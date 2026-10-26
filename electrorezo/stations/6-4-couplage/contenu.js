@@ -114,15 +114,14 @@
     if (v3) hote.appendChild(v3);
 
     /* Du général au particulier : le moteur, puis l'endroit où l'on câble, puis la plaque
-       qui dit quoi faire. Photos réelles de la bibliothèque — voir SOURCES.md. */
+       qui dit quoi faire. Dessins inerWeb (les photos de cours ont été retirées le 26/10/2026 : droits non réglés). */
     const g = carte('Le moteur, et l’endroit où l’on câble');
     const bande = el('div', 'bande-visuelle');
 
-    const vignette = (src, alt, titre, sous) => {
+    const vignette = (dessin, titre, sous) => {
       const f = el('figure', 'vignette');
-      const i = document.createElement('img');
-      i.src = src; i.alt = alt; i.loading = 'lazy';
-      f.appendChild(i);
+      dessin.style.cssText = 'display:block;width:100%;height:auto;border-radius:9px';
+      f.appendChild(dessin);
       const c = el('figcaption');
       c.appendChild(el('strong', null, titre));
       c.appendChild(document.createTextNode(' ' + sous));
@@ -130,24 +129,44 @@
       return f;
     };
 
-    bande.appendChild(vignette('assets/biblio/moteur-boite-a-bornes.jpeg',
-      'Photo d’un moteur électrique dont la boîte à bornes est ouverte : six bornes ; deux barrettes de couplage, désignées par deux flèches rouges, relient les trois bornes du bas : le moteur est couplé en étoile.',
+    /* la boîte à bornes : le dessin de la station, cadré sur la boîte, barrettes posées en étoile */
+    const bornes = plaqueSVG();
+    poserBarrettes(bornes, 'etoile');
+    bornes.querySelector('#cInterne').setAttribute('opacity', '1');   /* la légende du dessin parle des bobinages en pointillé */
+    bornes.setAttribute('viewBox', '0 0 466 470');
+    bornes.setAttribute('aria-label', 'Boîte à bornes dessinée : six bornes sur deux rangées ; deux barrettes relient les trois bornes du bas : le moteur est couplé en étoile.');
+    bande.appendChild(vignette(bornes,
       'La boîte à bornes.',
-      'Sur le flanc du moteur, sous un couvercle. Les flèches montrent les barrettes de couplage (ici deux : le moteur est couplé en étoile).'));
+      'Sur le flanc du moteur, sous un couvercle. Ici, deux barrettes relient les trois bornes du bas : le moteur est couplé en étoile.'));
     bande.appendChild(el('div', 'fleche', '➜'));
-    bande.appendChild(vignette('assets/biblio/plaque-signaletique.jpeg',
-      'Plaque signalétique d’un moteur asynchrone Leroy Somer : 1,5 kW, triangle 230 V 6,65 A, étoile 400 V 3,84 A, 1440 tours par minute, 50 Hz.',
+    /* la plaque signalétique, dessinée sans marque, mêmes valeurs que la plaque dessinée de la station 1.7 */
+    const plaque = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    plaque.setAttribute('viewBox', '0 0 300 220');
+    plaque.setAttribute('role', 'img');
+    plaque.setAttribute('aria-label', 'Plaque signalétique dessinée d’un moteur asynchrone triphasé : triangle 230 V 6,65 A, étoile 400 V 3,84 A, 1,5 kW, 1435 tours par minute, cos phi 0,80, 50 Hz, IP 55.');
+    plaque.innerHTML = `
+<rect x="6" y="6" width="288" height="208" rx="8" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+<circle cx="22" cy="22" r="4" fill="#1b3a63"/><circle cx="278" cy="22" r="4" fill="#1b3a63"/>
+<circle cx="22" cy="198" r="4" fill="#1b3a63"/><circle cx="278" cy="198" r="4" fill="#1b3a63"/>
+<text x="150" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#1b3a63">Moteur asynchrone triphasé</text>
+<line x1="30" y1="50" x2="270" y2="50" stroke="rgba(27,58,99,.3)"/>
+<text x="150" y="80" text-anchor="middle" font-size="19" font-weight="700" fill="#c9451a">Δ 230 V · 6,65 A</text>
+<text x="150" y="110" text-anchor="middle" font-size="19" font-weight="700" fill="#c9451a">Y 400 V · 3,84 A</text>
+<text x="150" y="142" text-anchor="middle" font-size="16" font-weight="700" fill="#1b3a63">1,5 kW · 1435 tr/min</text>
+<text x="150" y="168" text-anchor="middle" font-size="15" fill="#1b3a63">cos φ 0,80 · 50 Hz · 3 ~</text>
+<text x="150" y="192" text-anchor="middle" font-size="14" fill="#5a6472">IP 55</text>`;
+    bande.appendChild(vignette(plaque,
       'La plaque signalétique.',
       'Vissée sur le carter. C’est elle qui dit sous quelle tension chaque bobinage peut travailler.'));
     g.appendChild(bande);
-    Station.credit(g, 'Photographies : base de connaissances inerWeb, extraites d’un document de cours de l’établissement · plaque signalétique Leroy Somer, Angoulême. Détail dans « Crédits ».');
+    Station.credit(g, 'Dessins : inerWeb. Détail dans « Crédits ».');
 
     const d = carte('Lire cette plaque');
     d.appendChild(el('p', null, 'Sur la plaque de gauche, deux lignes seulement nous intéressent aujourd’hui.'));
     const lect = el('div', 'lecture');
     [['Δ 230 V · 6,65 A', 'en triangle, chaque bobinage tient 230 V'],
      ['Y 400 V · 3,84 A', 'en étoile, l’ensemble tient 400 V entre deux fils'],
-     ['1,5 kW · 1440 tr/min', 'la puissance et la vitesse, pour plus tard'],
+     ['1,5 kW · 1435 tr/min', 'la puissance et la vitesse, pour plus tard'],
      ['50 Hz · 3 phases', 'le réseau qu’il lui faut']].forEach(([v, x]) => {
       const b = el('div', 'metric'); b.appendChild(el('span', null, x));
       b.appendChild(el('strong', null, v)); lect.appendChild(b);
@@ -449,12 +468,9 @@
 
     niveaux: [{ id: 'CAP', libelle: 'CAP' }, { id: 'BAC', libelle: 'Bac pro' }],
     credits: [
-      { quoi: 'Photo « moteur et boîte à bornes »',
-        source: 'base de connaissances inerWeb',
-        detail: 'photographie extraite d’un document de cours de l’établissement' },
-      { quoi: 'Photo « plaque signalétique »',
-        source: 'base de connaissances inerWeb · constructeur Leroy Somer, Angoulême',
-        detail: 'photographie extraite d’un document de cours de l’établissement' },
+      { quoi: 'Dessins « boîte à bornes » et « plaque signalétique »',
+        source: 'inerWeb',
+        detail: 'dessins de la station ; valeurs d’un moteur courant de 1,5 kW, sans marque' },
       { quoi: 'Symboles normalisés',
         source: 'bibliothèque inerWeb, convertie depuis QElectroTech',
         detail: 'moteur triphasé et moteur à six bornes — 391_consumers_actuators/10_engines/' } ],

@@ -6,17 +6,10 @@ Trouvées par `node outils/chercher-images.mjs`, copiées dans `assets/biblio/`.
 Fonds d'origine : `C:\git\usine-contenu\moteur-recherche\illustrations\cache\`
 (44 011 images décrites, 51 890 fichiers en cache).
 
-| Fichier local | Empreinte d'origine | Ce qu'elle montre | Où elle était |
-|---|---|---|---|
-| `biblio/moteur-boite-a-bornes.jpeg` | `e8a557324ba1…` | moteur, boîte à bornes ouverte, deux flèches rouges sur les barrettes — 318 × 239 | `03_BAC-MFER/S1-Analyse/coure tri.docx` |
-| `biblio/plaque-signaletique.jpeg` | `7adb7f637f2b…` | plaque Leroy Somer 1,5 kW, Δ 230 V · 6,65 A / Y 400 V · 3,84 A, 1440 tr/min — 348 × 229 | `03_BAC-MFER/S4-Electricite/Activité 17 couplage moteur asynchrone triphasé.pdf` |
-| `biblio/tableau-couplages.jpeg` | `123e4aa8fc70…` | tableau des trois familles de plaques : 127/220, 230/400, 400/690 — 1762 × 928 | `02_CAP-IFCA/C1-Communiquer/Dossier technique.V2 CAP IFCA EP1 2022.pdf` |
-
-⚠️ **Droits — à trancher avant toute publication.** Ces images viennent des documents de cours
-des collègues, moissonnés dans la base de connaissances. Elles conviennent au **travail** et à
-un usage **interne**. Avant une mise en ligne sur inerweb.fr, deux voies : vérifier l'origine de
-chaque image retenue, ou faire dessiner la scène par Claude Design. La plaque signalétique porte
-une marque commerciale bien visible.
+**26/10/2026 : photos retirées** (droits non réglés, décision de F. Henninot). Le temps 1 montre deux dessins inerWeb :
+la boîte à bornes de la station (barrettes en étoile) et une plaque signalétique dessinée, sans marque, aux valeurs
+de la plaque dessinée de la station 1.7 (Δ 230 V 6,65 A / Y 400 V 3,84 A, 1,5 kW, 1435 tr/min). Le tableau des couplages
+est dessiné en code (Schemas.tableauCouplages).
 
 ⚠️ **Résolution.** 318 × 239 et 348 × 229 : convenable en vignette, insuffisant en plein écran.
 C'est une raison de plus pour que la scène animée soit redessinée par Design.
