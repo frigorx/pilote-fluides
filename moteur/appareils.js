@@ -10,7 +10,8 @@
    2. SUR LES CARTES, partout et sur tout appareil : le pictogramme « PC ou tablette » sur chaque
       lien-carte qui mène à une page de la liste (accueil, catalogue, réseaux, Mon parcours, Plan),
       y compris les cartes dessinées après coup par un script.
-   LA LISTE : chemin depuis la racine du site (un dossier vaut pour tout ce qu'il contient).
+   LA LISTE : chemin depuis la racine du site (un dossier vaut pour tout ce qu'il contient ;
+     « =m/<n>/ » vaut pour la seule page m/<n>/, voir cle()).
      "avertir" = fenêtre sur la page + pictogramme sur les cartes ;
      "carte"   = pictogramme seulement (la page avertit déjà elle-même). */
 (function () {
@@ -42,6 +43,9 @@
     "formateur.html": "avertir",
     "matrice.html": "avertir",
     "planning.html": "avertir",
+    // pages « Projeter » du livre MFER (m/<n>/), faites pour le vidéoprojecteur ; « = » : cette page
+    // seule, pas les stations rangées dessous (m/<n>/g/), qui passent au téléphone
+    "=m/<n>/": "avertir",
     // le Câblage virtuel a déjà sa fenêtre « Écran trop petit »
     "cablage-virtuel/": "carte"
   };
@@ -60,6 +64,7 @@
   }
   function cle(c) {
     if (c === null) return null;
+    if (/^m\/\d+\/$/.test(c)) return "=m/<n>/";
     for (var k in LISTE) if (c === k || (k.slice(-1) === "/" && c.indexOf(k) === 0)) return k;
     return null;
   }
