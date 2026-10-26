@@ -87,13 +87,13 @@ window.OIL_MODULE = {
       short: "Régler",
       kicker: "Station 6 · Réglage",
       title: "Régler le seuil, puis contrôler la coupure",
-      lead: "Exemple Danfoss : sur un MP55, le seuil se règle avec le disque de réglage (la molette placée dans le boîtier) et se lit sur l’échelle intérieure ; sur un MP54, il est fixe et frappé sur la face avant.",
+      lead: "Sur un MP55 (Danfoss), le seuil se règle avec le disque de réglage, une molette dans le boîtier, et se lit sur l’échelle intérieure. Sur un MP54, il est fixe, frappé sur la face avant.",
       details: [
-        "Valeurs de la fiche technique Danfoss MP54 / MP55 : seuil réglable de 0,3 à 4,5 bar (MP55) ou fixe à 0,65 ou 0,9 bar (MP54) ; différentiel de contact de 0,2 bar au plus ; temporisation fixe de 45, 60, 90 ou 120 s selon la référence.",
-        "La valeur à afficher vient de la notice du compresseur. Exemple d’exercice : la notice demande 0,65 bar → tourner le disque jusqu’à lire 0,65 bar. Le différentiel de contact vaut au plus 0,2 bar : la temporisation s’arrête au plus tard quand la pression nette dépasse 0,65 + 0,2 = 0,85 bar.",
-        "Contrôle : compresseur en marche, maintenir enfoncé le bouton de test (dans le boîtier, côté gauche) ; le compresseur doit s’arrêter au bout de la temporisation. Réarmer (remettre le contact en service) avec le bouton de réarmement, après environ 2 minutes, une fois la cause trouvée."
+        "Fiche Danfoss : MP55 réglable de 0,3 à 4,5 bar ; MP54 fixe à 0,65 ou 0,9 bar ; différentiel de contact 0,2 bar au plus ; temporisation 45, 60, 90 ou 120 s.",
+        "Exemple d’exercice : la notice du compresseur demande 0,65 bar → on règle jusqu’à lire 0,65. La temporisation s’arrête au plus tard à 0,65 + 0,2 = 0,85 bar.",
+        "Contrôle : compresseur en marche, maintenir le bouton de test enfoncé ; il doit s’arrêter après la temporisation. Réarmer (remettre en service) au bouton, après 2 min environ, cause trouvée."
       ],
-      box: { type: "warning", text: "Le seuil vient de la notice du compresseur : la fiche du pressostat ne donne que la plage possible." },
+      box: { type: "warning", text: "Le seuil vient de la notice du compresseur, pas de la fiche du pressostat." },
       visual: { kind: "oilPressureTimer", title: "Régler le seuil, contrôler la temporisation", label: "Temporisation lancée sous le seuil réglé et arrêtée au-dessus du seuil augmenté du différentiel de contact" }
     }
   ],
