@@ -73,11 +73,11 @@ window.OIL_MODULE = {
       short: "Choisir",
       kicker: "Station 5 · Décision",
       title: "Lequel choisir, et pourquoi",
-      lead: "Les deux ne se valent pas. Le coalescent sépare mieux : c’est le plus efficace des deux. Mais il coûte plus cher, il freine davantage le gaz, et sa cartouche est une pièce d’entretien.",
+      lead: "Les deux ne se valent pas. Le coalescent sépare mieux, mais il coûte plus cher, freine davantage le gaz, et sa cartouche est une pièce d’entretien.",
       details: [
         "L’éclatement, lui, est simple et robuste : rien à remplacer, une perte de charge faible et stable, un prix modeste. Sa limite est réelle : le brouillard le plus fin le traverse.",
         "Sur le terrain, on rencontre les deux : le coalescent est choisi pour son rendement de séparation, l’éclatement pour sa simplicité.",
-        "Sur les centrales au CO₂, le coalescent est souvent préféré. La raison est technique : la densité du CO₂ se rapproche de celle de l’huile et les gouttelettes sont très fines. Or l’éclatement sépare grâce à l’écart de densité — ici cet écart s’amenuise, et son moteur faiblit."
+        "Sur les centrales au CO₂, le coalescent est souvent préféré : la densité du CO₂ se rapproche de celle de l’huile et les gouttelettes sont très fines. L’éclatement, qui sépare grâce à l’écart de densité, perd alors de son efficacité."
       ],
       box: { type: "exam", text: "Le choix se fait sur l’installation complète — fluide, architecture, longueur des lignes, plage de débit — jamais sur le seul prix de l’appareil." },
       visual: { kind: "separatorChoice", title: "Lire l’installation avant de choisir", label: "Un poste à lignes courtes appelle un séparateur à éclatement ; une centrale à lignes longues appelle un coalescent" }
