@@ -113,7 +113,7 @@ Ils enseignent, mais rien ne le prouve — et c'est la première question d'un a
 | `nomenclature-interactive` | g1c, plan d’accueil | — | 1.06 | 103 Ko |
 | `parcours-manometres` | plan d’accueil | 27 | *appui : 4 codes* | 255 Ko |
 | `pose-manifold-2-voies-interactive` | p1, plan d’accueil | 8 | 4.05 · 5.01 · 12.02 | 322 Ko |
-| `pose-manifold-interactive` | p1, plan d’accueil | 6 | 4.05 · 5.01 · 5.02 · 3.03 · 3.04 | 91 Ko |
+| `pose-manifold-interactive` | p1, plan d’accueil | 6 | 4.05 · 5.01 · 5.02 · 3.03 · *appui : 3.04* | 91 Ko |
 | `pression-temperature-interactive` | g1b, plan d’accueil | — | 1.02 · 1.03 | 154 Ko |
 | `pressostat-bp-kp1` | plan d’accueil | 26 | 6.03 · 9.06 | 1254 Ko |
 | `pressostat-combine-kp15` | plan d’accueil | 26 | 6.03 · 7.04 · 9.06 | 941 Ko |

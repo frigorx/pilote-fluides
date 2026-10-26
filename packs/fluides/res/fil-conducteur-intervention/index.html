@@ -128,7 +128,7 @@
 <body>
   <main>
     <div class="barre">
-      <p><strong>Brouillon de slide</strong> · animation et voix · <span id="duree">38 s</span> · son coupé au chargement</p>
+      <p><strong>Introduction</strong> · animation et voix · <span id="duree">35 s</span> · son coupé au chargement</p>
       <div class="actions" aria-label="Commandes de l'animation et de la voix">
         <button class="principal" id="lancer" type="button" data-prof-ecouter>▶ Écouter</button>
         <button id="rejouer" type="button">↻ Sans voix</button>
@@ -136,7 +136,7 @@
       </div>
     </div>
     <div class="scene">
-      <object id="animation" data="animation-fil-conducteur-fluides.svg?vitesse=0.95" type="image/svg+xml">
+      <object id="animation" data="animation-fil-conducteur-fluides.svg?v=20261026-plan&vitesse=0.95" type="image/svg+xml">
         Le fil conducteur d'une intervention fluide : comprendre, être autorisé, préparer, intervenir, contrôler et tracer.
       </object>
     </div>
@@ -151,7 +151,7 @@
        voix du navigateur) à la vitesse commune du site, qui règle aussi le défilement de l'animation : une seule
        vitesse pour les deux, comme avant. Au clic seulement ; « Couper la voix », changer la vitesse ou quitter
        l'onglet arrêtent la lecture. */
-    const DUREE_NORMALE = 32.2;
+    const DUREE_NORMALE = 35.2;
 
     const animation = document.getElementById("animation");
     const lancer = document.getElementById("lancer");
@@ -170,7 +170,7 @@
 
     function relancerAnimation() {
       animation.data =
-        "animation-fil-conducteur-fluides.svg?vitesse=" + vitesse() +
+        "animation-fil-conducteur-fluides.svg?v=20261026-plan&vitesse=" + vitesse() +
         "&replay=" + Date.now();
     }
 

@@ -1229,7 +1229,7 @@
   function takeawayBox(lesson) {
     var box = lesson.box || { type: "key", text: lesson.takeaway || "" };
     var cls = box.type === "warning" ? "warning-box" : box.type === "exam" ? "exam-box" : "key-box";
-    var label = box.type === "warning" ? "LE PIÈGE" : box.type === "exam" ? "POUR L’HABILITATION" : "LA CLÉ";
+    var label = box.type === "warning" ? "LE PIÈGE" : box.type === "exam" ? "POUR L’ATTESTATION D’APTITUDE" : "LA CLÉ";
     return '<div class="' + cls + '"><strong>' + label + " · </strong>" + inline(box.text) + "</div>";
   }
 
@@ -1240,7 +1240,7 @@
       return '<button type="button" class="station-button ' + (active ? "active " : "") + (done ? "done" : "") + '" data-lesson="' + index + '" aria-label="Station ' + (index + 1) + " : " + esc(lesson.short) + '"' + (active ? ' aria-current="step"' : "") + '><span>' + (index + 1) + "</span><strong>" + esc(lesson.short) + "</strong></button>";
     }).join("");
     var quizActive = state.phase === "quiz" || state.phase === "summary";
-    ui.stations.innerHTML = lessonButtons + '<button type="button" class="station-button quiz ' + (quizActive ? "active" : "") + '" data-quiz="1" aria-label="Station finale : questions d’habilitation"' + (quizActive ? ' aria-current="step"' : "") + '><span>Q</span><strong>Questions</strong></button>';
+    ui.stations.innerHTML = lessonButtons + '<button type="button" class="station-button quiz ' + (quizActive ? "active" : "") + '" data-quiz="1" aria-label="Station finale : questions d’attestation d’aptitude"' + (quizActive ? ' aria-current="step"' : "") + '><span>Q</span><strong>Questions</strong></button>';
     Array.prototype.forEach.call(ui.stations.querySelectorAll("[data-lesson]"), function (button) {
       button.addEventListener("click", function () {
         stopSpeech();
@@ -1281,7 +1281,7 @@
     var options = q.options.map(function (option, index) {
       return '<button type="button" class="option-button" data-answer="' + index + '"><span>' + String.fromCharCode(65 + index) + "</span>" + esc(option) + "</button>";
     }).join("");
-    ui.lessonCard.innerHTML = '<section class="copy-panel"><div class="kicker">Questions d’habilitation · ' + (state.quiz + 1) + " / " + moduleData.quiz.length + '</div><span class="recall-badge">Entraînement — jamais un sujet officiel</span><h1>' + esc(q.prompt) + '</h1><div class="option-list">' + options + '</div><div class="feedback" id="quiz-feedback" aria-live="polite"></div><div class="exam-box"><strong>COMPÉTENCE · </strong>' + esc(q.code || moduleData.codes.join(" · ")) + "</div></section>" +
+    ui.lessonCard.innerHTML = '<section class="copy-panel"><div class="kicker">Questions d’attestation d’aptitude · ' + (state.quiz + 1) + " / " + moduleData.quiz.length + '</div><span class="recall-badge">Entraînement — jamais un sujet officiel</span><h1>' + esc(q.prompt) + '</h1><div class="option-list">' + options + '</div><div class="feedback" id="quiz-feedback" aria-live="polite"></div><div class="exam-box"><strong>COMPÉTENCE · </strong>' + esc(q.code || moduleData.codes.join(" · ")) + "</div></section>" +
       '<section class="visual-panel"><h2>Question possible à l’évaluation</h2><div class="visual-stage">' + renderVisual({ kind: "quiz", label: "Question d’entraînement reliée au référentiel" }, q) + '</div><p class="visual-caption">La formulation est pédagogique. Seul le référentiel officiel fixe la compétence évaluée.</p></section>';
     ui.previous.disabled = state.quiz === 0;
     ui.next.disabled = true;
@@ -1334,7 +1334,7 @@
       var q = moduleData.quiz[index];
       return '<li><button type="button" class="revoir-link" data-revoir="' + index + '">Question ' + (index + 1) + " · compétence " + esc(q.code || moduleData.codes.join(" · ")) + "</button></li>";
     }).join("") + "</ul></div>" : "";
-    ui.lessonCard.innerHTML = '<section class="copy-panel"><div class="kicker">Bilan du module</div><div class="score-card"><h1>' + (aRevoir.length ? "Quelques repères sont à revoir." : "Les repères essentiels sont en place.") + '</h1><p class="lead">Ce bilan est un entraînement. Il ne remplace ni l’épreuve officielle ni l’observation pratique.</p>' + revoir + '<div class="key-box"><strong>PROCHAINE ACTION · </strong>' + inline(moduleData.nextStep) + "</div>" + nextLink + '</div></section><section class="visual-panel"><h2>La ligne « Circuit d’huile » continue</h2><div class="visual-stage">' + renderVisual(moduleData.summaryVisual || { kind: "route", label: "Synthèse du module" }) + '</div><p class="visual-caption">Le module reste un brouillon jusqu’au bon à tirer métier et pédagogique.</p></section>';
+    ui.lessonCard.innerHTML = '<section class="copy-panel"><div class="kicker">Bilan du module</div><div class="score-card"><h1>' + (aRevoir.length ? "Quelques repères sont à revoir." : "Les repères essentiels sont en place.") + '</h1><p class="lead">Ce bilan est un entraînement. Il ne remplace ni l’épreuve officielle ni l’observation pratique.</p>' + revoir + '<div class="key-box"><strong>PROCHAINE ACTION · </strong>' + inline(moduleData.nextStep) + "</div>" + nextLink + '</div></section><section class="visual-panel"><h2>La ligne « Circuit d’huile » continue</h2><div class="visual-stage">' + renderVisual(moduleData.summaryVisual || { kind: "route", label: "Synthèse du module" }) + '</div><p class="visual-caption">Les notices du matériel réel restent prioritaires.</p></section>';
     Array.prototype.forEach.call(ui.lessonCard.querySelectorAll("[data-revoir]"), function (button) {
       button.addEventListener("click", function () {
         stopSpeech();
@@ -1414,7 +1414,7 @@
     for (var i = 0; i < aRetirer.length; i++) aRetirer[i].parentNode.removeChild(aRetirer[i]);
     var kicker = copie.querySelector(".kicker");
     if (kicker) {
-      /* « Questions d'habilitation · 3 / 6 » devient « Question 3 sur 6 ». */
+      /* « Questions d'attestation d'aptitude · 3 / 6 » devient « Question 3 sur 6 ». */
       var m = /(\d+)\s*\/\s*(\d+)/.exec(kicker.textContent || "");
       kicker.textContent = m ? "Question " + m[1] + " sur " + m[2] + "." : "";
     }
@@ -1602,7 +1602,7 @@
   }
 
   function renderSources() {
-    ui.dialogBody.innerHTML = '<p><strong>Statut :</strong> sources consultées pour construire un brouillon pédagogique. Les notices du matériel réel restent prioritaires.</p><ul>' + moduleData.sources.map(function (source) {
+    ui.dialogBody.innerHTML = '<p><strong>Statut :</strong> sources consultées pour construire ce module. Les notices du matériel réel restent prioritaires.</p><ul>' + moduleData.sources.map(function (source) {
       return '<li><a href="' + esc(source.url) + '" target="_blank" rel="noopener">' + esc(source.title) + "</a> — " + esc(source.use) + "</li>";
     }).join("") + '</ul><p>Les tracés pédagogiques sont recomposés par inerWeb. Les organes disponibles utilisent les symboles de la bibliothèque technique : <a href="https://github.com/qelectrotech/qelectrotech-elements" target="_blank" rel="noopener">collection QElectroTech</a> (CC BY 3.0), adaptés par inerWeb — F. Henninot.</p>';
   }

@@ -80,6 +80,21 @@ window.OIL_MODULE = {
       ],
       box: { type: "exam", text: "Touchez Démarrage, Pression suffisante ou Défaut persistant et lisez ce que fait le contact." },
       visual: { kind: "oilPressureClaudeSlot", title: "Explorer les trois états du mécanisme", label: "Mécanisme interactif du pressostat différentiel d’huile : trois états à explorer", caption: "Touchez Démarrage, Pression suffisante ou Défaut persistant." }
+    },
+    {
+      id: "reglage",
+      narration: "Dernier geste : régler, puis contrôler. Prenons un pressostat Danfoss, d'après sa fiche technique. Sur un M P cinquante-cinq, le seuil se règle avec le disque de réglage, une molette placée dans le boîtier, entre zéro virgule trois et quatre virgule cinq bars, et se lit sur l'échelle à l'intérieur du boîtier. Sur un M P cinquante-quatre, il est fixe, zéro virgule soixante-cinq ou zéro virgule neuf bar, et il est frappé sur la face avant. La valeur à afficher ne vient pas de la fiche du pressostat : elle vient de la notice du compresseur. Exemple d'exercice : la notice demande zéro virgule soixante-cinq bar, on tourne le disque jusqu'à lire cette valeur. Le différentiel de contact vaut au plus zéro virgule deux bar : la temporisation s'arrête au plus tard quand la pression nette dépasse zéro virgule soixante-cinq plus zéro virgule deux, soit zéro virgule quatre-vingt-cinq bar. Enfin, on contrôle : compresseur en marche, on maintient enfoncé le bouton de test ; le compresseur doit s'arrêter au bout de la temporisation. Réarmer, c'est remettre le contact en service : on appuie sur le bouton de réarmement, après environ deux minutes, une fois la cause trouvée.",
+      short: "Régler",
+      kicker: "Station 6 · Réglage",
+      title: "Régler le seuil, puis contrôler la coupure",
+      lead: "Exemple Danfoss : sur un MP55, le seuil se règle avec le disque de réglage (la molette placée dans le boîtier) et se lit sur l’échelle intérieure ; sur un MP54, il est fixe et frappé sur la face avant.",
+      details: [
+        "Valeurs de la fiche technique Danfoss MP54 / MP55 : seuil réglable de 0,3 à 4,5 bar (MP55) ou fixe à 0,65 ou 0,9 bar (MP54) ; différentiel de contact de 0,2 bar au plus ; temporisation fixe de 45, 60, 90 ou 120 s selon la référence.",
+        "La valeur à afficher vient de la notice du compresseur. Exemple d’exercice : la notice demande 0,65 bar → tourner le disque jusqu’à lire 0,65 bar. Le différentiel de contact vaut au plus 0,2 bar : la temporisation s’arrête au plus tard quand la pression nette dépasse 0,65 + 0,2 = 0,85 bar.",
+        "Contrôle : compresseur en marche, maintenir enfoncé le bouton de test (dans le boîtier, côté gauche) ; le compresseur doit s’arrêter au bout de la temporisation. Réarmer (remettre le contact en service) avec le bouton de réarmement, après environ 2 minutes, une fois la cause trouvée."
+      ],
+      box: { type: "warning", text: "Le seuil vient de la notice du compresseur : la fiche du pressostat ne donne que la plage possible." },
+      visual: { kind: "oilPressureTimer", title: "Régler le seuil, contrôler la temporisation", label: "Temporisation lancée sous le seuil réglé et arrêtée au-dessus du seuil augmenté du différentiel de contact" }
     }
   ],
   quiz: [
@@ -87,10 +102,12 @@ window.OIL_MODULE = {
     { prompt: "En quoi diffère-t-il d’un régulateur de niveau TraxOil ?", options: ["Il agit plus vite sur le même niveau", "Il surveille une pression, pas un niveau", "Il remplit la même fonction, autrement"], correct: 1, why: "TraxOil gère le niveau ; le pressostat différentiel protège la lubrification sous pression.", code: "1.05 · 6.03" },
     { prompt: "Où se raccorde normalement P1 côté OIL ?", options: ["À la bouteille liquide du circuit", "Sur l’aspiration, avant le carter", "À la sortie de la pompe à huile"], correct: 2, why: "P1 reçoit la pression fournie par la pompe à huile.", code: "1.05" },
     { prompt: "Comment obtenir la pression nette d’huile ?", options: ["P1 moins P2", "P1 plus P2", "P2 divisée par P1"], correct: 0, why: "Le contrôle compare la sortie de pompe à la pression du carter ou de l’aspiration.", code: "6.03" },
-    { prompt: "Pourquoi une temporisation existe-t-elle au démarrage ?", options: ["Pour éviter les à-coups sur le moteur", "Pour laisser chauffer l’huile du carter", "Pour laisser la pompe monter en pression"], correct: 2, why: "À l’arrêt, la pompe entraînée ne produit pas encore de pression nette.", code: "6.03" }
+    { prompt: "Pourquoi une temporisation existe-t-elle au démarrage ?", options: ["Pour éviter les à-coups sur le moteur", "Pour laisser chauffer l’huile du carter", "Pour laisser la pompe monter en pression"], correct: 2, why: "À l’arrêt, la pompe entraînée ne produit pas encore de pression nette.", code: "6.03" },
+    { prompt: "Sur un MP55, d’où vient la valeur de seuil à afficher sur le disque ?", options: ["D’une valeur retenue par cœur, la même partout", "De la notice du compresseur", "Du manomètre BP de l’installation"], correct: 1, why: "La fiche du pressostat donne la plage possible (0,3 à 4,5 bar) ; la valeur à régler est celle que demande le constructeur du compresseur.", code: "6.03", sansEnregistrement: true },
+    { prompt: "Seuil réglé à 0,9 bar, différentiel de contact de 0,2 bar au plus : au plus tard, quelle pression nette arrête la temporisation ?", options: ["0,7 bar", "0,9 bar", "1,1 bar"], correct: 2, why: "Comme dans l’exemple : seuil + différentiel de contact = 0,9 + 0,2 = 1,1 bar au plus.", code: "6.03", sansEnregistrement: true }
   ],
   sources: [
-    { title: "Danfoss — MP54 / MP55 / MP55A, fiche technique", url: "https://assets.danfoss.com/documents/latest/561042/AI545031222570en-000101.pdf", use: "rôle, deux prises OIL/LP, seuil, différentiel de contact, temporisation, test et réarmement" },
+    { title: "Danfoss — MP54 / MP55 / MP55A, fiche technique (AI545031222570, éd. 2025.12)", url: "https://assets.danfoss.com/documents/latest/561042/AI545031222570en-000101.pdf", use: "rôle, deux prises OIL/LP, seuil, différentiel de contact, temporisation, test et réarmement" },
     { title: "Danfoss — MP54 / MP55 / MP55A, guide d’installation", url: "https://assets.danfoss.com/documents/latest/459777/AN211986434504en-000403.pdf", use: "raccordements p1/p2, montage et schéma de câblage" },
     { title: "Danfoss — gamme MP", url: "https://designcenter.danfoss.com/products/climate-solutions-for-cooling/switches/differential-pressure-switches/mp54---mp55---mp55a?tab=products", use: "fonction de sécurité et variantes de la gamme" },
     { title: "Légifrance — attestation d’aptitude fluides", url: "https://www.legifrance.gouv.fr/jorf/id/JORFSCTA000053004646", use: "ancrage des questions de préparation aux compétences" }

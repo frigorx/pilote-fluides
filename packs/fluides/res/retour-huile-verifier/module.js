@@ -25,11 +25,11 @@ window.OIL_MODULE = {
     },
     {
       id: "calcul-vitesse",
-      narration: "La vitesse du gaz ne se devine pas, elle se calcule : on divise le débit aspiré par la section de passage du tube. Voici un exemple, avec les réglages de départ du simulateur. Un : le tube fait vingt-six millimètres de diamètre intérieur, et le simulateur affiche sa section, cinq cent trente et un millimètres carrés. Deux : le compresseur aspire dix-huit mètres cubes par heure à pleine charge. Trois : le simulateur divise le débit par la section et affiche la vitesse, environ neuf virgule quatre mètres par seconde. À vous maintenant de régler le diamètre intérieur, le régime et le débit, et de regarder ce que devient la vitesse — puis ce que devient l'huile. Ce que la manipulation montre le plus vite, c'est qu'un tracé peut très bien convenir à pleine charge et ne plus rien entraîner du tout à charge réduite. Une précision honnête : le calcul vous donne une vitesse, c'est tout. Le repère auquel la comparer vient ensuite de la notice du constructeur et de l'étude de l'installation.",
-      short: "Calcul",
-      kicker: "Station 2 · Calcul",
-      title: "Calculer la vitesse, et voir ce qu’elle change",
-      lead: "La vitesse du gaz ne se devine pas : elle se calcule en divisant le débit aspiré par la section de passage.",
+      narration: "La vitesse du gaz ne se devine pas : le simulateur la calcule, et vous la lisez. Il divise le débit aspiré par la section de passage du tube. Voici un exemple, avec les réglages de départ du simulateur. Un : le tube fait vingt-six millimètres de diamètre intérieur, et le simulateur affiche sa section, cinq cent trente et un millimètres carrés. Deux : le compresseur aspire dix-huit mètres cubes par heure à pleine charge. Trois : le simulateur divise le débit par la section et affiche la vitesse, environ neuf virgule quatre mètres par seconde. À vous maintenant de régler le diamètre intérieur, le régime et le débit, et de regarder ce que devient la vitesse — puis ce que devient l'huile. Ce que la manipulation montre le plus vite, c'est qu'un tracé peut très bien convenir à pleine charge et ne plus rien entraîner du tout à charge réduite. Une précision honnête : le calcul vous donne une vitesse, c'est tout. Le repère auquel la comparer vient ensuite de la notice du constructeur et de l'étude de l'installation.",
+      short: "Lire",
+      kicker: "Station 2 · Lecture",
+      title: "Lire la vitesse, et voir ce qu’elle change",
+      lead: "La vitesse du gaz ne se devine pas : le simulateur la calcule en divisant le débit aspiré par la section de passage, et vous la lisez.",
       details: [
         "Exemple résolu, avec les réglages de départ : 1) le tube fait 26 mm de diamètre intérieur, le simulateur affiche sa section, 531 mm² ; 2) le compresseur aspire 18 m³/h à pleine charge ; 3) le simulateur divise le débit par la section et affiche la vitesse : 9,4 m/s.",
         "À vous : régler le diamètre intérieur, le régime et le débit aspiré, puis lire la vitesse obtenue et l’état de l’huile.",

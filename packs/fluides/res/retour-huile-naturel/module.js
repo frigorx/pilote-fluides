@@ -2,7 +2,7 @@ window.OIL_MODULE = {
   id: "retour-huile-naturel",
   title: "Le retour d’huile naturel",
   subtitle: "LE CIRCUIT D’HUILE · STATION 3",
-  codes: ["1.05", "6.01", "6.05"],
+  codes: ["1.05", "6.01", "6.05", "9.07"],
   voix: true,
   nextStep: "Poursuivre avec « Vérifier le retour d’huile » : les régimes, le calcul de vitesse, la lecture du tracé et la méthode de diagnostic.",
   nextUrl: "../retour-huile-verifier/index.html",

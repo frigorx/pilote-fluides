@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f7f1e7">
   <meta name="description" content="Atelier interactif inerWeb : contrôler, poser, tirer au vide le manifold et ses flexibles, mettre en lecture et déposer un manifold 4 voies sur deux vannes de service.">
   <title>Poser et déposer le manifold 4 voies | Pilote Fluides</title>
-  <link rel="stylesheet" href="styles.css?v=5525b28d48">
+  <link rel="stylesheet" href="styles.css?v=20261026-plan">
   <link rel="stylesheet" href="../../../../moteur/impression.css?v=20260810-1" media="print">
   <script src="../../../../moteur/plan-donnees.js?v=20261023-tel"></script>
   <script src="../../../../moteur/suivant.js" defer></script>
@@ -21,7 +21,6 @@
       <span><small>Pilote Fluides · Atelier manifold</small></span>
     </a>
     <div class="appbar-actions">
-      <span class="draft-badge">BROUILLON MÉTIER</span>
       <span class="mode-badge" id="mode-badge">Accueil</span>
       <button type="button" class="small-button" id="voice-button" hidden aria-pressed="false">▶ Écouter</button>
       <button type="button" class="small-button" id="help-button" hidden>Aidez-moi</button>
@@ -45,7 +44,7 @@
           </button>
         </div>
         <p class="scope-note"><strong>Dans ce TP :</strong> le siège avant est expliqué dans le zoom, mais la pose et la dépose utilisent le siège arrière et la position intermédiaire de lecture. Le vide porte sur le manifold et les flexibles seulement : le circuit reste isolé, et le critère de vide est celui de la notice du poste.</p>
-        <p class="scope-note"><strong>Entraînement :</strong> ce TP ne vérifie pas que vous avez compris le pourquoi de chaque geste. Votre formateur le vérifie au poste réel.</p>
+        <p class="scope-note"><strong>Après la dépose :</strong> cinq questions vérifient que vous avez compris le pourquoi des gestes, sans note. Votre formateur le vérifie aussi au poste réel.</p>
       </div>
 
       <div class="home-visual" aria-label="Aperçu de l'atelier">
@@ -210,7 +209,7 @@
               <g class="direct-control check-card" data-control="inspect-red" transform="translate(18 180)" role="button" tabindex="0" aria-label="Inspecter le flexible rouge"><rect width="250" height="55" rx="14"/><path class="swatch red" d="M18 35h55"/><text x="150" y="34">INSPECTER ROUGE</text></g>
               <g class="direct-control check-card" data-control="inspect-black" transform="translate(18 245)" role="button" tabindex="0" aria-label="Inspecter le flexible de vide"><rect width="250" height="55" rx="14"/><path class="swatch black" d="M18 35h55"/><text x="150" y="34">INSPECTER VIDE</text></g>
 
-              <g class="direct-control residual-card" data-control="residual-treatment" transform="translate(930 300)" role="button" tabindex="0" aria-label="Traiter le fluide résiduel selon la procédure du poste"><rect width="245" height="84" rx="15"/><text x="122" y="27">FLUIDE PIÉGÉ</text><text x="122" y="50">traitement du poste</text><text x="122" y="70">AUCUN REJET</text></g>
+              <g class="direct-control residual-card" data-control="residual-treatment" transform="translate(930 300)" role="button" tabindex="0" aria-label="Ramener le fluide piégé vers l’aspiration par la BP"><rect width="245" height="84" rx="15"/><text x="122" y="27">FLUIDE PIÉGÉ</text><text x="122" y="50">retour par la BP</text><text x="122" y="70">AUCUN REJET</text></g>
               <g class="direct-control leak-card" data-control="leak-check" transform="translate(18 315)" role="button" tabindex="0" aria-label="Contrôler l'étanchéité des raccords"><rect width="250" height="70" rx="15"/><text x="125" y="29">ÉTANCHÉITÉ</text><text x="125" y="53">raccords · bouchons</text></g>
               <g class="direct-control reading-card" data-control="read-pressures" transform="translate(930 205)" role="button" tabindex="0" aria-label="Lire et relever les pressions"><rect width="245" height="72" rx="15"/><text x="122" y="29">RELEVER HP / BP</text><text x="122" y="53">valeurs du scénario</text></g>
             </svg>
@@ -226,8 +225,9 @@
       <div class="summary-grid">
         <div><strong>Avant</strong><span>Zéro · joints · robinets fermés</span></div>
         <div><strong>Pendant</strong><span>Vide des lignes · siège intermédiaire · lecture</span></div>
-        <div><strong>Après</strong><span>Siège arrière · fluide résiduel traité · bouchons · étanchéité</span></div>
+        <div><strong>Après</strong><span>Fluide piégé ramené par la BP · siège arrière · bouchons · étanchéité</span></div>
       </div>
+      <div class="why-quiz" id="why-quiz" aria-live="polite"></div>
       <p class="summary-warning"><strong>Ce module entraîne l’ordre et la gestuelle.</strong> La fiche constructeur, la procédure du plateau et la supervision du formateur restent prioritaires.</p>
       <button type="button" class="primary-button" id="restart-button">Refaire le TP</button>
     </section>
@@ -247,13 +247,13 @@
     <p id="valve-explanation" class="valve-explanation"></p>
   </dialog>
 
-  <script src="../../../../moteur/voix-index.js?v=69c3f48245"></script>
+  <script src="../../../../moteur/voix-index.js?v=20261026-plan"></script>
   <script src="../../../../moteur/prononciation.js?v=20260902-1"></script>
   <script src="../../../../moteur/reglage-voix.js?v=45451e558b"></script>
   <script src="../../../../moteur/voix.js?v=20261017-voix"></script>
   <script src="../../../../moteur/prof-vocal.js?v=9912c09150"></script>
   <script src="../vanne-service-interactive/valve-diagram.js?v=20260802-6"></script>
-  <script src="app.js?v=20261022-plan"></script>
+  <script src="app.js?v=20261026-plan"></script>
   <script src="../../../../moteur/lisibilite.js?v=0f188557ff"></script>
   <script src="../../../../moteur/marque.js?v=20260818-3" data-cartouche="Fluide" data-licence="cc-by-nc-nd"></script>
 <script src="referentiel.js"></script>

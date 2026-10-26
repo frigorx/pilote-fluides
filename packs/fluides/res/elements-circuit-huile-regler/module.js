@@ -100,7 +100,7 @@ window.OIL_MODULE = {
       options: ["Le niveau d’huile dans le réservoir tampon", "La pression de condensation du circuit", "L’écart entre pression de pompe et de carter"],
       correct: 2,
       why: "Il protège la lubrification en surveillant la pression nette P1 − P2 avec la temporisation prévue.",
-      code: "1.05 · 6.03 · 6.05"
+      code: "1.05 · 6.05"
     }
   ],
   sources: [

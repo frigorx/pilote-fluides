@@ -87,7 +87,7 @@ for (const [relativePath, content] of generated) {
 
 const manifest = {
   product: "inerweb.fr — Diagramme enthalpique modulaire",
-  version: "7.0.0-brouillon",
+  version: "7.0.0",
   generatedOn: "2026-08-18",
   offline: true,
   defaultCourse: "cours-habilitation.html",

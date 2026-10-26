@@ -55397,6 +55397,69 @@ window.PILOTE_VOIX_INDEX = {
       "octets": 115776,
       "voix": "fr_FR-tom-medium",
       "empreinteTexte": "49a13924f2b038d7"
+    },
+    "6244e82c-602": {
+      "fichier": "audio/6244e82c-602.mp3",
+      "sha256": "9c7b2ca8b180b326",
+      "octets": 210494,
+      "voix": "fr_FR-siwis-medium",
+      "empreinteTexte": "1373127740b5637f"
+    },
+    "49dfb6f7-606": {
+      "fichier": "audio/49dfb6f7-606.mp3",
+      "sha256": "079c111f1d050c12",
+      "octets": 211435,
+      "voix": "fr_FR-siwis-medium",
+      "empreinteTexte": "100b8fef5ceffb70"
+    },
+    "05bbdcb3-476": {
+      "fichier": "audio/05bbdcb3-476.mp3",
+      "sha256": "9dc0125d0970126e",
+      "octets": 164101,
+      "voix": "fr_FR-siwis-medium",
+      "empreinteTexte": "f0e643c1961442b5"
+    },
+    "9bd89251-578": {
+      "fichier": "audio/9bd89251-578.mp3",
+      "sha256": "a7304622a27acef5",
+      "octets": 207203,
+      "voix": "fr_FR-siwis-medium",
+      "empreinteTexte": "a29e4fc2192edf40"
+    },
+    "1b0bb372-1022": {
+      "fichier": "audio/1b0bb372-1022.mp3",
+      "sha256": "2e5038f7a2308bd7",
+      "octets": 354220,
+      "voix": "fr_FR-siwis-medium",
+      "empreinteTexte": "471b51a54485ac0c"
+    },
+    "4753fc60-620": {
+      "fichier": "audio/4753fc60-620.mp3",
+      "sha256": "04d15d3c4cc74adb",
+      "octets": 233064,
+      "voix": "fr_FR-tom-medium",
+      "empreinteTexte": "03e4be961d2d33ca"
+    },
+    "4a67dd21-653": {
+      "fichier": "audio/4a67dd21-653.mp3",
+      "sha256": "7bec2847e30bb5af",
+      "octets": 243648,
+      "voix": "fr_FR-tom-medium",
+      "empreinteTexte": "27909988588ad069"
+    },
+    "aaf6518f-537": {
+      "fichier": "audio/aaf6518f-537.mp3",
+      "sha256": "13e308b531815c15",
+      "octets": 193320,
+      "voix": "fr_FR-tom-medium",
+      "empreinteTexte": "3b988f057e441a9c"
+    },
+    "3bd6939c-1174": {
+      "fichier": "audio/3bd6939c-1174.mp3",
+      "sha256": "08608605498b6700",
+      "octets": 422064,
+      "voix": "fr_FR-tom-medium",
+      "empreinteTexte": "09b326944994d0fb"
     }
   },
   "moteurEdgeTts": {

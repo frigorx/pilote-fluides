@@ -28,7 +28,7 @@ export const MODULES = [
       },
       {
         question: "Pourquoi la pression est-elle tracée sur une échelle logarithmique ?",
-        choices: ["Pour rendre les courbes décoratives", "Pour supprimer les unités", "Pour lire une grande plage de pressions"],
+        choices: ["Pour que toutes les courbes deviennent des droites", "Pour supprimer les unités", "Pour lire une grande plage de pressions"],
         answer: 2,
         feedback: "L’échelle logarithmique rend lisibles sur la même feuille les petites et les grandes pressions."
       }
@@ -57,7 +57,7 @@ export const MODULES = [
     quiz: [
       {
         question: "Que délimite principalement la courbe de saturation ?",
-        choices: ["Les domaines de phase du fluide", "La tension électrique", "Le débit d’air"],
+        choices: ["Les domaines de phase du fluide", "Les lignes de pression constante", "Les lignes de température constante"],
         answer: 0,
         feedback: "La cloche sépare les domaines liquide, diphasique et vapeur."
       },
@@ -162,7 +162,7 @@ export const MODULES = [
     quiz: [
       {
         question: "Que représente le titre x ?",
-        choices: ["La pression absolue", "La fraction massique de vapeur", "Le volume du local"],
+        choices: ["La pression absolue", "La fraction massique de vapeur", "La température de saturation"],
         answer: 1,
         feedback: "Le titre x indique la part massique du fluide présente sous forme de vapeur."
       },
@@ -238,7 +238,7 @@ export const MODULES = [
       },
       {
         question: "Pour identifier une isotherme sur un autre diagramme, que faut-il privilégier ?",
-        choices: ["La légende, la valeur T et son allure", "Uniquement sa couleur", "La taille du fichier"],
+        choices: ["La légende, la valeur T et son allure", "Uniquement sa couleur", "Uniquement l’épaisseur du trait"],
         answer: 0,
         feedback: "La couleur n’est pas une convention universelle. Le symbole T et la légende sont les repères fiables."
       }
@@ -337,7 +337,7 @@ export const MODULES = [
     quiz: [
       {
         question: "Quelle grandeur reste constante pendant une détente isenthalpique ?",
-        choices: ["L’enthalpie", "La pression", "Le volume du local"],
+        choices: ["L’enthalpie", "La pression", "La température"],
         answer: 0,
         feedback: "Isenthalpique signifie : enthalpie h constante."
       },

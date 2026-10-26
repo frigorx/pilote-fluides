@@ -2,7 +2,7 @@ window.OIL_MODULE = {
   id: "technologie-huiles-choix-controle",
   title: "Choisir et contrôler l’huile",
   subtitle: "LE CIRCUIT D’HUILE · STATION 2",
-  codes: ["1.05", "5.08", "6.01", "6.05"],
+  codes: ["1.05", "5.04", "5.08", "6.01", "6.05"],
   voix: true,
   nextStep: "Poursuivre avec « Le retour d’huile naturel » : après avoir identifié l’huile, il faut comprendre comment la tuyauterie permet son retour au compresseur.",
   nextUrl: "../retour-huile-naturel/index.html",
@@ -149,7 +149,7 @@ window.OIL_MODULE = {
       options: ["Récipient étanche dédié, puis étiquette", "Je la verse dans le bidon d’huile neuve", "Je la mélange aux autres huiles usagées"],
       correct: 0,
       why: "L’huile contient du fluide dissous : c’est un déchet dangereux. Récipient étanche dédié, jamais mélangée à d’autres huiles, étiquetée (huile, fluide, date), puis éliminée par une filière agréée.",
-      code: "5.08",
+      code: "5.04",
       sansEnregistrement: true
     }
   ],
@@ -187,7 +187,7 @@ window.OIL_MODULE = {
     {
       title: "Légifrance — Arrêté du 21 novembre 2025, attestation d’aptitude",
       url: "https://www.legifrance.gouv.fr/jorf/id/JORFSCTA000053004646",
-      use: "compétences 1.05, 5.08, 6.01 et 6.05"
+      use: "compétences 1.05, 5.04, 5.08, 6.01 et 6.05"
     }
   ]
 };

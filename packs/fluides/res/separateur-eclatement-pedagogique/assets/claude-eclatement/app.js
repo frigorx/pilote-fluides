@@ -234,17 +234,17 @@
       description: "Le choix se lit sur l’installation et sur la notice. Sur le CO₂, la densité du fluide se rapproche de celle de l’huile : le coalescent est souvent préféré.",
       draw: function () { return wrap("L’emploi de chaque famille selon l’installation", this.description,
         '<text class="heading" x="360" y="24" text-anchor="middle">8 · OÙ L’ON RENCONTRE CHACUN</text>' +
-        // installation classique
+        // poste à lignes courtes
         '<rect class="panel" x="30" y="46" width="316" height="118" rx="18"/>' +
-        '<text class="label" x="188" y="76" text-anchor="middle">INSTALLATIONS CLASSIQUES</text>' +
-        '<text class="small" x="188" y="100" text-anchor="middle">fluides frigorigènes habituels</text>' +
+        '<text class="label" x="188" y="76" text-anchor="middle">POSTE À LIGNES COURTES</text>' +
+        '<text class="small" x="188" y="100" text-anchor="middle">choisi pour sa simplicité</text>' +
         '<rect class="metal" x="150" y="112" width="12" height="34" rx="4"/>' +
         '<path class="jet" d="M104 129 H144"/>' +
         '<text class="warn-text" x="248" y="134">→ éclatement</text>' +
-        // pays voisins
+        // centrale à lignes longues
         '<rect class="panel" x="374" y="46" width="316" height="118" rx="18"/>' +
-        '<text class="label" x="532" y="76" text-anchor="middle">AILLEURS EN EUROPE</text>' +
-        '<text class="small" x="532" y="100" text-anchor="middle">on emploie plus largement</text>' +
+        '<text class="label" x="532" y="76" text-anchor="middle">CENTRALE À LIGNES LONGUES</text>' +
+        '<text class="small" x="532" y="100" text-anchor="middle">choisi pour sa séparation plus fine</text>' +
         '<rect x="448" y="112" width="52" height="30" fill="url(#mesh)"/>' +
         '<rect x="448" y="112" width="52" height="30" fill="none" stroke="#7d8fa3" stroke-width="3"/>' +
         '<text class="warn-text" x="576" y="134">→ coalescent</text>' +
