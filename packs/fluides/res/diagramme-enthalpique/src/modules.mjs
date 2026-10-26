@@ -22,7 +22,7 @@ export const MODULES = [
     quiz: [
       {
         question: "Quelle grandeur se lit sur l’axe horizontal ?",
-        choices: ["La pression p", "L’enthalpie massique h", "Le titre vapeur x"],
+        choices: ["La pression p", "L’enthalpie massique h", "La température T"],
         answer: 1,
         feedback: "L’enthalpie massique h se lit horizontalement, en kJ/kg."
       },
@@ -63,7 +63,7 @@ export const MODULES = [
       },
       {
         question: "Comment s’appelle le sommet de la cloche ?",
-        choices: ["Le point zéro", "Le point critique", "Le point de vide"],
+        choices: ["Le point triple", "Le point critique", "Le point de bulle"],
         answer: 1,
         feedback: "Le sommet est le point critique. Au-dessus, la frontière liquide-vapeur disparaît."
       }
@@ -168,7 +168,7 @@ export const MODULES = [
       },
       {
         question: "Où se trouvent les isotitres ?",
-        choices: ["Uniquement à gauche", "Sur l’axe des pressions", "Uniquement dans la cloche"],
+        choices: ["Dans la zone de vapeur surchauffée", "Dans la zone de liquide sous-refroidi", "Dans la cloche, entre liquide et vapeur"],
         answer: 2,
         feedback: "Le titre n’a de sens que dans la zone où liquide et vapeur coexistent."
       }
@@ -238,7 +238,7 @@ export const MODULES = [
       },
       {
         question: "Pour identifier une isotherme sur un autre diagramme, que faut-il privilégier ?",
-        choices: ["La légende, la valeur T et son allure", "Uniquement sa couleur", "Uniquement l’épaisseur du trait"],
+        choices: ["La légende, la valeur T et son allure", "Sa couleur, la même sur tous les diagrammes", "Uniquement l’épaisseur du trait"],
         answer: 0,
         feedback: "La couleur n’est pas une convention universelle. Le symbole T et la légende sont les repères fiables."
       }

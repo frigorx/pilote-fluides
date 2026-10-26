@@ -61,6 +61,7 @@ window.OIL_MODULE = {
       title: "Le seuil réglé et le différentiel de contact ne désignent pas la même chose",
       lead: "Le seuil fixe la valeur basse qui lance la temporisation lorsque la pression nette chute.",
       details: [
+        "Au démarrage, la pompe n’a pas encore fait monter la pression : la temporisation lui en laisse le temps avant de couper.",
         "Pour revenir à l’état normal, la pression doit remonter au-delà du seuil augmenté du différentiel de contact propre au modèle.",
         "Une échelle de boîtier reste un repère : le contrôle se fait avec des instruments et la notice exacte."
       ],
@@ -99,7 +100,7 @@ window.OIL_MODULE = {
   ],
   quiz: [
     { prompt: "Quelle est la mission du pressostat différentiel d’huile ?", options: ["Arrêter le compresseur si la pression manque", "Maintenir le niveau d’huile du réservoir", "Séparer l’huile du gaz de refoulement"], correct: 0, why: "Il protège le compresseur à pompe en surveillant la pression nette de lubrification.", code: "6.03" },
-    { prompt: "En quoi diffère-t-il d’un régulateur de niveau TraxOil ?", options: ["Il agit plus vite sur le même niveau", "Il surveille une pression, pas un niveau", "Il remplit la même fonction, autrement"], correct: 1, why: "TraxOil gère le niveau ; le pressostat différentiel protège la lubrification sous pression.", code: "1.05 · 6.03" },
+    { prompt: "En quoi diffère-t-il d’un régulateur de niveau d’huile ?", options: ["Il règle le niveau d’huile du carter, plus finement", "Il surveille une pression, pas un niveau", "Il remet de l’huile dans le carter quand elle manque"], correct: 1, why: "Le régulateur gère un niveau ; le pressostat différentiel surveille la pression nette et protège la lubrification.", sansEnregistrement: true, code: "1.05 · 6.03" },
     { prompt: "Où se raccorde normalement P1 côté OIL ?", options: ["À la bouteille liquide du circuit", "Sur l’aspiration, avant le carter", "À la sortie de la pompe à huile"], correct: 2, why: "P1 reçoit la pression fournie par la pompe à huile.", code: "1.05" },
     { prompt: "Comment obtenir la pression nette d’huile ?", options: ["P1 moins P2", "P1 plus P2", "P2 divisée par P1"], correct: 0, why: "Le contrôle compare la sortie de pompe à la pression du carter ou de l’aspiration.", code: "6.03" },
     { prompt: "Pourquoi une temporisation existe-t-elle au démarrage ?", options: ["Pour éviter les à-coups sur le moteur", "Pour laisser chauffer l’huile du carter", "Pour laisser la pompe monter en pression"], correct: 2, why: "À l’arrêt, la pompe entraînée ne produit pas encore de pression nette.", code: "6.03" },
