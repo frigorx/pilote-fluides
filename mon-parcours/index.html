@@ -82,10 +82,11 @@
   .cel { display: inline-block; min-width: 34px; text-align: center; border-radius: 8px; padding: 2px 6px; font: inherit; font-weight: bold; }
   button.cel { cursor: pointer; }
   .cel.ok { background: var(--vert-f); color: var(--vert); border: 1px solid var(--vert); }
-  .cel.trou { background: var(--ambre-f); color: var(--ambre); border: 2px dashed var(--ambre); }
+  .cel.separe { background: var(--ambre-f); color: var(--ambre); border: 2px dashed var(--ambre); }
+  .cel.trou { background: #fdeee8; color: var(--orange-deep); border: 2px dashed var(--orange-deep); }
   .cel.hors { color: #b8c2ce; font-weight: normal; }
   td.cel.hors { display: table-cell; }
-  .mot-trou { color: var(--ambre); font-size: 14px; }
+  .mot-trou { color: var(--orange-deep); font-size: 14px; }
   .tri { font: inherit; font-weight: bold; color: var(--navy); background: none; border: 0; cursor: pointer; padding: 0; text-decoration: underline dotted; }
   .detail { position: relative; z-index: 1; margin-top: 20px; scroll-margin-top: 12px; }
   .detail h3 { font-size: 19px; }
@@ -128,7 +129,7 @@
   <section id="resultat" aria-live="polite" hidden></section>
 </main>
 
-<script src="donnees-parcours.js?v=20261026-plan3"></script>
+<script src="donnees-parcours.js?v=20261026-tc"></script>
 <script>
 (function () {
   "use strict";
@@ -214,8 +215,10 @@
   function ligneTC(d, i) {
     var x = d.tc[i]; if (!x) return null;
     var h = "";
-    if (x[1].length) h += "<b>Tâches</b> " + codesAvecTitres(d.taches, x[1]) + " · ";
-    h += "<b>Compétences</b> " + codesAvecTitres(d.competences, x[0]);
+    var parts = [];
+    if (x[1].length) parts.push("<b>Tâches</b> " + codesAvecTitres(d.taches, x[1]));
+    if (x[0].length) parts.push("<b>Compétences</b> " + codesAvecTitres(d.competences, x[0]));
+    h = parts.join(" · ");
     return el("span", { class: "tc", html: h });
   }
 
@@ -238,13 +241,14 @@
     var compOk = d.competences.filter(function (c) { return ensemble(d, 0, c.code).length; }).length;
     var tachOk = d.taches.filter(function (t) { return ensemble(d, 1, t.code).length; }).length;
     var savOk = savoirs.filter(function (c) { return c.coeur.length; }).length;
-    var cases = 0, casesOk = 0;
+    var cases = 0, casesOk = 0, casesSep = 0;
     d.taches.forEach(function (t) { d.competences.forEach(function (c) {
       if ((d.tachesDe[c.code] || []).indexOf(t.code) < 0) return;
-      cases++; if (croise(d, t.code, c.code).length) casesOk++;
+      cases++; if (croise(d, t.code, c.code).length) casesOk++; else if (separe(d, t.code, c.code)) casesSep++;
     }); });
     var bilan = "<strong>" + compOk + " compétences sur " + d.competences.length + "</strong> ont au moins une station";
-    if (aTaches) bilan += " · <strong>" + tachOk + " tâches sur " + d.taches.length + "</strong> · <strong>" + casesOk + " cases sur " + cases + "</strong> du référentiel (tâche × compétence) couvertes";
+    if (aTaches) bilan += " · <strong>" + tachOk + " tâches sur " + d.taches.length + "</strong> · <strong>" + casesOk + " cases sur " + cases + "</strong> du référentiel (tâche × compétence) couvertes par une même station, " +
+      casesSep + " travaillées séparément, " + (cases - casesOk - casesSep) + " vrais trous";
     if (savoirs.length) bilan += " · <strong>" + savOk + " savoirs sur " + savoirs.length + "</strong> enseignés";
     r.appendChild(el("p", { class: "bilan", html: bilan + "." }));
 
@@ -256,7 +260,8 @@
     });
     r.appendChild(bar);
     r.appendChild(el("p", { class: "legende", html: "<span class=\"cel ok\">3</span> stations dans la case · " +
-      "<span class=\"cel trou\">0</span> <b>trou</b> : le référentiel relie ces deux codes, aucune station encore · " +
+      "<span class=\"cel separe\">0</span> <b>travaillé séparément</b> : la tâche et la compétence ont leurs stations, mais aucune station ne relie les deux · " +
+      "<span class=\"cel trou\">0</span> <b>vrai trou</b> : la tâche ou la compétence n'a encore aucune station · " +
       "<span class=\"cel hors\">·</span> case que le référentiel ne relie pas" }));
 
     var boite = el("div", { class: "defile" }), tab = el("table", { class: "croise" });
@@ -271,14 +276,21 @@
           var off = (d.tachesDe[c.code] || []).indexOf(t.code) >= 0, n = croise(d, t.code, c.code).length;
           // Hors matrice officielle : une station à 2 compétences y serait comptée par ricochet ; on ne l'affiche pas.
           if (!off) return '<td class="cel hors">·</td>';
-          return '<td><button type="button" class="cel ' + (n ? "ok" : "trou") + '" data-t="' + t.code + '" data-c="' + c.code + '" title="' +
-            t.code + " × " + c.code + " : " + n + " station" + (n > 1 ? "s" : "") + (off ? "" : " (hors matrice officielle)") + '">' + n + "</button></td>";
+          var sep = !n && separe(d, t.code, c.code);
+          return '<td><button type="button" class="cel ' + (n ? "ok" : sep ? "separe" : "trou") + '" data-t="' + t.code + '" data-c="' + c.code + '" title="' +
+            t.code + " × " + c.code + " : " + (sep ? "travaillées séparément" : n + " station" + (n > 1 ? "s" : "")) + '">' + n + "</button></td>";
         }).join("") + "</tr>";
       }).join("");
       tab.innerHTML = tete + "<tbody>" + corps + "</tbody>";
       tab.addEventListener("click", function (e) {
         var b = e.target.closest("button.cel"); if (!b) return;
-        montrer(d, detail, b.dataset.t + " × " + b.dataset.c, croise(d, b.dataset.t, b.dataset.c));
+        var t = b.dataset.t, c = b.dataset.c, l = croise(d, t, c);
+        if (!l.length && separe(d, t, c)) {
+          montrer(d, detail, t + " seule, sans " + c, ensemble(d, 1, t));
+          var suite = el("div"); montrer(d, suite, c + " seule, sans " + t, ensemble(d, 0, c), true); detail.appendChild(suite);
+          return;
+        }
+        montrer(d, detail, t + " × " + c, l);
       });
     } else {
       var lignes = etat.tab === "comp"
@@ -315,10 +327,11 @@
       });
     }
   }
+  function separe(d, t, c) { return ensemble(d, 1, t).length > 0 && ensemble(d, 0, c).length > 0; }
   function croise(d, t, c) {
     var n = []; for (var i in d.tc) if (d.tc[i][0].indexOf(c) >= 0 && d.tc[i][1].indexOf(t) >= 0) n.push(+i); return n;
   }
-  function montrer(d, detail, titre, liste) {
+  function montrer(d, detail, titre, liste, sansDefiler) {
     detail.innerHTML = "";
     detail.appendChild(el("h3", { texte: titre + " : " + liste.length + " station" + (liste.length > 1 ? "s" : "") }));
     var g = el("div", { class: "cartes" });
@@ -330,7 +343,7 @@
       ]));
     });
     detail.appendChild(g);
-    detail.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!sansDefiler) detail.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function dessinerResultat() {
