@@ -392,12 +392,15 @@
          page, écrite au build par plan-liste.mjs. Ajouter un cours au plan le
          rend donc cherchable sans toucher une ligne ici — et les deux ne
          peuvent pas diverger, puisqu'il n'y en a qu'une.
+         Depuis le 28/10, les AUTRES réseaux s'y ajoutent (recherche-index.gen.js,
+         chargé à la demande) et les fautes sont tolérées : voir le script
+         « CHERCHER UN COURS » en bas de page.
          Le champ reste caché tant que le script n'a pas construit l'index :
          sans JavaScript, c'est la liste elle-même qui sert à trouver. -->
     <div class="chercher" id="chercher" hidden>
       <label for="q">Chercher un cours</label>
       <input type="search" id="q" autocomplete="off" spellcheck="false"
-             placeholder="un mot : surchauffe, éjecteur, manifold, huile…"
+             placeholder="un mot : inverter, surchauffe, manifold, huile…"
              role="combobox" aria-expanded="false" aria-controls="q-res" aria-autocomplete="list">
       <p class="q-etat" id="q-etat" role="status" aria-live="polite"></p>
       <ul class="q-res" id="q-res" role="listbox" aria-label="Résultats" hidden></ul>
@@ -782,6 +785,8 @@
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
 <script src="plan-descriptions.gen.js?v=20261028-bouteilles"></script>
+<script src="moteur/lexique-recherche.js?v=b94ffe0caa"></script>
+<script src="moteur/recherche.js?v=b94ffe0caa"></script>
 <script src="moteur/plan-donnees.js?v=20261028-bouteilles"></script>
 <script>
 /* =====================================================================
@@ -1364,16 +1369,21 @@
 
 
 /* ==================================================================
-   CHERCHER UN COURS
+   CHERCHER UN COURS — dans TOUT le site, même mal écrit (28/10/2026)
    ------------------------------------------------------------------
-   L'index se construit au chargement À PARTIR DE LA LISTE HTML du
-   réseau — celle que build/plan-liste.mjs écrit plus bas dans cette
-   page. Pas de seconde source à tenir à jour : ajouter une station au
-   plan la rend cherchable, et les deux ne peuvent pas se contredire.
-   La description longue vient de PLAN_DESC (relevée des <meta> par
-   build/registre.mjs) : elle n'est pas affichée, elle sert à trouver
-   — chercher « asphyxie » doit ramener la sécurité R744 même si le
-   mot n'est ni dans le nom ni dans le sous-titre.
+   Avant ce jour, l'index se construisait sur la seule liste du plan
+   thermo-techno : « inverter » ne trouvait rien, la station étant dans
+   CartoClim. Désormais :
+   · la liste du plan reste la première source (ses lignes et sous-
+     titres sont les plus parlants) ;
+   · recherche-index.gen.js (build/recherche-index.mjs) ajoute toutes
+     les stations des autres réseaux. Il pèse lourd pour un téléphone :
+     il n'est chargé qu'au moment où l'on se sert du champ ;
+   · moteur/recherche.js fait le travail : lexique des variantes
+     (moteur/lexique-recherche.js), correction des fautes annoncée au
+     lecteur, et repli sur les mots les plus nombreux.
+   Un mot qui ne donne rien propose de le signaler par courriel : c'est
+   ainsi que le lexique s'enrichit des vraies fautes des vrais élèves.
    ================================================================== */
 (function () {
   var boite = document.getElementById("chercher");
@@ -1381,86 +1391,83 @@
   var res   = document.getElementById("q-res");
   var etat  = document.getElementById("q-etat");
   var liste = document.getElementById("liste-cours");
-  if (!boite || !champ || !res || !liste) return;
+  var R = window.InerRecherche;
+  if (!boite || !champ || !res || !liste || !R) return;
 
-  /* ech() du plan vit dans une AUTRE fonction anonyme : elle n'est pas
-     visible ici. On en refait une, plutôt que d'ouvrir la portée de
-     l'autre — ce qui obligerait à relire tout le script du plan. */
   function ech(v) {
     return String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;")
                     .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
-  /* Comparer sans accent ni casse : « éjecteur » se trouve en tapant
-     « ejecteur », et « CO₂ » en tapant « co2 ». La plage des diacritiques
-     s'écrit en \u… et JAMAIS avec les caractères eux-mêmes : posés
-     directement, ils dépendent de l'encodage du fichier au moment où il
-     est servi. */
-  var IND = { "₂": "2", "²": "2", "’": "'" };
-  function pliant(s) {
-    return String(s || "")
-      .replace(/[₂²’]/g, function (c) { return IND[c]; })
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
+  /* La clé qui dit « même page » — la même règle que
+     build/recherche-index.mjs (cleAdresse). */
+  function cleAdresse(h) {
+    return String(h || "").trim()
+      .replace(/^https?:\/\/(www\.)?inerweb\.fr\//i, "").replace(/^\.\//, "")
+      .replace(/index\.html(?=[?#]|$)/i, "").replace(/\/(?=[?#]|$)/, "").toLowerCase();
   }
-
-  /* Le slug du module, pour retrouver sa description : c'est l'avant-
-     dernier segment du chemin (…/res/<slug>/index.html). */
   function slugDe(href) {
     var m = String(href).match(/\/res\/([^\/]+)\//);
     return m ? m[1] : "";
   }
 
-  var index = [];
+  /* 1. La liste du plan, comme avant. */
+  var entrees = [], parAdresse = {};
   Array.prototype.forEach.call(liste.querySelectorAll("details"), function (d) {
     var som = d.querySelector("summary");
-    /* Le libellé de ligne sans son compteur de stations : « 🔧 LES
-       ORGANES », pas « … · 6 stations ». */
     var ligne = som ? som.cloneNode(true) : null;
     if (ligne) { var n = ligne.querySelector(".n"); if (n) n.remove(); }
     ligne = ligne ? ligne.textContent.trim() : "";
     Array.prototype.forEach.call(d.querySelectorAll("li"), function (li) {
       var a = li.querySelector("a"); if (!a) return;
       var sd = li.querySelector(".d");
-      var nom = a.textContent.trim();
-      var sous = sd ? sd.textContent.replace(/^\s*—\s*/, "").trim() : "";
-      var desc = (window.PLAN_DESC || {})[slugDe(a.getAttribute("href"))] || "";
-      /* DEUX clés, et pas une seule. Les treize escales du CO₂ ouvrent le
-         même module, donc partagent SA description : chercher « éjecteur »
-         les ramenait toutes les treize. La description ne sert donc qu'en
-         SECOND RECOURS — quand rien n'est trouvé dans les noms, les
-         sous-titres et les lignes. « asphyxie » y trouve encore la sécurité
-         R744 ; « éjecteur » ne ramène plus tout le CO₂. */
-      index.push({ nom: nom, sous: sous, ligne: ligne, href: a.getAttribute("href"),
-                   cible: a.getAttribute("target") || "",
-                   cle: pliant(nom + " " + sous + " " + ligne),
-                   cleLarge: pliant(nom + " " + sous + " " + ligne + " " + desc),
-                   cleNom: pliant(nom) });
+      var e = {
+        nom: a.textContent.trim(),
+        sous: sd ? sd.textContent.replace(/^\s*—\s*/, "").trim() : "",
+        ligne: ligne,
+        href: a.getAttribute("href"),
+        cible: a.getAttribute("target") || "",
+        desc: (window.PLAN_DESC || {})[slugDe(a.getAttribute("href"))] || ""
+      };
+      entrees.push(e);
+      parAdresse[cleAdresse(e.href)] = e;
     });
   });
-  if (!index.length) return;          /* rien à chercher : on laisse caché */
+  if (!entrees.length) return;
+  var moteur = R.creer(entrees, window.LEXIQUE_RECHERCHE);
   boite.hidden = false;
 
-  function surligne(texte, mots) {
-    var out = "", reste = texte, plie = pliant(texte);
-    /* On surligne sur le texte D'ORIGINE en s'appuyant sur les positions
-       trouvées dans sa version pliée : les deux ont la même longueur, le
-       pliage ne fait que remplacer caractère par caractère. */
-    var marques = [];
-    mots.forEach(function (m) {
-      var i = plie.indexOf(m);
-      while (i !== -1) { marques.push([i, i + m.length]); i = plie.indexOf(m, i + m.length); }
-    });
-    if (!marques.length) return ech(texte);
-    marques.sort(function (a, b) { return a[0] - b[0]; });
-    var pos = 0;
-    marques.forEach(function (mk) {
-      if (mk[0] < pos) return;
-      out += ech(texte.slice(pos, mk[0])) + "<mark>" + ech(texte.slice(mk[0], mk[1])) + "</mark>";
-      pos = mk[1];
-    });
-    return out + ech(texte.slice(pos));
+  /* 2. Le reste du site, chargé à la demande. */
+  var etatIndex = "absent";          /* absent → en-cours → pret | echec */
+  function chargerIndex() {
+    if (etatIndex !== "absent") return;
+    etatIndex = "en-cours";
+    var s = document.createElement("script");
+    s.src = "recherche-index.gen.js?v=b94ffe0caa";
+    s.onload = function () {
+      (window.RECHERCHE_INDEX || []).forEach(function (st) {
+        var deja = parAdresse[cleAdresse(st.u)];
+        /* Déjà au plan : on garde l'entrée du plan, on lui donne seulement
+           les phrases du catalogue pour être trouvée. */
+        if (deja) { deja.desc = [deja.desc, st.d].filter(Boolean).join(" · "); return; }
+        entrees.push({
+          nom: st.n, sous: "",
+          ligne: st.r + (st.l ? " · " + st.l : ""),
+          href: st.u,
+          cible: /^https?:/.test(st.u) ? "_blank" : "",
+          desc: st.d || ""
+        });
+      });
+      moteur = R.creer(entrees, window.LEXIQUE_RECHERCHE);
+      etatIndex = "pret";
+      if (champ.value.trim()) chercher();
+    };
+    /* Hors ligne sans le fichier : on reste sur le plan, sans bruit. */
+    s.onerror = function () { etatIndex = "echec"; if (champ.value.trim()) chercher(); };
+    document.head.appendChild(s);
   }
+  champ.addEventListener("focus", chargerIndex);
+  champ.addEventListener("pointerdown", chargerIndex);
 
   var choix = -1, courants = [];
 
@@ -1470,51 +1477,54 @@
     etat.textContent = "";
   }
 
-  function chercher() {
-    var q = pliant(champ.value).trim();
-    if (q.length < 2) { vider(); return; }
-    var mots = q.split(/\s+/);
-    function surCle(champCle) {
-      return index.filter(function (e) {
-        return mots.every(function (m) { return e[champCle].indexOf(m) !== -1; });
-      });
-    }
-    var trouves = surCle("cle");
-    var elargi = false;
-    if (!trouves.length) { trouves = surCle("cleLarge"); elargi = trouves.length > 0; }
-    /* Ce qui matche le NOM passe devant : chercher « huile » doit donner
-       « Les familles d'huile » avant un cours qui la mentionne au détour
-       de sa description. */
-    trouves.sort(function (a, b) {
-      var na = mots.every(function (m) { return a.cleNom.indexOf(m) !== -1; }) ? 0 : 1;
-      var nb = mots.every(function (m) { return b.cleNom.indexOf(m) !== -1; }) ? 0 : 1;
-      return na - nb;
-    });
-    courants = trouves.slice(0, 8); choix = -1;
+  function signaler(mot) {
+    var sujet = "inerweb.fr — recherche sans résultat : " + mot;
+    var corps = "Bonjour,\n\nJ'ai cherché « " + mot + " » sur inerweb.fr sans rien trouver.\n" +
+                "Ce que je cherchais : \n";
+    return '<a href="mailto:inerweb.fh@gmail.com?subject=' + encodeURIComponent(sujet) +
+           "&amp;body=" + encodeURIComponent(corps) + '">Signaler ce mot</a>';
+  }
 
-    if (!trouves.length) {
+  function chercher() {
+    var brut = champ.value.trim();
+    if (R.cle(brut).length < 2) { vider(); return; }
+    chargerIndex();
+    var r = moteur.chercher(brut);
+    courants = r.resultats.slice(0, 8); choix = -1;
+
+    if (!courants.length) {
       res.hidden = true; res.innerHTML = "";
       champ.setAttribute("aria-expanded", "false");
-      etat.textContent = "Aucun cours ne correspond à « " + champ.value.trim() + " ».";
+      if (etatIndex === "en-cours") { etat.textContent = "Recherche dans tout le site…"; return; }
+      etat.innerHTML = "Aucun cours ne correspond à « " + ech(brut) + " ». " + signaler(brut);
       return;
     }
-    res.innerHTML = courants.map(function (e, i) {
+    res.innerHTML = courants.map(function (x, i) {
+      var e = x.entree, alts = r.toutesAlts;
       var cible = e.cible ? ' target="' + ech(e.cible) + '" rel="noopener"' : "";
       return '<li role="option" id="q-opt-' + i + '" aria-selected="false">' +
              '<a href="' + ech(e.href) + '"' + cible + '>' +
-             "<b>" + surligne(e.nom, mots) + "</b>" +
-             (e.sous ? " — " + surligne(e.sous, mots) : "") +
+             "<b>" + R.surligner(e.nom, alts) + "</b>" +
+             (e.sous ? " — " + R.surligner(e.sous, alts) : "") +
              '<span class="q-ligne">' + ech(e.ligne) + "</span></a></li>";
     }).join("");
     res.hidden = false;
     champ.setAttribute("aria-expanded", "true");
-    var dit = trouves.length > courants.length
-      ? trouves.length + " cours trouvés, les 8 premiers sont proposés."
-      : trouves.length + (trouves.length > 1 ? " cours trouvés." : " cours trouvé.");
-    /* Le dire quand le mot n'est pas dans le titre : le lecteur comprend
-       pourquoi il tombe sur un cours dont le nom ne ressemble à rien de ce
-       qu'il a tapé. */
-    etat.textContent = elargi ? dit + " Le mot apparaît dans le contenu, pas dans le titre." : dit;
+
+    var n = r.resultats.length;
+    var dit = n > courants.length
+      ? n + " cours trouvés, les " + courants.length + " premiers sont proposés."
+      : n + (n > 1 ? " cours trouvés." : " cours trouvé.");
+    /* La correction se DIT : le lecteur doit savoir pourquoi il tombe sur
+       un autre mot que le sien, et apprendre au passage la bonne
+       orthographe. */
+    if (r.corrections.length) {
+      dit = "Résultats pour " + r.corrections.map(function (c) { return "« " + c.propose + " »"; }).join(", ") +
+            " (vous avez tapé " + r.corrections.map(function (c) { return "« " + c.tape + " »"; }).join(", ") + "). " + dit;
+    }
+    if (r.partiel) dit = "Aucun cours ne contient tous ces mots : voici ceux qui en contiennent le plus. " + dit;
+    if (r.elargi) dit += " Le mot apparaît dans le contenu, pas dans le titre.";
+    etat.textContent = dit;
   }
 
   function marquer(i) {
@@ -1544,12 +1554,8 @@
     if (!boite.contains(ev.target)) vider();
   });
 
-  /* Ouverture directe depuis un lien de recherche (complément du 17/09,
-     reçu en cours de chantier) : "plan.html#q=huile" ET "plan.html?q=huile"
-     (le second sert le <form action="plan.html"> sans JavaScript de l'accueil,
-     et l’urlTemplate du JSON-LD) remplissent #q, ouvrent #chercher et lancent
-     la même recherche que la saisie au clavier — pas de fonction dupliquée,
-     on rappelle chercher(). */
+  /* Ouverture directe : "plan.html#q=huile" et "plan.html?q=huile" (le
+     formulaire de l'accueil, l'urlTemplate du JSON-LD). */
   var qDirect = (location.hash || "").match(/^#q=(.+)$/);
   if (!qDirect) {
     var qParam = new URLSearchParams(location.search || "").get("q");
@@ -1558,6 +1564,7 @@
   if (qDirect) {
     boite.hidden = false;
     champ.value = decodeURIComponent(qDirect[1]);
+    chargerIndex();
     chercher();
   }
 })();
@@ -1586,11 +1593,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=52de42bc0f"></script>
-<script src="chiffres.gen.js?v=52de42bc0f"></script>
+<script src="moteur/lisibilite.js?v=b94ffe0caa"></script>
+<script src="chiffres.gen.js?v=b94ffe0caa"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=52de42bc0f" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=b94ffe0caa" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

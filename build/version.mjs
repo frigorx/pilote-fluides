@@ -33,6 +33,11 @@ const FICHIERS_VERSIONNES = [
   "config.js",
   "chiffres.gen.js",
   "plan-descriptions.gen.js",
+  // 28/10/2026 — la recherche de tout le site : son moteur, son lexique et
+  // son index. Un mot ajouté au lexique doit marcher dès la visite suivante.
+  "recherche-index.gen.js",
+  "moteur/recherche.js",
+  "moteur/lexique-recherche.js",
   "moteur/charte-edu.css",
   "moteur/impression.css",
   "moteur/lisibilite.js",

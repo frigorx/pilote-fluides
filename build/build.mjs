@@ -501,6 +501,14 @@ function main() {
     stdio: "inherit",
   });
 
+  /* --- l'index de recherche de tout le site (28/10/2026) : sans lui, la
+     recherche de plan.html ne voyait que le plan thermo-techno. Relevé du
+     catalogue des stations : une station ajoutée devient cherchable dès
+     que outils/catalogue-stations.mjs l'a inscrite. --- */
+  execFileSync(process.execPath, [resolve(RACINE, "build/recherche-index.mjs")], {
+    stdio: "inherit",
+  });
+
   /* --- le sitemap, depuis une liste contrôlée (20/08) : existence et
      absence de noindex vérifiées pour chaque URL avant écriture. --- */
   execFileSync(process.execPath, [resolve(RACINE, "build/sitemap.mjs")], {

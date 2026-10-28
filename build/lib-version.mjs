@@ -51,6 +51,11 @@ const FICHIERS_SOURCES = [
   /* Les descriptions du plan (relevées par registre.mjs) : une description
      de cours corrigée doit atteindre le visiteur qui garde l'onglet ouvert. */
   "plan-descriptions.gen.js",
+  /* La recherche (28/10/2026) : un mot ajouté au lexique, une station
+     ajoutée à l'index doivent atteindre le visiteur sans Ctrl+F5. */
+  "recherche-index.gen.js",
+  "moteur/recherche.js",
+  "moteur/lexique-recherche.js",
   "moteur/moteur.js",
   "moteur/sons.js",
   "moteur/lecture.js",
