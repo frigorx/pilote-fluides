@@ -150,6 +150,7 @@
         cours("pose-manifold-2-voies-interactive", "Le manifold 2 voies",   "poser, lire, déposer"),
         cours("pose-manifold-interactive",         "Le manifold 4 voies",   "l’outil complet"),
         cours("recuperation-fluide-interactive",   "TP récupération",       "station, pesée, tirage au vide"),
+        cours("bouteilles-fluide",                 "Les bouteilles",        "types, robinets, charge maxi"),
         cours("mission-bouteilles",                "Mission bouteilles",    "la bonne bouteille, le bon geste"),
         cours("chaine-intervention-interactive",   "La chaîne complète",    "tout enchaîner proprement"),
         cours("remise-au-client-interactif",       "Remettre au client",    "expliquer, consigner, conseiller")
