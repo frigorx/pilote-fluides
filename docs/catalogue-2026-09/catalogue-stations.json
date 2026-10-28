@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 524,
+  "total": 525,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -54,6 +54,18 @@
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/bouteille-liquide-pedagogique/",
       "chemin": "packs/fluides/res/bouteille-liquide-pedagogique/"
+    },
+    {
+      "reseau": "Plan thermo-techno",
+      "id": "bouteilles-fluide",
+      "titre": "Les bouteilles de fluide",
+      "ligne": null,
+      "resume": "Les bouteilles du frigoriste : fluide neuf, récupération, azote, bouteille jetable interdite, deux robinets et tube plongeur, plaque TW WC PS, charge maximale, fluides inflammables, rangement.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/packs/fluides/res/bouteilles-fluide/",
+      "chemin": "packs/fluides/res/bouteilles-fluide/"
     },
     {
       "reseau": "Plan thermo-techno",
@@ -3894,7 +3906,7 @@
       "resume": "Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "Dans tous les ateliers, toutes les armoires industrielles, toutes les machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé ; un logement n’en reçoit souvent qu’une phase.",
+      "missionProf": "Dans tous les ateliers, toutes les armoires industrielles, la plupart des machines de plus de quelques kilowatts. Et dans la rue : le réseau de distribution est triphasé ; un logement n’en reçoit souvent qu’une phase.",
       "url": "https://inerweb.fr/electrorezo/stations/2-3-triphase/",
       "chemin": "electrorezo/stations/2-3-triphase/"
     },
@@ -3963,7 +3975,7 @@
       "id": "3-2-sectionneur",
       "titre": "Le sectionneur",
       "ligne": "Ligne 3",
-      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 3 d’ÉlectroRézo : couper, commander, isoler.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -3975,7 +3987,7 @@
       "id": "3-3-interrupteur-sectionneur",
       "titre": "L’interrupteur-sectionneur",
       "ligne": "Ligne 3",
-      "resume": "Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 3 d’ÉlectroRézo : couper, commander, isoler.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4362,7 +4374,7 @@
       "resume": "Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie.",
       "niveaux": null,
       "competences": null,
-      "missionProf": "Sur beaucoup de machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs de climatisation. C’est ce qui a transformé l’industrie ces trente dernières années.",
+      "missionProf": "Sur beaucoup de machines modernes à vitesse réglable : pompes, ventilateurs, convoyeurs, compresseurs (souvent entraînés par un moteur à aimants). C’est ce qui a transformé l’industrie ces trente dernières années.",
       "url": "https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/",
       "chemin": "electrorezo/stations/7-3-varier-la-frequence/"
     },
@@ -4383,7 +4395,7 @@
       "id": "8-1-trait-et-point",
       "titre": "Le trait et le point",
       "ligne": "Ligne 8",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4395,7 +4407,7 @@
       "id": "8-10-dechiffrer",
       "titre": "Déchiffrer",
       "ligne": "Ligne 5",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4419,7 +4431,7 @@
       "id": "8-2-contact",
       "titre": "Le contact",
       "ligne": "Ligne 5",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4443,7 +4455,7 @@
       "id": "8-4-rectangle",
       "titre": "Le rectangle",
       "ligne": "Ligne 3",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4455,7 +4467,7 @@
       "id": "8-5-declencheur-thermique",
       "titre": "Le déclencheur thermique",
       "ligne": "Ligne 4",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4479,7 +4491,7 @@
       "id": "8-7-pointille",
       "titre": "Le pointillé",
       "ligne": "Ligne 5",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -4503,7 +4515,7 @@
       "id": "8-9-reperes",
       "titre": "Les repères",
       "ligne": "Ligne 5",
-      "resume": "Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler.",
+      "resume": "Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -6695,7 +6707,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-pub\\sous-tension/index.html"
+      "chemin": "D:\\git\\pilote-fluides\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6707,7 +6719,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6719,7 +6731,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6731,7 +6743,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6743,7 +6755,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-pub\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6755,7 +6767,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-pub\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

@@ -2,15 +2,16 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**524 stations** réparties en 18 réseaux.
+**525 stations** réparties en 18 réseaux.
 
-## Plan thermo-techno — 125 stations
+## Plan thermo-techno — 126 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [Qui fait quoi — analyse fonctionnelle d’une installation frigorifique](https://inerweb.fr/packs/fluides/res/analyse-fonctionnelle-interactif/) | — | — | — | Cours interactif : l’analyse fonctionnelle et structurelle d’une installation frigorifique : le besoin, la fonction et l’organe, les deux structures (circuit et câblage), capteurs et actionneurs, lire un dossier d’analyse fonctionnelle, étudier une séquence de fonctionnement. |
 | [Tome 4 — Bilan thermique et performance énergétique](https://inerweb.fr/packs/fluides/res/bilan-thermique-performance-interactif/) | — | — | 5.2 5.4 6.08 7.10 8.11 9.10 11.02 11.04 11.06 12.14 13.17 14.19 | Cours interactif professionnel : bilan thermique d’une chambre froide, climatisation en chaud et en froid, COP, EER, SCOP et SEER. |
 | [Comprendre la bouteille liquide](https://inerweb.fr/packs/fluides/res/bouteille-liquide-pedagogique/) | — | — | 1.05 7.05 12.07 | Parcours interactif pour comprendre la bouteille liquide frigorifique, son tube plongeur et sa vanne de départ liquide. |
+| [Les bouteilles de fluide](https://inerweb.fr/packs/fluides/res/bouteilles-fluide/) | — | — | — | Les bouteilles du frigoriste : fluide neuf, récupération, azote, bouteille jetable interdite, deux robinets et tube plongeur, plaque TW WC PS, charge maximale, fluides inflammables, rangement. |
 | [Assembler une centrale positive — compresseurs en parallèle, collecteurs, bouteille](https://inerweb.fr/packs/fluides/res/centrale-positive-interactif/) | — | — | — | Cours interactif : lire une centrale frigorifique positive de supermarché, comprendre les compresseurs en parallèle, les collecteurs d’aspiration et de refoulement, le séparateur d’huile, le condenseur et la bouteille, puis monter dans l’ordre. |
 | [La chaîne d’énergie et d’information d’une installation](https://inerweb.fr/packs/fluides/res/chaine-energie-information-interactif/) | — | — | — | Cours interactif : les deux chaînes d’une installation frigorifique, la chaîne d’énergie (alimenter, distribuer, convertir, agir) et la chaîne d’information (acquérir, traiter, communiquer), l’endroit où elles se croisent (la bobine du contacteur), et comment les suivre quand ça ne marche pas. |
 | [La chaîne de l’intervention — manifold, vide et ordre des vannes](https://inerweb.fr/packs/fluides/res/chaine-intervention-interactive/) | — | — | 3.03 3.04 4.05 5.01 5.02 | Cours interactif commun aux fiches p1, p3 et p5 : manifold, raccordement, tirage au vide, isolement et déconnexion avec un minimum d’émissions. |
@@ -327,8 +328,8 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le champ tournant](https://inerweb.fr/electrorezo/stations/2-6-champ-tournant/) | Ligne 2 | — | — | Station autonome de la ligne 2 d’ÉlectroRézo : les réseaux d’alimentation. |
 | [Les réseaux électriques d’un site : du compteur à l’appareil](https://inerweb.fr/electrorezo/stations/2-7-du-compteur-a-l-appareil/) | Ligne 2 | — | — | Station autonome de la ligne 2 d’ÉlectroRézo : du compteur à l’appareil, reconnaître les réseaux électriques d’un site. |
 | [L’interrupteur](https://inerweb.fr/electrorezo/stations/3-1-interrupteur/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
-| [Le sectionneur](https://inerweb.fr/electrorezo/stations/3-2-sectionneur/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
-| [L’interrupteur-sectionneur](https://inerweb.fr/electrorezo/stations/3-3-interrupteur-sectionneur/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
+| [Le sectionneur](https://inerweb.fr/electrorezo/stations/3-2-sectionneur/) | Ligne 3 | — | — | Station autonome de la ligne 3 d’ÉlectroRézo : couper, commander, isoler. |
+| [L’interrupteur-sectionneur](https://inerweb.fr/electrorezo/stations/3-3-interrupteur-sectionneur/) | Ligne 3 | — | — | Station autonome de la ligne 3 d’ÉlectroRézo : couper, commander, isoler. |
 | [Le porte-fusible](https://inerweb.fr/electrorezo/stations/3-4-porte-fusible/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
 | [Le sectionneur porte-fusible](https://inerweb.fr/electrorezo/stations/3-5-sectionneur-porte-fusible/) | Ligne 3 | — | — | Station autonome de la ligne 3 dÉlectroRézo : couper, commander, isoler. |
 | [Le fusible gG](https://inerweb.fr/electrorezo/stations/4-1-fusible-gg/) | Ligne 4 | — | — | Station autonome de la ligne 4 d’ÉlectroRézo (protéger) : le fusible gG, ce qu’il protège et comment le lire. |
@@ -362,17 +363,17 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le variateur de tension](https://inerweb.fr/electrorezo/stations/7-2-variateur-tension/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
 | [Faire varier la fréquence](https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
 | [Le variateur de fréquence](https://inerweb.fr/electrorezo/stations/7-4-variateur-frequence/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
-| [Le trait et le point](https://inerweb.fr/electrorezo/stations/8-1-trait-et-point/) | Ligne 8 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
-| [Déchiffrer](https://inerweb.fr/electrorezo/stations/8-10-dechiffrer/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
+| [Le trait et le point](https://inerweb.fr/electrorezo/stations/8-1-trait-et-point/) | Ligne 8 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
+| [Déchiffrer](https://inerweb.fr/electrorezo/stations/8-10-dechiffrer/) | Ligne 5 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
 | [Le jeu des symboles](https://inerweb.fr/electrorezo/stations/8-11-jeu-des-symboles/) | Ligne 3 | — | — | Le jeu des symboles : reconnaître les symboles normalisés vus dans tout le réseau ÉlectroRézo. |
-| [Le contact](https://inerweb.fr/electrorezo/stations/8-2-contact/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
+| [Le contact](https://inerweb.fr/electrorezo/stations/8-2-contact/) | Ligne 5 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
 | [La barre du sectionnement](https://inerweb.fr/electrorezo/stations/8-3-barre-sectionnement/) | Ligne 3 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
-| [Le rectangle](https://inerweb.fr/electrorezo/stations/8-4-rectangle/) | Ligne 3 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
-| [Le déclencheur thermique](https://inerweb.fr/electrorezo/stations/8-5-declencheur-thermique/) | Ligne 4 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
+| [Le rectangle](https://inerweb.fr/electrorezo/stations/8-4-rectangle/) | Ligne 3 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
+| [Le déclencheur thermique](https://inerweb.fr/electrorezo/stations/8-5-declencheur-thermique/) | Ligne 4 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
 | [Le déclencheur magnétique](https://inerweb.fr/electrorezo/stations/8-6-declencheur-magnetique/) | Ligne 4 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
-| [Le pointillé](https://inerweb.fr/electrorezo/stations/8-7-pointille/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
+| [Le pointillé](https://inerweb.fr/electrorezo/stations/8-7-pointille/) | Ligne 5 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
 | [La bobine et le rond](https://inerweb.fr/electrorezo/stations/8-8-bobine-et-rond/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
-| [Les repères](https://inerweb.fr/electrorezo/stations/8-9-reperes/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
+| [Les repères](https://inerweb.fr/electrorezo/stations/8-9-reperes/) | Ligne 5 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
 
 ## CartoClim — 21 stations
 
