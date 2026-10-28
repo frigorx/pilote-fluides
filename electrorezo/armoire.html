@@ -78,7 +78,7 @@
   <nav class="vues" aria-label="Trois entrées dans le réseau">
     <a href="armoire.html" aria-current="page">L’armoire</a>
     <a href="carte-reseau.html">La carte en grand</a>
-    <a href="lignes.html">Les 8 lignes</a>
+    <a href="lignes.html">Les 9 lignes</a>
   </nav>
 </header>
 
@@ -147,7 +147,7 @@
   const hote = document.getElementById('carte'), note = document.getElementById('carteNote');
   hote.innerHTML = window.CARTE_SVG || '';
   const svg = hote.querySelector('svg');
-  const TOUT = [0, 0, 1800, 1200];
+  const TOUT = [0, 0, 1800, 1380];
   let vb = TOUT.slice(), anim = 0;
   const lignes = svg ? [...svg.querySelectorAll('path[stroke-width="9"]')] : [];   /* dans l'ordre : lignes 1 à 8 */
   const noeuds = svg ? [...svg.querySelectorAll('a')] : [];
@@ -183,8 +183,8 @@
     let w = Math.max(x1 - x0, 720), h = Math.max(y1 - y0, 480);
     if (w / h > 1.5) h = w / 1.5; else w = h * 1.5;
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
-    w = Math.min(w, 1800); h = Math.min(h, 1200);
-    viser([Math.max(0, Math.min(1800 - w, cx - w / 2)), Math.max(0, Math.min(1200 - h, cy - h / 2)), w, h]);
+    w = Math.min(w, 1800); h = Math.min(h, 1380);
+    viser([Math.max(0, Math.min(1800 - w, cx - w / 2)), Math.max(0, Math.min(1380 - h, cy - h / 2)), w, h]);
   }
   document.getElementById('toute').addEventListener('click', () => viser(TOUT));
 

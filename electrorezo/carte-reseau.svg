@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" width="1800" height="1200" font-family="Segoe UI, Trebuchet MS, sans-serif" role="img" aria-label="ÉlectroRézo, carte du réseau : 8 lignes, 63 stations.">
-<rect width="1800" height="1200" fill="#f7f1e7"/>
-  <rect x="18" y="18" width="1764" height="1164" rx="18" fill="#fffdf8" stroke="rgba(27,58,99,.16)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1380" width="1800" height="1380" font-family="Segoe UI, Trebuchet MS, sans-serif" role="img" aria-label="ÉlectroRézo, carte du réseau : 9 lignes, 72 stations.">
+<rect width="1800" height="1380" fill="#f7f1e7"/>
+  <rect x="18" y="18" width="1764" height="1344" rx="18" fill="#fffdf8" stroke="rgba(27,58,99,.16)"/>
   <text x="48.0" y="74.0" text-anchor="start" font-size="26" font-weight="700" fill="#1b3a63">ÉlectroRézo — la carte du réseau</text>
-  <text x="48.0" y="104.0" text-anchor="start" font-size="15" font-weight="400" fill="#637285">8 lignes · 63 stations · anneau épais = correspondance · double anneau = grand carrefour</text>
+  <text x="48.0" y="104.0" text-anchor="start" font-size="15" font-weight="400" fill="#637285">9 lignes · 72 stations · anneau épais = correspondance · double anneau = grand carrefour</text>
   <path d="M720.0 210.0 L1500.8 210.0 L1500.8 1068.0" fill="none" stroke="#1b3a63" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M781.0 237.3 L781.0 912.0 L951.8 912.0 L951.8 1021.2 L1073.8 1021.2 L1134.8 1068.0" fill="none" stroke="#0C4B88" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 288.0 L781.0 288.0" fill="none" stroke="#5b4bd6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
@@ -11,6 +11,7 @@
   <path d="M232.0 912.0 L1500.8 912.0" fill="none" stroke="#c9451a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M671.2 1068.0 L1647.2 1068.0" fill="none" stroke="#0f766e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 444.0 L1574.0 444.0" fill="none" stroke="#7c3aed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 1224.0 L1183.6 1224.0" fill="none" stroke="#a16207" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 12"/>
   <rect x="649.0" y="195.0" width="30" height="30" rx="8" fill="#1b3a63"/>
   <text x="664.0" y="216.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">1</text>
   <rect x="792.0" y="222.3" width="30" height="30" rx="8" fill="#0C4B88"/>
@@ -27,6 +28,8 @@
   <text x="615.2" y="1074.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">7</text>
   <rect x="39.0" y="429.0" width="30" height="30" rx="8" fill="#7c3aed"/>
   <text x="54.0" y="450.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">8</text>
+  <rect x="39.0" y="1209.0" width="30" height="30" rx="8" fill="#a16207"/>
+  <text x="54.0" y="1230.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">9</text>
   <a href="stations/1-1-courant-intensite/index.html" aria-label="1.1 Intensité">
   <circle cx="720.0" cy="210.0" r="10" fill="#fffdf8" stroke="#1b3a63" stroke-width="4"/>
   <circle cx="720.0" cy="210.0" r="24" fill="transparent" class="cible"/>
@@ -299,10 +302,10 @@
   <text x="951.8" y="862.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.4  ⇄ 1 · 2</text>
   </a>
   <a href="stations/6-5-moteur-monophase/index.html" aria-label="6.5 Moteur monophasé">
-  <circle cx="1134.8" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="1134.8" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
   <circle cx="1134.8" cy="912.0" r="24" fill="transparent" class="cible"/>
   <text x="1134.8" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur monophasé</text>
-  <text x="1134.8" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.5</text>
+  <text x="1134.8" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.5  ⇄ 9</text>
   </a>
   <a href="stations/6-6-synchrone-et-continu/index.html" aria-label="6.6 Synchrone et courant continu">
   <circle cx="1269.0" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
@@ -408,28 +411,67 @@
   <text x="1647.2" y="1034.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Variateur de fréquence</text>
   <text x="1647.2" y="1018.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">7.4</text>
   </a>
-  <rect x="56" y="1145" width="26" height="18" rx="5" fill="#1b3a63"/>
-  <text x="69" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">1</text>
-  <text x="89" y="1158" font-size="14" fill="#10233c">Les grandeurs de l’électricité</text>
-  <rect x="326.5" y="1145" width="26" height="18" rx="5" fill="#0C4B88"/>
-  <text x="339.5" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">2</text>
-  <text x="359.5" y="1158" font-size="14" fill="#10233c">Les réseaux d’alimentation</text>
-  <rect x="568.8" y="1145" width="26" height="18" rx="5" fill="#5b4bd6"/>
-  <text x="581.8" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">3</text>
-  <text x="601.8" y="1158" font-size="14" fill="#10233c">Couper et isoler</text>
-  <rect x="740.5999999999999" y="1145" width="26" height="18" rx="5" fill="#c0392b"/>
-  <text x="753.5999999999999" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">4</text>
-  <text x="773.5999999999999" y="1158" font-size="14" fill="#10233c">Protéger</text>
-  <rect x="855.9999999999999" y="1145" width="26" height="18" rx="5" fill="#1e7e54"/>
-  <text x="868.9999999999999" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">5</text>
-  <text x="888.9999999999999" y="1158" font-size="14" fill="#10233c">Commander</text>
-  <rect x="978.4499999999998" y="1145" width="26" height="18" rx="5" fill="#c9451a"/>
-  <text x="991.4499999999998" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">6</text>
-  <text x="1011.4499999999998" y="1158" font-size="14" fill="#10233c">Machines et conversion</text>
-  <rect x="1192.5499999999997" y="1145" width="26" height="18" rx="5" fill="#0f766e"/>
-  <text x="1205.5499999999997" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">7</text>
-  <text x="1225.5499999999997" y="1158" font-size="14" fill="#10233c">Faire varier l’énergie</text>
-  <rect x="1406.6499999999996" y="1145" width="26" height="18" rx="5" fill="#7c3aed"/>
-  <text x="1419.6499999999996" y="1158" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">8</text>
-  <text x="1439.6499999999996" y="1158" font-size="14" fill="#10233c">L’écriture du schéma</text>
+  <circle cx="110.0" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <circle cx="110.0" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="110.0" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Qui fait tourner quoi</text>
+  <text x="110.0" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.1  ⇄ 6 · en construction</text>
+  <circle cx="244.2" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <circle cx="244.2" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="244.2" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Repérer C, S, R</text>
+  <text x="244.2" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.2  ⇄ 1 · en construction</text>
+  <circle cx="378.4" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <circle cx="378.4" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="378.4" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Compresseur RSIR, CSIR</text>
+  <text x="378.4" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.3  ⇄ 5 · en construction</text>
+  <circle cx="512.6" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4" stroke-dasharray="5 4"/>
+  <circle cx="512.6" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="512.6" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Compresseur PSC, CSR</text>
+  <text x="512.6" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.4 · en construction</text>
+  <circle cx="646.8" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <circle cx="646.8" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="646.8" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Klixon et dépannage</text>
+  <text x="646.8" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.5  ⇄ 4 · en construction</text>
+  <circle cx="781.0" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4" stroke-dasharray="5 4"/>
+  <circle cx="781.0" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="781.0" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Bague de déphasage</text>
+  <text x="781.0" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.6 · en construction</text>
+  <circle cx="915.2" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4" stroke-dasharray="5 4"/>
+  <circle cx="915.2" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="915.2" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Ventilateur et vitesses</text>
+  <text x="915.2" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.7 · en construction</text>
+  <circle cx="1049.4" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <circle cx="1049.4" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="1049.4" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Inverser le sens</text>
+  <text x="1049.4" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.8  ⇄ 2 · en construction</text>
+  <circle cx="1183.6" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <circle cx="1183.6" cy="1224.0" r="24" fill="transparent" class="cible"/>
+  <text x="1183.6" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur EC</text>
+  <text x="1183.6" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.9  ⇄ 7 · en construction</text>
+  <rect x="56" y="1303" width="26" height="18" rx="5" fill="#1b3a63"/>
+  <text x="69" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">1</text>
+  <text x="89" y="1316" font-size="14" fill="#10233c">Les grandeurs de l’électricité</text>
+  <rect x="326.5" y="1303" width="26" height="18" rx="5" fill="#0C4B88"/>
+  <text x="339.5" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">2</text>
+  <text x="359.5" y="1316" font-size="14" fill="#10233c">Les réseaux d’alimentation</text>
+  <rect x="568.8" y="1303" width="26" height="18" rx="5" fill="#5b4bd6"/>
+  <text x="581.8" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">3</text>
+  <text x="601.8" y="1316" font-size="14" fill="#10233c">Couper et isoler</text>
+  <rect x="740.5999999999999" y="1303" width="26" height="18" rx="5" fill="#c0392b"/>
+  <text x="753.5999999999999" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">4</text>
+  <text x="773.5999999999999" y="1316" font-size="14" fill="#10233c">Protéger</text>
+  <rect x="855.9999999999999" y="1303" width="26" height="18" rx="5" fill="#1e7e54"/>
+  <text x="868.9999999999999" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">5</text>
+  <text x="888.9999999999999" y="1316" font-size="14" fill="#10233c">Commander</text>
+  <rect x="978.4499999999998" y="1303" width="26" height="18" rx="5" fill="#c9451a"/>
+  <text x="991.4499999999998" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">6</text>
+  <text x="1011.4499999999998" y="1316" font-size="14" fill="#10233c">Machines et conversion</text>
+  <rect x="1192.5499999999997" y="1303" width="26" height="18" rx="5" fill="#0f766e"/>
+  <text x="1205.5499999999997" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">7</text>
+  <text x="1225.5499999999997" y="1316" font-size="14" fill="#10233c">Faire varier l’énergie</text>
+  <rect x="1406.6499999999996" y="1303" width="26" height="18" rx="5" fill="#7c3aed"/>
+  <text x="1419.6499999999996" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">8</text>
+  <text x="1439.6499999999996" y="1316" font-size="14" fill="#10233c">L’écriture du schéma</text>
+  <rect x="56" y="1329" width="26" height="18" rx="5" fill="#a16207"/>
+  <text x="69" y="1342" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">9</text>
+  <text x="89" y="1342" font-size="14" fill="#10233c">Le moteur monophasé</text>
 </svg>
