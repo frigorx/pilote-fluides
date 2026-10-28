@@ -1,0 +1,14 @@
+{
+  "cours": "bouteilles-fluide",
+  "titre": "Les bouteilles de fluide — types, robinets, plaque, charge maximale, fluides inflammables",
+  "reference": "arrêté du 21 novembre 2025 (attestation d’aptitude) ; CAP IFCA C4.2 ; règlement (UE) 2024/573, annexe IV point 1 et article 11 § 3",
+  "ecrans": 16,
+  "codes": {
+    "5.02": ["metier", "choisir", "deux-robinets", "tube-plongeur", "liquide-vapeur", "jamais-a-ras", "jusqu-ou", "flotteur-soupape", "bilan"],
+    "5.05": ["deux-robinets", "meme-pression", "tube-plongeur", "liquide-vapeur", "bilan"],
+    "5.06": ["plaque", "pesee", "jamais-a-ras", "jusqu-ou", "bilan"]
+  },
+  "cap_ifca": {
+    "C4.2": ["metier", "choisir", "jetable", "deux-robinets", "meme-pression", "tube-plongeur", "liquide-vapeur", "plaque", "pesee", "jamais-a-ras", "jusqu-ou", "flotteur-soupape", "inflammables", "raccord", "ranger", "bilan"]
+  }
+}
