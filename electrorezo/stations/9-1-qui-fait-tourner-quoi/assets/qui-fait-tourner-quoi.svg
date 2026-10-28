@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="sans-serif">
+<title>Trois machines qui tournent dans une installation</title>
+<desc>Symboles de la bibliothèque inerWeb : le compresseur, le ventilateur à hélice, la turbine. Chacune est entraînée par un moteur.</desc>
+<rect width="100%" height="100%" fill="#fffdf8"/>
+<svg x="75" y="20" width="150" height="120" viewBox="-24.0 -20.0 50 40" overflow="visible"><!-- Compresseur, dessin de la planche Eduscol (Franck, 03/10/2026) : cercle traversé de deux lignes, raccordements à gauche et à droite. Cadre et points latéraux inchangés. -->
+<circle cx="0.0" cy="0.0" r="15.0" fill="white" stroke="#000" stroke-width="1"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="#000" stroke-width="1"/>
+<circle cx="-16" cy="0" r="1.5" fill="#000"/>
+<circle cx="16" cy="0" r="1.5" fill="#000"/>
+</svg>
+<text x="150" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#1b3a63">Le compresseur</text>
+<text x="150" y="222" text-anchor="middle" font-size="17" fill="#333">hermétique, dans le groupe</text>
+<text x="150" y="246" text-anchor="middle" font-size="17" fill="#333">ou l’unité extérieure</text>
+<svg x="375" y="20" width="150" height="120" viewBox="-24.0 -20.0 50 40" overflow="visible"><circle cx="0.0" cy="0.0" r="15.0" fill="white" stroke="#000" stroke-width="1"/>
+<line x1="-12" y1="0" x2="-8" y2="0" stroke="#000" stroke-width="1"/>
+<path d="M -6.00 -7.00 A 6.00 6.00 0 0 1 0.00 -1.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -1.00 0.00 A 6.00 6.00 0 0 1 -7.00 -6.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -7.00 6.00 A 6.00 6.00 0 0 1 -1.00 0.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M 0.00 1.00 A 6.00 6.00 0 0 1 -6.00 7.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -6.00 7.00 A 1.00 1.00 0 0 1 -7.00 6.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -7.00 -6.00 A 1.00 1.00 0 0 1 -6.00 -7.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M 0.00 -1.00 A 1.00 1.00 0 0 1 -1.00 0.00" fill="none" stroke="#000" stroke-width="1"/>
+<ellipse cx="4.5" cy="0.0" rx="4.5" ry="2.5" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="#000" stroke-width="1"/>
+<circle cx="-16" cy="0" r="1.5" fill="#000"/>
+<circle cx="16" cy="0" r="1.5" fill="#000"/>
+</svg>
+<text x="450" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#1b3a63">Le ventilateur à hélice</text>
+<text x="450" y="222" text-anchor="middle" font-size="17" fill="#333">sur le condenseur</text>
+<text x="450" y="246" text-anchor="middle" font-size="17" fill="#333">et sur l’évaporateur</text>
+<svg x="675" y="20" width="150" height="120" viewBox="-24.0 -20.0 50 40" overflow="visible"><circle cx="0.0" cy="0.0" r="15.0" fill="white" stroke="#000" stroke-width="1"/>
+<path d="M 0.00 1.00 A 6.00 6.00 0 0 1 -6.00 7.00" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="-10" y1="3" x2="-10" y2="-3" stroke="#000" stroke-width="1"/>
+<path d="M -1.00 0.00 A 6.00 6.00 0 0 1 -7.00 -6.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -7.00 6.00 A 6.00 6.00 0 0 1 -1.00 0.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -6.00 7.00 A 1.00 1.00 0 0 1 -7.00 6.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -6.00 -7.00 A 6.00 6.00 0 0 1 0.00 -1.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M -7.00 -6.00 A 1.00 1.00 0 0 1 -6.00 -7.00" fill="none" stroke="#000" stroke-width="1"/>
+<path d="M 0.00 -1.00 A 1.00 1.00 0 0 1 -1.00 0.00" fill="none" stroke="#000" stroke-width="1"/>
+<ellipse cx="4.5" cy="0.0" rx="4.5" ry="2.5" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="#000" stroke-width="1"/>
+<circle cx="-16" cy="0" r="1.5" fill="#000"/>
+<circle cx="16" cy="0" r="1.5" fill="#000"/>
+</svg>
+<text x="750" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#1b3a63">La turbine</text>
+<text x="750" y="222" text-anchor="middle" font-size="17" fill="#333">dans l’unité intérieure</text>
+<text x="750" y="246" text-anchor="middle" font-size="17" fill="#333">du climatiseur</text>
+</svg>

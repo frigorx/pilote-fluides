@@ -30,9 +30,9 @@ ModeleAppareil.construire({
   ],
 
   variantes: [
-    "<strong>Condensateur permanent</strong> — il reste en service. Simple, silencieux, mais le couple de démarrage est modeste.",
-    "<strong>Condensateur de démarrage</strong> — de forte valeur, déconnecté dès le lancement. Couple important, mais il ne supporte pas d’être maintenu.",
-    "<strong>Les deux</strong> — un permanent, plus un de démarrage. C’est le montage des compresseurs qui doivent partir en charge.",
+    "<strong>Condensateur permanent</strong> — il reste en service. Simple, silencieux, mais le couple de démarrage est modeste. Sur un compresseur, c’est le montage <strong>PSC</strong>.",
+    "<strong>Condensateur de démarrage</strong> — de forte valeur, déconnecté dès le lancement. Couple important, mais il ne supporte pas d’être maintenu. Sur un compresseur, c’est le montage <strong>CSIR</strong>.",
+    "<strong>Les deux</strong> — un permanent, plus un de démarrage. C’est le montage des compresseurs qui doivent partir en charge, le <strong>CSR</strong>. Les quatre montages du compresseur sont comparés à la station 9.1.",
     "<strong>À bague de déphasage</strong> — sans condensateur : une spire en court-circuit sur un coin du pôle suffit à décaler un peu. Couple très faible, mais très robuste : rien à entretenir. C’est le moteur des petits ventilateurs."
   ],
   reglage: "Rien ne se règle. Mais un condensateur se <strong>choisit</strong> : sa capacité en microfarads et sa tension d’emploi sont écrites dessus. Sur un condensateur permanent, monter une capacité supérieure à celle de la plaque ne donne pas plus de couple : cela déséquilibre le déphasage, et le moteur chauffe. Le condensateur de démarrage, lui, est choisi de forte valeur, pour donner du couple au lancement.",
@@ -121,5 +121,6 @@ ModeleAppareil.construire({
   correspondances: [
     { ligne: 2, couleur: '#7a4fb5', texte: "2.6 Le champ tournant" },
     { ligne: 2, couleur: '#7a4fb5', texte: "2.2 Le réseau monophasé" },
-    { ligne: 6, couleur: '#c9451a', texte: "6.3 Le moteur asynchrone triphasé" } ]
+    { ligne: 6, couleur: '#c9451a', texte: "6.3 Le moteur asynchrone triphasé" },
+    { ligne: 9, couleur: '#a16207', texte: "9.1 Qui fait tourner quoi" } ]
 });

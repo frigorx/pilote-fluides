@@ -1,7 +1,7 @@
 /* ÉlectroRézo — la liste ordonnée des stations du réseau.
    ÉCRIT PAR outils/construire-reseau.mjs — ne pas modifier à la main.
    Relancer l'outil après toute création ou tout renommage de station.
-   63 stations, 8 lignes. */
+   64 stations, 9 lignes. */
 
 const RESEAU = {
   lignes: {
@@ -12,7 +12,8 @@ const RESEAU = {
     5: 'Commander',
     6: 'Machines et conversion',
     7: 'Faire varier l’énergie',
-    8: 'L’écriture du schéma'
+    8: 'L’écriture du schéma',
+    9: 'Le moteur monophasé'
   },
   stations: [
     { id: '1.1', ligne: 1, dossier: '1-1-courant-intensite', titre: 'Le courant et l’intensité', genre: 'homme' },
@@ -77,7 +78,8 @@ const RESEAU = {
     { id: '8.8', ligne: 8, dossier: '8-8-bobine-et-rond', titre: 'La bobine et le rond', genre: 'femme' },
     { id: '8.9', ligne: 8, dossier: '8-9-reperes', titre: 'Les repères', genre: 'homme' },
     { id: '8.10', ligne: 8, dossier: '8-10-dechiffrer', titre: 'Déchiffrer', genre: 'homme' },
-    { id: '8.11', ligne: 8, dossier: '8-11-jeu-des-symboles', titre: 'Le jeu des symboles', genre: 'femme' }
+    { id: '8.11', ligne: 8, dossier: '8-11-jeu-des-symboles', titre: 'Le jeu des symboles', genre: 'femme' },
+    { id: '9.1', ligne: 9, dossier: '9-1-qui-fait-tourner-quoi', titre: 'Qui fait tourner quoi', genre: 'homme' }
   ],
 
   /* la station qui suit celle-ci, ou null si c'est la dernière du réseau */
