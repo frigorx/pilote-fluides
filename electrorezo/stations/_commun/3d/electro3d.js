@@ -93,6 +93,11 @@
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
   const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; };
   const reduit = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  /* Chrome coupe toute la 3D d'un site dont une page a fait planter la carte graphique, jusqu'à
+     sa fermeture complète (Pixel 10, 29/10/2026). Sur écran tactile, ombres moins fines et image
+     moins dense : la carte graphique travaille deux à trois fois moins, le risque baisse. */
+  const LEGER = !!(window.matchMedia && matchMedia('(pointer: coarse)').matches);
+  const FERMER = 'fermez complètement le navigateur (sur un téléphone, retirez-le des applications récentes), puis rouvrez cette page.';
 
   /* ------------------------------------------------------------------ l'atelier
      Un environnement d'éclairage fabriqué : une pièce claire, un grand plafonnier, deux
@@ -213,7 +218,7 @@
       try { T = await chargerThree(); } catch (e) { return this._repli('reseau', 'La bibliothèque 3D n’a pas pu se charger (pas de réseau ?).'); }
       if (!this.isConnected) { this._etatInit = 'attente'; return; }
       try { this._monter(T, def); }
-      catch (e) { console.warn('electro-3d :', nom, e); return this._repli('webgl', 'La vue 3D n’a pas pu s’ouvrir sur cet appareil.'); }
+      catch (e) { console.warn('electro-3d :', nom, e); return this._repli('webgl', e && e.contexte ? 'Le navigateur bloque la 3D de ce site. Pour la retrouver, ' + FERMER : 'La vue 3D n’a pas pu s’ouvrir sur cet appareil.'); }
       this._etatInit = 'pret';
       this._dom.attente.remove();
       this.dataset.pret = '1';
@@ -231,19 +236,41 @@
       this.dispatchEvent(new CustomEvent('e3d-repli', { bubbles: true, detail: { raison } }));
     }
 
+    /* la carte graphique décroche en cours de route : le dire au lieu de laisser une image figée */
+    _decroche() {
+      if (this._etatInit !== 'pret') return;
+      if (this._raf) cancelAnimationFrame(this._raf); this._raf = 0;
+      this._repli('decroche', 'La carte graphique a décroché. Si la 3D ne revient pas d’elle-même, ' + FERMER);
+      this._dom.scene.append(this._dom.attente);
+    }
+    /* le navigateur rend le contexte : tout remonter, comme au premier affichage */
+    _reprendre() {
+      if (this.dataset.repli !== 'decroche') return;
+      this._detruire();
+      for (const k of Object.keys(this)) if (k !== '_id') delete this[k];
+      this.textContent = '';
+      delete this.dataset.repli; delete this.dataset.pret;
+      this._etatInit = 'attente';
+      this.connectedCallback();
+    }
+
     _monter(T, def) {
       const d = this._dom;
       this._T = T;
-      const rd = new T.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-      if (!rd.getContext()) throw new Error('pas de WebGL');
+      let rd = null;
+      try { rd = new T.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (e) {}
+      if (!rd || !rd.getContext()) throw Object.assign(new Error('contexte WebGL refusé'), { contexte: true });
       rd.setClearColor(0x000000, 0);
       rd.outputColorSpace = T.SRGBColorSpace;
       rd.toneMapping = T.ACESFilmicToneMapping; rd.toneMappingExposure = 1.0;
-      rd.shadowMap.enabled = true; rd.shadowMap.type = T.PCFSoftShadowMap;
+      rd.shadowMap.enabled = true; rd.shadowMap.type = LEGER ? T.PCFShadowMap : T.PCFSoftShadowMap;
       rd.localClippingEnabled = true;
-      this._pr = Math.min(window.devicePixelRatio || 1, 2); rd.setPixelRatio(this._pr);
+      this._pr = Math.min(window.devicePixelRatio || 1, LEGER ? 1.5 : 2); rd.setPixelRatio(this._pr);
       d.scene.insertBefore(rd.domElement, d.fils);
       this._rd = rd;
+      /* seul le contexte en service compte : celui qu'on libère en démontant n'annonce rien */
+      rd.domElement.addEventListener('webglcontextlost', () => { if (this._rd === rd) this._decroche(); });
+      rd.domElement.addEventListener('webglcontextrestored', () => { if (this._rd === rd) this._reprendre(); });
 
       const sc = new T.Scene(); this._sc = sc;
       const pm = new T.PMREMGenerator(rd); const env = envAtelier(T);
@@ -252,7 +279,7 @@
 
       this._cam = new T.PerspectiveCamera(30, 1, 1, 10000);
       const dl = new T.DirectionalLight(0xfff3e4, 1.5);
-      dl.castShadow = true; dl.shadow.mapSize.set(1024, 1024); dl.shadow.bias = -0.0005; dl.shadow.normalBias = 0.5;
+      dl.castShadow = true; dl.shadow.mapSize.set(LEGER ? 512 : 1024, LEGER ? 512 : 1024); dl.shadow.bias = -0.0005; dl.shadow.normalBias = 0.5;
       sc.add(dl, dl.target); this._dl = dl;
       sc.add(new T.HemisphereLight(0xffffff, 0xd9cdb8, 0.35));
 
