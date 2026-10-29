@@ -35,6 +35,33 @@ function enchainement93() {
   return bande;
 }
 
+/* Un schéma de MONTAGES_9_3 posé là où la consigne ou la question le fait lire (temps 3, 4 et 5), avec une
+   légende qui ne répond pas. Il porte la loupe de la bande : un clic l'ouvre en grand. */
+function vignette93(i, legende, complement) {
+  const f = document.createElement('figure');
+  f.className = 'vignette';
+  const im = document.createElement('img');
+  im.src = MONTAGES_9_3[i].src; im.alt = MONTAGES_9_3[i].alt; im.loading = 'lazy';
+  f.appendChild(im);
+  const c = document.createElement('figcaption');
+  const s = document.createElement('strong');
+  s.textContent = legende;
+  c.appendChild(s);
+  if (complement) c.appendChild(document.createTextNode(' ' + complement));
+  f.appendChild(c);
+  return f;
+}
+function bandeSchemas93(liste) {
+  const bande = document.createElement('div');
+  bande.className = 'bande-visuelle';
+  liste.forEach(([i, legende, complement]) => bande.appendChild(vignette93(i, legende, complement)));
+  return bande;
+}
+/* La même vignette en HTML, pour le texte de « Le lire sur un plan ». L'étiquette est écrite IMG en capitales
+   à dessein : le modèle ajoute « retour du neutre en orange » dès qu'il voit <img, et ces schémas sont en noir. */
+const schemaPlan93 = (i, legende) => '<figure class="vignette" style="max-width:340px;margin:.2rem auto"><IMG src="' +
+  MONTAGES_9_3[i].src + '" alt="' + MONTAGES_9_3[i].alt + '"><figcaption><strong>' + legende + '</strong></figcaption></figure>';
+
 /* Le récapitulatif du temps 5. */
 const LIGNES_9_3 = [
   ['RSIR à relais', 'le relais d’intensité : son contact s’ouvre vers 80 % de la vitesse', 'aucun', 'faible', 'capillaire seulement'],
@@ -45,6 +72,9 @@ const LIGNES_9_3 = [
 function tableau93() {
   const boite = document.createElement('div');
   boite.style.overflowX = 'auto';
+  /* sur téléphone, le tableau défile seul : sans ces deux lignes, il élargit toute la colonne, et le rappel,
+     les schémas et les questions sortent de l'écran à droite */
+  boite.style.width = '0'; boite.style.minWidth = '100%';
   const t = document.createElement('table');
   t.className = 'tab';
   t.innerHTML = '<thead><tr><th>Montage</th><th>Ce qui retire l’auxiliaire</th><th>Condensateur</th>' +
@@ -57,6 +87,13 @@ function tableau93() {
   l.className = 'legende';
   l.textContent = 'Sans condensateur, le couple au démarrage est faible. La détente doit alors se faire par capillaire, pour que la haute pression et la basse pression s’égalisent à l’arrêt. Le CSIR s’emploie quand le couple demandé au démarrage risque d’être fort.';
   boite.appendChild(l);
+  /* la question sur la CTP relancée chaude s'appuie sur ce rappel, repris du paragraphe « La CTP » du temps 2 */
+  const r = document.createElement('p');
+  r.className = 'legende';
+  r.textContent = 'Si on relance le moteur quand la CTP est encore chaude, elle ne laisse presque rien passer dans l’auxiliaire : le moteur ne démarre pas, le courant du principal monte, et le Klixon coupe. D’où l’arrêt d’au moins 5 minutes.';
+  boite.appendChild(r);
+  /* les questions lisent le schéma du RSIR et celui du CSIR : ils sont posés ici, sous le tableau */
+  boite.appendChild(bandeSchemas93([[0, 'Schéma du RSIR.'], [2, 'Schéma du CSIR.']]));
   return boite;
 }
 
@@ -104,20 +141,24 @@ ModeleAppareil.construire({
   ],
   reglage: "Rien ne se règle. Un relais se remplace par un relais de <strong>même référence</strong> : sinon son contact ne colle jamais, ou reste collé. Une CTP se remplace aussi par la même référence. Quand on change un compresseur, on change aussi les pièces de démarrage : relais et condensateurs.",
 
-  picto: () => null,
+  /* temps 3 : les deux schémas de la consigne, sous elle (D.picto) : plus de renvoi aux temps 1 et 2 */
+  picto: () => ({
+    element: bandeSchemas93([[0, 'RSIR à relais.', 'Exemple résolu.'], [1, 'RSIR à CTP.', 'À vous maintenant.']]),
+    marquer: () => {}
+  }),
   colonnes: [
     { id: 'relais', libelle: 'Un relais d’intensité', aide: 'une bobine sur le principal, un contact sur l’auxiliaire' },
     { id: 'condensateur', libelle: 'Un condensateur de démarrage', aide: 'il donne du couple au lancement' },
     { id: 'ctp', libelle: 'Une CTP', aide: 'sa résistance monte quand elle chauffe' }
   ],
-  consigneAptitudes: 'Exemple résolu. Sur le RSIR à relais, on lit au temps 1 la bobine KA sur le principal et le contact KA sur l’auxiliaire : il porte un relais. Il n’a ni CTP ni condensateur. À vous maintenant. Un compresseur est un RSIR à CTP. Ouvrez le temps 2 et regardez l’image marquée « RSIR à CTP ». Cherchez la bobine, la CTP et le condensateur Cd. Cochez ce que ce compresseur porte, puis validez.',
+  consigneAptitudes: 'Exemple résolu. Sur le premier schéma, « RSIR à relais », on lit la bobine KA sur le principal et le contact KA sur l’auxiliaire : il porte un relais. Il n’a ni CTP ni condensateur. À vous maintenant. Un compresseur est un RSIR à CTP. Regardez le second schéma, « RSIR à CTP ». Cherchez la bobine, la CTP et le condensateur Cd. Cochez ce que ce compresseur porte, puis validez.',
   aptitudes: {
     relais: false, condensateur: false, ctp: true,
     bonneReponse: 'Juste. Le RSIR à CTP porte une CTP, en série avec l’auxiliaire. Elle retire le courant de l’auxiliaire quand elle a chauffé. Il n’a ni relais ni condensateur.',
     erreurs: {
-      relais: 'Sur l’image « RSIR à CTP », il n’y a ni bobine KA ni contact KA. La CTP tient la place du relais.',
-      condensateur: 'Le RSIR n’a aucun condensateur. Sur l’image « RSIR à CTP », il n’y a pas de Cd.',
-      ctp: 'Sur l’image « RSIR à CTP », une CTP est en série avec l’auxiliaire, entre la borne S et le neutre N.'
+      relais: 'Sur le schéma « RSIR à CTP », juste au-dessus des cases, il n’y a ni bobine KA ni contact KA. La CTP tient la place du relais.',
+      condensateur: 'Le RSIR n’a aucun condensateur. Sur le schéma « RSIR à CTP », juste au-dessus des cases, il n’y a pas de Cd.',
+      ctp: 'Sur le schéma « RSIR à CTP », juste au-dessus des cases, une CTP est en série avec l’auxiliaire, entre la borne S et le neutre N.'
     }
   },
 
@@ -139,39 +180,41 @@ ModeleAppareil.construire({
     { src: 'assets/clixon.svg', alt: "Symbole du protecteur thermique Klixon : un cercle traversé par un trait brisé.", legende: "Klixon" }
   ],
   lecturePlan: [
-    "Ouvrez le temps 1 et agrandissez le schéma du RSIR. Lisez de haut en bas : l’alimentation <strong>L</strong>, le Klixon, la borne <strong>C</strong>. Le fil se partage ensuite en deux branches.",
+    schemaPlan93(0, 'Schéma du RSIR.'),
+    "Sur le schéma du RSIR, juste au-dessus, lisez de haut en bas : l’alimentation <strong>L</strong>, le Klixon, la borne <strong>C</strong>. Le fil se partage ensuite en deux branches. Un clic sur le schéma l’agrandit.",
     "À gauche, le <strong>principal</strong> : la borne R, puis la bobine, puis le neutre N. À droite, l’<strong>auxiliaire</strong> : la borne S, puis le contact, puis le neutre N.",
     "La bobine et le contact portent le même repère <strong>KA</strong>. Deux symboles distincts, un seul relais : la bobine du principal commande le contact de l’auxiliaire.",
     "Le cadre en pointillés entoure le compresseur. Les deux enroulements et les bornes C, R et S sont dedans. La bobine et le contact KA sont dehors, dans le relais.",
-    "Sur le schéma du CSIR, cherchez le condensateur <strong>Cd</strong>. Il est sur la branche de l’auxiliaire, sous le contact KA."
+    schemaPlan93(2, 'Schéma du CSIR.'),
+    "Sur le schéma du CSIR, juste au-dessus, cherchez le condensateur <strong>Cd</strong>. Il est sur la branche de l’auxiliaire, sous le contact KA."
   ],
 
   tableau: () => tableau93(),
   tableauTitre: 'RSIR à relais, RSIR à CTP, CSIR',
 
   quiz: [
-    { question: "Regardez le schéma du RSIR au temps 1. Suivez le fil à partir de la borne R. Avec quel enroulement la bobine KA est-elle en série ?",
+    { question: "Sur le schéma du RSIR, juste au-dessus des questions, suivez le fil à partir de la borne R. Avec quel enroulement la bobine KA est-elle en série ?",
       confirmation: "Avec le principal : la bobine est entre la borne R et le neutre N. Tout le courant du principal la traverse.",
       reponses: [
         { texte: "Avec l’enroulement principal.", juste: true },
         { texte: "Avec l’enroulement auxiliaire.", pourquoi: "Le fil de l’auxiliaire, de la borne S au neutre N, porte le contact KA. La bobine est sur l’autre branche." },
         { texte: "Avec aucun enroulement.", pourquoi: "Elle est sur le fil du principal, entre R et N : le courant du principal passe par elle." } ] },
 
-    { question: "Le compresseur vient d’être mis sous tension et le contact KA est ouvert. Relisez la carte « Ce qu’il y a dedans » du temps 2, paragraphe « Au démarrage ». Que se passe-t-il d’abord ?",
+    { question: "Le compresseur vient d’être mis sous tension et le contact KA est ouvert. La carte « Ce qu’il faut retenir » rappelle où est la bobine et ce que fait le contact. Que se passe-t-il d’abord ?",
       confirmation: "Le moteur ne peut pas démarrer, le courant monte dans le principal et la bobine, et la bobine attire le contact.",
       reponses: [
         { texte: "L’auxiliaire est déjà alimenté et le moteur démarre.", pourquoi: "Le contact est ouvert au repos : l’auxiliaire n’est pas alimenté." },
         { texte: "Le courant monte dans le principal et dans la bobine, qui attire le contact.", juste: true },
         { texte: "Le contact s’ouvre pour retirer l’auxiliaire.", pourquoi: "Il est déjà ouvert. Il s’ouvre de nouveau vers 80 % de la vitesse, quand le moteur a accéléré." } ] },
 
-    { question: "Regardez le schéma du CSIR au temps 1. Où est branché le condensateur de démarrage Cd ?",
+    { question: "Sur le schéma du CSIR, juste au-dessus des questions, où est branché le condensateur de démarrage Cd ?",
       confirmation: "En série avec l’auxiliaire, après le contact KA. Quand le contact s’ouvre, le condensateur est retiré avec l’auxiliaire.",
       reponses: [
         { texte: "En série avec le principal, avant la borne R.", pourquoi: "Sur le schéma, le principal ne porte que la bobine KA." },
         { texte: "En série avec l’auxiliaire, après le contact KA.", juste: true },
         { texte: "Entre L et le Klixon.", pourquoi: "À cet endroit passe tout le courant du moteur. Le condensateur de démarrage sert l’auxiliaire seulement." } ] },
 
-    { question: "Un compresseur RSIR à CTP vient de s’arrêter. Le thermostat le relance aussitôt. Lisez le paragraphe « La CTP » du temps 2, puis l’encadré rouge du temps 3. Que risque-t-il ?",
+    { question: "Un compresseur RSIR à CTP vient de s’arrêter. Le thermostat le relance aussitôt. Sous le tableau, le rappel dit ce qui se passe quand on relance une CTP encore chaude. Que risque-t-il ?",
       confirmation: "La CTP est encore chaude : il y a une surintensité, et le Klixon coupe le moteur. Il faut au moins 5 minutes d’arrêt.",
       reponses: [
         { texte: "Rien : la CTP refroidit en une seconde.", pourquoi: "Il faut au moins 5 minutes d’arrêt pour qu’elle refroidisse." },

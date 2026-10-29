@@ -21,7 +21,6 @@ ModelePratique.construire({
   kicker: 'ÉlectroRézo · Ligne 9 Le moteur monophasé · Station 2',
   titre: "Repérer C, S, R à l’ohmmètre",
   narration: NARRATION,
-  sansMp3: true,
 
   prerequis: [
     { id: '9.1', quoi: "les trois bornes du compresseur et ses montages" },

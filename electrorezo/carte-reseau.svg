@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1380" width="1800" height="1380" font-family="Segoe UI, Trebuchet MS, sans-serif" role="img" aria-label="ÉlectroRézo, carte du réseau : 9 lignes, 72 stations.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1380" width="1800" height="1380" font-family="Segoe UI, Trebuchet MS, sans-serif" role="img" aria-label="ÉlectroRézo, carte du réseau : 9 lignes, 75 stations.">
 <rect width="1800" height="1380" fill="#f7f1e7"/>
   <rect x="18" y="18" width="1764" height="1344" rx="18" fill="#fffdf8" stroke="rgba(27,58,99,.16)"/>
   <text x="48.0" y="74.0" text-anchor="start" font-size="26" font-weight="700" fill="#1b3a63">ÉlectroRézo — la carte du réseau</text>
-  <text x="48.0" y="104.0" text-anchor="start" font-size="15" font-weight="400" fill="#637285">9 lignes · 72 stations · anneau épais = correspondance · double anneau = grand carrefour</text>
+  <text x="48.0" y="104.0" text-anchor="start" font-size="15" font-weight="400" fill="#637285">9 lignes · 75 stations · anneau épais = correspondance · double anneau = grand carrefour</text>
   <path d="M720.0 210.0 L1500.8 210.0 L1500.8 1068.0" fill="none" stroke="#1b3a63" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M781.0 237.3 L781.0 912.0 L951.8 912.0 L951.8 1021.2 L1073.8 1021.2 L1134.8 1068.0" fill="none" stroke="#0C4B88" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 288.0 L781.0 288.0" fill="none" stroke="#5b4bd6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 600.0 L1500.8 600.0" fill="none" stroke="#c0392b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 756.0 L1500.8 756.0" fill="none" stroke="#1e7e54" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M232.0 912.0 L1500.8 912.0" fill="none" stroke="#c9451a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110.0 912.0 L1500.8 912.0" fill="none" stroke="#c9451a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M671.2 1068.0 L1647.2 1068.0" fill="none" stroke="#0f766e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 444.0 L1574.0 444.0" fill="none" stroke="#7c3aed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M110.0 1224.0 L1183.6 1224.0" fill="none" stroke="#a16207" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
@@ -22,8 +22,8 @@
   <text x="54.0" y="606.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">4</text>
   <rect x="39.0" y="741.0" width="30" height="30" rx="8" fill="#1e7e54"/>
   <text x="54.0" y="762.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">5</text>
-  <rect x="161.0" y="897.0" width="30" height="30" rx="8" fill="#c9451a"/>
-  <text x="176.0" y="918.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">6</text>
+  <rect x="39.0" y="897.0" width="30" height="30" rx="8" fill="#c9451a"/>
+  <text x="54.0" y="918.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">6</text>
   <rect x="600.2" y="1053.0" width="30" height="30" rx="8" fill="#0f766e"/>
   <text x="615.2" y="1074.0" text-anchor="middle" font-size="17" font-weight="700" fill="#fffdf8">7</text>
   <rect x="39.0" y="429.0" width="30" height="30" rx="8" fill="#7c3aed"/>
@@ -276,23 +276,41 @@
   <text x="1317.8" y="730.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Lire un schéma</text>
   <text x="1317.8" y="714.0" text-anchor="middle" font-size="12" font-weight="400" fill="#1e7e54">5.9  ⇄ 3 · 4 · 6</text>
   </a>
+  <a href="stations/6-a-d-ou-vient-le-champ/index.html" aria-label="6.A D’où vient le champ">
+  <circle cx="110.0" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="110.0" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="110.0" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">D’où vient le champ</text>
+  <text x="110.0" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.A</text>
+  </a>
+  <a href="stations/6-b-ce-que-fait-le-champ/index.html" aria-label="6.B Ce que fait le champ">
+  <circle cx="217.4" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="217.4" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="217.4" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Ce que fait le champ</text>
+  <text x="217.4" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.B</text>
+  </a>
+  <a href="stations/6-c-action-et-reaction/index.html" aria-label="6.C Action et réaction">
+  <circle cx="324.7" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="324.7" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="324.7" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Action et réaction</text>
+  <text x="324.7" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.C</text>
+  </a>
   <a href="stations/6-1-bobine-electro-aimant/index.html" aria-label="6.1 Bobine et électro-aimant">
-  <circle cx="232.0" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
-  <circle cx="232.0" cy="912.0" r="24" fill="transparent" class="cible"/>
-  <text x="232.0" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Bobine et électro-aimant</text>
-  <text x="232.0" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.1  ⇄ 4 · 5</text>
+  <circle cx="432.1" cy="912.0" r="14" fill="#fffdf8" stroke="#c9451a" stroke-width="5"/>
+  <circle cx="432.1" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="432.1" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Bobine et électro-aimant</text>
+  <text x="432.1" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#c9451a">6.1  ⇄ 4 · 5</text>
   </a>
   <a href="stations/6-2-transformateur/index.html" aria-label="6.2 Transformateur">
-  <circle cx="390.6" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
-  <circle cx="390.6" cy="912.0" r="24" fill="transparent" class="cible"/>
-  <text x="390.6" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Transformateur</text>
-  <text x="390.6" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.2</text>
+  <circle cx="539.4" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="539.4" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="539.4" y="948.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Transformateur</text>
+  <text x="539.4" y="964.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.2</text>
   </a>
   <a href="stations/6-3-moteur-asynchrone/index.html" aria-label="6.3 Moteur asynchrone triphasé">
-  <circle cx="549.2" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
-  <circle cx="549.2" cy="912.0" r="24" fill="transparent" class="cible"/>
-  <text x="549.2" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur asynchrone triphasé</text>
-  <text x="549.2" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.3</text>
+  <circle cx="646.8" cy="912.0" r="10" fill="#fffdf8" stroke="#c9451a" stroke-width="4"/>
+  <circle cx="646.8" cy="912.0" r="24" fill="transparent" class="cible"/>
+  <text x="646.8" y="886.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur asynchrone triphasé</text>
+  <text x="646.8" y="870.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">6.3</text>
   </a>
   <a href="stations/6-4-couplage/index.html" aria-label="6.4 Couplage de la plaque à bornes">
   <circle cx="951.8" cy="912.0" r="21" fill="none" stroke="#c9451a" stroke-width="3"/>

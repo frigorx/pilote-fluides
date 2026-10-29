@@ -29,6 +29,23 @@ function tableauMontages91() {
   return boite;
 }
 
+/* Le temps 3 : les lignes du tableau que la consigne fait lire (l'exemple RSIR, puis le CSIR) sont posées
+   sous la consigne, par la place que le modèle réserve aux pictogrammes (D.picto). L'élève n'a plus à
+   retourner au temps 2. Trois colonnes suffisent : le montage, les condensateurs, l'organe de démarrage. */
+function lignesMontages91(sigles) {
+  const boite = document.createElement('div');
+  boite.style.overflowX = 'auto';
+  const t = document.createElement('table');
+  t.className = 'tab';
+  t.innerHTML = '<thead><tr><th>Montage</th><th>Condensateurs</th><th>Organe de démarrage</th></tr></thead><tbody>' +
+    sigles.map(s => MONTAGES_9_1.find(m => m[0] === s)).map(([m, c, r]) =>
+      '<tr><td><strong>' + m + '</strong></td><td>' + c + '</td><td>' + r + '</td></tr>'
+    ).join('') + '</tbody>';
+  boite.appendChild(t);
+  boite.style.marginBottom = '.5rem';
+  return { element: boite, marquer: () => {} };
+}
+
 ModeleAppareil.construire({
   id: '9.1', ligne: 9,
   vue3d: { modele: 'compresseurHermetique', defaut: 'schema' },   /* 3D */
@@ -67,13 +84,13 @@ ModeleAppareil.construire({
   ],
   reglage: "Rien ne se règle. Le montage se lit sur le schéma électrique du compresseur ou dans sa notice. Un relais de démarrage se remplace par un relais de <strong>même référence</strong> : un relais mal adapté reste collé, ou ne colle jamais.",
 
-  picto: () => null,
+  picto: () => lignesMontages91(['RSIR', 'CSIR']),
   colonnes: [
     { id: 'demarrage', libelle: 'Un condensateur de démarrage', aide: 'il donne du couple au lancement, puis il est retiré' },
     { id: 'permanent', libelle: 'Un condensateur permanent', aide: 'il reste en service pendant la marche' },
     { id: 'relais', libelle: 'Un relais de démarrage', aide: 'il coupe le circuit de démarrage après le lancement' }
   ],
-  consigneAptitudes: 'Un compresseur porte le sigle CSIR. Ouvrez le temps 2 et lisez la ligne CSIR du tableau. Cochez ce que ce compresseur porte, puis validez.',
+  consigneAptitudes: 'Exemple résolu. Dans le tableau ci-dessous, lisez la ligne RSIR : la colonne « Condensateurs » dit « aucun », la colonne « Organe de démarrage » dit « un relais d’intensité, ou une CTP ». Le RSIR n’a donc aucun condensateur, et un relais ou une CTP retire son auxiliaire. À vous maintenant. Un compresseur porte le sigle CSIR. Lisez la ligne CSIR de la même façon. Cochez ce que ce compresseur porte, puis validez.',
   aptitudes: {
     demarrage: true, permanent: false, relais: true,
     bonneReponse: 'Juste. Le CSIR a un condensateur de démarrage et un relais d’intensité qui le retire. Il n’a pas de condensateur permanent : c’est le CSR qui en ajoute un.',

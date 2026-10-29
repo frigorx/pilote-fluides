@@ -1,7 +1,7 @@
 /* ÉlectroRézo — la liste ordonnée des stations du réseau.
    ÉCRIT PAR outils/construire-reseau.mjs — ne pas modifier à la main.
    Relancer l'outil après toute création ou tout renommage de station.
-   68 stations, 9 lignes. */
+   75 stations, 9 lignes. */
 
 const RESEAU = {
   lignes: {
@@ -57,6 +57,9 @@ const RESEAU = {
     { id: '5.7', ligne: 5, dossier: '5-7-boutons', titre: 'Bouton-poussoir et sélecteur', genre: 'femme' },
     { id: '5.8', ligne: 5, dossier: '5-8-securite-signalisation', titre: 'Arrêt d’urgence et signalisation', genre: 'femme' },
     { id: '5.9', ligne: 5, dossier: '5-9-lire-un-schema', titre: 'Lire un schéma : puissance et commande', genre: 'femme' },
+    { id: '6.A', ligne: 6, dossier: '6-a-d-ou-vient-le-champ', titre: 'D’où vient le champ magnétique', genre: 'femme' },
+    { id: '6.B', ligne: 6, dossier: '6-b-ce-que-fait-le-champ', titre: 'Ce que fait le champ magnétique', genre: 'femme' },
+    { id: '6.C', ligne: 6, dossier: '6-c-action-et-reaction', titre: 'Action et réaction : le courant induit', genre: 'homme' },
     { id: '6.1', ligne: 6, dossier: '6-1-bobine-electro-aimant', titre: 'La bobine et l’électro-aimant', genre: 'homme' },
     { id: '6.2', ligne: 6, dossier: '6-2-transformateur', titre: 'Le transformateur', genre: 'femme' },
     { id: '6.3', ligne: 6, dossier: '6-3-moteur-asynchrone', titre: 'Le moteur asynchrone triphasé', genre: 'homme' },
@@ -84,9 +87,9 @@ const RESEAU = {
     { id: '9.3', ligne: 9, dossier: '9-3-compresseur-rsir-csir', titre: 'Compresseur RSIR, CSIR : le relais d’intensité', genre: 'homme' },
     { id: '9.4', ligne: 9, dossier: '9-4-compresseur-psc-csr', titre: 'Compresseur PSC, CSR : le condensateur permanent', genre: 'femme' },
     { id: '9.5', ligne: 9, dossier: '9-5-klixon-et-depannage', titre: 'Le Klixon et le dépannage du compresseur', genre: 'homme' },
-    { id: '9.6', ligne: 9, dossier: '9-6-spire-de-frager', titre: 'Spire de Frager : le moteur sans condensateur', genre: 'femme' },
-    { id: '9.7', ligne: 9, dossier: '9-7-ventilateur-et-vitesses', titre: 'Ventilateur et vitesses : le moteur à plusieurs vitesses', genre: 'homme' },
-    { id: '9.8', ligne: 9, dossier: '9-8-inverser-le-sens', titre: 'Inverser le sens d’un moteur monophasé', genre: 'femme' },
+    { id: '9.6', ligne: 9, dossier: '9-6-spire-de-frager', titre: 'Spire de Frager : le moteur sans condensateur', genre: 'homme' },
+    { id: '9.7', ligne: 9, dossier: '9-7-ventilateur-et-vitesses', titre: 'Ventilateur et vitesses : le moteur à plusieurs vitesses', genre: 'femme' },
+    { id: '9.8', ligne: 9, dossier: '9-8-inverser-le-sens', titre: 'Inverser le sens d’un moteur monophasé', genre: 'homme' },
     { id: '9.9', ligne: 9, dossier: '9-9-moteur-ec', titre: 'Moteur EC : la vitesse par un signal', genre: 'homme' }
   ],
 

@@ -61,8 +61,98 @@ const Station = (() => {
   };
   const vitesseVoix = () => window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : S.vitesse;
 
+  /* Le guidage (29/10/2026, F. Henninot : « si l'élève doit aller chercher l'image de la voix, il est perdu
+     instantanément ») : pendant que la voix parle, l'écran montre ce qu'elle explique, sans la souris.
+     Une station le déclare dans narration.js : window.GUIDAGE = { <id du temps> : [{ quand, montre, clic }] }.
+       quand  : le début d'une phrase de la narration ;
+       montre : un texte visible à l'écran (légende, ligne, titre, texte d'une image) ou '3D' ; la page défile
+                jusqu'à lui et un cadre l'entoure jusqu'à la consigne suivante ;
+       clic   : facultatif, le texte d'un bouton à presser à ce moment (étape de la vue 3D, bouton du schéma).
+     La phrase en cours s'estime comme dans la bulle des sous-titres : à la part du texte déjà dite. */
+  const GUIDE = { minuterie: null, cadre: null };
+  const aplatir = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, "'").replace(/\s+/g, ' ').trim().toLowerCase();
+  /* la page du temps : l'espace de travail ET la vue 3D, que les modèles posent à côté de lui */
+  const guideZone = () => { const w = document.querySelector('.workspace'); return (w && w.parentElement) || document.body; };
+  function guideTrouver(montre) {
+    const zone = guideZone();
+    const visibles = [...zone.querySelectorAll('canvas, img, figcaption, p, li, tr, td, h2, h3, h4, strong, b, button, span, div')].filter(e => e.offsetParent);
+    if (aplatir(montre) === '3d') {
+      let e = visibles.find(x => x.tagName === 'CANVAS');
+      if (e && e.closest('.vue3d')) return e.closest('.vue3d');
+      while (e && e.parentElement && !e.querySelector('button')) e = e.parentElement;   /* le bloc de la vue, avec ses boutons */
+      return e || null;
+    }
+    const m = aplatir(montre);
+    let choix = null, longueur = Infinity;
+    for (const e of visibles) {
+      const t = aplatir(e.tagName === 'IMG' ? e.alt : e.textContent);
+      if (t.includes(m) && t.length < longueur) { choix = e; longueur = t.length; }
+    }
+    if (!choix) return null;
+    /* le titre d'une vue 3D : la vue entière, ses boutons sont les siens (la 9.3 en a deux) ; une ligne de son tableau reste une ligne */
+    if (choix.closest('.vue3d') && !choix.closest('tr, li, p, figure')) return choix.closest('.vue3d');
+    if (/^H[2-4]$/.test(choix.tagName)) return choix.closest('section, .card') || choix.parentElement;   /* un titre : tout son cadre */
+    return choix.closest('figure') || choix.closest('li, tr, p') || choix;
+  }
+  function guidePresser(texte, pres) {
+    const m = aplatir(texte);
+    const boutons = [...guideZone().querySelectorAll('button')].filter(b => b.offsetParent && aplatir(b.textContent).includes(m));
+    const exact = boutons.filter(x => aplatir(x.textContent) === m);   /* « 1 » ne doit pas presser « 10 » */
+    const b = exact.find(x => pres && pres.contains(x)) || boutons.find(x => pres && pres.contains(x)) || exact[0] || boutons[0];
+    if (b) b.click();
+  }
+  function guideMontrer(c) {
+    if (!document.getElementById('guide-style')) {
+      const st = document.createElement('style'); st.id = 'guide-style';
+      st.textContent = '.guide-cadre{outline:4px solid #c9451a;outline-offset:4px;border-radius:6px;scroll-margin-top:90px;animation:guide-pouls 1.4s ease-in-out 2}'
+        + '@keyframes guide-pouls{50%{outline-color:rgba(201,69,26,.3)}}'
+        + '@media (prefers-reduced-motion:reduce){.guide-cadre{animation:none}}';
+      document.head.appendChild(st);
+    }
+    const cadrer = cible => {
+      if (!cible || cible === GUIDE.cadre) return;
+      if (GUIDE.cadre) GUIDE.cadre.classList.remove('guide-cadre');
+      GUIDE.cadre = cible;
+      cible.classList.add('guide-cadre');
+      const doux = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      const grand = cible.getBoundingClientRect().height > window.innerHeight * 0.8;   /* plus haut que l'écran : on montre son début */
+      cible.scrollIntoView({ behavior: doux ? 'smooth' : 'auto', block: grand ? 'start' : 'center' });
+    };
+    const cible = c.montre ? guideTrouver(c.montre) : null;
+    /* ce qu'il faut montrer est caché (le tableau derrière « En schéma ») : le bouton d'abord, puis le cadre */
+    if (!cible && c.clic) { guidePresser(c.clic, null); setTimeout(() => cadrer(c.montre ? guideTrouver(c.montre) : null), 250); return; }
+    cadrer(cible);
+    if (c.clic) guidePresser(c.clic, cible);
+  }
+  function guideArreter() {
+    clearInterval(GUIDE.minuterie); GUIDE.minuterie = null;
+    if (GUIDE.cadre) { GUIDE.cadre.classList.remove('guide-cadre'); GUIDE.cadre = null; }
+  }
+  /* progression() rend la part dite, de 0 à 1 */
+  function guideSuivre(t, progression) {
+    guideArreter();
+    const liste = window.GUIDAGE && window.GUIDAGE[t.id];
+    if (!liste || !liste.length) return;
+    (S.demos || []).forEach(f => f()); S.demos = [];   /* la démonstration automatique s'efface devant la voix */
+    const texte = String(t.narration || '');
+    const plat = aplatir(texte);
+    const total = plat.length || 1;
+    /* chaque consigne prend la place de sa phrase dans le texte */
+    const etapes = liste.map(c => ({ c, a: plat.indexOf(aplatir(c.quand)) })).filter(x => x.a >= 0).sort((x, y) => x.a - y.a);
+    let faite = -1;
+    const tic = () => {
+      const dit = Math.max(0, Math.min(1, progression() || 0)) * total;
+      let k = faite;
+      while (k + 1 < etapes.length && etapes[k + 1].a <= dit) k++;
+      if (k > faite) { faite = k; guideMontrer(etapes[k].c); }
+    };
+    tic();
+    GUIDE.minuterie = setInterval(tic, 200);
+  }
+
   function couperVoix() {
     S.tour++;
+    guideArreter();
     bulle('cacher');
     if (lecteur) { lecteur.pause(); lecteur = null; annoncer('annulation'); }
     if ('speechSynthesis' in window) speechSynthesis.cancel();
@@ -104,10 +194,10 @@ const Station = (() => {
     a.addEventListener('playing', () => {
       if (tour === S.tour) {
         b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', t.narration, { audio: a });
-        if (!annonce) { annonce = true; annoncer('debut', t.narration); }
+        if (!annonce) { annonce = true; annoncer('debut', t.narration); guideSuivre(t, () => a.duration > 0 ? a.currentTime / a.duration : 0); }
       } });
     a.addEventListener('ended', () => {
-      if (tour === S.tour) { lecteur = null; b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); annoncer('fin', t.narration); } });
+      if (tour === S.tour) { lecteur = null; guideArreter(); b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); annoncer('fin', t.narration); } });
     a.addEventListener('error', () => {
       /* pas de fichier ici : on ne réessaiera plus de la séance — repli sur
          la voix du poste, et on dit quand même. */
@@ -130,8 +220,10 @@ const Station = (() => {
     const dit = window.PILOTE_PRONONCIATION ? window.PILOTE_PRONONCIATION.oraliser(texte) : texte;
     const u = new SpeechSynthesisUtterance(dit);
     u.lang = 'fr-FR'; u.rate = vitesseVoix(); u.pitch = 1; u.voice = v;
-    u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', texte, { debit: u.rate }); } };
-    u.onend = u.onerror = () => { if (tour === S.tour) { b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); } };
+    u.onstart = () => { if (tour === S.tour) { b.textContent = 'Ⅱ Pause'; b.setAttribute('aria-pressed', 'true'); bulle('montrer', texte, { debit: u.rate });
+      const t0 = Date.now(), duree = texte.length / (14 * u.rate) * 1000;   /* 14 caractères par seconde, comme la bulle */
+      guideSuivre(S.contenu.temps[S.temps], () => (Date.now() - t0) / duree); } };
+    u.onend = u.onerror = () => { if (tour === S.tour) { guideArreter(); b.textContent = '▶ Écouter'; b.setAttribute('aria-pressed', 'false'); bulle('cacher'); } };
     speechSynthesis.speak(u);
   }
 
@@ -177,6 +269,7 @@ const Station = (() => {
     const main = e => { if (e.isTrusted) arreter(); };
     carte.addEventListener('pointerdown', main, true); carte.addEventListener('keydown', main, true);
     S.nettoyages.push(arreter);
+    (S.demos || (S.demos = [])).push(arreter);   /* la voix qui guide l'arrête : un seul maître pour l'écran */
     if (reglette) {
       const min = +reglette.min || 0, max = reglette.max === '' ? 100 : +reglette.max, pas = +reglette.step || 1, v0 = +reglette.value;
       const poser = v => { const x = Math.round(v / pas) * pas; if (+reglette.value !== x) { reglette.value = x; reglette.dispatchEvent(new Event('input', { bubbles: true })); reglette.dispatchEvent(new Event('change', { bubbles: true })); } };

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-43 -23 46 26" width="46" height="26">
+<!-- Inductance à noyau magnétique — converti de en_60617_04_03_03.elmt par outils\elmt-vers-svg.py -->
+<path d="M -10.00,-10.00 A 5.00,5.00 0 0 0 -20.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -30.00,-10.00 A 5.00,5.00 0 0 0 -40.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 0.00,-10.00 A 5.00,5.00 0 0 0 -10.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -20.00,-10.00 A 5.00,5.00 0 0 0 -30.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-40" y1="-20" x2="0" y2="-20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-40" y1="-10" x2="-40" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</svg>

@@ -36,11 +36,27 @@ function vignette97(im, titre, sous) {
 const SOUS_FILS_9_7 = "Rouge, petite vitesse. Gris, moyenne vitesse. Noir, grande vitesse. Sur le boîtier à bornes, la vitesse minimum est sur la borne 6 et la vitesse maximum sur la borne 1.";
 const SOUS_TABLEAU_9_7 = "Cherchez la ligne d’un fil, puis la colonne de l’autre : la case donne la mesure en ohms entre les deux fils.";
 
-/* Le temps 2 : le moteur réel, le code des fils, et le tableau des cinq fils (Bac pro). */
+/* Le code des fils, dans la carte du câblage (temps 3). */
+function codeDesFils97() {
+  const f = vignette97(IM_9_7.fils, "Le code des fils.", SOUS_FILS_9_7);
+  f.style.maxWidth = '380px';
+  return f.outerHTML;
+}
+
+/* Le schéma du moteur, en tête de la carte de lecture (temps 4). Le modèle ajoute la « convention du schéma de commande »
+   dès qu'il voit <img dans lecturePlan ; elle ne vaut pas ici, la balise est donc écrite en majuscules. */
+function schemaLecture97() {
+  const f = vignette97(IM_9_7.schema, "Le schéma du moteur.", "Le commutateur est dessiné sur PV, la petite vitesse.");
+  f.style.maxWidth = '420px';
+  return f.outerHTML.replace('<img', '<IMG');
+}
+
+/* Le temps 2 : le moteur réel, le schéma, le code des fils, et le tableau des cinq fils (Bac pro). */
 function scene97() {
   const bande = document.createElement('div');
   bande.className = 'bande-visuelle';
   bande.appendChild(vignette97(IM_9_7.photo, "Un moto-ventilateur.", "Le moteur, ses deux turbines, un boîtier à bornes et, en dessous, le condensateur."));
+  bande.appendChild(vignette97(IM_9_7.schema, "Le schéma du moteur.", "Le commutateur est dessiné sur PV, la petite vitesse."));
   bande.appendChild(vignette97(IM_9_7.fils, "Le code des fils.", SOUS_FILS_9_7));
   bande.appendChild(vignette97(IM_9_7.tableau, "En Bac pro : les cinq fils.", SOUS_TABLEAU_9_7));
   return bande;
@@ -71,6 +87,8 @@ function tableau97() {
   boite.appendChild(l);
   const bande = document.createElement('div');
   bande.className = 'bande-visuelle';
+  bande.appendChild(vignette97(IM_9_7.fils, "Le code des fils.", "Pour la première question."));
+  bande.appendChild(vignette97(IM_9_7.schema, "Le schéma du moteur.", "Pour la deuxième question et pour la dernière."));
   bande.appendChild(vignette97(IM_9_7.tableau, "En Bac pro : le tableau des mesures.", "Pour les deux dernières questions. " + SOUS_TABLEAU_9_7));
   boite.appendChild(bande);
   return boite;
@@ -108,7 +126,7 @@ ModeleAppareil.construire({
     ["Le moteur", "le moteur d’un petit ventilateur de climatiseur est un moteur monophasé à condensateur permanent, le PSC de la station 9.4. Il n’a aucun relais de démarrage. Sur la photo ci-dessus, le condensateur est fixé au châssis, sous le moteur. La notice d’un ventilo-convecteur gainable décrit ce moteur : 230 V, monophasé, 50 Hz, condensateur permanent et protection interne de surcharge."],
     ["La chute de tension", "pour changer de vitesse, on crée une <strong>chute de tension</strong> : une baisse de la tension aux bornes du moteur. Le couple du moteur diminue, donc la vitesse aussi. On y arrive avec une impédance, une bobine placée en série avec le moteur PSC."],
     ["Le commutateur PV, MV, GV", "il a une position par vitesse : PV pour la petite vitesse, MV pour la moyenne, GV pour la grande. En PV, le courant traverse l’impédance, qui crée la chute de tension : le moteur tourne en petite vitesse. En GV, le courant ne traverse <strong>aucune impédance</strong> : le moteur reçoit la tension du réseau et tourne en grande vitesse. Pour la plus petite vitesse, on intercale la plus grande impédance."],
-    ["Sur le schéma du temps 1", "le commutateur est dessiné sur PV. PV est relié au fil R, MV au fil B et GV au fil N. Entre R et B, puis entre B et N, une impédance de 110 Ω. En PV, le courant traverse les deux impédances. En MV, il en traverse une. En GV, il n’en traverse aucune."],
+    ["Sur le schéma du moteur, ci-dessus", "le commutateur est dessiné sur PV. PV est relié au fil R, MV au fil B et GV au fil N. Entre R et B, puis entre B et N, une impédance de 110 Ω. En PV, le courant traverse les deux impédances. En MV, il en traverse une. En GV, il n’en traverse aucune."],
     ["Le code des fils", "sur la notice d’un moto-ventilateur de ventilo-convecteur, le fil <strong>rouge</strong> donne la petite vitesse. Le fil gris donne la moyenne vitesse, et le fil noir la grande vitesse. Le fil vert et jaune va à la borne de terre. Ce code vient de la notice de cet appareil."],
     ["En Bac pro : les cinq fils", "le cours donne un exercice : moteur monophasé 220 V, condensateur de marche de 3 µF, ventilateur de climatiseur, commutateur à quatre bornes C, PV, MV, GV. Cinq fils sortent du moteur : bleu (B), rouge (R), noir (N), jaune (J) et vert (V). Avec le code de la notice ci-dessus, ce sont deux exemples. Les couleurs changent d’un moteur à l’autre : lisez la notice du moteur. Le tableau donne la résistance mesurée entre deux fils, en ohms. <strong>Exemple résolu</strong> : dans cet exemple, la plus faible valeur, 90 Ω entre N et V, est l’enroulement principal. N est le commun des enroulements. L’auxiliaire est entre N et J : 180 Ω. Les deux impédances sont entre N et B, 110 Ω, puis entre B et R, 110 Ω. Les autres mesures sont des sommes de branches qui partent de N : J-B vaut 180 + 110 = 290 Ω."]
   ],
@@ -127,7 +145,7 @@ ModeleAppareil.construire({
     { id: 'autotransfo', libelle: 'Un autotransformateur', aide: 'il offre le choix de plusieurs vitesses' },
     { id: 'multibobinage', libelle: 'Plusieurs bobinages dans le moteur', aide: 'le moteur lui-même porte plusieurs bobinages' }
   ],
-  consigneAptitudes: 'Exemple résolu. Le cours montre un commutateur PV et GV : en petite vitesse, le courant traverse une bobine en série avec le moteur. Ce ventilateur a ses vitesses par une impédance en série. À vous maintenant. La notice d’un ventilo-convecteur de taille 1 dit : « six vitesses réalisées à partir d’un autotransformateur ». Relisez ces mots, puis cherchez la carte « Les variantes » au temps 2. Cochez ce qui donne les vitesses de cet appareil, puis validez.',
+  consigneAptitudes: 'Exemple résolu. Le cours montre un commutateur PV et GV : en petite vitesse, le courant traverse une bobine en série avec le moteur. Ce ventilateur a ses vitesses par une impédance en série. À vous maintenant. La notice d’un ventilo-convecteur de taille 1 dit : « six vitesses réalisées à partir d’un autotransformateur ». Relisez ces mots, puis comparez-les aux trois cases ci-dessous : chaque case dit en quelques mots une façon d’obtenir des vitesses. Cochez ce qui donne les vitesses de cet appareil, puis validez.',
   aptitudes: {
     impedance: false, autotransfo: true, multibobinage: false,
     bonneReponse: 'Juste. La notice de la taille 1 dit : six vitesses réalisées à partir d’un autotransformateur. On en choisit trois parmi les six. La taille 2 a quatre vitesses, avec un moteur multibobinage.',
@@ -139,7 +157,7 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "Le fil <strong>rouge</strong> donne la petite vitesse, le fil gris la moyenne vitesse, le fil noir la grande vitesse. Le fil vert et jaune va à la borne de terre. Le dessin est au temps 2.",
+    "Le fil <strong>rouge</strong> donne la petite vitesse, le fil gris la moyenne vitesse, le fil noir la grande vitesse. Le fil vert et jaune va à la borne de terre. Le dessin de la notice est juste dessous." + codeDesFils97(),
     "Les raccordements du moto-ventilateur se font par un connecteur rapide, qui évite les erreurs de câblage.",
     "Avant de démonter, repérez et notez les vitesses câblées.",
     "Sur un montage à impédance, la plus grande vitesse s’obtient en alimentant le moteur directement sur la tension du réseau. La plus faible s’obtient en intercalant la plus grande impédance.",
@@ -156,7 +174,8 @@ ModeleAppareil.construire({
       legende: "Condensateur (sur le schéma, Cp 3 µF)" }
   ],
   lecturePlan: [
-    "Ouvrez le temps 1 et cliquez sur le schéma du moteur pour l’agrandir. Lisez de haut en bas. L’alimentation <strong>Alim.</strong> arrive au commun du commutateur, repéré <strong>Com.</strong>",
+    schemaLecture97(),
+    "Regardez le schéma ci-dessus et cliquez dessus pour l’agrandir. Lisez de haut en bas. L’alimentation <strong>Alim.</strong> arrive au commun du commutateur, repéré <strong>Com.</strong>",
     "Le commutateur a trois sorties : <strong>PV</strong> à gauche, <strong>MV</strong> au milieu, <strong>GV</strong> à droite. Le trait oblique est posé sur PV : le schéma est dessiné en petite vitesse.",
     "Chaque sortie va à un fil du moteur : PV au fil R, MV au fil B, GV au fil N. Les fils se repèrent par leur couleur : B bleu, R rouge, N noir, J jaune, V vert.",
     "Le cadre en pointillés entoure le moteur. Entre R et B, une impédance de 110 Ω. Entre B et N, une autre de 110 Ω. Ce sont les <strong>impédances chutrices</strong> : elles font chuter la tension.",
@@ -168,7 +187,7 @@ ModeleAppareil.construire({
   tableauTitre: 'Trois façons d’avoir plusieurs vitesses',
 
   quiz: [
-    { question: "Regardez l’image du code des fils au temps 2. Sur la notice d’un moto-ventilateur, quel fil donne la grande vitesse ?",
+    { question: "Regardez l’image « Le code des fils », sous le tableau. Sur la notice d’un moto-ventilateur, quel fil donne la grande vitesse ?",
       confirmation: "Le fil noir donne la grande vitesse. Le rouge donne la petite vitesse et le gris la moyenne vitesse. Le fil vert et jaune va à la borne de terre.",
       reponses: [
         { texte: "Le fil rouge.", pourquoi: "Le fil rouge donne la petite vitesse. La notice écrit : fil rouge, petite vitesse." },
@@ -176,7 +195,7 @@ ModeleAppareil.construire({
         { texte: "Le fil noir.", juste: true },
         { texte: "Le fil vert et jaune.", pourquoi: "Le fil vert et jaune se raccorde à la borne de terre. Il ne donne aucune vitesse." } ] },
 
-    { question: "Regardez le schéma du temps 1. Imaginez le commutateur sur GV et suivez le fil qui part de GV. Que se passe-t-il pour les impédances ?",
+    { question: "Regardez l’image « Le schéma du moteur », sous le tableau. Imaginez le commutateur sur GV et suivez le fil qui part de GV. Que se passe-t-il pour les impédances ?",
       confirmation: "Le fil de GV arrive en N : le courant ne traverse aucune impédance, et le moteur reçoit la tension du réseau.",
       reponses: [
         { texte: "Le courant ne traverse aucune impédance : le moteur reçoit la tension du réseau.", juste: true },
@@ -184,7 +203,7 @@ ModeleAppareil.construire({
         { texte: "Elles remplacent le condensateur.", pourquoi: "Sur le schéma, le condensateur Cp reste entre J et V. Une impédance est une bobine en série avec le moteur." },
         { texte: "Elles coupent l’auxiliaire.", pourquoi: "L’auxiliaire reste relié entre N et J. Sur GV, rien n’est coupé : le courant ne traverse aucune impédance." } ] },
 
-    { question: "Lisez le paragraphe « Le commutateur PV, MV, GV » de la carte « Ce qu’il y a dedans », au temps 2. Pour la plus petite vitesse, que met-on en série avec le moteur ?",
+    { question: "Lisez la première ligne du tableau « Trois façons d’avoir plusieurs vitesses ». Pour la plus petite vitesse, que met-on en série avec le moteur ?",
       confirmation: "La plus grande impédance : c’est la règle du cours pour la plus petite vitesse.",
       reponses: [
         { texte: "Rien.", pourquoi: "Sans impédance en série, le moteur reçoit la tension du réseau : c’est la grande vitesse." },
@@ -192,7 +211,7 @@ ModeleAppareil.construire({
         { texte: "La plus petite impédance.", pourquoi: "Pour la plus petite vitesse, le cours intercale la plus grande impédance." },
         { texte: "Un second condensateur.", pourquoi: "Le moteur garde son seul condensateur, Cp. Les vitesses viennent de l’impédance en série." } ] },
 
-    { question: "Lisez « Le réglage » au temps 2. Avant de démonter un moto-ventilateur à plusieurs vitesses, que faites-vous ?",
+    { question: "Avant de démonter un moto-ventilateur à plusieurs vitesses, que faites-vous ? Cherchez la réponse dans la carte « Ce qu’il faut retenir ».",
       confirmation: "Je repère et je note les vitesses câblées. Le constructeur n’en câble que trois, et la notice demande ce repérage avant de démonter.",
       reponses: [
         { texte: "Je démonte d’abord, je note ensuite.", pourquoi: "La notice demande de repérer et de noter les vitesses câblées avant de démonter. Le constructeur n’en câble que trois." },
@@ -207,7 +226,7 @@ ModeleAppareil.construire({
         { texte: "L’auxiliaire.", juste: true },
         { texte: "Une impédance.", pourquoi: "Les impédances mesurent 110 Ω chacune : entre N et B, puis entre B et R." } ] },
 
-    { question: "En Bac pro. Seul. Vérifiez une mesure du tableau : entre N et R, on lit 220 Ω. Regardez le schéma du temps 1. De quoi cette mesure est-elle faite ?",
+    { question: "En Bac pro. Seul. Vérifiez une mesure du tableau : entre N et R, on lit 220 Ω. Regardez l’image « Le schéma du moteur », sous le tableau. De quoi cette mesure est-elle faite ?",
       confirmation: "Des deux impédances en série : 110 + 110 = 220 Ω. Sur le schéma, N, B et R sont reliés par ces deux impédances.",
       reponses: [
         { texte: "L’auxiliaire seul.", pourquoi: "L’auxiliaire seul mesure 180 Ω, entre N et J." },

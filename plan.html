@@ -785,8 +785,8 @@
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
 <script src="plan-descriptions.gen.js?v=20261028-bouteilles"></script>
-<script src="moteur/lexique-recherche.js?v=9fa39208b5"></script>
-<script src="moteur/recherche.js?v=9fa39208b5"></script>
+<script src="moteur/lexique-recherche.js?v=b9076f4b9a"></script>
+<script src="moteur/recherche.js?v=b9076f4b9a"></script>
 <script src="moteur/plan-donnees.js?v=20261028-bouteilles"></script>
 <script>
 /* =====================================================================
@@ -1443,7 +1443,7 @@
     if (etatIndex !== "absent") return;
     etatIndex = "en-cours";
     var s = document.createElement("script");
-    s.src = "recherche-index.gen.js?v=9fa39208b5";
+    s.src = "recherche-index.gen.js?v=b9076f4b9a";
     s.onload = function () {
       (window.RECHERCHE_INDEX || []).forEach(function (st) {
         var deja = parAdresse[cleAdresse(st.u)];
@@ -1593,11 +1593,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=9fa39208b5"></script>
-<script src="chiffres.gen.js?v=9fa39208b5"></script>
+<script src="moteur/lisibilite.js?v=b9076f4b9a"></script>
+<script src="chiffres.gen.js?v=b9076f4b9a"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=9fa39208b5" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=b9076f4b9a" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)

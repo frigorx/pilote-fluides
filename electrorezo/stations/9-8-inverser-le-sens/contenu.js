@@ -42,6 +42,15 @@ function unSchema98(src, alt, legende) {
   return f;
 }
 
+/* Temps 5 : les deux schémas de la question 1, avec des légendes neutres (la légende « après » dirait la réponse). */
+function schemasQuestion98() {
+  const d = document.createElement('div');
+  d.style.cssText = 'display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start';
+  d.appendChild(unSchema98('assets/sens-avant.svg', ALT_AVANT_98, "Le premier schéma."));
+  d.appendChild(unSchema98('assets/sens-apres.svg', ALT_APRES_98, "Le second schéma."));
+  return d;
+}
+
 const ALT_AVANT_98 = "Schéma d’un moteur monophasé à quatre fils sortis. Les deux fils du haut sont ceux du principal : l’un va à l’alimentation, à gauche, l’autre au point commun C. Les deux fils de droite sont ceux de l’auxiliaire : le fil du haut va au point commun C, le fil du bas va à l’alimentation, à droite.";
 const ALT_APRES_98 = "Le même schéma, avec les deux fils de l’auxiliaire croisés : le fil du haut va maintenant à l’alimentation, à droite, et le fil du bas va au point commun C. Les fils du principal n’ont pas bougé. Le repère « fils croisés » est écrit près du croisement.";
 const ALT_BORNIER_98 = "Le bornier d’un compresseur hermétique monophasé, vu de face : trois vis repérées 1, 2 et 3, et à côté le Klixon, relié à la borne 1 par un trait.";
@@ -51,7 +60,6 @@ ModelePratique.construire({
   kicker: 'ÉlectroRézo · Ligne 9 Le moteur monophasé · Station 8',
   titre: "Inverser le sens d’un moteur monophasé",
   narration: NARRATION,
-  sansMp3: true,
 
   prerequis: [
     { id: '2.6', quoi: "inverser le sens d’un moteur triphasé" },
@@ -89,7 +97,7 @@ ModelePratique.construire({
     etapes: [
       { nom: 'Consigner et vérifier', quand: 'Avant de toucher à un fil.',
         outil: 'le sectionneur ouvert, un blocage mécanique et une pancarte, un vérificateur d’absence de tension',
-        geste: 'Consignez le circuit (station 6.7), dans l’ordre : ' + ModelePratique.consignationEnUneLigne() + ' (la dernière opération seulement si elle est prescrite ; carte « Avant de toucher », au temps 3). Si le moteur a un condensateur, déchargez-le avec une résistance (station 9.5).',
+        geste: 'Consignez le circuit (station 6.7), dans l’ordre : ' + ModelePratique.consignationEnUneLigne() + ' (la dernière opération seulement si elle est prescrite : elle n’est pas toujours requise en basse tension). Si le moteur a un condensateur, déchargez-le avec une résistance (station 9.5).',
         verifie: 'que vous pouvez toucher aux fils sans risque.',
         neVerifiePas: 'quel fil appartient à quel enroulement : c’est le travail des étapes suivantes.',
         attention: 'un condensateur reste chargé après la coupure. On le décharge avec une résistance, jamais avec un tournevis.' },
@@ -151,8 +159,8 @@ ModelePratique.construire({
       { mode: 'guide',
         enonce: "Sur le même moteur, on croise les deux fils du principal au lieu de ceux de l’auxiliaire. Le sens change-t-il ?",
         figure: () => unSchema98('assets/sens-avant.svg', ALT_AVANT_98, "Les deux fils du principal sont en haut du moteur."),
-        ou: "sur le schéma : les deux fils du principal, en haut du moteur. Relisez aussi l’étape 5 du temps 2.",
-        comment: "on croise toujours les deux fils d’un seul enroulement. Cherchez à l’étape 5 quels enroulements on peut croiser.",
+        ou: "sur le schéma : les deux fils du principal, en haut du moteur. Relisez aussi la ligne 5 de la carte « La méthode, dans l’ordre ».",
+        comment: "on croise toujours les deux fils d’un seul enroulement. Cherchez, à la ligne 5 de la même carte, quels enroulements on peut croiser.",
         choix: [
           { texte: "Non : seul l’auxiliaire compte.", pourquoi: "Le cours donne deux possibilités : croiser les deux fils de l’auxiliaire, ou ceux du principal." },
           { texte: "Le moteur grille.", pourquoi: "Le moteur grille, en général peu après la mise sous tension, quand on échange un fil du principal avec un fil de l’auxiliaire. Ici, les deux fils croisés sont ceux du même enroulement." },
@@ -174,8 +182,8 @@ ModelePratique.construire({
 
       { mode: 'guide',
         enonce: "Sur un bornier à quatre bornes, un élève échange un fil du principal avec un fil de l’auxiliaire. Que risque-t-il ?",
-        ou: "dans l’énoncé : un fil du principal et un fil de l’auxiliaire, donc deux enroulements différents. Relisez l’étape 6 du temps 2.",
-        comment: "demandez-vous si les deux fils croisés sont ceux d’un même enroulement. Ici, ils viennent de deux enroulements. L’étape 6 dit ce que devient le moteur.",
+        ou: "dans l’énoncé : un fil du principal et un fil de l’auxiliaire, donc deux enroulements différents. Relisez la ligne 6 de la carte « La méthode, dans l’ordre ».",
+        comment: "demandez-vous si les deux fils croisés sont ceux d’un même enroulement. Ici, ils viennent de deux enroulements. La ligne 6 dit ce que devient le moteur.",
         choix: [
           { texte: "Rien : le moteur tourne dans l’autre sens.", pourquoi: "Le moteur tourne dans l’autre sens quand on croise les deux fils d’un même enroulement. Ici, les fils viennent de deux enroulements." },
           { texte: "Le moteur grille, en général peu après la mise sous tension.", juste: true },
@@ -186,7 +194,7 @@ ModelePratique.construire({
       { mode: 'seul',
         enonce: "Un compresseur hermétique monophasé tourne. Vous voulez inverser son sens. Que faites-vous ?",
         figure: () => unSchema98('assets/biblio/bornier-compresseur-3-bornes-klixon.png', ALT_BORNIER_98, "Le bornier d’un compresseur hermétique monophasé."),
-        methodeVue: "Revoyez le temps 2, à la ligne du compresseur hermétique, et le bornier du temps 4.",
+        methodeVue: "Le bornier est dessiné ci-dessus : comptez ses vis. La ligne 3 de la carte « La méthode, dans l’ordre » dit combien de bornes a un moteur prévu pour deux sens.",
         choix: [
           { texte: "On ne croise rien : il a trois bornes, C, S et R, et échanger un fil du principal avec un fil de l’auxiliaire le fait griller, en général peu après la mise sous tension.", juste: true },
           { texte: "Je croise les fils de S et de R.", pourquoi: "S est l’auxiliaire et R le principal. Croiser S et R échange un fil du principal avec un fil de l’auxiliaire, et le moteur grille, en général peu après la mise sous tension." },
@@ -196,7 +204,7 @@ ModelePratique.construire({
 
       { mode: 'seul',
         enonce: "Le petit ventilateur à spire de Frager tourne à l’envers de ce que demande votre montage. Que faites-vous ?",
-        methodeVue: "Revoyez le temps 2, à la ligne de la spire de Frager. La station 9.6 présente ce moteur.",
+        methodeVue: "Un moteur à spire de Frager n’a pas d’enroulement auxiliaire : la spire tient sa place, et elle n’est reliée à aucun fil. La station 9.6 présente ce moteur.",
         choix: [
           { texte: "Je croise les fils de l’auxiliaire.", pourquoi: "Un moteur à spire de Frager n’a pas d’enroulement auxiliaire : la spire tient sa place, et elle n’est reliée à aucun fil." },
           { texte: "Je permute la phase et le neutre.", pourquoi: "Permuter la phase et le neutre ne change pas le sens d’un moteur monophasé." },
@@ -206,7 +214,7 @@ ModelePratique.construire({
 
       { mode: 'seul',
         enonce: "Un moteur triphasé tourne à l’envers. Que faites-vous ?",
-        methodeVue: "Revoyez le temps 2, à la ligne du moteur triphasé, et la station 2.6.",
+        methodeVue: "Un moteur triphasé n’a pas d’enroulement auxiliaire. Pensez à la station 2.6.",
         choix: [
           { texte: "Je croise les fils de l’auxiliaire.", pourquoi: "Un moteur triphasé n’a pas d’enroulement auxiliaire." },
           { texte: "Je permute deux phases (station 2.6).", juste: true },
@@ -262,12 +270,17 @@ ModelePratique.construire({
       const t = document.createElement('table');
       t.innerHTML = '<thead><tr><th>Le cas</th><th>Le geste</th><th>Ce qui se passe</th></tr></thead><tbody>'
         + lignes.map(l => '<tr><td><strong>' + l[0] + '</strong></td><td>' + l[1] + '</td><td>' + l[2] + '</td></tr>').join('') + '</tbody>';
-      const d = document.createElement('div'); d.className = 'recap'; d.appendChild(t); return d;
+      const d = document.createElement('div'); d.className = 'recap'; d.appendChild(t);
+      const q1 = document.createElement('p'); q1.className = 'legende'; q1.textContent = 'Pour la première question : les deux schémas.';
+      const q3 = document.createElement('p'); q3.className = 'legende'; q3.textContent = 'Pour la troisième question : le bornier d’un compresseur hermétique.';
+      d.append(q1, schemasQuestion98(), q3,
+        unSchema98('assets/biblio/bornier-compresseur-3-bornes-klixon.png', ALT_BORNIER_98, "Trois vis, 1, 2 et 3, et le Klixon."));
+      return d;
     }
   },
 
   quiz: [
-    { question: "Regardez les deux schémas du temps 1. Quels fils a-t-on croisés pour passer du premier au second ?",
+    { question: "Regardez les deux schémas, sous le tableau. Quels fils a-t-on croisés pour passer du premier au second ?",
       confirmation: "On a croisé les deux fils de l’auxiliaire, à droite du moteur. Le moteur tourne dans l’autre sens.",
       reponses: [
         { texte: "Les deux fils du principal.", pourquoi: "Les fils du principal, en haut du moteur, sont à la même place sur les deux schémas." },
@@ -275,7 +288,7 @@ ModelePratique.construire({
         { texte: "Un fil du principal et un fil de l’auxiliaire.", pourquoi: "Ce serait un échange entre le principal et l’auxiliaire, et le moteur grillerait, en général peu après la mise sous tension. Ici, seuls les fils de l’auxiliaire changent." },
         { texte: "La phase et le neutre.", pourquoi: "Les deux repères Alim. n’ont pas changé. Seuls les fils de l’auxiliaire sont croisés." } ] },
 
-    { question: "Relisez, au temps 2, la carte « Selon le moteur ». Combien de bornes a, au moins, un moteur monophasé prévu pour deux sens ?",
+    { question: "Lisez la première ligne du tableau « Le cas, le geste, ce qui se passe ». Combien de bornes a, au moins, un moteur monophasé prévu pour deux sens ?",
       confirmation: "Au moins quatre. Certains moteurs bi-tension en ont six.",
       reponses: [
         { texte: "Deux.", pourquoi: "Un moteur prévu pour deux sens a au moins quatre bornes." },
@@ -283,7 +296,7 @@ ModelePratique.construire({
         { texte: "Au moins quatre.", juste: true },
         { texte: "Six, toujours.", pourquoi: "Six bornes existent pour un moteur bi-tension, mais pas toujours : un moteur prévu pour deux sens a au moins quatre bornes." } ] },
 
-    { question: "Regardez le bornier du temps 4 : un compresseur hermétique a trois bornes. Un collègue veut croiser deux fils pour changer son sens. Que lui dites-vous ?",
+    { question: "Regardez le bornier, sous le tableau : un compresseur hermétique a trois bornes. Un collègue veut croiser deux fils pour changer son sens. Que lui dites-vous ?",
       confirmation: "On ne croise rien : échanger un fil du principal avec un fil de l’auxiliaire fait griller le moteur, en général peu après la mise sous tension.",
       reponses: [
         { texte: "On ne croise rien : échanger un fil du principal avec un fil de l’auxiliaire fait griller le moteur, en général peu après la mise sous tension.", juste: true },
@@ -291,7 +304,7 @@ ModelePratique.construire({
         { texte: "Croisez C et R.", pourquoi: "C est la borne commune aux deux enroulements. Sur trois bornes, croiser deux fils échange un fil du principal avec un fil de l’auxiliaire." },
         { texte: "Permutez la phase et le neutre.", pourquoi: "Permuter la phase et le neutre ne change pas le sens d’un moteur monophasé." } ] },
 
-    { question: "Relisez l’étape 1 du temps 2. Avant de toucher aux fils d’un moteur qui a un condensateur, que faites-vous ?",
+    { question: "Avant de toucher aux fils d’un moteur qui a un condensateur, que faites-vous ? Cherchez la réponse dans la carte « Ce qu’il faut retenir ».",
       confirmation: "On consigne, on vérifie l’absence de tension, puis on décharge le condensateur avec une résistance.",
       reponses: [
         { texte: "Je décharge le condensateur avec un tournevis.", pourquoi: "On décharge avec une résistance, jamais avec un tournevis (station 9.5)." },

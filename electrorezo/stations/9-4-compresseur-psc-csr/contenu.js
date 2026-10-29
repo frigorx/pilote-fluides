@@ -32,6 +32,33 @@ function enchainement94() {
   return bande;
 }
 
+/* Un schéma de MONTAGES_9_4 posé là où la consigne ou la question le fait lire (temps 3, 4 et 5), avec une
+   légende qui ne répond pas. Il porte la loupe de la bande : un clic l'ouvre en grand. */
+function vignette94(i, legende, complement) {
+  const f = document.createElement('figure');
+  f.className = 'vignette';
+  const im = document.createElement('img');
+  im.src = MONTAGES_9_4[i].src; im.alt = MONTAGES_9_4[i].alt; im.loading = 'lazy';
+  f.appendChild(im);
+  const c = document.createElement('figcaption');
+  const s = document.createElement('strong');
+  s.textContent = legende;
+  c.appendChild(s);
+  if (complement) c.appendChild(document.createTextNode(' ' + complement));
+  f.appendChild(c);
+  return f;
+}
+function bandeSchemas94(liste) {
+  const bande = document.createElement('div');
+  bande.className = 'bande-visuelle';
+  liste.forEach(([i, legende, complement]) => bande.appendChild(vignette94(i, legende, complement)));
+  return bande;
+}
+/* La même vignette en HTML, pour le texte de « Le lire sur un plan ». L'étiquette est écrite IMG en capitales
+   à dessein : le modèle ajoute « retour du neutre en orange » dès qu'il voit <img, et ces schémas sont en noir. */
+const schemaPlan94 = (i, legende) => '<figure class="vignette" style="max-width:340px;margin:.2rem auto"><IMG src="' +
+  MONTAGES_9_4[i].src + '" alt="' + MONTAGES_9_4[i].alt + '"><figcaption><strong>' + legende + '</strong></figcaption></figure>';
+
 /* Le récapitulatif du temps 5. */
 const LIGNES_9_4 = [
   ['PSC', 'un seul, permanent (de marche)', 'aucun relais : le condensateur permanent donne le coup de pouce du démarrage', 'un coup de pouce, pour un couple résistant peu important', 'meilleur : l’auxiliaire reste alimenté au travers du condensateur', 'capillaire : les pressions s’égalisent à l’arrêt'],
@@ -41,6 +68,9 @@ const LIGNES_9_4 = [
 function tableau94() {
   const boite = document.createElement('div');
   boite.style.overflowX = 'auto';
+  /* sur téléphone, le tableau défile seul : sans ces deux lignes, il élargit toute la colonne, et le rappel,
+     les schémas et les questions sortent de l'écran à droite */
+  boite.style.width = '0'; boite.style.minWidth = '100%';
   const t = document.createElement('table');
   t.className = 'tab';
   t.innerHTML = '<thead><tr><th>Montage</th><th>Condensateurs</th><th>Organe de démarrage</th>' +
@@ -53,6 +83,13 @@ function tableau94() {
   l.className = 'legende';
   l.textContent = 'Au démarrage du CSR, les deux condensateurs sont en parallèle : leurs capacités s’additionnent. Le condensateur de démarrage est ensuite éliminé, et l’auxiliaire reste alimenté au travers du condensateur permanent.';
   boite.appendChild(l);
+  /* la question sur le relais trop petit ou trop gros s'appuie sur ce rappel, repris de l'encadré du temps 3 */
+  const r = document.createElement('p');
+  r.className = 'legende';
+  r.textContent = 'Relais de tension trop petit : il colle à une tension trop basse, dès la mise sous tension. Relais de tension trop gros : il colle à une tension que l’auxiliaire n’atteint jamais, son contact reste fermé.';
+  boite.appendChild(r);
+  /* les questions lisent le schéma du PSC et celui du CSR : ils sont posés ici, sous le tableau */
+  boite.appendChild(bandeSchemas94([[0, 'Schéma du PSC.'], [1, 'Schéma du CSR.']]));
   return boite;
 }
 
@@ -99,27 +136,31 @@ ModeleAppareil.construire({
   ],
   reglage: "Rien ne se règle. Un relais de tension se remplace par un relais de <strong>même référence</strong>. Quand on change un compresseur, on change aussi ses pièces de démarrage : relais et condensateurs.",
 
-  picto: () => null,
+  /* temps 3 : les deux schémas de la consigne, sous elle (D.picto) : plus de renvoi au temps 1 */
+  picto: () => ({
+    element: bandeSchemas94([[0, 'PSC.', 'Exemple résolu.'], [1, 'CSR.', 'À vous maintenant.']]),
+    marquer: () => {}
+  }),
   colonnes: [
     { id: 'permanent', libelle: 'Un condensateur permanent', aide: 'il reste en série avec l’auxiliaire' },
     { id: 'demarrage', libelle: 'Un condensateur de démarrage', aide: 'il est retiré en fin de démarrage' },
     { id: 'relais', libelle: 'Un relais de tension', aide: 'une bobine sur l’auxiliaire, un contact fermé au repos' }
   ],
-  consigneAptitudes: 'Exemple résolu. Sur le PSC, on lit au temps 1 un seul condensateur, Cp, sur l’auxiliaire : il porte un condensateur permanent. Il n’a ni condensateur de démarrage ni relais. À vous maintenant. Un compresseur est un CSR. Ouvrez le temps 1 et regardez le schéma du CSR, le second. Cherchez les condensateurs Cp et Cd, puis la bobine KA et son contact. Cochez ce que ce compresseur porte, puis validez.',
+  consigneAptitudes: 'Exemple résolu. Sur le premier schéma, « PSC », on lit un seul condensateur, Cp, sur l’auxiliaire : il porte un condensateur permanent. Il n’a ni condensateur de démarrage ni relais. À vous maintenant. Un compresseur est un CSR. Regardez le second schéma, « CSR ». Cherchez les condensateurs Cp et Cd, puis la bobine KA et son contact. Cochez ce que ce compresseur porte, puis validez.',
   aptitudes: {
     permanent: true, demarrage: true, relais: true,
     bonneReponse: 'Juste. Le CSR porte un condensateur permanent Cp, un condensateur de démarrage Cd et un relais de tension. Le relais retire Cd quand le moteur a pris de la vitesse. Cp reste en service.',
     erreurs: {
-      permanent: 'Sur le schéma du CSR, Cp est entre la borne S et le retour. Il reste en service tant que le moteur tourne.',
-      demarrage: 'Sur le schéma du CSR, Cd est sur la branche du contact KA, après le contact. Le relais de tension le retire en fin de démarrage.',
-      relais: 'Sur le schéma du CSR, la bobine KA est hors du cadre, à droite, et le contact KA est sur la branche de Cd. Les deux forment le relais de tension.'
+      permanent: 'Sur le schéma « CSR », juste au-dessus des cases, Cp est entre la borne S et le retour. Il reste en service tant que le moteur tourne.',
+      demarrage: 'Sur le schéma « CSR », juste au-dessus des cases, Cd est sur la branche du contact KA, après le contact. Le relais de tension le retire en fin de démarrage.',
+      relais: 'Sur le schéma « CSR », juste au-dessus des cases, la bobine KA est hors du cadre, à droite, et le contact KA est sur la branche de Cd. Les deux forment le relais de tension.'
     }
   },
 
   cablage: [
-    "Le condensateur permanent <strong>Cp</strong> est branché entre la borne S et le retour. Il y reste en permanence.",
-    "Sur la branche du condensateur de démarrage, le <strong>contact du relais</strong>, fermé au repos, vient en premier. Le condensateur de démarrage Cd vient après lui.",
-    "La bobine du relais est branchée <strong>entre S et C</strong>, sur l’auxiliaire.",
+    "Un condensateur permanent <strong>Cp</strong> se branche entre la borne S et le retour. Il y reste en permanence.",
+    "Avec un relais de tension, le <strong>contact du relais</strong>, fermé au repos, vient en premier sur la branche du condensateur de démarrage. Le condensateur de démarrage Cd vient après lui.",
+    "La bobine d’un relais de tension se branche <strong>entre S et C</strong>, sur l’auxiliaire.",
     "Cd n’est jamais branché entre la borne 2 du relais et l’auxiliaire. Il se branche entre la borne 1 et le côté principal.",
     "Un condensateur reste <strong>chargé</strong> après la coupure. On décharge Cp et Cd avant d’y toucher, avec une résistance. Certains ont une résistance de décharge, d’environ 15 kΩ, entre leurs bornes. La décharge n’est pas instantanée, elle peut prendre quelques minutes : on décharge quand même.",
     "Le Klixon est en série sur la borne C, comme sur les schémas. Toute mesure se fait hors tension, après consignation."
@@ -133,40 +174,42 @@ ModeleAppareil.construire({
     { src: 'assets/clixon.svg', alt: "Symbole du protecteur thermique Klixon : un cercle traversé par un trait brisé.", legende: "Klixon" }
   ],
   lecturePlan: [
-    "Ouvrez le temps 1 et agrandissez le schéma du CSR. Lisez de haut en bas : l’alimentation <strong>L</strong>, le Klixon, la borne <strong>C</strong>. Le fil se partage ensuite en deux branches.",
+    schemaPlan94(1, 'Schéma du CSR.'),
+    "Sur le schéma du CSR, juste au-dessus, lisez de haut en bas : l’alimentation <strong>L</strong>, le Klixon, la borne <strong>C</strong>. Le fil se partage ensuite en deux branches. Un clic sur le schéma l’agrandit.",
     "À gauche, le <strong>principal</strong> : la borne R, puis le retour N. À droite, l’<strong>auxiliaire</strong> : la borne S. Sous S, le fil se partage encore en deux branches.",
     "Sur la première branche, le condensateur permanent <strong>Cp</strong>, qui va vers le retour. Sur la seconde, le contact <strong>KA</strong>, puis le condensateur de démarrage <strong>Cd</strong>, qui va vers le retour.",
     "Le contact KA est dessiné <strong>fermé au repos</strong> : le trait oblique touche la barre du haut. Au démarrage, le courant passe donc par lui jusqu’à Cd.",
     "La bobine KA est à droite, <strong>hors du cadre</strong> « le compresseur ». Elle est branchée entre S et C. La bobine et le contact portent le même repère KA : ils forment un seul relais.",
-    "Sur le schéma du PSC, cherchez Cp : un seul condensateur sur l’auxiliaire, sans bobine ni contact."
+    schemaPlan94(0, 'Schéma du PSC.'),
+    "Sur le schéma du PSC, juste au-dessus, cherchez Cp : un seul condensateur sur l’auxiliaire, sans bobine ni contact."
   ],
 
   tableau: () => tableau94(),
   tableauTitre: 'PSC, CSR',
 
   quiz: [
-    { question: "Regardez le schéma du PSC au temps 1. Suivez le fil à partir de la borne S. Que trouve-t-on sur la branche de l’auxiliaire ?",
+    { question: "Sur le schéma du PSC, juste au-dessus des questions, suivez le fil à partir de la borne S. Que trouve-t-on sur la branche de l’auxiliaire ?",
       confirmation: "Un seul condensateur, Cp, entre la borne S et le retour N. Il reste en service. Il n’y a ni bobine ni contact.",
       reponses: [
         { texte: "Un condensateur permanent Cp, et rien d’autre.", juste: true },
         { texte: "Un contact KA, puis un condensateur Cd.", pourquoi: "Ce montage est celui du CSR. Sur le schéma du PSC, la branche de l’auxiliaire ne porte que Cp." },
         { texte: "Une bobine KA.", pourquoi: "Le PSC n’a aucun relais. Il n’y a pas de bobine KA sur son schéma." } ] },
 
-    { question: "Regardez le schéma du CSR au temps 1. En partant de la borne S, dans quel ordre le courant traverse-t-il la branche du condensateur de démarrage ?",
+    { question: "Sur le schéma du CSR, juste au-dessus des questions, en partant de la borne S, dans quel ordre le courant traverse-t-il la branche du condensateur de démarrage ?",
       confirmation: "D’abord le contact KA, puis le condensateur Cd. Quand le contact s’ouvre, Cd est retiré.",
       reponses: [
         { texte: "Le condensateur Cd, puis le contact KA.", pourquoi: "Sur le schéma, le contact KA est le premier, juste sous la borne S. Cd vient après lui." },
         { texte: "Le contact KA, puis le condensateur Cd.", juste: true },
         { texte: "Le condensateur Cp, puis le condensateur Cd.", pourquoi: "Cp est sur une autre branche, directement entre S et le retour." } ] },
 
-    { question: "Le compresseur d’un CSR vient d’être mis sous tension. Lisez le paragraphe « Le relais de tension » de la carte « Ce qu’il y a dedans », au temps 2. Dans quel état est le contact du relais ?",
+    { question: "Le compresseur d’un CSR vient d’être mis sous tension. La carte « Ce qu’il faut retenir » décrit le relais de tension. Dans quel état est le contact du relais ?",
       confirmation: "Fermé. Le courant traverse l’auxiliaire, le contact et le condensateur de démarrage : le moteur démarre.",
       reponses: [
         { texte: "Ouvert, comme le contact du relais d’intensité de la station 9.3.", pourquoi: "Le contact du relais de tension est fermé au repos. S’il était ouvert, le condensateur de démarrage ne serait pas alimenté." },
         { texte: "Fermé.", juste: true },
         { texte: "Il attend que l’intensité monte.", pourquoi: "Le relais de tension réagit à la tension de l’auxiliaire, qui monte avec la vitesse du moteur." } ] },
 
-    { question: "Un compresseur en CSR ne démarre pas, il grogne, puis les sécurités thermiques coupent. Le relais de tension colle dès la mise sous tension. Lisez « Le câblage » au temps 3. Quel est le défaut ?",
+    { question: "Un compresseur en CSR ne démarre pas, il grogne, puis les sécurités thermiques coupent. Le relais de tension colle dès la mise sous tension. Sous le tableau, le rappel dit ce que donne un relais de tension trop petit et un relais trop gros. Quel est le défaut ?",
       confirmation: "Le relais est trop petit : il colle trop tôt et retire le condensateur de démarrage dès le début. Un contact coupé donne les mêmes signes. On remplace par un relais de même référence.",
       reponses: [
         { texte: "Le relais est trop gros.", pourquoi: "Un relais trop gros ne colle jamais : l’auxiliaire reste alimenté en permanence. Ici, il colle dès la mise sous tension." },

@@ -5,7 +5,7 @@ const NARRATION = {
 
   decouvrir: `Cette station prend deux montages du compresseur monophasé : le RSIR et le CSIR.
 Vous avez vu qu'un moteur monophasé ne démarre pas avec son seul enroulement principal. Il lui faut aussi
-l'enroulement auxiliaire, au démarrage. Puis il faut le retirer. C'est le travail du relais d'intensité.
+l'enroulement auxiliaire, au démarrage. Puis il faut le retirer. C'est le travail du relais d'intensité. Le voici, en trois dimensions.
 Regardez les deux schémas. Ils se ressemblent. L'alimentation passe par le Klixon et arrive à la borne C.
 Le fil se partage alors en deux. D'un côté, le principal, avec la borne R. De l'autre, l'auxiliaire, avec
 la borne S.
@@ -15,7 +15,7 @@ Sur le second schéma, le CSIR, on ajoute un condensateur de démarrage sur l'au
 Ce relais équipe les petits compresseurs, jusqu'à environ six cents watts : les réfrigérateurs ménagers
 et les petits congélateurs.`,
 
-  comprendre: `Suivons le démarrage d'un RSIR à relais.
+  comprendre: `Suivons le démarrage d'un RSIR à relais. Regardez le relais en trois dimensions : il avance tout seul, étape par étape.
 À la mise sous tension, le courant traverse le Klixon, le principal et la bobine. Le contact est ouvert au
 repos. L'auxiliaire n'est donc pas alimenté, et le moteur ne peut pas démarrer. Le courant monte, jusqu'à
 environ cinq fois le courant nominal.
@@ -25,7 +25,7 @@ Le relais a un sens de montage. L'inscription Top se met en haut. Monté à l'en
 fermé en permanence, et le moteur risque de griller.
 Sans condensateur, le couple au démarrage est faible. La détente se fait donc par capillaire, pour que la
 haute pression et la basse pression s'égalisent à l'arrêt.
-Il existe une autre manière de retirer l'auxiliaire : la CTP. C'est une résistance dont la valeur monte
+Il existe une autre manière de retirer l'auxiliaire : la CTP. Regardez la vue en trois dimensions de la CTP. C'est une résistance dont la valeur monte
 quand elle chauffe. Froide, sa résistance est très faible. Le courant passe dans l'auxiliaire, et le moteur
 démarre. Ce courant chauffe la CTP. Après une à deux secondes, sa résistance dépasse mille ohms, et le
 courant de l'auxiliaire tombe à quelques milliampères. C'est comme si un relais l'avait retiré. Il faut
@@ -35,25 +35,82 @@ important. On l'emploie quand ce couple risque d'être fort, par exemple avec un
 Ce condensateur ne doit pas rester sous tension : cinq secondes au plus, et vingt démarrages par heure au
 maximum. Sinon il chauffe et risque d'exploser.`,
 
-  manipuler: `Un compresseur est monté en RSIR à CTP.
-Ouvrez le temps deux, et regardez l'image marquée R S I R à C T P. Cherchez trois choses : une bobine,
-une CTP, un condensateur. Cochez ce que ce compresseur porte, puis validez.
-Ensuite, lisez le câblage. Le Klixon est en série sur la borne C. La bobine du relais est en série avec le
+  manipuler: `Regardez la consigne, sous le titre « Que sait faire cet appareil ». Elle commence par un exemple résolu, avec deux schémas juste en dessous.
+Sur le premier schéma, le RSIR à relais, on lit la bobine K A sur le principal et le contact K A sur l'auxiliaire : il porte un relais.
+Il n'a ni CTP ni condensateur.
+À vous maintenant. Un compresseur est monté en RSIR à CTP. Regardez le second schéma. Cherchez-y la bobine, la CTP et le
+condensateur de démarrage.
+Trois cases sont proposées : un relais d'intensité, un condensateur de démarrage, une CTP.
+Cochez ce que ce compresseur porte, puis validez.
+Ensuite, regardez la carte « Le câblage ». Le Klixon est en série sur la borne C. La bobine du relais est en série avec le
 principal. Sur le CSIR, le condensateur vient après le contact.
 Un condensateur reste chargé après la coupure. On le décharge avec une résistance avant d'y toucher. Cette
 décharge n'est pas instantanée : elle peut prendre quelques minutes. On décharge quand même.`,
 
-  representer: `Cinq symboles.
+  representer: `Regardez d'abord les cinq symboles.
 La bobine du relais est un rectangle, avec un fil de chaque côté.
 Le contact est un trait oblique qui ne touche pas le fil du haut : il est ouvert au repos. Un pointillé le
 relie à un petit arc de cercle, qui indique la commande électromagnétique.
 La CTP est un rectangle de résistance marqué de la lettre T.
 Le condensateur est formé de deux traits parallèles.
 Le Klixon est un cercle traversé par un trait brisé.
-Maintenant, lisez le schéma du RSIR de haut en bas. L'alimentation, le Klixon, la borne C. Puis deux
+Maintenant, regardez le schéma du RSIR, dans la carte « Le lire sur un plan ». Il se lit de haut en bas. L'alimentation, le Klixon, la borne C. Puis deux
 branches. À gauche, le principal : la borne R, la bobine, le neutre. À droite, l'auxiliaire : la borne S,
 le contact, le neutre.
-Cherchez le repère K A, écrit deux fois. Il est sur la bobine et sur le contact. Ces deux symboles forment
+Le repère K A est écrit deux fois. Il est sur la bobine et sur le contact. Ces deux symboles forment
 un seul relais.
 Le cadre en pointillés entoure le compresseur. Le relais est dehors.`
+};
+
+/* Le guidage : ce que l'écran montre pendant que la voix parle (moteur : _commun/station.js, « Le guidage »). */
+window.GUIDAGE = {
+  decouvrir: [
+    { quand: "Cette station prend deux montages", montre: "En photo" },
+    { quand: "Vous avez vu qu'un moteur monophasé", montre: "Un moteur monophasé ne démarre pas avec son seul enroulement principal" },
+    { quand: "C'est le travail du relais d'intensité", montre: "3D" },
+    { quand: "Regardez les deux schémas", montre: "En photo" },
+    { quand: "Sur le premier schéma, le RSIR", montre: "Le RSIR. Une bobine sur le principal" },
+    { quand: "Sur le second schéma, le CSIR", montre: "Le CSIR. Le même relais, avec un condensateur" },
+    { quand: "Ce relais équipe les petits compresseurs", montre: "Le relais d'intensité équipe les petits compresseurs" }
+  ],
+  comprendre: [
+    { quand: "Suivons le démarrage d'un RSIR à relais", montre: "3D", clic: "1" },
+    { quand: "À la mise sous tension, le courant traverse", montre: "3D", clic: "2" },
+    { quand: "La bobine attire alors le contact", montre: "3D", clic: "3" },
+    { quand: "Le moteur accélère, et le courant baisse", montre: "3D", clic: "4" },
+    { quand: "Vers quatre-vingts pour cent de la vitesse", montre: "3D", clic: "5" },
+    { quand: "Monté à l'envers, son contact", montre: "3D", clic: "6" },
+    { quand: "Sans condensateur, le couple", montre: "RSIR à relais : le relais d'intensité retire l'auxiliaire" },
+    { quand: "Il existe une autre manière de retirer", montre: "La CTP, dedans et en marche", clic: "1" },
+    { quand: "Le courant passe dans l'auxiliaire", montre: "La CTP, dedans et en marche", clic: "2" },
+    { quand: "Ce courant chauffe la CTP", montre: "La CTP, dedans et en marche", clic: "3" },
+    { quand: "Après une à deux secondes", montre: "La CTP, dedans et en marche", clic: "4" },
+    { quand: "Il faut ensuite au moins cinq minutes", montre: "La CTP, dedans et en marche", clic: "5" },
+    { quand: "Le CSIR ajoute un condensateur", montre: "CSIR : le RSIR avec un condensateur de démarrage" },
+    { quand: "Ce condensateur ne doit pas rester", montre: "Le condensateur de démarrage" }
+  ],
+  manipuler: [
+    { quand: "Regardez la consigne", montre: "Exemple résolu. Sur le premier schéma" },
+    { quand: "Sur le premier schéma, le RSIR à relais", montre: "RSIR à relais. Exemple résolu." },
+    { quand: "À vous maintenant", montre: "RSIR à CTP. À vous maintenant." },
+    { quand: "Trois cases sont proposées", montre: "Que sait faire cet appareil ?" },
+    { quand: "Cochez ce que ce compresseur porte", montre: "Valider" },
+    { quand: "Ensuite, regardez la carte", montre: "Le câblage" },
+    { quand: "Le Klixon est en série sur la borne C", montre: "Le Klixon est en série sur la borne C" },
+    { quand: "La bobine du relais est en série avec le principal", montre: "La bobine du relais est en série avec le principal" },
+    { quand: "Sur le CSIR, le condensateur vient", montre: "Le contact du relais est sur l'auxiliaire" },
+    { quand: "Un condensateur reste chargé après la coupure", montre: "Un condensateur reste chargé après la coupure" }
+  ],
+  representer: [
+    { quand: "Regardez d'abord les cinq symboles", montre: "Le symbole normalisé" },
+    { quand: "La bobine du relais est un rectangle", montre: "Bobine du relais" },
+    { quand: "Le contact est un trait oblique", montre: "Contact ouvert au repos" },
+    { quand: "La CTP est un rectangle", montre: "CTP" },
+    { quand: "Le condensateur est formé", montre: "Condensateur" },
+    { quand: "Le Klixon est un cercle", montre: "Klixon" },
+    { quand: "Maintenant, regardez le schéma du RSIR", montre: "Schéma du RSIR." },
+    { quand: "Puis deux branches", montre: "À gauche, le principal : la borne R" },
+    { quand: "Le repère K A est écrit deux fois", montre: "La bobine et le contact portent le même repère" },
+    { quand: "Le cadre en pointillés entoure", montre: "Le cadre en pointillés entoure le compresseur" }
+  ]
 };

@@ -16,25 +16,43 @@ const SCHEMAS_9_9 = [
     titre: "Version EC, page 10 de la notice.", sous: "Le régulateur envoie L, N, le signal 0..10 V et GND. Le moteur MV porte un bloc INV. Il n’y a plus de fil de vitesse." }
 ];
 
+function vignette99(m, sous) {
+  const f = document.createElement('figure');
+  f.className = 'vignette';
+  f.style.flex = '1 1 100%';
+  const im = document.createElement('img');
+  im.src = m.src; im.alt = m.alt; im.loading = 'lazy';
+  f.appendChild(im);
+  const c = document.createElement('figcaption');
+  const s = document.createElement('strong');
+  s.textContent = m.titre;
+  c.appendChild(s);
+  c.appendChild(document.createTextNode(' ' + sous));
+  f.appendChild(c);
+  return f;
+}
+
 function enchainement99() {
   const bande = document.createElement('div');
   bande.className = 'bande-visuelle';
-  SCHEMAS_9_9.forEach(m => {
-    const f = document.createElement('figure');
-    f.className = 'vignette';
-    f.style.flex = '1 1 100%';
-    const im = document.createElement('img');
-    im.src = m.src; im.alt = m.alt; im.loading = 'lazy';
-    f.appendChild(im);
-    const c = document.createElement('figcaption');
-    const s = document.createElement('strong');
-    s.textContent = m.titre;
-    c.appendChild(s);
-    c.appendChild(document.createTextNode(' ' + m.sous));
-    f.appendChild(c);
-    bande.appendChild(f);
-  });
+  SCHEMAS_9_9.forEach(m => bande.appendChild(vignette99(m, m.sous)));
   return bande;
+}
+
+/* Temps 3 : le schéma de la version EC, entre la consigne et les cases. */
+function aideAptitudes99() {
+  return { element: vignette99(SCHEMAS_9_9[1], "Cherchez-y ce que disent les trois cases."), marquer: () => {} };
+}
+
+/* Le schéma du câblage EC (assets/cablage-ec.svg) : en tête de la carte de lecture (temps 4) et sous le tableau (temps 5). */
+const SCHEMA_CABLAGE_9_9 = { src: 'assets/cablage-ec.svg', alt: ALT_EC_9_9, titre: "Le câblage EC." };
+
+/* Temps 4. Le modèle ajoute la « convention du schéma de commande » dès qu'il voit <img dans lecturePlan ;
+   elle ne vaut pas ici, la balise est donc écrite en majuscules. */
+function schemaLecture99() {
+  const f = vignette99(SCHEMA_CABLAGE_9_9, "Le régulateur en haut, le bornier X1 au milieu, le moto-ventilateur en bas.");
+  f.style.maxWidth = '440px';
+  return f.outerHTML.replace('<img', '<IMG');
 }
 
 /* Le récapitulatif du temps 5 : les deux versions de la même notice. */
@@ -58,6 +76,9 @@ function tableau99() {
   l.className = 'legende';
   l.textContent = 'Les deux lignes viennent de la même notice. Sur la version EC, la vitesse suit le signal : il n’y a ni commutateur de vitesse ni autotransformateur.';
   boite.appendChild(l);
+  const f = vignette99(SCHEMA_CABLAGE_9_9, "Pour la première question : le cadre du milieu est le bornier X1.");
+  f.style.maxWidth = '440px';
+  boite.appendChild(f);
   return boite;
 }
 
@@ -88,7 +109,7 @@ ModeleAppareil.construire({
     ["Le nom EC", "EC veut dire <strong>commutation électronique</strong>. La notice d’un ventilo-convecteur parle d’un moteur EC à commande 0..10 V proportionnelle. Ce moteur porte une protection thermique incorporée."],
     ["L’alimentation", "Le moteur EC de la notice s’alimente en <strong>230 V monophasé</strong>, avec une tolérance de plus ou moins 5 %. Le courant arrive par L, la phase, et N, le neutre, avec la terre PE. La notice demande une protection par un disjoncteur adapté."],
     ["Le signal de commande", "La vitesse suit un <strong>signal 0..10 V</strong>. C’est une tension continue, comprise entre 0 et 10 volts. La commande est proportionnelle : la vitesse suit le signal. Le régulateur donne ce signal. Il n’est pas dans l’appareil : l’installateur le pose. Un variateur de fréquence reçoit lui aussi, en général, sa consigne de vitesse en tension de 0 à 10 V (station 7.4)."],
-    ["Le bornier X1", "Sur le schéma du temps 1, cinq fils arrivent au bornier X1 : PE, L, N, 0..10 V et GND. Le régulateur fournit L, N, 0..10 V et GND. Le fil PE, vert et jaune, ne part pas de lui. Sur la notice, deux autres fils du bornier, COM et On, vont à une vanne. Le schéma du temps 1 ne les dessine pas."],
+    ["Le bornier X1", "Sur le schéma de la version EC, ci-dessus, cinq fils vont du bornier X1 au moteur : PE, L, N, 0..10 V et GND. Le régulateur fournit L, N, 0..10 V et GND. Le fil PE, vert et jaune, ne part pas de lui. Deux autres fils du bornier, COM et On, vont à une vanne."],
     ["L’électronique du moteur", "Sur le schéma, le moto-ventilateur est repéré MV. Un bloc INV est dessiné contre le moteur : c’est l’<strong>électronique du moteur</strong>. La notice le légende « inverter ». Le moteur lui-même est dessiné avec le symbole M 1~ du moteur monophasé. Aucun condensateur n’est dessiné près de lui."],
     ["Le moteur AC de la même notice", "La version AC a un moteur monophasé 230 V avec condensateur. Six vitesses sont disponibles dans le moteur, et trois sont connectées au commutateur. Un autotransformateur offre le choix de trois vitesses sur six. Son schéma porte un condensateur C, le fil commun Com et trois fils de vitesse, Max, Med et Min. La version EC n’a rien de tout cela : la vitesse vient du signal."],
     ["Sur un groupe de condensation", "Sur le schéma d’un groupe de condensation, le condenseur standard a un moteur à deux fils. Le condenseur EC monophasé a un moteur dessiné avec le même symbole M 1~, mais raccordé par quatre fils, repérés PH, N, 10V et 0V. Comme L et N au bornier X1, PH et N sont la phase et le neutre : ils amènent le 230 V."],
@@ -103,13 +124,13 @@ ModeleAppareil.construire({
   ],
   reglage: "La vitesse d’un moteur EC se règle par le <strong>signal 0..10 V</strong> du régulateur. Le moteur n’a pas de commutateur de vitesse. La notice ne dit pas quelle tension du signal donne quelle vitesse.",
 
-  picto: () => null,
+  picto: () => aideAptitudes99(),
   colonnes: [
     { id: 'condensateur', libelle: 'Un condensateur', aide: 'dessiné près du moteur' },
     { id: 'commutateur', libelle: 'Un commutateur de vitesse', aide: 'il choisit une vitesse parmi trois' },
     { id: 'signal', libelle: 'Un signal 0..10 V', aide: 'une tension continue que le régulateur envoie au bornier' }
   ],
-  consigneAptitudes: 'Exemple résolu. Le ventilo-convecteur à moteur AC de la notice, page 6, a un moteur avec condensateur et un commutateur qui choisit trois vitesses par un autotransformateur. Il n’a pas de signal 0..10 V. Sur la version AC, on coche donc le condensateur et le commutateur. À vous maintenant. Ouvrez le temps 2 et regardez le schéma de la version EC du même appareil, page 10. Cherchez un condensateur près du moteur, un commutateur de vitesse, et un signal 0..10 V au bornier. Cochez ce que la version EC porte, puis validez.',
+  consigneAptitudes: 'Exemple résolu. Le ventilo-convecteur à moteur AC de la notice, page 6, a un moteur avec condensateur et un commutateur qui choisit trois vitesses par un autotransformateur. Il n’a pas de signal 0..10 V. Sur la version AC, on coche donc le condensateur et le commutateur. À vous maintenant. Regardez ci-dessous le schéma de la version EC du même appareil, page 10. Cherchez un condensateur près du moteur, un commutateur de vitesse, et un signal 0..10 V au bornier. Cochez ce que la version EC porte, puis validez.',
   aptitudes: {
     condensateur: false, commutateur: false, signal: true,
     bonneReponse: 'Juste. La version EC porte un signal 0..10 V, qui règle la vitesse. Elle n’a ni condensateur dessiné ni commutateur de vitesse.',
@@ -134,27 +155,28 @@ ModeleAppareil.construire({
     { src: 'assets/moteur-m1.svg', alt: "Le symbole du moteur monophasé : un rond avec la lettre M et le signe 1 ~, et deux fils.", legende: "Moteur monophasé, M 1~ : le même symbole pour un moteur EC" }
   ],
   lecturePlan: [
-    "Ouvrez le temps 1 et agrandissez le schéma. Il se lit de haut en bas, en trois cadres.",
+    schemaLecture99(),
+    "Regardez le schéma ci-dessus et cliquez dessus pour l’agrandir. Il se lit de haut en bas, en trois cadres.",
     "Le cadre du haut est le <strong>régulateur</strong>. Quatre fils en partent : L 230 V, N, 0..10 V et GND. Le cinquième, PE, passe à gauche du cadre.",
     "Le cadre du milieu est le <strong>bornier X1</strong>. Lisez ses bornes : PE, puis 1 pour L, 2 pour N, 3 pour 0..10 V et 4 pour GND.",
     "Le cadre du bas est le <strong>moto-ventilateur EC</strong>. Les cinq fils arrivent sur le bloc INV, qui est l’électronique du moteur.",
     "Sous le bloc, cherchez le rond M 1~ : c’est le symbole du moteur monophasé. Cherchez ensuite un condensateur et un fil de vitesse : aucun n’est dessiné.",
-    "Au temps 2, comparez avec la version AC : le condensateur C, le fil commun Com et les trois fils de vitesse Max, Med et Min y sont dessinés."
+    "Sur la version AC de la même notice, le condensateur C, le fil commun Com et les trois fils de vitesse Max, Med et Min sont dessinés."
   ],
 
   tableau: () => tableau99(),
   tableauTitre: 'Moteur AC, moteur EC',
 
   quiz: [
-    { question: "Regardez le schéma du temps 1, cadre du milieu. Quels fils arrivent au bornier X1 d’un ventilo-convecteur EC ?",
+    { question: "Regardez l’image « Le câblage EC », sous le tableau, cadre du milieu. Quels fils arrivent au bornier X1 d’un ventilo-convecteur EC ?",
       confirmation: "Cinq fils : la terre PE, le 230 V par L et N, puis le signal 0..10 V et GND.",
       reponses: [
         { texte: "L, N, PE et trois fils de vitesse.", pourquoi: "Des fils de vitesse, on en trouve sur la version AC : Max, Med et Min, avec Com. Le schéma de la version EC n’en a pas." },
         { texte: "L, N, PE, GND et 0..10 V.", juste: true },
-        { texte: "L, N et le condensateur.", pourquoi: "Aucun condensateur n’est dessiné sur le schéma du temps 1. Un condensateur n’arrive pas au bornier X1." },
+        { texte: "L, N et le condensateur.", pourquoi: "Aucun condensateur n’est dessiné sur le schéma du câblage EC. Un condensateur n’arrive pas au bornier X1." },
         { texte: "Trois phases et la terre.", pourquoi: "Le moteur de la notice s’alimente en 230 V monophasé : une phase, L, et le neutre, N." } ] },
 
-    { question: "Comment règle-t-on la vitesse d’un moteur EC ? Lisez le paragraphe « Le signal de commande » de la carte « Ce qu’il y a dedans », au temps 2.",
+    { question: "Comment règle-t-on la vitesse d’un moteur EC ? Cherchez la réponse dans la carte « Ce qu’il faut retenir ».",
       confirmation: "Par le signal 0..10 V que le régulateur envoie au bornier. La vitesse suit ce signal.",
       reponses: [
         { texte: "Par le signal 0..10 V du régulateur.", juste: true },
@@ -162,7 +184,7 @@ ModeleAppareil.construire({
         { texte: "Par un autotransformateur.", pourquoi: "L’autotransformateur donne ses trois vitesses au moteur AC de la même notice. Le moteur EC n’en a pas." },
         { texte: "En changeant le condensateur.", pourquoi: "Aucun condensateur n’est dessiné sur le schéma de la version EC. La vitesse vient du signal." } ] },
 
-    { question: "Sous quelle tension s’alimente le moteur EC de la notice ? Lisez le paragraphe « L’alimentation » de la carte « Ce qu’il y a dedans », au temps 2.",
+    { question: "Sous quelle tension s’alimente le moteur EC de la notice ? Lisez la colonne « Alimentation » du tableau « Moteur AC, moteur EC ».",
       confirmation: "En 230 V monophasé, avec une tolérance de plus ou moins 5 %. Le courant arrive par L et N.",
       reponses: [
         { texte: "10 V.", pourquoi: "10 V est la valeur la plus haute du signal de commande. Le signal règle la vitesse, il n’alimente pas le moteur." },
@@ -170,7 +192,7 @@ ModeleAppareil.construire({
         { texte: "230 V monophasé, à plus ou moins 5 %.", juste: true },
         { texte: "24 V.", pourquoi: "La notice donne 230 V monophasé. Elle ne cite pas 24 V pour le moteur." } ] },
 
-    { question: "Sur le schéma d’un groupe de condensation, un condenseur EC monophasé a un moteur raccordé par quatre fils : PH, N, 10V et 0V. Lisez le paragraphe « Sur un groupe de condensation » de la carte « Ce qu’il y a dedans », au temps 2. Lesquels amènent le 230 V ?",
+    { question: "Sur le schéma d’un groupe de condensation, un condenseur EC monophasé a un moteur raccordé par quatre fils : PH, N, 10V et 0V. Lesquels amènent le 230 V ? Cherchez la ligne sur le groupe de condensation dans la carte « Ce qu’il faut retenir ».",
       confirmation: "PH, la phase, et N, le neutre : le 230 V monophasé arrive par ces deux fils. Le schéma ne dit pas le rôle des fils 10V et 0V.",
       reponses: [
         { texte: "10V et 0V.", pourquoi: "Ces repères ne sont ni la phase ni le neutre. Le 230 V monophasé arrive par la phase PH et par le neutre N." },
@@ -178,7 +200,7 @@ ModeleAppareil.construire({
         { texte: "Les quatre.", pourquoi: "Le 230 V monophasé arrive par deux fils : la phase PH et le neutre N." },
         { texte: "PH et N.", juste: true } ] },
 
-    { question: "Un ventilateur EC ne tourne pas. Lisez le paragraphe « Contrôle et dépannage » de la carte « Ce qu’il y a dedans », au temps 2. Où trouvez-vous la conduite à tenir ?",
+    { question: "Un ventilateur EC ne tourne pas. Où trouvez-vous la conduite à tenir ? Cherchez la réponse dans la carte « Ce qu’il faut retenir ».",
       confirmation: "Dans le manuel du régulateur, en plus de la notice de l’appareil. La notice demande de s’y référer obligatoirement.",
       reponses: [
         { texte: "Je mesure le condensateur.", pourquoi: "Aucun condensateur n’est dessiné sur le schéma du moteur EC." },
@@ -192,12 +214,13 @@ ModeleAppareil.construire({
     "Sa vitesse suit un <strong>signal 0..10 V</strong>, tension continue donnée par le régulateur. Le bornier X1 reçoit PE, L, N, 0..10 V et GND.",
     "Le moteur à condensateur choisit sa vitesse par un commutateur et un autotransformateur. Le moteur EC n’a ni commutateur de vitesse ni autotransformateur.",
     "Le moteur EC est une variante ou une option, selon le modèle. Il se dessine avec le symbole M 1~ du moteur monophasé, comme un moteur ordinaire.",
+    "Sur un groupe de condensation, le condenseur EC monophasé a le même symbole M 1~, avec quatre fils : PH, N, 10V et 0V. PH et N, la phase et le neutre, amènent le 230 V.",
     "Pour le contrôle et le dépannage, reportez-vous au manuel du régulateur."
   ],
 
   objectifs: '<p><strong>Objectif.</strong> Reconnaître un moteur EC sur un schéma ou sur une notice, nommer les fils de son bornier et dire comment on règle sa vitesse.</p><p><strong>Limites.</strong> Cette station est du niveau Bac pro. La phrase « En CAP » dit ce que le CAP doit reconnaître. La notice consultée ne dit pas quelle tension du signal donne quelle vitesse. Cette station ne donne aucune mesure ni aucune panne du moteur EC : le contrôle passe par le manuel du régulateur. Les aimants ne sont décrits que pour les circulateurs. Le moteur à condensateur est à la station 9.4, ses vitesses à la station 9.7, le variateur de fréquence à la station 7.4.</p>',
   credits: [
-    { quoi: 'Schéma du temps 1', source: 'construit dans QElectroTech',
+    { quoi: 'Schéma du câblage EC', source: 'construit dans QElectroTech',
       detail: 'd’après le schéma de câblage de la version EC, page 10 de la notice d’installation « Ventilo-convecteurs à moteur AC ou EC » (AquaVent, 21/06/2021)' },
     { quoi: 'Schémas de câblage des versions AC et EC', source: 'notice d’installation « Ventilo-convecteurs à moteur AC ou EC », AquaVent, 21/06/2021',
       detail: 'recadrages des pages 6 et 10. Droits à confirmer avant publication.' },
