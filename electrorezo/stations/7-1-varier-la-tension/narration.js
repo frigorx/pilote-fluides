@@ -48,18 +48,21 @@ vous prévient.
 La seconde, pour les protections. Une onde découpée met aussi en défaut beaucoup de
 différentiels. Sur une installation à gradateurs, il faut des différentiels de type adapté.`,
 
-  representer: `Retenez cette station comme celle qui vous dit ce qu'il ne faut PAS faire, et pourquoi.
+  representer: `Retenez cette station comme celle qui vous dit ce qu'il ne faut pas faire, et pourquoi.
 Faire varier une tension, c'est excellent pour ce qui chauffe et pour ce qui éclaire. Une
 résistance, une lampe : moins de tension, moins de puissance, et c'est tout.
 Pour ce qui tourne, c'est en général une mauvaise idée. Le couple s'écroule, l'intensité monte, et
 la vitesse ne bouge pas. L'exception, ce sont certains moteurs de ventilateur de condenseur, prévus
 pour cette variation de tension.
-Deux avertissements pour finir.
+Deux remarques pour finir.
 Beaucoup de gradateurs portent la mention « charges résistives uniquement ». Prenez-la au
 sérieux : sur un moteur ou sur un transformateur, ils se détruisent.
-Et attention à ne pas confondre deux choses. Un ventilateur à plusieurs vitesses ne fait pas
-varier sa tension : il change d'enroulement. Ce n'est pas de la variation, c'est une sélection
-entre deux ou trois vitesses fixes.
+Et un mot sur les ventilateurs à plusieurs vitesses, ceux du soufflage de nombreux climatiseurs.
+Leur petite vitesse vient d'une baisse de tension. Une bobine placée en série avec le moteur, qu'on
+appelle une impédance, fait chuter sa tension : son couple baisse, donc sa vitesse. Le commutateur
+choisit la petite, la moyenne ou la grande vitesse.
+D'autres modèles passent par un autotransformateur, ou par un moteur à plusieurs bobinages. La
+station neuf point sept les compare.
 La vraie variation de vitesse d'un moteur asynchrone, elle, passe par autre chose. Par la
 fréquence. Et c'est la station sept point trois.`
 };

@@ -65,7 +65,7 @@ ModeleGrandeur.construire({
     "<img src=\"assets/ac1_ac1.svg\" alt=\"Symbole d’un convertisseur alternatif vers alternatif, celui d’un gradateur : un rectangle barré en diagonale, avec une petite onde de chaque côté.\" style=\"width:150px;height:auto;display:block;margin:0 auto .4rem\"><span class=\"legende\">Sur un plan, un gradateur se dessine ainsi (station 7.2).</span>",
     "Sur un <strong>gradateur</strong>, la puissance annoncée est celle qu’il peut commuter, pas celle qu’il fournit.",
     "Beaucoup de gradateurs portent la mention <strong>« charges résistives uniquement »</strong>. Elle est à prendre au sérieux : sur un moteur ou un transformateur, ils se détruisent.",
-    "Sur un <strong>ventilateur à plusieurs vitesses</strong>, ce n’est pas la tension qui change : ce sont les <strong>enroulements</strong>. Ce n’est pas de la variation, c’est une sélection.",
+    "Sur le <strong>ventilateur à plusieurs vitesses</strong> de nombreux climatiseurs, une bobine placée en série avec le moteur, appelée impédance, fait chuter sa tension. Le couple baisse, donc la vitesse. D’autres modèles passent par un autotransformateur ou par un moteur à plusieurs bobinages (station 9.7).",
     "Retenez la distinction : faire varier une tension, c’est utile pour ce qui chauffe et pour ce qui éclaire. Pour ce qui tourne, il faut autre chose — et c’est la station 7.3."
   ],
 

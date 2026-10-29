@@ -68,6 +68,11 @@ const ModeleAppareil = (() => {
       const v3 = window.Electro3D ? Electro3D.pourStation(D.vue3d, 'comprendre', D.scene || null, 'Dedans, et en marche') : null;
       if (v3) hote.appendChild(v3);
       else if (D.scene) g.insertBefore(D.scene(), g.querySelector('p'));
+      /* un second objet de la station, s'il est déclaré : vue3dAussi: [{ modele, titre }] */
+      (window.Electro3D && D.vue3dAussi || []).forEach(s => {
+        const b = Electro3D.pourStation(s, 'comprendre', null, s.titre || 'Dedans, et en marche');
+        if (b) hote.appendChild(b);
+      });
 
       const d = carte('Les variantes');
       const ul = el('ul');

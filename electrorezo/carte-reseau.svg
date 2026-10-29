@@ -417,38 +417,54 @@
   <text x="110.0" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Qui fait tourner quoi</text>
   <text x="110.0" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.1  ⇄ 6</text>
   </a>
-  <circle cx="244.2" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <a href="stations/9-2-reperer-c-s-r/index.html" aria-label="9.2 Repérer C, S, R">
+  <circle cx="244.2" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5"/>
   <circle cx="244.2" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="244.2" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Repérer C, S, R</text>
-  <text x="244.2" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.2  ⇄ 1 · en construction</text>
-  <circle cx="378.4" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <text x="244.2" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.2  ⇄ 1</text>
+  </a>
+  <a href="stations/9-3-compresseur-rsir-csir/index.html" aria-label="9.3 Compresseur RSIR, CSIR">
+  <circle cx="378.4" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5"/>
   <circle cx="378.4" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="378.4" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Compresseur RSIR, CSIR</text>
-  <text x="378.4" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.3  ⇄ 5 · en construction</text>
-  <circle cx="512.6" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4" stroke-dasharray="5 4"/>
+  <text x="378.4" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.3  ⇄ 5</text>
+  </a>
+  <a href="stations/9-4-compresseur-psc-csr/index.html" aria-label="9.4 Compresseur PSC, CSR">
+  <circle cx="512.6" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4"/>
   <circle cx="512.6" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="512.6" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Compresseur PSC, CSR</text>
-  <text x="512.6" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.4 · en construction</text>
-  <circle cx="646.8" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <text x="512.6" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.4</text>
+  </a>
+  <a href="stations/9-5-klixon-et-depannage/index.html" aria-label="9.5 Klixon et dépannage">
+  <circle cx="646.8" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5"/>
   <circle cx="646.8" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="646.8" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Klixon et dépannage</text>
-  <text x="646.8" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.5  ⇄ 4 · en construction</text>
-  <circle cx="781.0" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4" stroke-dasharray="5 4"/>
+  <text x="646.8" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.5  ⇄ 4</text>
+  </a>
+  <a href="stations/9-6-spire-de-frager/index.html" aria-label="9.6 Spire de Frager">
+  <circle cx="781.0" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4"/>
   <circle cx="781.0" cy="1224.0" r="24" fill="transparent" class="cible"/>
-  <text x="781.0" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Bague de déphasage</text>
-  <text x="781.0" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.6 · en construction</text>
-  <circle cx="915.2" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4" stroke-dasharray="5 4"/>
+  <text x="781.0" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Spire de Frager</text>
+  <text x="781.0" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.6</text>
+  </a>
+  <a href="stations/9-7-ventilateur-et-vitesses/index.html" aria-label="9.7 Ventilateur et vitesses">
+  <circle cx="915.2" cy="1224.0" r="10" fill="#fffdf8" stroke="#a16207" stroke-width="4"/>
   <circle cx="915.2" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="915.2" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Ventilateur et vitesses</text>
-  <text x="915.2" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.7 · en construction</text>
-  <circle cx="1049.4" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <text x="915.2" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#637285">9.7</text>
+  </a>
+  <a href="stations/9-8-inverser-le-sens/index.html" aria-label="9.8 Inverser le sens">
+  <circle cx="1049.4" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5"/>
   <circle cx="1049.4" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="1049.4" y="1260.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Inverser le sens</text>
-  <text x="1049.4" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.8  ⇄ 2 · en construction</text>
-  <circle cx="1183.6" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5" stroke-dasharray="5 4"/>
+  <text x="1049.4" y="1276.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.8  ⇄ 2</text>
+  </a>
+  <a href="stations/9-9-moteur-ec/index.html" aria-label="9.9 Moteur EC">
+  <circle cx="1183.6" cy="1224.0" r="14" fill="#fffdf8" stroke="#a16207" stroke-width="5"/>
   <circle cx="1183.6" cy="1224.0" r="24" fill="transparent" class="cible"/>
   <text x="1183.6" y="1198.0" text-anchor="middle" font-size="14" font-weight="600" fill="#10233c">Moteur EC</text>
-  <text x="1183.6" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.9  ⇄ 7 · en construction</text>
+  <text x="1183.6" y="1182.0" text-anchor="middle" font-size="12" font-weight="400" fill="#a16207">9.9  ⇄ 7</text>
+  </a>
   <rect x="56" y="1303" width="26" height="18" rx="5" fill="#1b3a63"/>
   <text x="69" y="1316" text-anchor="middle" font-size="12" font-weight="700" fill="#fffdf8">1</text>
   <text x="89" y="1316" font-size="14" fill="#10233c">Les grandeurs de l’électricité</text>

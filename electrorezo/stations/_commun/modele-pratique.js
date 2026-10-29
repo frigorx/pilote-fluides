@@ -211,6 +211,10 @@ const ModelePratique = (() => {
 
     /* ---------------- temps 1 : découvrir */
     function decouvrir(hote) {
+      /* l'objet en 3D, s'il est déclaré (comme ModeleAppareil) : vue3d: { modele, options, mode } */
+      const v3 = window.Electro3D && D.vue3d ? Electro3D.pourStation(D.vue3d, D.vue3d.mode || 'decouvrir', null, 'L’objet en 3D',
+        'Tournez-le à la souris ou au doigt. Survolez le nom d’une pièce : elle s’allume.') : null;
+      if (v3) hote.appendChild(v3);
       const w = el('div', 'workspace');
       const g = carte(T.objet);
       const bande = el('div', 'bande-visuelle');

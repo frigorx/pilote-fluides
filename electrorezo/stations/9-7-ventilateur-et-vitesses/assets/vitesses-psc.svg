@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="195 25 495 610" width="495" height="610">
+<!-- Lot 3 de la ligne 9 — converti de montages-lot3.qet par outils\qet-vers-svg.py -->
+<rect x="195" y="25" width="495" height="610" fill="#ffffff"/>
+<g id="conducteurs">
+<polyline points="380.00,56.00 380.00,94.00 380.00,94.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="360.00,126.00 360.00,150.00 260.00,150.00 260.00,219.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="380.00,126.00 380.00,219.00 380.00,219.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="400.00,126.00 400.00,150.00 500.00,150.00 500.00,219.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="494.00,225.00 457.00,225.00 457.00,225.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="423.00,225.00 386.00,225.00 386.00,225.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="374.00,225.00 337.00,225.00 337.00,225.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="303.00,225.00 266.00,225.00 266.00,225.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,231.00 500.00,270.00 430.00,270.00 430.00,318.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="500.00,231.00 500.00,270.00 570.00,270.00 570.00,318.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="430.00,352.00 430.00,394.00 430.00,394.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="570.00,352.00 570.00,394.00 570.00,394.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="430.00,406.00 430.00,540.00 500.00,540.00 500.00,574.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="430.00,406.00 430.00,470.00 494.00,470.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="570.00,406.00 570.00,470.00 506.00,470.00" fill="none" stroke="black" stroke-width="1"/>
+</g>
+<g id="symboles">
+<g class="symbole" data-type="borne_2" transform="translate(380.00,50.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="021_switch_3pos" transform="translate(380.00,120.00)">
+<ellipse cx="20.00" cy="0.00" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="20" y1="2" x2="20" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1.2" y1="-18.8" x2="-18" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="-20.00" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-20.00" cy="0.00" rx="1.50" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-20" y1="2" x2="-20" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="2" x2="0" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-22" x2="0" y2="-25.59" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(260.00,225.00) rotate(270)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="inductance" transform="translate(320.00,225.00) rotate(90)">
+<path d="M -0.00,-5.00 A 3.50,2.50 0 0 0 0.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,5.00 A 3.50,2.50 0 0 0 0.00,0.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,10.00 A 3.50,2.50 0 0 0 0.00,5.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,0.00 A 3.50,2.50 0 0 0 0.00,-5.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="10" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(380.00,225.00) rotate(270)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="inductance" transform="translate(440.00,225.00) rotate(90)">
+<path d="M -0.00,-5.00 A 3.50,2.50 0 0 0 0.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,5.00 A 3.50,2.50 0 0 0 0.00,0.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,10.00 A 3.50,2.50 0 0 0 0.00,5.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,0.00 A 3.50,2.50 0 0 0 0.00,-5.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="10" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(500.00,225.00) rotate(180)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="inductance" transform="translate(430.00,335.00)">
+<path d="M -0.00,-5.00 A 3.50,2.50 0 0 0 0.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,5.00 A 3.50,2.50 0 0 0 0.00,0.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,10.00 A 3.50,2.50 0 0 0 0.00,5.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,0.00 A 3.50,2.50 0 0 0 0.00,-5.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="10" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="inductance" transform="translate(570.00,335.00)">
+<path d="M -0.00,-5.00 A 3.50,2.50 0 0 0 0.00,-10.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,5.00 A 3.50,2.50 0 0 0 0.00,0.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,10.00 A 3.50,2.50 0 0 0 0.00,5.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -0.00,0.00 A 3.50,2.50 0 0 0 0.00,-5.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="10" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-20" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(430.00,400.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(570.00,400.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="condensateur" transform="translate(500.00,470.00) rotate(90)">
+<line x1="0" y1="-2" x2="0" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="2" x2="0" y2="10" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="2" x2="5" y2="2" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="-2" x2="5" y2="-2" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(500.00,580.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+</g>
+<g id="reperes" font-family="sans-serif" fill="#000">
+<rect x="215" y="185" width="450" height="240" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="6 4"/>
+<circle cx="500" cy="270" r="3" fill="#000"/>
+<circle cx="430" cy="470" r="3" fill="#000"/>
+<text x="392" y="55" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">Alim.</text>
+<text x="392" y="104" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">Com.</text>
+<text x="352" y="135" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">PV</text>
+<text x="408" y="135" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">GV</text>
+<text x="388" y="172" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">MV</text>
+<text x="665" y="179" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">le moteur</text>
+<text x="244" y="230" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">R</text>
+<text x="390" y="210" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">B</text>
+<text x="510" y="210" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">N</text>
+<text x="320" y="213" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">110 Ω</text>
+<text x="440" y="213" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">110 Ω</text>
+<text x="380" y="255" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">impédances chutrices</text>
+<text x="416" y="331" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">principal</text>
+<text x="416" y="349" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">90 Ω</text>
+<text x="584" y="331" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">auxiliaire</text>
+<text x="584" y="349" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">180 Ω</text>
+<text x="418" y="405" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">V</text>
+<text x="582" y="405" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">J</text>
+<text x="500" y="452" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">Cp 3 µF</text>
+<text x="512" y="585" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">Alim.</text>
+<text x="215" y="618" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">B bleu, R rouge, N noir, J jaune, V vert</text>
+</g>
+</svg>

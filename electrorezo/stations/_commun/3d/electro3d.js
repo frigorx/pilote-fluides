@@ -66,7 +66,9 @@
     troisDefauts: 'defauts', priseDeTerre: 'defauts', cablesSections: 'defauts',
     electroAimant: 'machines', transformateur: 'machines', moteurMonophase: 'machines', machineCC: 'machines', plaqueABornes: 'machines',
     gradateur: 'variation', variateur: 'variation',
-    armoire: 'armoire'
+    armoire: 'armoire',
+    relaisIntensite: 'compresseur',
+    klixon: 'protecteur', ctp: 'demarrage', condensateurs: 'demarrage', compresseurHermetique: 'hermetique'
   };
   /* une famille qui assemble les modèles des autres les charge d'abord */
   const DEPEND = { variation: ['moteur'] };

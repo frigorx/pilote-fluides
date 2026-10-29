@@ -33,7 +33,7 @@ ModeleAppareil.construire({
     "<strong>Condensateur permanent</strong> — il reste en service. Simple, silencieux, mais le couple de démarrage est modeste. Sur un compresseur, c’est le montage <strong>PSC</strong>.",
     "<strong>Condensateur de démarrage</strong> — de forte valeur, déconnecté dès le lancement. Couple important, mais il ne supporte pas d’être maintenu. Sur un compresseur, c’est le montage <strong>CSIR</strong>.",
     "<strong>Les deux</strong> — un permanent, plus un de démarrage. C’est le montage des compresseurs qui doivent partir en charge, le <strong>CSR</strong>. Les quatre montages du compresseur sont comparés à la station 9.1.",
-    "<strong>À bague de déphasage</strong> — sans condensateur : une spire en court-circuit sur un coin du pôle suffit à décaler un peu. Couple très faible, mais très robuste : rien à entretenir. C’est le moteur des petits ventilateurs."
+    "<strong>À spire de Frager</strong> — sans condensateur ni enroulement auxiliaire : une spire en court-circuit, posée sur un coin du pôle, crée le décalage. Le couple est faible et le moteur ne tourne que dans un sens. C’est le moteur des petits ventilateurs d’évaporateur et de vitrine (station 9.6)."
   ],
   reglage: "Rien ne se règle. Mais un condensateur se <strong>choisit</strong> : sa capacité en microfarads et sa tension d’emploi sont écrites dessus. Sur un condensateur permanent, monter une capacité supérieure à celle de la plaque ne donne pas plus de couple : cela déséquilibre le déphasage, et le moteur chauffe. Le condensateur de démarrage, lui, est choisi de forte valeur, pour donner du couple au lancement.",
 
@@ -51,8 +51,8 @@ ModeleAppareil.construire({
   },
 
   cablage: [
-    "Les repères courants sont <strong>U1-U2</strong> pour le principal et <strong>Z1-Z2</strong> pour l’auxiliaire. La notice du constructeur fait foi.",
-    "Pour <strong>inverser le sens</strong>, on inverse les bornes de <strong>l’enroulement auxiliaire</strong> — pas celles de l’alimentation. C’est le contraire du triphasé, et c’est une source d’erreur classique.",
+    "Les cours repèrent les bornes par <strong>C, P et A</strong> : le commun, le principal, l’auxiliaire. On lit aussi R pour le principal et S pour l’auxiliaire. Avant de raccorder, lisez la plaque signalétique et le schéma de raccordement, souvent placé à l’intérieur du couvercle du bornier.",
+    "Pour <strong>inverser le sens</strong>, on croise les deux fils d’un seul enroulement, l’auxiliaire ou le principal (station 9.8). Permuter la phase et le neutre ne change pas le sens : c’est l’erreur d’un élève qui pense au triphasé, où l’on permute deux phases.",
     "Le condensateur se raccorde <strong>en série avec l’auxiliaire</strong>, et non en parallèle sur l’alimentation.",
     "Un condensateur reste <strong>chargé</strong> après la coupure. On le décharge avant d’y toucher, avec une résistance et non par un court-circuit brutal."
   ],
@@ -90,9 +90,9 @@ ModeleAppareil.construire({
         { texte: "Il décale le courant de l’enroulement auxiliaire.", juste: true } ] },
 
     { question: "Comment inverse-t-on le sens d’un moteur monophasé ?",
-      confirmation: "En inversant les bornes de l’enroulement auxiliaire.",
+      confirmation: "En croisant les deux fils d’un seul enroulement : l’auxiliaire ou le principal.",
       reponses: [
-        { texte: "En inversant les bornes de l’auxiliaire.", juste: true },
+        { texte: "En croisant les deux fils d’un enroulement.", juste: true },
         { texte: "En changeant le condensateur.", pourquoi: "La capacité n’a aucun effet sur le sens." },
         { texte: "En inversant la phase et le neutre.", pourquoi: "En alternatif, cela ne change rien au sens." },
         { texte: "En échangeant deux phases.", pourquoi: "Il n’y a qu’une phase : c’est justement toute la difficulté." } ] },
@@ -109,7 +109,7 @@ ModeleAppareil.construire({
   retenir: [
     "<strong>Un seul enroulement pulse</strong>, il ne tourne pas.",
     "<strong>Le condensateur décale</strong> le courant de l’auxiliaire.",
-    "<strong>On inverse par l’auxiliaire</strong>, pas par l’alimentation.",
+    "<strong>On inverse le sens</strong> en croisant les fils d’un seul enroulement, l’auxiliaire ou le principal.",
     "<strong>Ronfle et part à la main</strong> : l’auxiliaire ne travaille pas. Vérifiez d’abord le condensateur."
   ],
 

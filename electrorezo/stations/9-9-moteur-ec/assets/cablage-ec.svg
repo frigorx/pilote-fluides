@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 70 560 485" width="560" height="485">
+<!-- Lot 3 de la ligne 9 — converti de montages-lot3.qet par outils\qet-vers-svg.py -->
+<rect x="30" y="70" width="560" height="485" fill="#ffffff"/>
+<g id="conducteurs">
+<polyline points="150.00,156.00 150.00,256.00 150.00,256.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="150.00,268.00 150.00,366.00 150.00,366.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="240.00,156.00 240.00,256.00 240.00,256.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="240.00,268.00 240.00,366.00 240.00,366.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="330.00,156.00 330.00,256.00 330.00,256.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="330.00,268.00 330.00,366.00 330.00,366.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="420.00,156.00 420.00,256.00 420.00,256.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="420.00,268.00 420.00,366.00 420.00,366.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="510.00,156.00 510.00,256.00 510.00,256.00" fill="none" stroke="black" stroke-width="1"/>
+<polyline points="510.00,268.00 510.00,366.00 510.00,366.00" fill="none" stroke="black" stroke-width="1"/>
+</g>
+<g id="symboles">
+<g class="symbole" data-type="borne_2" transform="translate(150.00,150.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(240.00,150.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(330.00,150.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(420.00,150.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(510.00,150.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(150.00,262.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(150.00,372.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(240.00,262.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(240.00,372.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(330.00,262.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(330.00,372.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(420.00,262.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(420.00,372.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(510.00,262.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="borne_2" transform="translate(510.00,372.00)">
+<line x1="0" y1="10" x2="0" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="-10" x2="0" y2="-3" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="2.50" ry="2.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+</g>
+<g class="symbole" data-type="moteur_mono1" transform="translate(330.00,462.00)">
+<polyline points="20,-20 20,9 15,9" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-20,-20 -20,10 -15,10" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="10.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1" fill="none"/>
+<text x="-11" y="17" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -11 17)">1 ~</text>
+<text x="-4" y="7" font-family="Arial,sans-serif" font-size="9.0" fill="#000000" stroke="white" stroke-width="3.1" stroke-linejoin="round" paint-order="stroke" transform="rotate(0 -4 7)">M</text>
+</g>
+</g>
+<g id="reperes" font-family="sans-serif" fill="#000">
+<rect x="195" y="100" width="385" height="72" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="40" y="228" width="540" height="70" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="6 4"/>
+<rect x="120" y="382" width="420" height="60" fill="none" stroke="#000" stroke-width="1"/>
+<rect x="40" y="337" width="540" height="205" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="197" y="92" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">régulateur</text>
+<text x="150" y="128" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">PE</text>
+<text x="240" y="128" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">L 230 V~</text>
+<text x="330" y="128" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">N</text>
+<text x="420" y="128" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">0..10 V</text>
+<text x="510" y="128" font-size="16" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">GND</text>
+<text x="140" y="211" font-size="16" text-anchor="end" stroke="#fff" stroke-width="4" paint-order="stroke">vert/jaune</text>
+<text x="52" y="258" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">bornier</text>
+<text x="52" y="276" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">X1</text>
+<text x="166" y="267" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">PE</text>
+<text x="256" y="267" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">1</text>
+<text x="256" y="286" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">L 230 V~</text>
+<text x="346" y="267" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">2</text>
+<text x="346" y="286" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">N</text>
+<text x="436" y="267" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">3</text>
+<text x="436" y="286" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">0..10 V</text>
+<text x="526" y="267" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">4</text>
+<text x="526" y="286" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">GND</text>
+<text x="130" y="414" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">INV (inverter)</text>
+<text x="50" y="532" font-size="16" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke">MV : moto-ventilateur EC</text>
+</g>
+</svg>

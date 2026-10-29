@@ -36,7 +36,7 @@ Avec un détendeur thermostatique, les pressions ne s'égalisent pas toujours à
 il lui faut un condensateur de démarrage, donc un CSIR ou un CSR.
 Pour les ventilateurs et la turbine, c'est plus court. Le plus souvent, un condensateur permanent,
 comme le PSC. Sur les
-petits ventilateurs, une bague de déphasage. Et sur les appareils récents, un moteur électronique,
+petits ventilateurs, une spire de Frager. Et sur les appareils récents, un moteur électronique,
 qu'on verra à la fin de la ligne.`,
 
   manipuler: `Le compresseur de l'exercice porte le sigle CSIR.

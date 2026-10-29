@@ -45,10 +45,10 @@ en contact.
 Son repère commence par C, et sa capacité en microfarads est écrite à côté. Pas dans le
 dessin.
 Maintenant, deux choses très pratiques pour finir, et je veux qu'elles vous restent.
-La première : pour inverser le sens d'un moteur monophasé, on inverse les bornes de
-l'enroulement auxiliaire. Pas celles de l'alimentation.
-C'est exactement le contraire du triphasé, où on échange deux phases d'alimentation. Beaucoup
-de gens font l'erreur, tournent la phase et le neutre, et s'étonnent que rien ne change.
+La première : pour inverser le sens d'un moteur monophasé, on croise les deux fils d'un seul
+enroulement, l'auxiliaire ou le principal.
+Beaucoup de gens pensent au triphasé, où l'on permute deux phases. Ils permutent la phase et le
+neutre, et s'étonnent que rien ne change : le sens reste le même.
 La seconde, et c'est un vrai diagnostic. Un moteur monophasé qui ronfle sans démarrer, et qui
 part si on le lance à la main dans le sens où on l'a lancé : l'enroulement auxiliaire ne travaille
 pas.
@@ -56,6 +56,6 @@ Ce symptôme est très caractéristique. Avant de démonter quoi que ce soit, al
 condensateur, c'est la cause la plus fréquente. Puis, si ce n'est pas lui, le contact centrifuge
 ou le relais de démarrage, l'enroulement et les connexions.
 Et attention en le manipulant : un condensateur reste chargé après la coupure. On le décharge
-avant d'y toucher, avec une résistance — pas en le court-circuitant brutalement avec un
+avant d'y toucher, avec une résistance, pas en le court-circuitant brutalement avec un
 tournevis.`
 };

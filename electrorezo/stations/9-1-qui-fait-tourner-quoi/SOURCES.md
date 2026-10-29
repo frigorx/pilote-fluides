@@ -12,7 +12,7 @@
 | Remplacer un relais d'intensité par la même référence | « 20-MoteurMonophase.pdf », § III.1 |
 | Turbine : moteur AC 230 V à condensateur, plusieurs vitesses ; moteur EC à commande 0-10 V | Notice ventilo-convecteurs Aquavent, banc VC10 (fonds ERM) ; « 20-MoteurMonophase.pdf », § VII |
 | Compresseur Inverter piloté par une carte électronique | CartoClim, station 2.4 « L'Inverter » |
-| Bague de déphasage sur les petits ventilateurs | repris de la station 6.5 ; aucune source du fonds trouvée par `chercher-rag.js` |
+| Spire de Frager sur les petits ventilateurs d'évaporateur | décision de Franck du 29/10/2026 ; le nom « spire de Frager » : « 9 Moteur monophasé.doc », fiches « 9.1 Electricité (moteur).pdf » et « 9.2 Electricité (moteur monophasé).pdf » (`03_BAC-MFER/S4-Electricite/`) ; relevé `LIGNE-9-FAITS-LOT-3.md` |
 
 ## Erreur relevée dans le fonds
 « 08 LES MOTEURS prof.docx », § II.1 : sous le titre « relais d'intensité », le paragraphe « Principe de

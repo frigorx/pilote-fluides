@@ -31,6 +31,7 @@ function tableauMontages91() {
 
 ModeleAppareil.construire({
   id: '9.1', ligne: 9,
+  vue3d: { modele: 'compresseurHermetique', defaut: 'schema' },   /* 3D */
   kicker: 'ÉlectroRézo · Ligne 9 Le moteur monophasé · Station 1',
   titre: "Qui fait tourner quoi",
   narration: NARRATION,
@@ -60,7 +61,7 @@ ModeleAppareil.construire({
 
   variantes: [
     "<strong>Le compresseur</strong> : un des quatre montages du tableau, RSIR, CSIR, PSC ou CSR. Le sigle dit quels condensateurs et quel relais l’accompagnent (stations 9.3 et 9.4). Le compresseur d’un climatiseur Inverter est piloté par une carte électronique : il n’a aucun de ces montages.",
-    "<strong>Le ventilateur à hélice</strong> : un moteur à condensateur permanent. Sur les petits ventilateurs d’évaporateur, un moteur à bague de déphasage, sans condensateur (station 9.6).",
+    "<strong>Le ventilateur à hélice</strong> : un moteur à condensateur permanent. Sur les petits ventilateurs d’évaporateur, un moteur à spire de Frager, sans condensateur (station 9.6).",
     "<strong>La turbine</strong> : un moteur à condensateur permanent, avec plusieurs vitesses (station 9.7).",
     "<strong>Le moteur EC</strong> : sur les appareils récents, ventilateurs et turbines ont un moteur à commutation électronique, piloté par une consigne de 0 à 10 V (station 9.9)."
   ],
