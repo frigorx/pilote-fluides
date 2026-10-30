@@ -8,13 +8,21 @@
 @page{size:A4;margin:14mm}
 body{font-family:"Segoe UI",Helvetica,Arial,sans-serif;font-size:14pt;line-height:1.5;color:#10233c;margin:0}
 h1{font-size:17pt;margin:0 0 4px;color:#1b3a63}
-h2{font-size:15pt;margin:14px 0 6px;color:#1b3a63;border-bottom:2px solid #1b3a63}
+h2{font-size:15pt;margin:8px 0 4px;color:#1b3a63;border-bottom:2px solid #1b3a63}
 p{margin:4px 0}
-.entete{display:flex;justify-content:space-between;font-size:14pt;color:#637285;margin-bottom:6px}
+.entete{display:flex;align-items:center;gap:12px;border-bottom:3px solid #1b3a63;padding-bottom:6px;margin-bottom:8px}
+.entete svg{width:190px;height:auto;flex:none}
+.entete .titre{flex:1;color:#1b3a63}
+.entete .titre b{display:block;font-size:15pt}
+.cadre{border:1.5px solid #1b3a63;border-radius:6px;padding:4px 10px;width:58mm;line-height:1.7}
+.corrige-badge{border:2px solid #c9451a;color:#c9451a;border-radius:6px;padding:4px 10px;font-weight:bold}
+.filigrane{position:fixed;left:50%;top:50%;width:150mm;transform:translate(-50%,-50%) rotate(-24deg);opacity:.07;z-index:-1}
+.filigrane.haut{top:16%;left:24%;width:80mm}
+@page{margin-bottom:22mm;@bottom-left{content:"© inerWeb 2026, F. Henninot · inerweb.fr · Licence CC BY-NC-ND 4.0 : citer inerWeb, pas d’usage commercial, pas de diffusion d’adaptations.";font-family:"Segoe UI",Arial,sans-serif;font-size:14pt;color:#1b3a63;border-top:1.5px solid #1b3a63;vertical-align:top;padding-top:2mm}}
 table{border-collapse:collapse;width:100%;margin:6px 0;font-size:14pt}
 th,td{border:1px solid #1b3a63;padding:5px 7px;text-align:left;vertical-align:top}
 th{background:#eef4fb}
-td{height:28px}
+td{height:26px}
 .rep{color:#c9451a;font-weight:bold}
 figure{margin:6px 0;text-align:center;break-inside:avoid}
 figure svg{max-width:100%;height:auto}
@@ -25,14 +33,39 @@ figcaption{font-size:14pt;color:#637285}
 </style>
 </head>
 <body>
-<div class="entete"><span>inerWeb Plan · Gare 7 bis · Le métré sur plan</span><span>Nom : ................................</span></div>
+<div class="filigrane"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></div><div class="filigrane haut"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></div>
+<div class="entete"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg><div class="titre"><b>Gare 7 bis · Le métré sur plan</b>Réseau inerWeb Plan · exercice papier</div><div class="cadre">Nom, prénom :<br>Classe :<span style="margin-left:20mm">Date :</span></div></div>
 <h1>Exercice papier : le métré du bâtiment B</h1>
-<p>Le bâtiment B a deux niveaux et une toiture-terrasse. Les cotes sont en millimètres. La coupe donne 2500 sous plafond à chaque niveau et un plancher de 200. Écrivez chaque calcul avec son unité. La calculatrice est autorisée.</p>
+<p>Bâtiment B : deux niveaux, toiture-terrasse, cotes en millimètres. Coupe : 2500 sous plafond, plancher de 200. Écrivez chaque calcul avec son unité ; calculatrice autorisée.</p>
 
 <h2>1. Les murs de la salle (gare, écrans 3 à 7)</h2>
-<figure class="svgbox"><svg viewBox="0 0 547 426" width="547" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de niveau : salle de 4300 sur 3600 millimètres, chaîne de cotes du mur nord 900 plus 1400 plus 2000, fenêtre F3."><rect x="90" y="50" width="427" height="364" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="110" y="70" width="387" height="324" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="191" y="50" width="126" height="20" fill="#fffdf8"/><line x1="191" y1="50" x2="191" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="317" y1="50" x2="317" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="191" y1="57" x2="317" y2="57" stroke="#1b3a63" stroke-width="1.1"/><line x1="191" y1="63" x2="317" y2="63" stroke="#1b3a63" stroke-width="1.1"/><text x="254" y="42" text-anchor="middle" fill="#c9451a" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">F3</text><text x="517" y="42" text-anchor="end" fill="#637285" font-size="18" font-family="Segoe UI, sans-serif">mur nord</text><text transform="rotate(90 525 232)" x="525" y="232" text-anchor="middle" fill="#637285" font-size="18" font-family="Segoe UI, sans-serif">mur est</text><line x1="110" y1="72" x2="110" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="191" y1="72" x2="191" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="102" x2="191" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="110,102 119,98.5 119,105.5" fill="#10233c"/><polygon points="191,102 182,105.5 182,98.5" fill="#10233c"/><text x="150.5" y="96" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">900</text><line x1="191" y1="72" x2="191" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="317" y1="72" x2="317" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="191" y1="102" x2="317" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="191,102 200,98.5 200,105.5" fill="#10233c"/><polygon points="317,102 308,105.5 308,98.5" fill="#10233c"/><text x="254" y="96" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">1400</text><line x1="317" y1="72" x2="317" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="497" y1="72" x2="497" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="317" y1="102" x2="497" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="317,102 326,98.5 326,105.5" fill="#10233c"/><polygon points="497,102 488,105.5 488,98.5" fill="#10233c"/><text x="407" y="96" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">2000</text><line x1="110" y1="72" x2="110" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="497" y1="72" x2="497" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="134" x2="497" y2="134" stroke="#10233c" stroke-width="1.1"/><polygon points="110,134 119,130.5 119,137.5" fill="#10233c"/><polygon points="497,134 488,137.5 488,130.5" fill="#10233c"/><text x="303.5" y="128" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">4300</text><line x1="126" y1="70" x2="126" y2="394" stroke="#10233c" stroke-width="1.1"/><polygon points="126,70 129.5,79 122.5,79" fill="#10233c"/><polygon points="126,394 122.5,385 129.5,385" fill="#10233c"/><text x="134" y="239" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">3600</text><text x="333.5" y="270.88" text-anchor="middle" fill="#637285" font-size="20" font-family="Segoe UI, sans-serif">Salle</text></svg><figcaption>Plan de la salle, à l'étage. Cotes intérieures en millimètres.</figcaption></figure>
+<figure class="svgbox"><svg viewBox="0 0 461.00000000000006 354" width="461.00000000000006" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de niveau : salle de 4300 sur 3600 millimètres, chaîne de cotes du mur nord 900 plus 1400 plus 2000, fenêtre F3."><rect x="90" y="50" width="341.00000000000006" height="292" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="110" y="70" width="301.00000000000006" height="252.00000000000003" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="173" y="50" width="98" height="20" fill="#fffdf8"/><line x1="173" y1="50" x2="173" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="271" y1="50" x2="271" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="173" y1="57" x2="271" y2="57" stroke="#1b3a63" stroke-width="1.1"/><line x1="173" y1="63" x2="271" y2="63" stroke="#1b3a63" stroke-width="1.1"/><text x="222" y="42" text-anchor="middle" fill="#c9451a" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">F3</text><text x="431.00000000000006" y="42" text-anchor="end" fill="#637285" font-size="18" font-family="Segoe UI, sans-serif">mur nord</text><text transform="rotate(90 439.00000000000006 196)" x="439.00000000000006" y="196" text-anchor="middle" fill="#637285" font-size="18" font-family="Segoe UI, sans-serif">mur est</text><line x1="110" y1="72" x2="110" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="173" y1="72" x2="173" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="102" x2="173" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="110,102 119,98.5 119,105.5" fill="#10233c"/><polygon points="173,102 164,105.5 164,98.5" fill="#10233c"/><text x="141.5" y="96" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">900</text><line x1="173" y1="72" x2="173" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="271" y1="72" x2="271" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="173" y1="102" x2="271" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="173,102 182,98.5 182,105.5" fill="#10233c"/><polygon points="271,102 262,105.5 262,98.5" fill="#10233c"/><text x="222" y="96" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">1400</text><line x1="271" y1="72" x2="271" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="411" y1="72" x2="411" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="271" y1="102" x2="411" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="271,102 280,98.5 280,105.5" fill="#10233c"/><polygon points="411,102 402,105.5 402,98.5" fill="#10233c"/><text x="341" y="96" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">2000</text><line x1="110" y1="72" x2="110" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="411.00000000000006" y1="72" x2="411.00000000000006" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="134" x2="411.00000000000006" y2="134" stroke="#10233c" stroke-width="1.1"/><polygon points="110,134 119,130.5 119,137.5" fill="#10233c"/><polygon points="411.00000000000006,134 402.00000000000006,137.5 402.00000000000006,130.5" fill="#10233c"/><text x="260.5" y="128" text-anchor="middle" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">4300</text><line x1="126" y1="70" x2="126" y2="322" stroke="#10233c" stroke-width="1.1"/><polygon points="126,70 129.5,79 122.5,79" fill="#10233c"/><polygon points="126,322 122.5,313 129.5,313" fill="#10233c"/><text x="134" y="203" fill="#10233c" font-size="20" font-weight="bold" font-family="Segoe UI, sans-serif">3600</text><text x="290.5" y="226.24" text-anchor="middle" fill="#637285" font-size="20" font-family="Segoe UI, sans-serif">Salle</text></svg><figcaption>Plan de la salle, à l'étage. Cotes intérieures en millimètres.</figcaption></figure>
 <table><tr><th>Fenêtre</th><th>Largeur × hauteur (mm)</th><th>Mur</th></tr><tr><td>F3</td><td>1400 × 1100</td><td>nord</td></tr></table>
-<p>Les murs nord et est sont à doubler. Le mur est mesure 3600, comme le mur ouest coté sur le plan, et n'a pas d'ouverture.</p>
+<p>Murs à doubler : nord et est. Le mur est mesure 3600, sans ouverture.</p>
 <table><tr><th>Mur</th><th>Longueur (m)</th><th>Hauteur (m)</th><th>Brute (m²)</th><th>Ouvertures (m²)</th><th>Nette (m²)</th></tr>
 <tr><td>nord</td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>est</td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -66,6 +99,5 @@ figcaption{font-size:14pt;color:#637285}
 <tr><td>Volume de la salle</td><td></td><td></td></tr>
 <tr><td>Isolant de 100 mm sur la toiture nette</td><td></td><td></td></tr></table>
 </div>
-<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd"></script>
 </body>
 </html>
