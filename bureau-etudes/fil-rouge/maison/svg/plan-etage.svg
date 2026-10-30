@@ -82,8 +82,13 @@
 <line x1="214.00" y1="11.00" x2="214.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="226.00" y1="11.00" x2="226.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <rect x="128.00" y="11.00" width="24.00" height="44.00" fill="none" stroke="#000" stroke-width="0.3"/>
-<line x1="128.00" y1="11.00" x2="152.00" y2="55.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
-<line x1="128.00" y1="55.00" x2="152.00" y2="11.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<line x1="128.00" y1="11.00" x2="134.00" y2="22.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<line x1="152.00" y1="55.00" x2="146.00" y2="44.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<line x1="128.00" y1="55.00" x2="134.00" y2="44.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<line x1="152.00" y1="11.00" x2="146.00" y2="22.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<text x="140.25" y="28.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Trémie</text>
+<text x="140.25" y="34.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,20 ×</text>
+<text x="140.25" y="40.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,20</text>
 <line x1="118.00" y1="163.00" x2="146.00" y2="163.00" stroke="#000" stroke-width="0.2"/>
 <line x1="118.00" y1="161.00" x2="146.00" y2="161.00" stroke="#000" stroke-width="0.2"/>
 <line x1="94.00" y1="131.00" x2="94.00" y2="115.00" stroke="#000" stroke-width="0.2"/>
@@ -176,15 +181,28 @@
 <text x="202.51" y="118.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre 2</text>
 <text x="202.51" y="124.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12,60 m²</text>
 <text x="202.51" y="130.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,50 × 3,60</text>
-<text x="119.89" y="53.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Palier</text>
-<text x="119.89" y="59.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7,35 m²</text>
-<text x="119.89" y="65.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,70 × 3,70</text>
+<text x="119.46" y="53.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Palier</text>
+<text x="119.46" y="59.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7,35 m²</text>
+<text x="119.46" y="65.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">hors trémie</text>
+<text x="119.46" y="71.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,70 × 3,70</text>
 <text x="176.51" y="43.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre 3</text>
 <text x="176.51" y="49.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">8,51 m²</text>
 <text x="176.51" y="55.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,30 × 3,70</text>
 <text x="219.99" y="31.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Salle d'eau</text>
 <text x="219.99" y="37.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">6,66 m²</text>
 <text x="219.99" y="43.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,80 × 3,70</text>
+<text x="132.24" y="150.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M10</text>
+<text x="104.24" y="118.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M11</text>
+<text x="203.24" y="150.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M12</text>
+<text x="231.24" y="118.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M13</text>
+<text x="104.24" y="46.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M14</text>
+<text x="121.24" y="22.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M15</text>
+<line x1="122.60" y1="18.55" x2="124.83" y2="11.47" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="177.24" y="22.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M16</text>
+<text x="220.24" y="22.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M17</text>
+<text x="231.24" y="55.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M18</text>
+<text x="69.62" y="10.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Mxx : repère</text>
+<text x="69.62" y="16.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">d’un mur</text>
 <rect x="6.00" y="186.50" width="285.00" height="18.50" fill="none" stroke="#000" stroke-width="0.4"/>
 <text x="9" y="192.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" fill="#1b3a63"><tspan font-weight="bold">iner</tspan><tspan>Web</tspan></text>
 <rect x="32.80" y="187.70" width="45.61" height="6.74" fill="#e8914a"/>

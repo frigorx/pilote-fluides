@@ -8,7 +8,7 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-  const NOMS_NIVEAU = { 1: "guidé", 2: "autonome", 3: "type BTS" };
+  const NOMS_NIVEAU = { 1: "guidé", 2: "autonome", 3: "bâtiment tertiaire" };
   const TITRES_AIDES = ["Où chercher", "La méthode", "Le premier pas"];
   const LIEN_DEDIEE = "../../dediee/";   // adresse provisoire de la partie réservée aux classes
   const PHRASE_FILE = "Ouvrez la station par le site ou le serveur local pour afficher ce bloc.";
@@ -220,8 +220,8 @@
   function referentielMarkup() {
     if (!jsonLu) return "";
     const ref = couv && couv.referentiel;
-    if (!ref) return `<h2 id="codes-titre">Sert notamment pour</h2><p class="fichier-absent">${esc(PHRASE_FILE)}</p>`;
-    let html = `<h2 id="codes-titre">Sert notamment pour</h2>`;
+    if (!ref) return `<h2 id="codes-titre">Correspondances de formation</h2><p class="fichier-absent">${esc(PHRASE_FILE)}</p>`;
+    let html = `<h2 id="codes-titre">Correspondances de formation</h2>`;
     if (ref.tecvc && ref.tecvc.length) html += `<h3>TP Technicien d’études en CVC (TECVC)</h3>${listeCodes(ref.tecvc)}`;
     const b = ref.bts_fed;
     if (b) {
@@ -241,8 +241,8 @@
     $("#station-code").textContent = lu("code") || "";
     $("#station-ligne").textContent = lu("ligne") ? `Ligne : ${lu("ligne")}` : "";
     $("#badge-duree").textContent = duree ? `Station longue · ${duree}` : "Station longue";
-    const publicVise = lu("niveau");
-    $("#badge-niveau").textContent = publicVise ? `Niveau : ${publicVise}` : ""; $("#badge-niveau").hidden = !publicVise;
+    /* Décision 32 : le public visé (diplômes) reste dans fiche.json, il ne s'affiche pas. */
+    $("#badge-niveau").textContent = ""; $("#badge-niveau").hidden = true;
     $("#home-title").textContent = lu("titre") || "";
     $("#home-intro").textContent = lu("intro") || "";
     $("#volet-actions").innerHTML = nv.map((x, i) => `<button class="primary-button volet-button niveau-button niveau-${x.n}" type="button" ${i === 0 ? 'id="start-button"' : ""} data-niveau="${x.n}"><span class="niveau-titre">Niveau ${x.n}${x.nom ? `, ${esc(x.nom)}` : ""} <span aria-hidden="true">→</span></span>${x.batiment ? `<small class="niveau-batiment">${esc(x.batiment)}</small>` : ""}</button>`).join("");
@@ -252,7 +252,10 @@
     $$("[data-dossier]").forEach(b => b.addEventListener("click", () => { niveau = niveau || niveauParDefaut(); startCourse(b.dataset.dossier); }));
     const note = lu("note");
     $("#home-note").innerHTML = note ? `<strong>Point à retenir.</strong> ${esc(note)}` : ""; $("#home-note").hidden = !note;
-    $("#codes-box").innerHTML = referentielMarkup(); $("#codes-box").hidden = !jsonLu;
+    /* Décision 32 (F. Henninot, 30/10/2026) : la page publique ne porte ni diplôme ni code ; un lien discret les ouvre à la demande. */
+    $("#codes-box").innerHTML = `<p class="lien-corresp"><a href="#corresp-detail" id="lien-corresp" aria-expanded="false" aria-controls="corresp-detail">Correspondances de formation</a></p><div id="corresp-detail" hidden>${referentielMarkup()}</div>`;
+    $("#codes-box").hidden = !jsonLu;
+    $("#lien-corresp").addEventListener("click", e => { e.preventDefault(); const d = $("#corresp-detail"); d.hidden = !d.hidden; e.currentTarget.setAttribute("aria-expanded", String(!d.hidden)); });
   }
   function showHome() {
     stopSpeech(); document.body.classList.remove("course-running");
@@ -310,10 +313,14 @@
     $("#lesson-text").textContent = texteNiveau(item.text);
     $("#action-prompt").textContent = texteNiveau(item.prompt) || "Lisez, puis continuez.";
     const activity = item.render ? item.render(item) : `<div class="panel"><div class="panel-title">${esc(item.title)}</div><div class="method-line"><div class="method-node">OBSERVER</div><span class="method-arrow">→</span><div class="method-node">COMPRENDRE</div><span class="method-arrow">→</span><div class="method-node">AGIR</div></div></div>`;
-    $("#activity-zone").innerHTML = (item.image ? `<div class="visual-split"><img src="${esc(item.image)}" alt="${esc(item.imageAlt)}"><div class="visual-host">${activity}</div></div>` : activity) + (aidesDe(item).length ? '<section class="aides" id="aides" aria-label="Aides"></section>' : "");
+    /* Image de mise en situation (décision 31) : sous la consigne, dans la colonne du texte, pour laisser au schéma toute sa largeur. */
+    let illu = $("#lesson-illu");
+    if (!illu) { illu = document.createElement("img"); illu.id = "lesson-illu"; illu.className = "lesson-illu"; $("#action-prompt").after(illu); }
+    if (item.image) { illu.src = item.image; illu.alt = item.imageAlt; illu.hidden = false; } else { illu.hidden = true; illu.removeAttribute("src"); illu.alt = ""; }
+    $("#activity-zone").innerHTML = activity +(aidesDe(item).length ? '<section class="aides" id="aides" aria-label="Aides"></section>' : "");
     if (item.wire) item.wire(item);
     renderAides(item);
-    $("#reference-box").innerHTML = item.codes.length ? `<strong>Référentiel</strong> : ${item.codes.map(esc).join(", ")}` : "<strong>Contexte</strong> : hors référentiel";
+    $("#reference-box").innerHTML = "";
     renderStepper(item); updateNav(); updateUrl(); replierTexte();
     if (moveFocus) $("#lesson-title").focus({ preventScroll: true });
     if (autoplay) setTimeout(() => speakCurrent(), 320);
@@ -434,7 +441,7 @@
 
   /* Encadré affiché à la place des données quand le niveau se travaille dans la partie réservée aux classes. */
   function partieReservee() {
-    return `<div class="partie-reservee"><p><strong>Partie réservée aux classes.</strong> Ce niveau se travaille dans la partie réservée aux classes : sujet de BTS, maquette à télécharger par son lien officiel, feuille réponse. Votre enseignant vous donne le code de séance.</p><p><a class="primary-button" href="${esc(LIEN_DEDIEE)}">Aller à la partie réservée aux classes</a></p></div>`;
+    return `<div class="partie-reservee"><p><strong>Partie réservée aux classes.</strong> Ce niveau se travaille dans la partie réservée aux classes : sujet d’examen, maquette à télécharger par son lien officiel, feuille réponse. Votre enseignant vous donne le code de séance.</p><p><a class="primary-button" href="${esc(LIEN_DEDIEE)}">Aller à la partie réservée aux classes</a></p></div>`;
   }
 
   /* À vous, le projet : la commande du niveau courant, présentée comme une commande de bureau d'études. */

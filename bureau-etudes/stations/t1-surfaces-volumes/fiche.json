@@ -1,0 +1,53 @@
+{
+  "numero": 4,
+  "titre": "Relever les surfaces et les volumes",
+  "ligne": "Thermique",
+  "code": "BE-T1",
+  "quand": "Avant le calcul des déperditions d'un bâtiment. Vous avez les plans (plans de niveau, coupe, plan de masse) et le tableau des menuiseries. Vous obtenez, pour chaque paroi, sa surface nette, puis les surfaces de plancher et de plafond et le volume chauffé.",
+  "methode": [
+    "Repérer les murs sur les plans de niveau et leur orientation sur le plan de masse. L'orientation est celle de la face extérieure.",
+    "Lire la longueur de chaque mur en cotes intérieures, sur l'étiquette de la pièce ou sur une chaîne de cotes. En chaîne, additionner les cotes.",
+    "Lire la hauteur sous plafond sur la coupe, jamais la hauteur d'étage.",
+    "Surface brute d'un mur : S brute (m²) = longueur (m) × hauteur sous plafond (m).",
+    "Relever les baies du mur dans le tableau des menuiseries : S baie (m²) = largeur (m) × hauteur (m), en dimensions de tableau.",
+    "Surface nette d'un mur : S nette (m²) = S brute (m²) − somme des S baie (m²).",
+    "Relever le plancher bas et le plafond sous combles : surface au sol des pièces concernées, en m².",
+    "Volume d'une pièce chauffée : V (m³) = surface au sol (m²) × hauteur sous plafond (m). Additionner les pièces chauffées.",
+    "Surface des parois opaques déperditives (m²) = murs extérieurs nets + murs sur local non chauffé nets + plancher bas + plafond sous combles. Les baies se relèvent à part.",
+    "Contrôler par le ratio, sans unité : surface des parois opaques déperditives (m²) ÷ surface habitable (m²). Hypothèse d'exercice : entre 2 et 3 pour une maison de deux niveaux. En dessous, chercher une paroi oubliée. Au-dessus, une paroi comptée deux fois ou un local non chauffé compté.",
+    "Arrondir chaque surface et chaque volume de pièce au centième ; le total est la somme des valeurs arrondies."
+  ],
+  "valeurs": [
+    { "grandeur": "Cotes", "valeur": "Intérieures, en mètres", "source": "Convention d'exercice de la station BE-T1" },
+    { "grandeur": "Hauteur d'un mur", "valeur": "Hauteur sous plafond", "source": "Convention d'exercice de la station BE-T1" },
+    { "grandeur": "Baies", "valeur": "Dimensions de tableau, largeur × hauteur", "source": "Convention d'exercice de la station BE-T1" },
+    { "grandeur": "Parois non relevées", "valeur": "Plancher intermédiaire, cloisons entre pièces chauffées", "source": "Convention d'exercice de la station BE-T1" },
+    { "grandeur": "Ratio parois opaques déperditives sur surface habitable", "valeur": "Entre 2 et 3 pour une maison de deux niveaux", "source": "Hypothèse d'exercice, sans source" },
+    { "grandeur": "Tolérance de la vérification", "valeur": "± 5 %", "source": "Station BE-T1" }
+  ],
+  "exemple": {
+    "enonce": "Un bureau au rez-de-chaussée mesure 5,80 m sur 3,30 m en cotes intérieures, hauteur sous plafond 2,60 m. Son mur nord est extérieur et porte une fenêtre de 1,40 m sur 1,15 m. Son mur est est extérieur, sans baie. Son mur ouest donne sur un local non chauffé et porte une porte de 0,90 m sur 2,10 m. Le plafond donne sur un étage chauffé. Le plancher bas est sur terre-plein.",
+    "lignes": [
+      "Mur nord : 5,80 m × 2,60 m = 15,08 m² brut ; baie 1,40 m × 1,15 m = 1,61 m² ; net 15,08 m² − 1,61 m² = 13,47 m².",
+      "Mur est : 3,30 m × 2,60 m = 8,58 m², net 8,58 m².",
+      "Murs extérieurs nets : 13,47 m² + 8,58 m² = 22,05 m².",
+      "Mur ouest, sur local non chauffé : 8,58 m² − (0,90 m × 2,10 m = 1,89 m²) = 6,69 m².",
+      "Plancher bas : 5,80 m × 3,30 m = 19,14 m². Plafond non relevé (étage chauffé).",
+      "Parois opaques déperditives : 22,05 m² + 6,69 m² + 19,14 m² = 47,88 m².",
+      "Volume : 19,14 m² × 2,60 m = 49,76 m³.",
+      "Ratio de contrôle : 47,88 m² ÷ 19,14 m² = 2,50."
+    ],
+    "resultat": "Parois opaques déperditives : 47,88 m². Baies relevées à part : 1,61 m² (fenêtre) et 1,89 m² (porte). Volume chauffé : 49,76 m³."
+  },
+  "pieges": [
+    "Hauteur d'étage prise pour la hauteur sous plafond : toutes les surfaces de murs et les volumes grossissent d'environ 10 %.",
+    "Baies non déduites, ou ajoutées au lieu d'être retirées.",
+    "Mur d'un local non chauffé oublié, ou garage compté dans le volume chauffé."
+  ],
+  "sources": [
+    "NF EN 12831-1, données d'entrée géométriques (paragraphe à confirmer). La norme est citée sans être reproduite.",
+    "Station BE-T1 pour les conventions. Station suivante : BE-T2, le coefficient U de chaque paroi.",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

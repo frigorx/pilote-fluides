@@ -107,7 +107,7 @@ const vignettes = RESEAUX.map((r) => {
   const raccourcis = r.raccourcis.map((x) => `<a href="${ech(x.href)}">${ech(x.titre)}</a>`)
     .concat(r.pdf ? [`<a href="${ech(r.pdf.href)}" download>${ech(r.pdf.titre)}</a>`] : [])
     .concat(r.externe ? [`<a class="v-externe" href="${ech(r.externe.href)}" target="_blank" rel="noopener">${ech(r.externe.titre)}</a>`] : []).join("\n        ");
-  const nombres = ech(r.chiffres || `${c.stations} stations · ${c.lignes} lignes`);
+  const nombres = ech(r.chiffres || `${c.stations} station${c.stations > 1 ? "s" : ""} · ${c.lignes} lignes`);
   return `      <article class="vignette" style="--c:${r.couleur}">
         ${carte(r)}
         <div class="v-corps">
@@ -152,7 +152,7 @@ RESEAUX.forEach((r, i) => {
     svg += `<circle class="cr-s" cx="${x.toFixed(1)}" cy="${y}" r="6.5" fill="#fffdf8" stroke="${r.couleur}" stroke-width="3.5" style="animation-delay:${(i * 0.18 + 0.9 + j * 0.05).toFixed(2)}s"/>\n`;
   }
   svg += `<text x="${xFin + 16}" y="${y + 5}" class="cr-t" fill="${r.couleur}">${ech(r.court)}</text>\n`;
-  svg += `<text x="${xFin + 16}" y="${y + 22}" class="cr-n">${ech(r.chiffres || `${c.stations} stations · ${c.lignes} lignes`)}</text>\n`;
+  svg += `<text x="${xFin + 16}" y="${y + 22}" class="cr-n">${ech(r.chiffres || `${c.stations} station${c.stations > 1 ? "s" : ""} · ${c.lignes} lignes`)}</text>\n`;
 });
 svg += `</svg>`;
 

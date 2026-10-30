@@ -92,11 +92,10 @@ window.INERWEB_RESEAUX = [
     emoji: "📐",
     adresse: "bureau-etudes/index.html",
     couleur: "#0c4b88",
-    sousTitre: "Un projet de chauffage, ventilation, climatisation calculé de bout en bout : 34 stations de 2 heures, une maison et une clinique, du dossier projet à la note de calcul.",
-    niveaux: "TP TECVC, BTS",
+    sousTitre: "Un projet de chauffage, ventilation, climatisation calculé de bout en bout, du dossier projet à la note de calcul : 34 stations de 2 heures prévues, ouvertes une à une, sur une maison puis sur un bâtiment tertiaire.",
+    niveaux: "technicien d’études CVC",
     etat: "en relecture",
     catalogue: ["Bureau d'études"],
-    stations: 34, /* annoncées dans bureau-etudes/programme.js ; le catalogue ne relève que les stations ouvertes */
     lignes: 6,
     vignette: "icones/reseaux/bureau-etudes.svg",
     entree: { titre: "Le plan du réseau", href: "bureau-etudes/index.html" },

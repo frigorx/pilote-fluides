@@ -22,6 +22,8 @@
      bâtiment d'un sujet de BTS, dans la partie réservée aux classes. `volets` garde les bâtiments
      possibles (M maison, T tertiaire) : une station « T » n'a pas de niveau maison. */
   const MT = ["M", "T"], T = ["T"];
+  /* Stations écrites : leur état ; les autres sont « a-venir ». */
+  const OUVERTES = {T1: "relecture"};
   const STATIONS = [
     ["D0", "d0-dossier-projet", "Le dossier projet", MT, 1, 0, "Lire le dossier et la maquette, remplir la carte d'identité du bâtiment."],
     ["E1", "e1-climat-site", "Le climat du site", MT, 2, 1, "Trouver la zone, la température de base et les données d'été du site, avec leurs sources."],
@@ -60,7 +62,7 @@
   ].map(([code, cle, titre, volets, fiche, chapitre, rendu]) => ({
     code, cle, titre, volets, rendu, livre: {fiche, chapitre},
     ligne: code === "D0" ? "D" : code[0],
-    etat: "a-venir",
+    etat: OUVERTES[code] || "a-venir",
     href: `stations/${cle}/`
   }));
 

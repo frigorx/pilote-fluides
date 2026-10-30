@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 537,
+  "total": 539,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2589,6 +2589,27 @@
       "missionProf": null,
       "url": "https://inerweb.fr/legislation/stations/travail-temps-et-paie/",
       "chemin": "legislation/stations/travail-temps-et-paie/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t1-surfaces-volumes",
+      "titre": "BE-T1, Surfaces et volumes du projet",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP5",
+        "CP8",
+        "C4-3",
+        "C12-2",
+        "C3-3",
+        "A2-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t1-surfaces-volumes/",
+      "chemin": "bureau-etudes/stations/t1-surfaces-volumes/"
     },
     {
       "reseau": "HydroMétro",
@@ -5464,6 +5485,18 @@
     },
     {
       "reseau": "inerWeb Plan",
+      "id": "g07b-le-metre-sur-plan",
+      "titre": "Gare 7 bis — Le métré sur plan : longueurs, surfaces, volumes",
+      "ligne": null,
+      "resume": "Avant de commander ou de chiffrer, chaque métier relève des quantités sur le plan. Le plaquiste compte des mètres carrés de mur. L'étancheur compte des mètres carrés de toiture et des mètres de relevé. Le plombier compte des mètres de tube.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/plan/gares/g07b-le-metre-sur-plan/",
+      "chemin": "plan/gares/g07b-le-metre-sur-plan/"
+    },
+    {
+      "reseau": "inerWeb Plan",
       "id": "g08-le-croquis-cote",
       "titre": "Gare 8 — Le croquis coté : dessiner à main levée",
       "ligne": null,
@@ -6855,7 +6888,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6867,7 +6900,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6879,7 +6912,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6891,7 +6924,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6903,7 +6936,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6915,7 +6948,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

@@ -243,3 +243,7 @@ body{font-size:17px}
 .partie-reservee{padding:14px 16px;border:3px solid #1b3a63;border-radius:13px;background:#eef5fc;color:var(--ink);font-size:17px;line-height:1.45}
 .partie-reservee a.primary-button{display:inline-block;text-decoration:none;color:#fff}.partie-reservee p{margin:0 0 10px}.partie-reservee p:last-child{margin:0}
 @media(max-width:650px){.volet-button{width:100%;font-size:18px}.niveau-button{min-width:0}.commande-champs{grid-template-columns:1fr}.commande-champs dd{margin-bottom:4px}.pieces th,.pieces td{font-size:15px}.fourchette-saisie input{width:100%}}
+
+/* Image de mise en situation sous la consigne (décision 31, 30/10/2026). */
+.lesson-illu{display:block;width:100%;max-height:230px;object-fit:contain;margin-top:10px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}.lesson-illu[hidden]{display:none}
+@media (max-width:650px){.lesson-illu{max-height:160px}}

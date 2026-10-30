@@ -1,0 +1,32 @@
+{
+  "cle": "t1-surfaces-volumes",
+  "code": "BE-T1",
+  "titre": "Surfaces et volumes du projet",
+  "ligne": "Thermique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [1, 2, 3],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": { "fiche": 4, "chapitre": 2 },
+  "referentiel": {
+    "tecvc": [
+      { "code": "CP5", "libelle": "Réaliser les calculs de déperditions thermiques" },
+      { "code": "CP8", "libelle": "Réaliser les calculs d'apports thermiques" }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        { "code": "C4-3", "libelle": "Décoder les plans" },
+        { "code": "C12-2", "libelle": "Extraire les informations" },
+        { "code": "C3-3", "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques (à confirmer)" }
+      ],
+      "savoirs": [
+        { "code": "A2-3", "libelle": "Bilan thermique (déperditions, apports de chaleur et d'humidité) (à confirmer : le référentiel porte aussi le libellé « Bilan thermique en régime permanent d'une enceinte fermée ou ouverte »)" }
+      ],
+      "taches": [
+        { "code": "T1", "libelle": "Analyser le CCTP ou le cahier des charges (à confirmer)" }
+      ]
+    }
+  }
+}

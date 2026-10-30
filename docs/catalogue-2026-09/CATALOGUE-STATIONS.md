@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**537 stations** réparties en 18 réseaux.
+**539 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -233,6 +233,12 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Se former](https://inerweb.fr/legislation/stations/travail-se-former/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires. |
 | [Temps & paie](https://inerweb.fr/legislation/stations/travail-temps-et-paie/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés. |
 
+## Bureau d'études — 1 stations
+
+| Station | Ligne | Niveaux | Codes | Sujet |
+|---|---|---|---|---|
+| [BE-T1, Surfaces et volumes du projet](https://inerweb.fr/bureau-etudes/stations/t1-surfaces-volumes/) | Thermique | BTS | CP5 CP8 C4-3 C12-2 C3-3 A2-3 | — |
+
 ## HydroMétro — 27 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
@@ -461,7 +467,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Remplacer un composant électrique sous consignation · Le tour de main](https://inerweb.fr/tour-de-main/interventions/remplacer-composant-electrique/) | — | — | — | Guidance au poste : remplacer un contacteur (ou un pressostat) dans une armoire électrique, sous consignation. Je sépare, je condamne, j'identifie, je fais la VAT, je repère les fils avant de les retirer, je recâble, je déconsigne, je fais l'essai. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
 | [Remplacer un composant du circuit frigorifique · Le tour de main](https://inerweb.fr/tour-de-main/interventions/remplacer-composant-frigo/) | — | — | — | Guidance au poste : remplacer un composant du circuit frigorifique, le filtre déshydrateur (le voyant en variante). Je récupère, je dépose, je monte le composant neuf dans le bon sens sous balayage d'azote, je referme, je recharge, je trace. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
 
-## inerWeb Plan — 14 stations
+## inerWeb Plan — 15 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -472,6 +478,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Gare 5 — Conventions graphiques : traits, hachures, symboles](https://inerweb.fr/plan/gares/g05-conventions/) | — | — | — | Un plan est écrit dans une langue codée : des traits, des hachures, des symboles — les mêmes pour tous les métiers, partout en France. Environ 2 heures . À la fin, vous saurez : |
 | [Gare 6 — Les échelles : le kutch, du plan au réel](https://inerweb.fr/plan/gares/g06-les-echelles/) | — | — | — | Une maison de 12 m ne tient pas sur une feuille de 30 cm : on la dessine réduite , dans une proportion exacte — l'échelle. Environ 2 heures . À la fin, vous saurez : |
 | [Gare 7 — La cotation : chaînes de cotes](https://inerweb.fr/plan/gares/g07-la-cotation/) | — | — | — | Les dimensions d'un plan sont écrites dans les cotes . Environ 2 heures . À la fin, vous saurez : |
+| [Gare 7 bis — Le métré sur plan : longueurs, surfaces, volumes](https://inerweb.fr/plan/gares/g07b-le-metre-sur-plan/) | — | — | — | Avant de commander ou de chiffrer, chaque métier relève des quantités sur le plan. Le plaquiste compte des mètres carrés de mur. L'étancheur compte des mètres carrés de toiture et des mètres de relevé. Le plombier compte des mètres de tube. |
 | [Gare 8 — Le croquis coté : dessiner à main levée](https://inerweb.fr/plan/gares/g08-le-croquis-cote/) | — | — | — | Jusqu'ici vous LISIEZ. Cette gare, c'est l'inverse : vous PRODUISEZ. Le croquis coté est le brouillon intelligent du chantier : rapide, à main levée, mais assez précis pour qu'un autre travaille avec. Environ 2 heures . |
 | [Gare 9 — La maquette BIM : initiation BIM Vision](https://inerweb.fr/plan/gares/g09-la-maquette-bim/) | — | — | — | Le bâtiment existe aussi en version numérique : la maquette BIM . Cette gare se vit sur poste informatique (~2 h). À la fin, vous saurez : |
 | [Gare 10 — Le sujet guidé : un vrai sujet, pas à pas](https://inerweb.fr/plan/gares/g10-le-sujet-guide/) | — | — | — | Vous avez les neuf premières gares dans les jambes : documents, plans, conventions, échelles, cotes, croquis, maquette. Cette gare assemble tout sur du VRAI : un vrai sujet de CAP , lu ensemble, pas à pas. Environ 2 heures . |
