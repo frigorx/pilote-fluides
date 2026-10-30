@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gare 7 bis — Le métré sur plan : longueurs, surfaces, volumes</title>
+<link rel="stylesheet" href="../../moteur/gare.css?v=93ab74161b">
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="plan/index.html" data-reseau-nom="📐 inerWeb Plan"></script>
+<style>
+.illus{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.kicker{color:#c9451a;font-weight:bold;font-size:.9em;margin:0 0 4px}
+.seul{display:inline-block;background:#fff4e0;color:#8a5200;border:1px solid #e0b36a;border-radius:6px;padding:0 8px;font-size:.7em;vertical-align:middle}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.q p.consigne{margin:0 0 10px}
+.aides{margin:12px 0}
+.aides button,button.revoir{font:inherit;padding:8px 16px;border-radius:9px;border:2px solid var(--blue);background:var(--paper);color:var(--navy);cursor:pointer;min-height:44px}
+.aides button[disabled]{opacity:.6;cursor:default}
+.aides ol{margin:8px 0 0;padding-left:22px}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="80" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="230" y="29" text-anchor="middle">Plan</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La carte du réseau</a> · tronc commun · 1re année</p>
+    <h1>Gare 7 bis — Le métré sur plan : longueurs, surfaces, volumes</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <img class="illus" src="illustrations/1-trois-metiers.webp" width="1200" height="800" alt="Sur un chantier, un plaquiste, un étancheur et un plombier lisent le même plan posé sur une table. Chacun montre sa partie : un mur, la toiture, un tuyau.">
+  <p>Avant de commander ou de chiffrer, chaque métier relève des quantités sur le plan. Le plaquiste compte des mètres carrés de mur. L'étancheur compte des mètres carrés de toiture et des mètres de relevé. Le plombier compte des mètres de tube.</p>
+  <p>Environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>passer une cote en mètres ;</li>
+    <li>additionner une chaîne de cotes ;</li>
+    <li>choisir la bonne hauteur ;</li>
+    <li>passer de la surface brute à la surface nette ;</li>
+    <li>calculer une longueur de réseau et un volume.</li>
+  </ul>
+  <p class="cle">Gardez une feuille et un crayon. Chaque calcul s'écrit avec son unité, et chaque résultat s'arrondit au centième. La calculatrice est autorisée.</p>
+</section>
+
+<section>
+  <h2>Le dossier du bâtiment d'exemple</h2>
+  <p>Toute la gare s'appuie sur un petit bâtiment de deux niveaux, avec une toiture-terrasse. Son dossier contient quatre documents. Chaque donnée se lit dans un seul document.</p>
+  <table class="doc"><tr><th>Vous cherchez</th><th>Vous lisez</th></tr>
+    <tr><td>la longueur d'un mur</td><td>le plan de niveau, dans la chaîne de cotes</td></tr>
+    <tr><td>une hauteur</td><td>la coupe</td></tr>
+    <tr><td>une fenêtre, une porte</td><td>le tableau des menuiseries</td></tr>
+    <tr><td>la toiture</td><td>le plan de toiture</td></tr></table>
+  <figure class="svgbox"><svg viewBox="0 0 620 439" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de niveau : pièce a de 4600 sur 3200 millimètres, chaîne de cotes du mur nord 1200 plus 1500 plus 1900, fenêtre F1."><rect x="90" y="50" width="500" height="360" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="110" y="70" width="460" height="320" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="230" y="50" width="150" height="20" fill="#fffdf8"/><line x1="230" y1="50" x2="230" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="380" y1="50" x2="380" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="230" y1="57" x2="380" y2="57" stroke="#1b3a63" stroke-width="1.1"/><line x1="230" y1="63" x2="380" y2="63" stroke="#1b3a63" stroke-width="1.1"/><text x="305" y="42" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">F1</text><text x="590" y="42" text-anchor="end" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">mur nord</text><text transform="rotate(90 598 230)" x="598" y="230" text-anchor="middle" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">mur est</text><rect x="410" y="390" width="90" height="20" fill="#fffdf8"/><line x1="410" y1="390" x2="410" y2="300" stroke="#1b3a63" stroke-width="1.6"/><path d="M 410 300 A 90 90 0 0 1 500 390" fill="none" stroke="#1b3a63" stroke-width="1" stroke-dasharray="4 3"/><text x="455" y="429" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">P1</text><line x1="110" y1="72" x2="110" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="230" y1="72" x2="230" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="102" x2="230" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="110,102 119,98.5 119,105.5" fill="#10233c"/><polygon points="230,102 221,105.5 221,98.5" fill="#10233c"/><text x="170" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1200</text><line x1="230" y1="72" x2="230" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="380" y1="72" x2="380" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="230" y1="102" x2="380" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="230,102 239,98.5 239,105.5" fill="#10233c"/><polygon points="380,102 371,105.5 371,98.5" fill="#10233c"/><text x="305" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1500</text><line x1="380" y1="72" x2="380" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="570" y1="72" x2="570" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="380" y1="102" x2="570" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="380,102 389,98.5 389,105.5" fill="#10233c"/><polygon points="570,102 561,105.5 561,98.5" fill="#10233c"/><text x="475" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1900</text><line x1="110" y1="72" x2="110" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="570" y1="72" x2="570" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="134" x2="570" y2="134" stroke="#10233c" stroke-width="1.1"/><polygon points="110,134 119,130.5 119,137.5" fill="#10233c"/><polygon points="570,134 561,137.5 561,130.5" fill="#10233c"/><text x="340" y="128" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">4600</text><line x1="126" y1="70" x2="126" y2="390" stroke="#10233c" stroke-width="1.1"/><polygon points="126,70 129.5,79 122.5,79" fill="#10233c"/><polygon points="126,390 122.5,381 129.5,381" fill="#10233c"/><text x="134" y="235.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">3200</text><text x="370" y="268.4" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Pièce A</text></svg><figcaption>Plan de niveau de la pièce A, au rez-de-chaussée. Cotes intérieures en millimètres.</figcaption></figure>
+  <table class="doc"><tr><th>Repère</th><th>Ouvrage</th><th>Largeur × hauteur (mm)</th><th>Mur</th></tr><tr><td>F1</td><td>fenêtre</td><td>1500 × 1200</td><td>nord</td></tr><tr><td>P1</td><td>porte</td><td>900 × 2100</td><td>sud</td></tr></table>
+  <p class="cle">Le dessin n'est pas à l'échelle. Les dimensions se lisent dans les cotes (gare 7).</p>
+</section>
+
+<section>
+  <h2>Passer une cote en mètres</h2>
+  <p>Sur un plan de bâtiment, une cote est en millimètres (gare 7). Une surface et un volume se calculent en mètres. Pour passer des millimètres aux mètres, divisez par 1000 : la virgule recule de trois rangs.</p>
+  <table class="doc"><tr><th>Cote sur le plan (mm)</th><th>En mètres</th></tr>
+    <tr><td>4600</td><td>4,60 m</td></tr><tr><td>1500</td><td>1,50 m</td></tr><tr><td>200</td><td>0,20 m</td></tr><tr><td>50</td><td>0,05 m</td></tr></table>
+  <div class="calc"><h3>Exemple résolu</h3><p>La pièce A mesure 4600 sur 3200 mm. En mètres, elle mesure 4,60 m sur 3,20 m.</p></div>
+  <p class="cle">Multipliez des mètres. 4600 × 2500 donne 11 500 000 mm², un nombre inutilisable sur un chantier.</p>
+</section>
+
+<section>
+  <h2>Additionner une chaîne de cotes</h2>
+  <p>Une longueur de mur est souvent découpée en morceaux par une chaîne de cotes. La longueur du mur est la somme des cotes partielles. La cote totale, placée plus loin du mur, sert de contrôle (gare 7).</p>
+  <figure class="svgbox"><svg viewBox="0 0 620 439" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de niveau : pièce a de 4600 sur 3200 millimètres, chaîne de cotes du mur nord 1200 plus 1500 plus 1900, fenêtre F1."><rect x="90" y="50" width="500" height="360" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="110" y="70" width="460" height="320" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="230" y="50" width="150" height="20" fill="#fffdf8"/><line x1="230" y1="50" x2="230" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="380" y1="50" x2="380" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="230" y1="57" x2="380" y2="57" stroke="#1b3a63" stroke-width="1.1"/><line x1="230" y1="63" x2="380" y2="63" stroke="#1b3a63" stroke-width="1.1"/><text x="305" y="42" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">F1</text><text x="590" y="42" text-anchor="end" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">mur nord</text><text transform="rotate(90 598 230)" x="598" y="230" text-anchor="middle" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">mur est</text><rect x="410" y="390" width="90" height="20" fill="#fffdf8"/><line x1="410" y1="390" x2="410" y2="300" stroke="#1b3a63" stroke-width="1.6"/><path d="M 410 300 A 90 90 0 0 1 500 390" fill="none" stroke="#1b3a63" stroke-width="1" stroke-dasharray="4 3"/><text x="455" y="429" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">P1</text><line x1="110" y1="72" x2="110" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="230" y1="72" x2="230" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="102" x2="230" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="110,102 119,98.5 119,105.5" fill="#10233c"/><polygon points="230,102 221,105.5 221,98.5" fill="#10233c"/><text x="170" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1200</text><line x1="230" y1="72" x2="230" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="380" y1="72" x2="380" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="230" y1="102" x2="380" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="230,102 239,98.5 239,105.5" fill="#10233c"/><polygon points="380,102 371,105.5 371,98.5" fill="#10233c"/><text x="305" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1500</text><line x1="380" y1="72" x2="380" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="570" y1="72" x2="570" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="380" y1="102" x2="570" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="380,102 389,98.5 389,105.5" fill="#10233c"/><polygon points="570,102 561,105.5 561,98.5" fill="#10233c"/><text x="475" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1900</text><line x1="110" y1="72" x2="110" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="570" y1="72" x2="570" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="134" x2="570" y2="134" stroke="#10233c" stroke-width="1.1"/><polygon points="110,134 119,130.5 119,137.5" fill="#10233c"/><polygon points="570,134 561,137.5 561,130.5" fill="#10233c"/><text x="340" y="128" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">4600</text><line x1="126" y1="70" x2="126" y2="390" stroke="#10233c" stroke-width="1.1"/><polygon points="126,70 129.5,79 122.5,79" fill="#10233c"/><polygon points="126,390 122.5,381 129.5,381" fill="#10233c"/><text x="134" y="235.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">3200</text><text x="370" y="268.4" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Pièce A</text></svg><figcaption>La pièce A : la ligne des cotes partielles du mur nord, puis la cote totale.</figcaption></figure>
+  <div class="calc"><h3>Exemple résolu</h3><p>Mur nord de la pièce A : 1200 + 1500 + 1900 = 4600 mm.</p><p>La cote totale porte 4600 : la chaîne est juste. Le mur nord mesure 4,60 m.</p></div>
+  <p class="cle">Si la somme ne tombe pas sur la cote totale, une cote est fausse ou manque. Signalez-le avant de calculer.</p>
+</section>
+
+<section>
+  <h2>Choisir la bonne hauteur</h2>
+  <p>La coupe donne plusieurs hauteurs. La <strong>hauteur sous plafond</strong> va du sol fini au plafond.</p>
+  <p>La <strong>hauteur d'étage</strong> va du sol d'un niveau au sol du niveau du dessus. Elle ajoute l'épaisseur du plancher.</p>
+  <img class="illus" src="illustrations/2-deux-hauteurs.webp" width="1200" height="800" alt="Coupe d'un bâtiment de deux niveaux. À gauche, un plaquiste mesure du sol au plafond du rez-de-chaussée. À droite, une colonne traverse le plancher et monte à l'étage.">
+  <figure class="svgbox"><svg viewBox="0 0 760 470" width="760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coupe de deux niveaux : 2500 sous plafond à chaque niveau, plancher de 200, hauteur d'étage 2700 millimètres. Une colonne d'eau traverse le plancher."><rect x="90" y="40" width="20" height="416" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="470" y="40" width="20" height="416" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="90" y="440" width="400" height="16" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="90" y="236" width="400" height="24" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="90" y="40" width="400" height="16" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><line x1="410" y1="440" x2="410" y2="56" stroke="#3d7fca" stroke-width="5"/><text x="400" y="82" text-anchor="end" fill="#3d7fca" font-size="14" font-family="Segoe UI, sans-serif">colonne d'eau</text><text x="260" y="350" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Rez-de-chaussée</text><text x="260" y="146" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Étage</text><line x1="492" y1="440" x2="536" y2="440" stroke="#10233c" stroke-width="1.1"/><line x1="492" y1="260" x2="536" y2="260" stroke="#10233c" stroke-width="1.1"/><line x1="530" y1="260" x2="530" y2="440" stroke="#10233c" stroke-width="1.1"/><polygon points="530,260 533.5,269 526.5,269" fill="#10233c"/><polygon points="530,440 526.5,431 533.5,431" fill="#10233c"/><text x="538" y="355.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="538" y="372.25" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">sous plafond</text><line x1="492" y1="236" x2="536" y2="236" stroke="#10233c" stroke-width="1.1"/><line x1="492" y1="56" x2="536" y2="56" stroke="#10233c" stroke-width="1.1"/><line x1="530" y1="56" x2="530" y2="236" stroke="#10233c" stroke-width="1.1"/><polygon points="530,56 533.5,65 526.5,65" fill="#10233c"/><polygon points="530,236 526.5,227 533.5,227" fill="#10233c"/><text x="538" y="151.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="538" y="168.25" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">sous plafond</text><line x1="530" y1="236" x2="530" y2="260" stroke="#10233c" stroke-width="1.1"/><text x="538" y="253.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">plancher 200</text><line x1="492" y1="440" x2="686" y2="440" stroke="#10233c" stroke-width="1.1"/><line x1="492" y1="236" x2="686" y2="236" stroke="#10233c" stroke-width="1.1"/><line x1="680" y1="236" x2="680" y2="440" stroke="#10233c" stroke-width="1.1"/><polygon points="680,236 683.5,245 676.5,245" fill="#10233c"/><polygon points="680,440 676.5,431 683.5,431" fill="#10233c"/><text x="688" y="343.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2700</text><text x="688" y="360.25" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">d'étage</text></svg><figcaption>Coupe du bâtiment d'exemple. Cotes en millimètres.</figcaption></figure>
+  <div class="calc"><h3>Exemple résolu</h3><p>Hauteur sous plafond : 2500 mm, soit 2,50 m.</p><p>Plancher : 200 mm, soit 0,20 m.</p><p>Hauteur d'étage : 2,50 + 0,20 = 2,70 m.</p></div>
+  <table class="doc"><tr><th>Vous mesurez</th><th>Vous prenez la hauteur</th></tr>
+    <tr><td>un mur, une cloison, un doublage</td><td>sous plafond</td></tr>
+    <tr><td>le volume d'une pièce</td><td>sous plafond</td></tr>
+    <tr><td>un tube ou une gaine qui traverse le plancher</td><td>d'étage</td></tr>
+    <tr><td>un relevé d'étanchéité</td><td>du relevé, lue sur le détail de l'acrotère</td></tr></table>
+  <p class="cle">Une hauteur d'étage prise pour un mur ajoute 0,20 m sur toute sa longueur. La surface grossit d'environ 8 %.</p>
+</section>
+
+<section>
+  <h2>La surface brute d'un mur</h2>
+  <p>La surface brute d'un mur est sa longueur multipliée par sa hauteur. On ne retire encore rien. Écrivez l'unité à chaque ligne.</p>
+  <p class="cle">Surface brute (m²) = longueur (m) × hauteur sous plafond (m)</p>
+  <figure class="svgbox"><svg viewBox="0 0 620 330" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Élévation du mur nord, 4600 sur 2500 millimètres."><rect x="130" y="30" width="460" height="250" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><line x1="130" y1="282" x2="130" y2="318" stroke="#10233c" stroke-width="1.1"/><line x1="590" y1="282" x2="590" y2="318" stroke="#10233c" stroke-width="1.1"/><line x1="130" y1="312" x2="590" y2="312" stroke="#10233c" stroke-width="1.1"/><polygon points="130,312 139,308.5 139,315.5" fill="#10233c"/><polygon points="590,312 581,315.5 581,308.5" fill="#10233c"/><text x="360" y="306" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">4600</text><line x1="128" y1="30" x2="94" y2="30" stroke="#10233c" stroke-width="1.1"/><line x1="128" y1="280" x2="94" y2="280" stroke="#10233c" stroke-width="1.1"/><line x1="100" y1="30" x2="100" y2="280" stroke="#10233c" stroke-width="1.1"/><polygon points="100,30 103.5,39 96.5,39" fill="#10233c"/><polygon points="100,280 96.5,271 103.5,271" fill="#10233c"/><text x="92" y="160.25" text-anchor="end" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="92" y="177.25" text-anchor="end" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">sous plafond</text><line x1="110" y1="280" x2="610" y2="280" stroke="#1b3a63" stroke-width="3"/></svg><figcaption>Le mur nord de la pièce A, vu de face. Cotes en millimètres.</figcaption></figure>
+  <div class="calc"><h3>Exemple résolu</h3><p>Mur nord de la pièce A : 4,60 m × 2,50 m = 11,50 m².</p></div>
+  <p>Pour les quatre murs d'une pièce, prenez le tour de la pièce : 2 × (longueur + largeur). Multipliez ce tour par la hauteur sous plafond.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Tour de la pièce A : 2 × (4,60 + 3,20) = 15,60 m.</p><p>Quatre murs bruts : 15,60 × 2,50 = 39,00 m².</p></div>
+  <p>Un <strong>doublage</strong> recouvre un mur d'un isolant et d'une plaque de plâtre, sur une seule face. Une cloison sépare deux pièces : elle a deux faces. Une plaque sur chaque face demande deux fois la surface de la cloison.</p>
+</section>
+
+<section id="ecran-deduire">
+  <h2>Déduire les ouvertures</h2>
+  <p>Une ouverture est une fenêtre, une porte ou une porte-fenêtre. Ses dimensions se lisent dans le tableau des menuiseries, la largeur d'abord (gare 7). La surface nette est la surface brute moins les ouvertures.</p>
+  <p class="cle">Surface nette (m²) = surface brute (m²) − surfaces des ouvertures (m²)</p>
+  <figure class="svgbox"><svg viewBox="0 0 620 330" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Élévation du mur nord, 4600 sur 2500 millimètres, avec la fenêtre F1 à retirer."><rect x="130" y="30" width="460" height="250" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="250" y="70" width="150" height="120" fill="#fbe3d6" stroke="#c9451a" stroke-width="2.5"/><text x="325" y="128" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">F1</text><text x="325" y="147" text-anchor="middle" fill="#c9451a" font-size="14" font-family="Segoe UI, sans-serif">à retirer</text><line x1="130" y1="282" x2="130" y2="318" stroke="#10233c" stroke-width="1.1"/><line x1="590" y1="282" x2="590" y2="318" stroke="#10233c" stroke-width="1.1"/><line x1="130" y1="312" x2="590" y2="312" stroke="#10233c" stroke-width="1.1"/><polygon points="130,312 139,308.5 139,315.5" fill="#10233c"/><polygon points="590,312 581,315.5 581,308.5" fill="#10233c"/><text x="360" y="306" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">4600</text><line x1="128" y1="30" x2="94" y2="30" stroke="#10233c" stroke-width="1.1"/><line x1="128" y1="280" x2="94" y2="280" stroke="#10233c" stroke-width="1.1"/><line x1="100" y1="30" x2="100" y2="280" stroke="#10233c" stroke-width="1.1"/><polygon points="100,30 103.5,39 96.5,39" fill="#10233c"/><polygon points="100,280 96.5,271 103.5,271" fill="#10233c"/><text x="92" y="160.25" text-anchor="end" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="92" y="177.25" text-anchor="end" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">sous plafond</text><line x1="110" y1="280" x2="610" y2="280" stroke="#1b3a63" stroke-width="3"/></svg><figcaption>Le mur nord de la pièce A et sa fenêtre F1, à retirer.</figcaption></figure>
+  <div class="calc"><h3>Exemple résolu</h3><p>Fenêtre F1 : 1500 × 1200 mm, soit 1,50 m × 1,20 m = 1,80 m².</p><p>Mur nord : 11,50 m² − 1,80 m² = 9,70 m².</p></div>
+  <p class="cle">Sur un chantier, la règle de déduction est écrite dans le descriptif ou donnée par la consigne. Dans cette gare, toutes les ouvertures se déduisent.</p>
+</section>
+
+<section>
+  <p class="kicker">Exercice 1 · plâtrerie, isolation, peinture</p>
+  <h2>Les murs d'une pièce</h2>
+  <div class="calc"><h3>L'exemple, à imiter</h3><p>Mur nord de la pièce A : 4,60 × 2,50 = 11,50 m², puis 11,50 − 1,80 = 9,70 m².</p></div>
+  <div class="q exo" data-bon="1">
+  <p class="consigne">Une chambre de l'étage a un mur nord à doubler. Le plan donne sa chaîne de cotes et sa fenêtre F2. La coupe est celle du bâtiment d'exemple : 2500 sous plafond, plancher de 200.</p>
+  <figure class="svgbox"><svg viewBox="0 0 550 402" width="550" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de niveau : chambre de 3900 sur 3000 millimètres, chaîne de cotes du mur nord 1100 plus 1200 plus 1600, fenêtre F2."><rect x="90" y="50" width="430" height="340" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="110" y="70" width="390" height="300" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="220" y="50" width="120" height="20" fill="#fffdf8"/><line x1="220" y1="50" x2="220" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="340" y1="50" x2="340" y2="70" stroke="#1b3a63" stroke-width="2"/><line x1="220" y1="57" x2="340" y2="57" stroke="#1b3a63" stroke-width="1.1"/><line x1="220" y1="63" x2="340" y2="63" stroke="#1b3a63" stroke-width="1.1"/><text x="280" y="42" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">F2</text><text x="520" y="42" text-anchor="end" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">mur nord</text><text transform="rotate(90 528 220)" x="528" y="220" text-anchor="middle" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">mur est</text><line x1="110" y1="72" x2="110" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="220" y1="72" x2="220" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="102" x2="220" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="110,102 119,98.5 119,105.5" fill="#10233c"/><polygon points="220,102 211,105.5 211,98.5" fill="#10233c"/><text x="165" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1100</text><line x1="220" y1="72" x2="220" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="340" y1="72" x2="340" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="220" y1="102" x2="340" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="220,102 229,98.5 229,105.5" fill="#10233c"/><polygon points="340,102 331,105.5 331,98.5" fill="#10233c"/><text x="280" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1200</text><line x1="340" y1="72" x2="340" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="500" y1="72" x2="500" y2="108" stroke="#10233c" stroke-width="1.1"/><line x1="340" y1="102" x2="500" y2="102" stroke="#10233c" stroke-width="1.1"/><polygon points="340,102 349,98.5 349,105.5" fill="#10233c"/><polygon points="500,102 491,105.5 491,98.5" fill="#10233c"/><text x="420" y="96" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1600</text><line x1="110" y1="72" x2="110" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="500" y1="72" x2="500" y2="140" stroke="#10233c" stroke-width="1.1"/><line x1="110" y1="134" x2="500" y2="134" stroke="#10233c" stroke-width="1.1"/><polygon points="110,134 119,130.5 119,137.5" fill="#10233c"/><polygon points="500,134 491,137.5 491,130.5" fill="#10233c"/><text x="305" y="128" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">3900</text><line x1="126" y1="70" x2="126" y2="370" stroke="#10233c" stroke-width="1.1"/><polygon points="126,70 129.5,79 122.5,79" fill="#10233c"/><polygon points="126,370 122.5,361 129.5,361" fill="#10233c"/><text x="134" y="225.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">3000</text><text x="335" y="256" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Chambre</text></svg><figcaption>Plan de la chambre, à l'étage. Cotes intérieures en millimètres.</figcaption></figure><table class="doc"><tr><th>Repère</th><th>Ouvrage</th><th>Largeur × hauteur (mm)</th><th>Mur</th></tr><tr><td>F2</td><td>fenêtre</td><td>1200 × 1350</td><td>nord</td></tr></table>
+  <p class="enonce">Quelle est la surface nette du mur nord ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>La longueur est dans la chaîne de cotes du mur nord, en millimètres. La hauteur est dans la consigne. La fenêtre est dans le tableau des menuiseries.</li><li hidden>Surface brute = longueur × hauteur sous plafond, puis retirez la fenêtre. Passez les cotes en mètres avant de multiplier.</li><li hidden>1100 + 1200 + 1600 = 3900 mm, soit 3,90 m. Multipliez 3,90 par 2,50.</li></ol></div>
+  <button class="rep" type="button">9,75 m²</button>
+  <button class="rep" type="button">8,13 m²</button>
+  <button class="rep" type="button">11,37 m²</button>
+  <button class="rep" type="button">8,91 m²</button>
+  <p class="explic">3,90 × 2,50 = 9,75 m². Fenêtre : 1,20 × 1,35 = 1,62 m². 9,75 − 1,62 = 8,13 m². 9,75 m² oublie la fenêtre, 11,37 m² l'ajoute au lieu de la retirer, 8,91 m² prend la hauteur d'étage.</p>
+</div>
+</section>
+
+<section id="ecran-toiture">
+  <h2>La toiture et ses relevés</h2>
+  <p>Sur une toiture-terrasse, l'étanchéité couvre la surface comprise entre les <strong>acrotères</strong>. Un acrotère est le muret qui borde la toiture.</p>
+  <p>Une émergence traverse la toiture : un lanterneau, une sortie de gaine. Sa surface se retire de la surface de la toiture.</p>
+  <p>Le <strong>relevé</strong> remonte l'étanchéité sur les acrotères et autour de chaque émergence. Il se compte en mètres, sur le tour. Une émergence retire donc de la surface et ajoute du relevé.</p>
+  <img class="illus" src="illustrations/3-toiture-releve.webp" width="1200" height="800" alt="Sur une toiture-terrasse bordée d'un garde-corps, un étancheur colle une bande de relevé sur l'acrotère. Au milieu de la toiture, un lanterneau.">
+  <figure class="svgbox"><svg viewBox="0 0 600 452" width="600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de toiture : 8000 sur 6500 millimètres entre les acrotères, lanterneau de 1000 sur 1000, gaine de 500 sur 500. Le relevé suit le tour des acrotères et de chaque émergence."><rect x="88" y="58" width="424" height="349" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="100" y="70" width="400" height="325" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="104" y="74" width="392" height="317" fill="none" stroke="#c9451a" stroke-width="2.2" stroke-dasharray="7 5"/><rect x="221" y="166" width="58" height="58" fill="none" stroke="#c9451a" stroke-width="2.2" stroke-dasharray="7 5"/><rect x="225" y="170" width="50" height="50" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><text x="285" y="200.25" fill="#10233c" font-size="14" font-family="Segoe UI, sans-serif">lanterneau 1000 × 1000</text><rect x="196" y="306" width="33" height="33" fill="none" stroke="#c9451a" stroke-width="2.2" stroke-dasharray="7 5"/><rect x="200" y="310" width="25" height="25" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><text x="235" y="327.75" fill="#10233c" font-size="14" font-family="Segoe UI, sans-serif">gaine 500 × 500</text><line x1="100" y1="72" x2="100" y2="106" stroke="#10233c" stroke-width="1.1"/><line x1="500" y1="72" x2="500" y2="106" stroke="#10233c" stroke-width="1.1"/><line x1="100" y1="100" x2="500" y2="100" stroke="#10233c" stroke-width="1.1"/><polygon points="100,100 109,96.5 109,103.5" fill="#10233c"/><polygon points="500,100 491,103.5 491,96.5" fill="#10233c"/><text x="300" y="94" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">8000</text><line x1="130" y1="70" x2="130" y2="395" stroke="#10233c" stroke-width="1.1"/><polygon points="130,70 133.5,79 126.5,79" fill="#10233c"/><polygon points="130,395 126.5,386 133.5,386" fill="#10233c"/><text x="138" y="237.75" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">6500</text><text x="512" y="50" text-anchor="end" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">acrotère</text><text x="88" y="436" fill="#c9451a" font-size="14" font-family="Segoe UI, sans-serif">En orange : le relevé, qui fait le tour des acrotères et de chaque émergence.</text></svg><figcaption>Plan de toiture du bâtiment d'exemple. Cotes en millimètres.</figcaption></figure>
+  <p class="cle">Tour d'un rectangle = 2 × (longueur + largeur). Tour d'un carré = 4 × côté.</p>
+  <p>La hauteur développée du relevé est sa hauteur mesurée en suivant la membrane. Le dossier la donne dans le détail de l'acrotère, un dessin à grande échelle du bord de la toiture.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Surface brute : 8,00 m × 6,50 m = 52,00 m².</p><p>Émergences : 1,00 × 1,00 = 1,00 m² et 0,50 × 0,50 = 0,25 m², soit 1,25 m².</p><p>Surface nette : 52,00 − 1,25 = 50,75 m².</p><p>Relevé des acrotères : 2 × (8,00 + 6,50) = 29,00 m.</p><p>Relevé des émergences : 4 × 1,00 = 4,00 m et 4 × 0,50 = 2,00 m.</p><p>Relevé total : 29,00 + 4,00 + 2,00 = 35,00 m.</p><p>Hauteur développée : 300 mm, soit 0,30 m. Surface de relevé : 35,00 × 0,30 = 10,50 m².</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 2 · étanchéité</p>
+  <h2>La toiture-terrasse</h2>
+  <p>L'exemple est sur l'écran de la toiture. <button type="button" class="revoir" data-va="ecran-toiture">Revoir l'exemple</button></p>
+  <div class="q exo" data-bon="2">
+  <p class="consigne">Une toiture-terrasse mesure 9400 × 7000 mm entre les acrotères. Un lanterneau de 1200 × 1200 mm la traverse.</p>
+  <figure class="svgbox"><svg viewBox="0 0 600 442" width="600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan de toiture : 9400 sur 7000 millimètres entre les acrotères, lanterneau de 1200 sur 1200. Le relevé suit le tour des acrotères et de chaque émergence."><rect x="88" y="58" width="447" height="339" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="100" y="70" width="423" height="315" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><rect x="104" y="74" width="415" height="307" fill="none" stroke="#c9451a" stroke-width="2.2" stroke-dasharray="7 5"/><rect x="231" y="178.5" width="62" height="62" fill="none" stroke="#c9451a" stroke-width="2.2" stroke-dasharray="7 5"/><rect x="235" y="182.5" width="54" height="54" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><text x="299" y="214.75" fill="#10233c" font-size="14" font-family="Segoe UI, sans-serif">lanterneau 1200 × 1200</text><line x1="100" y1="72" x2="100" y2="106" stroke="#10233c" stroke-width="1.1"/><line x1="523" y1="72" x2="523" y2="106" stroke="#10233c" stroke-width="1.1"/><line x1="100" y1="100" x2="523" y2="100" stroke="#10233c" stroke-width="1.1"/><polygon points="100,100 109,96.5 109,103.5" fill="#10233c"/><polygon points="523,100 514,103.5 514,96.5" fill="#10233c"/><text x="311.5" y="94" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">9400</text><line x1="130" y1="70" x2="130" y2="385" stroke="#10233c" stroke-width="1.1"/><polygon points="130,70 133.5,79 126.5,79" fill="#10233c"/><polygon points="130,385 126.5,376 133.5,376" fill="#10233c"/><text x="138" y="232.75" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">7000</text><text x="535" y="50" text-anchor="end" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">acrotère</text><text x="88" y="426" fill="#c9451a" font-size="14" font-family="Segoe UI, sans-serif">En orange : le relevé, qui fait le tour des acrotères et de chaque émergence.</text></svg><figcaption>Plan de toiture. Cotes en millimètres.</figcaption></figure>
+  <p class="enonce">Combien de mètres de relevé faut-il compter ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Les dimensions entre acrotères sont sur le plan de toiture. Le lanterneau porte ses cotes à côté de lui.</li><li hidden>Le relevé fait le tour des acrotères, puis le tour de chaque émergence. Tour d'un rectangle = 2 × (longueur + largeur).</li><li hidden>Tour des acrotères : 2 × (9,40 + 7,00) = 32,80 m. Ajoutez le tour du lanterneau.</li></ol></div>
+  <button class="rep" type="button">32,80 m</button>
+  <button class="rep" type="button">16,40 m</button>
+  <button class="rep" type="button">37,60 m</button>
+  <button class="rep" type="button">28,00 m</button>
+  <p class="explic">2 × (9,40 + 7,00) = 32,80 m. Lanterneau : 4 × 1,20 = 4,80 m. Total : 37,60 m. 32,80 m oublie le lanterneau, 16,40 m ne compte qu'une longueur et une largeur, 28,00 m retire le lanterneau au lieu de l'ajouter.</p>
+</div>
+</section>
+
+<section>
+  <h2>La longueur d'un réseau</h2>
+  <img class="illus" src="illustrations/4-reseau-plomberie.webp" width="1200" height="800" alt="Un plombier mesure un tube de cuivre fixé au mur, du compteur jusqu'à l'angle où le tube monte vers l'étage.">
+  <p>Un tube se compte en mètres, morceau par morceau. Les morceaux horizontaux se lisent dans les chaînes de cotes. La montée se lit sur la coupe.</p>
+  <p>La montée traverse le plancher. Elle prend donc la hauteur d'étage : la hauteur sous plafond plus le plancher.</p>
+  <figure class="svgbox"><svg viewBox="0 0 680 512" width="680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Élévation du mur : le tube part du compteur, fait 1800 plus 1400 au rez-de-chaussée, monte à travers le plancher, puis fait 1300 plus 800 à l'étage jusqu'au lavabo. Coupe : 2500 sous plafond, plancher de 200."><rect x="70" y="446" width="420" height="16" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="70" y="240" width="420" height="26" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="70" y="44" width="420" height="16" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="104" y="408" width="26" height="32" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="117" y="400" text-anchor="middle" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">compteur</text><path d="M 130 424 H 450 V 218 H 240" fill="none" stroke="#3d7fca" stroke-width="4"/><circle cx="310" cy="424" r="5" fill="#1b3a63"/><text x="318" y="416" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">vanne</text><circle cx="320" cy="218" r="5" fill="#1b3a63"/><text x="328" y="210" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">vanne</text><text x="232" y="223" text-anchor="end" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">lavabo</text><line x1="130" y1="426" x2="130" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="310" y1="426" x2="310" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="130" y1="492" x2="310" y2="492" stroke="#10233c" stroke-width="1.1"/><polygon points="130,492 139,488.5 139,495.5" fill="#10233c"/><polygon points="310,492 301,495.5 301,488.5" fill="#10233c"/><text x="220" y="486" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1800</text><line x1="310" y1="426" x2="310" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="450" y1="426" x2="450" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="310" y1="492" x2="450" y2="492" stroke="#10233c" stroke-width="1.1"/><polygon points="310,492 319,488.5 319,495.5" fill="#10233c"/><polygon points="450,492 441,495.5 441,488.5" fill="#10233c"/><text x="380" y="486" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1400</text><line x1="240" y1="216" x2="240" y2="176" stroke="#10233c" stroke-width="1.1"/><line x1="320" y1="216" x2="320" y2="176" stroke="#10233c" stroke-width="1.1"/><line x1="240" y1="182" x2="320" y2="182" stroke="#10233c" stroke-width="1.1"/><polygon points="240,182 249,178.5 249,185.5" fill="#10233c"/><polygon points="320,182 311,185.5 311,178.5" fill="#10233c"/><text x="280" y="176" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">800</text><line x1="320" y1="216" x2="320" y2="176" stroke="#10233c" stroke-width="1.1"/><line x1="450" y1="216" x2="450" y2="176" stroke="#10233c" stroke-width="1.1"/><line x1="320" y1="182" x2="450" y2="182" stroke="#10233c" stroke-width="1.1"/><polygon points="320,182 329,178.5 329,185.5" fill="#10233c"/><polygon points="450,182 441,185.5 441,178.5" fill="#10233c"/><text x="385" y="176" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1300</text><line x1="492" y1="446" x2="536" y2="446" stroke="#10233c" stroke-width="1.1"/><line x1="492" y1="266" x2="536" y2="266" stroke="#10233c" stroke-width="1.1"/><line x1="530" y1="266" x2="530" y2="446" stroke="#10233c" stroke-width="1.1"/><polygon points="530,266 533.5,275 526.5,275" fill="#10233c"/><polygon points="530,446 526.5,437 533.5,437" fill="#10233c"/><text x="538" y="361.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="538" y="378.25" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">sous plafond</text><line x1="492" y1="240" x2="536" y2="240" stroke="#10233c" stroke-width="1.1"/><line x1="530" y1="240" x2="530" y2="266" stroke="#10233c" stroke-width="1.1"/><text x="538" y="258.25" fill="#10233c" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">plancher 200</text><text x="280" y="301" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Rez-de-chaussée</text><text x="280" y="95" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Étage</text></svg><figcaption>Élévation du mur : le tube, du compteur jusqu'au lavabo de l'étage. Cotes en millimètres.</figcaption></figure>
+  <p class="cle">Dans cette gare, le tube se compte dans son axe, sans les coudes. Les deux parcours horizontaux sont à la même hauteur au-dessus de leur sol : la montée vaut la hauteur d'étage.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Rez-de-chaussée : 1800 + 1400 = 3200 mm, soit 3,20 m.</p><p>Montée : 2,50 + 0,20 = 2,70 m.</p><p>Étage : 1300 + 800 = 2100 mm, soit 2,10 m.</p><p>Longueur de tube : 3,20 + 2,70 + 2,10 = 8,00 m.</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 3 · plomberie, chauffage, froid</p>
+  <h2>Le réseau <span class="seul">à faire seul</span></h2>
+  <p>L'exemple n'est plus rappelé. Les aides restent là si vous bloquez.</p>
+  <div class="q exo" data-bon="0">
+  <p class="consigne">Une alimentation d'eau part du compteur, au rez-de-chaussée, et monte au lavabo de l'étage. Les deux parcours sont à la même hauteur au-dessus de leur sol. L'élévation donne les parcours et la coupe.</p>
+  <figure class="svgbox"><svg viewBox="0 0 720 512" width="720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Élévation du mur : le tube part du compteur, fait 2100 plus 1500 au rez-de-chaussée, monte à travers le plancher, puis fait 1800 à l'étage jusqu'au lavabo. Coupe : 2500 sous plafond, plancher de 200."><rect x="70" y="446" width="460" height="16" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="70" y="240" width="460" height="26" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="70" y="44" width="460" height="16" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><rect x="104" y="408" width="26" height="32" fill="#fffdf8" stroke="#1b3a63" stroke-width="2"/><text x="117" y="400" text-anchor="middle" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">compteur</text><path d="M 130 424 H 490 V 218 H 310" fill="none" stroke="#3d7fca" stroke-width="4"/><circle cx="340" cy="424" r="5" fill="#1b3a63"/><text x="348" y="416" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">vanne</text><text x="302" y="223" text-anchor="end" fill="#637285" font-size="14" font-family="Segoe UI, sans-serif">lavabo</text><line x1="130" y1="426" x2="130" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="340" y1="426" x2="340" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="130" y1="492" x2="340" y2="492" stroke="#10233c" stroke-width="1.1"/><polygon points="130,492 139,488.5 139,495.5" fill="#10233c"/><polygon points="340,492 331,495.5 331,488.5" fill="#10233c"/><text x="235" y="486" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2100</text><line x1="340" y1="426" x2="340" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="490" y1="426" x2="490" y2="498" stroke="#10233c" stroke-width="1.1"/><line x1="340" y1="492" x2="490" y2="492" stroke="#10233c" stroke-width="1.1"/><polygon points="340,492 349,488.5 349,495.5" fill="#10233c"/><polygon points="490,492 481,495.5 481,488.5" fill="#10233c"/><text x="415" y="486" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1500</text><line x1="310" y1="216" x2="310" y2="176" stroke="#10233c" stroke-width="1.1"/><line x1="490" y1="216" x2="490" y2="176" stroke="#10233c" stroke-width="1.1"/><line x1="310" y1="182" x2="490" y2="182" stroke="#10233c" stroke-width="1.1"/><polygon points="310,182 319,178.5 319,185.5" fill="#10233c"/><polygon points="490,182 481,185.5 481,178.5" fill="#10233c"/><text x="400" y="176" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">1800</text><line x1="532" y1="446" x2="576" y2="446" stroke="#10233c" stroke-width="1.1"/><line x1="532" y1="266" x2="576" y2="266" stroke="#10233c" stroke-width="1.1"/><line x1="570" y1="266" x2="570" y2="446" stroke="#10233c" stroke-width="1.1"/><polygon points="570,266 573.5,275 566.5,275" fill="#10233c"/><polygon points="570,446 566.5,437 573.5,437" fill="#10233c"/><text x="578" y="361.25" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="578" y="378.25" fill="#637285" font-size="13" font-family="Segoe UI, sans-serif">sous plafond</text><line x1="532" y1="240" x2="576" y2="240" stroke="#10233c" stroke-width="1.1"/><line x1="570" y1="240" x2="570" y2="266" stroke="#10233c" stroke-width="1.1"/><text x="578" y="258.25" fill="#10233c" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">plancher 200</text><text x="300" y="301" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Rez-de-chaussée</text><text x="300" y="95" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">Étage</text></svg><figcaption>Élévation du mur. Cotes en millimètres.</figcaption></figure>
+  <p class="enonce">Quelle longueur de tube faut-il compter ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Le parcours a trois morceaux : le rez-de-chaussée, la montée, l'étage.</li><li hidden>La montée traverse le plancher : elle prend la hauteur d'étage, hauteur sous plafond plus plancher.</li><li hidden>2,50 + 0,20 = 2,70 m. Additionnez les trois morceaux.</li></ol></div>
+  <button class="rep" type="button">8,10 m</button>
+  <button class="rep" type="button">7,90 m</button>
+  <button class="rep" type="button">5,40 m</button>
+  <button class="rep" type="button">8,30 m</button>
+  <p class="explic">2100 + 1500 = 3600 mm, soit 3,60 m. Montée : 2,70 m. Étage : 1,80 m. Total : 8,10 m. 7,90 m prend la hauteur sous plafond pour la montée, 5,40 m oublie la montée, 8,30 m compte le plancher deux fois.</p>
+</div>
+</section>
+
+<section>
+  <h2>Le volume</h2>
+  <p>Le volume d'une pièce est sa surface au sol multipliée par sa hauteur sous plafond. Il sert au calcul du chauffage et de la ventilation.</p>
+  <figure class="svgbox"><svg viewBox="0 0 514 290" width="514" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La pièce A en volume : 4600 de long, 3200 de large, 2500 sous plafond."><polygon points="90,90 157.872,22.128 433.872,22.128 366,90" fill="#eef4fb" stroke="#1b3a63" stroke-width="2"/><polygon points="366,240 366,90 433.872,22.128 433.872,172.128" fill="#b9cce3" stroke="#1b3a63" stroke-width="2"/><rect x="90" y="90" width="276" height="150" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2"/><line x1="90" y1="242" x2="90" y2="278" stroke="#10233c" stroke-width="1.1"/><line x1="366" y1="242" x2="366" y2="278" stroke="#10233c" stroke-width="1.1"/><line x1="90" y1="272" x2="366" y2="272" stroke="#10233c" stroke-width="1.1"/><polygon points="90,272 99,268.5 99,275.5" fill="#10233c"/><polygon points="366,272 357,275.5 357,268.5" fill="#10233c"/><text x="228" y="266" text-anchor="middle" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">4600</text><line x1="88" y1="90" x2="54" y2="90" stroke="#10233c" stroke-width="1.1"/><line x1="88" y1="240" x2="54" y2="240" stroke="#10233c" stroke-width="1.1"/><line x1="60" y1="90" x2="60" y2="240" stroke="#10233c" stroke-width="1.1"/><polygon points="60,90 63.5,99 56.5,99" fill="#10233c"/><polygon points="60,240 56.5,231 63.5,231" fill="#10233c"/><text x="52" y="170.25" text-anchor="end" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">2500</text><text x="411.936" y="212.064" fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">3200</text></svg><figcaption>La pièce A en volume. Cotes en millimètres.</figcaption></figure>
+  <p class="cle">Volume (m³) = surface (m²) × hauteur ou épaisseur (m)</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Surface au sol de la pièce A : 4,60 × 3,20 = 14,72 m².</p><p>Volume : 14,72 m² × 2,50 m = 36,80 m³.</p></div>
+  <p>Une couche de matériau a aussi un volume : l'isolant d'une toiture, une chape. Son volume est sa surface multipliée par son épaisseur. L'épaisseur est souvent donnée en millimètres : passez-la en mètres d'abord.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Isolant de la toiture d'exemple, posé sur la surface nette : 120 mm, soit 0,12 m.</p><p>Volume : 50,75 m² × 0,12 m = 6,09 m³.</p></div>
+</section>
+
+<section>
+  <h2>Contrôler son métré</h2>
+  <p>Avant de rendre un métré, relisez-le avec trois contrôles.</p>
+  <ul>
+    <li>L'unité est écrite à chaque ligne : m, m² ou m³.</li>
+    <li>La somme des cotes partielles égale la cote totale.</li>
+    <li>Le résultat a un ordre de grandeur possible. Les quatre murs d'une pièce de 15 m² au sol font une quarantaine de mètres carrés. Un résultat de 400 m² cache une virgule mal placée.</li>
+  </ul>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Les trois dernières questions regardent vers un métier : faites celle du vôtre, ou les trois.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare 7 bis</h2>
+  <p>Vous savez passer une cote en mètres, additionner une chaîne, choisir la hauteur, passer du brut au net, et calculer une longueur de réseau et un volume.</p>
+  <p style="text-align:center;margin:22px 0"><a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a></p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="corrige.pdf">corrige.pdf</a>. L'exercice fait relever, sur un deuxième bâtiment, les murs d'une salle, une toiture et ses relevés, un réseau et deux volumes.</p>
+  <p>Gare suivante : <strong>le croquis coté</strong>, gare 8. En deuxième année, les lignes de métier reprennent ces gestes pour compter des plaques et des rouleaux.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Sur un plan en millimètres, la cote 3900 vaut, en mètres :",
+  "r": [
+   "39 m",
+   "3,90 m",
+   "0,39 m",
+   "390 m"
+  ],
+  "bon": 1,
+  "x": "3900 ÷ 1000 = 3,90 m : la virgule recule de trois rangs."
+ },
+ {
+  "e": "Chaîne de cotes : 1100 + 1600 + 2100. La longueur du mur vaut :",
+  "r": [
+   "3700 mm",
+   "2700 mm",
+   "4800 mm",
+   "4700 mm"
+  ],
+  "bon": 2,
+  "x": "1100 + 1600 + 2100 = 4800 mm, soit 4,80 m."
+ },
+ {
+  "e": "Pour la surface d'un mur à doubler, vous prenez la hauteur :",
+  "r": [
+   "d'étage",
+   "sous plafond",
+   "du relevé",
+   "du plancher"
+  ],
+  "bon": 1,
+  "x": "Le doublage s'arrête au plafond : c'est la hauteur sous plafond."
+ },
+ {
+  "e": "Un tube monte d'un niveau à l'autre en traversant le plancher. Sa montée se compte avec la hauteur :",
+  "r": [
+   "sous plafond",
+   "d'étage",
+   "du plancher seul",
+   "du relevé"
+  ],
+  "bon": 1,
+  "x": "Il traverse le plancher : hauteur sous plafond plus plancher, soit la hauteur d'étage."
+ },
+ {
+  "e": "Un mur de 4,00 m sur 2,50 m porte une porte de 0,90 m × 2,10 m. Sa surface nette vaut :",
+  "r": [
+   "10,00 m²",
+   "8,11 m²",
+   "11,89 m²",
+   "7,00 m²"
+  ],
+  "bon": 1,
+  "x": "4,00 × 2,50 = 10,00 m². Porte : 0,90 × 2,10 = 1,89 m². 10,00 − 1,89 = 8,11 m²."
+ },
+ {
+  "e": "Une pièce de 4,00 m × 3,50 m a 2,50 m sous plafond. Son volume vaut :",
+  "r": [
+   "14,00 m³",
+   "37,50 m³",
+   "35,00 m³",
+   "350,00 m³"
+  ],
+  "bon": 2,
+  "x": "4,00 × 3,50 = 14,00 m² au sol. 14,00 × 2,50 = 35,00 m³."
+ },
+ {
+  "e": "Un isolant de 100 mm d'épaisseur couvre 40 m². Son volume vaut :",
+  "r": [
+   "4000 m³",
+   "40,00 m³",
+   "4,00 m³",
+   "0,40 m³"
+  ],
+  "bon": 2,
+  "x": "100 mm = 0,10 m. 40 × 0,10 = 4,00 m³. 4000 garde l'épaisseur en millimètres."
+ },
+ {
+  "e": "Les quatre murs de cette pièce de 4,00 m × 3,50 m, 2,50 m sous plafond, font en surface brute :",
+  "r": [
+   "37,50 m²",
+   "35,00 m²",
+   "18,75 m²",
+   "375,00 m²"
+  ],
+  "bon": 0,
+  "x": "Le tour : 2 × (4,00 + 3,50) = 15,00 m. 15,00 × 2,50 = 37,50 m²."
+ },
+ {
+  "spec": "Plâtrerie et isolation",
+  "e": "Une cloison de 3,60 m × 2,50 m reçoit une plaque sur chaque face. La surface de plaques vaut :",
+  "r": [
+   "9,00 m²",
+   "18,00 m²",
+   "36,00 m²",
+   "12,20 m²"
+  ],
+  "bon": 1,
+  "x": "3,60 × 2,50 = 9,00 m² par face. Deux faces : 18,00 m²."
+ },
+ {
+  "spec": "Étanchéité",
+  "e": "Une toiture mesure 10,00 × 6,00 m entre les acrotères. Une gaine de 0,60 × 0,60 m la traverse. La surface nette vaut :",
+  "r": [
+   "60,36 m²",
+   "60,00 m²",
+   "59,64 m²",
+   "57,60 m²"
+  ],
+  "bon": 2,
+  "x": "60,00 − 0,36 = 59,64 m². 57,60 retire le tour de la gaine au lieu de sa surface."
+ },
+ {
+  "spec": "Plomberie, chauffage, froid",
+  "e": "Un tube fait 4,20 m à l'étage, traverse le plancher, puis fait 1,50 m au rez-de-chaussée. Les deux parcours sont à la même hauteur au-dessus de leur sol. La coupe donne 2,50 m sous plafond et un plancher de 0,20 m. La longueur vaut :",
+  "r": [
+   "8,20 m",
+   "8,40 m",
+   "5,70 m",
+   "8,60 m"
+  ],
+  "bon": 1,
+  "x": "Montée : 2,50 + 0,20 = 2,70 m. 4,20 + 2,70 + 1,50 = 8,40 m."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script>
+/* Exercices de la gare 7 bis : trois aides qui s'affichent une à une, une réponse. */
+document.querySelectorAll(".exo").forEach(exo => {
+  const bouton = exo.querySelector(".aides button"), aides = [...exo.querySelectorAll(".aides li")];
+  let vues = 0;
+  bouton.addEventListener("click", () => {
+    if (vues < aides.length) aides[vues++].hidden = false;
+    bouton.textContent = vues < aides.length ? "Afficher l'aide " + (vues + 1) + " sur " + aides.length : "Les " + aides.length + " aides sont affichées";
+    bouton.disabled = vues >= aides.length;
+  });
+  const bon = Number(exo.dataset.bon), reps = [...exo.querySelectorAll(".rep")];
+  reps.forEach((b, i) => b.addEventListener("click", () => {
+    if (exo.classList.contains("fini")) return;
+    exo.classList.add("fini");
+    b.classList.add(i === bon ? "ok" : "ko");
+    reps[bon].classList.add("ok");
+  }));
+});
+document.querySelectorAll("[data-va]").forEach(b => b.addEventListener("click", () => montre(ecrans.indexOf(document.getElementById(b.dataset.va)))));
+</script>
+<script src="../../moteur/marque.js" data-cartouche="Plan" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>
