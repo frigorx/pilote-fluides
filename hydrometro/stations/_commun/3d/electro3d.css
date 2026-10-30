@@ -28,6 +28,13 @@ electro-3d[hidden]{display:none}
 .e3d-attente{position:absolute;inset:0;display:grid;place-items:center;padding:1rem;text-align:center;
   color:var(--muted,#637285);font-weight:600}
 .e3d-attente.echec{color:#8e2b20}
+/* la 3D refusée : l'appareil en image, la phrase dessous, plus de boutons qui ne servent à rien */
+.e3d-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+electro-3d[data-photo] .e3d-scene canvas,electro-3d[data-photo] .e3d-fils,electro-3d[data-photo] .e3d-reperes,
+electro-3d[data-repli] .e3d-outils,electro-3d[data-repli] .e3d-cote{display:none}
+electro-3d[data-repli] .e3d{grid-template-columns:1fr}
+.e3d-note{margin:.5rem 0 0;color:var(--muted,#637285)}
+.e3d-note strong{display:block;color:var(--e3d-navy)}
 
 .e3d-outils{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:.5rem}
 .e3d-outils button{min-height:36px;padding:.18rem .65rem;font-size:.9em}

@@ -35,8 +35,8 @@
       schema: o.schema ? () => { const d = document.createElement('div'); d.innerHTML = o.schema; return d; } : null,
       defaut: o.defaut || null, choisir: o.piece || null
     });
-    /* au temps Découvrir, le bloc est la seule image : en repli, il garde sa scène dessinée */
-    if (!o.garderSchema) bloc.addEventListener('e3d-repli', () => bloc.remove());
+    /* au temps Découvrir, le bloc est la seule image : en repli, il garde sa scène dessinée ; ailleurs, sans image de secours, il se retire */
+    if (!o.garderSchema) bloc.addEventListener('e3d-sans-photo', () => bloc.remove());
     hote.replaceWith(bloc);
   };
 

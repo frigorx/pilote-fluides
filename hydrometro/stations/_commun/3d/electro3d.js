@@ -105,7 +105,20 @@
      sa fermeture complète (Pixel 10, 29/10/2026). Sur écran tactile, ombres moins fines et image
      moins dense : la carte graphique travaille deux à trois fois moins, le risque baisse. */
   const LEGER = !!(window.matchMedia && matchMedia('(pointer: coarse)').matches);
-  const FERMER = 'fermez complètement le navigateur (sur un téléphone, retirez-le des applications récentes), puis rouvrez cette page.';
+  const APPAREIL = LEGER ? 'ce téléphone' : 'cet ordinateur';
+  const AIDE = LEGER
+    ? 'Pour retrouver la 3D : fermez le navigateur (glissez du bas de l’écran vers le haut sans lâcher, puis poussez sa fenêtre vers le haut) et rouvrez cette page.'
+    : 'Pour retrouver la 3D : fermez toutes les fenêtres du navigateur, puis rouvrez cette page.';
+  /* un navigateur qui a refusé la 3D une fois la refuse aux vues suivantes de la page :
+     elles passent directement à l'image, sans redemander */
+  let refusee = false;
+  /* l'image de secours : une prise de vue faite à l'avance par outils/photos-3d.mjs, rangée
+     sous photos/ au nom du modèle, de son mode et de ses options */
+  const clePhoto = (modele, mode, options) => {
+    const s = (mode || 'comprendre') + '|' + (options || '');
+    let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return modele + '-' + h.toString(36);
+  };
 
   /* ------------------------------------------------------------------ l'atelier
      Un environnement d'éclairage fabriqué : une pièce claire, un grand plafonnier, deux
@@ -220,13 +233,18 @@
     async _demarrer() {
       this._etatInit = 'chargement';
       const nom = this.getAttribute('modele');
+      if (refusee) return this._repli('webgl', 'La 3D ne s’ouvre pas sur ' + APPAREIL + ' en ce moment. ' + AIDE);
       let def, T;
       try { def = await assurerModele(nom); } catch (e) { return this._repli('modele', 'Le modèle 3D n’a pas pu se charger.'); }
       if (!def) return this._repli('modele', 'Modèle 3D inconnu : ' + nom);
       try { T = await chargerThree(); } catch (e) { return this._repli('reseau', 'La bibliothèque 3D n’a pas pu se charger (pas de réseau ?).'); }
       if (!this.isConnected) { this._etatInit = 'attente'; return; }
       try { this._monter(T, def); }
-      catch (e) { console.warn('electro-3d :', nom, e); return this._repli('webgl', e && e.contexte ? 'Le navigateur bloque la 3D de ce site. Pour la retrouver, ' + FERMER : 'La vue 3D n’a pas pu s’ouvrir sur cet appareil.'); }
+      catch (e) {
+        console.warn('electro-3d :', nom, e);
+        if (e && e.contexte) refusee = true;
+        return this._repli('webgl', e && e.contexte ? 'La 3D ne s’ouvre pas sur ' + APPAREIL + ' en ce moment. ' + AIDE : 'La vue 3D n’a pas pu s’ouvrir sur cet appareil.');
+      }
       this._etatInit = 'pret';
       this._dom.attente.remove();
       this.dataset.pret = '1';
@@ -237,18 +255,35 @@
     _repli(raison, message) {
       this._etatInit = 'repli';
       this.dataset.repli = raison;
-      if (this._dom) {
-        this._dom.attente.textContent = message;
-        this._dom.attente.classList.add('echec');
+      const d = this._dom;
+      if (d) {
+        d.attente.textContent = message;
+        d.attente.classList.add('echec');
+        /* l'appareil en image, pris à l'avance : l'élève le voit quand même, la phrase passe dessous */
+        if (!d.photo) {
+          const img = d.photo = el('img', 'e3d-photo');
+          img.alt = 'L’appareil, en image';
+          img.onload = () => {
+            d.attente.remove();
+            const note = el('p', 'e3d-note');
+            note.append(el('strong', null, 'La 3D ne s’ouvre pas sur ' + APPAREIL + ' en ce moment : voici l’appareil en image.'), ' ' + AIDE);
+            d.scene.after(note);
+            this.dataset.photo = '1';
+          };
+          img.onerror = () => { img.remove(); this.dispatchEvent(new CustomEvent('e3d-sans-photo', { bubbles: true })); };
+          img.src = BASE + 'photos/' + this.clePhoto() + '.jpg';
+          d.scene.prepend(img);
+        }
       }
       this.dispatchEvent(new CustomEvent('e3d-repli', { bubbles: true, detail: { raison } }));
     }
+    clePhoto() { return clePhoto(this.getAttribute('modele'), this.getAttribute('mode'), this.getAttribute('options')); }
 
     /* la carte graphique décroche en cours de route : le dire au lieu de laisser une image figée */
     _decroche() {
       if (this._etatInit !== 'pret') return;
       if (this._raf) cancelAnimationFrame(this._raf); this._raf = 0;
-      this._repli('decroche', 'La carte graphique a décroché. Si la 3D ne revient pas d’elle-même, ' + FERMER);
+      this._repli('decroche', 'La 3D s’est arrêtée sur ' + APPAREIL + '. ' + AIDE);
       this._dom.scene.append(this._dom.attente);
     }
     /* le navigateur rend le contexte : tout remonter, comme au premier affichage */
@@ -1005,7 +1040,10 @@
     if (o.defaut === 'schema' && o.schema) montrer(false);
     b3.addEventListener('click', () => montrer(true));
     bs.addEventListener('click', () => montrer(false));
-    e.addEventListener('e3d-repli', () => { if (o.schema) { montrer(false); bascule.hidden = true; } });
+    /* la 3D refusée : l'image de l'appareil prend sa place ; sans image, le schéma */
+    e.addEventListener('e3d-repli', () => { b3.textContent = 'En image'; });
+    e.addEventListener('e3d-pret', () => { b3.textContent = 'En 3D'; });
+    e.addEventListener('e3d-sans-photo', () => { if (o.schema) { montrer(false); bascule.hidden = true; } });
     if (o.choisir) e.addEventListener('e3d-pret', () => e.choisir(o.choisir));
     /* l'impression prend la scène dessinée : elle existe dès l'ouverture (cachée), sans attendre un
        « beforeprint » que tous les chemins d'impression n'envoient pas (export PDF, impression pilotée) */
