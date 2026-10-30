@@ -318,7 +318,7 @@ collectMainCards();
    · aerorezo         — ajouté le 01/09/2026 pour la même raison. Ses 144
      narrations (36 stations × 4 phases) étaient conformes depuis le 27/08 mais
      n'avaient aucun fichier : elles se disaient à la voix du poste. */
-for (const racine of ["packs/fluides/res", "legislation", "hydrometro", "aerorezo"]) {
+for (const racine of ["packs/fluides/res", "legislation", "hydrometro", "aerorezo", "bureau-etudes"]) {
   const dossier = path.join(root, racine);
   if (!fs.existsSync(dossier)) continue;
   for (const file of walkFiles(dossier)) {

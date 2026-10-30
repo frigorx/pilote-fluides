@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**525 stations** réparties en 18 réseaux.
+**537 stations** réparties en 18 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -11,7 +11,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Qui fait quoi — analyse fonctionnelle d’une installation frigorifique](https://inerweb.fr/packs/fluides/res/analyse-fonctionnelle-interactif/) | — | — | — | Cours interactif : l’analyse fonctionnelle et structurelle d’une installation frigorifique : le besoin, la fonction et l’organe, les deux structures (circuit et câblage), capteurs et actionneurs, lire un dossier d’analyse fonctionnelle, étudier une séquence de fonctionnement. |
 | [Tome 4 — Bilan thermique et performance énergétique](https://inerweb.fr/packs/fluides/res/bilan-thermique-performance-interactif/) | — | — | 5.2 5.4 6.08 7.10 8.11 9.10 11.02 11.04 11.06 12.14 13.17 14.19 | Cours interactif professionnel : bilan thermique d’une chambre froide, climatisation en chaud et en froid, COP, EER, SCOP et SEER. |
 | [Comprendre la bouteille liquide](https://inerweb.fr/packs/fluides/res/bouteille-liquide-pedagogique/) | — | — | 1.05 7.05 12.07 | Parcours interactif pour comprendre la bouteille liquide frigorifique, son tube plongeur et sa vanne de départ liquide. |
-| [Les bouteilles de fluide](https://inerweb.fr/packs/fluides/res/bouteilles-fluide/) | — | — | — | Les bouteilles du frigoriste : fluide neuf, récupération, azote, bouteille jetable interdite, deux robinets et tube plongeur, plaque TW WC PS, charge maximale, fluides inflammables, rangement. |
+| [Les bouteilles de fluide — types, robinets, plaque, charge maximale, fluides inflammables](https://inerweb.fr/packs/fluides/res/bouteilles-fluide/) | — | — | 5.02 5.05 5.06 | Les bouteilles du frigoriste : fluide neuf, récupération, azote, bouteille jetable interdite, deux robinets et tube plongeur, plaque TW WC PS, charge maximale, fluides inflammables, rangement. |
 | [Assembler une centrale positive — compresseurs en parallèle, collecteurs, bouteille](https://inerweb.fr/packs/fluides/res/centrale-positive-interactif/) | — | — | — | Cours interactif : lire une centrale frigorifique positive de supermarché, comprendre les compresseurs en parallèle, les collecteurs d’aspiration et de refoulement, le séparateur d’huile, le condenseur et la bouteille, puis monter dans l’ordre. |
 | [La chaîne d’énergie et d’information d’une installation](https://inerweb.fr/packs/fluides/res/chaine-energie-information-interactif/) | — | — | — | Cours interactif : les deux chaînes d’une installation frigorifique, la chaîne d’énergie (alimenter, distribuer, convertir, agir) et la chaîne d’information (acquérir, traiter, communiquer), l’endroit où elles se croisent (la bobine du contacteur), et comment les suivre quand ça ne marche pas. |
 | [La chaîne de l’intervention — manifold, vide et ordre des vannes](https://inerweb.fr/packs/fluides/res/chaine-intervention-interactive/) | — | — | 3.03 3.04 4.05 5.01 5.02 | Cours interactif commun aux fiches p1, p3 et p5 : manifold, raccordement, tirage au vide, isolement et déconnexion avec un minimum d’émissions. |
@@ -307,7 +307,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Parois et écarts de température](https://inerweb.fr/aerorezo/stations/transmission/) | C | CAP BAC BTS | — | Repérez mur, vitrage, toiture et plancher. |
 | [Ventilateur et équilibrage](https://inerweb.fr/aerorezo/stations/ventilateur-equilibrage/) | D | CAP BAC BTS | — | Vois le débit changer quand un registre bouge. |
 
-## ÉlectroRézo — 63 stations
+## ÉlectroRézo — 75 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -359,6 +359,9 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le moteur monophasé](https://inerweb.fr/electrorezo/stations/6-5-moteur-monophase/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie. |
 | [Synchrone et courant continu](https://inerweb.fr/electrorezo/stations/6-6-synchrone-et-continu/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : machines et conversion d’énergie. |
 | [Autocontrôle électrique avant mise sous tension](https://inerweb.fr/electrorezo/stations/6-7-autocontrole-mise-sous-tension/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : l’autocontrôle électrique avant la mise sous tension. |
+| [D’où vient le champ magnétique](https://inerweb.fr/electrorezo/stations/6-a-d-ou-vient-le-champ/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : le champ magnétique, d’où il vient. |
+| [Ce que fait le champ magnétique](https://inerweb.fr/electrorezo/stations/6-b-ce-que-fait-le-champ/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : ce que fait le champ magnétique. |
+| [Action et réaction : le courant induit](https://inerweb.fr/electrorezo/stations/6-c-action-et-reaction/) | Ligne 6 | — | — | Station autonome de la ligne 6 d’ÉlectroRézo : action et réaction, le courant induit. |
 | [Faire varier la tension](https://inerweb.fr/electrorezo/stations/7-1-varier-la-tension/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
 | [Le variateur de tension](https://inerweb.fr/electrorezo/stations/7-2-variateur-tension/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
 | [Faire varier la fréquence](https://inerweb.fr/electrorezo/stations/7-3-varier-la-frequence/) | Ligne 7 | — | — | Station autonome de la ligne 7 d’ÉlectroRézo : faire varier et piloter l’énergie. |
@@ -374,6 +377,15 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Le pointillé](https://inerweb.fr/electrorezo/stations/8-7-pointille/) | Ligne 5 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
 | [La bobine et le rond](https://inerweb.fr/electrorezo/stations/8-8-bobine-et-rond/) | Ligne 5 | — | — | Station autonome de la ligne 8 dÉlectroRézo : couper, commander, isoler. |
 | [Les repères](https://inerweb.fr/electrorezo/stations/8-9-reperes/) | Ligne 5 | — | — | Station autonome de la ligne 8 d’ÉlectroRézo : l’écriture du schéma. |
+| [Qui fait tourner quoi](https://inerweb.fr/electrorezo/stations/9-1-qui-fait-tourner-quoi/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [Repérer C, S, R à l’ohmmètre](https://inerweb.fr/electrorezo/stations/9-2-reperer-c-s-r/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [RSIR à relais.](https://inerweb.fr/electrorezo/stations/9-3-compresseur-rsir-csir/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [PSC.](https://inerweb.fr/electrorezo/stations/9-4-compresseur-psc-csr/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [Le Klixon et le dépannage du compresseur](https://inerweb.fr/electrorezo/stations/9-5-klixon-et-depannage/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [Spire de Frager : le moteur sans condensateur](https://inerweb.fr/electrorezo/stations/9-6-spire-de-frager/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [Ventilateur et vitesses : le moteur à plusieurs vitesses](https://inerweb.fr/electrorezo/stations/9-7-ventilateur-et-vitesses/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
+| [Inverser le sens d’un moteur monophasé](https://inerweb.fr/electrorezo/stations/9-8-inverser-le-sens/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : inverser le sens d’un moteur monophasé. |
+| [Version AC, page 6 de la notice.](https://inerweb.fr/electrorezo/stations/9-9-moteur-ec/) | Ligne 9 | — | — | Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé. |
 
 ## CartoClim — 21 stations
 

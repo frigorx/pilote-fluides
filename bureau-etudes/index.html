@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Réseau Bureau d'études d'inerWeb : un projet de chauffage, ventilation et climatisation calculé de bout en bout, en 34 stations de 2 heures, du dossier projet à la note de calcul. TP TECVC, BTS FED.">
+<title>Bureau d'études : le réseau | inerWeb</title>
+<link rel="stylesheet" href="accueil.css">
+  <script src="../moteur/animations.js?v=7bddbcaafd"></script>
+  <script src="../moteur/voix-index.js?v=20261030-1"></script>
+  <script src="../moteur/prononciation.js?v=20261030-1"></script>
+  <script src="../moteur/voix.js?v=20261030-1"></script>
+  <script src="../moteur/reglage-voix.js?v=20261030-1"></script>
+  <script src="../moteur/lisibilite.js?v=20261030-1" defer></script>
+  <script src="../moteur/agrandir.js?v=20261030-1" defer></script>
+  <script src="../moteur/marque.js?v=20261030-1" data-cartouche="Bureau d'études" data-licence="conditions" data-prototype defer></script>
+<script defer src="../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 Réseau Bureau d'études"></script>
+</head>
+<body>
+<div class="page">
+  <div class="filigrane" aria-hidden="true" style="top:120px;left:40px">inerWeb<small>by inerweb.fr</small></div>
+  <div class="filigrane" aria-hidden="true" style="top:46%;left:42%">inerWeb<small>by inerweb.fr</small></div>
+  <div class="filigrane" aria-hidden="true" style="bottom:120px;right:60px">inerWeb<small>by inerweb.fr</small></div>
+
+  <header class="barre">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 50" width="248" height="40" role="img" aria-label="inerWeb Bureau d'études"><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="4" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="54" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="4" x2="112" y1="35" y2="35"/><rect fill="#e8914a" x="118" y="10" rx="5" ry="5" width="186" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15px" font-weight="bold" x="211" y="27" text-anchor="middle">Bureau d'études</text></svg>
+    <span class="badge">En relecture</span>
+  </header>
+
+  <section class="identite">
+    <h1>Bureau d'études</h1>
+    <p>Un vrai projet de chauffage, ventilation, climatisation, calculé de bout en bout. <strong>34 stations de 2 heures</strong>, du dossier projet à la note de calcul. TP TECVC, BTS FED.</p>
+  </section>
+
+  <section class="porte" aria-label="Le projet et le plan du réseau">
+    <aside class="visuel">
+      <h2>Le projet</h2>
+      <figure id="visuel-maison">
+        <img src="fil-rouge/maison/svg/plan-rdc.svg" alt="Plan coté du rez-de-chaussée de la maison d'étude.">
+        <figcaption>La maison d'étude, rez-de-chaussée : niveaux 1 et 2.</figcaption>
+      </figure>
+      <p class="attente">Niveau 3, type BTS : le bâtiment d'un sujet de BTS, dans la partie réservée aux classes.</p>
+      <div class="legende" id="legende"></div>
+    </aside>
+    <div class="plan">
+      <svg id="plan" role="img" aria-labelledby="plan-titre"><title id="plan-titre">Plan du réseau Bureau d'études : la gare centrale D0, six lignes, le terminus R5</title></svg>
+    </div>
+  </section>
+
+  <h2 class="bloc">Par où commencer ?</h2>
+  <nav class="portes" id="portes">
+    <a href="#stations"><strong>Les 34 stations</strong>La liste, ligne par ligne, avec ce qui est ouvert.</a>
+    <a href="#mode-emploi"><strong>Comment ça marche</strong>Deux heures par station, trois niveaux, une feuille papier.</a>
+    <a id="porte-premiere" href="#stations"><strong>La première station</strong>Elle ouvre bientôt.</a>
+  </nav>
+
+  <h2 class="bloc" id="mode-emploi">Comment ça marche</h2>
+  <ol class="mode">
+    <li>Chaque station dure 2 heures : la méthode sur un exemple résolu, puis votre projet.</li>
+    <li>Trois niveaux, chacun avec trois aides : 1 guidé et 2 autonome sur la maison d'étude, 3 sur le bâtiment d'un sujet de BTS, dans la partie réservée aux classes.</li>
+    <li>Vous travaillez sur une feuille réponse papier. La station ne calcule pas à votre place.</li>
+    <li>À la fin, vous saisissez vos résultats : la station dit s'ils sont dans la fourchette attendue. Rien n'est enregistré.</li>
+    <li>Les calculettes RézoTools vous servent d'outil. Au terminus, vos feuilles deviennent la note de calcul du projet.</li>
+  </ol>
+
+  <h2 class="bloc" id="stations">Les 34 stations</h2>
+  <div class="lignes" id="lignes"></div>
+</div>
+
+<script src="programme.js"></script>
+<script src="carte.js"></script>
+<script>
+(function () {
+  "use strict";
+  const P = window.BE_PROGRAMME, C = window.BE_CARTE;
+  C.dessiner(document.getElementById("plan"), P);
+
+  document.getElementById("legende").innerHTML = P.LIGNES.map(l => `<span><i class="trait" style="background:${l.couleur}"></i><b>${l.code}</b> ${l.nom}</span>`).join("")
+    + `<span>Chaque station : 2 heures, 3 niveaux. Disque plein : station ouverte. Cercle en pointillé : à venir. Survolez une station pour voir ce que l'on y rend ; cliquez sur une lettre pour isoler sa ligne.</span>`;
+
+  const etat = s => s.etat === "en-ligne" ? "ouverte" : s.etat === "relecture" ? "en relecture" : s.etat === "construction" ? "en construction" : "à venir";
+  document.getElementById("lignes").innerHTML = [{code: "D", nom: "Gare centrale et terminus", couleur: "#1b3a63"}].concat(P.LIGNES).map(l => {
+    const st = l.code === "D" ? [P.station(P.GARE), P.station(P.TERMINUS)] : P.deLaLigne(l.code).filter(s => s.code !== P.TERMINUS);
+    return `<section class="ligne" style="--c:${l.couleur}"><h3>${l.code === "D" ? "" : "Ligne " + l.code + ", "}${l.nom}</h3><ol>${st.map(s => {
+      const titre = C.ouverte(s) ? `<a href="${s.href}">${s.titre}</a>` : s.titre;
+      return `<li><b>${s.code}</b><span>${titre}</span><em class="${C.ouverte(s) ? "ouverte" : ""}">${etat(s)}</em></li>`;
+    }).join("")}</ol></section>`;
+  }).join("");
+
+  const premiere = P.STATIONS.find(C.ouverte);
+  if (premiere) {
+    const a = document.getElementById("porte-premiere");
+    a.href = premiere.href;
+    a.innerHTML = `<strong>${premiere.code}, ${premiere.titre}</strong>La première station ouverte.`;
+  }
+})();
+</script>
+  <script src="../moteur/prof-vocal.js?v=20261030-1"></script>
+</body>
+</html>

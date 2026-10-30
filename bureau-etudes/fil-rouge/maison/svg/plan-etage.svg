@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" width="297mm" height="210mm">
+<title>Plan de l'étage</title>
+<rect width="297" height="210" fill="#fff"/>
+<g class="filigrane"><text x="148.5" y="105" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-22 148.5 105)">inerWeb, by inerweb.fr</text><text x="68" y="52" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-22 68 52)">inerWeb, by inerweb.fr</text><text x="232" y="160" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-22 232 160)">inerWeb, by inerweb.fr</text></g>
+<rect x="92.00" y="159.00" width="26.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="146.00" y="159.00" width="43.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="217.00" y="159.00" width="27.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="131.00" width="6.00" height="28.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="166.00" y="87.00" width="2.00" height="72.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="238.00" y="135.00" width="6.00" height="24.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="87.00" width="6.00" height="28.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="238.00" y="87.00" width="6.00" height="24.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="85.00" width="152.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="59.00" width="6.00" height="26.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="152.00" y="11.00" width="2.00" height="74.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="200.00" y="11.00" width="2.00" height="74.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="238.00" y="56.00" width="6.00" height="29.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="11.00" width="6.00" height="32.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="238.00" y="11.00" width="6.00" height="29.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="5.00" width="14.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="126.00" y="5.00" width="39.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="189.00" y="5.00" width="25.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="226.00" y="5.00" width="18.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<line x1="92.00" y1="165.00" x2="118.00" y2="165.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="146.00" y1="165.00" x2="189.00" y2="165.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="217.00" y1="165.00" x2="244.00" y2="165.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="159.00" x2="118.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="146.00" y1="159.00" x2="166.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="168.00" y1="159.00" x2="189.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="217.00" y1="159.00" x2="238.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="135.00" x2="244.00" y2="135.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="131.00" x2="98.00" y2="131.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="115.00" x2="98.00" y2="115.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="111.00" x2="244.00" y2="111.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="87.00" x2="166.00" y2="87.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="168.00" y1="87.00" x2="238.00" y2="87.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="85.00" x2="152.00" y2="85.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="154.00" y1="85.00" x2="200.00" y2="85.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="202.00" y1="85.00" x2="238.00" y2="85.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="59.00" x2="98.00" y2="59.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="56.00" x2="244.00" y2="56.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="43.00" x2="98.00" y2="43.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="40.00" x2="244.00" y2="40.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="11.00" x2="106.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="126.00" y1="11.00" x2="152.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="154.00" y1="11.00" x2="165.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="189.00" y1="11.00" x2="200.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="202.00" y1="11.00" x2="214.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="226.00" y1="11.00" x2="238.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="5.00" x2="106.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="126.00" y1="5.00" x2="165.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="189.00" y1="5.00" x2="214.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="226.00" y1="5.00" x2="244.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="165.00" x2="92.00" y2="131.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="115.00" x2="92.00" y2="59.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="92.00" y1="43.00" x2="92.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="118.00" y1="165.00" x2="118.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="146.00" y1="165.00" x2="146.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="189.00" y1="165.00" x2="189.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="189.00" y1="11.00" x2="189.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="217.00" y1="165.00" x2="217.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="244.00" y1="165.00" x2="244.00" y2="135.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="244.00" y1="111.00" x2="244.00" y2="56.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="244.00" y1="40.00" x2="244.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="159.00" x2="98.00" y2="131.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="115.00" x2="98.00" y2="87.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="85.00" x2="98.00" y2="59.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="43.00" x2="98.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="166.00" y1="159.00" x2="166.00" y2="87.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="168.00" y1="159.00" x2="168.00" y2="87.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="159.00" x2="238.00" y2="135.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="111.00" x2="238.00" y2="87.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="85.00" x2="238.00" y2="56.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="238.00" y1="40.00" x2="238.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="152.00" y1="85.00" x2="152.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="154.00" y1="85.00" x2="154.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="200.00" y1="85.00" x2="200.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="202.00" y1="85.00" x2="202.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="106.00" y1="11.00" x2="106.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="126.00" y1="11.00" x2="126.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="165.00" y1="11.00" x2="165.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="214.00" y1="11.00" x2="214.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="226.00" y1="11.00" x2="226.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<rect x="128.00" y="11.00" width="24.00" height="44.00" fill="none" stroke="#000" stroke-width="0.3"/>
+<line x1="128.00" y1="11.00" x2="152.00" y2="55.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<line x1="128.00" y1="55.00" x2="152.00" y2="11.00" stroke="#000" stroke-width="0.2" stroke-dasharray="1.2 0.8"/>
+<line x1="118.00" y1="163.00" x2="146.00" y2="163.00" stroke="#000" stroke-width="0.2"/>
+<line x1="118.00" y1="161.00" x2="146.00" y2="161.00" stroke="#000" stroke-width="0.2"/>
+<line x1="94.00" y1="131.00" x2="94.00" y2="115.00" stroke="#000" stroke-width="0.2"/>
+<line x1="96.00" y1="131.00" x2="96.00" y2="115.00" stroke="#000" stroke-width="0.2"/>
+<line x1="189.00" y1="163.00" x2="217.00" y2="163.00" stroke="#000" stroke-width="0.2"/>
+<line x1="189.00" y1="161.00" x2="217.00" y2="161.00" stroke="#000" stroke-width="0.2"/>
+<line x1="240.00" y1="135.00" x2="240.00" y2="111.00" stroke="#000" stroke-width="0.2"/>
+<line x1="242.00" y1="135.00" x2="242.00" y2="111.00" stroke="#000" stroke-width="0.2"/>
+<line x1="94.00" y1="59.00" x2="94.00" y2="43.00" stroke="#000" stroke-width="0.2"/>
+<line x1="96.00" y1="59.00" x2="96.00" y2="43.00" stroke="#000" stroke-width="0.2"/>
+<line x1="106.00" y1="9.00" x2="126.00" y2="9.00" stroke="#000" stroke-width="0.2"/>
+<line x1="106.00" y1="7.00" x2="126.00" y2="7.00" stroke="#000" stroke-width="0.2"/>
+<line x1="165.00" y1="9.00" x2="189.00" y2="9.00" stroke="#000" stroke-width="0.2"/>
+<line x1="165.00" y1="7.00" x2="189.00" y2="7.00" stroke="#000" stroke-width="0.2"/>
+<line x1="214.00" y1="9.00" x2="226.00" y2="9.00" stroke="#000" stroke-width="0.2"/>
+<line x1="214.00" y1="7.00" x2="226.00" y2="7.00" stroke="#000" stroke-width="0.2"/>
+<line x1="240.00" y1="56.00" x2="240.00" y2="40.00" stroke="#000" stroke-width="0.2"/>
+<line x1="242.00" y1="56.00" x2="242.00" y2="40.00" stroke="#000" stroke-width="0.2"/>
+<line x1="92.00" y1="178.00" x2="244.00" y2="178.00" stroke="#000" stroke-width="0.25"/>
+<line x1="92.00" y1="166.00" x2="92.00" y2="179.20" stroke="#000" stroke-width="0.2"/>
+<line x1="90.90" y1="179.10" x2="93.10" y2="176.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="98.00" y1="166.00" x2="98.00" y2="179.20" stroke="#000" stroke-width="0.2"/>
+<line x1="96.90" y1="179.10" x2="99.10" y2="176.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="166.00" y1="166.00" x2="166.00" y2="179.20" stroke="#000" stroke-width="0.2"/>
+<line x1="164.90" y1="179.10" x2="167.10" y2="176.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="168.00" y1="166.00" x2="168.00" y2="179.20" stroke="#000" stroke-width="0.2"/>
+<line x1="166.90" y1="179.10" x2="169.10" y2="176.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="238.00" y1="166.00" x2="238.00" y2="179.20" stroke="#000" stroke-width="0.2"/>
+<line x1="236.90" y1="179.10" x2="239.10" y2="176.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="244.00" y1="166.00" x2="244.00" y2="179.20" stroke="#000" stroke-width="0.2"/>
+<line x1="242.90" y1="179.10" x2="245.10" y2="176.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<text x="95.00" y="184.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,30</text>
+<text x="132.00" y="184.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,40</text>
+<text x="167.00" y="184.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,10</text>
+<text x="203.00" y="184.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,50</text>
+<text x="241.00" y="184.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,30</text>
+<line x1="92.00" y1="169.00" x2="244.00" y2="169.00" stroke="#000" stroke-width="0.25"/>
+<line x1="92.00" y1="166.00" x2="92.00" y2="170.20" stroke="#000" stroke-width="0.2"/>
+<line x1="90.90" y1="170.10" x2="93.10" y2="167.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="244.00" y1="166.00" x2="244.00" y2="170.20" stroke="#000" stroke-width="0.2"/>
+<line x1="242.90" y1="170.10" x2="245.10" y2="167.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<text x="174.00" y="175.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7,60</text>
+<line x1="257.00" y1="5.00" x2="257.00" y2="165.00" stroke="#000" stroke-width="0.25"/>
+<line x1="245.00" y1="5.00" x2="258.20" y2="5.00" stroke="#000" stroke-width="0.2"/>
+<line x1="255.90" y1="6.10" x2="258.10" y2="3.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="245.00" y1="11.00" x2="258.20" y2="11.00" stroke="#000" stroke-width="0.2"/>
+<line x1="255.90" y1="12.10" x2="258.10" y2="9.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="245.00" y1="85.00" x2="258.20" y2="85.00" stroke="#000" stroke-width="0.2"/>
+<line x1="255.90" y1="86.10" x2="258.10" y2="83.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="245.00" y1="87.00" x2="258.20" y2="87.00" stroke="#000" stroke-width="0.2"/>
+<line x1="255.90" y1="88.10" x2="258.10" y2="85.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="245.00" y1="159.00" x2="258.20" y2="159.00" stroke="#000" stroke-width="0.2"/>
+<line x1="255.90" y1="160.10" x2="258.10" y2="157.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="245.00" y1="165.00" x2="258.20" y2="165.00" stroke="#000" stroke-width="0.2"/>
+<line x1="255.90" y1="166.10" x2="258.10" y2="163.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<text x="263.15" y="9.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 263.15 9.50)">0,30</text>
+<text x="263.15" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 263.15 48.00)">3,70</text>
+<text x="263.15" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 263.15 86.00)">0,10</text>
+<text x="263.15" y="123.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 263.15 123.00)">3,60</text>
+<text x="263.15" y="162.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 263.15 162.00)">0,30</text>
+<line x1="248.00" y1="5.00" x2="248.00" y2="165.00" stroke="#000" stroke-width="0.25"/>
+<line x1="245.00" y1="5.00" x2="249.20" y2="5.00" stroke="#000" stroke-width="0.2"/>
+<line x1="246.90" y1="6.10" x2="249.10" y2="3.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="245.00" y1="165.00" x2="249.20" y2="165.00" stroke="#000" stroke-width="0.2"/>
+<line x1="246.90" y1="166.10" x2="249.10" y2="163.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<text x="254.15" y="79.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 254.15 79.00)">8,00</text>
+<polygon points="47.00,15.00 43.50,29.00 47.00,26.50 50.50,29.00" fill="#000" stroke="#000" stroke-width="0.3" stroke-linejoin="round"/>
+<text x="47.00" y="12.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">N</text>
+<line x1="30.00" y1="42.00" x2="70.00" y2="42.00" stroke="#000" stroke-width="0.5"/>
+<line x1="30.00" y1="40.20" x2="30.00" y2="43.80" stroke="#000" stroke-width="0.35"/>
+<text x="30.00" y="37.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<line x1="50.00" y1="40.20" x2="50.00" y2="43.80" stroke="#000" stroke-width="0.35"/>
+<text x="50.00" y="37.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1</text>
+<rect x="30.00" y="40.80" width="20.00" height="1.20" fill="#000" stroke="#000" stroke-width="0.2"/>
+<line x1="70.00" y1="40.20" x2="70.00" y2="43.80" stroke="#000" stroke-width="0.35"/>
+<text x="70.00" y="37.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2 m</text>
+<rect x="50.00" y="40.80" width="20.00" height="1.20" fill="#fff" stroke="#000" stroke-width="0.2"/>
+<text x="132.21" y="156.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F7</text>
+<text x="102.21" y="124.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F8</text>
+<text x="203.21" y="156.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F9</text>
+<text x="231.76" y="124.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F10</text>
+<text x="103.76" y="52.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F11</text>
+<text x="115.76" y="16.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F12</text>
+<text x="176.76" y="16.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F13</text>
+<text x="219.76" y="16.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F14</text>
+<text x="231.76" y="49.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">F15</text>
+<text x="131.51" y="118.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre 1</text>
+<text x="131.51" y="124.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12,24 m²</text>
+<text x="131.51" y="130.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,40 × 3,60</text>
+<text x="202.51" y="118.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre 2</text>
+<text x="202.51" y="124.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12,60 m²</text>
+<text x="202.51" y="130.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,50 × 3,60</text>
+<text x="119.89" y="53.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Palier</text>
+<text x="119.89" y="59.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7,35 m²</text>
+<text x="119.89" y="65.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,70 × 3,70</text>
+<text x="176.51" y="43.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre 3</text>
+<text x="176.51" y="49.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">8,51 m²</text>
+<text x="176.51" y="55.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,30 × 3,70</text>
+<text x="219.99" y="31.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Salle d'eau</text>
+<text x="219.99" y="37.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">6,66 m²</text>
+<text x="219.99" y="43.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,80 × 3,70</text>
+<rect x="6.00" y="186.50" width="285.00" height="18.50" fill="none" stroke="#000" stroke-width="0.4"/>
+<text x="9" y="192.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" fill="#1b3a63"><tspan font-weight="bold">iner</tspan><tspan>Web</tspan></text>
+<rect x="32.80" y="187.70" width="45.61" height="6.74" fill="#e8914a"/>
+<text x="55.60" y="192.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Bureau d'études</text>
+<text x="84.41" y="192.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Plan de l'étage</text>
+<text x="288.00" y="192.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Maison d'étude BE, Marseille, zone H3</text>
+<text x="9.00" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Échelle 1/50</text>
+<text x="47.74" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Cotes en mètres</text>
+<text x="95.96" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">30/10/2026</text>
+<text x="131.84" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plan généré depuis maison.json, version 1</text>
+</svg>

@@ -1,0 +1,245 @@
+/* Bureau d'études : feuille de station. Socle du cours Condenseur + feuille des bouteilles, regroupés ici pour que la station soit autonome (plus d'@import), puis les blocs propres au format long en fin de fichier. */
+:root {
+  --navy:#1b3a63; --ink:#10233c; --orange:#ff6b35; --orange-dark:#c9451a;
+  --blue:#3d7fca; --blue-soft:#84b7ec; --cream:#f7f1e7; --paper:#fffdf8;
+  --muted:#637285; --line:rgba(27,58,99,.16); --ok:#1e7e54; --ok-bg:#e3f5ec;
+  --bad:#c0392b; --bad-bg:#fbe7e4; --wait:#b06a00; --wait-bg:#fff4e0;
+  --shadow:0 18px 48px rgba(27,58,99,.14);
+}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;background:var(--cream);color:var(--ink)}
+[hidden]{display:none!important}
+body{font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;font-size:16px;line-height:1.45;overflow-x:hidden}
+button,a,input{font:inherit} button{touch-action:manipulation} button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid rgba(255,107,53,.48);outline-offset:3px}
+.skip-link{position:fixed;z-index:99;left:12px;top:-80px;background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px}.skip-link:focus{top:12px}
+.appbar{height:72px;padding:10px clamp(12px,3vw,32px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(255,253,248,.96)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--navy);text-decoration:none}.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font:bold 22px "Trebuchet MS",Calibri,sans-serif;border:3px solid var(--orange)}
+.brand strong,.brand small{display:block}.brand strong{font:700 17px "Trebuchet MS",Calibri,sans-serif}.brand small{font-size:14px;color:var(--muted)}
+.appbar-actions,.lesson-tools,.home-actions{display:flex;align-items:center;gap:8px}.mode-badge,.small-button,.tool-button,.speed-control{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;font-weight:700}
+.mode-badge{padding:7px 12px;font-size:14px}.small-button,.tool-button{padding:8px 12px;cursor:pointer}.exit-button{border-color:rgba(201,69,26,.35);color:var(--orange-dark)}
+.home{width:min(1180px,calc(100% - 32px));min-height:calc(100dvh - 72px);margin:auto;padding:clamp(18px,4vh,44px) 0 20px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(18px,4vw,54px);align-content:center}
+.home-copy{align-self:center}.eyebrow{margin:0 0 7px;color:var(--orange-dark);font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1,h2,h3{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy);margin:0;line-height:1.03}
+h1{font-size:clamp(42px,5.4vw,76px);letter-spacing:-.015em}h1 span{color:var(--orange-dark)}
+.home-intro{max-width:660px;font-size:clamp(17px,1.7vw,21px);line-height:1.55;margin:18px 0}.primary-button,.nav-button{border:0;border-radius:999px;background:var(--navy);color:#fff;padding:12px 20px;font-weight:800;cursor:pointer}.primary-button{font-size:17px}.home-actions>span{color:var(--muted);font-size:14px}
+.home-visual{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden;align-self:center}.home-visual img{display:block;width:100%;height:min(36vh,340px);object-fit:cover}.home-visual figcaption{padding:12px 16px;color:var(--muted);font-weight:700}
+.dossier-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.dossier-button{display:flex;align-items:center;gap:9px;min-height:66px;text-align:left;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--navy);padding:10px;cursor:pointer}.dossier-button b{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:#fff}.dossier-button span{font-weight:800}.dossier-button small{display:block;color:var(--muted);font-weight:400}.home-note{grid-column:1/-1;margin:0;padding:10px 14px;border:1px dashed var(--orange-dark);border-radius:12px;background:var(--paper)}
+body.course-running{height:100dvh;overflow:hidden}.course-shell{height:calc(100dvh - 72px);padding:10px;display:grid;grid-template-columns:156px minmax(0,1fr);gap:10px}
+.course-rail,.lesson-card{min-height:0;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}.course-rail{border-radius:18px;padding:12px 9px;display:flex;flex-direction:column}.rail-heading{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}.rail-heading strong{color:var(--navy)}
+.stepper{display:grid;gap:6px;margin:12px 0 auto}.step-button{display:grid;grid-template-columns:26px 1fr;gap:6px;align-items:center;border:0;background:transparent;color:var(--muted);text-align:left;padding:5px 3px;border-radius:9px;cursor:pointer}.step-button b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;border:1px solid var(--line);background:var(--paper)}.step-button.active{background:#eef5fc;color:var(--navy);font-weight:800}.step-button.active b{background:var(--blue);border-color:var(--blue);color:#fff}.step-button.done b{border:3px double var(--ok);color:var(--ok)}
+.progress-track{height:7px;border-radius:999px;background:#e6edf4;overflow:hidden}.progress-track span{display:block;height:100%;background:var(--orange);width:0}.course-rail>p{margin:7px 0 0;color:var(--muted);font-size:14px}
+.lesson-card{border-radius:20px;overflow:hidden;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto}.lesson-header{grid-row:1;padding:10px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.lesson-heading{min-width:0}.lesson-heading h2{font-size:clamp(25px,3.3vw,42px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lesson-tools{flex:0 0 auto}.tool-button{font-size:14px}.speed-control{display:flex;align-items:center;overflow:hidden;font-size:14px}.speed-control button{border:0;background:transparent;color:var(--navy);padding:8px;cursor:pointer}.speed-control span{min-width:42px;text-align:center}.voice-button{background:var(--navy);color:#fff}
+.lesson-content{grid-row:3;min-height:0;padding:10px 14px;display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.6fr);gap:12px}.lesson-copy{min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center}.lesson-copy>p:first-child{font-size:clamp(14px,1.45vw,19px);line-height:1.48;margin:0}.action-prompt{margin:12px 0 0;padding:8px 10px;border-left:4px solid var(--orange-dark);background:#fff8f1;border-radius:0 9px 9px 0;font-weight:800;color:var(--navy)}
+.activity-zone{min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fdfbf5;padding:12px;display:grid;place-items:center}.activity-zone>*{max-width:100%}
+.lesson-footer{grid-row:2;padding:8px 14px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;background:var(--paper)}.nav-button{padding:9px 16px}.nav-button.secondary{background:var(--paper);color:var(--navy);border:1px solid var(--line)}.nav-button:disabled{opacity:.4;cursor:not-allowed}.reference-box{text-align:center;color:var(--muted);font-size:14px}.reference-box strong{color:var(--navy)}.status-message{grid-row:4;min-height:18px;margin:0;padding:0 14px 4px;text-align:center;color:var(--ok);font-weight:800;font-size:14px}
+.panel{width:100%;height:100%;min-height:0;display:grid;align-content:center;gap:10px}.panel-title{text-align:center;color:var(--navy);font:bold clamp(17px,2vw,24px) "Trebuchet MS",Calibri,sans-serif}.cards{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:8px}.choice,.check-card,.sequence-step{border:2px solid var(--line);background:var(--paper);color:var(--ink);border-radius:12px;padding:10px;text-align:left;cursor:pointer}.choice strong,.check-card strong{display:block;color:var(--navy);font-size:15px}.choice small,.check-card small{display:block;color:var(--muted);margin-top:4px}.choice.good{border:4px double var(--ok);background:var(--ok-bg)}.choice.bad{border:3px dashed var(--bad);background:var(--bad-bg)}.choice.selected:not(.good):not(.bad){border-color:var(--blue);background:#edf5fd}.feedback{min-height:42px;padding:8px 10px;border-left:5px solid var(--blue);border-radius:0 10px 10px 0;background:#eef5fc}.feedback.good{border-left-style:double;border-left-color:var(--ok);background:var(--ok-bg)}.feedback.bad{border-left-style:dashed;border-left-color:var(--bad);background:var(--bad-bg)}
+.cause-scene{width:100%;display:grid;grid-template-columns:minmax(200px,1.35fr) minmax(150px,.65fr);gap:14px;align-items:center}.coil{position:relative;height:190px;border:8px solid #7890a4;border-radius:16px;background:repeating-linear-gradient(90deg,#d7e5ec 0 5px,#869daa 5px 8px);overflow:hidden}.coil::after{content:"";position:absolute;inset:0;background:rgba(80,78,70,var(--dirt,.05));transition:background .18s}.fan{position:absolute;z-index:2;left:50%;top:50%;width:88px;height:88px;transform:translate(-50%,-50%);border:8px solid var(--navy);border-radius:50%;background:var(--paper)}.fan::before,.fan::after{content:"";position:absolute;left:34px;top:5px;width:13px;height:70px;border-radius:999px;background:var(--blue);transform:rotate(45deg)}.fan::after{transform:rotate(-45deg)}.fan.off::before,.fan.off::after{background:var(--muted)}.air-arrows{display:flex;justify-content:space-around;color:var(--blue);font-size:31px;font-weight:900;opacity:var(--air,1)}
+.gauge-wrap{text-align:center}.gauge{position:relative;margin:auto;width:160px;height:82px;overflow:hidden}.gauge::before{content:"";position:absolute;inset:0 0 -80px;border:18px solid #dfe7ec;border-top-color:var(--ok);border-right-color:var(--bad);border-left-color:var(--blue);border-radius:50%}.needle{position:absolute;left:80px;bottom:0;width:64px;height:4px;background:var(--navy);transform-origin:left center;transform:rotate(var(--needle,-150deg));transition:transform .2s}.needle::after{content:"";position:absolute;left:-6px;top:-5px;width:14px;height:14px;border-radius:50%;background:var(--navy)}.state-word{display:inline-block;margin-top:8px;padding:6px 11px;border-radius:999px;border:2px solid var(--line);font-weight:900}.state-word.warn{border:3px dotted var(--wait);color:#7b4a00;background:var(--wait-bg)}.state-word.danger{border:3px dashed var(--bad);color:var(--bad);background:var(--bad-bg)}
+.range-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}.range-row input{width:100%;accent-color:var(--orange-dark)}.big-label{font:800 clamp(18px,2.2vw,28px) "Trebuchet MS",Calibri,sans-serif;color:var(--navy);text-align:center}.diagram{width:100%;display:grid;gap:10px}.flow-row{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}.flow-box{padding:9px 12px;border:2px solid var(--navy);border-radius:12px;background:var(--paper);font-weight:800;color:var(--navy)}.flow-arrow{color:var(--orange-dark);font-weight:900}.photo-card{width:100%;height:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}.photo-card img{width:100%;max-height:260px;object-fit:contain;border-radius:14px;border:1px solid var(--line)}.hotspot-list{display:grid;gap:7px}.hotspot-list button{border:2px solid var(--line);background:var(--paper);color:var(--navy);border-radius:10px;padding:9px;text-align:left;font-weight:800;cursor:pointer}.hotspot-list button.seen{border:4px double var(--ok);background:var(--ok-bg)}
+.sequence{display:flex;align-items:stretch;gap:5px}.sequence-step{flex:1;min-width:0;padding-inline:6px;overflow-wrap:anywhere;text-align:center;cursor:default}.sequence-step.active{border-color:var(--blue);background:#edf5fd}.sequence-step.done{border:4px double var(--ok);background:var(--ok-bg)}.sequence-arrow{flex:0 0 auto;align-self:center;color:var(--orange-dark);font-weight:900}.report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}.report-grid label{font-weight:800;color:var(--navy)}.report-grid input,.report-grid textarea{display:block;width:100%;margin-top:4px;border:2px solid var(--line);border-radius:9px;padding:8px;background:#fff}.report-grid textarea{resize:none;height:66px}.score{display:grid;place-items:center;text-align:center}.score-number{font:900 clamp(52px,8vw,92px) "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.print-book{display:none}
+html.lisibilite-agrandie body.course-running{height:auto;min-height:100dvh;overflow-x:hidden;overflow-y:auto}html.lisibilite-agrandie body.course-running .appbar{position:sticky;top:0;z-index:30}html.lisibilite-agrandie .course-shell{height:auto;min-height:calc(100dvh - 72px);align-items:start}html.lisibilite-agrandie .course-rail{position:sticky;top:82px;max-height:calc(100dvh - 92px)}html.lisibilite-agrandie .lesson-card{min-height:calc(100dvh - 92px);overflow:visible}html.lisibilite-agrandie .lesson-footer{position:sticky;top:72px;z-index:20;box-shadow:0 4px 10px rgba(27,58,99,.10)}html.lisibilite-agrandie .lesson-content{grid-template-columns:1fr;overflow:visible}html.lisibilite-agrandie .lesson-copy,html.lisibilite-agrandie .activity-zone{overflow:visible}html.lisibilite-agrandie .activity-zone{min-height:360px}
+/* ---- Le dessin vivant (scene-condensation.js, 04/10/2026) : un écran = un dessin + 3 lignes, le reste à la voix ---- */
+/* Ce fichier est importé par d'autres cours (@import) : les règles qui touchent des éléments communs (.lesson-card, .lesson-content, texte et consigne) ne s'appliquent que là où le dessin existe (:has) ; :where() garde la spécificité du pilote, donc les @media plus bas passent toujours après. */
+.lesson-card:where(:has(.scene-lecon)){grid-template-columns:minmax(0,1fr)}
+.lesson-content:where(:has(.scene-lecon)){grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);grid-template-rows:auto minmax(min-content,1fr);overflow-y:auto}
+.scene-lecon{grid-column:1/-1;margin:0;display:grid;gap:6px;justify-items:center}
+.scene-dessins{display:flex;gap:10px;align-items:flex-start;width:100%;max-width:max(956px,calc((100dvh - 533px)*3.548 + 10px))}
+.scene-dessins>svg{display:block;height:auto;min-width:0}
+.scene-lecon .scene-coupe{flex:640 1 0;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}
+.scene-lecon .scene-diagramme{flex:460 1 0}
+.scene-barre{width:100%;max-width:max(956px,calc((100dvh - 533px)*3.548 + 10px));display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.scene-barre button{border:1px solid var(--line);background:var(--paper);color:var(--navy);border-radius:999px;padding:5px 12px;font-weight:800;font-size:17px;cursor:pointer}
+.scene-barre .scene-etape{min-width:42px;font-size:19px;padding:4px 10px}.scene-barre button[aria-current="step"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.scene-legende{flex:1 1 320px;margin:0 0 0 6px;font-size:19px;line-height:1.3}.scene-legende strong{color:var(--navy)}
+.scene-accueil svg{display:block;width:100%;height:auto}.scene-legende-accueil{padding:10px 16px;color:var(--muted);font-weight:700;font-size:19px;line-height:1.3}
+.lesson-copy:where(:has(.texte-entier))>p:first-child{font-size:clamp(16px,1.5vw,20px);line-height:1.38;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+.lesson-copy.texte-ouvert{justify-content:flex-start}.lesson-copy.texte-ouvert>p:first-child{display:block;-webkit-line-clamp:unset;line-clamp:none}
+.texte-entier{align-self:flex-start;margin-top:2px;padding:0;border:0;background:none;color:var(--orange-dark);font-weight:800;font-size:17px;line-height:1.3;text-decoration:underline;cursor:pointer}:where(.lesson-content:has(.scene-lecon)) .action-prompt{font-size:19px;line-height:1.3;margin-top:8px;padding:6px 10px}
+@media (min-width:651px){
+}
+@media (max-width:900px){.home-visual.scene-accueil{display:block;margin:14px 0}.scene-dessins{flex-direction:column;align-items:stretch}.scene-lecon .scene-coupe,.scene-lecon .scene-diagramme{flex:none;width:100%}}
+@media (max-width:900px){.home{grid-template-columns:1fr}.home-visual{display:none}.dossier-grid{grid-template-columns:repeat(3,1fr)}.lesson-content{grid-template-columns:minmax(190px,.75fr) minmax(0,1.45fr)}}
+@media (max-width:650px){.appbar{height:54px;padding:6px 8px}.brand-mark{width:34px;height:34px;font-size:18px}.brand small{display:none}.mode-badge{display:none}.small-button{padding:6px 9px}.home{min-height:calc(100dvh - 54px);width:calc(100% - 16px);padding:14px 0;display:block}.home h1{font-size:38px}.home-intro{font-size:16px}.home-actions{align-items:flex-start;flex-direction:column}.dossier-grid{margin-top:14px;grid-template-columns:1fr 1fr}.dossier-button{min-height:58px}.home-note{margin-top:12px;font-size:14px}body.course-running{height:100dvh}.course-shell{height:calc(100dvh - 54px);padding:4px;grid-template-columns:1fr;grid-template-rows:31px minmax(0,1fr);gap:4px}.course-rail{border-radius:10px;padding:3px 5px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:5px}.rail-heading{display:block}.rail-heading span{display:none}.stepper{display:flex;margin:0;justify-content:space-around;gap:1px}.step-button{display:block;padding:0}.step-button span{display:none}.step-button b{width:23px;height:23px;font-size:14px}.progress-track{display:none}.course-rail>p{display:none}.lesson-card{border-radius:12px}.lesson-header{padding:5px 7px;align-items:center}.lesson-heading .eyebrow{font-size:14px;margin-bottom:2px}.lesson-heading h2{font-size:clamp(18px,5.5vw,23px)}.lesson-tools{gap:3px}.tool-button{padding:5px 7px;font-size:14px}.tool-label,.voice-button span:last-child{display:none}.speed-control{display:none}.lesson-content{padding:5px 7px;grid-template-columns:minmax(120px,.68fr) minmax(0,1.5fr);gap:6px}.lesson-copy>p:first-child{font-size:14px;line-height:1.25}.action-prompt{font-size:14px;margin-top:5px;padding:5px 6px}.activity-zone{padding:6px;border-radius:10px}.lesson-footer{padding:4px 7px;grid-template-columns:auto 1fr auto}.nav-button{padding:6px 9px;font-size:14px}.reference-box{font-size:14px}.status-message{min-height:12px;font-size:14px;padding-bottom:1px}.panel{gap:5px}.cards{gap:4px}.choice,.check-card,.sequence-step{padding:6px;border-radius:8px;font-size:14px}.choice strong,.check-card strong{font-size:14px}.choice small,.check-card small{font-size:14px}.feedback{font-size:14px;min-height:30px;padding:5px}.cause-scene{grid-template-columns:1.25fr .75fr;gap:6px}.coil{height:112px;border-width:5px}.fan{width:55px;height:55px;border-width:5px}.fan::before,.fan::after{left:21px;top:3px;width:9px;height:42px}.gauge{width:105px;height:55px}.gauge::before{inset:0 0 -54px;border-width:12px}.needle{left:52px;width:42px}.state-word{font-size:14px;padding:3px 6px}.air-arrows{font-size:18px}.photo-card{gap:5px}.photo-card img{max-height:130px}.hotspot-list{gap:3px}.hotspot-list button{font-size:14px;padding:5px}.flow-row{gap:3px}.flow-box{font-size:14px;padding:5px}.sequence{gap:2px}.sequence-step{font-size:14px}.report-grid{gap:4px}.report-grid label{font-size:14px}.report-grid input,.report-grid textarea{padding:4px;font-size:14px}.report-grid textarea{height:40px}html.lisibilite-agrandie .course-shell{height:auto;grid-template-rows:auto auto}html.lisibilite-agrandie .course-rail{position:static;max-height:none}html.lisibilite-agrandie .lesson-footer{top:54px}html.lisibilite-agrandie .lesson-content{grid-template-columns:1fr}html.lisibilite-agrandie .activity-zone{min-height:300px}html.lisibilite-agrandie .appbar .exit-button{display:none}}
+@media (max-width:380px){.lesson-copy>p:first-child{font-size:14px}.action-prompt{font-size:14px}.home .dossier-grid{display:none}.lesson-content{grid-template-columns:112px minmax(0,1fr)}.brand strong{font-size:14px}}
+
+/* Illustrations SVG des ecrans « comprendre » (greffe du 20/08) : elles portent du contenu, elles occupent donc la scene, sans deborder. */
+.svg-lesson{width:100%;height:100%;display:grid;align-content:center;gap:10px}
+.svg-lesson img{width:100%;max-height:min(58vh,430px);object-fit:contain}
+.svg-lesson figcaption{color:var(--muted);font-size:14px;text-align:center}
+
+/* ===== Téléphone : la page défile — gabarit « appbar / course-shell » (audit téléphone 23/10/2026) =====
+   Bloc commun aux cours à coque « bandeau + rail + carte » (Condenseur, Compresseur, Évaporateur, Détendeurs,
+   Étanchéité, Chambre froide…) : recopié à l'identique dans chaque copie, pour une future fusion. Avant, la page
+   tenait dans l'écran sans défiler : réponses, « Précédent / Suivant » et liens de fin étaient sous l'écran,
+   et tout le texte faisait 8 à 12 px. Ici : la page défile (html seul), le dessin passe avant le texte, la barre
+   « Précédent / Suivant » reste collée en bas, et tout texte lisible fait 14 px au moins. Rien ne change au-delà de 760 px. */
+@media (max-width: 760px) {
+  html { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  body, body.course-running { height: auto !important; max-height: none !important; min-height: 100dvh; overflow: visible !important; overflow-x: clip !important; }
+  .appbar { position: static !important; height: auto !important; min-height: 54px; flex-wrap: wrap; gap: 6px; }
+  .appbar-actions { flex-wrap: wrap; }
+  .small-button { min-height: 44px; font-size: 14px !important; }
+  body > main#app { flex: 0 0 auto !important; }
+  .course-shell { flex: 0 0 auto !important; height: auto !important; min-height: 0 !important; display: flex !important; flex-direction: column; gap: 6px; padding: 6px !important; overflow: visible !important; }
+  .course-rail { position: static !important; max-height: none !important; height: auto !important; display: flex !important; flex-wrap: nowrap; align-items: center; gap: 4px 8px; padding: 4px 6px !important; }
+  .rail-heading, .rail-heading strong { font-size: 14px !important; }
+  .stepper { flex: 1 1 auto; flex-wrap: wrap; justify-content: space-around; gap: 2px; }
+  .step-button { min-width: 40px; min-height: 44px; display: grid; place-items: center; }
+  .step-button b { width: 36px !important; height: 36px !important; font-size: 14px !important; }
+  .lesson-card { display: flex !important; flex-direction: column; height: auto !important; min-height: 0 !important; overflow: visible !important; }
+  .lesson-header { order: 1; position: static !important; display: flex !important; flex-direction: column !important; align-items: stretch !important; }
+  .lesson-heading, .lesson-tools { flex: 0 0 auto !important; }
+  .lesson-heading .eyebrow, .eyebrow { font-size: 14px !important; }
+  .lesson-heading h2 { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; }
+  .lesson-tools { flex-wrap: wrap; width: 100%; gap: 6px !important; align-items: center !important; }
+  .tool-button, .tool-button span, .speed-control, #pilote-prof-toggle { font-size: 14px !important; min-height: 44px !important; }
+  .reglage-voix button, .speed-control button { min-width: 44px !important; min-height: 44px !important; font-size: 16px !important; }
+  .lesson-content { order: 2; display: flex !important; flex-direction: column; gap: 10px; height: auto !important; overflow: visible !important; padding: 8px !important; }
+  .scene-lecon { order: 1; width: 100%; position: static !important; }
+  .lesson-copy { order: 2; overflow: visible !important; display: block !important; }
+  .lesson-copy > p:first-child { display: block !important; -webkit-line-clamp: unset !important; line-clamp: none !important; overflow: visible !important; height: auto !important; }
+  .texte-entier { display: none !important; }
+  .activity-zone { order: 3; overflow: visible !important; height: auto !important; min-height: 0 !important; display: block !important; }
+  .panel { height: auto !important; }
+  .status-message { order: 3; min-height: 0 !important; }
+  /* la barre du bas : Précédent / Suivant collés au bas de l'écran, fond opaque */
+  .lesson-footer { order: 4; position: sticky !important; top: auto !important; bottom: 0 !important; z-index: 20; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)) !important; background: var(--paper, #fffdf8) !important; border-top: 1px solid var(--line, #ddd); border-bottom: 0 !important; box-shadow: 0 -4px 10px rgba(27,58,99,.10) !important; }
+  .nav-button { min-height: 44px !important; padding: 8px 14px !important; font-size: 14px !important; }
+  .reference-box, .reference-box strong { font-size: 14px !important; line-height: 1.25 !important; }
+  /* lisibilité : 14 px au moins */
+  .lesson-copy > p, .lesson-copy > p:first-child, #lesson-text, .action-prompt, .texte-entier, .feedback, .status-message, .home-note, .home-note strong, .home-visual figcaption,
+  .choice, .choice strong, .choice small, .check-card, .check-card strong, .check-card small, .sequence-step, .flow-box, .hotspot-list button, .state-word, .gauge-wrap p,
+  .dossier-button small, .dossier-button b, .law-note strong, .law-note p, .registry button, .registry button strong, .report-grid label, .report-grid input, .report-grid textarea, .scene-barre button, .scene-legende, .scene-legende-box,
+  .tag, .range-row, .sort-btn, .order-item, .carte p, .geste p, .flux-case small, .images-rang figcaption, .tableau, .constat, .lecture, .interdits, .exemple-liste, .exemple small, .definition, .cas-boite, .cas { font-size: 14px !important; line-height: 1.35 !important; }
+  .choice, .check-card, .sequence-step, .hotspot-list button, .sort-btn, .order-item, .registry button { min-height: 44px; }
+  .range-row input { min-height: 44px; }
+  #station-suivante, #station-suivante a, #station-suivante .ligne { font-size: 14px !important; line-height: 1.5 !important; }
+}
+
+/* Les bouteilles de fluide — feuille copiée de celle des Détecteurs de fuite (28/10/2026), même socle ; ajouts en fin de fichier : .schema, .alerte. Origine : Le socle (coque, rail, carte, boutons, dessin vivant) vient du cours Condenseur, comme pour L'étanchéité. Ici : les activités propres à ce cours et une mise en page de téléphone lisible (texte jamais sous 14 px). */
+:root{--leak:#3d7fca}
+.lesson-heading .eyebrow{font-size:14px}.tool-button,.speed-control{font-size:14px}.rail-heading{font-size:14px}.course-rail>p{font-size:14px}.status-message{font-size:14px}.reference-box{font-size:14px}.mode-badge{font-size:14px}
+.lesson-card{min-width:0}.lesson-card>*{min-width:0;width:100%}.lesson-heading h2{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(22px,2.8vw,36px);line-height:1.05}
+.home-visual img{object-fit:contain;background:var(--paper);padding:8px}
+.visual-collage>div{display:grid;grid-template-columns:repeat(3,1fr);height:min(36vh,340px)}.visual-collage img{width:100%;height:100%;min-width:0;border-right:1px solid var(--line)}.visual-collage img:last-child{border-right:0}
+.dossier-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+.statut{margin:12px 0 0;padding:8px 12px;border-left:5px dotted var(--wait);background:var(--wait-bg);color:#714500;border-radius:0 10px 10px 0}
+.codes-box{grid-column:1/-1;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}.codes-box h2{font-size:20px;margin-bottom:6px}.codes-box dl{margin:0}.codes-box dt{margin-top:8px;font-weight:800;color:var(--navy)}.codes-box dd{margin:2px 0 0;font-size:15px;line-height:1.4}
+.visual-split{width:100%;height:100%;display:grid;grid-template-columns:minmax(150px,.8fr) minmax(0,1.2fr);gap:10px;align-items:center}.visual-split>img{width:100%;max-height:260px;object-fit:contain;border:1px solid var(--line);border-radius:14px;background:var(--paper)}.visual-host{width:100%;height:100%;min-height:0;display:grid;align-items:center}
+.law-note{width:100%;padding:10px 12px;border:3px dotted var(--wait);border-radius:13px;background:var(--wait-bg);color:#714500}.law-note strong{display:block;color:#714500;font:800 clamp(16px,2vw,20px) "Trebuchet MS",Calibri,sans-serif}.law-note p{margin:6px 0 0;font-size:15px;line-height:1.35}
+.exemple{width:100%;padding:9px 12px;border:3px solid var(--blue);border-radius:13px;background:#eef5fc}.exemple p{margin:4px 0}.exemple small{display:block;font-size:15px;line-height:1.35;color:var(--ink)}.tag{display:inline-block;padding:2px 9px;border-radius:999px;background:var(--blue);color:#fff;font-size:14px;font-weight:800}
+.definition{margin:0 0 8px;font-size:15px;line-height:1.4}.cas-boite{margin:0 0 8px;padding:9px 12px;border:3px solid var(--blue);border-radius:13px;background:#eef5fc;font-size:15px;line-height:1.4}.exemple-liste{margin:0 0 8px;padding:9px 12px 9px 34px;border:3px solid var(--blue);border-radius:13px;background:#eef5fc;font-size:15px;line-height:1.4}.exemple-liste::before{content:"Exemple résolu";display:inline-block;margin-left:-22px;margin-bottom:4px;padding:2px 9px;border-radius:999px;background:var(--blue);color:#fff;font-size:14px;font-weight:800}
+.sort{align-content:start}.sort-rows{display:grid;gap:6px}.sort-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:7px 9px;border:2px solid var(--line);border-radius:12px;background:var(--paper)}.sort-row.done{border:4px double var(--ok);background:var(--ok-bg)}.sort-text{font-size:15px;line-height:1.3;overflow-wrap:anywhere}.sort-buttons{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.sort-btn,.order-item{border:2px solid var(--line);border-radius:10px;background:var(--paper);color:var(--navy);padding:7px 12px;font-weight:800;font-size:15px;cursor:pointer}.sort-btn.good{border:4px double var(--ok);background:var(--ok-bg)}.sort-btn.bad{border:3px dashed var(--bad);background:var(--bad-bg);opacity:.75}.sort-btn:disabled{cursor:default}
+.order-list{display:grid;gap:6px}.order-item{display:grid;grid-template-columns:32px minmax(0,1fr);gap:8px;align-items:center;text-align:left;font-weight:700;color:var(--ink)}.order-n{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:2px dashed var(--line);color:var(--ok)}.order-item.done{border:4px double var(--ok);background:var(--ok-bg)}.order-item.done .order-n{border:2px solid var(--ok)}.order-item.bad{border:3px dashed var(--bad);background:var(--bad-bg)}
+.cartes{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.cartes.deux{grid-template-columns:repeat(2,minmax(0,1fr))}.carte{padding:9px 11px;border:2px solid var(--line);border-radius:13px;background:var(--paper)}.carte h3{font-size:18px;margin-bottom:5px}.carte p{margin:4px 0;font-size:15px;line-height:1.35;overflow-wrap:anywhere}.carte strong{color:var(--navy)}
+.source,.renvoi{margin:6px 0 0;font-size:15px;color:var(--muted)}.renvoi a,.cas a{color:var(--orange-dark);font-weight:800}.cas{margin:8px 0;font-size:15px;line-height:1.4}
+.gestes{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.geste{padding:9px 11px;border:2px solid var(--line);border-radius:13px;background:var(--paper)}.geste h3{font-size:17px;margin-bottom:4px;color:var(--orange-dark)}.geste p{margin:0;font-size:15px;line-height:1.35}
+.constat-duo{width:100%;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:10px;align-items:start}.constat{width:100%;border-collapse:collapse;background:var(--paper);font-size:15px}.constat caption{padding:4px 0 6px;text-align:left;font-weight:800;color:var(--navy)}.constat th,.constat td{padding:5px 8px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.3}.constat th{width:34%;background:#eef5fc;color:var(--navy)}
+.lecture{margin:0;padding:9px 12px 9px 30px;border:3px solid var(--blue);border-radius:13px;background:#eef5fc;font-size:15px;line-height:1.4}.lecture li{margin:0 0 6px}
+.interdits{margin:0 0 8px;padding:9px 12px 9px 32px;border:3px dashed var(--bad);border-radius:13px;background:var(--bad-bg);font-size:15px;line-height:1.4}.interdits li{margin:0 0 3px}
+.libre{align-content:start}.libre-label{font-weight:800;color:var(--navy)}.libre textarea{width:100%;min-height:96px;border:2px solid var(--line);border-radius:10px;padding:8px;font:inherit;font-size:16px;resize:vertical;background:#fff}.libre .primary-button:disabled{opacity:.45;cursor:not-allowed}.libre .feedback ol{margin:6px 0 0;padding-left:22px}.libre .feedback li{margin:0 0 4px}
+.liens{width:100%;display:grid;gap:8px}.lien-carte{display:block;padding:10px 14px;border:2px solid var(--navy);border-radius:13px;background:var(--paper);color:var(--navy);text-decoration:none}.lien-carte:hover,.lien-carte:focus-visible{background:#eef5fc}.lien-carte strong{display:block;font-size:17px}.lien-carte small{display:block;margin-top:2px;font-size:15px;color:var(--muted)}
+.visual-host .cards,.visual-host .cards>*,.choice strong,.choice small,.check-card strong,.check-card small{min-width:0;overflow-wrap:anywhere}.choice small{font-size:15px}[data-quiz] strong{display:inline;margin-right:6px}[data-quiz] small{display:inline;margin:0;color:var(--ink)}.feedback{font-size:16px;line-height:1.35}
+/* ---- Le dessin vivant (scene-geste.js) : même mise en page que L'étanchéité ; les pictogrammes décoratifs de bibliotheque/ s'effacent, les schémas validés (../svg/) restent en vignette ---- */
+.lesson-content:has(.scene-lecon){grid-template-rows:auto minmax(min-content,1fr)}.scene-lecon{grid-column:1/-1;margin:0}
+.scene-lecon .scene-geste{display:block;flex:1 1 0;min-width:0;height:auto;background:#fdfbf5;border:1px solid var(--line);border-radius:16px}.lesson-content:has(.scene-lecon) .visual-split>img{max-height:140px}.lesson-content:has(.scene-lecon) .visual-split:has(>img[src*="bibliotheque"]){grid-template-columns:1fr}.lesson-content:has(.scene-lecon) .visual-split>img[src*="bibliotheque"]{display:none}
+/* ---- La page défile (19/10/2026, preuve P1 : choix coupés à 1280 × 900) : plus de colonne qui défile à l'intérieur de l'écran ; le haut de la carte (boutons précédent / suivant) reste collé, le dessin est plus petit et masqué quand il ne parle pas de l'écran ---- */
+body.course-running{height:auto;min-height:100dvh;overflow-x:hidden;overflow-y:auto}
+.appbar{position:sticky;top:0;z-index:30}
+.course-shell{height:auto;min-height:calc(100dvh - 72px);align-items:start}
+.course-rail{position:sticky;top:82px;max-height:calc(100dvh - 92px)}
+.lesson-card{min-height:calc(100dvh - 92px);overflow:visible}
+.lesson-footer{position:sticky;top:72px;z-index:20;box-shadow:0 4px 10px rgba(27,58,99,.10)}
+.lesson-content,.lesson-content:has(.scene-lecon){overflow:visible}
+.lesson-copy,.activity-zone{overflow:visible}
+.scene-dessins,.scene-barre{max-width:800px}
+@media(max-width:900px){.scene-lecon .scene-geste{flex:none;width:100%}.cartes,.gestes{grid-template-columns:repeat(2,minmax(0,1fr))}.constat-duo{grid-template-columns:1fr}.dossier-grid{grid-template-columns:repeat(3,1fr)}.home-visual{display:block;margin:8px 0 0;border-radius:14px}.visual-collage>div{height:120px}}
+/* ---- Téléphone : une colonne qui défile, texte à 15 px au moins (le socle réduit tout à 8-11 px : pas ici) ---- */
+@media(max-width:650px){
+body.course-running{height:auto;min-height:100dvh;overflow-x:hidden;overflow-y:auto}
+.appbar{position:sticky;top:0;z-index:30}.brand svg{width:150px;height:32px}.small-button{font-size:14px}
+.home h1{font-size:40px}.home .dossier-grid{display:grid;grid-template-columns:1fr 1fr}.dossier-button small{display:none}.home-visual{display:block}.visual-collage>div{height:96px}.home-visual figcaption{font-size:14px}.home-note{display:block;font-size:15px}.codes-box dd{font-size:15px}
+.course-shell{height:auto;grid-template-rows:auto auto;padding:6px}
+.course-rail{position:static;max-height:none;padding:4px 6px}.course-rail>p{display:none}.step-button b{width:28px;height:28px;font-size:14px}.rail-heading{font-size:14px}
+.lesson-card{min-height:0;overflow:visible;border-radius:14px;grid-template-rows:auto auto auto auto}
+.lesson-header{position:static;padding:8px 10px;flex-direction:column;align-items:stretch}.lesson-heading .eyebrow{font-size:14px}.lesson-heading h2{font-size:21px}.lesson-tools{gap:4px;flex-wrap:wrap}.tool-button{font-size:14px;padding:7px 10px}.voice-button span:last-child{display:inline}.tool-label{display:none}
+.lesson-footer{position:sticky;top:54px;z-index:20;padding:6px 8px;grid-template-columns:auto 1fr auto;box-shadow:0 4px 10px rgba(27,58,99,.10)}.nav-button{font-size:15px;padding:8px 12px}.reference-box{font-size:14px}
+.lesson-content,.lesson-content:has(.scene-lecon){display:block;padding:8px;overflow:visible}
+.lesson-copy,.activity-zone{overflow:visible}.lesson-copy{display:block}.lesson-copy>p:first-child{font-size:16px;line-height:1.4}.texte-entier{font-size:16px}.action-prompt{font-size:16px;line-height:1.3;margin:8px 0;padding:8px 10px}.activity-zone{margin-top:8px;padding:8px;min-height:0;display:block}
+.scene-lecon{display:none}
+.panel{height:auto}.choice,.check-card{padding:9px;font-size:15px}.choice strong,.check-card strong{font-size:16px}.choice small{font-size:15px}.feedback{font-size:15px;min-height:30px;padding:7px}
+.cards{grid-template-columns:1fr!important}.cartes,.cartes.deux,.gestes{grid-template-columns:1fr}.carte p,.geste p,.constat,.lecture,.interdits,.exemple-liste,.exemple small,.sort-text,.law-note p{font-size:15px}
+.sort-row{grid-template-columns:1fr}.sort-buttons{justify-content:flex-start}.sort-btn,.order-item{font-size:15px}
+.visual-split{display:block}.visual-split>img{max-height:150px;margin-bottom:8px}
+.codes-box h2{font-size:18px}
+}
+@media(min-width:901px){.home{padding-block:14px 10px}}
+/* 28/10/2026 — Les bouteilles : les schémas légendés posés en grand dans l'activité (leur texte reste lisible), l'encadré d'erreur. */
+.schema{width:100%;margin:0 0 10px;text-align:center}.schema img{width:100%;max-width:620px;max-height:380px;object-fit:contain;background:#fdfbf5;border:1px solid var(--line);border-radius:14px;cursor:zoom-in}.schema figcaption{margin-top:4px;font-size:15px;line-height:1.35;color:var(--ink)}
+.alerte{width:100%;margin:8px 0;padding:9px 12px;border:3px solid #c0392b;border-radius:13px;background:#fbe7e4;color:#7a1f15;font-size:15px;line-height:1.4}
+.renvoi{margin:8px 0 0;font-size:15px}
+ol.definition{padding-left:22px}
+@media(max-width:650px){.schema img{max-height:300px}}
+
+/* ===================== Bureau d'études : format long (30/10/2026) ===================== */
+body{font-size:17px}
+.brand-cartouche{display:inline-block;margin-left:6px;vertical-align:middle}
+.brand .station-sub{display:block;font-size:14px;color:var(--muted)}
+/* Accueil : badges, volets */
+.home-badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:14px;font-weight:800;border:2px solid var(--navy);color:var(--navy);background:var(--paper)}
+.badge.badge-longue{background:var(--navy);color:#fff}
+.station-ligne{margin:0 0 6px;font-weight:800;color:var(--navy);font-size:17px}
+.volet-actions{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 8px}
+.volet-button{min-height:64px;padding:14px 28px;font-size:20px;border:3px solid var(--navy)}
+.volet-button:hover,.volet-button:focus-visible{background:var(--blue);border-color:var(--blue)}
+.home-meta{margin:4px 0 0;color:var(--muted);font-size:15px}
+.codes-box h3{margin-top:12px;font-size:19px}.codes-box h4{margin:8px 0 2px;font-size:16px;color:var(--navy);font-family:"Trebuchet MS",Calibri,sans-serif}
+.codes-liste{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:2px 12px;margin:2px 0 0}.codes-liste dt{margin:0;font-weight:800;color:var(--navy)}.codes-liste dd{margin:0;font-size:16px}
+.apport{margin:12px 0 0;font-size:16px}
+.fichier-absent{margin:6px 0 0;padding:8px 12px;border-left:5px dotted var(--wait);background:var(--wait-bg);color:#714500;font-size:16px;border-radius:0 10px 10px 0}
+/* Rail : volet courant */
+.rail-volet{margin:8px 0 0;padding:4px 8px;border-radius:10px;background:#eef5fc;color:var(--navy);font-weight:800;font-size:14px;text-align:center}
+/* Commande de bureau d'études */
+.commande{width:100%;padding:14px 16px;border:2px solid var(--navy);border-radius:6px;background:var(--paper);box-shadow:0 2px 0 var(--line)}
+.commande-entete{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding-bottom:8px;border-bottom:3px double var(--navy)}
+.commande-volet{font:800 17px "Trebuchet MS",Calibri,sans-serif;color:var(--navy)}
+.commande-champs{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 14px;margin:10px 0}.commande-champs dt{font-weight:800;color:var(--navy)}.commande-champs dd{margin:0}
+.commande-corps{padding:10px 12px;border-left:5px solid var(--blue);background:#eef5fc;border-radius:0 10px 10px 0}.commande-corps p{margin:0 0 6px;font-size:17px;line-height:1.4}.commande-corps p:last-child{margin:0}
+.pieces{width:100%;margin-top:12px;border-collapse:collapse;font-size:16px}.pieces caption{padding:2px 0 6px;text-align:left;font-weight:800;color:var(--navy)}.pieces th,.pieces td{padding:6px 9px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.3}.pieces th{background:#eef5fc;color:var(--navy)}
+.commande-actions{margin:14px 0 6px}.lien-feuille{display:inline-block;text-decoration:none;text-align:center;line-height:1.3;font-size:17px}
+.rappel-source{margin:8px 0 0;padding:8px 12px;border-left:4px solid var(--orange-dark);background:#fff8f1;border-radius:0 9px 9px 0;color:var(--navy);font-size:17px}
+/* Vérifier */
+.fourchettes{align-content:start;gap:10px}
+.fourchette-ligne{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr);gap:4px 14px;align-items:center;padding:9px 12px;border:2px solid var(--line);border-radius:12px;background:var(--paper)}
+.fourchette-libelle{font-weight:800;color:var(--navy);line-height:1.3}
+.fourchette-saisie{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.fourchette-saisie input{width:9em;min-height:44px;padding:6px 10px;border:2px solid var(--navy);border-radius:10px;background:#fff;color:var(--ink);font-size:18px}
+.fourchette-unite{font-weight:800;color:var(--navy);font-size:16px}
+.verifier-bouton{min-height:44px;padding:8px 18px;border:0;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:16px;cursor:pointer}
+.fourchette-reponse{grid-column:1/-1;margin:0;min-height:0;font-size:16px;line-height:1.35}
+.fourchette-reponse.juste,.fourchette-reponse.revoir{padding:7px 10px;border-radius:0 10px 10px 0;font-weight:800}
+.fourchette-reponse.juste{color:#1e7e54;background:#e3f5ec;border-left:5px double #1e7e54}
+.fourchette-reponse.revoir{color:#b06a00;background:#fff4e0;border-left:5px dashed #b06a00}
+/* Emporter */
+.emporter{width:100%;display:grid;gap:10px;align-content:start}.emporter p{margin:0}
+.emporter-titre{margin-top:6px;font-size:20px}
+.ligne-livre{padding:8px 12px;border-left:5px solid var(--blue);background:#eef5fc;border-radius:0 10px 10px 0;color:var(--navy);font-weight:800;font-size:17px}
+/* Écran de méthode : texte entier, pas de repli à 3 lignes tant qu'il tient */
+@media(max-width:900px){.fourchette-ligne{grid-template-columns:1fr}.codes-liste{grid-template-columns:1fr}.codes-liste dd{margin-bottom:4px}}
+/* Niveaux, aides graduées, partie réservée */
+.niveau-button{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;color:#fff;min-width:230px}
+.niveau-button .niveau-titre{font-size:20px;font-weight:800}.niveau-button .niveau-batiment{font-size:14px;font-weight:600;color:#fff;opacity:.95}
+.niveau-1{background:#1e7e54;border-color:#145a3b}.niveau-2{background:#1b3a63;border-color:#10233c}.niveau-3{background:#a63a12;border-color:#6e2408}
+.niveau-1:hover,.niveau-1:focus-visible{background:#145a3b;border-color:#0d3d28}.niveau-2:hover,.niveau-2:focus-visible{background:#2a5391;border-color:#1b3a63}.niveau-3:hover,.niveau-3:focus-visible{background:#6e2408;border-color:#4a1805}
+.aides{margin:14px 0 0;padding:12px 14px;border:2px solid #1b3a63;border-radius:13px;background:#fff;color:var(--ink);font-size:16px;line-height:1.45}
+.aides-liste{margin:0 0 10px;padding:0;list-style:none;display:grid;gap:8px}
+.aides-liste li{display:block}.aide-palier{display:block;font-weight:800;color:#1b3a63}.aide-texte{display:block}
+.aides-pied{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.aide-bouton{min-height:44px;padding:8px 16px;border:2px solid #1b3a63;border-radius:999px;background:#fff;color:#1b3a63;font:700 16px "Trebuchet MS",Calibri,sans-serif;cursor:pointer}
+.aide-bouton:hover,.aide-bouton:focus-visible{background:#1b3a63;color:#fff}
+.aides-compteur{font-size:14px;color:#1b3a63;font-weight:700}
+.partie-reservee{padding:14px 16px;border:3px solid #1b3a63;border-radius:13px;background:#eef5fc;color:var(--ink);font-size:17px;line-height:1.45}
+.partie-reservee a.primary-button{display:inline-block;text-decoration:none;color:#fff}.partie-reservee p{margin:0 0 10px}.partie-reservee p:last-child{margin:0}
+@media(max-width:650px){.volet-button{width:100%;font-size:18px}.niveau-button{min-width:0}.commande-champs{grid-template-columns:1fr}.commande-champs dd{margin-bottom:4px}.pieces th,.pieces td{font-size:15px}.fourchette-saisie input{width:100%}}

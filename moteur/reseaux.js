@@ -86,6 +86,26 @@ window.INERWEB_RESEAUX = [
     ]
   },
   {
+    id: "bureau-etudes",
+    nom: "Réseau Bureau d'études",
+    court: "Bureau d'études",
+    emoji: "📐",
+    adresse: "bureau-etudes/index.html",
+    couleur: "#0c4b88",
+    sousTitre: "Un projet de chauffage, ventilation, climatisation calculé de bout en bout : 34 stations de 2 heures, une maison et une clinique, du dossier projet à la note de calcul.",
+    niveaux: "TP TECVC, BTS",
+    etat: "en relecture",
+    catalogue: ["Bureau d'études"],
+    stations: 34, /* annoncées dans bureau-etudes/programme.js ; le catalogue ne relève que les stations ouvertes */
+    lignes: 6,
+    vignette: "icones/reseaux/bureau-etudes.svg",
+    entree: { titre: "Le plan du réseau", href: "bureau-etudes/index.html" },
+    raccourcis: [
+      { titre: "Comment ça marche", href: "bureau-etudes/index.html#mode-emploi" },
+      { titre: "Les 34 stations", href: "bureau-etudes/index.html#stations" }
+    ]
+  },
+  {
     id: "hydrometro",
     nom: "HydroMétro",
     court: "HydroMétro",

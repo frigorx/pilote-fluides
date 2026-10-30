@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 190" width="400" height="190">
+<title>Réseau Bureau d'études : la gare centrale, six lignes, le terminus</title>
+<rect width="400" height="190" fill="#f7f1e7"/>
+<svg x="10" y="8" width="380" height="174" viewBox="0 0 1040 685" preserveAspectRatio="xMidYMid meet">
+<line x1="120" x2="920" y1="75" y2="75" stroke="#637285" stroke-width="12" stroke-linecap="round"/>
+<line x1="120" x2="920" y1="285" y2="285" stroke="#c9451a" stroke-width="12" stroke-linecap="round"/>
+<line x1="120" x2="920" y1="180" y2="180" stroke="#3d7fca" stroke-width="12" stroke-linecap="round"/>
+<line x1="120" x2="920" y1="390" y2="390" stroke="#0c4b88" stroke-width="12" stroke-linecap="round"/>
+<line x1="120" x2="920" y1="495" y2="495" stroke="#706eed" stroke-width="12" stroke-linecap="round"/>
+<line x1="120" x2="920" y1="600" y2="600" stroke="#1e7e54" stroke-width="12" stroke-linecap="round"/>
+<rect x="10" y="30" width="110" height="615" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="6"/>
+<rect x="920" y="30" width="110" height="615" rx="22" fill="#fffdf8" stroke="#1b3a63" stroke-width="6"/>
+<circle cx="345.0" cy="75" r="15" fill="#fffdf8" stroke="#637285" stroke-width="7"/>
+<circle cx="715.0" cy="75" r="15" fill="#fffdf8" stroke="#637285" stroke-width="7"/>
+<circle cx="201.1" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="283.3" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="365.6" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="447.8" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="530.0" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="612.2" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="694.4" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="776.7" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="858.9" cy="285" r="15" fill="#fffdf8" stroke="#c9451a" stroke-width="7"/>
+<circle cx="221.7" cy="180" r="15" fill="#fffdf8" stroke="#3d7fca" stroke-width="7"/>
+<circle cx="345.0" cy="180" r="15" fill="#fffdf8" stroke="#3d7fca" stroke-width="7"/>
+<circle cx="468.3" cy="180" r="15" fill="#fffdf8" stroke="#3d7fca" stroke-width="7"/>
+<circle cx="591.7" cy="180" r="15" fill="#fffdf8" stroke="#3d7fca" stroke-width="7"/>
+<circle cx="715.0" cy="180" r="15" fill="#fffdf8" stroke="#3d7fca" stroke-width="7"/>
+<circle cx="838.3" cy="180" r="15" fill="#fffdf8" stroke="#3d7fca" stroke-width="7"/>
+<circle cx="221.7" cy="390" r="15" fill="#fffdf8" stroke="#0c4b88" stroke-width="7"/>
+<circle cx="345.0" cy="390" r="15" fill="#fffdf8" stroke="#0c4b88" stroke-width="7"/>
+<circle cx="468.3" cy="390" r="15" fill="#fffdf8" stroke="#0c4b88" stroke-width="7"/>
+<circle cx="591.7" cy="390" r="15" fill="#fffdf8" stroke="#0c4b88" stroke-width="7"/>
+<circle cx="715.0" cy="390" r="15" fill="#fffdf8" stroke="#0c4b88" stroke-width="7"/>
+<circle cx="838.3" cy="390" r="15" fill="#fffdf8" stroke="#0c4b88" stroke-width="7"/>
+<circle cx="234.0" cy="495" r="15" fill="#fffdf8" stroke="#706eed" stroke-width="7"/>
+<circle cx="382.0" cy="495" r="15" fill="#fffdf8" stroke="#706eed" stroke-width="7"/>
+<circle cx="530.0" cy="495" r="15" fill="#fffdf8" stroke="#706eed" stroke-width="7"/>
+<circle cx="678.0" cy="495" r="15" fill="#fffdf8" stroke="#706eed" stroke-width="7"/>
+<circle cx="826.0" cy="495" r="15" fill="#fffdf8" stroke="#706eed" stroke-width="7"/>
+<circle cx="252.5" cy="600" r="15" fill="#fffdf8" stroke="#1e7e54" stroke-width="7"/>
+<circle cx="437.5" cy="600" r="15" fill="#fffdf8" stroke="#1e7e54" stroke-width="7"/>
+<circle cx="622.5" cy="600" r="15" fill="#fffdf8" stroke="#1e7e54" stroke-width="7"/>
+<circle cx="807.5" cy="600" r="15" fill="#fffdf8" stroke="#1e7e54" stroke-width="7"/>
+</svg>
+</svg>

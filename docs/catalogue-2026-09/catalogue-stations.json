@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 525,
+  "total": 537,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -58,11 +58,15 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "bouteilles-fluide",
-      "titre": "Les bouteilles de fluide",
+      "titre": "Les bouteilles de fluide — types, robinets, plaque, charge maximale, fluides inflammables",
       "ligne": null,
       "resume": "Les bouteilles du frigoriste : fluide neuf, récupération, azote, bouteille jetable interdite, deux robinets et tube plongeur, plaque TW WC PS, charge maximale, fluides inflammables, rangement.",
       "niveaux": null,
-      "competences": null,
+      "competences": [
+        "5.02",
+        "5.05",
+        "5.06"
+      ],
       "missionProf": null,
       "url": "https://inerweb.fr/packs/fluides/res/bouteilles-fluide/",
       "chemin": "packs/fluides/res/bouteilles-fluide/"
@@ -4344,6 +4348,42 @@
     },
     {
       "reseau": "ÉlectroRézo",
+      "id": "6-a-d-ou-vient-le-champ",
+      "titre": "D’où vient le champ magnétique",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : le champ magnétique, d’où il vient.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-a-d-ou-vient-le-champ/",
+      "chemin": "electrorezo/stations/6-a-d-ou-vient-le-champ/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-b-ce-que-fait-le-champ",
+      "titre": "Ce que fait le champ magnétique",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : ce que fait le champ magnétique.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-b-ce-que-fait-le-champ/",
+      "chemin": "electrorezo/stations/6-b-ce-que-fait-le-champ/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "6-c-action-et-reaction",
+      "titre": "Action et réaction : le courant induit",
+      "ligne": "Ligne 6",
+      "resume": "Station autonome de la ligne 6 d’ÉlectroRézo : action et réaction, le courant induit.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/6-c-action-et-reaction/",
+      "chemin": "electrorezo/stations/6-c-action-et-reaction/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
       "id": "7-1-varier-la-tension",
       "titre": "Faire varier la tension",
       "ligne": "Ligne 7",
@@ -4521,6 +4561,114 @@
       "missionProf": null,
       "url": "https://inerweb.fr/electrorezo/stations/8-9-reperes/",
       "chemin": "electrorezo/stations/8-9-reperes/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-1-qui-fait-tourner-quoi",
+      "titre": "Qui fait tourner quoi",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-1-qui-fait-tourner-quoi/",
+      "chemin": "electrorezo/stations/9-1-qui-fait-tourner-quoi/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-2-reperer-c-s-r",
+      "titre": "Repérer C, S, R à l’ohmmètre",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-2-reperer-c-s-r/",
+      "chemin": "electrorezo/stations/9-2-reperer-c-s-r/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-3-compresseur-rsir-csir",
+      "titre": "RSIR à relais.",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-3-compresseur-rsir-csir/",
+      "chemin": "electrorezo/stations/9-3-compresseur-rsir-csir/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-4-compresseur-psc-csr",
+      "titre": "PSC.",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-4-compresseur-psc-csr/",
+      "chemin": "electrorezo/stations/9-4-compresseur-psc-csr/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-5-klixon-et-depannage",
+      "titre": "Le Klixon et le dépannage du compresseur",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-5-klixon-et-depannage/",
+      "chemin": "electrorezo/stations/9-5-klixon-et-depannage/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-6-spire-de-frager",
+      "titre": "Spire de Frager : le moteur sans condensateur",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-6-spire-de-frager/",
+      "chemin": "electrorezo/stations/9-6-spire-de-frager/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-7-ventilateur-et-vitesses",
+      "titre": "Ventilateur et vitesses : le moteur à plusieurs vitesses",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-7-ventilateur-et-vitesses/",
+      "chemin": "electrorezo/stations/9-7-ventilateur-et-vitesses/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-8-inverser-le-sens",
+      "titre": "Inverser le sens d’un moteur monophasé",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : inverser le sens d’un moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-8-inverser-le-sens/",
+      "chemin": "electrorezo/stations/9-8-inverser-le-sens/"
+    },
+    {
+      "reseau": "ÉlectroRézo",
+      "id": "9-9-moteur-ec",
+      "titre": "Version AC, page 6 de la notice.",
+      "ligne": "Ligne 9",
+      "resume": "Station autonome de la ligne 9 d’ÉlectroRézo : le moteur monophasé.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/electrorezo/stations/9-9-moteur-ec/",
+      "chemin": "electrorezo/stations/9-9-moteur-ec/"
     },
     {
       "reseau": "CartoClim",
@@ -6707,7 +6855,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\pilote-fluides\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6719,7 +6867,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6731,7 +6879,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6743,7 +6891,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6755,7 +6903,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\pilote-fluides\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6767,7 +6915,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\pilote-fluides\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

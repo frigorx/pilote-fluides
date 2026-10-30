@@ -20,6 +20,8 @@
   window.__inerwebAppareils = true;
 
   var LISTE = {
+    // réseau Bureau d'études (30/10/2026) : stations de 2 h, tableaux et plans, double écran
+    "bureau-etudes/": "avertir",
     // cours denses du pack fluides (ex-SUPPORTS de plan-donnees.js et balise inerweb-support)
     "packs/fluides/res/surchauffe-sous-refroidissement-interactif/": "avertir",
     "packs/fluides/res/diagramme-enthalpique/": "avertir",

@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "nom": "Maison d'étude BE",
+    "version": 1,
+    "date": "2026-10-30",
+    "zone": "H3",
+    "ville": "Marseille",
+    "altitude_m": 0,
+    "unites": "mètres et mètres carrés, cotes à deux décimales",
+    "origine": "Maison fictive écrite par inerWeb pour le réseau Bureau d'études. Aucune donnée de tiers.",
+    "orientation": "Le nord est en haut de tous les plans. Les orientations S, N, E, O sont celles de la face extérieure du mur. Le séjour est au sud, la rue et l'entrée au nord.",
+    "conventions": [
+      "Ces conventions sont des choix d'exercice, pas des règles de calcul réglementaires. Elles sont écrites pour que tous les stagiaires comptent de la même façon.",
+      "Les surfaces de paroi sont prises en cotes intérieures : longueur de la face intérieure du mur, dans la pièce.",
+      "La hauteur prise pour un mur est la hauteur sous plafond (2,50 m), jamais la hauteur d'étage.",
+      "Les baies (fenêtres, portes-fenêtres, portes) sont déduites en dimensions de tableau, largeur × hauteur, en mètres.",
+      "Les parois déperditives relevées sont les murs extérieurs, les murs sur local non chauffé, le plancher bas sur terre-plein et le plafond sous combles perdus.",
+      "Le plancher intermédiaire et les cloisons entre pièces chauffées ne sont pas déperditifs.",
+      "Le volume d'une pièce est sa surface en cotes intérieures multipliée par la hauteur sous plafond. L'épaisseur des planchers n'est pas comptée.",
+      "La trémie d'escalier est rattachée au palier pour les parois et le volume. Elle est exclue de la surface habitable et du plancher du palier. Le plafond au-dessus de la trémie compte.",
+      "Les portes intérieures ne sont pas relevées."
+    ]
+  },
+  "batiment": {
+    "hors_tout": { "longueur_m": 10.90, "largeur_m": 8.00 },
+    "epaisseur_murs_exterieurs_m": 0.30,
+    "epaisseur_cloisons_m": 0.10,
+    "empreinte_RDC": [[0, 0], [10.90, 0], [10.90, 8.00], [3.30, 8.00], [3.30, 6.00], [0, 6.00]],
+    "empreinte_ETG": [[3.30, 0], [10.90, 0], [10.90, 8.00], [3.30, 8.00]],
+    "toiture": { "type": "combles perdus non chauffés, deux pentes", "egout_m": 5.40, "faitage_m": 6.60, "debord_m": 0.40 },
+    "escalier": { "niveau_bas": "RDC", "niveau_haut": "ETG", "x": 5.10, "y": 5.50, "longueur": 1.20, "largeur": 2.20, "sens": "monte vers le sud, de l'entrée vers le palier" }
+  },
+  "niveaux": [
+    {
+      "id": "RDC", "nom": "Rez-de-chaussée",
+      "altitude_sol_fini_m": 0.00, "hauteur_sous_plafond_m": 2.50, "epaisseur_plancher_haut_m": 0.20,
+      "interieur": { "x": 3.60, "y": 0.30, "longueur": 7.00, "largeur": 7.40 }
+    },
+    {
+      "id": "ETG", "nom": "Étage",
+      "altitude_sol_fini_m": 2.70, "hauteur_sous_plafond_m": 2.50, "epaisseur_plancher_haut_m": 0.20,
+      "interieur": { "x": 3.60, "y": 0.30, "longueur": 7.00, "largeur": 7.40 }
+    }
+  ],
+  "pieces": [
+    { "id": "GAR", "nom": "Garage", "niveau": "RDC", "chauffee": false,
+      "rectangles": [ { "x": 0.30, "y": 0.30, "longueur": 3.00, "largeur": 5.40 } ] },
+    { "id": "SEJ", "nom": "Séjour-cuisine", "niveau": "RDC", "chauffee": true,
+      "rectangles": [ { "x": 3.60, "y": 0.30, "longueur": 7.00, "largeur": 4.20 }, { "x": 7.70, "y": 4.50, "longueur": 2.90, "largeur": 3.20 } ] },
+    { "id": "ENT", "nom": "Entrée", "niveau": "RDC", "chauffee": true,
+      "rectangles": [ { "x": 3.60, "y": 4.60, "longueur": 2.70, "largeur": 3.10 }, { "x": 6.30, "y": 4.60, "longueur": 1.30, "largeur": 1.40 } ] },
+    { "id": "WC", "nom": "WC", "niveau": "RDC", "chauffee": true,
+      "rectangles": [ { "x": 6.40, "y": 6.10, "longueur": 1.20, "largeur": 1.60 } ] },
+    { "id": "CH1", "nom": "Chambre 1", "niveau": "ETG", "chauffee": true,
+      "rectangles": [ { "x": 3.60, "y": 0.30, "longueur": 3.40, "largeur": 3.60 } ] },
+    { "id": "CH2", "nom": "Chambre 2", "niveau": "ETG", "chauffee": true,
+      "rectangles": [ { "x": 7.10, "y": 0.30, "longueur": 3.50, "largeur": 3.60 } ] },
+    { "id": "PAL", "nom": "Palier", "niveau": "ETG", "chauffee": true,
+      "rectangles": [ { "x": 3.60, "y": 4.00, "longueur": 2.70, "largeur": 3.70 } ],
+      "tremie": { "x": 5.10, "y": 5.50, "longueur": 1.20, "largeur": 2.20 } },
+    { "id": "CH3", "nom": "Chambre 3", "niveau": "ETG", "chauffee": true,
+      "rectangles": [ { "x": 6.40, "y": 4.00, "longueur": 2.30, "largeur": 3.70 } ] },
+    { "id": "SDE", "nom": "Salle d'eau", "niveau": "ETG", "chauffee": true,
+      "rectangles": [ { "x": 8.80, "y": 4.00, "longueur": 1.80, "largeur": 3.70 } ] }
+  ],
+  "murs": [
+    { "id": "M01", "niveau": "RDC", "piece": "SEJ", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "S", "segment": { "x1": 3.60, "y1": 0.30, "x2": 10.60, "y2": 0.30 } },
+    { "id": "M02", "niveau": "RDC", "piece": "SEJ", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "E", "segment": { "x1": 10.60, "y1": 0.30, "x2": 10.60, "y2": 4.50 } },
+    { "id": "M03", "niveau": "RDC", "piece": "SEJ", "type": "sur_local_non_chauffe", "local_voisin": "GAR", "epaisseur_m": 0.30, "orientation": "O", "segment": { "x1": 3.60, "y1": 0.30, "x2": 3.60, "y2": 4.50 } },
+    { "id": "M04", "niveau": "RDC", "piece": "SEJ", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "E", "segment": { "x1": 10.60, "y1": 4.50, "x2": 10.60, "y2": 7.70 } },
+    { "id": "M05", "niveau": "RDC", "piece": "SEJ", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 7.70, "y1": 7.70, "x2": 10.60, "y2": 7.70 } },
+    { "id": "M06", "niveau": "RDC", "piece": "ENT", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 3.60, "y1": 7.70, "x2": 6.30, "y2": 7.70 } },
+    { "id": "M07", "niveau": "RDC", "piece": "ENT", "type": "sur_local_non_chauffe", "local_voisin": "GAR", "epaisseur_m": 0.30, "orientation": "O", "segment": { "x1": 3.60, "y1": 4.60, "x2": 3.60, "y2": 5.70 } },
+    { "id": "M08", "niveau": "RDC", "piece": "ENT", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "O", "segment": { "x1": 3.60, "y1": 5.70, "x2": 3.60, "y2": 7.70 } },
+    { "id": "M09", "niveau": "RDC", "piece": "WC", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 6.40, "y1": 7.70, "x2": 7.60, "y2": 7.70 } },
+    { "id": "M10", "niveau": "ETG", "piece": "CH1", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "S", "segment": { "x1": 3.60, "y1": 0.30, "x2": 7.00, "y2": 0.30 } },
+    { "id": "M11", "niveau": "ETG", "piece": "CH1", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "O", "segment": { "x1": 3.60, "y1": 0.30, "x2": 3.60, "y2": 3.90 } },
+    { "id": "M12", "niveau": "ETG", "piece": "CH2", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "S", "segment": { "x1": 7.10, "y1": 0.30, "x2": 10.60, "y2": 0.30 } },
+    { "id": "M13", "niveau": "ETG", "piece": "CH2", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "E", "segment": { "x1": 10.60, "y1": 0.30, "x2": 10.60, "y2": 3.90 } },
+    { "id": "M14", "niveau": "ETG", "piece": "PAL", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "O", "segment": { "x1": 3.60, "y1": 4.00, "x2": 3.60, "y2": 7.70 } },
+    { "id": "M15", "niveau": "ETG", "piece": "PAL", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 3.60, "y1": 7.70, "x2": 6.30, "y2": 7.70 } },
+    { "id": "M16", "niveau": "ETG", "piece": "CH3", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 6.40, "y1": 7.70, "x2": 8.70, "y2": 7.70 } },
+    { "id": "M17", "niveau": "ETG", "piece": "SDE", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 8.80, "y1": 7.70, "x2": 10.60, "y2": 7.70 } },
+    { "id": "M18", "niveau": "ETG", "piece": "SDE", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "E", "segment": { "x1": 10.60, "y1": 4.00, "x2": 10.60, "y2": 7.70 } },
+    { "id": "M19", "niveau": "RDC", "piece": "GAR", "type": "exterieur", "epaisseur_m": 0.30, "orientation": "N", "segment": { "x1": 0.30, "y1": 5.70, "x2": 3.30, "y2": 5.70 } },
+
+    { "id": "C01", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["SEJ", "ENT"], "segment": { "x1": 3.60, "y1": 4.55, "x2": 7.60, "y2": 4.55 } },
+    { "id": "C02", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["SEJ", "ENT", "WC"], "segment": { "x1": 7.65, "y1": 4.50, "x2": 7.65, "y2": 7.70 } },
+    { "id": "C03", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["ENT", "WC"], "segment": { "x1": 6.35, "y1": 6.00, "x2": 6.35, "y2": 7.70 } },
+    { "id": "C04", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["ENT", "WC"], "segment": { "x1": 6.40, "y1": 6.05, "x2": 7.60, "y2": 6.05 } },
+    { "id": "C05", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH1", "CH2", "PAL", "CH3", "SDE"], "segment": { "x1": 3.60, "y1": 3.95, "x2": 10.60, "y2": 3.95 } },
+    { "id": "C06", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH1", "CH2"], "segment": { "x1": 7.05, "y1": 0.30, "x2": 7.05, "y2": 3.90 } },
+    { "id": "C07", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["PAL", "CH3"], "segment": { "x1": 6.35, "y1": 4.00, "x2": 6.35, "y2": 7.70 } },
+    { "id": "C08", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH3", "SDE"], "segment": { "x1": 8.75, "y1": 4.00, "x2": 8.75, "y2": 7.70 } }
+  ],
+  "menuiseries": [
+    { "repere": "PF1", "type": "Porte-fenêtre 2 vantaux", "niveau": "RDC", "piece": "SEJ", "mur": "M01", "orientation": "S", "largeur_m": 2.40, "hauteur_m": 2.15, "allege_m": 0.00, "decalage_m": 0.50 },
+    { "repere": "F1", "type": "Fenêtre 2 vantaux", "niveau": "RDC", "piece": "SEJ", "mur": "M01", "orientation": "S", "largeur_m": 1.20, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 4.80 },
+    { "repere": "F2", "type": "Fenêtre 2 vantaux", "niveau": "RDC", "piece": "SEJ", "mur": "M02", "orientation": "E", "largeur_m": 1.20, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.50 },
+    { "repere": "F3", "type": "Fenêtre 2 vantaux", "niveau": "RDC", "piece": "SEJ", "mur": "M04", "orientation": "E", "largeur_m": 1.20, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.00 },
+    { "repere": "F4", "type": "Fenêtre 1 vantail", "niveau": "RDC", "piece": "SEJ", "mur": "M05", "orientation": "N", "largeur_m": 1.00, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 0.95 },
+    { "repere": "PE", "type": "Porte d'entrée pleine", "niveau": "RDC", "piece": "ENT", "mur": "M06", "orientation": "N", "largeur_m": 0.90, "hauteur_m": 2.10, "allege_m": 0.00, "decalage_m": 0.30, "porte": true, "charniere": "min" },
+    { "repere": "PS1", "type": "Porte de service vers le garage", "niveau": "RDC", "piece": "ENT", "mur": "M07", "orientation": "O", "largeur_m": 0.90, "hauteur_m": 2.10, "allege_m": 0.00, "decalage_m": 0.10, "porte": true, "charniere": "min" },
+    { "repere": "F5", "type": "Fenêtre 1 vantail", "niveau": "RDC", "piece": "ENT", "mur": "M08", "orientation": "O", "largeur_m": 0.80, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 0.60 },
+    { "repere": "F6", "type": "Fenêtre oscillo-battante", "niveau": "RDC", "piece": "WC", "mur": "M09", "orientation": "N", "largeur_m": 0.60, "hauteur_m": 0.60, "allege_m": 1.40, "decalage_m": 0.30 },
+    { "repere": "PG1", "type": "Porte de garage sectionnelle", "niveau": "RDC", "piece": "GAR", "mur": "M19", "orientation": "N", "largeur_m": 2.40, "hauteur_m": 2.00, "allege_m": 0.00, "decalage_m": 0.30, "porte": true, "garage": true },
+    { "repere": "F7", "type": "Fenêtre 2 vantaux", "niveau": "ETG", "piece": "CH1", "mur": "M10", "orientation": "S", "largeur_m": 1.40, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.00 },
+    { "repere": "F8", "type": "Fenêtre 1 vantail", "niveau": "ETG", "piece": "CH1", "mur": "M11", "orientation": "O", "largeur_m": 0.80, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.40 },
+    { "repere": "F9", "type": "Fenêtre 2 vantaux", "niveau": "ETG", "piece": "CH2", "mur": "M12", "orientation": "S", "largeur_m": 1.40, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.05 },
+    { "repere": "F10", "type": "Fenêtre 2 vantaux", "niveau": "ETG", "piece": "CH2", "mur": "M13", "orientation": "E", "largeur_m": 1.20, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.20 },
+    { "repere": "F11", "type": "Fenêtre 1 vantail", "niveau": "ETG", "piece": "PAL", "mur": "M14", "orientation": "O", "largeur_m": 0.80, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 1.30 },
+    { "repere": "F12", "type": "Fenêtre 1 vantail", "niveau": "ETG", "piece": "PAL", "mur": "M15", "orientation": "N", "largeur_m": 1.00, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 0.40 },
+    { "repere": "F13", "type": "Fenêtre 2 vantaux", "niveau": "ETG", "piece": "CH3", "mur": "M16", "orientation": "N", "largeur_m": 1.20, "hauteur_m": 1.35, "allege_m": 0.90, "decalage_m": 0.55 },
+    { "repere": "F14", "type": "Fenêtre oscillo-battante", "niveau": "ETG", "piece": "SDE", "mur": "M17", "orientation": "N", "largeur_m": 0.60, "hauteur_m": 0.60, "allege_m": 1.40, "decalage_m": 0.60 },
+    { "repere": "F15", "type": "Fenêtre 1 vantail", "niveau": "ETG", "piece": "SDE", "mur": "M18", "orientation": "E", "largeur_m": 0.80, "hauteur_m": 1.00, "allege_m": 1.10, "decalage_m": 1.45 }
+  ],
+  "planchers": [
+    { "id": "PB1", "type": "bas_terre_plein", "nom": "Plancher bas sur terre-plein", "niveau": "RDC", "pieces": ["SEJ", "ENT", "WC"], "epaisseur_m": 0.20, "deperditif": true },
+    { "id": "PI1", "type": "intermediaire", "nom": "Plancher intermédiaire", "entre": ["RDC", "ETG"], "epaisseur_m": 0.20, "deperditif": false },
+    { "id": "PH1", "type": "haut_sous_combles_perdus", "nom": "Plafond sous combles perdus", "niveau": "ETG", "pieces": ["CH1", "CH2", "PAL", "CH3", "SDE"], "epaisseur_m": 0.20, "deperditif": true }
+  ]
+}

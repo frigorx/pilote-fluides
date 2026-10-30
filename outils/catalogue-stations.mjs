@@ -246,6 +246,30 @@ for (const nom of dossiers('legislation/stations')) {
   });
 }
 
+/* --- Bureau d'études (30/10/2026) : couverture.json de chaque station ouverte -----
+   Les 34 stations annoncées vivent dans bureau-etudes/programme.js ; le catalogue ne
+   relève que celles qui ont un dossier (station ouverte ou en construction). */
+for (const nom of dossiers('bureau-etudes/stations', ['_commun', '_MODELE'])) {
+  const brut = lire(path.join(ROOT, 'bureau-etudes/stations', nom, 'couverture.json'));
+  if (!brut) continue;
+  let j = null;
+  try { j = JSON.parse(brut); } catch { continue; }
+  const ref = j.referentiel || {};
+  const bts = ref.bts_fed || {};
+  const codes = [...(ref.tecvc || []), ...(bts.competences || []), ...(bts.savoirs || [])]
+    .map((c) => (typeof c === 'string' ? c : c.code)).filter(Boolean);
+  ajouter({
+    reseau: "Bureau d'études",
+    id: nom,
+    titre: j.code ? `${j.code}, ${j.titre}` : j.titre,
+    ligne: j.ligne || null,
+    resume: phrase(j.objectif || null),
+    niveaux: { bts: 'TP TECVC, BTS FED' },
+    competences: codes.length ? codes : null,
+    chemin: `bureau-etudes/stations/${nom}/`,
+  });
+}
+
 /* --- HydroMétro : manifest.json, le mieux renseigné ------------------ */
 for (const nom of dossiers('hydrometro/stations')) {
   const dir = path.join(ROOT, 'hydrometro/stations', nom);
