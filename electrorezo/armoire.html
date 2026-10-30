@@ -99,7 +99,7 @@
 
 <script src="assets/armoire-zones.js"></script>
 <script src="assets/armoire-carte.js"></script>
-<script src="stations/_commun/3d/electro3d.js"></script>
+<script src="stations/_commun/3d/electro3d.js?v=e74bb7ab4e"></script>
 <script>
 (() => {
   const Z = window.ZONES_ARMOIRE || [], e = document.getElementById('armoire'), fiche = document.getElementById('fiche');
@@ -202,8 +202,8 @@
   });
 
   e.addEventListener('e3d-choix', ev => { montrer(ev.detail.id, true); allumer(Z.find(x => x.id === ev.detail.id)); });
-  /* sans WebGL ou sans réseau : la 3D se retire, la liste des zones reste la porte */
-  e.addEventListener('e3d-repli', () => { e.hidden = true; });
+  /* sans WebGL : l'armoire en image ; sans image non plus, la 3D se retire. La liste des zones reste la porte */
+  e.addEventListener('e3d-sans-photo', () => { e.hidden = true; });
   accueil();
 })();
 </script>
