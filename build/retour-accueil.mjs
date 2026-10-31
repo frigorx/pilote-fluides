@@ -39,7 +39,7 @@ if (!Array.isArray(RESEAUX) || !RESEAUX.length) throw new Error("moteur/reseaux.
 const parId = (id) => { const r = RESEAUX.find((x) => x.id === id); if (!r) throw new Error("réseau inconnu : " + id); return r; };
 const SALLES_DE_FILMS = [/^studio\//, /^voyage\//, /^packs\/fluides\/res\/_regules-commun\/films\//, /^packs\/fluides\/res\/film-[^/]+\//];
 const DOSSIERS = RESEAUX.filter((r) => r.adresse.includes("/")).map((r) => [r.adresse.slice(0, r.adresse.lastIndexOf("/") + 1), r])
-  .concat([["packs/fluides/res/", parId("thermo-techno")]]);
+  .concat([["packs/fluides/res/", parId("thermo-techno")], ["plan/", parId("bureau-etudes")]]);
 const sansIndex = (c) => c.replace(/index\.html$/, "");
 const STATIONS = new Map();
 for (const st of JSON.parse(readFileSync(join(RACINE, "docs", "catalogue-2026-09", "catalogue-stations.json"), "utf8")).stations) {

@@ -69,7 +69,43 @@
   /* Gare centrale D0, terminus commun R5 (il appartient à la ligne R). */
   const GARE = "D0", TERMINUS = "R5";
 
-  window.BE_PROGRAMME = {LIGNES, STATIONS, GARE, TERMINUS,
+  /* La ligne P « Lire les plans » (décision de Franck, 30/10/2026 : inerWeb Plan fait partie d'inerWeb BE).
+     Ce n'est pas une ligne de stations : ses gares vivent dans plan/gares/<clé>/ (adresses inchangées),
+     avec leur cours, leur test et leurs deux PDF. Elle est donc hors de STATIONS : les 34 stations,
+     le livre et les tests ne bougent pas. Le plan du réseau la dessine en tête ; la page la liste.
+     États : "relecture" (en ligne, noindex, ouverte), "fermee" (écrite, en relecture, pas cliquable).
+     Les gares Toiture et Plâtrerie sont les deux embranchements « métiers du bâtiment ». */
+  const GARES_PLANS = [
+    ["1", "g01-bases-graphiques", "Bases graphiques", "Tracer et présenter"],
+    ["2", "g02-les-vues", "Les vues", "Le dé à six faces"],
+    ["3", "g03-dossier-technique", "Le dossier technique", "Acteurs, documents, cartouche"],
+    ["4", "g04-types-de-plans", "Les types de plans", "De la situation au détail"],
+    ["5", "g05-conventions", "Conventions graphiques", "Traits, hachures, symboles"],
+    ["6", "g06-les-echelles", "Les échelles", "Le kutch, du plan au réel"],
+    ["7", "g07-la-cotation", "La cotation", "Chaînes de cotes"],
+    ["7b", "g07b-le-metre-sur-plan", "Le métré sur plan", "Longueurs, surfaces, volumes"],
+    ["8", "g08-le-croquis-cote", "Le croquis coté", "Dessiner à main levée"],
+    ["9", "g09-la-maquette-bim", "La maquette BIM", "Initiation BIM Vision"],
+    ["10", "g10-le-sujet-guide", "Le sujet guidé", "Un vrai sujet, pas à pas"],
+    ["11", "g11-suivre-une-installation", "Suivre une installation", "Dans la maquette 3D"],
+    ["12", "g12-croquer-et-relever", "Croquer et relever", "Une installation frigorifique"],
+    ["13", "g13-schema-isometrique", "Le schéma isométrique", "Lire et tracer un réseau"],
+    ["CVC", "tecvc1-plan-implantation-cvc", "Plan d'implantation CVC", "Équipements, réseaux, nomenclature"]
+  ].map(([code, cle, titre, rendu]) => ({code, cle, titre, rendu, ligne: "P", etat: "relecture", href: `../plan/gares/${cle}/index.html`,
+    exercice: `../plan/gares/${cle}/exercice.pdf`, corrige: `../plan/gares/${cle}/corrige.pdf`}));
+  const METIERS = [
+    {nom: "Plâtrerie et isolation", detail: "niveau CAP du bâtiment", gares: [
+      ["Plâtrerie 1", "mpi1-plan-de-distribution", "Le plan de distribution"], ["Plâtrerie 2", "mpi2-calepinage-implantation", "Calepinage et implantation"],
+      ["Plâtrerie 3", "mpi3-details-second-oeuvre", "Les détails du second œuvre"], ["Plâtrerie 4", "mpi4-bim-du-plaquiste", "Le BIM du plaquiste"],
+      ["Plâtrerie 5", "mpi5-du-plan-au-devis", "Du plan au devis"], ["Plâtrerie 6", "mpi6-cap-sur-ep1", "Terminus : sujets et sujet blanc"]]},
+    {nom: "Étanchéité des toitures", detail: "niveau CAP du bâtiment", gares: [
+      ["Toiture 1", "etam1-plan-toiture-terrasse", "Le plan de toiture-terrasse"], ["Toiture 2", "etam2-coupe-du-complexe", "La coupe du complexe"],
+      ["Toiture 3", "etam3-points-singuliers", "Les points singuliers"], ["Toiture 4", "etam4-bim-de-l-etancheur", "Le BIM de l'étancheur"],
+      ["Toiture 5", "etam5-surfaces-et-quantites", "Surfaces et quantités"], ["Toiture 6", "etam6-cap-sur-ep1", "Terminus : sujets et sujet blanc"]]}
+  ].map(m => ({nom: m.nom, detail: m.detail, gares: m.gares.map(([code, cle, titre]) => ({code, cle, titre, ligne: "P", etat: "fermee", href: `../plan/gares/${cle}/index.html`}))}));
+  const PLANS = {code: "P", nom: "Lire les plans", detail: "du trait au plan, de la cote à la maquette", couleur: "#8a5200", carte: "../plan/index.html", GARES: GARES_PLANS, METIERS};
+
+  window.BE_PROGRAMME = {LIGNES, STATIONS, GARE, TERMINUS, PLANS,
     station: code => STATIONS.find(s => s.code === code),
     deLaLigne: ligne => STATIONS.filter(s => s.ligne === ligne)};
 })();

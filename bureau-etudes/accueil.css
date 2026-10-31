@@ -27,7 +27,7 @@ a{color:var(--blue)}
 .plan svg{display:block;width:100%;height:auto}
 .plan svg a:hover text,.plan svg a:focus text{text-decoration:underline}
 h2.bloc{font-size:24px;margin:28px 0 10px}
-.portes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.portes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .portes a{display:block;background:var(--paper);border:2px solid var(--navy);border-radius:12px;padding:12px 14px;color:var(--ink);text-decoration:none}
 .portes strong{display:block;color:var(--navy);font-size:18px}
 .mode{background:var(--paper);border-radius:12px;padding:6px 18px;margin:0}
@@ -60,3 +60,24 @@ h2.bloc{font-size:24px;margin:28px 0 10px}
 .carte-lettre,.carte-station{cursor:pointer}
 .carte-lettre:focus,.carte-station:focus{outline:3px solid #3d7fca;outline-offset:2px}
 .carte-station circle{transition:r .15s}
+.intro-plans{margin:0 0 10px}
+.ligne-plans{margin-bottom:14px}
+.ligne-plans table{width:100%;border-collapse:collapse;margin-top:8px}
+.ligne-plans th,.ligne-plans td{text-align:left;padding:5px 8px;border-bottom:1px solid #eadfcd;vertical-align:top;font-weight:400}
+.ligne-plans thead th{font-weight:700;color:var(--navy);font-size:15px}
+.ligne-plans tbody th{font-weight:700;color:var(--navy);width:56px}
+.ligne-plans td small{display:block;color:var(--muted);font-size:15px}
+.ligne-plans td.docs a{display:inline-block;margin:0 10px 2px 0;white-space:nowrap}
+.ligne-plans td em{font-style:normal;color:var(--muted);font-size:15px;white-space:nowrap}
+.ligne-plans td em.ouverte{color:#1e7e54;font-weight:700}
+.metiers-titre{font-size:18px;margin:6px 0 8px}
+.metiers-titre span{font-size:15px;color:var(--muted);font-weight:400}
+.ligne .detail{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:900px){
+  .ligne-plans thead{display:none}
+  .ligne-plans table,.ligne-plans tbody,.ligne-plans tr,.ligne-plans th,.ligne-plans td{display:block}
+  .ligne-plans tr{border-bottom:1px solid #eadfcd;padding:6px 0}
+  .ligne-plans th,.ligne-plans td{border:0;padding:2px 0}
+  .ligne-plans tbody th{width:auto}
+  .ligne-plans td a{display:inline-flex;align-items:center;min-height:44px}
+}

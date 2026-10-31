@@ -483,10 +483,10 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Gare 8 — Le croquis coté : dessiner à main levée](https://inerweb.fr/plan/gares/g08-le-croquis-cote/) | — | — | — | Jusqu'ici vous LISIEZ. Cette gare, c'est l'inverse : vous PRODUISEZ. Le croquis coté est le brouillon intelligent du chantier : rapide, à main levée, mais assez précis pour qu'un autre travaille avec. Environ 2 heures . |
 | [Gare 9 — La maquette BIM : initiation BIM Vision](https://inerweb.fr/plan/gares/g09-la-maquette-bim/) | — | — | — | Le bâtiment existe aussi en version numérique : la maquette BIM . Cette gare se vit sur poste informatique (~2 h). À la fin, vous saurez : |
 | [Gare 10 — Le sujet guidé : un vrai sujet, pas à pas](https://inerweb.fr/plan/gares/g10-le-sujet-guide/) | — | — | — | Vous avez les neuf premières gares dans les jambes : documents, plans, conventions, échelles, cotes, croquis, maquette. Cette gare assemble tout sur du VRAI : un vrai sujet de CAP , lu ensemble, pas à pas. Environ 2 heures . |
-| [Gare 11 — Suivre une installation dans la maquette 3D](https://inerweb.fr/plan/gares/g11-suivre-une-installation/) | — | — | — | ⬅ La carte du réseau · tronc commun · après la gare 10 · pour le froid et la clim en cours de relecture |
-| [Gare 12 — Croquer et relever une installation frigorifique](https://inerweb.fr/plan/gares/g12-croquer-et-relever/) | — | — | — | ⬅ La carte du réseau · tronc commun · pour le froid et la clim en cours de relecture |
-| [Gare 13 — Le schéma isométrique d'un réseau](https://inerweb.fr/plan/gares/g13-schema-isometrique/) | — | — | — | ⬅ La carte du réseau · tronc commun · pour le froid et la clim en cours de relecture |
-| [Bureau d'études, gare 1 — Tracer le plan d'implantation d'une installation CVC](https://inerweb.fr/plan/gares/tecvc1-plan-implantation-cvc/) | — | — | — | ⬅ La carte du réseau · ligne bureau d'études CVC en cours de relecture |
+| [Gare 11 — Suivre une installation dans la maquette 3D](https://inerweb.fr/plan/gares/g11-suivre-une-installation/) | — | — | — | ⬅ La ligne Lire les plans · tronc commun · après la gare 10 · pour le froid et la clim en cours de relecture |
+| [Gare 12 — Croquer et relever une installation frigorifique](https://inerweb.fr/plan/gares/g12-croquer-et-relever/) | — | — | — | ⬅ La ligne Lire les plans · tronc commun · pour le froid et la clim en cours de relecture |
+| [Gare 13 — Le schéma isométrique d'un réseau](https://inerweb.fr/plan/gares/g13-schema-isometrique/) | — | — | — | ⬅ La ligne Lire les plans · tronc commun · pour le froid et la clim en cours de relecture |
+| [Bureau d'études, gare 1 — Tracer le plan d'implantation d'une installation CVC](https://inerweb.fr/plan/gares/tecvc1-plan-implantation-cvc/) | — | — | — | ⬅ La ligne Lire les plans · ligne bureau d'études CVC en cours de relecture |
 
 ## JouéRézo — 45 stations
 

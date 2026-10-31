@@ -139,3 +139,15 @@ function agrandissables(sec){
   });
 }
 window.addEventListener("resize", () => agrandissables(ecrans[idx]));
+
+/* ---------- rangée « Documents » en haut de la gare (Franck, 30/10/2026) ----------
+   L'exercice et le corrigé se télécharge dès l'ouverture, sans attendre le dernier écran. */
+(function () {
+  if (!document.querySelector('a[href="exercice.pdf"]')) return;
+  const entete = document.querySelector("header");
+  if (!entete) return;
+  const rangee = document.createElement("p");
+  rangee.className = "documents-gare";
+  rangee.innerHTML = '<strong>Documents</strong> <a href="exercice.pdf" download>Exercice (PDF)</a> <a href="corrige.pdf" download>Corrigé (PDF)</a> <span>A4, noir et blanc</span>';
+  entete.insertAdjacentElement("afterend", rangee);
+})();

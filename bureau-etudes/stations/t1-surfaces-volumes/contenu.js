@@ -80,7 +80,7 @@ BE.station({
   suivante: { code: "BE-T2", titre: "Les parois et le coefficient U", href: "../t2-parois-coefficient-u/index.html" },
   correspondances: [
     { reseau: "AéroRézo", titre: "Déperditions d’une pièce", href: "../../../aerorezo/stations/deperditions-piece/index.html", pourquoi: "Cette page applique les surfaces relevées ici au calcul des déperditions d’une pièce." },
-    { reseau: "inerWeb Plan", titre: "Les échelles", href: "../../../plan/gares/g06-les-echelles/index.html", pourquoi: "Cette gare rappelle comment lire une échelle et une cote sur un plan." }
+    { reseau: "inerWeb BE, ligne Lire les plans", titre: "Les échelles", href: "../../../plan/gares/g06-les-echelles/index.html", pourquoi: "Cette gare rappelle comment lire une échelle et une cote sur un plan." }
   ],
 
   ecrans: [

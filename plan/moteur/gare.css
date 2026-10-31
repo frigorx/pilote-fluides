@@ -94,3 +94,13 @@ nav.pied{z-index:50}
   .credit, .credit a, .statut, figcaption { font-size: 14px; }
   .boutons-vues button, nav.pied button, .q .rep { min-height: 44px; }
 }
+
+/* Rangée « Documents » en haut de la gare (30/10/2026) */
+.documents-gare{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin:10px 0 14px;padding:8px 14px;background:#fff7ee;border-left:4px solid #e8914a;border-radius:8px;font-size:16px}
+.documents-gare a{min-height:44px;display:inline-flex;align-items:center;font-weight:700}
+.documents-gare span{color:#637285;font-size:15px}
+@media print{.documents-gare{display:none}}
+
+/* Lien « Correspondances de formation » en bas de gare (décision 32, 31/10/2026) */
+.corresp{text-align:center;font-size:15px;margin:18px 0 0}
+.corresp a{color:var(--muted)}

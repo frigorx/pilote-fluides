@@ -394,7 +394,7 @@ BE.station({
     { reseau: "AéroRézo", titre: "Parois et écarts de température", href: "../../../aerorezo/stations/transmission/index.html", pourquoi: "Cette page explique pourquoi une paroi laisse passer la chaleur selon son U et l’écart de température." },
     { reseau: "AéroRézo", titre: "Déperditions d’une pièce", href: "../../../aerorezo/stations/deperditions-piece/index.html", pourquoi: "Cette page applique le U des parois au calcul des déperditions d’une pièce." },
     { reseau: "Bureau d’études", titre: "BE-T1, Surfaces et volumes du projet", href: "../t1-surfaces-volumes/index.html", pourquoi: "Les surfaces relevées à la station T1 se multiplient par les U calculés ici." },
-    { reseau: "inerWeb Plan", titre: "Le dossier technique", href: "../../../plan/gares/g03-dossier-technique/index.html", pourquoi: "Cette gare présente les documents d’un dossier technique, dont le CCTP." }
+    { reseau: "inerWeb BE, ligne Lire les plans", titre: "Le dossier technique", href: "../../../plan/gares/g03-dossier-technique/index.html", pourquoi: "Cette gare présente les documents d’un dossier technique, dont le CCTP." }
   ],
 
   ecrans: [

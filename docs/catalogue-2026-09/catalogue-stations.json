@@ -5555,7 +5555,7 @@
       "id": "g11-suivre-une-installation",
       "titre": "Gare 11 — Suivre une installation dans la maquette 3D",
       "ligne": null,
-      "resume": "⬅ La carte du réseau · tronc commun · après la gare 10 · pour le froid et la clim en cours de relecture",
+      "resume": "⬅ La ligne Lire les plans · tronc commun · après la gare 10 · pour le froid et la clim en cours de relecture",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5567,7 +5567,7 @@
       "id": "g12-croquer-et-relever",
       "titre": "Gare 12 — Croquer et relever une installation frigorifique",
       "ligne": null,
-      "resume": "⬅ La carte du réseau · tronc commun · pour le froid et la clim en cours de relecture",
+      "resume": "⬅ La ligne Lire les plans · tronc commun · pour le froid et la clim en cours de relecture",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5579,7 +5579,7 @@
       "id": "g13-schema-isometrique",
       "titre": "Gare 13 — Le schéma isométrique d'un réseau",
       "ligne": null,
-      "resume": "⬅ La carte du réseau · tronc commun · pour le froid et la clim en cours de relecture",
+      "resume": "⬅ La ligne Lire les plans · tronc commun · pour le froid et la clim en cours de relecture",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -5591,7 +5591,7 @@
       "id": "tecvc1-plan-implantation-cvc",
       "titre": "Bureau d'études, gare 1 — Tracer le plan d'implantation d'une installation CVC",
       "ligne": null,
-      "resume": "⬅ La carte du réseau · ligne bureau d'études CVC en cours de relecture",
+      "resume": "⬅ La ligne Lire les plans · ligne bureau d'études CVC en cours de relecture",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -6907,7 +6907,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-fusion\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6919,7 +6919,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6931,7 +6931,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6943,7 +6943,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6955,7 +6955,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6967,7 +6967,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-fusion\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

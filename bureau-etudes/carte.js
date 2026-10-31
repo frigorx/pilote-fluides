@@ -17,8 +17,9 @@
   "use strict";
 
   const NS = "http://www.w3.org/2000/svg";
-  const VUE = {largeur: 1040, hauteur: 685};
-  const VOIES = {E: 75, A: 180, T: 285, H: 390, F: 495, R: 600};
+  const DECAL = 200;   /* la ligne P « Lire les plans » occupe le haut ; les six autres descendent d'autant */
+  const VUE = {largeur: 1040, hauteur: 685 + DECAL};
+  const VOIES = {P: 160, E: 75 + DECAL, A: 180 + DECAL, T: 285 + DECAL, H: 390 + DECAL, F: 495 + DECAL, R: 600 + DECAL};
   const COTE = {E: "haut", A: "haut", T: "alterne", H: "bas", F: "bas", R: "bas"};
   const X0 = 120, X1 = 920, DEBUT = 160, FIN = 900;
   const TRACE = 1100, DECALE = 170;   /* durée du tracé d'une ligne, écart entre deux lignes (ms) */
@@ -54,12 +55,17 @@
     fiche.hidden = true;
     fiche.setAttribute("role", "status");
     hote.appendChild(fiche);
-    const ligneDe = Object.fromEntries(P.LIGNES.map(l => [l.code, l]));
+    const PL = P.PLANS;
+    const lignes = PL ? [PL].concat(P.LIGNES) : P.LIGNES;
+    const ligneDe = Object.fromEntries(lignes.map(l => [l.code, l]));
 
     function montrer(s, x, y, cercle) {
       const l = ligneDe[s.ligne] || {nom: s.code === P.GARE ? "Gare centrale" : "Terminus", couleur: "#1b3a63"};
       fiche.style.setProperty("--c", l.couleur);
-      fiche.innerHTML = `<strong>${s.code}, ${s.titre}</strong><span class="carte-ligne">${s.ligne === "D" ? (s.code === P.GARE ? "Gare centrale" : "Terminus") : "Ligne " + s.ligne + ", " + l.nom}</span>`
+      if (s.ligne === "P") {
+        fiche.innerHTML = `<strong>Gare ${s.code}, ${s.titre}</strong><span class="carte-ligne">Ligne P, ${l.nom}</span>`
+          + `<p>${s.rendu}.</p><p class="carte-pied">${ouverte(s) ? "Cours, test et deux PDF : cliquez pour entrer." : "Gare en relecture, pas encore ouverte."}</p>`;
+      } else fiche.innerHTML = `<strong>${s.code}, ${s.titre}</strong><span class="carte-ligne">${s.ligne === "D" ? (s.code === P.GARE ? "Gare centrale" : "Terminus") : "Ligne " + s.ligne + ", " + l.nom}</span>`
         + `<p>Vous rendez : ${s.rendu}</p><p class="carte-pied">2 heures, 3 niveaux. ${ouverte(s) ? "Station " + etatTexte(s) + " : cliquez pour entrer." : "Station à venir."}</p>`;
       fiche.hidden = false;
       const k = svg.getBoundingClientRect().width / VUE.largeur;
@@ -84,17 +90,17 @@
     /* Les quais d'abord */
     const quai = (x, s, role) => {
       const g = ouverte(s) ? el("a", {href: s.href}) : el("g", {});
-      el("rect", {x, y: 30, width: 110, height: 615, rx: 22, fill: "#fffdf8", stroke: "#1b3a63", "stroke-width": 4}, undefined, g);
-      el("text", {x: x + 55, y: 322, "text-anchor": "middle", fill: "#1b3a63", "font-family": "Trebuchet MS, Arial", "font-size": 30, "font-weight": 700}, s.code, g);
-      el("text", {x: x + 55, y: 348, "text-anchor": "middle", fill: "#637285", "font-family": "Calibri, Arial", "font-size": 17}, role, g);
-      couper(s.titre, 11).forEach((t, i) => el("text", {x: x + 55, y: 376 + i * 21, "text-anchor": "middle", fill: "#10233c", "font-family": "Calibri, Arial", "font-size": 18, "font-weight": 700}, t, g));
-      brancher(g, s, x + 55, 300, null, 0);
+      el("rect", {x, y: 30 + DECAL, width: 110, height: 615, rx: 22, fill: "#fffdf8", stroke: "#1b3a63", "stroke-width": 4}, undefined, g);
+      el("text", {x: x + 55, y: 322 + DECAL, "text-anchor": "middle", fill: "#1b3a63", "font-family": "Trebuchet MS, Arial", "font-size": 30, "font-weight": 700}, s.code, g);
+      el("text", {x: x + 55, y: 348 + DECAL, "text-anchor": "middle", fill: "#637285", "font-family": "Calibri, Arial", "font-size": 17}, role, g);
+      couper(s.titre, 11).forEach((t, i) => el("text", {x: x + 55, y: 376 + DECAL + i * 21, "text-anchor": "middle", fill: "#10233c", "font-family": "Calibri, Arial", "font-size": 18, "font-weight": 700}, t, g));
+      brancher(g, s, x + 55, 300 + DECAL, null, 0);
       apparait(g, 0);
     };
 
     /* Les voies, chacune avec sa lettre ; la lettre isole la ligne */
     const groupes = {};
-    P.LIGNES.forEach((l, i) => {
+    lignes.forEach((l, i) => {
       const y = VOIES[l.code], debut = 200 + i * DECALE;
       const g = groupes[l.code] = el("g", {"data-ligne": l.code, class: "carte-ligne-g"});
       const voie = el("line", {x1: X0, x2: X1, y1: y, y2: y, stroke: l.couleur, "stroke-width": 9, "stroke-linecap": "round"}, undefined, g);
@@ -120,8 +126,26 @@
     quai(10, P.station(P.GARE), "Gare centrale");
     quai(920, P.station(P.TERMINUS), "Terminus");
 
+    /* La ligne P : des gares numérotées, leur titre en biais au-dessus de la voie (49 px d'écart seulement) */
+    if (PL) {
+      const y = VOIES.P, n = PL.GARES.length, pas = (FIN - DEBUT) / n, i = 0;
+      PL.GARES.forEach((s, k) => {
+        const x = DEBUT + (k + 0.5) * pas;
+        const g = ouverte(s) ? el("a", {href: s.href, "aria-label": `Gare ${s.code}, ${s.titre}. ${s.rendu}`}, undefined, groupes.P) : el("g", {}, undefined, groupes.P);
+        const r = ouverte(s) ? 13 : 12;
+        const cercle = el("circle", ouverte(s)
+          ? {cx: x, cy: y, r, fill: PL.couleur, stroke: "#fffdf8", "stroke-width": 4}
+          : {cx: x, cy: y, r, fill: "#fffdf8", stroke: PL.couleur, "stroke-width": 5, "stroke-dasharray": "6 4"}, undefined, g);
+        el("text", {x: x + 6, y: y - 24, transform: `rotate(-40 ${x + 6} ${y - 24})`, fill: "#10233c", "font-family": "Calibri, Arial", "font-size": 16},
+          `${s.code}  ${s.titre}`, g);
+        brancher(g, s, x, y, cercle, r);
+        apparait(g, 200 + i * DECALE + TRACE * (x - X0) / (X1 - X0));
+      });
+    }
+
     /* Les stations, qui apparaissent au passage du trait */
-    P.LIGNES.forEach((l, i) => {
+    P.LIGNES.forEach((l, i0) => {
+      const i = i0 + (PL ? 1 : 0);
       const liste = P.deLaLigne(l.code).filter(s => s.code !== P.TERMINUS);
       const y = VOIES[l.code], n = liste.length, pas = (FIN - DEBUT) / n;
       liste.forEach((s, k) => {
@@ -146,7 +170,7 @@
 
     /* Le train : un passage par ligne, de temps en temps, une fois le plan tracé */
     if (anime) {
-      P.LIGNES.forEach((l, i) => {
+      lignes.forEach((l, i) => {
         const train = el("rect", {x: X0 - 14, y: VOIES[l.code] - 6, width: 28, height: 12, rx: 6, fill: "#fffdf8", stroke: l.couleur, "stroke-width": 3, opacity: 0, "pointer-events": "none"}, undefined, groupes[l.code]);
         /* 7 s de trajet, puis 7 s de quai : un train à la fois par ligne, pas un défilé */
         train.animate([
@@ -155,7 +179,7 @@
           {transform: `translateX(${X1 - X0 - 40}px)`, opacity: 1, offset: 0.47},
           {transform: `translateX(${X1 - X0}px)`, opacity: 0, offset: 0.5},
           {transform: `translateX(${X1 - X0}px)`, opacity: 0}
-        ], {duration: 14000, delay: 200 + P.LIGNES.length * DECALE + TRACE + i * 2300, iterations: Infinity, easing: "linear"});
+        ], {duration: 14000, delay: 200 + lignes.length * DECALE + TRACE + i * 2300, iterations: Infinity, easing: "linear"});
       });
     }
   }
