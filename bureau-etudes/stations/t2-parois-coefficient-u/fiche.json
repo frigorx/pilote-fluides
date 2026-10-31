@@ -1,0 +1,74 @@
+{
+  "numero": 5,
+  "titre": "Calculer le coefficient U d’une paroi",
+  "ligne": "Thermique",
+  "code": "BE-T2",
+  "quand": "Après le relevé des surfaces (station T1) et avant le calcul des déperditions d’un local (station T3). Vous avez le CCTP, qui décrit les couches de chaque paroi. Vous obtenez le coefficient U de chaque paroi, et vous relevez Ue, Uw et Ud tels que le CCTP les donne.",
+  "methode": [
+    "Lire dans le CCTP les couches de la paroi, du local chauffé vers l’autre face : matériau, épaisseur en millimètres, λ ou R donné, source.",
+    "Convertir chaque épaisseur en mètres : e (m) = e (mm) ÷ 1 000.",
+    "Résistance d’une couche : R (m².K/W) = e (m) ÷ λ (W/(m.K)). Si le CCTP donne R, le recopier sans diviser.",
+    "Pour un isolant, prendre λ du certificat si le CCTP le cite. Sans certificat, prendre la valeur par défaut des règles Th-Bât et écrire que c’est une hypothèse.",
+    "Choisir Rsi et Rse dans le tableau X d’après le sens du flux de chaleur. Sur un local non chauffé, prendre Rsi des deux côtés.",
+    "Résistance totale : Rt (m².K/W) = Rsi + somme des R des couches + Rse.",
+    "Coefficient U (W/(m².K)) = 1 ÷ Rt. R au millième, U au centième.",
+    "Plancher sur terre-plein : recopier Ue du CCTP. Fenêtre : recopier Uw. Porte : recopier Ud. Les écrire avec leur page.",
+    "Contrôler : Rt est toujours plus grand que le R de l’isolant seul."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Rsi et Rse (m².K/W)",
+      "valeur": "Mur, flux horizontal : 0,13 et 0,04. Flux montant : 0,10 et 0,04. Flux descendant : 0,17 et 0,04",
+      "source": "Th-Bât Parois opaques, § 3.1.1.3, tableau X, p. 14"
+    },
+    {
+      "grandeur": "Paroi sur un local non chauffé",
+      "valeur": "Rsi des deux côtés",
+      "source": "Th-Bât Parois opaques, § 3.1.1.3, tableau X, note 2, p. 14"
+    },
+    {
+      "grandeur": "Plaque de plâtre standard, 750 à 900 kg/m³",
+      "valeur": "λ = 0,25 W/(m.K)",
+      "source": "Th-Bât Matériaux, § 2.3, p. 12"
+    },
+    {
+      "grandeur": "Béton plein",
+      "valeur": "λ = 2,00 de 2 300 à 2 600 kg/m³ ; 1,65 de 2 000 à 2 300",
+      "source": "Th-Bât Matériaux, § 2.2.1.1, p. 7"
+    },
+    {
+      "grandeur": "Mortier d’enduit de ciment",
+      "valeur": "λ = 1,3 de 1 800 à 2 000 kg/m³ ; 1,8 au-dessus de 2 000",
+      "source": "Th-Bât Matériaux, § 2.9.2, p. 28"
+    },
+    {
+      "grandeur": "Isolants sans certificat",
+      "valeur": "Laine de verre 15 à 20 kg/m³ : 0,044. Laine de roche 40 à 100 kg/m³ : 0,042. Polystyrène expansé 15 à 19 kg/m³ : 0,044. Laine soufflée sur plancher de comble : 0,056",
+      "source": "Th-Bât Matériaux, § 1.3.1 et § 2.6, p. 17 et 18"
+    }
+  ],
+  "exemple": {
+    "enonce": "Mur extérieur du bureau d’exemple de la station T1, de l’intérieur vers l’extérieur : plaque de plâtre de 15 mm, laine de roche certifiée de 100 mm (λ = 0,034, valeur d’exercice), béton plein de 160 mm, enduit au mortier de ciment de 15 mm. Mur vertical sur l’extérieur.",
+    "lignes": [
+      "Plaque de plâtre : 15 mm = 0,015 m ; R = 0,015 ÷ 0,25 = 0,060 m².K/W.",
+      "Laine de roche : 100 mm = 0,100 m ; R = 0,100 ÷ 0,034 = 2,941 m².K/W.",
+      "Béton plein : 160 mm = 0,160 m ; R = 0,160 ÷ 2,00 = 0,080 m².K/W.",
+      "Enduit : 15 mm = 0,015 m ; R = 0,015 ÷ 1,3 = 0,012 m².K/W.",
+      "Rsi 0,13 et Rse 0,04 (tableau X, mur vertical sur l’extérieur).",
+      "Rt = 0,13 + 0,060 + 2,941 + 0,080 + 0,012 + 0,04 = 3,263 m².K/W.",
+      "U = 1 ÷ 3,263 = 0,31 W/(m².K)."
+    ],
+    "resultat": "U = 0,31 W/(m².K) pour le mur extérieur du bureau d’exemple."
+  },
+  "pieges": [
+    "Épaisseur laissée en millimètres : R devient mille fois trop grand et U est faux.",
+    "Rsi et Rse oubliées : U sort trop grand (ici 0,32 au lieu de 0,31 pour le mur d’exemple).",
+    "Mur sur local non chauffé calculé avec Rse = 0,04 au lieu de Rsi : U trop grand (ici 0,56 au lieu de 0,54 pour le mur MC du bureau d’exemple)."
+  ],
+  "sources": [
+    "Règles Th-Bât 2017 : fascicule Matériaux (§ 1.3.1, 2.2.1.1, 2.3, 2.6, 2.9.2) et fascicule Parois opaques (§ 3.1.1.3, tableau X ; § 3.1.2.2 pour Ue). Elles sont citées, non reproduites.",
+    "Stations en correspondance : BE-T1 (surfaces), BE-T3 (déperditions d’un local), AéroRézo « Parois et écarts de température ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

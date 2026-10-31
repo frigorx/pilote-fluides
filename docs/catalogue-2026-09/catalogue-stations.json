@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 539,
+  "total": 540,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2610,6 +2610,25 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/t1-surfaces-volumes/",
       "chemin": "bureau-etudes/stations/t1-surfaces-volumes/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t2-parois-coefficient-u",
+      "titre": "BE-T2, Les parois : de la coupe au coefficient U",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP5",
+        "CP8",
+        "A2-3",
+        "S5.1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t2-parois-coefficient-u/",
+      "chemin": "bureau-etudes/stations/t2-parois-coefficient-u/"
     },
     {
       "reseau": "HydroMétro",
@@ -6823,7 +6842,7 @@
       "id": "index",
       "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Treize réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte.",
+      "resume": "Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -6888,7 +6907,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6900,7 +6919,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6912,7 +6931,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6924,7 +6943,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6936,7 +6955,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6948,7 +6967,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be-pub\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-t2\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

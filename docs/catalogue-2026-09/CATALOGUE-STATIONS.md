@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**539 stations** réparties en 19 réseaux.
+**540 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -233,11 +233,12 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Se former](https://inerweb.fr/legislation/stations/travail-se-former/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires. |
 | [Temps & paie](https://inerweb.fr/legislation/stations/travail-temps-et-paie/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés. |
 
-## Bureau d'études — 1 stations
+## Bureau d'études — 2 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [BE-T1, Surfaces et volumes du projet](https://inerweb.fr/bureau-etudes/stations/t1-surfaces-volumes/) | Thermique | BTS | CP5 CP8 C4-3 C12-2 C3-3 A2-3 | — |
+| [BE-T2, Les parois : de la coupe au coefficient U](https://inerweb.fr/bureau-etudes/stations/t2-parois-coefficient-u/) | Thermique | BTS | CP5 CP8 A2-3 S5.1 | — |
 
 ## HydroMétro — 27 stations
 
@@ -619,7 +620,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Utiliser inerWeb en classe et demander une réutilisation. Droits réservés sur les nouvelles créations ; licences antérieures et tierces conservées. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
 | [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
-| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Treize réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte. |
+| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
 | [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
 | [Le plan du réseau thermo-techno](https://inerweb.fr/plan.html) | — | — | — | Le plan de formation inerweb.fr : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte. |

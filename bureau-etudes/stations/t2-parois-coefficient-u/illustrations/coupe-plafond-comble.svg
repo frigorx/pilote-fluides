@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 124" width="180mm" height="124mm" role="img">
+<title>Coupe du plafond du bureau d’exemple sous des combles perdus</title>
+<defs>
+<pattern id="isolant" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#fff"/><path d="M0 3 Q1.5 0.2 3 3 T6 3" fill="none" stroke="#000" stroke-width="0.25"/></pattern>
+<pattern id="beton" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#b3b3b3"/><circle cx="1" cy="1" r="0.35" fill="#000"/><circle cx="3" cy="3" r="0.35" fill="#000"/></pattern>
+<pattern id="air" width="2" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="4" fill="#fff"/><line x1="1" y1="0" x2="1" y2="2" stroke="#000" stroke-width="0.2"/></pattern>
+<pattern id="airh" width="4" height="2" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#fff"/><line x1="0" y1="1" x2="2" y2="1" stroke="#000" stroke-width="0.2"/></pattern>
+</defs>
+<rect width="180" height="124" fill="#fff"/>
+<g><text x="90" y="68.2" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 68.2)">inerWeb, by inerweb.fr</text><text x="35" y="37.199999999999996" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 37.199999999999996)">inerWeb, by inerweb.fr</text><text x="150" y="99.2" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 99.2)">inerWeb, by inerweb.fr</text></g>
+<rect x="14.00" y="22.00" width="66.00" height="10.00" fill="url(#airh)"/>
+<rect x="14.00" y="32.00" width="66.00" height="42.50" fill="url(#isolant)"/>
+<rect x="14.00" y="74.50" width="66.00" height="6.00" fill="#e6e6e6"/>
+<rect x="14.00" y="80.50" width="66.00" height="10.00" fill="url(#airh)"/>
+<line x1="14.00" y1="22.00" x2="80.00" y2="22.00" stroke="#000" stroke-width="0.3"/>
+<line x1="80.00" y1="22.00" x2="80.00" y2="32.00" stroke="#000" stroke-width="0.3"/>
+<line x1="80.00" y1="32.00" x2="14.00" y2="32.00" stroke="#000" stroke-width="0.3"/>
+<line x1="14.00" y1="32.00" x2="14.00" y2="22.00" stroke="#000" stroke-width="0.3"/>
+<line x1="14.00" y1="32.00" x2="80.00" y2="32.00" stroke="#000" stroke-width="0.4"/>
+<line x1="80.00" y1="32.00" x2="80.00" y2="74.50" stroke="#000" stroke-width="0.4"/>
+<line x1="80.00" y1="74.50" x2="14.00" y2="74.50" stroke="#000" stroke-width="0.4"/>
+<line x1="14.00" y1="74.50" x2="14.00" y2="32.00" stroke="#000" stroke-width="0.4"/>
+<line x1="14.00" y1="74.50" x2="80.00" y2="74.50" stroke="#000" stroke-width="0.4"/>
+<line x1="80.00" y1="74.50" x2="80.00" y2="80.50" stroke="#000" stroke-width="0.4"/>
+<line x1="80.00" y1="80.50" x2="14.00" y2="80.50" stroke="#000" stroke-width="0.4"/>
+<line x1="14.00" y1="80.50" x2="14.00" y2="74.50" stroke="#000" stroke-width="0.4"/>
+<line x1="14.00" y1="80.50" x2="80.00" y2="80.50" stroke="#000" stroke-width="0.3"/>
+<line x1="80.00" y1="80.50" x2="80.00" y2="90.50" stroke="#000" stroke-width="0.3"/>
+<line x1="80.00" y1="90.50" x2="14.00" y2="90.50" stroke="#000" stroke-width="0.3"/>
+<line x1="14.00" y1="90.50" x2="14.00" y2="80.50" stroke="#000" stroke-width="0.3"/>
+<text x="86.00" y="28.48" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Rsi</text>
+<text x="86.00" y="54.73" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">2  Laine soufflée, 250 mm</text>
+<text x="86.00" y="78.98" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1  Plaque de plâtre, 15 mm</text>
+<text x="86.00" y="86.98" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Rsi</text>
+<text x="14.00" y="17.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Combles perdus</text>
+<text x="14.00" y="98.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Pièce chauffée</text>
+<line x1="150.00" y1="94.50" x2="150.00" y2="36.00" stroke="#000" stroke-width="0.5"/>
+<line x1="150.00" y1="36.00" x2="148.80" y2="38.20" stroke="#000" stroke-width="0.5"/>
+<line x1="150.00" y1="36.00" x2="151.20" y2="38.20" stroke="#000" stroke-width="0.5"/>
+<text x="155.00" y="62.25" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Flux</text>
+<text x="155.00" y="68.25" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">montant</text>
+<line x1="4.00" y1="113.50" x2="176.00" y2="113.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Paroi d’exemple, pas la maison</text>
+</svg>

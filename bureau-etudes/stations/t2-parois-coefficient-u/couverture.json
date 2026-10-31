@@ -1,0 +1,29 @@
+{
+  "cle": "t2-parois-coefficient-u",
+  "code": "BE-T2",
+  "titre": "Les parois : de la coupe au coefficient U",
+  "ligne": "Thermique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [1, 2, 3],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": { "fiche": 5, "chapitre": 2 },
+  "referentiel": {
+    "tecvc": [
+      { "code": "CP5", "libelle": "Réaliser les calculs de déperditions thermiques" },
+      { "code": "CP8", "libelle": "Réaliser les calculs d'apports thermiques" }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [],
+      "savoirs": [
+        { "code": "A2-3", "libelle": "Bilan thermique (déperditions, apports de chaleur et d'humidité) (à confirmer : le référentiel porte aussi le libellé « Bilan thermique en régime permanent d'une enceinte fermée ou ouverte »)" },
+        { "code": "S5.1", "libelle": "Réglementation thermique" }
+      ],
+      "taches": [
+        { "code": "T1", "libelle": "Analyser le CCTP ou le cahier des charges (à confirmer)" }
+      ]
+    }
+  }
+}

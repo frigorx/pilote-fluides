@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 124" width="180mm" height="124mm" role="img">
+<title>Coupe du mur extérieur du bureau d’exemple, avec les résistances superficielles Rsi et Rse</title>
+<defs>
+<pattern id="isolant" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#fff"/><path d="M0 3 Q1.5 0.2 3 3 T6 3" fill="none" stroke="#000" stroke-width="0.25"/></pattern>
+<pattern id="beton" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#b3b3b3"/><circle cx="1" cy="1" r="0.35" fill="#000"/><circle cx="3" cy="3" r="0.35" fill="#000"/></pattern>
+<pattern id="air" width="2" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="4" fill="#fff"/><line x1="1" y1="0" x2="1" y2="2" stroke="#000" stroke-width="0.2"/></pattern>
+<pattern id="airh" width="4" height="2" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#fff"/><line x1="0" y1="1" x2="2" y2="1" stroke="#000" stroke-width="0.2"/></pattern>
+</defs>
+<rect width="180" height="124" fill="#fff"/>
+<g><text x="90" y="68.2" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 68.2)">inerWeb, by inerweb.fr</text><text x="35" y="37.199999999999996" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 37.199999999999996)">inerWeb, by inerweb.fr</text><text x="150" y="99.2" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 99.2)">inerWeb, by inerweb.fr</text></g>
+<rect x="30.70" y="25.00" width="10.00" height="50.00" fill="url(#air)"/>
+<rect x="40.70" y="25.00" width="5.10" height="50.00" fill="#e6e6e6"/>
+<rect x="45.80" y="25.00" width="34.00" height="50.00" fill="url(#isolant)"/>
+<rect x="79.80" y="25.00" width="54.40" height="50.00" fill="url(#beton)"/>
+<rect x="134.20" y="25.00" width="5.10" height="50.00" fill="#8c8c8c"/>
+<rect x="139.30" y="25.00" width="10.00" height="50.00" fill="url(#air)"/>
+<line x1="30.70" y1="25.00" x2="40.70" y2="25.00" stroke="#000" stroke-width="0.3"/>
+<line x1="40.70" y1="25.00" x2="40.70" y2="75.00" stroke="#000" stroke-width="0.3"/>
+<line x1="40.70" y1="75.00" x2="30.70" y2="75.00" stroke="#000" stroke-width="0.3"/>
+<line x1="30.70" y1="75.00" x2="30.70" y2="25.00" stroke="#000" stroke-width="0.3"/>
+<line x1="40.70" y1="25.00" x2="45.80" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="45.80" y1="25.00" x2="45.80" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="45.80" y1="75.00" x2="40.70" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="40.70" y1="75.00" x2="40.70" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="45.80" y1="25.00" x2="79.80" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="79.80" y1="25.00" x2="79.80" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="79.80" y1="75.00" x2="45.80" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="45.80" y1="75.00" x2="45.80" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="79.80" y1="25.00" x2="134.20" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="134.20" y1="25.00" x2="134.20" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="134.20" y1="75.00" x2="79.80" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="79.80" y1="75.00" x2="79.80" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="134.20" y1="25.00" x2="139.30" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="139.30" y1="25.00" x2="139.30" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="139.30" y1="75.00" x2="134.20" y2="75.00" stroke="#000" stroke-width="0.4"/>
+<line x1="134.20" y1="75.00" x2="134.20" y2="25.00" stroke="#000" stroke-width="0.4"/>
+<line x1="139.30" y1="25.00" x2="149.30" y2="25.00" stroke="#000" stroke-width="0.3"/>
+<line x1="149.30" y1="25.00" x2="149.30" y2="75.00" stroke="#000" stroke-width="0.3"/>
+<line x1="149.30" y1="75.00" x2="139.30" y2="75.00" stroke="#000" stroke-width="0.3"/>
+<line x1="139.30" y1="75.00" x2="139.30" y2="25.00" stroke="#000" stroke-width="0.3"/>
+<text x="35.70" y="21.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Rsi</text>
+<text x="43.25" y="21.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">1</text>
+<text x="62.80" y="21.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">2</text>
+<text x="107.00" y="21.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">3</text>
+<text x="136.75" y="21.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">4</text>
+<text x="144.30" y="21.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Rse</text>
+<text x="30.70" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Intérieur</text>
+<text x="149.30" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">Extérieur</text>
+<line x1="30.70" y1="14.00" x2="149.30" y2="14.00" stroke="#000" stroke-width="0.5"/>
+<line x1="149.30" y1="14.00" x2="147.10" y2="12.80" stroke="#000" stroke-width="0.5"/>
+<line x1="149.30" y1="14.00" x2="147.10" y2="15.20" stroke="#000" stroke-width="0.5"/>
+<text x="30.70" y="87.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1  Plaque de plâtre, 15 mm</text>
+<text x="30.70" y="94.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">2  Laine de roche, 100 mm</text>
+<text x="30.70" y="101.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3  Béton plein, 160 mm</text>
+<text x="30.70" y="108.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4  Enduit, 15 mm</text>
+<line x1="4.00" y1="113.50" x2="176.00" y2="113.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Paroi d’exemple, pas la maison</text>
+</svg>
