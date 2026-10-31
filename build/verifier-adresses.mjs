@@ -101,6 +101,32 @@ for (const ed of editions) {
   }
 }
 
+/* Les QR du réseau Bureau d'études (31/10/2026) : une seule page d'aiguillage b/index.html, adresse
+   https://inerweb.fr/b/?<clé>. Le registre b/ADRESSES-GRAVEES.json liste les clés gravées ; chacune doit
+   être dans la table de b/index.html et sa cible doit exister dans le dépôt. */
+const REGISTRE_B = resolve(RACINE, "b", "ADRESSES-GRAVEES.json");
+if (existsSync(REGISTRE_B)) {
+  const page = resolve(RACINE, "b", "index.html");
+  const html = existsSync(page) ? readFileSync(page, "utf8") : "";
+  const m = html.match(/var T = (\{.*?\});/s);
+  const table = m ? JSON.parse(m[1]) : {};
+  for (const ed of JSON.parse(readFileSync(REGISTRE_B, "utf8")).editions || []) {
+    const dur = ed.statut === "vendue";
+    const defauts = [];
+    for (const cle of ed.slugs || []) {
+      if (!table[cle]) { defauts.push(`${cle} : absente de b/index.html`); continue; }
+      const c = cheminLocal(table[cle]);
+      if (!c || !existe(RACINE, c)) defauts.push(`${cle} → ${table[cle]} : cible absente`);
+    }
+    const titre = `  QR Bureau d'études « ${ed.edition} » (${ed.statut}) — ${(ed.slugs || []).length} clés`;
+    if (!defauts.length) { console.log(`${titre} : toutes vivantes`); continue; }
+    console.log(titre);
+    defauts.slice(0, 12).forEach((d) => console.log(`      ${d}`));
+    if (dur) bloquant += defauts.length;
+    else { avertissements += defauts.length; console.log("    (édition encore à l'épreuve : avertissement, la chaîne continue)"); }
+  }
+}
+
 if (bloquant) {
   console.error(
     `\n✗ ${bloquant} défaut(s) sur des adresses DÉJÀ VENDUES. ` +
