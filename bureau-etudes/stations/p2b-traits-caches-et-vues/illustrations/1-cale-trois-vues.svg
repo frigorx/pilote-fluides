@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 110" width="170mm" height="110mm" role="img" aria-labelledby="t"><title id="t">Cale en L : vue de face, vue de dessus, vue de gauche</title><rect width="170" height="110" fill="#fff"/><g class="filigrane"><text x="85.00" y="55.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="7" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-22 85.00 55.00)">inerWeb, by inerweb.fr</text><text x="37.40" y="24.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="7" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-22 37.40 24.20)">inerWeb, by inerweb.fr</text><text x="132.60" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="7" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-22 132.60 88.00)">inerWeb, by inerweb.fr</text></g><path d="M59.00 40.00 L14.00 40.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M59.00 31.00 L32.35 31.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M14.00 13.00 L14.00 40.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M59.00 31.00 L59.00 40.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M32.00 13.00 L14.00 13.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M32.00 13.00 L32.00 30.66" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M59.00 82.00 L32.35 82.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M59.00 52.00 L32.35 52.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M59.00 52.00 L59.00 82.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M32.00 82.00 L14.00 82.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M32.00 52.00 L14.00 52.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M14.00 52.00 L14.00 82.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M32.00 52.00 L32.00 82.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M71.34 31.00 L100.66 31.00" fill="none" stroke="#000" stroke-width="0.3" stroke-dasharray="1.8 0.9" stroke-linejoin="round" class="cache"/>
+<path d="M71.00 40.00 L101.00 40.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M101.00 13.00 L101.00 40.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M71.00 13.00 L71.00 40.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M71.00 13.00 L101.00 13.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M154.00 48.00 L112.00 48.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M154.00 39.60 L128.87 39.60" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M163.90 29.70 L138.77 29.70" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M163.90 38.10 L154.00 48.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M163.90 29.70 L154.00 39.60" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M112.00 22.80 L112.00 48.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M154.00 39.60 L154.00 48.00" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M163.90 29.70 L163.90 38.10" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M128.80 22.80 L112.00 22.80" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M138.70 12.90 L121.90 12.90" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M121.90 12.90 L112.00 22.80" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M138.70 29.70 L128.80 39.60" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M138.70 12.90 L128.80 22.80" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M128.80 22.80 L128.80 39.26" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<path d="M138.70 12.90 L138.70 29.36" fill="none" stroke="#000" stroke-width="0.7" stroke-linejoin="round" class="vu"/>
+<text x="137.95" y="57.39" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">la pièce, en volume</text>
+<text x="36.50" y="49.39" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">vue de face</text>
+<text x="36.50" y="91.39" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">vue de dessus</text>
+<text x="86.00" y="49.39" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">vue de gauche</text></svg>

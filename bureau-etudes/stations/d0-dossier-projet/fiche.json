@@ -1,0 +1,71 @@
+{
+  "numero": 1,
+  "titre": "Ouvrir le dossier et remplir la carte d’identité du bâtiment",
+  "ligne": "Lire les plans",
+  "code": "BE-D0",
+  "quand": "Au début de toute étude, avant le moindre calcul. Vous avez les plans d’architecte, le cahier des clauses techniques particulières (CCTP) et ses compléments. Vous obtenez la carte d’identité du bâtiment : huit lignes, chacune avec sa réponse et l’endroit où vous l’avez lue.",
+  "methode": [
+    "Faire l’inventaire du dossier : plan de masse, plans de niveau, coupes, façades, CCTP, tableau des menuiseries, maquette numérique si elle existe.",
+    "Lire le cartouche de chaque plan : titre, lieu, échelle, date, indice. Garder l’indice et la date les plus récents.",
+    "Lieu : ville, zone climatique et altitude, sur le plan de masse.",
+    "Surfaces : surface habitable = somme des surfaces des pièces chauffées, lues sur les plans de niveau. Un local non chauffé est écarté ; un palier se lit hors trémie.",
+    "Niveaux : nombre de niveaux et hauteur sous plafond, à la coupe.",
+    "Usage, occupation, chauffage, ventilation, climatisation : au CCTP, lot par lot, et au programme du maître d’ouvrage.",
+    "Pour chaque ligne, écrire la pièce du dossier et la page où la réponse se lit.",
+    "Donnée absente : écrire « Je suppose que… parce que… ; à confirmer auprès de… ». Au niveau 2, ajouter une question au maître d’ouvrage.",
+    "Règle du sixième : total des baies (fenêtres et portes-fenêtres, largeur × hauteur de chaque baie en tableau) supérieur ou égal à la surface habitable ÷ 6."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Règle du sixième",
+      "valeur": "surface totale des baies, mesurée en tableau, supérieure ou égale à la surface habitable ÷ 6 (logements neufs sous réglementation thermique 2012, RT 2012)",
+      "source": "arrêté du 26 octobre 2010 relatif aux caractéristiques thermiques et aux exigences de performance énergétique des bâtiments nouveaux (RT 2012), article 20 ; Légifrance, JORFTEXT000022959397, consulté le 31/10/2026"
+    },
+    {
+      "grandeur": "Surface habitable (convention de la station)",
+      "valeur": "somme des surfaces des pièces chauffées, lues sur les plans",
+      "source": "Station BE-D0, écran « Le plan de niveau et la coupe »"
+    },
+    {
+      "grandeur": "Zone climatique",
+      "valeur": "H1, H2 ou H3, avec une lettre pour H1 et H2, fixée par département",
+      "source": "arrêté du 26 octobre 2010, article 2 et annexe I (le sujet de la station E1)"
+    },
+    {
+      "grandeur": "Hauteur sous plafond",
+      "valeur": "du sol fini au plafond, lue à la coupe",
+      "source": "Station BE-D0, écran « Le plan de niveau et la coupe »"
+    },
+    {
+      "grandeur": "Baie mesurée en tableau",
+      "valeur": "largeur × hauteur de l’ouverture, au centième de m² ; portes pleines exclues du total",
+      "source": "Station BE-D0, écran « La règle du sixième »"
+    }
+  ],
+  "exemple": {
+    "enonce": "Dossier d’exemple : atelier de réparation de vélos avec un bureau, à Pau (Pyrénées-Atlantiques, 64). Les valeurs sont des valeurs d’exercice. Logement d’exemple pour la règle du sixième : surface habitable 60,00 m², baies vitrées 9,50 m².",
+    "lignes": [
+      "Lieu : Pau, zone H2c, altitude 200 m (plan de masse d’exemple, bloc du lieu).",
+      "Usage : atelier de réparation de vélos et bureau, bâtiment tertiaire (CCTP d’exemple).",
+      "Surfaces : 85,00 + 15,00 = 100,00 m² ; le local de rangement non chauffé (12,00 m²) est écarté.",
+      "Niveaux : un niveau, hauteur sous plafond 3,00 m, plafond sous toiture isolée (plan de niveau et coupe d’exemple).",
+      "Occupation : 2 personnes, de 8 h à 18 h, 5 jours sur 7 (CCTP, lot 1).",
+      "Chauffage : radiateurs électriques (CCTP, lot 1).",
+      "Ventilation : absente du CCTP. Je suppose une extraction mécanique dans le bureau parce que le lot plomberie pose une bouche d’extraction ; à confirmer auprès de le maître d’ouvrage.",
+      "Climatisation : aucune (CCTP, lot 1).",
+      "Règle du sixième : 60,00 ÷ 6 = 10,00 m² ; 9,50 < 10,00 : non conforme, il manque 0,50 m² de baie."
+    ],
+    "resultat": "Carte d’exemple en huit lignes, chacune avec sa source ; surface chauffée 100,00 m² ; logement d’exemple non conforme à la règle du sixième (valeurs d’exercice)."
+  },
+  "pieges": [
+    "Local non chauffé ajouté à la surface : 112,00 m² au lieu de 100,00 m² pour le dossier d’exemple, soit 12 % de trop.",
+    "Plan d’indice ancien lu à la place du plus récent : toutes les données reprises sont périmées.",
+    "Porte pleine comptée parmi les baies : 11,39 m² au lieu de 9,50 m² pour le logement d’exemple, et un verdict faux."
+  ],
+  "sources": [
+    "Règle du sixième : arrêté du 26 octobre 2010 relatif aux caractéristiques thermiques et aux exigences de performance énergétique des bâtiments nouveaux (RT 2012), article 20, Légifrance, JORFTEXT000022959397, consulté le 31/10/2026. Citée, non reproduite.",
+    "Zones climatiques : arrêté du 26 octobre 2010, article 2 et annexe I. Elles sont le sujet de la station E1.",
+    "Stations en correspondance : BE-E1, gares 3, 4, 9 et 10 de la ligne Lire les plans, Législation « Loi, norme, DTU ». Aucune calculette : le travail se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

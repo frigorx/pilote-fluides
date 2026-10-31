@@ -1,0 +1,72 @@
+{
+  "numero": 0,
+  "titre": "Tracer et lire une coupe",
+  "ligne": "Lire les plans",
+  "code": "BE-P5b",
+  "quand": "Après les vues (gare 2) et les types de plans (gare 4), avant les échelles (gare 6). Vous avez un objet en trois vues, ou un plan avec la trace d’une coupe. Vous obtenez la coupe dessinée, ou les hauteurs, les épaisseurs et les pièces lues sur la coupe d’un plan.",
+  "methode": [
+    "Repérer le plan de coupe sur une vue : trace en trait mixte fin, extrémités en trait fort, une flèche et une lettre à chaque bout. La coupe s’appelle A-A.",
+    "Lire le sens du regard : on garde la partie vers laquelle les flèches pointent. Des flèches inversées donnent la coupe symétrique.",
+    "Dessiner la matière coupée avec ses contours en trait fort et ses hachures fines à 45°. Le vide reste blanc.",
+    "Dessiner en trait fort ce qui reste visible derrière le plan. Ne tracer aucun trait caché.",
+    "Choisir le motif de hachures d’après le matériau et lire la légende du plan avant de conclure.",
+    "Pour une pièce longue, dessiner une section : rabattue sur la vue en trait fin, ou sortie à côté en trait fort, nommée par ses lettres.",
+    "Quand un seul plan ne passe pas par tout ce qu’on veut montrer, faire une coupe brisée à plans parallèles : la trace est en escalier, la coupe se dessine comme un seul plan.",
+    "Sur un plan d’architecte : trouver la trace sur le plan de niveau, lire le sens, puis les pièces, les hauteurs sur les chaînes de cotes et la matière coupée."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Trace du plan de coupe",
+      "valeur": "trait mixte fin, extrémités en trait fort, flèches et lettres identiques à chaque bout",
+      "source": "Gare 5 du réseau Lire les plans ; conventions du dessin technique (norme ISO 128, parties sur les coupes et les hachures)"
+    },
+    {
+      "grandeur": "Hachures de la matière coupée",
+      "valeur": "traits fins à 45°, régulièrement espacés",
+      "source": "Gare 5 ; norme ISO 128, partie sur les hachures"
+    },
+    {
+      "grandeur": "Motifs par matériau",
+      "valeur": "béton en obliques, isolant en vagues, bois en traits horizontaux, plâtre en points, terre en tirets obliques",
+      "source": "Gare 5 ; la légende du plan donne le sens de chaque motif"
+    },
+    {
+      "grandeur": "Section rabattue et section sortie",
+      "valeur": "rabattue : contour fin sur la vue ; sortie : contour fort à côté de la vue",
+      "source": "Norme ISO 128, partie sur les coupes et les sections"
+    },
+    {
+      "grandeur": "Plan de niveau",
+      "valeur": "coupe horizontale, à environ 1 m du sol",
+      "source": "Gare 4 du réseau Lire les plans, plan de niveau"
+    },
+    {
+      "grandeur": "Poché gris",
+      "valeur": "matière coupée pochée en gris uni, sans hachures",
+      "source": "Coupe A-A de la maison d’étude : une convention à côté des hachures"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bloc percé d’exemple (60 × 40 × 30 mm, valeurs d’exercice) : trou de 16 mm débouchant, à 20 mm du bord gauche et 20 mm du bord avant. Plan de coupe A-A par l’axe du trou, flèches vers le fond de la vue de dessus.",
+    "lignes": [
+      "Plan de coupe à 20 mm du bord avant : trace en trait mixte fin sur la vue de dessus, flèches vers le fond, lettre A à chaque bout.",
+      "Contour de la coupe : 60 mm de large et 30 mm de haut, en trait fort.",
+      "Vide du trou : de 20 − 8 = 12 mm à 20 + 8 = 28 mm du bord gauche, soit 16 mm de large, laissé blanc.",
+      "Zones de matière : de 0 à 12 mm (12 mm de large) et de 28 à 60 mm (32 mm de large).",
+      "Hachures fines à 45° dans les deux zones. Aucun trait caché.",
+      "Titre de la coupe : A-A."
+    ],
+    "resultat": "Coupe A-A du bloc d’exemple : un vide de 16 mm entre deux zones hachurées de 12 mm et de 32 mm."
+  },
+  "pieges": [
+    "Le vide du trou est hachuré comme la matière : le trou disparaît de la coupe.",
+    "Les flèches sont dans le mauvais sens : la coupe obtenue est la symétrique de celle qu’on attend.",
+    "Des traits cachés traversent la coupe, ou la trace n’a pas de lettres : la coupe ne se lit plus."
+  ],
+  "sources": [
+    "Gares 2, 4 et 5 du réseau Lire les plans (vues, types de plans, conventions graphiques). Conventions du dessin technique, norme ISO 128, parties sur les coupes et sur les hachures.",
+    "Stations en correspondance : BE-P2b (traits cachés et vues), BE-T2 (les parois, de la coupe au coefficient U).",
+    "Aucune calculette : les coupes se dessinent sur la feuille réponse."
+  ],
+  "calculette": null
+}

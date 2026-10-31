@@ -1,0 +1,73 @@
+{
+  "numero": 2,
+  "titre": "Établir le climat du site",
+  "ligne": "Données d’entrée",
+  "code": "BE-E1",
+  "quand": "Au début de l’étude, après la lecture du dossier projet (station D0) et avant les conditions intérieures (station E2) et les déperditions. Vous avez le plan de masse, le CCTP et un relevé climatique du bureau d’études. Vous obtenez le tableau du climat du site : zone, θe retenue, conditions d’été et DJU, chaque valeur avec sa source.",
+  "methode": [
+    "Zone : numéro du département du site, puis sa ligne à l’annexe I de l’arrêté du 26 octobre 2010 (Légifrance). Écrire la zone et la ligne lue.",
+    "θe de référence : lue dans l’annexe nationale de la NF EN 12831-1 (ligne du département, colonne de la tranche d’altitude) ou donnée par le CCTP du projet. La moyenne d’hiver et le record de froid ne servent pas de θe.",
+    "Correction d’altitude, règle d’exercice : tranches = (altitude − 200 m) ÷ 200 m, arrondi au nombre entier supérieur, et 0 jusqu’à 200 m. Correction (K) = tranches × (−2 K). θe retenue = θe de référence + correction.",
+    "Conditions d’été : température et HR extérieures d’été, lues au CCTP ou au relevé climatique du bureau d’études. Elles servent au bilan d’été.",
+    "DJU du jour = 18 − (Tmin + Tmax) ÷ 2 si ce nombre est positif, sinon 0. DJU d’une période = somme des DJU de ses jours.",
+    "Les DJU estiment une consommation, jamais une puissance : la puissance du chauffage vient de θe.",
+    "Écrire la source de chaque valeur, et « valeur d’exercice » quand elle n’a pas de source officielle lisible."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Zones climatiques",
+      "valeur": "H1a, H1b, H1c, H2a, H2b, H2c, H2d, H3",
+      "source": "arrêté du 26 octobre 2010 (RT 2012), article 2 et annexe I"
+    },
+    {
+      "grandeur": "Exemples de lecture de l’annexe I",
+      "valeur": "75 Paris H1a ; 69 Rhône H1c ; 33 Gironde H2c ; 64 Pyrénées-Atlantiques H2c",
+      "source": "Arrêté du 26 octobre 2010, annexe I (Légifrance)"
+    },
+    {
+      "grandeur": "θe",
+      "valeur": "Tableau par département, colonne selon l’altitude, citée et non reproduite",
+      "source": "NF EN 12831-1 et son annexe nationale"
+    },
+    {
+      "grandeur": "Correction d’altitude",
+      "valeur": "Au-dessus de 200 m : −2 K par tranche de 200 m entamée",
+      "source": "Valeur d’exercice ; sur un projet, l’annexe nationale de la NF EN 12831-1"
+    },
+    {
+      "grandeur": "Base des DJU",
+      "valeur": "18 °C",
+      "source": "Méthode simplifiée de la moyenne, valeur d’exercice ; DJU publiés par Météo-France"
+    },
+    {
+      "grandeur": "Conditions d’été du site d’exemple",
+      "valeur": "35 °C et HR 40 %",
+      "source": "Valeurs d’exercice, CCTP d’une affaire réelle de Jurançon"
+    }
+  ],
+  "exemple": {
+    "enonce": "Site d’exemple : Pau, département 64 Pyrénées-Atlantiques, altitude 200 m, θe de référence −5 °C. Site de montagne d’exemple : 850 m, même département. Trois jours d’exemple : jour 1, Tmin 2 °C et Tmax 10 °C ; jour 2, Tmin −1 °C et Tmax 7 °C ; jour 3, Tmin 11 °C et Tmax 26 °C.",
+    "lignes": [
+      "Zone : ligne 64 de l’annexe I, H2c.",
+      "Pau, 200 m : aucune tranche au-dessus de 200 m, correction 0 K, θe retenue = −5 + (0) = −5 °C.",
+      "Montagne, 850 m : 850 − 200 = 650 m ; 650 ÷ 200 = 3,25, soit 4 tranches ; correction 4 × (−2) = −8 K ; θe retenue = −5 + (−8) = −13 °C.",
+      "Été à Pau : 35 °C et HR 40 %.",
+      "jour 1 : moyenne (2 + 10) ÷ 2 = 6 °C ; DJU = 18 − 6 = 12.",
+      "jour 2 : moyenne (−1 + 7) ÷ 2 = 3 °C ; DJU = 18 − 3 = 15.",
+      "jour 3 : moyenne (11 + 26) ÷ 2 = 18,5 °C ; 18 − 18,5 = −0,5, écrit 0.",
+      "Total des trois jours : 12 + 15 + 0 = 27 DJU."
+    ],
+    "resultat": "Pau : zone H2c, θe retenue −5 °C, été 35 °C et HR 40 %, 27 DJU sur les trois jours (valeurs d’exercice sauf la zone)."
+  },
+  "pieges": [
+    "Correction faite sur un site qui ne dépasse pas 200 m, ou tranches entières comptées : à 850 m, 3 tranches au lieu de 4.",
+    "Jour tempéré compté en négatif : −0,5 au lieu de 0.",
+    "θe prise sur la moyenne d’hiver ou sur le record de froid ; DJU pris pour une puissance."
+  ],
+  "sources": [
+    "Arrêté du 26 octobre 2010 (RT 2012), article 2 et annexe I, sur Légifrance ; norme NF EN 12831-1 et son annexe nationale, citées et non reproduites ; DJU publiés par Météo-France.",
+    "Stations en correspondance : BE-D0 (dossier projet), BE-E2 (conditions intérieures) ; Législation « La RE2020 » et « Le confort d’été » ; AéroRézo « Parois et écarts de température ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

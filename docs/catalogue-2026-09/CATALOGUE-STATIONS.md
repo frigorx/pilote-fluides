@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**540 stations** réparties en 19 réseaux.
+**545 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -233,12 +233,17 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Se former](https://inerweb.fr/legislation/stations/travail-se-former/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires. |
 | [Temps & paie](https://inerweb.fr/legislation/stations/travail-temps-et-paie/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés. |
 
-## Bureau d'études — 2 stations
+## Bureau d'études — 7 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
+| [BE-D0, Le dossier projet](https://inerweb.fr/bureau-etudes/stations/d0-dossier-projet/) | Lire les plans | BTS | CP1 CP2 CP5 CP8 C4-3 C12-1 C12-2 C1-2 A2-1 | — |
+| [BE-E1, Le climat du site](https://inerweb.fr/bureau-etudes/stations/e1-climat-site/) | Données d’entrée | BTS | CP5 CP8 C5-2 A2-4 S5.1 | — |
+| [BE-P2b, Traits cachés et vues](https://inerweb.fr/bureau-etudes/stations/p2b-traits-caches-et-vues/) | Lire les plans | BTS | CP1 CP2 C4-3 | — |
+| [BE-P5b, Coupes et sections](https://inerweb.fr/bureau-etudes/stations/p5b-coupes-et-sections/) | Lire les plans | BTS | CP1 CP2 C4-3 | — |
 | [BE-T1, Surfaces et volumes du projet](https://inerweb.fr/bureau-etudes/stations/t1-surfaces-volumes/) | Thermique | BTS | CP5 CP8 C4-3 C12-2 C3-3 A2-3 | — |
 | [BE-T2, Les parois : de la coupe au coefficient U](https://inerweb.fr/bureau-etudes/stations/t2-parois-coefficient-u/) | Thermique | BTS | CP5 CP8 A2-3 S5.1 | — |
+| [BE-T3, Déperditions d’un local par les parois](https://inerweb.fr/bureau-etudes/stations/t3-deperditions-local/) | Thermique | BTS | CP5 C3-3 A2-3 | — |
 
 ## HydroMétro — 27 stations
 

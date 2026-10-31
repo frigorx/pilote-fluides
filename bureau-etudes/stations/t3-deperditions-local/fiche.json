@@ -1,0 +1,84 @@
+{
+  "numero": 6,
+  "titre": "Calculer les déperditions d’un local par ses parois",
+  "ligne": "Thermique",
+  "code": "BE-T3",
+  "quand": "Après le relevé des surfaces (station T1) et le calcul des coefficients U (station T2), avant les déperditions par l’air (station T4). Vous avez les surfaces, les U, Uw, Ud et Ue, et la page du CCTP qui donne les températures de calcul et les locaux non chauffés. Vous obtenez H et Φ d’une pièce par ses parois, et le ratio en W par m².",
+  "methode": [
+    "Écart de température : ΔT (K) = θi − θe. θe est souvent négative : on retranche un nombre négatif.",
+    "Une ligne par paroi et par baie qui compte : mur sur l’extérieur, baie, mur ou porte sur un local non chauffé, plancher bas sur le sol, plafond sous comble. Le plancher intermédiaire et les cloisons entre pièces chauffées ne comptent pas.",
+    "Surfaces de la station T1 : mur en surface nette, baie avec la surface de son ouverture. Coefficients : U de la station T2, Uw, Ud et Ue du CCTP.",
+    "b = 1 pour une paroi sur l’extérieur ou sur le sol. Pour un local non chauffé, b se lit dans un tableau : relever Aiu (toutes les parois des pièces chauffées qui touchent le local non chauffé, portes comprises) et Aue, dire si chacune est isolée (tableau II : Aiu isolée et Aue non isolée ; III : aucune isolée ; IV : Aiu non isolée et Aue isolée ; V : les deux isolées), lire Uv,ue au tableau VI, calculer Aiu ÷ Aue, repérer la ligne, lire la colonne de Uv,ue.",
+    "Pour un comble : Ao ÷ Ac plus de 0,003, fortement ventilé, Uv,ue = 9 ; de 0,0003 à 0,003, faiblement ventilé, Uv,ue = 3 ; moins de 0,0003, très faiblement ventilé, Uv,ue = 0,3.",
+    "Chaque ligne : U × A × b, en W/K, au centième.",
+    "H (W/K) = somme des lignes. Φ (W) = H × ΔT.",
+    "Ratio (W/m²) = Φ ÷ surface habitable de la pièce : un repère pour comparer des pièces et repérer une erreur grossière.",
+    "Ce qui manque encore : les ponts thermiques (bilan, station T5) et le renouvellement d’air (station T4). La puissance à installer se décide à la station T5."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "b sur l’extérieur et sur le sol",
+      "valeur": "b = 1",
+      "source": "Th-Bât Généralités, § 4, p. 17"
+    },
+    {
+      "grandeur": "b d’un local non chauffé, calcul complet",
+      "valeur": "b = Due ÷ (Due + Diu), citée, non calculée ici",
+      "source": "Th-Bât Généralités, § 5.1, p. 17"
+    },
+    {
+      "grandeur": "Tableau de b selon l’isolation",
+      "valeur": "II : Aiu isolée, Aue non isolée. III : aucune isolée. IV : Aiu non isolée, Aue isolée (page 21, titrée « Tableau VI » par erreur dans le fascicule). V : les deux isolées",
+      "source": "Th-Bât Généralités, § 5.2.1, tableaux II à V, p. 19 à 22"
+    },
+    {
+      "grandeur": "Uv,ue d’un local de maison individuelle",
+      "valeur": "Garage, cellier, véranda : 3. Comble fortement ventilé : 9 ; faiblement : 3 ; très faiblement : 0,3",
+      "source": "Th-Bât Généralités, § 5.2.2, tableau VI, p. 23"
+    },
+    {
+      "grandeur": "Uv,ue d’un local tertiaire",
+      "valeur": "Locaux fortement ventilés : 9. Parking privé : 3. Autres dépendances : 3",
+      "source": "Th-Bât Généralités, § 5.2.2, tableau VI, p. 23"
+    },
+    {
+      "grandeur": "Classe d’un comble",
+      "valeur": "Ao ÷ Ac : plus de 0,003, de 0,0003 à 0,003, moins de 0,0003",
+      "source": "Th-Bât Généralités, § 5.2.2, p. 23 et 24"
+    },
+    {
+      "grandeur": "Tableau II complet",
+      "valeur": "Écran « Lire b dans le tableau » de la station, ou Th-Bât Généralités p. 19. Unité de Uv,ue : W/(m².K) (le tableau VI imprime W/(m.K), coquille du fascicule)",
+      "source": "Th-Bât Généralités, § 5.2.1, tableau II, p. 19"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bureau d’exemple des stations T1 et T2, θi = 19 °C et θe = −7 °C (valeurs d’exercice), donc ΔT = 19 − (−7) = 26 K. Local technique non chauffé : Aiu = 8,58 m², Aue = 5,72 m², tertiaire, autres dépendances. Comble : Aiu = 40,00 m², Aue = 48,0 m², Ao = 0,25 m², Ac = 42,0 m².",
+    "lignes": [
+      "b du local technique : Aiu isolée, Aue non isolée, tableau II ; Uv,ue = 3 ; 8,58 ÷ 5,72 = 1,50, ligne « 1,25 < … ≤ 2,00 » : b = 0,90.",
+      "b du comble : Ao ÷ Ac = 0,25 ÷ 42,0 = 0,006, fortement ventilé, Uv,ue = 9 ; 40,00 ÷ 48,0 = 0,83, ligne « 0,75 < … ≤ 1,00 », tableau II : b = 0,95.",
+      "MA, mur nord (extérieur) : 13,47 × 0,31 × 1,00 = 4,18 W/K.",
+      "Fa, fenêtre nord : 1,61 × 1,6 × 1,00 = 2,58 W/K.",
+      "MB, mur est (extérieur) : 8,58 × 0,31 × 1,00 = 2,66 W/K.",
+      "MC, mur ouest sur le local technique : 6,69 × 0,54 × 0,90 = 3,25 W/K.",
+      "Pn, porte vers le local technique : 1,89 × 1,8 × 0,90 = 3,06 W/K.",
+      "Plancher bas sur terre-plein : 19,14 × 0,36 × 1,00 = 6,89 W/K.",
+      "Plafond sous comble : 19,14 × 0,21 × 0,95 = 3,82 W/K.",
+      "H = 4,18 + 2,58 + 2,66 + 3,25 + 3,06 + 6,89 + 3,82 = 26,44 W/K.",
+      "Φ = 26,44 × 26 = 687 W.",
+      "Ratio = 687 ÷ 19,14 = 35,9 W/m²."
+    ],
+    "resultat": "Φ = 687 W, soit 35,9 W/m², pour le bureau d’exemple (valeurs d’exercice pour Uw, Ud, Ue, Aue, Ao et Ac)."
+  },
+  "pieges": [
+    "Signe de θe : ΔT = 12 K au lieu de 26 K pour le bureau d’exemple.",
+    "Plancher bas oublié : ici 508 W au lieu de 687 W.",
+    "Mur compté en surface brute avec ses baies en plus, b oublié sur une paroi qui donne sur un local non chauffé, Aiu limitée au mur de la pièce au lieu de tous les murs sur le local non chauffé."
+  ],
+  "sources": [
+    "Règles Th-Bât 2017, fascicule Généralités : § 4 (b = 1), § 4.3 (somme des U × A), § 5.1 (formule 4), § 5.2.1 (tableaux II à V), § 5.2.2 (tableau VI). Elles sont citées, non reproduites en entier.",
+    "Stations en correspondance : BE-T1 (surfaces), BE-T2 (coefficients U), BE-T4 (renouvellement d’air), AéroRézo « Déperditions d’une pièce » et « Parois et écarts de température ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

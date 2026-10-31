@@ -404,7 +404,7 @@ BE.station({
       text: "Vous recevez la commande d’un bureau d’études : établir le coefficient U de chaque paroi de la maison. Vous partez de l’extrait de CCTP du dossier, qui décrit les couches de chaque paroi. Vous rendez un tableau, une ligne par couche, avec le U de la paroi en bas. Les réponses s’écrivent sur la feuille A4 recto verso. L’écran explique chaque geste, la feuille reçoit vos résultats.",
       prompt: "Lisez les trois cartes, puis continuez.",
       render: () => BE.cartes([
-        { title: "Vous recevez", rows: [["La commande :", "calculer le U des parois de la maison."], ["Le dossier :", "un extrait de CCTP de deux pages, avec les couches de chaque paroi."]] },
+        { title: "Vous recevez", rows: [["La commande :", "calculer le U des parois de la maison."], ["Le dossier :", "un extrait de CCTP, avec les couches de chaque paroi aux pages 1 et 2."]] },
         { title: "Vous produisez", rows: [["Le tableau :", "une ligne par couche, avec e, λ et R."], ["Le résultat :", "Rsi, Rse, Rt et le U de chaque paroi, puis les valeurs lues au CCTP."]] },
         { title: "Vous emportez", rows: [["Une fiche :", "la méthode d’un côté, un exemple de l’autre."], ["La suite :", "la station T3, les déperditions d’un local."]] }
       ])

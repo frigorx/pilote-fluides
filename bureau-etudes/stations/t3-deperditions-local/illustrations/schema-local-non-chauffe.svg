@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 142" width="180mm" height="142mm" role="img">
+<title>Schéma d’un local non chauffé entre le volume chauffé et l’extérieur, avec Aiu et Aue</title>
+<rect width="180" height="142" fill="#fff"/>
+<g><text x="90" y="78.10000000000001" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 78.10000000000001)">inerWeb, by inerweb.fr</text><text x="35" y="42.6" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 42.6)">inerWeb, by inerweb.fr</text><text x="150" y="113.60000000000001" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 113.60000000000001)">inerWeb, by inerweb.fr</text></g>
+<rect x="6.00" y="20.00" width="50.00" height="46.00" fill="#ffffff"/>
+<rect x="56.00" y="20.00" width="4.00" height="46.00" fill="#4d4d4d"/>
+<rect x="60.00" y="20.00" width="60.00" height="46.00" fill="#dcdcdc"/>
+<rect x="120.00" y="20.00" width="4.00" height="46.00" fill="#4d4d4d"/>
+<rect x="124.00" y="20.00" width="50.00" height="46.00" fill="#bdbdbd"/>
+<line x1="6.00" y1="20.00" x2="56.00" y2="20.00" stroke="#000" stroke-width="0.4"/>
+<line x1="56.00" y1="20.00" x2="56.00" y2="66.00" stroke="#000" stroke-width="0.4"/>
+<line x1="56.00" y1="66.00" x2="6.00" y2="66.00" stroke="#000" stroke-width="0.4"/>
+<line x1="6.00" y1="66.00" x2="6.00" y2="20.00" stroke="#000" stroke-width="0.4"/>
+<line x1="56.00" y1="20.00" x2="60.00" y2="20.00" stroke="#000" stroke-width="0.3"/>
+<line x1="60.00" y1="20.00" x2="60.00" y2="66.00" stroke="#000" stroke-width="0.3"/>
+<line x1="60.00" y1="66.00" x2="56.00" y2="66.00" stroke="#000" stroke-width="0.3"/>
+<line x1="56.00" y1="66.00" x2="56.00" y2="20.00" stroke="#000" stroke-width="0.3"/>
+<line x1="60.00" y1="20.00" x2="120.00" y2="20.00" stroke="#000" stroke-width="0.4"/>
+<line x1="120.00" y1="20.00" x2="120.00" y2="66.00" stroke="#000" stroke-width="0.4"/>
+<line x1="120.00" y1="66.00" x2="60.00" y2="66.00" stroke="#000" stroke-width="0.4"/>
+<line x1="60.00" y1="66.00" x2="60.00" y2="20.00" stroke="#000" stroke-width="0.4"/>
+<line x1="120.00" y1="20.00" x2="124.00" y2="20.00" stroke="#000" stroke-width="0.3"/>
+<line x1="124.00" y1="20.00" x2="124.00" y2="66.00" stroke="#000" stroke-width="0.3"/>
+<line x1="124.00" y1="66.00" x2="120.00" y2="66.00" stroke="#000" stroke-width="0.3"/>
+<line x1="120.00" y1="66.00" x2="120.00" y2="20.00" stroke="#000" stroke-width="0.3"/>
+<line x1="124.00" y1="20.00" x2="174.00" y2="20.00" stroke="#000" stroke-width="0.4"/>
+<line x1="174.00" y1="20.00" x2="174.00" y2="66.00" stroke="#000" stroke-width="0.4"/>
+<line x1="174.00" y1="66.00" x2="124.00" y2="66.00" stroke="#000" stroke-width="0.4"/>
+<line x1="124.00" y1="66.00" x2="124.00" y2="20.00" stroke="#000" stroke-width="0.4"/>
+<text x="31.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Volume chauffé</text>
+<text x="31.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">le plus chaud</text>
+<text x="90.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Local non chauffé</text>
+<text x="90.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">température</text>
+<text x="90.00" y="52.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">intermédiaire</text>
+<text x="149.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Extérieur</text>
+<text x="149.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">le plus froid</text>
+<text x="58.00" y="15.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Aiu</text>
+<text x="122.00" y="15.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Aue</text>
+<line x1="14.00" y1="76.00" x2="166.00" y2="76.00" stroke="#000" stroke-width="0.5"/>
+<line x1="166.00" y1="76.00" x2="163.80" y2="74.80" stroke="#000" stroke-width="0.5"/>
+<line x1="166.00" y1="76.00" x2="163.80" y2="77.20" stroke="#000" stroke-width="0.5"/>
+<text x="90.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">La chaleur va du plus chaud au plus froid</text>
+<text x="8.00" y="98.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Aiu : surface des parois entre le volume</text>
+<text x="8.00" y="104.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">chauffé et le local non chauffé, portes</text>
+<text x="8.00" y="110.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">comprises, toutes pièces chauffées confondues</text>
+<text x="8.00" y="118.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Aue : surface des parois entre le local non</text>
+<text x="8.00" y="125.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">chauffé et l’extérieur</text>
+<line x1="4.00" y1="131.50" x2="176.00" y2="131.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="138.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="138.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe, pas la maison</text>
+</svg>

@@ -78,9 +78,11 @@
   const GARES_PLANS = [
     ["1", "g01-bases-graphiques", "Bases graphiques", "Tracer et présenter"],
     ["2", "g02-les-vues", "Les vues", "Le dé à six faces"],
+    ["2b", "p2b-traits-caches-et-vues", "Traits cachés et vues", "Arêtes cachées, vues utiles", "be"],
     ["3", "g03-dossier-technique", "Le dossier technique", "Acteurs, documents, cartouche"],
     ["4", "g04-types-de-plans", "Les types de plans", "De la situation au détail"],
     ["5", "g05-conventions", "Conventions graphiques", "Traits, hachures, symboles"],
+    ["5b", "p5b-coupes-et-sections", "Coupes et sections", "Plan de coupe, hachures", "be"],
     ["6", "g06-les-echelles", "Les échelles", "Le kutch, du plan au réel"],
     ["7", "g07-la-cotation", "La cotation", "Chaînes de cotes"],
     ["7b", "g07b-le-metre-sur-plan", "Le métré sur plan", "Longueurs, surfaces, volumes"],
@@ -91,8 +93,11 @@
     ["12", "g12-croquer-et-relever", "Croquer et relever", "Une installation frigorifique"],
     ["13", "g13-schema-isometrique", "Le schéma isométrique", "Lire et tracer un réseau"],
     ["CVC", "tecvc1-plan-implantation-cvc", "Plan d'implantation CVC", "Équipements, réseaux, nomenclature"]
-  ].map(([code, cle, titre, rendu]) => ({code, cle, titre, rendu, ligne: "P", etat: "relecture", href: `../plan/gares/${cle}/index.html`,
-    exercice: `../plan/gares/${cle}/exercice.pdf`, corrige: `../plan/gares/${cle}/corrige.pdf`}));
+  ].map(([code, cle, titre, rendu, be]) => be
+    /* Gare écrite au moteur des stations BE (décision 38, sprint du 31/10/2026) : elle vit dans stations/<clé>/, son corrigé au coffre. */
+    ? {code, cle, titre, rendu, ligne: "P", etat: "relecture", href: `stations/${cle}/`, exercice: `stations/${cle}/feuille-N1.pdf`, be: true}
+    : {code, cle, titre, rendu, ligne: "P", etat: "relecture", href: `../plan/gares/${cle}/index.html`,
+    exercice: `../plan/gares/${cle}/exercice.pdf`, corrige: `../plan/gares/${cle}/corrige.pdf`});
   const METIERS = [
     {nom: "Plâtrerie et isolation", detail: "niveau CAP du bâtiment", gares: [
       ["Plâtrerie 1", "mpi1-plan-de-distribution", "Le plan de distribution"], ["Plâtrerie 2", "mpi2-calepinage-implantation", "Calepinage et implantation"],

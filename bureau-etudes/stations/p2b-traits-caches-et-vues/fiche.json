@@ -1,0 +1,64 @@
+{
+  "numero": 0,
+  "titre": "Dessiner les vues d’une pièce avec ses traits cachés",
+  "ligne": "Lire les plans",
+  "code": "BE-P2b",
+  "quand": "Après la gare 2 (les six vues, leur rangement) et la gare 5 (le code des traits). Vous avez une pièce, en volume ou décrite par ses dimensions. Vous obtenez ses vues utiles, avec leurs arêtes cachées en traits interrompus fins et les axes de ses trous.",
+  "methode": [
+    "Choisir la vue de face : celle qui montre le plus de formes. Ajouter la vue de dessus et la vue de gauche seulement si elles apprennent quelque chose que les autres ne disent pas.",
+    "Ranger les vues comme à la gare 2 : la vue de dessus sous la vue de face, la vue de gauche à droite de la vue de face.",
+    "Tracer le contour de chaque vue en trait continu fort : ce que l’observateur voit.",
+    "Placer les arêtes cachées en trait interrompu fin : un trou qui traverse donne deux traits quand on le regarde de côté, une partie de la pièce qui passe devant une arête la cache.",
+    "Tracer l’axe de chaque trou en trait mixte fin, qui dépasse un peu du contour. Quand deux traits cachés se superposent, n’en dessiner qu’un.",
+    "Aligner les vues : mêmes largeurs entre la vue de face et la vue de dessus, mêmes hauteurs entre la vue de face et la vue de gauche, profondeurs de la vue de dessus à la vue de gauche par la ligne à 45°.",
+    "Compter les traits interrompus de chaque vue et contrôler avec la pièce en volume."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Trait continu fort",
+      "valeur": "arête vue, contour visible",
+      "source": "Gare 5, « Le code des traits »"
+    },
+    {
+      "grandeur": "Trait interrompu fin",
+      "valeur": "arête cachée : bord d’un trou, partie cachée derrière une autre",
+      "source": "Gare 5, « Le code des traits »"
+    },
+    {
+      "grandeur": "Trait mixte fin",
+      "valeur": "axe d’un trou ou d’une symétrie",
+      "source": "Station BE-P2b, écran « Le code des traits sur une vue »"
+    },
+    {
+      "grandeur": "Rangement des vues",
+      "valeur": "dessus sous la face, gauche à droite de la face",
+      "source": "Gare 2, « La croix des vues »"
+    },
+    {
+      "grandeur": "Dimensions des pièces",
+      "valeur": "valeurs d’exercice, ni celles d’un produit du commerce ni celles d’un chantier",
+      "source": "Station BE-P2b"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bloc percé de 60 × 40 × 30 mm : un trou débouchant vertical Ø 16 mm, à 20 mm du bord gauche et 20 mm du bord avant.",
+    "lignes": [
+      "Vue de dessus : le trou se voit en cercle de Ø 16 mm, avec son axe en croix de trait mixte fin.",
+      "Vue de face : le trou ne se voit pas, mais ses deux bords sont des arêtes cachées. Rayon 8 mm : 20 − 8 = 12 et 20 + 8 = 28. Deux traits interrompus fins à 12 et 28 mm du bord gauche, axe en trait mixte fin à 20 mm.",
+      "Vue de gauche : le trou est centré à 20 mm du bord avant. Deux traits interrompus fins à 12 et 28 mm du bord avant, axe au milieu.",
+      "Les vues utiles : la vue de face et la vue de dessus. La vue de gauche répète la vue de face."
+    ],
+    "resultat": "deux traits interrompus de face, aucun trait interrompu de dessus, deux traits interrompus de gauche, pour le bloc percé (valeurs d’exercice)."
+  },
+  "pieges": [
+    "Trait caché tracé en trait fort : il se lit comme une arête que l’on voit.",
+    "Trait caché oublié : le trou disparaît de la vue de face.",
+    "Vue de dessus posée au-dessus de la vue de face, ou trou décalé d’une vue à l’autre, ou axe oublié."
+  ],
+  "sources": [
+    "Gares 2 et 5 de la ligne « Lire les plans » : rangement des vues et code des traits.",
+    "Station en correspondance : BE-P5b, coupes et sections.",
+    "Aucune calculette : le dessin se fait sur la feuille réponse ou sur papier quadrillé."
+  ],
+  "calculette": null
+}

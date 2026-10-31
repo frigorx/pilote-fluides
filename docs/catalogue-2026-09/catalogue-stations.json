@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 540,
+  "total": 545,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2592,6 +2592,86 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "d0-dossier-projet",
+      "titre": "BE-D0, Le dossier projet",
+      "ligne": "Lire les plans",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP1",
+        "CP2",
+        "CP5",
+        "CP8",
+        "C4-3",
+        "C12-1",
+        "C12-2",
+        "C1-2",
+        "A2-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/d0-dossier-projet/",
+      "chemin": "bureau-etudes/stations/d0-dossier-projet/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "e1-climat-site",
+      "titre": "BE-E1, Le climat du site",
+      "ligne": "Données d’entrée",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP5",
+        "CP8",
+        "C5-2",
+        "A2-4",
+        "S5.1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/e1-climat-site/",
+      "chemin": "bureau-etudes/stations/e1-climat-site/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "p2b-traits-caches-et-vues",
+      "titre": "BE-P2b, Traits cachés et vues",
+      "ligne": "Lire les plans",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP1",
+        "CP2",
+        "C4-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/p2b-traits-caches-et-vues/",
+      "chemin": "bureau-etudes/stations/p2b-traits-caches-et-vues/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "p5b-coupes-et-sections",
+      "titre": "BE-P5b, Coupes et sections",
+      "ligne": "Lire les plans",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP1",
+        "CP2",
+        "C4-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/p5b-coupes-et-sections/",
+      "chemin": "bureau-etudes/stations/p5b-coupes-et-sections/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "t1-surfaces-volumes",
       "titre": "BE-T1, Surfaces et volumes du projet",
       "ligne": "Thermique",
@@ -2629,6 +2709,24 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/t2-parois-coefficient-u/",
       "chemin": "bureau-etudes/stations/t2-parois-coefficient-u/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t3-deperditions-local",
+      "titre": "BE-T3, Déperditions d’un local par les parois",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP5",
+        "C3-3",
+        "A2-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t3-deperditions-local/",
+      "chemin": "bureau-etudes/stations/t3-deperditions-local/"
     },
     {
       "reseau": "HydroMétro",
@@ -6907,7 +7005,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-fusion\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-coffre\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -6919,7 +7017,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-coffre\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -6931,7 +7029,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-coffre\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -6943,7 +7041,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-coffre\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -6955,7 +7053,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-fusion\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-coffre\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -6967,7 +7065,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-fusion\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-coffre\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

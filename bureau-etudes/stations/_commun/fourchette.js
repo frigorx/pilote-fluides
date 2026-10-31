@@ -10,7 +10,7 @@
     if (typeof texte === "number") return Number.isFinite(texte) ? texte : null;
     let s = String(texte).trim();
     if (s === "") return null;
-    s = s.replace(/[\s  ]/g, "").replace(",", ".");
+    s = s.replace(/[\s  ]/g, "").replace(/[\u2212\u2013]/g, "-").replace(",", ".");
     if (!/^[+-]?(\d+\.?\d*|\.\d+)$/.test(s)) return null;
     const n = Number(s);
     return Number.isFinite(n) ? n : null;

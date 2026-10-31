@@ -148,6 +148,6 @@ window.addEventListener("resize", () => agrandissables(ecrans[idx]));
   if (!entete) return;
   const rangee = document.createElement("p");
   rangee.className = "documents-gare";
-  rangee.innerHTML = '<strong>Documents</strong> <a href="exercice.pdf" download>Exercice (PDF)</a> <a href="corrige.pdf" download>Corrigé (PDF)</a> <span>A4, noir et blanc</span>';
+  rangee.innerHTML = '<strong>Documents</strong> <a href="exercice.pdf" download>Exercice (PDF)</a> <span>A4, noir et blanc</span> <a href="../../../bureau-etudes/documents-professeur.html">Corrigé : sous code, pour l’enseignant</a>';
   entete.insertAdjacentElement("afterend", rangee);
 })();

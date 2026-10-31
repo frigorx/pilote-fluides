@@ -1,0 +1,33 @@
+{
+  "cle": "d0-dossier-projet",
+  "code": "BE-D0",
+  "titre": "Le dossier projet",
+  "ligne": "Lire les plans",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [1, 2, 3],
+  "ecrans": 15,
+  "etat": "relecture",
+  "livre": { "fiche": 1, "chapitre": 0 },
+  "referentiel": {
+    "tecvc": [
+      { "code": "CP1", "libelle": "Réaliser les plans d'implantation des équipements et des réseaux d'une installation de génie climatique (à confirmer : la station lit les plans, la compétence les réalise)" },
+      { "code": "CP2", "libelle": "Modéliser les équipements et les réseaux d'une installation de génie climatique (à confirmer : la station lit la maquette, la compétence la modélise)" },
+      { "code": "CP5", "libelle": "Réaliser les calculs de déperditions thermiques" },
+      { "code": "CP8", "libelle": "Réaliser les calculs d'apports thermiques" }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        { "code": "C4-3", "libelle": "Décoder les plans" },
+        { "code": "C12-1", "libelle": "Identifier les documents d'un dossier" },
+        { "code": "C12-2", "libelle": "Extraire les informations" },
+        { "code": "C1-2", "libelle": "Exprimer les contraintes" }
+      ],
+      "savoirs": [
+        { "code": "A2-1", "libelle": "Génie civil, structure et architecture : le vocabulaire (à confirmer)" }
+      ],
+      "taches": []
+    }
+  }
+}

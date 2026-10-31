@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="../../../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Relevé climatique fourni par le bureau d’études (valeurs d’exercice) - Bureau d’études inerWeb</title>
+<style>
+@page { size: A4; margin: 12mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #000; }
+body { font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; line-height: 1.12; }
+h1, h2, h3 { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; margin: 0; }
+h1 { font-size: 18pt; }
+h2 { font-size: 16pt; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; margin: 2.5mm 0 1.5mm; }
+h3 { font-size: 14pt; margin: 1.5mm 0 1mm; }
+.page { position: relative; width: 186mm; height: 272mm; overflow: hidden; margin: 0 auto; }
+.page:not(:last-child) { break-after: page; page-break-after: always; }
+.page > .filbox { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.filbox .fil { position: absolute; opacity: .07; display: block; }
+.fil.c { width: 130mm; height: 23.1mm; left: 25mm; top: 120mm; transform: rotate(-10deg); }
+.fil.h { width: 125mm; height: 22.2mm; right: -22mm; top: 40mm; transform: rotate(-10deg); }
+.fil.b { width: 125mm; height: 22.2mm; left: -14mm; bottom: 12mm; transform: rotate(-10deg); }
+.page > *:not(.filbox) { position: relative; z-index: 1; }
+.entete { display: flex; justify-content: space-between; align-items: center; gap: 6mm; margin-bottom: 1.5mm; }
+.entete svg.logo { width: 90mm; height: 13.2mm; flex: none; }
+.entete .qui { text-align: right; }
+.entete .qui p { margin: 0; font-weight: bold; }
+p { margin: 0 0 1.2mm; }
+.note { margin: 1mm 0 0; }
+.ue { border: 0.3mm solid #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 1mm 2.5mm; margin: 1.5mm 0 0; }
+table.t { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.t th, .t td { border: 0.3mm solid #000; padding: 0.3mm 1.3mm; vertical-align: top; overflow-wrap: anywhere; font-size: 14pt; }
+.t th { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; text-align: left; border-bottom: 0.8mm solid #1b3a63; vertical-align: middle; }
+.t tr { break-inside: avoid; page-break-inside: avoid; }
+.paroi { break-inside: avoid; page-break-inside: avoid; }
+@media screen { body { background: #e9edf2; padding: 8mm 0; } .page { background: #fff; margin-bottom: 8mm; padding: 0; outline: 1px solid #b8c2cf; } }
+@media print { html, body { background: #fff !important; color: #000 !important; } }
+
+.blocs { display: flex; gap: 5mm; align-items: flex-start; }
+.bloc { flex: 1 1 0; min-width: 0; }
+.bloc h2 { margin-top: 1mm; }
+.t th[scope="row"] { font-weight: bold; vertical-align: top; border-bottom: 0.3mm solid #000; }
+.titre { font-size: 16pt; margin: 1mm 0 2mm; }
+.extrait { border: 0.3mm solid #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 1mm 2.5mm; margin: 3mm 0 2mm; }
+.extrait h3 { margin: 0 0 1mm; }
+</style>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="filigrane" viewBox="0 0 900 160">
+      <text fill="#1b3a63" font-size="80" x="14" y="92">&#10052;&#65039;</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="78" font-weight="bold" x="120" y="88">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="78" x="262" y="88">Web</text>
+      <line stroke="#e8914a" stroke-width="5" x1="120" x2="440" y1="102" y2="102"/>
+      <rect fill="#e8914a" x="450" y="12" rx="9" ry="9" width="430" height="60"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="bold" x="665" y="54" text-anchor="middle">Bureau d'études</text>
+      <text fill="#1b3a63" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="42" x="120" y="148">by inerweb.fr</text>
+    </symbol>
+  </defs>
+</svg>
+<section class="page" id="page-1" data-page="1"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div>
+<div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>Relevé climatique</h1><p>Valeurs d’exercice, page 1 sur 1</p></div></div>
+<p class="titre"><b>Relevé climatique fourni par le bureau d’études (valeurs d’exercice)</b></p>
+<p>Ce relevé donne, pour chacun des deux sites de la station BE-E1, les données climatiques que le CCTP ne porte pas. Toutes les valeurs sont des valeurs d’exercice choisies par inerWeb. Le relevé donne le DJU annuel, mais ni la moyenne de chaque jour, ni les DJU journaliers, ni le total de la semaine : ils se calculent.</p>
+<div class="blocs"><div class="bloc"><h2>Site 1 : maison d’étude BE</h2>
+<table class="t"><colgroup><col style="width:46%"><col style="width:54%"></colgroup><tbody><tr><th scope="row">Département</th><td>13 Bouches-du-Rhône</td></tr><tr><th scope="row">Altitude</th><td>0 m</td></tr><tr><th scope="row">θe de référence</th><td>Voir le CCTP, page 3</td></tr><tr><th scope="row">Été : température</th><td>33 °C</td></tr><tr><th scope="row">Été : HR</th><td>40 %</td></tr><tr><th scope="row">DJU annuel, base 18 °C</th><td>1500</td></tr></tbody></table>
+<h3>Semaine de janvier</h3>
+<table class="t"><colgroup><col style="width:40%"><col style="width:30%"><col style="width:30%"></colgroup><thead><tr><th>Jour</th><th>Tmin (°C)</th><th>Tmax (°C)</th></tr></thead><tbody><tr><td>lundi</td><td>3</td><td>11</td></tr><tr><td>mardi</td><td>2</td><td>10</td></tr><tr><td>mercredi</td><td>5</td><td>13</td></tr><tr><td>jeudi</td><td>4</td><td>12</td></tr><tr><td>vendredi</td><td>1</td><td>9</td></tr><tr><td>samedi</td><td>6</td><td>14</td></tr><tr><td>dimanche</td><td>7</td><td>15</td></tr></tbody></table></div><div class="bloc"><h2>Site 2 : second bâtiment</h2>
+<table class="t"><colgroup><col style="width:46%"><col style="width:54%"></colgroup><tbody><tr><th scope="row">Département</th><td>59 Nord</td></tr><tr><th scope="row">Altitude</th><td>250 m</td></tr><tr><th scope="row">θe de référence</th><td>−9 °C, pour 200 m ou moins</td></tr><tr><th scope="row">Été : température</th><td>29 °C</td></tr><tr><th scope="row">Été : HR</th><td>55 %</td></tr><tr><th scope="row">DJU annuel, base 18 °C</th><td>2600</td></tr></tbody></table>
+<h3>Semaine d’octobre</h3>
+<table class="t"><colgroup><col style="width:40%"><col style="width:30%"><col style="width:30%"></colgroup><thead><tr><th>Jour</th><th>Tmin (°C)</th><th>Tmax (°C)</th></tr></thead><tbody><tr><td>lundi</td><td>5</td><td>13</td></tr><tr><td>mardi</td><td>7</td><td>16</td></tr><tr><td>mercredi</td><td>12</td><td>30</td></tr><tr><td>jeudi</td><td>8</td><td>18</td></tr><tr><td>vendredi</td><td>3</td><td>11</td></tr><tr><td>samedi</td><td>6</td><td>14</td></tr><tr><td>dimanche</td><td>9</td><td>19</td></tr></tbody></table></div></div>
+<div class="extrait"><h3>Extrait de l’annexe I de l’arrêté du 26 octobre 2010 (zones climatiques par département)</h3><table class="t"><colgroup><col style="width:70%"><col style="width:30%"></colgroup><thead><tr><th>Département</th><th>Zone</th></tr></thead><tbody><tr><td>13 Bouches-du-Rhône</td><td>H3</td></tr><tr><td>59 Nord</td><td>H1a</td></tr></tbody></table><p class="note"><b>Source.</b> Arrêté du 26 octobre 2010 (RT 2012), article 2 et annexe I. Légifrance, JORFTEXT000022959397, lu le 31/10/2026. Deux lignes recopiées de l’annexe.</p></div>
+<p class="note"><b>Sources.</b> Valeurs d’exercice, sans source officielle lisible. La zone climatique se lit à l’extrait de l’annexe I ci-dessus. La θe de référence du site 2 est la température de base de son département pour une altitude de 200 m ou moins, avant correction d’altitude.</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="../../../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>CCTP de la maison d’étude, programme et équipements - Bureau d’études inerWeb</title>
+<style>
+@page { size: A4; margin: 12mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #000; }
+body { font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; line-height: 1.12; }
+h1, h2, h3 { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; margin: 0; }
+h1 { font-size: 18pt; }
+h2 { font-size: 16pt; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; margin: 2.5mm 0 1.5mm; }
+h3 { font-size: 14pt; margin: 1.5mm 0 1mm; }
+.page { position: relative; width: 186mm; height: 272mm; overflow: hidden; margin: 0 auto; }
+.page:not(:last-child) { break-after: page; page-break-after: always; }
+.page > .filbox { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.filbox .fil { position: absolute; opacity: .07; display: block; }
+.fil.c { width: 130mm; height: 23.1mm; left: 25mm; top: 120mm; transform: rotate(-10deg); }
+.fil.h { width: 125mm; height: 22.2mm; right: -22mm; top: 40mm; transform: rotate(-10deg); }
+.fil.b { width: 125mm; height: 22.2mm; left: -14mm; bottom: 12mm; transform: rotate(-10deg); }
+.page > *:not(.filbox) { position: relative; z-index: 1; }
+.entete { display: flex; justify-content: space-between; align-items: center; gap: 6mm; margin-bottom: 1.5mm; }
+.entete svg.logo { width: 90mm; height: 13.2mm; flex: none; }
+.entete .qui { text-align: right; }
+.entete .qui p { margin: 0; font-weight: bold; }
+p { margin: 0 0 1.2mm; }
+.note { margin: 1mm 0 0; }
+.ue { border: 0.3mm solid #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 1mm 2.5mm; margin: 1.5mm 0 0; }
+table.t { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.t th, .t td { border: 0.3mm solid #000; padding: 0.3mm 1.3mm; vertical-align: top; overflow-wrap: anywhere; font-size: 14pt; }
+.t th { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; text-align: left; border-bottom: 0.8mm solid #1b3a63; vertical-align: middle; }
+.t tr { break-inside: avoid; page-break-inside: avoid; }
+.paroi { break-inside: avoid; page-break-inside: avoid; }
+@media screen { body { background: #e9edf2; padding: 8mm 0; } .page { background: #fff; margin-bottom: 8mm; padding: 0; outline: 1px solid #b8c2cf; } }
+@media print { html, body { background: #fff !important; color: #000 !important; } }
+</style>
+<script defer src="../../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="filigrane" viewBox="0 0 900 160">
+      <text fill="#1b3a63" font-size="80" x="14" y="92">&#10052;&#65039;</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="78" font-weight="bold" x="120" y="88">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="78" x="262" y="88">Web</text>
+      <line stroke="#e8914a" stroke-width="5" x1="120" x2="440" y1="102" y2="102"/>
+      <rect fill="#e8914a" x="450" y="12" rx="9" ry="9" width="430" height="60"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="bold" x="665" y="54" text-anchor="middle">Bureau d'études</text>
+      <text fill="#1b3a63" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="42" x="120" y="148">by inerweb.fr</text>
+    </symbol>
+  </defs>
+</svg>
+<section class="page" id="page-1" data-page="1"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div>
+<div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>CCTP, extrait</h1><p>Programme et équipements, complément</p></div></div>
+<p><b>Maison d’étude BE.</b> Complément de l’extrait de CCTP : le programme du maître d’ouvrage et les équipements. Cet extrait est fictif : inerWeb l’a écrit pour le réseau Bureau d’études.</p>
+<section class="lot"><h2>Programme et équipements</h2>
+<table class="t"><colgroup><col style="width:26%"><col style="width:74%"></colgroup>
+<thead><tr><th>Rubrique</th><th>Ce que dit le CCTP</th></tr></thead><tbody>
+<tr><td>Usage</td><td>Maison individuelle d’habitation, résidence principale, un logement : séjour-cuisine, entrée, WC au rez-de-chaussée ; trois chambres, palier et salle d’eau à l’étage ; garage accolé non chauffé.</td></tr>
+<tr><td>Chauffage</td><td>Chauffage central à eau chaude par pompe à chaleur air/eau installée dans le garage, émetteurs : radiateurs à eau chaude basse température dans toutes les pièces chauffées. Température intérieure de calcul : voir « Conditions de calcul » (page 3). Eau chaude sanitaire : voir page 5.</td></tr>
+<tr><td>Climatisation</td><td>Aucune climatisation. Le confort d’été repose sur les volets roulants des baies et sur la ventilation nocturne par ouverture des fenêtres.</td></tr>
+</tbody></table>
+<p class="note">Valeur d’exercice choisie par inerWeb pour la maison d’étude (hypothèse de programme). Les valeurs de cette page sont des valeurs d’exercice : sur un vrai projet, elles viennent du programme du maître d’ouvrage et des bureaux d’études de chaque lot.</p></section>
+</section>
+</body>
+</html>

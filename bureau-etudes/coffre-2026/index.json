@@ -5,6 +5,42 @@
  "documents": [
   {
    "id": "d001",
+   "groupe": "d0-dossier-projet",
+   "exercice": "BE-D0, Le dossier projet",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-D0-corrige-N1.pdf",
+   "taille": 175334
+  },
+  {
+   "id": "d002",
+   "groupe": "d0-dossier-projet",
+   "exercice": "BE-D0, Le dossier projet",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-D0-corrige-N2.pdf",
+   "taille": 260366
+  },
+  {
+   "id": "d003",
+   "groupe": "e1-climat-site",
+   "exercice": "BE-E1, Le climat du site",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-E1-corrige-N1.pdf",
+   "taille": 209192
+  },
+  {
+   "id": "d004",
+   "groupe": "e1-climat-site",
+   "exercice": "BE-E1, Le climat du site",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-E1-corrige-N2.pdf",
+   "taille": 212293
+  },
+  {
+   "id": "d005",
    "groupe": "t1-surfaces-volumes",
    "exercice": "BE-T1, Surfaces et volumes",
    "titre": "Corrigé de la feuille, niveau 1",
@@ -13,7 +49,7 @@
    "taille": 277555
   },
   {
-   "id": "d002",
+   "id": "d006",
    "groupe": "t1-surfaces-volumes",
    "exercice": "BE-T1, Surfaces et volumes",
    "titre": "Corrigé de la feuille, niveau 2",
@@ -22,7 +58,7 @@
    "taille": 275760
   },
   {
-   "id": "d003",
+   "id": "d007",
    "groupe": "t2-parois-coefficient-u",
    "exercice": "BE-T2, Les parois, le U",
    "titre": "Corrigé de la feuille, niveau 1",
@@ -31,7 +67,7 @@
    "taille": 226802
   },
   {
-   "id": "d004",
+   "id": "d008",
    "groupe": "t2-parois-coefficient-u",
    "exercice": "BE-T2, Les parois, le U",
    "titre": "Corrigé de la feuille, niveau 2",
@@ -40,7 +76,7 @@
    "taille": 219248
   },
   {
-   "id": "d005",
+   "id": "d009",
    "groupe": "t3-deperditions-local",
    "exercice": "BE-T3, Déperditions d'un local",
    "titre": "Corrigé de la feuille, niveau 1",
@@ -49,7 +85,7 @@
    "taille": 223027
   },
   {
-   "id": "d006",
+   "id": "d010",
    "groupe": "t3-deperditions-local",
    "exercice": "BE-T3, Déperditions d'un local",
    "titre": "Corrigé de la feuille, niveau 2",
@@ -58,7 +94,7 @@
    "taille": 247448
   },
   {
-   "id": "d007",
+   "id": "d011",
    "groupe": "g01-bases-graphiques",
    "exercice": "Ligne P, gare 1, Bases graphiques",
    "titre": "Corrigé de l’exercice",
@@ -67,7 +103,7 @@
    "taille": 68746
   },
   {
-   "id": "d008",
+   "id": "d012",
    "groupe": "g02-les-vues",
    "exercice": "Ligne P, gare 2, Les vues",
    "titre": "Corrigé de l’exercice",
@@ -76,7 +112,34 @@
    "taille": 82414
   },
   {
-   "id": "d009",
+   "id": "d013",
+   "groupe": "p2b-traits-caches-et-vues",
+   "exercice": "Ligne P, gare 2b, Traits cachés et vues",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "gare-2b-corrige-N1.pdf",
+   "taille": 157170
+  },
+  {
+   "id": "d014",
+   "groupe": "p2b-traits-caches-et-vues",
+   "exercice": "Ligne P, gare 2b, Traits cachés et vues",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "gare-2b-corrige-N2.pdf",
+   "taille": 160388
+  },
+  {
+   "id": "d015",
+   "groupe": "p2b-traits-caches-et-vues",
+   "exercice": "Ligne P, gare 2b, Traits cachés et vues",
+   "titre": "Corrigé de la feuille, niveau 3",
+   "format": "pdf",
+   "fichier": "gare-2b-corrige-N3.pdf",
+   "taille": 159921
+  },
+  {
+   "id": "d016",
    "groupe": "g03-dossier-technique",
    "exercice": "Ligne P, gare 3, Le dossier technique",
    "titre": "Corrigé de l’exercice",
@@ -85,7 +148,7 @@
    "taille": 76854
   },
   {
-   "id": "d010",
+   "id": "d017",
    "groupe": "g04-types-de-plans",
    "exercice": "Ligne P, gare 4, Les types de plans",
    "titre": "Corrigé de l’exercice",
@@ -94,7 +157,7 @@
    "taille": 72105
   },
   {
-   "id": "d011",
+   "id": "d018",
    "groupe": "g05-conventions",
    "exercice": "Ligne P, gare 5, Conventions graphiques",
    "titre": "Corrigé de l’exercice",
@@ -103,7 +166,34 @@
    "taille": 73465
   },
   {
-   "id": "d012",
+   "id": "d019",
+   "groupe": "p5b-coupes-et-sections",
+   "exercice": "Ligne P, gare 5b, Coupes et sections",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "gare-5b-corrige-N1.pdf",
+   "taille": 162211
+  },
+  {
+   "id": "d020",
+   "groupe": "p5b-coupes-et-sections",
+   "exercice": "Ligne P, gare 5b, Coupes et sections",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "gare-5b-corrige-N2.pdf",
+   "taille": 162159
+  },
+  {
+   "id": "d021",
+   "groupe": "p5b-coupes-et-sections",
+   "exercice": "Ligne P, gare 5b, Coupes et sections",
+   "titre": "Corrigé de la feuille, niveau 3",
+   "format": "pdf",
+   "fichier": "gare-5b-corrige-N3.pdf",
+   "taille": 158216
+  },
+  {
+   "id": "d022",
    "groupe": "g06-les-echelles",
    "exercice": "Ligne P, gare 6, Les échelles",
    "titre": "Corrigé de l’exercice",
@@ -112,7 +202,7 @@
    "taille": 77228
   },
   {
-   "id": "d013",
+   "id": "d023",
    "groupe": "g07-la-cotation",
    "exercice": "Ligne P, gare 7, La cotation",
    "titre": "Corrigé de l’exercice",
@@ -121,7 +211,7 @@
    "taille": 71420
   },
   {
-   "id": "d014",
+   "id": "d024",
    "groupe": "g07b-le-metre-sur-plan",
    "exercice": "Ligne P, gare 7b, Le métré sur plan",
    "titre": "Corrigé de l’exercice",
@@ -130,7 +220,7 @@
    "taille": 141493
   },
   {
-   "id": "d015",
+   "id": "d025",
    "groupe": "g08-le-croquis-cote",
    "exercice": "Ligne P, gare 8, Le croquis coté",
    "titre": "Corrigé de l’exercice",
@@ -139,7 +229,7 @@
    "taille": 78157
   },
   {
-   "id": "d016",
+   "id": "d026",
    "groupe": "g09-la-maquette-bim",
    "exercice": "Ligne P, gare 9, La maquette BIM",
    "titre": "Corrigé de l’exercice",
@@ -148,7 +238,7 @@
    "taille": 84141
   },
   {
-   "id": "d017",
+   "id": "d027",
    "groupe": "g10-le-sujet-guide",
    "exercice": "Ligne P, gare 10, Le sujet guidé",
    "titre": "Corrigé de l’exercice",
@@ -157,7 +247,7 @@
    "taille": 79269
   },
   {
-   "id": "d018",
+   "id": "d028",
    "groupe": "g11-suivre-une-installation",
    "exercice": "Ligne P, gare 11, Suivre une installation",
    "titre": "Corrigé de l’exercice",
@@ -166,7 +256,7 @@
    "taille": 120950
   },
   {
-   "id": "d019",
+   "id": "d029",
    "groupe": "g12-croquer-et-relever",
    "exercice": "Ligne P, gare 12, Croquer et relever",
    "titre": "Corrigé de l’exercice",
@@ -175,7 +265,7 @@
    "taille": 131813
   },
   {
-   "id": "d020",
+   "id": "d030",
    "groupe": "g13-schema-isometrique",
    "exercice": "Ligne P, gare 13, Le schéma isométrique",
    "titre": "Corrigé de l’exercice",
@@ -184,7 +274,7 @@
    "taille": 185221
   },
   {
-   "id": "d021",
+   "id": "d031",
    "groupe": "tecvc1-plan-implantation-cvc",
    "exercice": "Ligne P, gare CVC, Plan d'implantation CVC",
    "titre": "Corrigé de l’exercice",

@@ -1,0 +1,43 @@
+{
+  "cle": "t3-deperditions-local",
+  "code": "BE-T3",
+  "titre": "Déperditions d’un local par les parois",
+  "ligne": "Thermique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 6,
+    "chapitre": 2
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP5",
+        "libelle": "Réaliser les calculs de déperditions thermiques"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques (à confirmer : la station se fait à la main, et le référentiel contrôle C3-3 en E61)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A2-3",
+          "libelle": "Bilan thermique (déperditions, apports de chaleur et d'humidité) (à confirmer : le référentiel porte aussi le libellé « Bilan thermique en régime permanent d'une enceinte fermée ou ouverte »)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

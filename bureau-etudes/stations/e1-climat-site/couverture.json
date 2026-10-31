@@ -1,0 +1,51 @@
+{
+  "cle": "e1-climat-site",
+  "code": "BE-E1",
+  "titre": "Le climat du site",
+  "ligne": "Données d’entrée",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 16,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 2,
+    "chapitre": 1
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP5",
+        "libelle": "Réaliser les calculs de déperditions thermiques"
+      },
+      {
+        "code": "CP8",
+        "libelle": "Réaliser les calculs d'apports thermiques"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C5-2",
+          "libelle": "Extraire les éléments réglementaires concernant le projet"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A2-4",
+          "libelle": "DJU, besoin d'énergie utile (chauffage et climatisation)"
+        },
+        {
+          "code": "S5.1",
+          "libelle": "réglementation thermique"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

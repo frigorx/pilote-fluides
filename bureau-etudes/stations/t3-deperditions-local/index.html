@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Station BE-T3 du réseau Bureau d’études : calculer les déperditions d’un local par ses parois, avec le coefficient b des locaux non chauffés, sur les pièces d’une maison.">
+  <title>Déperditions d’un local par les parois | Bureau d’études</title>
+  <link rel="stylesheet" href="../_commun/station.css?v=20261031-1404">
+  <link rel="stylesheet" href="../_commun/impression.css" media="print">
+  <script src="../../../moteur/animations.js?v=7bddbcaafd"></script>
+  <script src="../../../moteur/voix-index.js?v=20261031-1"></script>
+  <script src="../../../moteur/prononciation.js?v=20261031-1"></script>
+  <script src="../../../moteur/voix.js?v=20261031-1"></script>
+  <script src="../../../moteur/reglage-voix.js?v=20261031-1"></script>
+  <script src="../../../moteur/lisibilite.js?v=20261031-1" defer></script>
+  <script src="../../../moteur/agrandir.js?v=20261031-1" defer></script>
+  <script src="../../../moteur/marque.js?v=20261031-1" data-cartouche="Bureau d'études" data-licence="conditions" data-prototype defer></script>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+  <a class="skip-link" href="#lesson-title">Aller au contenu de l’écran</a>
+  <header class="appbar">
+    <a class="brand" href="index.html" aria-label="Revenir à l’accueil de la station"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 50" width="264" height="40" role="img" aria-label="inerWeb Bureau d’études" style="flex:0 0 auto;display:block"><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="4" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="54" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="4" x2="112" y1="35" y2="35"/><rect fill="#e8914a" x="118" y="10" rx="5" ry="5" width="208" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="222" y="27" text-anchor="middle">Bureau d’études</text></svg><span><small id="station-sub"></small></span></a>
+    <div class="appbar-actions"><span class="mode-badge" id="mode-badge">En cours de relecture</span><button class="small-button" id="home-button" type="button" hidden>Sommaire</button><button class="small-button exit-button" id="exit-button" type="button" hidden>Quitter</button></div>
+  </header>
+  <main id="app">
+    <section class="home" id="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow" id="station-code"></p>
+        <p class="station-ligne" id="station-ligne"></p>
+        <p class="home-badges"><span class="badge badge-longue" id="badge-duree"></span><span class="badge" id="badge-niveau"></span></p>
+        <h1 id="home-title"></h1>
+        <p class="home-intro" id="home-intro"></p>
+        <div class="volet-actions home-actions" id="volet-actions"></div>
+        <p class="home-meta" id="home-meta"></p>
+        <p class="statut"><strong>Statut : en cours de relecture.</strong> Cette station n’est pas encore validée par F. Henninot.</p>
+      </div>
+      <nav class="dossier-grid" id="dossier-grid" aria-label="Ouvrir directement un dossier"></nav>
+      <p class="home-note" id="home-note" hidden></p>
+      <section class="codes-box" id="codes-box" aria-labelledby="codes-titre" hidden></section>
+    </section>
+    <section class="course-shell" id="course-shell" hidden aria-label="Station du Bureau d’études">
+      <aside class="course-rail"><div class="rail-heading"><span id="rail-mode">COURS</span><strong id="rail-progress">1 / 1</strong></div><div class="rail-volet" id="rail-volet" hidden></div><nav class="stepper" id="stepper" aria-label="Progression par dossier"></nav><div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div><p id="progress-copy">Début du parcours</p></aside>
+      <article class="lesson-card" aria-labelledby="lesson-title">
+        <header class="lesson-header"><div class="lesson-heading"><p class="eyebrow" id="lesson-kicker"></p><h2 id="lesson-title" tabindex="-1"></h2></div><div class="lesson-tools" aria-label="Outils de l’écran"><button class="tool-button" id="copy-link" type="button" aria-label="Copier le lien de cet écran"><span aria-hidden="true">↗</span><span class="tool-label">Copier</span></button><div class="speed-control" aria-label="Vitesse de la voix"><button id="slower" type="button" aria-label="Ralentir la voix">−</button><span id="speed-value">0,95×</span><button id="faster" type="button" aria-label="Accélérer la voix">+</button></div><button class="tool-button voice-button" id="listen" type="button"><span aria-hidden="true">▶</span><span>Écouter</span></button><button class="tool-button" id="stop-voice" type="button" aria-label="Arrêter la voix" disabled><span aria-hidden="true">■</span><span class="tool-label">Arrêter</span></button></div></header>
+        <div class="lesson-content"><div class="lesson-copy"><p id="lesson-text"></p><button class="texte-entier" id="texte-entier" type="button" aria-expanded="false" aria-controls="lesson-text" hidden>Lire tout le texte</button><p class="action-prompt" id="action-prompt"></p></div><section class="activity-zone" id="activity-zone" aria-label="Activité de l’écran"></section></div>
+        <footer class="lesson-footer"><button class="nav-button secondary" id="prev-button" type="button">← Précédent</button><div class="reference-box" id="reference-box"></div><button class="nav-button" id="next-button" type="button">Suivant →</button></footer><p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </article>
+    </section>
+    <section class="print-book" id="print-book" aria-label="Fiche aide-mémoire imprimable"></section>
+  </main>
+  <script src="../_commun/fourchette.js"></script>
+  <script src="../_commun/moteur-be.js?v=20261031-1404"></script>
+  <script src="contenu.js"></script>
+  <script src="../../../moteur/prof-vocal.js?v=20261031-1"></script>
+</body>
+</html>
