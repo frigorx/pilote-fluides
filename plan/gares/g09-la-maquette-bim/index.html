@@ -7,6 +7,17 @@
 <title>Gare 9 — La maquette BIM : initiation BIM Vision</title>
 <link rel="stylesheet" href="../../moteur/gare.css">
 <script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+<style>
+.capture{display:block;width:100%;height:auto;margin:12px auto;border:1px solid rgba(27,58,99,.25);border-radius:8px;background:#fff}
+ol.etapes{padding-left:26px}
+ol.etapes li{margin:6px 0}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
 </head>
 <body>
 <div class="page">
@@ -29,38 +40,40 @@
 <section class="on">
   <h2>Bienvenue en gare</h2>
   <p>Le bâtiment existe aussi en version numérique : la <strong>maquette BIM</strong>.
-  Cette gare se vit <strong>sur poste informatique</strong> (~2 h). À la fin, vous saurez :</p>
+  Cette gare se fait <strong>sur ordinateur</strong>, avec BIM Vision ouvert (environ 2 h, test compris ; la fiche de TP prend 1 h 30).
+  Chaque geste est montré sur une vraie capture du logiciel. À la fin, vous saurez :</p>
   <ul>
-    <li>dire ce qu'est une maquette numérique et un fichier <strong>IFC</strong> ;</li>
-    <li><strong>naviguer</strong> dans BIM Vision : tourner, zoomer, vous déplacer ;</li>
-    <li><strong>cacher et filtrer</strong> des éléments pour voir ce qui vous intéresse ;</li>
-    <li><strong>cliquer un élément</strong> pour lire sa fiche (matériau, dimensions) ;</li>
-    <li>faire le lien <strong>maquette 3D ↔ plan 2D</strong>.</li>
+    <li>dire ce qu'est une maquette numérique et un fichier IFC ;</li>
+    <li>ouvrir une maquette, la tourner, la regarder de dessus et de face ;</li>
+    <li>lire la structure IFC : les étages, et ce qu'ils contiennent ;</li>
+    <li>cliquer un élément pour lire sa fiche : dimensions, épaisseur, matériaux ;</li>
+    <li>masquer un étage, couper la maquette, mesurer une surface et une longueur.</li>
   </ul>
+  <p>Gardez la fiche de TP à côté du clavier : vous y notez ce que vous lisez dans la maquette.</p>
 </section>
 
 <section>
   <h2>La maquette numérique : plus qu'un dessin</h2>
   <p>Le BIM (« bâtiment et informations modélisées ») : le bâtiment entier est
   construit dans l'ordinateur, en 3D. Chaque mur, chaque porte y existe
-  <strong>avec ses informations</strong> : matériau, dimensions, étage…</p>
-  <p class="cle">Différence clé avec un plan : le plan MONTRE, la maquette
-  <strong>RENSEIGNE</strong>. On clique une cloison → sa fiche s'affiche.</p>
+  <strong>avec ses informations</strong> : matériau, dimensions, étage.</p>
+  <p class="cle">Un plan montre le bâtiment. La maquette donne en plus la fiche de chaque élément :
+  on clique une cloison, sa fiche s'affiche.</p>
   <p>Sur les chantiers, la maquette sert à voir le bâtiment avant de le faire,
-  détecter les conflits entre corps de métier (une gaine qui traverse votre cloison),
-  et compter les quantités.</p>
+  à repérer les conflits entre corps de métier (une gaine qui traverse votre cloison)
+  et à compter les quantités.</p>
 </section>
 
 <section>
-  <h2>IFC et BIM Vision : vos deux mots de passe</h2>
+  <h2>IFC et BIM Vision</h2>
   <ul>
-    <li><strong>IFC</strong> — le format d'échange des maquettes : quel que soit
-    le logiciel de l'architecte, il exporte un .ifc que tout le monde peut ouvrir.</li>
-    <li><strong>BIM Vision</strong> — un logiciel GRATUIT qui ouvre les IFC.
-    Il ne dessine pas : il permet de LIRE la maquette. C'est notre outil.</li>
+    <li><strong>IFC</strong> : le format d'échange des maquettes. Quel que soit
+    le logiciel de l'architecte, il exporte un fichier .ifc que tout le monde peut ouvrir.</li>
+    <li><strong>BIM Vision</strong> : un logiciel gratuit qui ouvre les fichiers IFC.
+    Il ne dessine pas, il sert à lire la maquette. C'est l'outil de cette gare.</li>
   </ul>
-  <p class="cle">Vous, en CAP, vous n'avez pas à dessiner de maquette : vous devez savoir
-  la <strong>consulter</strong> — exactement comme vous lisez un plan sans l'avoir dessiné.</p>
+  <p class="cle">Vous n'avez pas à dessiner de maquette. Vous apprenez à la consulter,
+  comme vous lisez un plan que vous n'avez pas dessiné.</p>
   <div class="spec">
     <h3>À télécharger</h3>
     <ul>
@@ -68,69 +81,194 @@
       la dernière version (55 Mo). Elle demande Windows 10 et une carte graphique récente (OpenGL 4.6).</li>
       <li><a href="https://download-datacomp.com.pl/bimvision/setup/BIMvision%202.29.0%20Setup.exe">BIM Vision 2.29.0</a> :
       la dernière version 2 (44 Mo), pour un PC plus ancien.</li>
-      <li><a href="https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/main/IFC%202.3.0.1%20(IFC%202x3)/Duplex%20Apartment/Duplex_A_20110907.ifc">Une maquette d'exemple</a> :
-      un petit immeuble de logements sur deux niveaux, au format IFC (2,4 Mo).</li>
+      <li><a href="https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/main/IFC%202.3.0.1%20(IFC%202x3)/Duplex%20Apartment/Duplex_A_20110907.ifc">La maquette d'exemple</a> :
+      un petit immeuble de deux logements sur deux niveaux, au format IFC (2,4 Mo). Toute la gare et la fiche de TP se font sur elle.</li>
     </ul>
     <p>BIM Vision est gratuit ; les deux liens mènent au serveur de son éditeur, Datacomp.
     Maquette : BSI (2020) Duplex Apartment Test Files, buildingSMART International,
     licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>, fichier non modifié.</p>
   </div>
+  <p>Les captures de cette gare viennent de BIM Vision 3.1.2 en français. Si les menus de votre
+  BIM Vision sont en anglais : cliquez « FILE », puis « Language », puis « Français ».
+  Le logiciel redémarre en français.</p>
 </section>
 
 <section>
-  <h2>Naviguer : les 3 gestes</h2>
+  <h2>Geste 1 : ouvrir la maquette</h2>
+  <img class="capture" src="illustrations/g09-01-ouvrir.webp" width="1200" height="493" alt="À gauche, le menu Fichier de BIM Vision ouvert, la commande Ouvrir encadrée. À droite, la fenêtre Ouvrir de Windows : le fichier Duplex_A_20110907.ifc est sélectionné et le bouton Ouvrir est encadré.">
+  <ol class="etapes">
+    <li>Cliquez « FICHIER », en haut à gauche, puis « Ouvrir ».</li>
+    <li>Allez dans le dossier où vous avez enregistré la maquette. Cliquez le fichier Duplex_A_20110907.ifc.</li>
+    <li>Cliquez le bouton « Ouvrir ». La maquette s'affiche en 3D après quelques secondes.</li>
+  </ol>
+  <p>La prochaine fois, la maquette est rangée dans FICHIER, liste « Ouverts récemment ».</p>
+</section>
+
+<section>
+  <h2>L'écran de BIM Vision</h2>
+  <img class="capture" src="illustrations/g09-02-ecran.webp" width="1200" height="628" alt="L'écran de BIM Vision avec la maquette ouverte. En haut, le ruban de boutons. Au centre, le bâtiment en 3D avec sa toiture verte. À droite en haut, la structure IFC avec ses quatre étages. À droite en bas, le panneau des propriétés.">
+  <ol class="etapes">
+    <li><strong>Le ruban</strong> : les boutons, rangés par onglets. Vous servez surtout d'AFFICHAGE, SECTIONS et MESURE.</li>
+    <li><strong>La vue 3D</strong> : le bâtiment. La toiture est végétalisée, d'où sa couleur verte.</li>
+    <li><strong>La structure IFC</strong> : la liste des étages et de tout ce qu'ils contiennent.</li>
+    <li><strong>Les propriétés</strong> : la fiche de l'élément que vous cliquez.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Geste 2 : tourner, zoomer, se déplacer</h2>
+  <img class="capture" src="illustrations/g09-03-tourner.webp" width="1200" height="725" alt="Le bâtiment vu sous un autre angle après une rotation. Une flèche courbe au-dessus montre le mouvement de la souris.">
   <table class="doc">
     <tr><th>Geste</th><th>Souris</th><th>Ce que ça fait</th></tr>
-    <tr><td><strong>Tourner</strong> (orbite)</td><td>clic gauche maintenu</td><td>vous tournez AUTOUR du bâtiment — la gare 2 en vrai : toutes les vues d'un coup</td></tr>
-    <tr><td><strong>Zoomer</strong></td><td>molette</td><td>du quartier au joint de cloison — le zoom de la gare 4, en continu</td></tr>
-    <tr><td><strong>Se déplacer</strong> (pan)</td><td>molette maintenue (ou clic droit)</td><td>vous glissez la vue sans tourner</td></tr>
+    <tr><td><strong>Tourner</strong></td><td>clic gauche maintenu, puis glisser (1)</td><td>vous tournez autour du bâtiment : toutes les vues de la gare 2, l'une après l'autre</td></tr>
+    <tr><td><strong>Zoomer</strong></td><td>molette</td><td>vous approchez ou vous reculez, comme le zoom de la gare 4</td></tr>
+    <tr><td><strong>Se déplacer</strong></td><td>molette enfoncée, puis glisser</td><td>vous faites glisser la vue sans tourner</td></tr>
   </table>
-  <p><strong>Ouvrir la maquette :</strong> dans BIM Vision, menu <strong>Fichier</strong>, puis « ouvrir le dossier d'IFC » :
-  choisissez le fichier .ifc fourni par l'enseignant, ou la maquette d'exemple de l'écran précédent. La liste « fichiers récemment ouverts » rappelle les derniers.</p>
-  <p class="cle">Perdu dans l'espace ? Tous les logiciels ont un bouton
-  « vue d'accueil » / « zoom tout » : il recadre la maquette entière (dans BIM Vision : « Zoom initial »). C'est votre
-  bouton panique.</p>
+  <p class="cle">Perdu dans l'espace ? Onglet AFFICHAGE, groupe Camera : <strong>Réinitialiser le zoom</strong>
+  recadre toute la maquette au centre de l'écran.</p>
 </section>
 
 <section>
-  <h2>Cacher et filtrer : ne voir que l'utile</h2>
-  <p>La maquette contient TOUT : structure, cloisons, gaines, meubles… L'arbre
-  des objets (à gauche dans BIM Vision) permet de :</p>
+  <h2>Geste 3 : les vues Dessus et Avant</h2>
+  <img class="capture" src="illustrations/g09-04-vues.webp" width="1200" height="728" alt="En haut, le groupe Vue du ruban, boutons Dessus et Avant encadrés. En bas à gauche, la maquette vue de dessus : la toiture verte et ses deux fenêtres de toit. En bas à droite, la maquette vue de face : la façade avec sa porte et ses fenêtres.">
+  <p>Onglet « AFFICHAGE », groupe Vue :</p>
+  <ol class="etapes">
+    <li>« Dessus » : la maquette vue d'en haut, comme la vue de dessus de la gare 2.</li>
+    <li>« Avant » : la façade, vue de face, comme une élévation.</li>
+  </ol>
+  <p>Arrière, Droite et Gauche donnent les autres faces. « Défaut » revient à la vue 3D du départ.</p>
+</section>
+
+<section>
+  <h2>Geste 4 : la structure IFC, étage par étage</h2>
+  <img class="capture" src="illustrations/g09-05-structure.webp" width="1200" height="705" alt="L'étage Level 1 est sélectionné : il s'allume en vert dans la vue 3D. Dans la structure IFC, la ligne Level 1 est dépliée sur ses familles. Dans les propriétés, la ligne Elevation vaut 0.">
+  <p>La structure IFC range la maquette en étages. Ici, quatre étages, nommés en anglais par le logiciel
+  de l'architecte : <strong>Level 1</strong> (rez-de-chaussée), <strong>Level 2</strong> (étage),
+  <strong>T/FDN</strong> (fondations) et <strong>Roof</strong> (toiture).</p>
+  <ol class="etapes">
+    <li>Cliquez la ligne d'un étage : il s'allume en vert dans la vue. Le petit + devant la ligne la déplie.</li>
+    <li>Un étage déplié montre ses familles : Pièces, Murs, Dalles, Fenêtres, Portes, Escaliers…</li>
+    <li>Dans les propriétés, la ligne <strong>Elevation</strong> donne l'altitude du plancher de l'étage, en mètres.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je clique la ligne Etage Level 1. Je lis Elevation : 0 m. Le plancher du rez-de-chaussée est à l'altitude 0.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Geste 5 : compter les éléments d'une famille</h2>
+  <img class="capture" src="illustrations/g09-06-compter.webp" width="1200" height="705" alt="Dans la structure IFC, la famille Portes de Level 1 est dépliée : six lignes Porte. Dans la vue 3D, les portes du rez-de-chaussée sont surlignées en vert.">
+  <ol class="etapes">
+    <li>Dépliez un étage, puis une famille, par exemple « Portes ». Chaque ligne est un élément : une ligne, une porte.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je déplie Level 1, puis Portes. Je compte 6 lignes. Le rez-de-chaussée a 6 portes,
+    pour les deux logements.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Geste 6 : cliquer un élément, lire sa fiche</h2>
+  <img class="capture" src="illustrations/g09-07-proprietes.webp" width="1200" height="705" alt="Un mur extérieur de l'étage est cliqué et s'allume en vert. Le panneau des propriétés montre son nom, Basic Wall:Exterior - Brick on Block, puis le groupe des dimensions : Area 41,357137, Length 17,383, Volume 16,741648.">
+  <ol class="etapes">
+    <li>Cliquez un élément dans la vue 3D : il s'allume en vert.</li>
+    <li>Le panneau Propriétés affiche sa fiche. Name donne son type : ici un mur extérieur en brique sur bloc béton.</li>
+    <li>Le groupe PSet_Revit_Dimensions donne ses dimensions.</li>
+  </ol>
+  <p>Les propriétés sont en anglais. Les mots utiles de la gare :</p>
+  <table class="doc">
+    <tr><th>Propriété</th><th>En français</th></tr>
+    <tr><td>Name</td><td>nom, type de l'élément</td></tr>
+    <tr><td>Length</td><td>longueur (m)</td></tr>
+    <tr><td>Unconnected Height</td><td>hauteur du mur (m)</td></tr>
+    <tr><td>Area</td><td>surface (m²)</td></tr>
+    <tr><td>Width</td><td>épaisseur du mur (m)</td></tr>
+    <tr><td>Elevation</td><td>altitude d'un étage (m)</td></tr>
+    <tr><td>LayerThickness</td><td>épaisseur d'une couche (m)</td></tr>
+    <tr><td>Material</td><td>matériau</td></tr>
+  </table>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je clique le grand mur de façade de l'étage, face à moi dans la vue Défaut. Je lis Length : 17,383 m,
+    et plus haut, Unconnected Height : 2,9 m. Ce mur mesure 17,383 m de long et 2,9 m de haut.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Geste 7 : l'épaisseur et les couches d'un mur</h2>
+  <img class="capture" src="illustrations/g09-08-epaisseur.webp" width="1200" height="690" alt="À gauche, le panneau des propriétés du mur extérieur descendu jusqu'à la ligne Width, qui vaut 0,417. À droite, la structure IFC du même mur dépliée sur la ligne IfcMaterialLayerSet et ses six couches ; la première couche est cliquée : LayerThickness 0,092, Material Masonry - Brick.">
+  <ol class="etapes">
+    <li>L'épaisseur du mur : descendez le panneau Propriétés avec son ascenseur jusqu'au groupe
+    PSet_Revit_Type_Construction. La ligne <strong>Width</strong> donne l'épaisseur totale : 0,417 m pour ce mur.</li>
+    <li>Les couches : dans la structure IFC, cliquez le petit + devant le mur, puis devant la ligne
+    IfcMaterialLayerSet. Chaque ligne en dessous est une couche du mur, dans l'ordre.</li>
+    <li>Cliquez une couche : LayerThickness donne son épaisseur, Material Name son matériau.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je clique la première couche du mur extérieur. Je lis LayerThickness : 0,092 m,
+    et Name : Masonry - Brick. La couche 1 est une brique de 0,092 m.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Geste 8 : masquer un étage</h2>
+  <img class="capture" src="illustrations/g09-09-masquer.webp" width="1200" height="705" alt="Dans la colonne Actif de la structure IFC, les cases de Level 2 et de Roof sont décochées. La vue 3D montre le rez-de-chaussée seul, ouvert par le haut : cloisons, escaliers et vitrages apparaissent.">
+  <ol class="etapes">
+    <li>Dans la colonne « Actif » de la structure IFC, décochez la case d'un étage : il disparaît de la vue.
+    Décochez Level 2 et Roof : le rez-de-chaussée apparaît, ouvert par le haut, avec ses cloisons et ses escaliers.</li>
+  </ol>
+  <p>Recochez les cases pour revoir tout le bâtiment.</p>
+</section>
+
+<section>
+  <h2>Geste 9 : couper la maquette</h2>
+  <img class="capture" src="illustrations/g09-10-couper.webp" width="1200" height="758" alt="En haut, l'onglet Sections : le bouton Ajoutez plan de coupe et son menu, la ligne Axe Z encadrée, puis la case Offset réglée à 1. En bas à gauche, la maquette coupée à 1 mètre, vue en 3D. En bas à droite, la même coupe vue de dessus : le plan du rez-de-chaussée.">
+  <p>Onglet « SECTIONS » :</p>
+  <ol class="etapes">
+    <li>Cliquez la petite flèche sous « Ajoutez plan de coupe ».</li>
+    <li>Choisissez « Axe Z », puis cliquez sur la façade du rez-de-chaussée. La maquette est coupée à l'endroit du clic.</li>
+    <li>Tapez 1 dans la case « Offset », puis Entrée : la coupe passe à 1 m du sol.</li>
+    <li>La maquette coupée se regarde en 3D, pièce par pièce.</li>
+    <li>Onglet « AFFICHAGE », vue « Dessus » : vous obtenez le plan du niveau, coupé à 1 m comme à la gare 4.</li>
+  </ol>
+  <p>Axe X ou Axe Y donnent une coupe verticale. Retourner change le côté gardé.
+  Pour retirer la coupe : onglet « SECTIONS », « Tout effacer ».</p>
+  <p class="cle">Le plan de niveau du dossier est coupé à 1 m une fois pour toutes. Dans la maquette,
+  vous choisissez la hauteur de coupe.</p>
+</section>
+
+<section>
+  <h2>Geste 10 : mesurer une surface et une longueur</h2>
+  <img class="capture" src="illustrations/g09-11-mesurer.webp" width="1200" height="749" alt="En haut, l'onglet Mesure : boutons Surface et Longueur encadrés, puis la case Résultat. En bas à gauche, la toiture surlignée en rose avec la mesure 132,926 mètres carrés. En bas à droite, l'arête verticale de l'angle vitré du rez-de-chaussée mesurée à 3,100 mètres.">
+  <p>Si une coupe est en place, retirez-la d'abord : onglet « SECTIONS », « Tout effacer », puis vue « Défaut ».</p>
+  <p>Onglet « MESURE ». Cochez d'abord <strong>Ignorer transparents</strong> :
+  sinon le clic prend le volume bleu transparent posé sur le toit.</p>
+  <ol class="etapes">
+    <li>« Surface » (le bouton affiche « Surface : Même plan ») : cliquez une face. Sa surface s'affiche, en m².</li>
+    <li>« Longueur », petite flèche, « Arête » : cliquez une arête. Sa longueur s'affiche, en m.</li>
+    <li>Le résultat s'affiche dans la vue et dans la case Résultat. Effacer mesures remet à zéro.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Mode Surface, je clique la toiture verte : 132,926 m². Mode Arête, je clique l'arête verticale
+    de l'angle vitré du rez-de-chaussée : 3,100 m. C'est la hauteur d'un étage.</p>
+  </div>
+</section>
+
+<section>
+  <h2>La maquette et les plans</h2>
+  <p>Le chantier vous donne les deux : la maquette et les plans PDF. Passer de l'un à l'autre
+  est la compétence finale de cette gare :</p>
   <ul>
-    <li><strong>cacher un étage</strong> pour voir celui du dessous ;</li>
-    <li><strong>isoler une famille</strong> : afficher seulement les cloisons,
-    ou seulement la toiture ;</li>
-    <li>faire une <strong>coupe en direct</strong> : trancher la maquette où vous voulez —
-    le plan de niveau de la gare 4, mais que VOUS choisissez. Dans BIM Vision : onglet <strong>Affichage</strong>, bouton <strong>Coupe</strong>,
-    choisissez l'axe (X, Y ou Z), puis déplacez le plan de coupe ;</li>
+    <li>retrouver dans la maquette la pièce que montre un plan ;</li>
+    <li>vérifier sur la maquette un doute du plan, et inversement ;</li>
+    <li>orienter la maquette comme le plan (le nord de la gare 4).</li>
   </ul>
-  <p class="cle">C'est la super-force de la maquette : le plan de niveau est coupé
-  à 1 m une fois pour toutes ; la maquette se coupe où vous voulez, quand vous voulez.</p>
-</section>
-
-<section>
-  <h2>Cliquer = lire la fiche</h2>
-  <p>Un clic sur un élément le met en surbrillance et ouvre ses
-  <strong>propriétés</strong> : nom, type, matériau, épaisseur, surface, étage…</p>
-  <p class="cle">Réflexe d'évaluation ET de chantier : la question « quelle est
-  l'épaisseur de cette cloison ? » se répond en UN clic dans la maquette —
-  là où le plan 2D vous obligeait à chercher la cote ou le détail.</p>
-  <p>Mais attention, la règle de la gare 3 reste : la maquette a elle aussi
-  ses versions. On travaille sur la maquette à jour, pas sur celle du mois dernier.</p>
-</section>
-
-<section>
-  <h2>3D ↔ 2D : le pont</h2>
-  <p>L'évaluation (et le chantier) vous donneront LES DEUX : la maquette et les plans
-  PDF. Le va-et-vient est la compétence finale de cette gare :</p>
-  <ul>
-    <li>retrouver dans la maquette la pièce que montre la coupe PDF ;</li>
-    <li>vérifier sur la maquette un doute du plan (et inversement) ;</li>
-    <li>orienter la maquette comme le plan (le nord de la gare 4 !).</li>
-  </ul>
-  <p class="cle">Le TP se fait sur poste, avec la maquette fournie par l'enseignant
-  et le didacticiel BIM Vision. L'exercice papier de la gare prépare et accompagne
-  ce passage sur machine.</p>
+  <p class="cle">La règle de la gare 3 vaut aussi pour la maquette : elle a ses versions.
+  On travaille sur la maquette à jour.</p>
 </section>
 
 <section id="ecran-test">
@@ -143,15 +281,15 @@
 
 <section>
   <h2>Terminus de la gare 9</h2>
-  <p>Naviguer, filtrer, cliquer-lire, faire le pont 3D ↔ 2D : la maquette est
+  <p>Avec ces dix gestes, la maquette est
   devenue un document de plus dans votre dossier technique.</p>
   <p style="text-align:center;margin:22px 0">
     <a class="tele" href="exercice.pdf" download>📄 Télécharger la fiche de TP (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant : corrigé dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
-  La fiche accompagne le TP sur poste : vocabulaire, gestes à valider, et
-  questions sur la maquette ouverte (BIM Vision + IFC pédagogique).</p>
-  <p>Prochaine gare : <strong>le sujet guidé</strong> — un vrai sujet, accompagné pas à pas.</p>
+  La fiche se remplit sur poste, BIM Vision ouvert sur la maquette d'exemple :
+  vocabulaire, gestes à valider, valeurs lues dans la maquette, coupe et mesures.</p>
+  <p>Prochaine gare : <strong>le sujet guidé</strong>, un vrai sujet, accompagné question par question.</p>
 <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
   <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
 </section>
@@ -163,12 +301,12 @@
   "e": "Une maquette BIM, c'est :",
   "r": [
    "une photo 3D du bâtiment",
-   "le bâtiment en 3D",
+   "le bâtiment en 3D, avec la fiche de chaque élément",
    "un plan scanné",
    "une vidéo du chantier filmée par un drone de surveillance"
   ],
   "bon": 1,
-  "x": "3D + informations : chaque élément porte sa fiche (matériau, dimensions…)."
+  "x": "3D et informations : chaque élément porte sa fiche (matériau, dimensions)."
  },
  {
   "e": "Le format IFC sert à :",
@@ -179,7 +317,7 @@
    "protéger la maquette du bâtiment par un mot de passe"
   ],
   "bon": 1,
-  "x": "L'IFC est le format d'échange universel : l'architecte exporte, tout le monde ouvre."
+  "x": "L'IFC est le format d'échange : l'architecte exporte, tout le monde ouvre."
  },
  {
   "e": "BIM Vision permet de :",
@@ -193,59 +331,59 @@
   "x": "C'est une visionneuse : consulter, pas concevoir. Et elle est gratuite."
  },
  {
-  "e": "Pour tourner autour du bâtiment (orbite), vous utilisez :",
+  "e": "Pour tourner autour du bâtiment, vous utilisez :",
   "r": [
-   "le clic gauche maintenu",
+   "le clic gauche maintenu, puis glisser",
    "la touche Entrée",
    "un double-clic",
    "l'impression d'écran en haute définition"
   ],
   "bon": 0,
-  "x": "Clic gauche = orbite, molette = zoom, molette maintenue = déplacement."
+  "x": "Clic gauche maintenu : tourner. Molette : zoomer. Molette enfoncée : se déplacer."
  },
  {
-  "e": "Vous ne vous repérez plus dans la maquette : tout a disparu de l'écran. Vous :",
+  "e": "Après un zoom, le bâtiment est sorti de l'écran. Toutes les cases de la colonne Actif sont cochées. Vous cliquez :",
   "r": [
-   "fermez le logiciel",
-   "cliquez « zoom tout / vue d'accueil »",
-   "secouez la souris",
-   "redémarrez le poste et rouvrez le fichier"
+   "la croix de fermeture du logiciel",
+   "Réinitialiser le zoom, onglet AFFICHAGE",
+   "Effacer mesures, onglet MESURE",
+   "Ouvrir, menu FICHIER, pour recharger le fichier"
   ],
   "bon": 1,
-  "x": "Le bouton panique recadre la maquette entière : aucun naufrage définitif."
+  "x": "Réinitialiser le zoom recadre toute la maquette au centre de l'écran."
  },
  {
-  "e": "Pour ne voir QUE les cloisons de l'étage 1 :",
+  "e": "Pour voir le rez-de-chaussée sans l'étage ni la toiture :",
   "r": [
-   "on zoome très fort sur la seule zone qui nous intéresse",
+   "on zoome très fort sur le rez-de-chaussée",
    "on imprime le plan",
-   "on cache ou filtre le reste dans l'arbre des objets",
+   "on décoche Level 2 et Roof dans la colonne Actif de la structure IFC",
    "c'est impossible"
   ],
   "bon": 2,
-  "x": "L'arbre des objets isole familles et étages : la maquette se fait sur mesure."
+  "x": "Une case décochée masque l'étage. On la recoche pour le revoir."
  },
  {
-  "e": "L'épaisseur d'une cloison, dans la maquette, se lit :",
+  "e": "L'épaisseur d'un mur, dans BIM Vision, se lit :",
   "r": [
-   "en cliquant la cloison",
+   "dans les propriétés du mur cliqué, ligne Width",
    "en mesurant l'épaisseur à la règle sur l'écran",
    "dans le cartouche",
-   "impossible sans le plan papier"
+   "dans le nom du fichier"
   ],
   "bon": 0,
-  "x": "Un clic = la fiche : nom, matériau, épaisseur, étage."
+  "x": "Un clic sur le mur, puis la ligne Width : l'épaisseur totale, en mètres."
  },
  {
-  "e": "La coupe « en direct » dans la maquette :",
+  "e": "La coupe dans la maquette (onglet SECTIONS) :",
   "r": [
    "est fixée à 1 m comme le plan de niveau",
-   "se place où l'on veut, quand on veut",
-   "détruit la maquette",
+   "se place à la hauteur choisie, avec la case Offset",
+   "efface la maquette",
    "n'existe pas"
   ],
   "bon": 1,
-  "x": "C'est l'avantage sur le papier : la coupe se déplace librement."
+  "x": "On règle la hauteur de coupe dans Offset. Le plan papier, lui, est coupé à 1 m une fois pour toutes."
  },
  {
   "spec": "Spécialité MPI",
@@ -257,19 +395,19 @@
    "la météo du chantier"
   ],
   "bon": 1,
-  "x": "La détection des conflits entre corps d'état : LA plus-value chantier du BIM."
+  "x": "La maquette montre les conflits entre corps de métier avant le chantier."
  },
  {
   "spec": "Spécialité ETAM",
-  "e": "Pour étudier la toiture-terrasse dans la maquette, le plus efficace :",
+  "e": "Pour connaître la surface de la toiture-terrasse dans BIM Vision :",
   "r": [
-   "zoomer depuis la rue",
-   "isoler la toiture en cachant les étages",
-   "imprimer la maquette en grand format sur papier",
-   "chercher une photo"
+   "on la devine en regardant la vue 3D",
+   "onglet MESURE, mode Surface, on clique la toiture",
+   "on imprime la maquette en grand format sur papier",
+   "on cherche une photo"
   ],
   "bon": 1,
-  "x": "On isole la toiture : émergences et naissances EP apparaissent seules, en 3D."
+  "x": "Le mode Surface donne la surface de la face cliquée, en m² (Ignorer transparents coché)."
  }
 ]
 </script>
