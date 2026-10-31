@@ -64,6 +64,17 @@ export const PRODUITS = [
     coffre: "cablage-virtuel/coffre-<millésime>",
     espace: "cablage-virtuel/documents-professeur.html",
   },
+  {
+    // 31/10/2026 — décision 41 du réseau Bureau d'études : aucun corrigé en accès
+    // libre. Le coffre (corrigés des stations et des gares de la ligne P) est
+    // fabriqué à l'atelier (D:/git/bureau-etudes, outils/chiffrer-coffre.mjs) et
+    // livré par son livrer.mjs ; il n'est jamais édité ici.
+    indice: 6,
+    id: "bureau-etudes",
+    nom: "inerWeb Bureau d'études",
+    coffre: "bureau-etudes/coffre-<millésime>",
+    espace: "bureau-etudes/documents-professeur.html",
+  },
 ];
 
 /* --------------------------------------------------------------------
