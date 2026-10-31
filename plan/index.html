@@ -49,6 +49,12 @@ h1{color:var(--navy);font-size:1.65em;margin:0}
 footer{color:var(--muted);font-size:.85em;text-align:center;margin-top:26px;
   border-top:1px solid rgba(27,58,99,.14);padding-top:14px}
 footer a{color:var(--navy)}
+
+/* Téléphone : texte à 14 px au moins (audit téléphone 23/10/2026). Rien ne change au-dessus de 760 px.
+   Le plan est un grand schéma : « ⤢ Agrandir » (moteur/agrandir.js) l'ouvre en plein écran. */
+@media (max-width:760px){
+  header p[style*="font-size:.85em"], footer{font-size:14px!important}
+}
 </style>
 <script defer src="../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
 </head>
