@@ -1,0 +1,80 @@
+{
+  "numero": 24,
+  "titre": "Calculer les besoins d’eau chaude sanitaire d’un logement et vérifier son ballon",
+  "ligne": "Hydraulique",
+  "code": "BE-H6",
+  "quand": "Quand un logement doit recevoir un chauffe-eau et que le CCTP donne les occupants, les litres par personne et par jour, les températures et le ballon. Il n’y a pas de station à faire avant. Vous avez la page du CCTP et les données du maître d’ouvrage. Vous obtenez le besoin journalier, l’énergie par jour, le volume équivalent à la température de stockage, le temps de chauffe du ballon, la pointe du soir, le tube le plus long et les températures de l’arrêté.",
+  "methode": [
+    "Besoin à 40 °C : V40 (L par jour) = n × l, avec n occupants et l litres par personne et par jour.",
+    "Énergie utile : E (Wh) = V × 1,163 × (θ chaude − θ froide). Divisez par 1 000 pour les kWh. Un écart de 1 K vaut un écart de 1 °C.",
+    "Volume équivalent à la température de stockage : V stock = V40 × (40 − θ froide) ÷ (θ stock − θ froide). Le ballon doit contenir au moins V stock (règle de cette station). Plein, il donne V ballon × (θ stock − θ froide) ÷ (40 − θ froide) à 40 °C.",
+    "Chauffe complète : E = V ballon × 1,163 × (θ stock − θ froide) ; t (h) = E ÷ P thermique ; la partie décimale × 60 donne les minutes. P électrique = P thermique ÷ COP.",
+    "Heures creuses : P = E ÷ durée en heures ; la pompe à chaleur suffit si sa puissance thermique est au moins égale.",
+    "Pointe : E = V40 de la pointe × 1,163 × (40 − θ froide) ; puissance en instantané = E ÷ t, avec t en heures ; remontée du ballon = E ÷ P thermique, puis × 60 pour les minutes.",
+    "Tube le plus long : V (L) = π ÷ 4 × d² (m²) × L (m) × 1 000, avec le diamètre intérieur. Au-delà de 3 L entre la production et le point de puisage le plus éloigné, le réseau garde 50 °C au moins en tout point (bouclage) ; sous 3 L, aucun bouclage n’est nécessaire.",
+    "Températures : 50 °C au plus aux points de puisage de la toilette, 60 °C au plus aux autres, 50 °C au moins en tout point d’un réseau de plus de 3 L hors tubes finaux de 3 L au plus, 55 °C au moins à la sortie du stockage dès 400 L (arrêté du 23 juin 1978 modifié, art. 36).",
+    "Sur la feuille, écrivez la source de chaque donnée : page du CCTP, commande, arrêté."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Constante de l’eau",
+      "valeur": "1,163 Wh/(L.K)",
+      "source": "4 185 J/(kg.K), soit 1,163 Wh/(L.K) avec 1 kg par litre : constante physique (HydroMétro, stations « Puissance » et « Énergie »)"
+    },
+    {
+      "grandeur": "Température d’usage du besoin",
+      "valeur": "40 °C",
+      "source": "convention de cette station ; le CCTP de la maison l’écrit page 5"
+    },
+    {
+      "grandeur": "Points de puisage de la toilette",
+      "valeur": "50 °C au plus",
+      "source": "arrêté du 23 juin 1978 modifié, art. 36"
+    },
+    {
+      "grandeur": "Autres points de puisage",
+      "valeur": "60 °C au plus",
+      "source": "arrêté du 23 juin 1978 modifié, art. 36"
+    },
+    {
+      "grandeur": "Réseau de plus de 3 L",
+      "valeur": "50 °C au moins en tout point, hors tubes finaux de 3 L au plus",
+      "source": "arrêté du 23 juin 1978 modifié, art. 36"
+    },
+    {
+      "grandeur": "Sortie du stockage dès 400 L",
+      "valeur": "55 °C au moins, ou montée quotidienne : 60 °C une heure, 65 °C une demi-heure, 70 °C deux minutes",
+      "source": "arrêté du 23 juin 1978 modifié, art. 36"
+    },
+    {
+      "grandeur": "Ballon",
+      "valeur": "au moins le volume équivalent de la journée",
+      "source": "règle de cette station ; sur un vrai projet, le profil de soutirage du fabricant"
+    }
+  ],
+  "exemple": {
+    "enonce": "Appartement d’exemple (valeurs d’exercice) : 3 personnes, 40 L par personne et par jour à 40 °C ; eau froide 12 °C ; stockage à 60 °C ; ballon de 100 L ; pompe à chaleur de 1 500 W thermiques, COP 2,8 ; pointe d’une douche de 40 L à 40 °C en 10 minutes ; heures creuses de 5 h ; tube le plus long de 20 m, 12 mm de diamètre intérieur.",
+    "lignes": [
+      "V40 = 3 × 40 = 120 L par jour.",
+      "E = 120 × 1,163 × (40 − 12) = 3 908 Wh, soit 3,9 kWh.",
+      "V stock = 120 × (40 − 12) ÷ (60 − 12) = 70 L. Le ballon de 100 L suffit et donne 171 L à 40 °C.",
+      "Chauffe complète : E = 100 × 1,163 × (60 − 12) = 5 582 Wh ; t = 5 582 ÷ 1 500 = 3,72 h, soit 3 h 43 min.",
+      "P électrique = 1 500 ÷ 2,8 = 536 W.",
+      "Heures creuses : P = 5 582 ÷ 5 = 1 116 W, inférieure à 1 500 W : la pompe à chaleur suffit.",
+      "Pointe : 40 × 1,163 × (40 − 12) = 1 303 Wh ; en 10 minutes, 1 303 ÷ (10 ÷ 60) = 7 818 W en instantané ; remontée : 1 303 ÷ 1 500 = 0,87 h, soit 52 min.",
+      "Tube : π ÷ 4 × 0,012² × 20 × 1 000 = 2,26 L, sous 3 L : pas de bouclage."
+    ],
+    "resultat": "3,9 kWh par jour, ballon de 100 L suffisant, chauffe en 3 h 43 min, 536 W électriques, pointe de 7 818 W en instantané, tube de 2,26 L, pas de bouclage (valeurs d’exercice)."
+  },
+  "pieges": [
+    "Eau froide oubliée : 5,6 kWh au lieu de 3,9 kWh pour l’appartement d’exemple.",
+    "Minutes prises pour des heures dans la pointe : 130 W au lieu de 7 818 W. Puissance électrique prise pour le temps de chauffe : 10 h 25 min au lieu de 3 h 43 min.",
+    "Diamètre extérieur pris pour le diamètre intérieur : 3,08 L au lieu de 2,26 L, et un bouclage conclu à tort."
+  ],
+  "sources": [
+    "Constante de l’eau : 4 185 J/(kg.K), soit 1,163 Wh/(L.K) avec 1 kg par litre : constante physique (HydroMétro, stations « Puissance » et « Énergie »). Températures et seuils de 3 L et de 400 L : arrêté du 23 juin 1978 relatif aux installations fixes destinées au chauffage et à l’alimentation en eau chaude sanitaire des bâtiments d’habitation, de bureaux ou recevant du public, art. 36 dans sa rédaction de l’arrêté du 30 novembre 2005 (texte consolidé lu le 31/10/2026 ; version officielle sur Légifrance).",
+    "Stations en correspondance : HydroMétro « Puissance », « Énergie », « Boucle » et « Dimensionner une distribution d’eau sanitaire », CartoClim « Le chauffe-eau thermodynamique », BE-F1.",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

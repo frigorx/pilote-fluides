@@ -1,0 +1,67 @@
+{
+  "numero": 7,
+  "titre": "Calculer les déperditions par l’air",
+  "ligne": "Thermique",
+  "code": "BE-T4",
+  "quand": "Après les déperditions par les parois (station T3), avant le bilan d’hiver (station T5). Vous avez les températures de calcul et la ventilation du CCTP, le volume de chaque pièce (station T1) et le Φ des parois de chaque pièce (station T3). Vous obtenez, pour chaque pièce, le débit d’air neuf, Hv et Φv, puis le total parois et air.",
+  "methode": [
+    "Écart de température : ΔT (K) = θi − θe, avec θe souvent négative.",
+    "Débit retenu : le débit que la ventilation assure en permanence (VMC hygroréglable : débit total minimal de l’art. 4 de l’arrêté du 24 mars 1982, lu au CCTP), pas la pointe des bouches (art. 3). Choix de l’exercice.",
+    "Simple flux : les infiltrations sont comprises dans le débit extrait ; on ne les ajoute pas.",
+    "Pièces principales (séjour, chambres) : elles reçoivent l’air neuf. qv de la pièce = qv retenu × V pièce ÷ somme des V des pièces principales (règle de l’exercice).",
+    "Pièces de service et circulations : air de transfert à θi, Φv = 0 W.",
+    "Hv (W/K) = 0,34 × qv (m³/h). Φv (W) = Hv × ΔT. Ne pas diviser par 3 600.",
+    "Pièce complète : Φ total = Φ des parois (T3) + Φv. Part de l’air = Φv ÷ Φ total × 100.",
+    "Double flux : débit à chauffer = qv × (1 − η) + qinf, puis Φv = 0,34 × débit à chauffer × ΔT."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Coefficient de l’air",
+      "valeur": "0,34 Wh/(m³.K)",
+      "source": "Th-Bât Généralités, § 5.1, p. 18 (UV,ue = 0,34 que)"
+    },
+    {
+      "grandeur": "Même coefficient, autre écriture",
+      "valeur": "0,33 à la formule 6 ; écart de 3 %",
+      "source": "Th-Bât Généralités, § 5.1, p. 17"
+    },
+    {
+      "grandeur": "Débits extraits d’un logement",
+      "valeur": "Art. 3 : débits à atteindre ; art. 4 : débit total minimal avec réglage",
+      "source": "Arrêté du 24 mars 1982, lu au CCTP de la maison"
+    },
+    {
+      "grandeur": "Efficacité d’un échangeur double flux",
+      "valeur": "entre 0 et 1, donnée par le fabricant",
+      "source": "Valeur d’exercice dans cette station"
+    },
+    {
+      "grandeur": "Débit d’infiltration",
+      "valeur": "en m³/h, estimé par le bureau d’études",
+      "source": "Valeur d’exercice dans cette station"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment du bureau d’exemple : bureau 49,76 m³ et salle de réunion 52,00 m³ (pièces principales) ; débit permanent 75 m³/h (sanitaires 45 m³/h et coin repas 30 m³/h) ; θi = 19 °C, θe = −7 °C, ΔT = 26 K. Valeurs d’exercice.",
+    "lignes": [
+      "Somme des volumes des pièces principales : 49,76 + 52,00 = 101,76 m³.",
+      "Bureau : qv = 75 × 49,76 ÷ 101,76 = 36,67 m³/h ; Hv = 0,34 × 36,67 = 12,47 W/K ; Φv = 324 W.",
+      "Salle de réunion : qv = 75 × 52,00 ÷ 101,76 = 38,33 m³/h ; Φv = 339 W.",
+      "Bâtiment : 0,34 × 75 × 26 = 663 W, égal à 324 + 339.",
+      "Bureau complet : 687 W de parois (T3) + 324 W d’air = 1011 W ; part de l’air 32,0 %.",
+      "Double flux, η = 0,70, infiltrations 10 m³/h : 75 × (1 − 0,70) + 10 = 32,5 m³/h ; Φv = 287 W."
+    ],
+    "resultat": "Φv = 663 W pour le bâtiment d’exemple en simple flux, 287 W en double flux (valeurs d’exercice)."
+  },
+  "pieges": [
+    "Diviser par 3 600 : le 0,34 contient déjà les heures.",
+    "Calculer avec le volume de la pièce au lieu de son débit, ou donner tout le débit à une seule pièce.",
+    "Ajouter les infiltrations en simple flux ; les oublier, ou les faire passer par l’échangeur, en double flux."
+  ],
+  "sources": [
+    "Règles Th-Bât 2017, fascicule Généralités, § 5.1, p. 17 et 18 (coefficient de l’air). Arrêté du 24 mars 1982, art. 3 et 4, lu au CCTP de la maison (page 4).",
+    "Stations en correspondance : BE-T1 (volumes), BE-T3 (parois), BE-T5 (bilan), AéroRézo « Air neuf et sélection », « La récupération de chaleur », « Déperditions d’une pièce ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

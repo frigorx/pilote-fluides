@@ -247,3 +247,7 @@ body{font-size:17px}
 /* Image de mise en situation sous la consigne (décision 31, 30/10/2026). */
 .lesson-illu{display:block;width:100%;max-height:230px;object-fit:contain;margin-top:10px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}.lesson-illu[hidden]{display:none}
 @media (max-width:650px){.lesson-illu{max-height:160px}}
+/* Rangée Documents d'une station (01/11/2026) : feuille réponse, page du livre, CCTP, en PDF ; liens de 44 px au doigt. */
+.documents-station{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:10px 0 0;padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--paper);font-size:16px}
+.documents-station a{display:inline-flex;align-items:center;min-height:44px;color:var(--orange-dark);font-weight:800}
+.documents-station span{color:var(--muted);font-size:15px}

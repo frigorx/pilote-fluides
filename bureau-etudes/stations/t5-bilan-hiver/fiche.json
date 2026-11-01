@@ -1,0 +1,74 @@
+{
+  "numero": 8,
+  "titre": "Faire le bilan d’hiver d’un bâtiment et trouver la puissance à installer",
+  "ligne": "Thermique",
+  "code": "BE-T5",
+  "quand": "Après les déperditions des pièces par leurs parois (station T3) et par le renouvellement d’air (station T4), avant le bilan d’été (stations T6 à T8) et le choix de la machine (station T9). Vous avez les tableaux des pièces, H air, les températures du CCTP et les deux forfaits de la commande. Vous obtenez Φ base, la puissance à installer et la première page de la note de calcul.",
+  "methode": [
+    "H parois (W/K) : somme des H des pièces chauffées (tableaux de la station T3), ou somme des U × A × b par familles de parois. Les deux se contrôlent l’une l’autre.",
+    "H ponts (W/K) = forfait × H parois, quand ψ et la longueur de chaque liaison ne sont pas connus. Calcul détaillé : somme des ψ × l × b.",
+    "H air (W/K) = 0,34 × qv, qv en m³/h (station T4). Chaque pièce reçoit sa part d’air de T4 ; leur somme, H air, se compte une seule fois.",
+    "H (W/K) = H parois + H ponts + H air.",
+    "ΔT (K) = θi − θe, températures du CCTP.",
+    "Φ base (W) = H × ΔT.",
+    "Relance (W) = forfait × Φ base ; puissance à installer (W) = Φ base + relance, arrondie au dixième de kW au-dessus.",
+    "Tableau local par local : Φ du local = (H parois + H ponts) × ΔT + sa part d’air. Ratio (W/m²) = Φ ÷ surface habitable : un repère pour repérer une erreur grossière.",
+    "Les apports gratuits (soleil, occupants, appareils) ne se retranchent pas. Le garage et le comble n’ont pas de ligne : seulement leur b.",
+    "Première page de la note : objet, données d’entrée et sources, hypothèses, méthode, résultats, puissance à installer."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Transmission du bâtiment",
+      "valeur": "Σ U × A × b + Σ ψ × l × b + Σ χ × b",
+      "source": "Th-Bât Généralités, § 4.3, formule 3, p. 16 et 17"
+    },
+    {
+      "grandeur": "Liaison négligeable",
+      "valeur": "ψ < 0,03 W/(m.K)",
+      "source": "Th-Bât Généralités, § 3.4, p. 13"
+    },
+    {
+      "grandeur": "Coefficient de l’air",
+      "valeur": "0,34 Wh/(m³.K)",
+      "source": "Th-Bât Généralités, § 5.1, p. 18 (station T4)"
+    },
+    {
+      "grandeur": "Forfait des ponts thermiques",
+      "valeur": "20 % (exemple), 15 % (maison)",
+      "source": "Commande du bureau d’études, données de l’exercice"
+    },
+    {
+      "grandeur": "Surpuissance de relance",
+      "valeur": "15 % (exemple), 10 % (maison)",
+      "source": "Commande du bureau d’études, données de l’exercice"
+    },
+    {
+      "grandeur": "Allure réduite de nuit de la maison",
+      "valeur": "17 °C",
+      "source": "Station E2, valeur d’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Petit bâtiment de bureaux de plain-pied, trois locaux chauffés, 49,94 m² habitables. θi = 19 °C, θe = −7 °C (valeurs d’exercice), ΔT = 26 K. Forfaits de la commande : ponts 20 %, relance 15 %. qv = 110 m³/h.",
+    "lignes": [
+      "H parois = 26,44 + 30,95 + 7,47 = 64,86 W/K (par familles : 64,85 W/K).",
+      "H ponts = 0,20 × 64,86 = 12,97 W/K.",
+      "H air = 0,34 × 110 = 37,40 W/K.",
+      "H = 64,86 + 12,97 + 37,40 = 115,23 W/K.",
+      "Φ base = 115,23 × 26 = 2996 W ; ratio 2996 ÷ 49,94 = 60,0 W/m².",
+      "Relance = 0,15 × 2996 = 449 W ; puissance = 2996 + 449 = 3445 W."
+    ],
+    "resultat": "puissance à installer 3,5 kW"
+  },
+  "pieges": [
+    "Le forfait des ponts thermiques appliqué à H parois + H air.",
+    "H air oublié, ou compté deux fois (dans chaque pièce et pour le bâtiment).",
+    "La puissance arrondie en dessous, ou la relance oubliée."
+  ],
+  "sources": [
+    "Règles Th-Bât 2017, fascicule Généralités : § 3.4 (ponts thermiques des liaisons), § 4.3 (formule 3).",
+    "Stations en correspondance : BE-T3 (parois), BE-T4 (air), BE-T9 (machine), AéroRézo « Déperditions d’une pièce ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

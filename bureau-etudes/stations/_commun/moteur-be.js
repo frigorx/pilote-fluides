@@ -460,7 +460,8 @@
           + `<dl class="commande-champs">${champs.map(c => `<dt>${c[0]}</dt><dd>${esc(c[1])}</dd>`).join("")}</dl>`
           + `<div class="commande-corps">${paragraphes(p.commande).map(t => `<p>${esc(t)}</p>`).join("")}</div>`
           + (pieces.length ? `<table class="pieces"><caption>Pièces fournies</caption><thead><tr><th scope="col">Pièce</th><th scope="col">Où la trouver</th></tr></thead><tbody>${pieces.map(x => `<tr><td>${esc(x.piece)}</td><td>${esc(x.ou)}</td></tr>`).join("")}</tbody></table>` : "")
-          + `<p class="commande-actions"><a class="primary-button lien-feuille" href="feuille-N${esc(niveau)}.html" target="_blank" rel="noopener">Ouvrir la feuille réponse (A4 recto-verso, à imprimer)</a></p>`
+          + `<p class="commande-actions"><a class="primary-button lien-feuille" href="feuille-N${esc(niveau)}.html" target="_blank" rel="noopener">Remplir la feuille réponse à l’écran, puis l’imprimer</a></p>`
+          + documentsMarkup(niveau)
           + `<p class="rappel-source"><strong>Écrivez la source de chaque donnée : page du plan, vue de la maquette, texte cité.</strong></p></div>`;
       }
     }, over);
@@ -507,7 +508,7 @@
         let html = '<div class="emporter">';
         if (!jsonLu) html += `<p class="fichier-absent">Chargement de la fiche…</p>`;
         else if (!fiche) html += `<p class="fichier-absent">${esc(PHRASE_FILE)}</p>`;
-        else html += `<p><button type="button" class="primary-button" id="imprimer-fiche">Imprimer la fiche aide-mémoire</button></p>`;
+        else html += `<p><button type="button" class="primary-button" id="imprimer-fiche">Imprimer la fiche aide-mémoire</button></p>` + documentsMarkup(niveau);
         const livre = couv && couv.livre;
         if (livre) html += `<p class="ligne-livre">Fiche n° ${esc(livre.fiche)} du livre Bureau d’études CVC-R, chapitre ${esc(livre.chapitre)}</p>`;
         if (fiche && fiche.calculette) html += `<p class="renvoi">Calculette associée : <a href="${esc(fiche.calculette.href)}">${esc(fiche.calculette.titre)}</a></p>`;
@@ -521,6 +522,13 @@
         if (b) b.addEventListener("click", () => { buildPrintBook(); window.print(); });
       }
     }, over);
+  }
+
+  /* ---- Documents à télécharger (Franck, 01/11/2026) : feuille réponse, page du livre, CCTP de la maison ---- */
+  function documentsMarkup(n) {
+    const feuille = n <= 2 ? `<a href="feuille-N${esc(n)}.pdf" download>Feuille réponse, niveau ${esc(n)} (PDF)</a>` : "";
+    return `<p class="documents-station"><strong>Documents</strong> ${feuille}<a href="fiche.pdf" download>Page du livre (PDF)</a>`
+      + `<a href="../../fil-rouge/maison/cctp-maison.pdf" download>CCTP de la maison (PDF)</a> <span>A4, noir et blanc</span></p>`;
   }
 
   /* ---- Fiche aide-mémoire imprimable ---- */

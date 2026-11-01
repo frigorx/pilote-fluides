@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 563,
+  "total": 566,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2659,6 +2659,25 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "h6-eau-chaude-sanitaire",
+      "titre": "BE-H6, L’eau chaude sanitaire",
+      "ligne": "Hydraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP3",
+        "CP6",
+        "C3-3",
+        "B3-2"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/h6-eau-chaude-sanitaire/",
+      "chemin": "bureau-etudes/stations/h6-eau-chaude-sanitaire/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "p2b-traits-caches-et-vues",
       "titre": "BE-P2b, Traits cachés et vues",
       "ligne": "Lire les plans",
@@ -2750,6 +2769,43 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/t3-deperditions-local/",
       "chemin": "bureau-etudes/stations/t3-deperditions-local/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t4-deperditions-air",
+      "titre": "BE-T4, Déperditions par l’air",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP5",
+        "A2-3",
+        "B2-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t4-deperditions-air/",
+      "chemin": "bureau-etudes/stations/t4-deperditions-air/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t5-bilan-hiver",
+      "titre": "BE-T5, Le bilan d’hiver",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP5",
+        "C3-3",
+        "C12-3",
+        "A2-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t5-bilan-hiver/",
+      "chemin": "bureau-etudes/stations/t5-bilan-hiver/"
     },
     {
       "reseau": "HydroMétro",
@@ -7232,7 +7288,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7244,7 +7300,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7256,7 +7312,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7268,7 +7324,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7280,7 +7336,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7292,7 +7348,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",
