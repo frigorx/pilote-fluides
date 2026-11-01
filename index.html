@@ -124,6 +124,9 @@
                text-decoration:none; font-weight:bold; font-size:15px; line-height:1.3; }
   .p-liens a:hover { background:var(--bleu); color:#fff; }
 
+  /* ---- L'établissement partenaire : le bandeau est posé par moteur/etablissement.js ---- */
+  .partenaire { margin-top:28px; }
+
   /* ---- Le bas : tout le site, les films ---- */
   .tout { margin:28px 0 10px; padding:18px 20px; background:var(--carte); border:1px solid var(--ligne);
           border-radius:var(--r); display:flex; gap:12px 18px; align-items:center; flex-wrap:wrap; }
@@ -145,8 +148,8 @@
   }
 
   /* ---- Le volet de communication (repris de l'ancien accueil, 17/09/2026) ----
-     Ouvert à l'arrivée sur grand écran, où il pousse la page ; replié sur téléphone,
-     avec une bande d'aperçu sous le menu. Aucune mention d'établissement : voir son pied. */
+     Ouvert à l'arrivée à partir de 1100 px, où il pousse la page sans la recouvrir ; replié en dessous,
+     avec une bande d'aperçu sous le menu. L'établissement partenaire y est posé par moteur/etablissement.js. */
   .volet { position:fixed; top:0; left:0; z-index:60; width:min(330px,86vw); height:100%;
            background:var(--carte); border-right:1px solid var(--ligne);
            box-shadow:4px 0 18px rgba(27,58,99,.14); display:flex; flex-direction:column; }
@@ -158,6 +161,9 @@
   .volet-fermer { margin-left:auto; flex:none; font:inherit; font-size:22px; line-height:1; cursor:pointer; background:none;
                   border:1.5px solid var(--ligne); border-radius:50%; width:42px; height:42px; color:var(--mut); }
   .volet-fermer:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+  .volet-fermer-bas { align-self:flex-start; margin-top:6px; font:inherit; font-size:15px; font-weight:bold; cursor:pointer;
+                      background:var(--bleu); color:#fff; border:0; border-radius:999px; padding:10px 22px; }
+  .volet-fermer-bas:hover { background:var(--bleu-clair); }
   .volet-corps { overflow-y:auto; padding:12px 16px 18px; display:flex; flex-direction:column; gap:10px; }
   .volet-bloc { border:1px solid var(--ligne); border-radius:10px; padding:11px 13px; background:#fbfdff; }
   .volet-bloc h3 { margin:0 0 3px; font-family:var(--titre); font-size:14.5px; color:var(--bleu); }
@@ -173,7 +179,7 @@
                    cursor:pointer; background:var(--bleu); color:#fff; border:0; border-radius:0 10px 10px 0;
                    padding:9px 13px; box-shadow:2px 2px 8px rgba(27,58,99,.2); }
   .volet-poignee:hover { background:var(--bleu-clair); }
-  @media (max-width: 700px) {
+  @media (max-width: 1099px) {
     .volet-poignee { position:static; display:block; width:100%; border-radius:0; padding:12px 16px;
                      text-align:left; font-size:14.5px; box-shadow:none; }
     .volet-poignee.apercu { display:flex; flex-direction:column; gap:6px; background:var(--carte);
@@ -193,10 +199,10 @@
   }
   @media (prefers-reduced-motion: reduce) { .volet.pret { transition:none; } }
   .page { transition:margin-left .22s ease; }
-  @media (min-width:1100px) { body.volet-ouvert .page { margin-left:350px; margin-right:auto; } }
+  @media (min-width:1100px) { body.volet-ouvert .page, body.volet-ouvert .entete .dedans { margin-left:350px; margin-right:auto; } }
   @media (prefers-reduced-motion: reduce) { .page { transition:none; } }
-  /* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
-  @media (max-width:760px){
+  /* Écrans étroits (audit téléphone 23/10/2026) : texte à 14 px au moins, aperçu du volet compris. */
+  @media (max-width:1099px){
     .volet-sous, .volet-actus li strong, .volet-actus li a, .volet-bloc p, .volet-bloc p strong, .volet-bloc p a, .volet-libre,
     .volet-pied, .volet-pied strong, .volet-pied em, .ap-appel, .ap-puces > span, .pastille, .hero-logo { font-size:14px !important; }
   }
@@ -215,55 +221,39 @@
   </div>
   <div class="volet-corps">
 
+    <!-- L'établissement partenaire : maquette tant que moteur/etablissement.js n'est pas réglé
+         (INERWEB_ETABLISSEMENT.actif). Le bandeau complet est plus bas, ancre #etablissement. -->
+    <div class="volet-bloc ouvert" data-etablissement="volet"></div>
+
     <div class="volet-bloc">
       <h3>📰 Actualités</h3>
-      <!-- Rempli par le script du volet avec les trois dernières actualités du journal
+      <!-- Rempli par le script du volet avec la dernière actualité du journal
            #nouveautes (27/09, F. Henninot : « rentrer quelque chose à chaque fois
            qu'on améliore le site ») : on n'écrit plus qu'à un seul endroit. -->
       <ul class="volet-actus" id="volet-actus"></ul>
-      <p>🚧 <strong>Réseau en travaux</strong> : les contenus continuent d’être relus et améliorés.<br>
-      <a href="reseaux.html#nouveautes"><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
+      <p><a href="reseaux.html#nouveautes"><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
     </div>
 
-    <div class="volet-bloc ouvert">
+    <div class="volet-bloc">
       <h3>🤝 Partenaires &amp; bêta-testeurs</h3>
-      <p><strong>inerWeb Fluide</strong> — le logiciel de traçabilité des fluides frigorigènes — cherche des centres de formation et des professionnels pour l’essayer avant sa sortie.<br>
+      <p><strong>inerWeb Fluide</strong> est le logiciel de traçabilité des fluides frigorigènes. Il cherche des centres de formation et des professionnels pour l’essayer avant sa sortie.<br>
       <!-- Voir AVANT de se proposer : la DÉMONSTRATION EN LIGNE directement
            (la v8, celle du README du dépôt Fluide — pas la page vitrine :
-           correction F. Henninot, 19/08 au soir), la candidature ensuite. -->
-      <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener"><strong>👀 Essayer la démonstration en ligne ▸</strong></a><br>
-      <a href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">📄 Télécharger la présentation (PDF, 2 pages) ▸</a><br>
-      <a href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Puis se proposer comme bêta-testeur ▸</a></p>
+           correction F. Henninot, 19/08 au soir). -->
+      <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener"><strong>👀 Essayer la démonstration en ligne ▸</strong></a></p>
     </div>
 
-    <!-- 06/10/2026 : la chaîne YouTube. Placée en TROISIÈME bloc : l'aperçu téléphone
-         lit les actualités (bloc 1) et l'appel aux partenaires (bloc 2) par leur rang,
-         les suivants deviennent des pastilles. -->
+    <!-- 06/10/2026 : la chaîne YouTube. L'aperçu qui s'affiche sous 1100 px prend les blocs
+         à partir du troisième (rang 2) pour en faire des pastilles : garder cet ordre. -->
     <div class="volet-bloc">
       <h3>🎥 La chaîne YouTube</h3>
-      <p>Les films d’inerWeb Studio en vidéo : le Voyage dans tous ses états, la régulation, la sécurité à l’atelier…<br>
+      <p>Les films d’inerWeb Studio en vidéo.<br>
       <a href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener"><strong>▶ Voir la chaîne inerWeb FR ▸</strong></a></p>
     </div>
 
-    <div class="volet-bloc">
-      <h3>🎓 Stages et PFMP</h3>
-      <p>Emplacement prévu pour un établissement qui cherche des terrains de stage : périodes, filières, contact.</p>
-      <span class="volet-libre">espace libre</span>
-    </div>
+    <p class="volet-pied">inerWeb est un <strong>projet personnel et indépendant</strong>, développé par inerweb.fr. L’espace « établissement partenaire » est réservé au lycée qui accueille ses ateliers : il s’affichera avec son accord.</p>
 
-    <div class="volet-bloc">
-      <h3>🔧 Recruter un apprenti</h3>
-      <p>Emplacement prévu pour présenter des jeunes formés au froid et à la climatisation à des entreprises qui recrutent.</p>
-      <span class="volet-libre">espace libre</span>
-    </div>
-
-    <div class="volet-bloc">
-      <h3>💛 Soutenir une formation</h3>
-      <p>Emplacement prévu pour un appel au soutien : taxe d’apprentissage, dons de matériel, équipement d’atelier.</p>
-      <span class="volet-libre">espace libre</span>
-    </div>
-
-    <p class="volet-pied">inerWeb est un <strong>projet personnel et indépendant</strong>, sans lien avec aucune institution — développé par inerweb.fr <em>(voir « Le mot de l’auteur », en bas de la page « Tout inerWeb »)</em>. Les trois espaces libres ci-dessus sont proposés sans contrepartie à un établissement de formation qui souhaiterait s’en servir ; ils ne représentent aujourd’hui aucune structure.</p>
+    <button type="button" class="volet-fermer-bas" id="volet-fermer-bas">Fermer le panneau</button>
   </div>
 </aside>
 
@@ -434,8 +424,10 @@
 
   </ul>
 
+  <section id="etablissement" class="partenaire" aria-label="L’établissement partenaire" data-etablissement="bandeau"></section>
+
   <div class="tout">
-    <p><strong>Tout le site sur une page :</strong> les quatorze réseaux et leurs cartes, les chiffres, les livres, les outils et le journal des nouveautés.</p>
+    <p><strong>Tout le site sur une page :</strong> <!-- CHIFFRES-PORTES DEBUT (écrit par build/accueil.mjs, ne pas éditer à la main) -->14 réseaux, 421 stations en ligne, 26 en préparation et plus de 8 900 narrations audio.<!-- CHIFFRES-PORTES FIN --></p>
     <div class="boutons">
       <a class="bouton" href="reseaux.html">Tout inerWeb, réseau par réseau →</a>
       <a class="bouton creux" href="studio/">🎬 Les films</a>
@@ -444,7 +436,7 @@
 
 </div>
 
-<!-- Le volet : ouvert à l'arrivée sur grand écran, refermé d'un clic, replié sur téléphone avec
+<!-- Le volet : ouvert à l'arrivée à partir de 1100 px, refermé d'un clic, replié en dessous avec
      un aperçu. sessionStorage : il se rouvre à chaque nouvelle session de navigateur, et reste
      fermé tant que l'onglet vit. Les actualités sont LUES dans le journal de reseaux.html
      (#nouveautes), jamais recopiées : un seul endroit où écrire. -->
@@ -471,9 +463,9 @@
 
   var replie = false;
   try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
-  var telephone = !!(window.matchMedia && window.matchMedia("(max-width: 700px)").matches);
+  var etroit = !!(window.matchMedia && window.matchMedia("(max-width: 1099px)").matches);
   var apercuActu = null;
-  if (telephone) {
+  if (etroit) {
     replie = true;
     var blocs = v.querySelectorAll(".volet-bloc");
     var texte = function (el) { return el ? el.textContent.replace(/\s+/g, " ").trim() : ""; };
@@ -482,9 +474,9 @@
     p.textContent = "";
     var tete = span("ap-tete", ""); tete.appendChild(span("", "📰 Actualités & espaces")); tete.appendChild(span("ap-tout", "Tout voir ▸"));
     p.appendChild(tete);
+    p.appendChild(span("ap-appel", "🏫 L’établissement partenaire : stages, apprentis, taxe d’apprentissage"));
     apercuActu = span("ap-actu", "");
     p.appendChild(apercuActu);
-    if (blocs[1]) p.appendChild(span("ap-appel", texte(blocs[1].querySelector("h3")) + " — " + texte(blocs[1].querySelector("strong")) + " cherche des bêta-testeurs"));
     var puces = span("ap-puces", "");
     for (var i = 2; i < blocs.length; i++) { var h = blocs[i].querySelector("h3"); if (h) puces.appendChild(span("", texte(h))); }
     p.appendChild(puces);
@@ -493,6 +485,7 @@
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
   document.getElementById("volet-fermer").addEventListener("click", replier);
+  document.getElementById("volet-fermer-bas").addEventListener("click", replier);
   p.addEventListener("click", function () {
     poser(false);
     try { sessionStorage.removeItem(CLE); } catch (e) {}
@@ -502,13 +495,13 @@
     if (ev.key === "Escape" && !v.classList.contains("replie")) replier();
   });
 
-  /* Les trois dernières actualités, lues dans le journal de reseaux.html. */
+  /* La dernière actualité, lue dans le journal de reseaux.html. */
   var actus = document.getElementById("volet-actus");
   if (!actus || !window.fetch || !window.DOMParser) return;
   fetch("reseaux.html").then(function (r) { return r.ok ? r.text() : ""; }).then(function (html) {
     if (!html) return;
     var doc = new DOMParser().parseFromString(html, "text/html");
-    var dates = doc.querySelectorAll("#nouveautes .nv-corps > h3"), MAX = 3, n = 0;
+    var dates = doc.querySelectorAll("#nouveautes .nv-corps > h3"), MAX = 1, n = 0;
     for (var d = 0; d < dates.length && n < MAX; d++) {
       var ul = dates[d].nextElementSibling;
       var titres = ul ? ul.querySelectorAll(":scope > li > a, :scope > li > strong") : [];
@@ -528,10 +521,13 @@
 })();
 </script>
 
+<!-- L'établissement partenaire : le bandeau de l'accueil et le bloc du volet (réglage dans le fichier). -->
+<script src="moteur/etablissement.js"></script>
+
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=d1ca11450a"></script>
+<script src="moteur/lisibilite.js?v=ae062fd5f8"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais écrit à la main. -->
-<script src="moteur/marque.js?v=d1ca11450a" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=ae062fd5f8" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   if ("serviceWorker" in navigator)

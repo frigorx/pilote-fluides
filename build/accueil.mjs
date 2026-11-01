@@ -13,6 +13,9 @@
               <!-- CARTE-RESEAUX DEBUT/FIN -->    la carte animée (SVG en ligne)
               <!-- CHIFFRES-ACCUEIL DEBUT/FIN --> les quatre compteurs
               <!-- RESEAUX DEBUT/FIN -->          les vignettes de réseau
+            index.html — un bloc, en ligne dans un paragraphe :
+              <!-- CHIFFRES-PORTES DEBUT/FIN -->  réseaux, stations en ligne, en préparation, audio
+            (« en préparation » = somme des `prevues` de reseaux.js moins les stations en ligne)
    USAGE    node build/accueil.mjs   (à brancher dans build.mjs avant version.mjs)
    PIÈGES   (1) refuse en dur une adresse de reseaux.js qui n'existe pas sur
    le disque ; (2) ne touche qu'entre les sentinelles, fins de ligne du
@@ -56,12 +59,14 @@ const audio = compterMp3("packs/fluides/res") + compterMp3("electrorezo") + comp
 const comptes = RESEAUX.map((r) => {
   const st = catalogue.filter((s) => r.catalogue.includes(s.reseau));
   const lignes = r.lignes || new Set(st.flatMap((s) => (s.ligne || "").split(",").map((x) => x.trim()).filter(Boolean))).size;
-  return { id: r.id, stations: r.stations || st.length, lignes };
+  const stations = r.stations || st.length;
+  return { id: r.id, stations, lignes, enPreparation: Math.max(0, (r.prevues || 0) - stations) };
 });
 const total = {
   reseaux: RESEAUX.length,
   stations: comptes.reduce((a, c) => a + c.stations, 0),
   lignes: comptes.reduce((a, c) => a + c.lignes, 0),
+  enPreparation: comptes.reduce((a, c) => a + c.enPreparation, 0),
   audio,
 };
 
@@ -83,6 +88,11 @@ if (manquantes.length) { console.error("accueil.mjs : adresses introuvables sur 
 const fr = (n) => n.toLocaleString("fr-FR").replace(/ /g, " ");
 const arrondi = (n) => (n >= 1000 ? Math.floor(n / 100) * 100 : n);
 const ech = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+
+/* La phrase de l'accueil à huit portes (index.html), sur une seule ligne : elle vit dans un <p>. */
+const phrasePortes = `${total.reseaux} réseaux, ${fr(total.stations)} stations en ligne` +
+  (total.enPreparation ? `, ${fr(total.enPreparation)} en préparation` : "") +
+  ` et plus de ${fr(arrondi(total.audio))} narrations audio.`;
 
 const chiffres = [
   { v: total.reseaux, l: "réseaux" },
@@ -180,17 +190,23 @@ const jsonld = {
 const jsonldHtml = `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>`;
 
 /* ---- 5. Écriture entre sentinelles, fins de ligne respectées ---- */
-let html = readFileSync(PAGE, "utf8");
-const nl = html.includes("\r\n") ? "\r\n" : "\n";
-function remplacer(nom, contenu) {
-  const re = new RegExp(`(<!-- ${nom} DEBUT[^>]*-->)\\r?\\n[\\s\\S]*?(<!-- ${nom} FIN -->)`);
-  if (!re.test(html)) throw new Error(`reseaux.html : sentinelles ${nom} introuvables`);
-  html = html.replace(re, (m, a, b) => a + nl + contenu.replace(/\r?\n/g, nl) + nl + b);
+/* `enLigne` : la sentinelle est au milieu d'une ligne (un <p>), le contenu s'y glisse sans saut de ligne. */
+function entreSentinelles(texte, fichier, nom, contenu, enLigne = false) {
+  const nl = texte.includes("\r\n") ? "\r\n" : "\n";
+  const re = new RegExp(`(<!-- ${nom} DEBUT[^>]*-->)${enLigne ? "" : "\\r?\\n"}[\\s\\S]*?(<!-- ${nom} FIN -->)`);
+  if (!re.test(texte)) throw new Error(`${fichier} : sentinelles ${nom} introuvables`);
+  return texte.replace(re, (m, a, b) => enLigne ? a + contenu + b : a + nl + contenu.replace(/\r?\n/g, nl) + nl + b);
 }
+let html = readFileSync(PAGE, "utf8");
+const remplacer = (nom, contenu) => { html = entreSentinelles(html, "reseaux.html", nom, contenu); };
 remplacer("CARTE-RESEAUX", svg);
 remplacer("CHIFFRES-ACCUEIL", chiffres);
 remplacer("RESEAUX", vignettes);
 remplacer("JSON-LD-ACCUEIL", jsonldHtml);
+/* index.html : calculé AVANT toute écriture, pour ne pas laisser reseaux.html à moitié à jour si ses sentinelles manquent. */
+const INDEX = resolve(RACINE, "index.html");
+const index = entreSentinelles(readFileSync(INDEX, "utf8"), "index.html", "CHIFFRES-PORTES", phrasePortes, true);
 writeFileSync(PAGE, html, "utf8");
-console.log(`accueil : ${total.reseaux} réseaux, ${total.stations} stations, ${total.lignes} lignes, ${total.audio} fichiers audio (affiché « + de ${fr(arrondi(total.audio))} ») → index.html`);
+writeFileSync(INDEX, index, "utf8");
+console.log(`accueil : ${total.reseaux} réseaux, ${total.stations} stations, ${total.enPreparation} en préparation, ${total.lignes} lignes, ${total.audio} fichiers audio (affiché « + de ${fr(arrondi(total.audio))} ») → reseaux.html + index.html`);
 comptes.forEach((c) => console.log(`  ${c.id} : ${c.stations} stations · ${c.lignes} lignes`));

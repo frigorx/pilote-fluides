@@ -97,6 +97,8 @@ window.INERWEB_RESEAUX = [
     etat: "en relecture",
     catalogue: ["Bureau d'études"],
     lignes: 7,
+    /* prevues : stations prévues au total (en ligne comprises) ; l'accueil affiche la différence comme « en préparation ». Ne le poser que là où le nombre est connu. */
+    prevues: 34,
     vignette: "icones/reseaux/bureau-etudes.svg",
     entree: { titre: "Le plan du réseau", href: "bureau-etudes/index.html" },
     raccourcis: [

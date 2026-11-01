@@ -30,4 +30,11 @@ fournit les illustrations des huit portes.
 3. [x] Page index.html
 4. [x] reseaux.html, générateur, sitemap, build (accueil, version)
 5. [x] Contrôles (téléphone : index OK, reseaux.html « à revoir » pour la carte SVG couchée, défaut antérieur ; style : 0 à réécrire ; titre sous la ligne de flottaison à 800 px et 1 280 px) : liens, style, téléphone, ligne de flottaison à 800 px
-6. [ ] Commit ; commande de fusion et de mise en ligne pour Franck
+6. [x] Commit ; commande de fusion et de mise en ligne pour Franck
+
+## Lot 2 (01/11/2026, 14 h 40 → 15 h) — retours de Franck sur la première version
+- Volet : en dessous de 1 100 px il démarre replié (aperçu dans le flux), à partir de 1 100 px il pousse la page ET l'en-tête ; bouton « Fermer le panneau » en bas ; actualités réduites à une ligne.
+- Bandeau « établissement partenaire » : composant `moteur/etablissement.js` (réglage en tête, mode maquette avec emplacements tiretés, mode actif avec logo, nom, adresse, boutons mailto), rendu deux fois sur l'accueil (bandeau `#etablissement` et bloc du volet), réutilisable sur le tableau de bord HAL par `INERWEB_ETABLISSEMENT_RENDRE(el, mode)`. Aucun nom ni logo réel.
+- Chiffres relevés : `prevues: 34` sur le Bureau d'études ; accueil.mjs écrit « 14 réseaux, 421 stations en ligne, 26 en préparation et plus de 8 900 narrations audio » entre les sentinelles CHIFFRES-PORTES de index.html.
+- Fait par deux sous-agents Sonnet, vérifié à l'écran (1 280, 1 000, 375 px), contrôle téléphone OK, style 0 à réécrire.
+- Reste : brancher le composant sur le tableau de bord HAL (autre dépôt, chat neuf) ; le jour J, remplir `moteur/etablissement.js` (nom, adresse, logos, courriels, `actif:true`).
