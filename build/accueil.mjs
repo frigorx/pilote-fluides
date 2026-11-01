@@ -8,7 +8,8 @@
    (docs/catalogue-2026-09/catalogue-stations.json, fichiers audio sur le
    disque) : un chiffre écrit à la main dérive, celui-ci se relève.
    ENTRÉES  moteur/reseaux.js · le catalogue des stations · les MP3 du dépôt
-   SORTIE   index.html — trois blocs réécrits entre sentinelles, idempotent :
+   SORTIE   reseaux.html (l'accueil complet ; index.html est la page à huit portes
+            depuis le 01/11/2026) — trois blocs réécrits entre sentinelles, idempotent :
               <!-- CARTE-RESEAUX DEBUT/FIN -->    la carte animée (SVG en ligne)
               <!-- CHIFFRES-ACCUEIL DEBUT/FIN --> les quatre compteurs
               <!-- RESEAUX DEBUT/FIN -->          les vignettes de réseau
@@ -25,7 +26,7 @@ import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
 const RACINE = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const PAGE = resolve(RACINE, "index.html");
+const PAGE = resolve(RACINE, "reseaux.html");
 
 /* ---- 1. La source : moteur/reseaux.js ---- */
 const ctx = { window: {} };
@@ -183,7 +184,7 @@ let html = readFileSync(PAGE, "utf8");
 const nl = html.includes("\r\n") ? "\r\n" : "\n";
 function remplacer(nom, contenu) {
   const re = new RegExp(`(<!-- ${nom} DEBUT[^>]*-->)\\r?\\n[\\s\\S]*?(<!-- ${nom} FIN -->)`);
-  if (!re.test(html)) throw new Error(`index.html : sentinelles ${nom} introuvables`);
+  if (!re.test(html)) throw new Error(`reseaux.html : sentinelles ${nom} introuvables`);
   html = html.replace(re, (m, a, b) => a + nl + contenu.replace(/\r?\n/g, nl) + nl + b);
 }
 remplacer("CARTE-RESEAUX", svg);

@@ -1,0 +1,1921 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1b3a63">
+<link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
+<title>Tout inerWeb, réseau par réseau — inerweb.fr</title>
+<meta name="description" content="Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte.">
+<meta property="og:title" content="Tout inerWeb, réseau par réseau">
+<meta property="og:description" content="Quatorze réseaux gratuits, rangés comme des lignes de métro : le froid, l’eau, l’air, l’électricité, la réglementation, l’habilitation, et aussi des jeux, un simulateur de panne et des films. Une voix qui explique, sans compte.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://inerweb.fr/reseaux.html">
+<link rel="canonical" href="https://inerweb.fr/reseaux.html">
+<script>
+  /* Le plan a quitté l'accueil pour plan.html le 17/09/2026. Les liens gravés dans les modules
+     (#ligne=…, #carte, #chercher) et les recherches (#q=…) continuent d'y mener. */
+  if (/^#(ligne=|q=|carte$|chercher$)/.test(location.hash)) location.replace("plan.html" + location.hash);
+  /* L'appli a quitté l'accueil pour formation.html le même jour. Les adresses du livre HabFluide
+     (inerweb.fr/f/…, générées par livre-habfluide/build/qr.mjs) visent encore « /?carte=… » :
+     sans ce renvoi, elles tombaient sur l'accueil (constaté par Franck le 04/10/2026). */
+  if (/[?&]carte=/.test(location.search)) location.replace("formation.html" + location.search + location.hash);
+</script>
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="inerweb.fr">
+<meta property="og:image" content="https://inerweb.fr/icones/og-inerweb-1200x630.png?v=20261006">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="inerweb.fr — apprendre le froid, station par station, sur un plan de métro.">
+<meta name="twitter:card" content="summary_large_image">
+<!-- JSON-LD-ACCUEIL DEBUT (généré par build/accueil.mjs — ne pas éditer à la main) -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://inerweb.fr/#site","name":"inerweb.fr","alternateName":"inerWeb","url":"https://inerweb.fr/","inLanguage":"fr","description":"14 réseaux de cours interactifs et gratuits sur le froid, la climatisation, l’hydraulique, l’aéraulique, l’électrotechnique et la réglementation — 421 stations, une voix qui explique, sans compte.","publisher":{"@id":"https://inerweb.fr/#org"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://inerweb.fr/plan.html?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://inerweb.fr/#org","name":"inerWeb","url":"https://inerweb.fr/","logo":"https://inerweb.fr/icones/og-inerweb-1200x630.png","email":"inerweb.fh@gmail.com","sameAs":["https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA"]},{"@type":"ItemList","name":"Les réseaux de cours inerWeb","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"name":"Le réseau thermo-techno","url":"https://inerweb.fr/plan.html","description":"Le métier de frigoriste : la chaleur, le circuit et ses organes, les gestes, les fluides, la régulation, l’huile, le CO₂."},{"@type":"ListItem","position":2,"name":"Réseau Législation","url":"https://inerweb.fr/legislation/index.html","description":"Le cadre du métier : réglementation, sécurité, environnement. Onze sous-lignes, un bâtiment en 3D pour s’y orienter, et un carnet de missions de chargé d’affaires."},{"@type":"ListItem","position":3,"name":"inerWeb BE","url":"https://inerweb.fr/bureau-etudes/index.html","description":"Lire les plans en 15 gares, puis calculer un projet de chauffage, ventilation, climatisation de bout en bout, du dossier projet à la note de calcul : 34 stations de 2 heures prévues, ouvertes une à une, sur une maison puis sur un bâtiment tertiaire."},{"@type":"ListItem","position":4,"name":"HydroMétro","url":"https://inerweb.fr/hydrometro/index.html","description":"L’eau dans les circuits : principes, équipements, distribution, mesure et diagnostic."},{"@type":"ListItem","position":5,"name":"AéroRézo","url":"https://inerweb.fr/aerorezo/index.html","description":"L’air dans les gaines : hygrométrie, VMC, distribution, climatisation, centrales de traitement d’air."},{"@type":"ListItem","position":6,"name":"ÉlectroRézo","url":"https://inerweb.fr/electrorezo/index.html","description":"L’électrotechnique, de l’ampère au variateur de fréquence, et la lecture du schéma."},{"@type":"ListItem","position":7,"name":"HoCourant","url":"https://inerweb.fr/hocourant/index.html","description":"Se préparer à l’habilitation électrique, de B0 à BR, palier par palier."},{"@type":"ListItem","position":8,"name":"inerWeb R408","url":"https://inerweb.fr/r408/index.html","description":"Se préparer à la formation échafaudages de pied (R408), du socle au montage, palier par palier. Prototype en cours de relecture."},{"@type":"ListItem","position":9,"name":"CuivRézo","url":"https://inerweb.fr/cuivrezo/index.html","description":"Les gestes du cuivre à votre poste d’atelier : couper, cintrer, évaser, braser, jusqu’aux pièces complexes. Prototype en cours de relecture."},{"@type":"ListItem","position":10,"name":"Le tour de main","url":"https://inerweb.fr/tour-de-main/index.html","description":"Les gestes qui demandent un réglage précis, avec leurs règles : on calcule, on règle, puis on prouve à l’instrument. En premier, le jeu de poste du réglage des pressostats (sept réglages, de la sécurité à la chambre froide) ; puis le manifold, l’azote, la récupération du fluide, le détendeur, les KV, la VAT et le relais thermique."},{"@type":"ListItem","position":11,"name":"CartoClim","url":"https://inerweb.fr/cartoclim/index.html","description":"Comprendre un climatiseur, du besoin à la panne : le split, le multisplit, le DRV, le roof-top, la PAC air/eau, le chauffe-eau thermodynamique, l’eau glacée — et ce qu’on pose, raccorde, règle et entretient. Relié aux autres réseaux, jamais recopié."},{"@type":"ListItem","position":12,"name":"JouéRézo","url":"https://inerweb.fr/jouerezo/index.html","description":"Dix jeux pour retenir le froid classique : Memory, le bon ordre, chrono vrai ou faux, QCM éclair, l’intrus, Nuit à l’atelier, compléter le schéma, Qui suis-je ?, le pendu du frigo, le circuit dont vous êtes le héros. Un code de partie à rendre en fin de jeu."},{"@type":"ListItem","position":13,"name":"SimuRézo","url":"https://inerweb.fr/simurezo/index.html","description":"Dépanner une chambre froide : relever les valeurs sur l’installation, voir le cycle se tracer sur le diagramme, puis conclure. Trois niveaux, de la Croix du frigoriste à l’atelier, en R-134a, R-449A ou R-290."},{"@type":"ListItem","position":14,"name":"inerWeb Studio","url":"https://inerweb.fr/studio/index.html","description":"Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le glissement, le compresseur à vis, le sous-refroidisseur, les centrales frigorifiques et leur régulation, la centrale booster CO₂, le bi-étagé), la série « L’ennemi juré » (le groupe d’eau glacée), les onze films de la régulation, les dix mini-films sécurité « Ça aurait pu mal finir », l’effet de serre et la couche d’ozone. Chaque film mène à son cours."}]}]}</script>
+<!-- JSON-LD-ACCUEIL FIN -->
+<style>
+  /* Couleurs de la charte (CHARTE-GRAPHIQUE.md § palette) : texte --ink
+     #10233c, carte --paper #fffdf8 — jamais de blanc pur (aligné 20/08). */
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --violet:#7a4fa0;
+          --vert:#1e7e54; --ambre:#b06a00; --hp:#c0392b;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --ok:#1e7e54; --ok-bg:#e3f5ec;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+
+  /* Accessibilité : lien d'évitement (visible au clavier seulement) et
+     focus orange bien marqué, partout. */
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  /* Le lien d'évitement ne déplace la page QUE si sa cible peut recevoir le
+     focus : sans tabindex, la tabulation suivante repartait du haut. Pas
+     d'anneau sur ce conteneur — le focus y est posé par programme, et
+     encadrer toute la page ne renseignerait personne. */
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+    outline:3px solid var(--orange); outline-offset:2px; }
+
+  /* La barre du haut : logo à gauche, quatre entrées à droite. */
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
+           border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+  .nav a.nav-youtube { color:#a30000; font-weight:bold; } /* 06/10 : la chaîne YouTube inerWeb FR, d'un clic */
+
+  /* Le pied de page est posé par moteur/marque.js (mode document). */
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 18px; }
+
+  /* ---- Accroche ---- */
+  .accroche { margin:26px 0 0; display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  .accroche .texte { flex:1; min-width:280px; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px;
+       line-height:1.15; color:var(--bleu); text-wrap:pretty; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0 0 20px; font-size:18px; color:var(--mut); max-width:30em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+  .boutons { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .bouton { display:inline-block; padding:11px 24px; background:var(--bleu); color:#fff;
+            font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.creux { padding:9px 22px; background:var(--carte); color:var(--bleu);
+                  border:2px solid var(--bleu-clair); }
+  .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+  /* La bannière AquiBlue (24/08) : logo de la charte + présentation + démo. */
+  .bandeau-aquiblue { margin:22px 0 0; padding:16px 20px; background:var(--carte);
+                      border:2px solid var(--bleu-clair); border-radius:var(--r);
+                      display:grid; grid-template-columns:minmax(0,1fr) auto;
+                      grid-template-areas:"logo couv" "texte couv" "btns couv";
+                      column-gap:28px; row-gap:10px; align-items:center; }
+  .bandeau-aquiblue .ba-logo { grid-area:logo; width:200px; height:auto; }
+  .bandeau-aquiblue .ba-texte { grid-area:texte; margin:0; font-size:15.5px; }
+  .bandeau-aquiblue .ba-boutons { grid-area:btns; display:flex; gap:10px; flex-wrap:wrap; }
+  /* HoCourant : même gabarit, bordure ambre tiretée — l'état « prototype »
+     se lit par la couleur, le trait ET le mot (charte § 4). */
+  .bandeau-hocourant { margin-top:14px; border:2px dashed #b06a00; }
+  /* La couverture du livre HoCourant sur son bandeau (27/09) : à droite, cliquable, jamais sur le texte.
+     Étendue le même jour aux bandeaux AquiBlue (vignette du circuit) et Fluide (couverture de la présentation). */
+  .bandeau-aquiblue .ba-couv { grid-area:couv; }
+  .bandeau-aquiblue .ba-couv img { display:block; width:118px; height:auto; border-radius:6px;
+                                    box-shadow:0 6px 16px rgba(27,58,99,.25); }
+  .bandeau-aquiblue .ba-couv:hover img { transform:translateY(-2px); }
+  .bandeau-aquiblue .ba-couv.ba-vign img { width:280px; }
+  /* Téléphone : une seule colonne, l'image centrée entre le texte et les boutons. */
+  @media (max-width:760px) {
+    .bandeau-aquiblue { grid-template-columns:minmax(0,1fr); grid-template-areas:"logo" "texte" "couv" "btns"; }
+    /* minmax(0,…) : sans lui, le bouton le plus long (nowrap) élargissait la colonne hors du cadre (27/09) */
+    .bandeau-aquiblue .bouton { white-space:normal; text-align:center; }
+    .bandeau-aquiblue .ba-couv.ba-vign img { width:100%; max-width:280px; }
+    .bandeau-aquiblue .ba-couv { justify-self:center; }
+  }
+  .etiquette-proto { display:inline-block; background:#b06a00; color:#fff; font-weight:bold;
+                     font-size:12.5px; letter-spacing:.04em; border-radius:999px;
+                     padding:2px 10px; margin-right:8px; vertical-align:2px; }
+  .flocon { font-size:96px; line-height:1; filter:drop-shadow(0 6px 12px rgba(27,58,99,.18));
+            animation:derive 5s ease-in-out infinite; }
+  @keyframes derive { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+  @keyframes flux { to { stroke-dashoffset:-40; } }
+  @media (prefers-reduced-motion: reduce) {
+    .flocon, .flux { animation:none; }
+    .plan svg animate { display:none; }
+  }
+
+  /* ---- L'ORGANIGRAMME (05/09/2026) : la porte d'entrée. F. Henninot :
+     « attaquer par l'organigramme, et dérouler le reste après ». Les
+     cartes des réseaux gardent leur style (.reseaux, ci-dessus, sorti du
+     bloc .plan) ; l'arbre n'ajoute que la racine, le rail et les trois
+     colonnes. Les traits relient des cartes, aucun texte ne passe dessus.
+     Sur téléphone : une colonne, pas de traits. ---- */
+  .orga { margin:26px 0 0; }
+  .o-racine { width:max-content; max-width:100%; margin:0 auto; padding:10px 26px;
+              background:var(--bleu); color:#fff; font-family:var(--titre); font-weight:bold;
+              font-size:22px; border-radius:12px; text-align:center; }
+  .o-racine small { display:block; font-weight:normal; font-size:14px; opacity:.9; }
+  .o-tige { width:3px; height:24px; background:var(--bleu); margin:0 auto; }
+  .o-rail { height:3px; background:var(--bleu); margin:0 calc(16.66% - 6px); }
+  .o-colonnes { display:grid; grid-template-columns:repeat(3,1fr); gap:0 18px; }
+  .o-col { position:relative; padding-top:24px; min-width:0; }
+  .o-col::before { content:""; position:absolute; top:0; left:50%; width:3px; height:24px;
+                   margin-left:-1.5px; background:var(--bleu); }
+  .o-tete { text-align:center; font-family:var(--titre); font-weight:bold; color:var(--bleu);
+            font-size:17px; padding:10px 12px; border:2px solid var(--bleu); border-radius:10px;
+            background:var(--carte); margin-bottom:12px; }
+  .o-tete small { display:block; font-weight:normal; color:var(--mut); font-size:13.5px; }
+  .o-sous { list-style:none; margin:-4px 0 0 14px; padding:0 0 0 12px;
+            border-left:2px solid var(--ligne); display:grid; gap:4px; }
+  .o-sous li { font-size:14px; color:var(--mut); }
+  .o-sous li b { color:var(--txt); font-weight:600; }
+  /* Les trois portes — même geste qu'ÉlectroRézo (ses trois portes) et
+     qu'HydroMétro (« Trouver mon trajet » à côté de la carte). */
+  .portes-titre { margin:28px 0 10px; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .portes { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .porte { display:grid; grid-template-columns:52px 1fr; gap:4px 12px; align-items:start;
+           text-decoration:none; color:var(--txt); background:var(--carte);
+           border:2px solid var(--bleu); border-radius:var(--r); padding:14px 16px; box-shadow:var(--ombre); }
+  .porte:hover { background:#e7eff7; }
+  .porte .p-ico { grid-row:1 / span 2; font-size:36px; line-height:1; }
+  .porte .p-titre { font-family:var(--titre); font-weight:bold; font-size:19px; color:var(--bleu); }
+  .porte .p-det { color:var(--mut); font-size:14.5px; }
+  .porte.forte { border-color:var(--orange); }
+  .porte.forte .p-titre { color:var(--orange); }
+  /* Une porte peut montrer ce qu'on trouve derrière (27/09 : le simulateur de câblage). */
+  .porte.avec-vignette { grid-template-columns:52px 1fr auto; grid-template-rows:auto 1fr; }
+  .porte .p-vign { grid-column:3; grid-row:1 / span 2; display:block; width:190px; height:auto;
+                   border-radius:6px; border:1px solid #d8e0ea; }
+  /* Les outils : les bandeaux AquiBlue / HoCourant / Fluide dans un bloc blanc, sous le plan. */
+  .outils .corps { padding:0 24px 22px; }
+  .outils .corps .bandeau-aquiblue { margin-top:14px; }
+  /* 20/10 : sur grand écran, les bandeaux d'outils vont par deux (la section faisait 1 300 px de haut). */
+  @media (min-width:1000px) {
+    .outils .corps { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; padding-top:14px; }
+    .outils .corps .bandeau-aquiblue { margin-top:0; align-content:start;
+      grid-template-areas:"logo logo" "texte texte" "btns couv"; } /* la couverture descend à côté des boutons */
+    .outils .corps .ba-texte { font-size:14.5px; }
+    .outils .corps .ba-couv img { width:88px; }
+    .outils .corps .ba-couv.ba-vign img { width:150px; }
+  }
+  .bandeau-fluide { border:2px solid var(--bleu-clair); }
+  @media (max-width:760px) {
+    .o-colonnes { grid-template-columns:1fr; gap:16px; }
+    .o-rail, .o-tige, .o-col::before { display:none; }
+    .o-col { padding-top:0; }
+  }
+
+  /* Les livres (20/10) : un rayon de couvertures, chacune ouvre son ouvrage. */
+  .livres { grid-column:span 3; display:flex; flex-direction:column; } /* dans la grille des réseaux, à côté de Studio */
+  .rayon { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; padding:16px 24px 6px; }
+  .livre { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
+           text-decoration:none; color:var(--txt); font-size:13.5px; line-height:1.35; }
+  .livre img { display:block; width:100%; max-width:150px; height:auto; border-radius:6px;
+               box-shadow:0 6px 16px rgba(27,58,99,.25); transition:transform .15s; }
+  .livre:hover img { transform:translateY(-4px); }
+  .livre b { margin-top:4px; font-family:var(--titre); font-size:16px; color:var(--bleu); }
+  .livre span { color:var(--mut); }
+  .livres-suite { margin:auto 0 0; padding:10px 24px 18px; font-size:14.5px; color:var(--mut); }
+  .livres-suite a { color:var(--bleu); font-weight:bold; }
+  @media (max-width:1000px) { .livres { grid-column:span 2; } }  /* grille à 3 : 4 rangées + Studio seul */
+  @media (max-width:800px) { .livres { grid-column:span 1; } .rayon { grid-template-columns:repeat(3,1fr); gap:12px; padding:14px 16px 4px; } }
+  @media (max-width:640px) { .livres { flex:0 0 92%; scroll-snap-align:center; } /* dernière voiture de la rame */
+                             .grille-reseaux { align-items:flex-start; } } /* sans quoi chaque vignette prend la hauteur du pavé */
+
+  /* ---- Blocs blancs ---- */
+  .bloc { background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); box-shadow:var(--ombre); }
+  .bloc .titre-bloc { padding:18px 24px 0; display:flex; align-items:baseline;
+                      gap:14px; flex-wrap:wrap; }
+  .bloc .titre-bloc h2 { margin:0; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .bloc .titre-bloc span { font-size:14px; color:var(--mut); }
+
+  /* ---- Le plan de formation ---- */
+  .plan { margin-top:30px; overflow:hidden; }
+
+  /* ---- Chercher un cours ----
+     Posé AU-DESSUS du plan : c'est le premier geste de qui sait ce qu'il
+     cherche, avant de parcourir la carte. Le panneau de résultats se
+     superpose au plan au lieu de le pousser — sinon toute la page saute à
+     chaque frappe. */
+  .plan .chercher { position:relative; padding:14px 24px 0; max-width:760px; }
+  .plan .chercher label { display:block; font-family:var(--titre); font-weight:bold;
+                          font-size:14px; color:var(--mut); margin-bottom:5px; }
+  .plan .chercher input { width:100%; padding:11px 16px; font:16px/1.4 inherit;
+                          color:var(--txt); background:var(--carte);
+                          border:2px solid var(--ligne); border-radius:999px; }
+  .plan .chercher input:focus { outline:3px solid var(--orange); outline-offset:2px;
+                                border-color:var(--bleu); }
+  .plan .q-etat { margin:6px 2px 0; font-size:13.5px; color:var(--mut); min-height:1.2em; }
+  .plan .q-res { position:absolute; z-index:30; left:24px; right:24px; margin:4px 0 0;
+                 padding:6px; list-style:none; max-height:52vh; overflow-y:auto;
+                 background:var(--carte); border:2px solid var(--ligne);
+                 border-radius:var(--r); box-shadow:var(--ombre); }
+  .plan .q-res li { margin:0; }
+  .plan .q-res a { display:block; padding:9px 12px; border-radius:9px;
+                   text-decoration:none; color:var(--txt); }
+  .plan .q-res a:hover, .plan .q-res a:focus,
+  .plan .q-res li[aria-selected="true"] a { background:#eef3f9; color:var(--bleu); outline:none; }
+  .plan .q-res b { font-family:var(--titre); }
+  /* La ligne d'appartenance : c'est elle qui répond à « où est-ce que ça
+     vit », pas seulement « ça existe ». */
+  .plan .q-res .q-ligne { display:block; font-size:13px; color:var(--mut); }
+  .plan .q-res mark { background:#ffe9b8; color:inherit; padding:0 1px; border-radius:3px; }
+  .plan .legende-plan { display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+                        padding:8px 24px 0; font-size:13.5px; color:var(--mut); }
+  .plan .legende-plan .puce-l { display:inline-flex; align-items:center; gap:6px; }
+  .plan .legende-plan .rond { width:13px; height:13px; border-radius:50%;
+                              border:3.5px solid var(--bleu-clair); background:#fff; display:inline-block; }
+  .plan .legende-plan .rond.vu { background:var(--bleu-clair); }
+  .plan .legende-plan .rond.corr { box-shadow:0 0 0 2.5px #98a6b3; border-width:3px; margin:0 3px; }
+  .plan .legende-plan button { font:inherit; font-size:13px; cursor:pointer; color:var(--mut);
+                               background:none; border:1.5px solid var(--ligne); border-radius:999px;
+                               padding:3px 12px; margin-left:auto; }
+  .plan .legende-plan button:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+
+  /* ---- LE CONNECTEUR VERS LES AUTRES RÉSEAUX ----
+     Décision de F. Henninot, 23/08 : inerWeb n'étoffe plus des lignes, il crée
+     des réseaux entiers (thermo-techno, Législation, hydraulique en cours ;
+     cinq à sept à terme). Ce connecteur se pose EN TÊTE du plan, avant le
+     départ de la première ligne : c'est la première chose qu'on voit, et
+     c'est par là qu'on change de réseau.
+     La grille accepte les suivants sans retouche : un réseau de plus = un
+     lien de plus, sa couleur passée en --c. */
+  .reseaux { padding:0; }
+  .reseaux .r-intro { margin:0 0 10px; font-family:var(--titre); font-weight:bold;
+                            font-size:14px; color:var(--mut); }
+  .reseaux .r-grille { display:grid; gap:12px; grid-template-columns:1fr; }
+  .reseaux a { display:flex; align-items:center; gap:14px; text-decoration:none;
+                     background:var(--c); color:#fff; border-radius:var(--r);
+                     padding:15px 20px; min-height:64px;
+                     border:3px solid transparent; transition:transform .12s, border-color .12s; }
+  .reseaux a:hover { transform:translateY(-2px); border-color:var(--orange); color:#fff; }
+  .reseaux a .r-texte { flex:1; min-width:0; }
+  .reseaux a .r-nom { display:block; font-family:var(--titre); font-weight:bold;
+                            font-size:18px; line-height:1.2; }
+  .reseaux a .r-det { display:block; font-size:13.5px; opacity:.92; margin-top:3px; }
+  .reseaux a .r-etat { flex:0 0 auto; font-size:12px; font-weight:bold;
+                             background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.55);
+                             border-radius:999px; padding:3px 10px; white-space:nowrap; }
+  .reseaux a .r-fleche { flex:0 0 auto; font-size:22px; line-height:1; }
+  /* Le motif de ligne de métro des cartes : il annule le min-width:980px
+     posé plus bas sur `.plan svg` (qui vise le grand plan, pas lui). */
+  .reseaux a .r-ligne { display:block; width:120px; min-width:0; height:12px;
+                              margin-top:8px; stroke:#fff; fill:#fff; opacity:.7;
+                              stroke-width:2; }
+  .plan .defilant { overflow-x:auto; padding:6px 10px 4px; }
+  .indice-glisser { display:none; text-align:center; font-size:13px; color:var(--mut); padding:2px 0 10px; }
+  @media (max-width: 700px) { .indice-glisser { display:block; } }
+  .plan svg { width:100%; min-width:980px; display:block; }
+  .plan a { cursor:pointer; }
+  .plan a:hover g { opacity:.72; }
+  .plan text { font-family:Calibri,sans-serif; }
+  .plan .st   { fill:var(--bleu); font-size:15px; font-weight:bold; }
+  .plan .sst  { fill:var(--mut); font-size:12px; }
+  .plan .coche { fill:#fff; font-size:11px; font-weight:bold; }
+  .plan .dep   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
+  .plan .dep-s { fill:var(--mut); font-size:13px; }
+  .plan .aig   { fill:#fff; font-family:var(--titre); font-size:14px; font-weight:bold; }
+  .plan .puce   { fill:#fff; font-family:var(--titre); font-size:14.5px; font-weight:bold; }
+  .plan .puce-s { fill:var(--mut); font-size:12.5px; }
+  .plan .fin  { fill:var(--ok); font-family:var(--titre); font-size:13px; font-weight:bold; }
+  .plan .note { fill:var(--mut); font-size:13px; font-style:italic; }
+  .plan .sortie { fill:var(--mut); font-size:15px; font-weight:bold; }
+
+  /* ---- La vue détaillée d'une ligne (un cartouche cliqué) ---- */
+  .vue-ligne { max-width:640px; margin:8px auto 20px; padding:0 14px; }
+  .vue-ligne .vl-tete { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:6px 0 16px; }
+  .vue-ligne .vl-retour { font:inherit; font-size:14px; font-weight:bold; text-decoration:none;
+                          color:var(--bleu); border:1.5px solid var(--ligne); border-radius:999px;
+                          padding:5px 14px; white-space:nowrap; }
+  .vue-ligne .vl-retour:hover { border-color:var(--bleu-clair); }
+  .vue-ligne .vl-puce { color:#fff; font-family:var(--titre); font-weight:bold; font-size:15px;
+                        border-radius:999px; padding:6px 16px; white-space:nowrap; }
+  .vue-ligne .vl-sous { color:var(--mut); font-size:14px; }
+  .vue-ligne .vl-stations { border-left:8px solid var(--ligne); margin-left:15px;
+                            display:flex; flex-direction:column; gap:10px; padding:8px 0; }
+  .vue-ligne .vl-station { position:relative; display:flex; gap:12px; align-items:flex-start;
+                           margin-left:18px; padding:12px 14px; text-decoration:none;
+                           background:var(--carte); border:1px solid var(--ligne); border-radius:10px;
+                           transition:border-color .12s, transform .12s; }
+  .vue-ligne .vl-station:hover { border-color:var(--bleu-clair); transform:translateX(3px); }
+  .vue-ligne .vl-rond { position:absolute; left:-31px; top:16px; width:15px; height:15px;
+                        border-radius:50%; background:#fff; border:4.5px solid var(--ligne); }
+  .vue-ligne .vl-rond.vu::after { content:"✓"; position:absolute; inset:0; display:flex;
+                                  align-items:center; justify-content:center;
+                                  font-size:9px; font-weight:bold; color:#fff; }
+  .vue-ligne .vl-rond.corr { box-shadow:0 0 0 2.5px #98a6b3; }
+  .vue-ligne .vl-nom { font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:16px; }
+  .vue-ligne .vl-det { color:var(--mut); font-size:13.5px; margin-top:2px; }
+  .vue-ligne .vl-desc { color:var(--txt); font-size:13.5px; margin-top:6px;
+                        line-height:1.45; max-width:34em; }
+  .vue-ligne .vl-support { display:inline-block; margin-top:7px; padding:3px 9px;
+                           border:1.5px solid #2f5689; border-radius:999px;
+                           color:#1b3a63; background:#eef5fc; font-size:12.5px;
+                           font-weight:bold; line-height:1.25; }
+  /* Texte réservé aux lecteurs d'écran : l'état « visité » ne doit pas
+     reposer sur la seule couleur du rond. */
+  .lecteur-seul { position:absolute; width:1px; height:1px; overflow:hidden;
+                  clip:rect(0 0 0 0); white-space:nowrap; }
+
+  /* ---- Le réseau en liste (contenu généré au build) ---- */
+  .liste-reseau details { background:var(--carte); border:1px solid var(--ligne);
+                          border-radius:10px; margin:8px 0; }
+  .liste-reseau summary { cursor:pointer; padding:11px 16px; min-height:44px;
+                          box-sizing:border-box; font-family:var(--titre);
+                          font-weight:bold; color:var(--bleu); }
+  .liste-reseau summary .n { color:var(--mut); font-weight:normal;
+                             font-family:Calibri,'Segoe UI',sans-serif; font-size:14px; }
+  .liste-reseau ul { margin:0; padding:2px 18px 12px 36px; }
+  .liste-reseau li { margin:8px 0; }
+  .liste-reseau li .d { color:var(--mut); font-size:14.5px; }
+  /* Nouveautés — même famille visuelle que la liste du réseau, en plus compact.
+     Le bloc est REPLIÉ par défaut : il informe qui le cherche, sans pousser
+     personne. L'archive reste dessous, par date, la plus récente en haut. */
+  .nouveautes { background:var(--carte); border:1px solid var(--ligne); border-radius:10px;
+                margin-top:26px; padding:0; }
+  .nouveautes summary { cursor:pointer; padding:13px 18px; min-height:44px; box-sizing:border-box;
+                        font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:16px; }
+  .nouveautes summary .n { color:var(--mut); font-weight:normal;
+                           font-family:Calibri,'Segoe UI',sans-serif; font-size:14px; }
+  .nouveautes .nv-corps { padding:0 18px 14px; }
+  .nouveautes h3 { font-family:var(--titre); color:var(--txt); font-size:15px;
+                   margin:10px 0 6px; padding-top:10px; border-top:1px solid var(--ligne); }
+  .nouveautes ul { margin:0; padding-left:22px; }
+  .nouveautes .nv-anciennes > summary { min-height:40px; padding:10px 0; font-size:15px; color:var(--mut); }
+  .nouveautes li { margin:7px 0; font-size:15px; }
+  .nouveautes li .d { color:var(--mut); font-size:14.5px; }
+  /* Étiquettes : la forme et le mot portent l'information, pas la seule
+     couleur — le journal reste lisible imprimé ou pour un daltonien. */
+  .nouveautes .nv-etiq { display:inline-block; margin-right:7px; border:1px solid var(--mut);
+                         border-radius:999px; padding:1px 9px; font-size:12.5px; color:var(--mut);
+                         font-weight:bold; white-space:nowrap; }
+  .nouveautes .nv-neuf { border:2px solid var(--orange); color:var(--orange); }
+  .nouveautes .nv-corr { border-style:dashed; }
+  /* Le mot de l'auteur — REPLIÉ par défaut (demande de F. Henninot, 21/08) :
+     même famille que .nouveautes, la photo et le titre restent visibles fermés. */
+  .mot-auteur { background:var(--carte); border:1px solid var(--ligne); border-radius:10px;
+                margin-top:26px; padding:0; }
+  .mot-auteur summary { cursor:pointer; padding:18px 22px; min-height:44px; box-sizing:border-box;
+                        display:flex; gap:16px; align-items:center; list-style:none; }
+  .mot-auteur summary::-webkit-details-marker { display:none; }
+  .mot-auteur summary img { flex:none; border-radius:50%; background:#e7eff7;
+                            border:1.5px solid var(--ligne); }
+  .mot-auteur summary .surtitre { margin:0; }
+  .mot-auteur .ma-corps { padding:0 22px 18px calc(22px + 56px + 16px); }
+  .mot-auteur .ma-corps p { margin:0 0 10px; color:var(--txt); font-size:15px; max-width:44em; }
+  .vue-ligne .vl-corr { margin-top:6px; font-size:12.5px; color:#5a6b7d; background:#eef2f6;
+                        border-radius:999px; display:inline-block; padding:2px 10px; }
+  .vue-ligne .vl-go { margin-left:auto; align-self:center; color:var(--orange); font-weight:bold; }
+
+  /* ---- Le circuit cliquable ---- */
+  .surtitre { font-family:var(--titre); color:var(--bleu); font-weight:bold; font-size:14px;
+              letter-spacing:.6px; text-transform:uppercase; margin:34px 4px 6px; }
+  .amorce { margin:0 4px 16px; color:var(--mut); }
+  .amorce strong { color:var(--txt); }
+  .circuit { padding:22px 22px 12px; overflow-x:auto; }
+  .circuit svg { width:100%; max-width:760px; display:block; margin:0 auto; }
+  .circuit a { cursor:pointer; }
+  .circuit a:hover g { opacity:.8; }
+  .circuit text { font-family:Calibri,sans-serif; }
+  .circuit .org   { fill:var(--bleu); font-family:var(--titre); font-size:17px; font-weight:bold; }
+  .circuit .org-s { fill:var(--mut); font-size:12.5px; }
+  .circuit .cote  { font-family:var(--titre); font-size:14px; font-weight:bold; }
+  .circuit .cote.hp { fill:var(--hp); }
+  .circuit .cote.bp { fill:var(--bleu-clair); }
+  .circuit .filigrane { fill:var(--ligne); font-family:var(--titre); font-size:15px; font-weight:bold; }
+  .legende { margin:8px 0 10px; text-align:center; font-size:13px; color:var(--mut); }
+
+  /* ---- Le volet de communication ----
+     Ouvert à l'arrivée, refermé d'un clic. Il RECOUVRE la page, il ne la
+     pousse pas : pousser ferait re-calculer la largeur du plan à chaque
+     ouverture. Aucune mention d'établissement — voir le pied du volet. */
+  .volet { position:fixed; top:0; left:0; z-index:60; width:min(330px,86vw); height:100%;
+           background:var(--carte); border-right:1px solid var(--ligne);
+           box-shadow:4px 0 18px rgba(27,58,99,.14);
+           display:flex; flex-direction:column; }
+  .volet.pret { transition:transform .22s ease; }
+  .volet.replie { transform:translateX(-101%); }
+  .volet-tete { display:flex; align-items:flex-start; gap:10px; padding:14px 16px 10px;
+                border-bottom:1px solid var(--ligne); }
+  .volet-titre { font-family:var(--titre); font-weight:bold; color:var(--bleu); font-size:17px; }
+  .volet-sous { font-size:12.5px; color:var(--mut); }
+  .volet-fermer { margin-left:auto; flex:none; font:inherit; font-size:22px; line-height:1;
+                  cursor:pointer; background:none; border:1.5px solid var(--ligne);
+                  border-radius:50%; width:42px; height:42px; color:var(--mut); }
+  .volet-fermer:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+  .volet-corps { overflow-y:auto; padding:12px 16px 18px;
+                 display:flex; flex-direction:column; gap:10px; }
+  .volet-bloc { border:1px solid var(--ligne); border-radius:10px; padding:11px 13px; background:#fbfdff; }
+  .volet-bloc h3 { margin:0 0 3px; font-family:var(--titre); font-size:14.5px; color:var(--bleu); }
+  .volet-bloc p { margin:0; font-size:13px; line-height:1.45; color:var(--mut); }
+  .volet-bloc.ouvert { background:#fff7f3; border-color:#ffd9c7; }
+  .volet-actus { list-style:none; margin:4px 0 6px; padding:0; font-size:13px; line-height:1.45; color:var(--mut); }
+  .volet-actus li { margin:0 0 5px; }
+  .volet-actus li strong { color:var(--txt); }
+  .volet-libre { display:inline-block; margin-top:6px; font-size:11px; font-weight:bold;
+                 color:var(--mut); background:#e7eff7; border-radius:999px; padding:2px 9px; }
+  .volet-pied { margin:4px 0 0; font-size:11.5px; line-height:1.5; color:var(--mut); }
+  .volet-poignee { position:fixed; top:96px; left:0; z-index:59; display:none;
+                   font:inherit; font-size:13px; font-weight:bold; cursor:pointer;
+                   background:var(--bleu); color:#fff; border:0; border-radius:0 10px 10px 0;
+                   padding:9px 13px; box-shadow:2px 2px 8px rgba(27,58,99,.2); }
+  .volet-poignee:hover { background:var(--bleu-clair); }
+  /* En 360-390 px, la poignée posée à 96 px recouvrait « Accueil » et
+     « Formateurs » (l'en-tête passe sur deux lignes) — mesuré le 19/08,
+     revue croisée : elle descend sous l'en-tête, et les cibles tactiles
+     s'élargissent. */
+  @media (max-width: 700px) {
+    .volet-poignee { position:static; display:block; width:100%; border-radius:0; padding:12px 16px;
+                     text-align:left; font-size:14.5px; box-shadow:none; }
+    .hall { margin-top:22px; }
+    /* L'aperçu du volet (18/09) : une carte dans le flux, qui montre et qui invite. */
+    .volet-poignee.apercu { display:flex; flex-direction:column; gap:6px; background:var(--carte);
+                            color:var(--txt); border:1px solid var(--ligne); border-left:5px solid var(--orange);
+                            font-weight:normal; font-size:14px; line-height:1.4; cursor:pointer; }
+    .volet-poignee.apercu:hover { background:var(--carte); }
+    .volet-poignee.apercu > span { display:block; margin-top:5px; } /* un <button> ignore parfois flex : chaque ligne en bloc */
+    .volet-poignee.apercu > .ap-tete { display:flex; margin-top:0; }
+    .volet-poignee.apercu > .ap-puces { display:flex; }
+    .ap-tete { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+               font-family:var(--titre); font-weight:bold; font-size:14.5px; color:var(--bleu); }
+    .ap-tout { color:var(--orange); white-space:nowrap; }
+    .ap-actu { font-weight:bold; color:var(--txt); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; } /* une seule ligne : la dernière actualité */
+    .ap-appel { color:var(--mut); font-size:13.5px; }
+    .ap-puces { display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
+    .ap-puces span { background:#eef3f9; color:var(--bleu); border-radius:999px; padding:3px 10px;
+                     font-size:12.5px; font-weight:bold; }
+    .nav { gap:14px; }
+    .nav a { padding:8px 2px 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .volet.pret { transition:none; } }
+  /* 17/09/2026 : le volet s'ouvre à l'arrivée. Sur grand écran il POUSSE la page au lieu de la
+     couvrir — le plan n'est plus sur cette page, plus rien à recalculer à l'ouverture. */
+  .page { transition:margin-left .22s ease; }
+  @media (min-width:1100px) { body.volet-ouvert .page { margin-left:350px; margin-right:auto; } }
+  @media (prefers-reduced-motion: reduce) { .page { transition:none; } }
+
+  /* ---- Les trois portes ---- */
+  .tuiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+            gap:16px; margin-top:34px; }
+  .tuile { text-decoration:none; background:var(--carte); border:1px solid var(--ligne);
+           border-radius:var(--r); padding:20px 22px; box-shadow:var(--ombre);
+           display:flex; flex-direction:column; gap:6px;
+           transition:transform .12s, border-color .12s; }
+  .tuile:hover { transform:translateY(-3px); border-color:var(--bleu-clair); }
+  .tuile .emoji { font-size:32px; line-height:1; }
+  .tuile h3 { margin:4px 0 0; font-family:var(--titre); font-size:18px; color:var(--bleu); }
+  .tuile p { margin:0; color:var(--mut); font-size:14px; line-height:1.5; }
+  .tuile .suite { margin-top:auto; padding-top:8px; color:var(--orange);
+                  font-weight:bold; font-size:14px; }
+
+  .pro-liens { display:flex; flex-wrap:wrap; gap:6px 14px; margin:10px 0 0; padding:0; list-style:none; font-size:14px; }
+  .pro-liens a { color:var(--bleu); font-weight:bold; }
+  .vous-venez .tuiles { grid-template-columns:repeat(2,1fr); }
+  @media (min-width:1000px) { .vous-venez .tuiles { grid-template-columns:repeat(4,1fr); } }
+  @media (max-width:720px) { .vous-venez .tuiles { grid-template-columns:1fr; } .vous-venez .tuile p { display:block; } }
+  /* Porte « Je prépare un diplôme » (18/10/2026) : toute la largeur, sous les quatre tuiles. */
+  /* 20/10 : .tuile impose flex-direction:column ; sans « row » ici, la tuile faisait 460 px de haut, vide au milieu. */
+  .vous-venez .tuile-diplome { grid-column:1 / -1; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; gap:10px 18px;
+    padding:14px 22px; border:2px solid var(--bleu); }
+  .vous-venez .tuile-diplome .emoji { margin:0; }
+  .vous-venez .tuile-diplome .txt { flex:1 1 320px; }
+  .vous-venez .tuile-diplome h3, .vous-venez .tuile-diplome p { margin:0; }
+  .vous-venez .tuile-diplome .neuf { display:inline-block; margin-left:8px; font-size:13px; padding:1px 8px; border-radius:999px;
+    background:#fff4e0; color:#b06a00; border:1px dashed #b06a00; vertical-align:middle; }
+
+  /* ---- LE HALL (17/09/2026) : phrase, recherche, carte animée, chiffres, vignettes ---- */
+  .hall { display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:center; margin:28px 0 0; }
+  .hall-texte .chapo { max-width:34em; }
+  .hall-recherche { display:flex; gap:8px; margin:0 0 16px; max-width:540px; }
+  .hall-recherche input { flex:1; min-width:0; padding:11px 16px; font:16px/1.4 inherit; color:var(--txt);
+                          background:var(--carte); border:2px solid var(--ligne); border-radius:999px; }
+  .hall-recherche input:focus { outline:3px solid var(--orange); outline-offset:2px; border-color:var(--bleu); }
+  .hall-recherche .bouton { border:0; font:inherit; font-weight:bold; cursor:pointer; }
+  .hall-carte { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+                box-shadow:var(--ombre); padding:14px 18px; }
+  .hall-carte svg { display:block; width:100%; height:auto; }
+  /* ---- LE QUARTIER TECHNIQUE dans le hall (F. Henninot, 02/10/2026) : la vue 3D prend la place
+     de la carte des réseaux, qui reste à côté en petit. Un clic l’agrandit sur place (dialogue). ---- */
+  .hall-droite { display:grid; gap:12px; }
+  .hall-quartier { position:relative; display:block; border-radius:var(--r); overflow:hidden; border:1px solid var(--ligne);
+                   box-shadow:var(--ombre); background:#f3eee3; color:var(--bleu); text-decoration:none; }
+  .hall-quartier img { display:block; width:100%; height:auto; transition:transform .6s ease; }
+  .hall-quartier:hover img, .hall-quartier:focus-visible img { transform:scale(1.025); }
+  .hall-quartier:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+  .hq-badge { position:absolute; left:12px; top:12px; background:var(--carte); color:var(--bleu); border:2px solid var(--bleu);
+              font:bold 14px/1.1 "Trebuchet MS",Calibri,Arial,sans-serif; padding:6px 12px; border-radius:999px; }
+  .hq-go { position:absolute; right:12px; bottom:12px; background:var(--bleu); color:#fff; font:bold 16px/1.2 "Trebuchet MS",Calibri,Arial,sans-serif;
+           padding:10px 18px; border-radius:999px; box-shadow:0 4px 14px rgba(16,35,60,.3); }
+  .hall-quartier:hover .hq-go { background:var(--orange); }
+  /* symétrie : les deux cadres ont la même largeur et la même hauteur */
+  .hall-quartier, .hall-droite .hall-carte { aspect-ratio:16/10; width:100%; }
+  .hall-quartier img { width:100%; height:100%; object-fit:cover; }
+  .hall-droite .hall-carte { padding:10px 14px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .hall-droite .hall-carte svg { width:auto; height:100%; max-width:100%; }
+  .hall-carte a.cr-lien rect { fill:transparent; transition:fill .2s; }
+  .hall-carte a.cr-lien:hover rect, .hall-carte a.cr-lien:focus rect { fill:rgba(255,107,53,.12); }
+  .hall-carte a.cr-lien:focus { outline:none; }
+  .hall-carte a.cr-lien:focus-visible rect { stroke:var(--orange); stroke-width:3; }
+  .hc-badge { position:absolute; left:12px; bottom:12px; background:var(--carte); color:var(--bleu); border:2px solid var(--bleu);
+             font:bold 14px/1.1 "Trebuchet MS",Calibri,Arial,sans-serif; padding:6px 12px; border-radius:999px; pointer-events:none; }
+  .quartier-grand { width:min(1500px,97vw); max-width:none; max-height:96vh; padding:0; border:0; border-radius:var(--r);
+                    background:var(--fond); box-shadow:0 20px 60px rgba(16,35,60,.45); overflow:auto; }
+  .quartier-grand::backdrop { background:rgba(16,35,60,.55); }
+  .qg-barre { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; padding:10px 16px;
+              background:var(--bleu); color:#fff; }
+  .qg-barre strong { font:bold 18px/1.2 "Trebuchet MS",Calibri,Arial,sans-serif; margin-right:auto; }
+  .qg-barre a { color:#fff; font-weight:bold; }
+  .qg-barre button { width:44px; height:44px; border-radius:50%; border:0; background:rgba(255,255,255,.18); color:#fff; font-size:26px; cursor:pointer; }
+  #quartier-3d { padding:12px 16px 18px; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  .chiffres { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:24px 0 0; }
+  .chiffre { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+             padding:14px 18px 12px; text-align:center; }
+  .chiffre b { display:block; font-family:var(--titre); font-size:34px; line-height:1.1; color:var(--bleu); white-space:nowrap; }
+  .chiffre span { display:block; margin-top:4px; font-size:14px; color:var(--mut); }
+
+  .hall-reseaux { margin-top:36px; }
+  .hall-reseaux h2 { margin:0 0 6px; font-family:var(--titre); font-size:26px; color:var(--bleu); }
+  .hall-reseaux .sous { margin:0 0 18px; color:var(--mut); max-width:48em; text-wrap:pretty; }
+  /* 20/10/2026 (F. Henninot : « trop de choses d'entrée de jeu ») : les treize vignettes passent en
+     grille compacte — quatre par rangée, image basse, résumé sur deux lignes, une seule entrée
+     (la première, ▶) plus la chaîne YouTube. Le HTML des vignettes reste celui de build/accueil.mjs. */
+  .grille-reseaux { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .vignette { background:var(--carte); border:1px solid var(--ligne); border-top:6px solid var(--c);
+              border-radius:var(--r); box-shadow:var(--ombre); overflow:hidden;
+              display:flex; flex-direction:column; }
+  .v-carte { display:block; background:#fff; padding:10px 12px; border-bottom:1px solid var(--ligne); }
+  .v-carte { position:relative; }
+  .v-carte img { display:block; width:100%; height:130px; object-fit:contain; }
+  /* 06/10/2026 — deux volets : ce qu'on va voir (illustration) et le plan du réseau, étiqueté. */
+  .v-carte.v-duo { display:grid; grid-template-columns:1.3fr 1fr; padding:0; height:130px; }
+  .v-duo .v-illu { display:block; overflow:hidden; background:#f3efe7; }
+  .v-duo .v-illu img { height:100%; object-fit:cover; }
+  .v-duo .v-plan { position:relative; display:block; background:#fff; padding:10px 8px 30px; border-left:1px solid var(--ligne); }
+  .v-duo .v-plan img { height:100%; object-fit:contain; }
+  .v-etiq { position:absolute; left:6px; right:6px; bottom:6px; text-align:center; font-size:14px; font-weight:bold;
+            color:var(--c); line-height:1.2; }
+  .v-carte.v-plein { padding:0; }
+  .v-plein img { height:130px; object-fit:cover; }
+  .v-pastille { position:absolute; right:10px; bottom:10px; padding:5px 12px; border-radius:999px; background:#c00; color:#fff;
+                font-size:14px; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,.25); }
+  .v-corps { padding:12px 14px 14px; display:flex; flex-direction:column; gap:5px; }
+  .v-nom { margin:0; font-family:var(--titre); font-size:17px; line-height:1.25; }
+  .v-nom a { color:var(--c); text-decoration:none; }
+  .v-nom a:hover, .v-carte:hover img { text-decoration:underline; opacity:.92; }
+  .v-chiffres { margin:0; font-size:13.5px; color:var(--mut); }
+  .v-niv { display:inline-block; margin-left:8px; padding:1px 9px; border-radius:999px;
+           background:#eef3f9; color:var(--bleu); font-weight:bold; font-size:12px; }
+  .v-etat { display:inline-block; margin-left:6px; padding:1px 9px; border-radius:999px;
+            background:#fff4e0; color:#b06a00; font-size:12px; font-weight:bold; }
+  .v-det { margin:0; font-size:14px; color:var(--txt); text-wrap:pretty;
+           display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .v-entrees { margin:auto 0 0; padding-top:4px; display:flex; flex-wrap:wrap; gap:8px; }
+  .v-entrees a:not(.v-entree):not(.v-externe) { display:none; } /* le détail des lignes vit sur la page du réseau */
+  .v-entrees a { font-size:13.5px; text-decoration:none; color:var(--bleu);
+                 border:1.5px solid var(--ligne); border-radius:999px; padding:4px 11px; }
+  .v-entrees a:hover { border-color:var(--bleu-clair); background:#eef3f9; }
+  .v-entrees a.v-entree { background:var(--c); color:#fff; border-color:var(--c); font-weight:bold; }
+  .v-entrees a.v-entree:hover { filter:brightness(1.12); }
+  .v-entrees a.v-externe { color:#a30000; border-color:#e3a3a3; font-weight:bold; } /* la chaîne YouTube : rouge reconnaissable, contraste AA */
+  .portes.formation .porte { --accent:#1e7e54; }
+  @media (max-width:1000px) {
+    .hall { grid-template-columns:1fr; gap:22px; margin-top:56px; } /* sous la poignée « Infos », fixée à gauche */
+    .grille-reseaux { grid-template-columns:repeat(3,1fr); }
+  }
+  @media (max-width:800px) { .grille-reseaux { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px) {
+    .grille-reseaux { grid-template-columns:1fr; }
+    .chiffres { grid-template-columns:repeat(2,1fr); }
+    .chiffre b { font-size:26px; }
+    .hall-recherche { flex-direction:column; }
+    .hall-recherche .bouton { align-self:flex-start; }
+    .v-carte img { height:150px; }
+  }
+  /* Téléphone : la page se PLIE au lieu de s'allonger (F. Henninot, 17/09 : « une grande page de
+     30 km de long… trouver des solutions hybrides »). Les six réseaux deviennent une rame à faire
+     glisser, une carte à la fois ; portes et tuiles passent en lignes compactes. Même page, même
+     contenu, aucun second site. */
+  .glisser { display:none; margin:0 0 8px; font-size:13.5px; color:var(--mut); }
+  @media (max-width:640px) {
+    .hall-texte .chapo { font-size:16.5px; }
+    .hall-texte h1 { font-size:31px; }
+    .grille-reseaux { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+                      padding:4px 2px 14px; scrollbar-width:thin; -webkit-overflow-scrolling:touch; }
+    .vignette { flex:0 0 86%; scroll-snap-align:center; }
+    .v-carte img { height:130px; }
+    .v-det { font-size:14.5px; }
+    .glisser { display:block; }
+    .portes { gap:10px; }
+    .porte { grid-template-columns:40px 1fr; padding:10px 12px; }
+    .porte .p-ico { font-size:26px; }
+    .porte .p-titre { font-size:17px; }
+    .porte .p-det { font-size:13.5px; }
+    .porte.avec-vignette { grid-template-columns:40px 1fr; grid-template-rows:none; }
+    .porte .p-vign { grid-column:1 / -1; grid-row:auto; width:100%; max-width:320px; }
+    .tuiles { grid-template-columns:repeat(2,1fr); gap:10px; }
+    .tuile { padding:12px; }
+    .tuile p { display:none; }
+    .tuile .emoji { font-size:26px; }
+    .tuile h3 { font-size:16px; }
+  }
+  /* La porte des enseignants (08/10/2026) : en tête de page ; au-dessus de 700 px elle passe
+     sous la poignée « Actualités » fixée à gauche (top 96 px). */
+  .porte-prof { margin:14px 0 18px; }
+  .porte-prof + .hall { margin-top:0; }
+  @media (min-width:701px) { .porte-prof { margin-top:84px; } }
+/* Téléphone (audit 23/10/2026) : texte à 14 px au moins, sur téléphone seulement. */
+@media (max-width:760px){
+  .volet-sous, .volet-actus li strong, .volet-actus li a, .volet-bloc p, .volet-bloc p strong, .volet-bloc p a, .volet-libre,
+  .volet-pied, .volet-pied strong, .volet-pied em, .ap-appel, .ap-puces > span, .hall-texte .pastille, h3 .neuf, .glisser,
+  .v-chiffres, .v-niv, .v-etat, .v-entrees a, .rayon .livre > span, .nouveautes .nv-etiq { font-size:14px !important; }
+  .v-entrees a { display:inline-block; padding-top:10px; padding-bottom:10px; }
+}
+</style>
+<script defer src="moteur/retour-accueil.js?v=93c85e5976"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<!-- ===================================================================
+     VOLET DE COMMUNICATION
+     Repris du système dormant de manometres_v5.html (les quatre volets
+     existaient encore dans la page, mais plus aucun bouton ne les
+     ouvrait). Reconstruit ici SANS AUCUNE identité d'établissement :
+     ni nom, ni adresse, ni courriel officiel, ni logo — F. Henninot n'a
+     pas l'autorisation de parler au nom de qui que ce soit. Les quatre
+     espaces sont donc VIERGES et déclarés comme tels : ils montrent ce
+     que la page pourrait accueillir, rien de plus. Si l'offre n'est pas
+     saisie, ces emplacements accueilleront autre chose (partenaires,
+     entreprises) sans toucher à la mécanique.
+     =================================================================== -->
+<aside class="volet" id="volet" role="complementary" aria-label="Actualités et espaces de communication">
+  <div class="volet-tete">
+    <div>
+      <div class="volet-titre">Actualités &amp; espaces</div>
+      <div class="volet-sous">Ce que cette page peut accueillir</div>
+    </div>
+    <button type="button" class="volet-fermer" id="volet-fermer" aria-label="Fermer le panneau">×</button>
+  </div>
+  <div class="volet-corps">
+
+    <div class="volet-bloc">
+      <h3>📰 Actualités</h3>
+      <!-- Rempli par le script du volet avec les trois dernières actualités du journal
+           #nouveautes (27/09, F. Henninot : « rentrer quelque chose à chaque fois
+           qu'on améliore le site ») : on n'écrit plus qu'à un seul endroit. -->
+      <ul class="volet-actus" id="volet-actus"></ul>
+      <p>🚧 <strong>Réseau en travaux</strong> : les contenus continuent d’être relus et améliorés.<br>
+      <a href="#nouveautes" data-vers-journal><strong>📔 Tout ce qui a changé, par date ▸</strong></a></p>
+    </div>
+
+    <div class="volet-bloc ouvert">
+      <h3>🤝 Partenaires &amp; bêta-testeurs</h3>
+      <p><strong>inerWeb Fluide</strong> — le logiciel de traçabilité des fluides frigorigènes — cherche des centres de formation et des professionnels pour l’essayer avant sa sortie.<br>
+      <!-- Voir AVANT de se proposer : la DÉMONSTRATION EN LIGNE directement
+           (la v8, celle du README du dépôt Fluide — pas la page vitrine :
+           correction F. Henninot, 19/08 au soir), la candidature ensuite. -->
+      <a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener"><strong>👀 Essayer la démonstration en ligne ▸</strong></a><br>
+      <a href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">📄 Télécharger la présentation (PDF, 2 pages) ▸</a><br>
+      <a href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Puis se proposer comme bêta-testeur ▸</a></p>
+    </div>
+
+    <!-- 06/10/2026 : la chaîne YouTube. Placée en TROISIÈME bloc : l'aperçu téléphone
+         lit les actualités (bloc 1) et l'appel aux partenaires (bloc 2) par leur rang,
+         les suivants deviennent des pastilles. -->
+    <div class="volet-bloc">
+      <h3>🎥 La chaîne YouTube</h3>
+      <p>Les films d’inerWeb Studio en vidéo : le Voyage dans tous ses états, la régulation, la sécurité à l’atelier…<br>
+      <a href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener"><strong>▶ Voir la chaîne inerWeb FR ▸</strong></a></p>
+    </div>
+
+    <div class="volet-bloc">
+      <h3>🎓 Stages et PFMP</h3>
+      <p>Emplacement prévu pour un établissement qui cherche des terrains de stage : périodes, filières, contact.</p>
+      <span class="volet-libre">espace libre</span>
+    </div>
+
+    <div class="volet-bloc">
+      <h3>🔧 Recruter un apprenti</h3>
+      <p>Emplacement prévu pour présenter des jeunes formés au froid et à la climatisation à des entreprises qui recrutent.</p>
+      <span class="volet-libre">espace libre</span>
+    </div>
+
+    <div class="volet-bloc">
+      <h3>💛 Soutenir une formation</h3>
+      <p>Emplacement prévu pour un appel au soutien : taxe d’apprentissage, dons de matériel, équipement d’atelier.</p>
+      <span class="volet-libre">espace libre</span>
+    </div>
+
+    <p class="volet-pied">inerWeb est un <strong>projet personnel et indépendant</strong>, sans lien avec aucune institution — développé par inerweb.fr <em>(voir « Le mot de l’auteur », en bas de l’accueil)</em>. Les trois espaces libres ci-dessus sont proposés sans contrepartie à un établissement de formation qui souhaiterait s’en servir ; ils ne représentent aujourd’hui aucune structure.</p>
+  </div>
+</aside>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerweb.fr — accueil">
+      <!-- Logo figé, charte § 3.4 : orange DU LOGO #e8914a, distinct de l'orange
+           du contenu. C'est aussi ce que marque.js reconnaît (aria-label
+           commençant par « inerWeb ») pour savoir que l'en-tête est marqué. -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="plan.html">Le plan</a>
+      <a href="galerie.html">Catalogue</a>
+      <a href="#outils">Outils</a>
+      <a href="metier.html">Le métier</a>
+      <a href="formateurs.html">Formateurs</a>
+      <a href="livres/">Livres</a>
+      <!-- La chaîne YouTube « inerWeb FR » (06/10/2026). Même adresse que
+           window.INERWEB_YOUTUBE (moteur/reseaux.js) : la changer partout à la fois
+           (git grep UCeeJMhgiuPSWekxoH-EexQA). -->
+      <a class="nav-youtube" href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener" title="La chaîne YouTube inerWeb FR (nouvel onglet)">▶ YouTube</a>
+    </nav>
+  </div>
+</div>
+
+<!-- La poignée du volet : onglet fixé à gauche sur grand écran ; sur téléphone, une bande sous le menu
+     (17/09, F. Henninot : « le bandeau est trop impressionnant sur téléphone et masque le contenu »). -->
+<button type="button" class="volet-poignee" id="volet-poignee" aria-label="Ouvrir le panneau d’actualités">📰 Actualités &amp; espaces ▸</button>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+  <!-- La porte des enseignants (F. Henninot, 08/10/2026 : « au début, bien visible »). Les collègues
+       ne trouvent pas l’entrée de l’écosystème ; ce bandeau mène au parcours découverte (decouvrir.html,
+       08/10/2026 ; CLAUDE-ESPACE-TRAVAIL/PORTE-PROF-ET-TUTOS-2026-10-08/PLAN.md). -->
+  <a href="decouvrir.html" class="porte-prof"
+     style="display:block; padding:9px 16px; border-radius:14px;
+            background:#ff6b35; color:#fff; text-decoration:none; font-size:15.5px; line-height:1.4;
+            font-family:'Trebuchet MS',Calibri,Arial,sans-serif; box-shadow:0 2px 10px rgba(27,58,99,.15);">
+    <strong>Vous êtes formateur ou enseignant&nbsp;?</strong>
+    Cliquez ici pour comprendre le fonctionnement de l’écosystème inerWeb, encore en développement&nbsp;→
+  </a>
+
+  <!-- ===================================================================
+       LE HALL (F. Henninot, 17/09/2026 : « l'effet waouh — oui bien sûr,
+       c'est un site qui fait ça, et je trouve tout de suite »). Il REMPLACE
+       l'accroche, l'organigramme et le plan qui vivaient ici : le plan du
+       thermo-techno a sa page (plan.html) ; l'accueil montre les réseaux,
+       leurs cartes, les chiffres relevés et les portes. Les blocs entre
+       sentinelles sont ÉCRITS par build/accueil.mjs depuis moteur/reseaux.js
+       et le catalogue — jamais à la main. -->
+  <section class="hall" aria-labelledby="titre-hall">
+    <div class="hall-texte">
+      <div class="pastille">GRATUIT · SANS COMPTE · EN FRANÇAIS</div>
+      <h1 id="titre-hall">Tout inerWeb, <em>réseau par réseau</em>.</h1>
+      <p class="chapo">Des cours interactifs qui parlent, rangés comme des lignes de métro : le froid, l’eau, l’air, l’électricité, la réglementation, l’habilitation. Du CAP au BTS, pour les élèves, les stagiaires et les professionnels — <strong>un projet personnel d’enseignant frigoriste</strong>.</p>
+      <form class="hall-recherche" action="plan.html" method="get" role="search" id="recherche-accueil">
+        <label for="q-accueil" class="sr-only">Chercher un cours</label>
+        <input type="search" id="q-accueil" name="q" placeholder="Chercher un cours : surchauffe, manifold, huile…" autocomplete="off" spellcheck="false">
+        <button type="submit" class="bouton">Chercher</button>
+      </form>
+      <div class="boutons">
+        <a class="bouton creux" href="#reseaux">Entrer dans un réseau ▾</a>
+        <a class="bouton creux" href="plan.html">Voir le grand plan</a>
+        <a class="bouton" href="mon-parcours/">🧭 Mon parcours par diplôme</a>
+      </div>
+    </div>
+    <div class="hall-droite">
+      <a class="hall-quartier" href="quartier/" data-quartier aria-label="Entrer dans le quartier technique en 3D : touchez un appareil pour trouver ses cours">
+        <img src="quartier/apercu.jpg" width="1240" height="698" alt="Le quartier technique en 3D : l’immeuble des règles, un commerce en coupe avec sa chambre froide, ses vitrines et ses machines sur le toit, une maison avec sa pompe à chaleur, et la camionnette du technicien.">
+        <span class="hq-badge">🏙️ Le quartier technique · 3D</span>
+        <span class="hq-go">Entrer : touchez un appareil →</span>
+      </a>
+    <div class="hall-carte">
+      <!-- CARTE-RESEAUX DEBUT (générée par build/accueil.mjs — ne pas éditer à la main) -->
+<svg class="carte-reseaux" viewBox="0 0 640 928" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cr-titre">
+<title id="cr-titre">Le réseau des réseaux inerWeb : 14 réseaux, 421 stations</title>
+<style>
+.cr-l{stroke-width:9;fill:none;stroke-linecap:round;animation:cr-tracer 1.5s ease-out both}
+.cr-s{animation:cr-paraitre .35s ease-out both}
+.cr-t{font:700 15px "Trebuchet MS",Calibri,Arial,sans-serif}
+.cr-n{font:13px Calibri,"Segoe UI",Arial,sans-serif;fill:#637285}
+@keyframes cr-tracer{from{stroke-dasharray:1000;stroke-dashoffset:1000}to{stroke-dasharray:1000;stroke-dashoffset:0}}
+@keyframes cr-paraitre{from{opacity:0;transform:scale(.4);transform-origin:center;transform-box:fill-box}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cr-l,.cr-s{animation:none}}
+</style>
+<circle cx="96" cy="464" r="40" fill="#fffdf8" stroke="#1b3a63" stroke-width="7"/>
+<text x="96" y="460" text-anchor="middle" class="cr-t" fill="#1b3a63">inerWeb</text>
+<text x="96" y="478" text-anchor="middle" class="cr-n">421 stations</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 42, 300 42 L 440 42" stroke="#0c4a6e" style="animation-delay:0.00s"/>
+<circle class="cr-s" cx="310.0" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:0.90s"/>
+<circle class="cr-s" cx="327.1" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:0.95s"/>
+<circle class="cr-s" cx="344.3" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:1.00s"/>
+<circle class="cr-s" cx="361.4" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:1.05s"/>
+<circle class="cr-s" cx="378.6" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:1.10s"/>
+<circle class="cr-s" cx="395.7" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:1.15s"/>
+<circle class="cr-s" cx="412.9" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:1.20s"/>
+<circle class="cr-s" cx="430.0" cy="42" r="6.5" fill="#fffdf8" stroke="#0c4a6e" stroke-width="3.5" style="animation-delay:1.25s"/>
+<text x="456" y="47" class="cr-t" fill="#0c4a6e">Thermo-techno</text>
+<text x="456" y="64" class="cr-n">151 stations · 15 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 104, 300 104 L 440 104" stroke="#1e40af" style="animation-delay:0.18s"/>
+<circle class="cr-s" cx="310.0" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.08s"/>
+<circle class="cr-s" cx="327.1" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.13s"/>
+<circle class="cr-s" cx="344.3" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.18s"/>
+<circle class="cr-s" cx="361.4" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.23s"/>
+<circle class="cr-s" cx="378.6" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.28s"/>
+<circle class="cr-s" cx="395.7" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.33s"/>
+<circle class="cr-s" cx="412.9" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.38s"/>
+<circle class="cr-s" cx="430.0" cy="104" r="6.5" fill="#fffdf8" stroke="#1e40af" stroke-width="3.5" style="animation-delay:1.43s"/>
+<text x="456" y="109" class="cr-t" fill="#1e40af">Législation</text>
+<text x="456" y="126" class="cr-n">63 stations · 11 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 166, 300 166 L 440 166" stroke="#0c4b88" style="animation-delay:0.36s"/>
+<circle class="cr-s" cx="310.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.26s"/>
+<circle class="cr-s" cx="330.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.31s"/>
+<circle class="cr-s" cx="350.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.36s"/>
+<circle class="cr-s" cx="370.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.41s"/>
+<circle class="cr-s" cx="390.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.46s"/>
+<circle class="cr-s" cx="410.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.51s"/>
+<circle class="cr-s" cx="430.0" cy="166" r="6.5" fill="#fffdf8" stroke="#0c4b88" stroke-width="3.5" style="animation-delay:1.56s"/>
+<text x="456" y="171" class="cr-t" fill="#0c4b88">inerWeb BE</text>
+<text x="456" y="188" class="cr-n">8 stations · 7 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 228, 300 228 L 440 228" stroke="#3d7fca" style="animation-delay:0.54s"/>
+<circle class="cr-s" cx="310.0" cy="228" r="6.5" fill="#fffdf8" stroke="#3d7fca" stroke-width="3.5" style="animation-delay:1.44s"/>
+<circle class="cr-s" cx="350.0" cy="228" r="6.5" fill="#fffdf8" stroke="#3d7fca" stroke-width="3.5" style="animation-delay:1.49s"/>
+<circle class="cr-s" cx="390.0" cy="228" r="6.5" fill="#fffdf8" stroke="#3d7fca" stroke-width="3.5" style="animation-delay:1.54s"/>
+<circle class="cr-s" cx="430.0" cy="228" r="6.5" fill="#fffdf8" stroke="#3d7fca" stroke-width="3.5" style="animation-delay:1.59s"/>
+<text x="456" y="233" class="cr-t" fill="#3d7fca">HydroMétro</text>
+<text x="456" y="250" class="cr-n">27 stations · 4 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 290, 300 290 L 440 290" stroke="#1b6e5a" style="animation-delay:0.72s"/>
+<circle class="cr-s" cx="310.0" cy="290" r="6.5" fill="#fffdf8" stroke="#1b6e5a" stroke-width="3.5" style="animation-delay:1.62s"/>
+<circle class="cr-s" cx="334.0" cy="290" r="6.5" fill="#fffdf8" stroke="#1b6e5a" stroke-width="3.5" style="animation-delay:1.67s"/>
+<circle class="cr-s" cx="358.0" cy="290" r="6.5" fill="#fffdf8" stroke="#1b6e5a" stroke-width="3.5" style="animation-delay:1.72s"/>
+<circle class="cr-s" cx="382.0" cy="290" r="6.5" fill="#fffdf8" stroke="#1b6e5a" stroke-width="3.5" style="animation-delay:1.77s"/>
+<circle class="cr-s" cx="406.0" cy="290" r="6.5" fill="#fffdf8" stroke="#1b6e5a" stroke-width="3.5" style="animation-delay:1.82s"/>
+<circle class="cr-s" cx="430.0" cy="290" r="6.5" fill="#fffdf8" stroke="#1b6e5a" stroke-width="3.5" style="animation-delay:1.87s"/>
+<text x="456" y="295" class="cr-t" fill="#1b6e5a">AéroRézo</text>
+<text x="456" y="312" class="cr-n">37 stations · 6 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 352, 300 352 L 440 352" stroke="#7c3aed" style="animation-delay:0.90s"/>
+<circle class="cr-s" cx="310.0" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:1.80s"/>
+<circle class="cr-s" cx="327.1" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:1.85s"/>
+<circle class="cr-s" cx="344.3" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:1.90s"/>
+<circle class="cr-s" cx="361.4" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:1.95s"/>
+<circle class="cr-s" cx="378.6" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:2.00s"/>
+<circle class="cr-s" cx="395.7" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:2.05s"/>
+<circle class="cr-s" cx="412.9" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:2.10s"/>
+<circle class="cr-s" cx="430.0" cy="352" r="6.5" fill="#fffdf8" stroke="#7c3aed" stroke-width="3.5" style="animation-delay:2.15s"/>
+<text x="456" y="357" class="cr-t" fill="#7c3aed">ÉlectroRézo</text>
+<text x="456" y="374" class="cr-n">75 stations · 9 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 414, 300 414 L 440 414" stroke="#b06a00" style="animation-delay:1.08s"/>
+<circle class="cr-s" cx="310.0" cy="414" r="6.5" fill="#fffdf8" stroke="#b06a00" stroke-width="3.5" style="animation-delay:1.98s"/>
+<circle class="cr-s" cx="340.0" cy="414" r="6.5" fill="#fffdf8" stroke="#b06a00" stroke-width="3.5" style="animation-delay:2.03s"/>
+<circle class="cr-s" cx="370.0" cy="414" r="6.5" fill="#fffdf8" stroke="#b06a00" stroke-width="3.5" style="animation-delay:2.08s"/>
+<circle class="cr-s" cx="400.0" cy="414" r="6.5" fill="#fffdf8" stroke="#b06a00" stroke-width="3.5" style="animation-delay:2.13s"/>
+<circle class="cr-s" cx="430.0" cy="414" r="6.5" fill="#fffdf8" stroke="#b06a00" stroke-width="3.5" style="animation-delay:2.18s"/>
+<text x="456" y="419" class="cr-t" fill="#b06a00">HoCourant</text>
+<text x="456" y="436" class="cr-n">13 stations · 5 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 476, 300 476 L 440 476" stroke="#1b3a63" style="animation-delay:1.26s"/>
+<circle class="cr-s" cx="310.0" cy="476" r="6.5" fill="#fffdf8" stroke="#1b3a63" stroke-width="3.5" style="animation-delay:2.16s"/>
+<circle class="cr-s" cx="350.0" cy="476" r="6.5" fill="#fffdf8" stroke="#1b3a63" stroke-width="3.5" style="animation-delay:2.21s"/>
+<circle class="cr-s" cx="390.0" cy="476" r="6.5" fill="#fffdf8" stroke="#1b3a63" stroke-width="3.5" style="animation-delay:2.26s"/>
+<circle class="cr-s" cx="430.0" cy="476" r="6.5" fill="#fffdf8" stroke="#1b3a63" stroke-width="3.5" style="animation-delay:2.31s"/>
+<text x="456" y="481" class="cr-t" fill="#1b3a63">inerWeb R408</text>
+<text x="456" y="498" class="cr-n">11 modules · 4 paliers</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 538, 300 538 L 440 538" stroke="#b45309" style="animation-delay:1.44s"/>
+<circle class="cr-s" cx="310.0" cy="538" r="6.5" fill="#fffdf8" stroke="#b45309" stroke-width="3.5" style="animation-delay:2.34s"/>
+<circle class="cr-s" cx="350.0" cy="538" r="6.5" fill="#fffdf8" stroke="#b45309" stroke-width="3.5" style="animation-delay:2.39s"/>
+<circle class="cr-s" cx="390.0" cy="538" r="6.5" fill="#fffdf8" stroke="#b45309" stroke-width="3.5" style="animation-delay:2.44s"/>
+<circle class="cr-s" cx="430.0" cy="538" r="6.5" fill="#fffdf8" stroke="#b45309" stroke-width="3.5" style="animation-delay:2.49s"/>
+<text x="456" y="543" class="cr-t" fill="#b45309">CuivRézo</text>
+<text x="456" y="560" class="cr-n">14 stations · 4 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 600, 300 600 L 440 600" stroke="#1f6fa8" style="animation-delay:1.62s"/>
+<circle class="cr-s" cx="310.0" cy="600" r="6.5" fill="#fffdf8" stroke="#1f6fa8" stroke-width="3.5" style="animation-delay:2.52s"/>
+<circle class="cr-s" cx="350.0" cy="600" r="6.5" fill="#fffdf8" stroke="#1f6fa8" stroke-width="3.5" style="animation-delay:2.57s"/>
+<circle class="cr-s" cx="390.0" cy="600" r="6.5" fill="#fffdf8" stroke="#1f6fa8" stroke-width="3.5" style="animation-delay:2.62s"/>
+<circle class="cr-s" cx="430.0" cy="600" r="6.5" fill="#fffdf8" stroke="#1f6fa8" stroke-width="3.5" style="animation-delay:2.67s"/>
+<text x="456" y="605" class="cr-t" fill="#1f6fa8">Le tour de main</text>
+<text x="456" y="622" class="cr-n">1 jeu de poste · 23 stations · 4 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 662, 300 662 L 440 662" stroke="#0e7490" style="animation-delay:1.80s"/>
+<circle class="cr-s" cx="310.0" cy="662" r="6.5" fill="#fffdf8" stroke="#0e7490" stroke-width="3.5" style="animation-delay:2.70s"/>
+<circle class="cr-s" cx="340.0" cy="662" r="6.5" fill="#fffdf8" stroke="#0e7490" stroke-width="3.5" style="animation-delay:2.75s"/>
+<circle class="cr-s" cx="370.0" cy="662" r="6.5" fill="#fffdf8" stroke="#0e7490" stroke-width="3.5" style="animation-delay:2.80s"/>
+<circle class="cr-s" cx="400.0" cy="662" r="6.5" fill="#fffdf8" stroke="#0e7490" stroke-width="3.5" style="animation-delay:2.85s"/>
+<circle class="cr-s" cx="430.0" cy="662" r="6.5" fill="#fffdf8" stroke="#0e7490" stroke-width="3.5" style="animation-delay:2.90s"/>
+<text x="456" y="667" class="cr-t" fill="#0e7490">CartoClim</text>
+<text x="456" y="684" class="cr-n">21 stations · 5 lignes</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 724, 300 724 L 440 724" stroke="#15803d" style="animation-delay:1.98s"/>
+<circle class="cr-s" cx="310.0" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:2.88s"/>
+<circle class="cr-s" cx="327.1" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:2.93s"/>
+<circle class="cr-s" cx="344.3" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:2.98s"/>
+<circle class="cr-s" cx="361.4" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:3.03s"/>
+<circle class="cr-s" cx="378.6" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:3.08s"/>
+<circle class="cr-s" cx="395.7" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:3.13s"/>
+<circle class="cr-s" cx="412.9" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:3.18s"/>
+<circle class="cr-s" cx="430.0" cy="724" r="6.5" fill="#fffdf8" stroke="#15803d" stroke-width="3.5" style="animation-delay:3.23s"/>
+<text x="456" y="729" class="cr-t" fill="#15803d">JouéRézo</text>
+<text x="456" y="746" class="cr-n">10 jeux</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 786, 300 786 L 440 786" stroke="#b91c1c" style="animation-delay:2.16s"/>
+<circle class="cr-s" cx="310.0" cy="786" r="6.5" fill="#fffdf8" stroke="#b91c1c" stroke-width="3.5" style="animation-delay:3.06s"/>
+<circle class="cr-s" cx="370.0" cy="786" r="6.5" fill="#fffdf8" stroke="#b91c1c" stroke-width="3.5" style="animation-delay:3.11s"/>
+<circle class="cr-s" cx="430.0" cy="786" r="6.5" fill="#fffdf8" stroke="#b91c1c" stroke-width="3.5" style="animation-delay:3.16s"/>
+<text x="456" y="791" class="cr-t" fill="#b91c1c">SimuRézo</text>
+<text x="456" y="808" class="cr-n">3 niveaux · 8 situations</text>
+<path class="cr-l" d="M 140 464 C 226 464, 240 848, 300 848 L 440 848" stroke="#be185d" style="animation-delay:2.34s"/>
+<circle class="cr-s" cx="310.0" cy="848" r="6.5" fill="#fffdf8" stroke="#be185d" stroke-width="3.5" style="animation-delay:3.24s"/>
+<circle class="cr-s" cx="350.0" cy="848" r="6.5" fill="#fffdf8" stroke="#be185d" stroke-width="3.5" style="animation-delay:3.29s"/>
+<circle class="cr-s" cx="390.0" cy="848" r="6.5" fill="#fffdf8" stroke="#be185d" stroke-width="3.5" style="animation-delay:3.34s"/>
+<circle class="cr-s" cx="430.0" cy="848" r="6.5" fill="#fffdf8" stroke="#be185d" stroke-width="3.5" style="animation-delay:3.39s"/>
+<text x="456" y="853" class="cr-t" fill="#be185d">Studio</text>
+<text x="456" y="870" class="cr-n">34 films</text>
+</svg>
+<!-- CARTE-RESEAUX FIN -->
+    </div>
+    </div>
+  </section>
+  <!-- Le quartier en grand : la 3D ne se charge qu’au clic (l’accueil reste léger). Sans dialogue
+       ou sans script, le lien mène simplement à la page quartier/. -->
+  <dialog class="quartier-grand" id="quartier-grand" aria-label="Le quartier technique en 3D">
+    <div class="qg-barre"><strong>🏙️ Le quartier technique</strong><a href="quartier/">Ouvrir la page du quartier</a>
+      <button type="button" data-fermer aria-label="Fermer le quartier">×</button></div>
+    <div id="quartier-3d"></div>
+  </dialog>
+  <script type="module">
+    const lien = document.querySelector("[data-quartier]"), dlg = document.getElementById("quartier-grand");
+    let monte = false;
+    if (lien && dlg && typeof dlg.showModal === "function") {
+      lien.addEventListener("click", function (e) {
+        if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+        dlg.showModal();
+        if (!monte) { monte = true; import("./quartier/entree.js").then(function (m) { m.monterRue(document.getElementById("quartier-3d")); }); }
+      });
+      dlg.querySelector("[data-fermer]").addEventListener("click", function () { dlg.close(); });
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    }
+    /* La carte des réseaux devient cliquable : chaque ligne mène à son réseau (lien lu dans sa
+       vignette, plus bas), le rond central aux cartes de tous les réseaux. */
+    (function () {
+      const carte = document.querySelector(".hall-droite .hall-carte"), svg = carte && carte.querySelector("svg.carte-reseaux");
+      if (!svg) return;
+      const NS = "http://www.w3.org/2000/svg", vignettes = Array.from(document.querySelectorAll(".v-nom a"));
+      function lien(href, titre, x, y, w, h, rond) {
+        const a = document.createElementNS(NS, "a"); a.setAttribute("href", href); a.setAttribute("class", "cr-lien");
+        a.setAttribute("aria-label", titre);
+        const r = document.createElementNS(NS, "rect"); r.setAttribute("x", x); r.setAttribute("y", y); r.setAttribute("width", w); r.setAttribute("height", h); r.setAttribute("rx", rond);
+        const t = document.createElementNS(NS, "title"); t.textContent = titre;
+        a.appendChild(t); a.appendChild(r); svg.appendChild(a);
+      }
+      svg.setAttribute("role", "group");
+      const vb = svg.viewBox.baseVal;
+      svg.querySelectorAll("text.cr-t").forEach(function (t) {
+        const nom = t.textContent.trim(), v = vignettes.find(function (a) { return a.textContent.toLowerCase().indexOf(nom.toLowerCase()) >= 0; });
+        if (nom === "inerWeb" || !v) return;
+        const y = parseFloat(t.getAttribute("y"));
+        lien(v.getAttribute("href"), "Entrer dans " + nom, 230, y - 32, vb.width - 234, 56, 12);
+      });
+      lien("#reseaux", "Voir les cartes de tous les réseaux", 40, vb.height / 2 - 60, 120, 120, 60);
+      const b = document.createElement("span"); b.className = "hc-badge"; b.textContent = "🚇 Les cartes des réseaux";
+      carte.appendChild(b);
+    })();
+  </script>
+
+  <div class="chiffres" aria-label="Le site en chiffres">
+    <!-- CHIFFRES-ACCUEIL DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
+      <div class="chiffre"><b>14</b><span>réseaux</span></div>
+      <div class="chiffre"><b>421</b><span>stations, un cours chacune</span></div>
+      <div class="chiffre"><b>74</b><span>lignes à suivre</span></div>
+      <div class="chiffre"><b>+ de 8 900</b><span>narrations audio</span></div>
+<!-- CHIFFRES-ACCUEIL FIN -->
+  </div>
+
+  <section class="vous-venez" aria-labelledby="titre-venez">
+    <h2 id="titre-venez">Vous venez pour quoi ?</h2>
+    <div class="tuiles">
+      <div class="tuile">
+        <div class="emoji">🎒</div>
+        <h3>J’apprends</h3>
+        <p>Je découvre le métier, je révise ou je suis mon cours.</p>
+        <div><a class="bouton" href="quartier/">Commencer</a></div>
+      </div>
+      <div class="tuile">
+        <div class="emoji">🎯</div>
+        <h3>Je me situe</h3>
+        <p>Où j’en suis, avant de commencer ? 22 questions qui ne comptent pas.</p>
+        <div><a class="bouton" href="f/positionnement/">Faire le test d’entrée</a></div>
+      </div>
+      <div class="tuile">
+        <div class="emoji">🎓</div>
+        <h3>J’enseigne / je forme</h3>
+        <p>Je cherche une séance, un support, une activité ou une évaluation.</p>
+        <div><a class="bouton" href="formateurs.html">Préparer ma séance</a></div>
+      </div>
+      <div class="tuile">
+        <div class="emoji">🔧</div>
+        <h3>Je suis professionnel</h3>
+        <p>Je cherche vite une information technique, réglementaire ou un outil.</p>
+        <div><a class="bouton" href="#recherche-accueil">Trouver une information</a></div>
+        <ul class="pro-liens">
+          <li><a href="aerorezo/stations/diagnostic/">Diagnostic</a></li>
+          <li><a href="legislation/">Fluides &amp; réglementation</a></li>
+          <li><a href="f/mise-en-service/">Mise en service</a></li>
+          <li><a href="rezotools/">Outils</a></li>
+        </ul>
+      </div>
+      <div class="tuile tuile-diplome">
+        <div class="emoji">🧭</div>
+        <div class="txt">
+          <h3>Je prépare un diplôme <span class="neuf">nouveau, en essai</span></h3>
+          <p>CAP, bac pro, titre professionnel : je choisis mon niveau et mon diplôme, je vois les stations qui me servent, rangées comme mon référentiel.</p>
+        </div>
+        <div><a class="bouton" href="mon-parcours/">Choisir mon diplôme</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hall-reseaux" id="reseaux" aria-labelledby="titre-reseaux">
+    <h2 id="titre-reseaux">Quatorze réseaux, une carte chacun</h2>
+    <p class="sous">Chaque réseau est un plan de métro : des lignes par thème, un cours à chaque station, une voix qui explique. Vous entrez où vous voulez, vous changez de ligne quand vous voulez.</p>
+    <p class="glisser" aria-hidden="true">← Faites glisser pour voir les quatorze réseaux →</p>
+    <div class="grille-reseaux">
+      <!-- RESEAUX DEBUT (générés par build/accueil.mjs — ne pas éditer à la main) -->
+      <article class="vignette" style="--c:#0c4a6e">
+        <a class="v-carte v-duo" href="plan.html" aria-label="Entrer dans Le réseau thermo-techno"><span class="v-illu"><img src="icones/reseaux/illustrations/thermo-techno.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/thermo-techno.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="plan.html">❄️ Le réseau thermo-techno</a></h3>
+          <p class="v-chiffres">151 stations · 15 lignes <span class="v-niv">CAP → BTS · habilitation fluides</span></p>
+          <p class="v-det">Le métier de frigoriste : la chaleur, le circuit et ses organes, les gestes, les fluides, la régulation, l’huile, le CO₂.</p>
+          <p class="v-entrees"><a class="v-entree" href="packs/fluides/res/chaleur-interactive/index.html">▶ Du glaçon au circuit</a>
+        <a href="plan.html#ligne=organes">Les organes</a>
+        <a href="plan.html#ligne=gestes">Les gestes</a>
+        <a href="plan.html#ligne=regules">La régulation</a>
+        <a href="plan.html#ligne=co2">Le CO₂</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#1e40af">
+        <a class="v-carte v-duo" href="legislation/index.html" aria-label="Entrer dans Réseau Législation"><span class="v-illu"><img src="icones/reseaux/illustrations/legislation.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/legislation.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="legislation/index.html">📜 Réseau Législation</a></h3>
+          <p class="v-chiffres">63 stations · 11 lignes <span class="v-niv">BTS</span> <span class="v-etat">en relecture</span></p>
+          <p class="v-det">Le cadre du métier : réglementation, sécurité, environnement. Onze sous-lignes, un bâtiment en 3D pour s’y orienter, et un carnet de missions de chargé d’affaires.</p>
+          <p class="v-entrees"><a class="v-entree" href="legislation/stations/fgaz-3/">▶ F-Gaz 3, le règlement 2024/573</a>
+        <a href="legislation/stations/desp-la-directive/">La DESP</a>
+        <a href="legislation/stations/risques-epi/">Les EPI</a>
+        <a href="legislation/stations/impact-prp-odp/">PRP &amp; ODP</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#0c4b88">
+        <a class="v-carte" href="bureau-etudes/index.html" aria-label="Entrer dans inerWeb BE"><img src="icones/reseaux/bureau-etudes.svg" alt="" loading="lazy" width="400" height="190"></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="bureau-etudes/index.html">📐 inerWeb BE</a></h3>
+          <p class="v-chiffres">8 stations · 7 lignes <span class="v-niv">technicien d’études CVC</span> <span class="v-etat">en relecture</span></p>
+          <p class="v-det">Lire les plans en 15 gares, puis calculer un projet de chauffage, ventilation, climatisation de bout en bout, du dossier projet à la note de calcul : 34 stations de 2 heures prévues, ouvertes une à une, sur une maison puis sur un bâtiment tertiaire.</p>
+          <p class="v-entrees"><a class="v-entree" href="bureau-etudes/index.html">▶ Le plan du réseau</a>
+        <a href="bureau-etudes/index.html#plans">Lire les plans</a>
+        <a href="bureau-etudes/index.html#mode-emploi">Comment ça marche</a>
+        <a href="bureau-etudes/index.html#stations">Les 34 stations</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#3d7fca">
+        <a class="v-carte v-duo" href="hydrometro/index.html" aria-label="Entrer dans HydroMétro"><span class="v-illu"><img src="icones/reseaux/illustrations/hydrometro.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/hydrometro.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="hydrometro/index.html">💧 HydroMétro</a></h3>
+          <p class="v-chiffres">27 stations · 4 lignes <span class="v-niv">CAP · Bac pro · BTS</span></p>
+          <p class="v-det">L’eau dans les circuits : principes, équipements, distribution, mesure et diagnostic.</p>
+          <p class="v-entrees"><a class="v-entree" href="hydrometro/stations/boucle/">▶ Boucle</a>
+        <a href="hydrometro/stations/debit/">Débit</a>
+        <a href="hydrometro/stations/circulateur/">Circulateur</a>
+        <a href="hydrometro/stations/equilibrage/">Équilibrage</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#1b6e5a">
+        <a class="v-carte v-duo" href="aerorezo/index.html" aria-label="Entrer dans AéroRézo"><span class="v-illu"><img src="icones/reseaux/illustrations/aerorezo.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/aerorezo.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="aerorezo/index.html">🌬️ AéroRézo</a></h3>
+          <p class="v-chiffres">37 stations · 6 lignes <span class="v-niv">CAP · Bac pro · BTS</span></p>
+          <p class="v-det">L’air dans les gaines : hygrométrie, VMC, distribution, climatisation, centrales de traitement d’air.</p>
+          <p class="v-entrees"><a class="v-entree" href="aerorezo/stations/air-circule/">▶ L’air se déplace</a>
+        <a href="aerorezo/stations/apport-latent/">Apport latent</a>
+        <a href="aerorezo/stations/air-neuf-selection/">Air neuf</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#7c3aed">
+        <a class="v-carte v-duo" href="electrorezo/index.html" aria-label="Entrer dans ÉlectroRézo"><span class="v-illu"><img src="icones/reseaux/illustrations/electrorezo.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/electrorezo.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="electrorezo/index.html">⚡ ÉlectroRézo</a></h3>
+          <p class="v-chiffres">75 stations · 9 lignes <span class="v-niv">CAP · Bac pro</span> <span class="v-etat">en relecture</span></p>
+          <p class="v-det">L’électrotechnique, de l’ampère au variateur de fréquence, et la lecture du schéma.</p>
+          <p class="v-entrees"><a class="v-entree" href="electrorezo/stations/1-1-courant-intensite/">▶ Le courant et l’intensité</a>
+        <a href="electrorezo/stations/1-3-resistance-loi-ohm/">La loi d’Ohm</a>
+        <a href="electrorezo/stations/5-2-contacteur/">Le contacteur</a>
+        <a href="electrorezo/stations/8-1-trait-et-point/">Lire un schéma</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#b06a00">
+        <a class="v-carte v-duo" href="hocourant/index.html" aria-label="Entrer dans HoCourant"><span class="v-illu"><img src="icones/reseaux/illustrations/hocourant.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/hocourant.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="hocourant/index.html">🔋 HoCourant</a></h3>
+          <p class="v-chiffres">13 stations · 5 lignes <span class="v-niv">tous niveaux</span></p>
+          <p class="v-det">Se préparer à l’habilitation électrique, de B0 à BR, palier par palier.</p>
+          <p class="v-entrees"><a class="v-entree" href="hocourant/?module=M1">▶ Le danger électrique</a>
+        <a href="hocourant/?module=M4">Les domaines de tension</a>
+        <a href="hocourant/?module=M9">La consignation</a>
+        <a href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>📕 Le livre — PDF disponible</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#1b3a63">
+        <a class="v-carte v-duo" href="r408/index.html" aria-label="Entrer dans inerWeb R408"><span class="v-illu"><img src="icones/reseaux/illustrations/r408.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/r408.svg" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="r408/index.html">🪜 inerWeb R408 — Travail en hauteur</a></h3>
+          <p class="v-chiffres">11 modules · 4 paliers <span class="v-niv">CAP</span> <span class="v-etat">en relecture</span></p>
+          <p class="v-det">Se préparer à la formation échafaudages de pied (R408), du socle au montage, palier par palier. Prototype en cours de relecture.</p>
+          <p class="v-entrees"><a class="v-entree" href="r408/?module=M1">▶ Le risque de chute</a>
+        <a href="r408/?module=M7">Utiliser en sécurité</a>
+        <a href="r408/?module=M9">La vérification journalière</a>
+        <a href="r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" download>📕 Le livret — PDF disponible</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#b45309">
+        <a class="v-carte v-duo" href="cuivrezo/index.html" aria-label="Entrer dans CuivRézo"><span class="v-illu"><img src="cuivrezo/images/1-4-cintrette.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/cuivrezo.webp" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="cuivrezo/index.html">🔥 CuivRézo — Les gestes du cuivre</a></h3>
+          <p class="v-chiffres">14 stations · 4 lignes <span class="v-niv">CAP</span> <span class="v-etat">en relecture</span></p>
+          <p class="v-det">Les gestes du cuivre à votre poste d’atelier : couper, cintrer, évaser, braser, jusqu’aux pièces complexes. Prototype en cours de relecture.</p>
+          <p class="v-entrees"><a class="v-entree" href="cuivrezo/stations/1-0/">▶ Mon poste de travail</a>
+        <a href="cuivrezo/stations/1-4/">Cintrer à la cintrette</a>
+        <a href="cuivrezo/stations/2-1/">Le poste oxyacétylénique</a>
+        <a href="cuivrezo/papier/fiches-de-poste.html">📄 Les fiches de poste</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#1f6fa8">
+        <a class="v-carte v-duo" href="tour-de-main/index.html" aria-label="Entrer dans Le tour de main"><span class="v-illu"><img src="icones/reseaux/illustrations/tour-de-main.webp" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/tour-de-main.webp" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="tour-de-main/index.html">🔧 Le tour de main — La gestuelle professionnelle</a></h3>
+          <p class="v-chiffres">1 jeu de poste · 23 stations · 4 lignes <span class="v-niv">CAP · Bac pro</span></p>
+          <p class="v-det">Les gestes qui demandent un réglage précis, avec leurs règles : on calcule, on règle, puis on prouve à l’instrument. En premier, le jeu de poste du réglage des pressostats (sept réglages, de la sécurité à la chambre froide) ; puis le manifold, l’azote, la récupération du fluide, le détendeur, les KV, la VAT et le relais thermique.</p>
+          <p class="v-entrees"><a class="v-entree" href="tour-de-main/simulateur/pressostat.html">▶ Le réglage des pressostats</a>
+        <a href="tour-de-main/index.html">Le plan des gestes</a>
+        <a href="packs/fluides/res/recuperation-fluide-interactive/">Récupérer le fluide</a>
+        <a href="packs/fluides/res/detendeur-interactif/">Le détendeur thermostatique</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#0e7490">
+        <a class="v-carte v-duo" href="cartoclim/index.html" aria-label="Entrer dans CartoClim"><span class="v-illu"><img src="cartoclim/stations/3-2-split/assets/biblio/898384a2af.png" alt="" loading="lazy" width="240" height="210"></span><span class="v-plan"><img src="icones/reseaux/cartoclim.webp" alt="" loading="lazy" width="160" height="170"><span class="v-etiq">le réseau</span></span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="cartoclim/index.html">🌡️ CartoClim — La climatisation, station par station</a></h3>
+          <p class="v-chiffres">21 stations · 5 lignes <span class="v-niv">CAP · Bac pro · BTS</span></p>
+          <p class="v-det">Comprendre un climatiseur, du besoin à la panne : le split, le multisplit, le DRV, le roof-top, la PAC air/eau, le chauffe-eau thermodynamique, l’eau glacée — et ce qu’on pose, raccorde, règle et entretient. Relié aux autres réseaux, jamais recopié.</p>
+          <p class="v-entrees"><a class="v-entree" href="cartoclim/stations/1-1-climatiser/">▶ Climatiser, c’est quoi ?</a>
+        <a href="cartoclim/stations/3-2-split/">Le split : deux unités, un circuit</a>
+        <a href="cartoclim/stations/2-6-vanne-4-voies/">La vanne 4 voies : froid ou chaud</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#15803d">
+        <a class="v-carte" href="jouerezo/index.html" aria-label="Entrer dans JouéRézo"><img src="jouerezo/illustrations/accueil.webp" alt="" loading="lazy" width="400" height="190"></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="jouerezo/index.html">🎮 JouéRézo — Les jeux du métier</a></h3>
+          <p class="v-chiffres">10 jeux <span class="v-niv">CAP · Bac pro</span></p>
+          <p class="v-det">Dix jeux pour retenir le froid classique : Memory, le bon ordre, chrono vrai ou faux, QCM éclair, l’intrus, Nuit à l’atelier, compléter le schéma, Qui suis-je ?, le pendu du frigo, le circuit dont vous êtes le héros. Un code de partie à rendre en fin de jeu.</p>
+          <p class="v-entrees"><a class="v-entree" href="jouerezo/memory.html">▶ Memory</a>
+        <a href="jouerezo/heros.html?t=froid">Le circuit dont vous êtes le héros</a>
+        <a href="jouerezo/schema.html">Compléter le schéma</a>
+        <a href="jouerezo/quisuisje.html">Qui suis-je ?</a>
+        <a href="jouerezo/pendu.html">Le pendu du frigo</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#b91c1c">
+        <a class="v-carte" href="simurezo/index.html" aria-label="Entrer dans SimuRézo"><img src="icones/reseaux/simurezo.jpg" alt="" loading="lazy" width="400" height="190"></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="simurezo/index.html">🛠️ SimuRézo — Le simulateur de panne</a></h3>
+          <p class="v-chiffres">3 niveaux · 8 situations <span class="v-niv">CAP → BTS</span></p>
+          <p class="v-det">Dépanner une chambre froide : relever les valeurs sur l’installation, voir le cycle se tracer sur le diagramme, puis conclure. Trois niveaux, de la Croix du frigoriste à l’atelier, en R-134a, R-449A ou R-290.</p>
+          <p class="v-entrees"><a class="v-entree" href="simurezo/index.html">▶ Commencer une partie</a>
+        <a href="simurezo/simurezo.html">Télécharger le simulateur (sans réseau)</a></p>
+        </div>
+      </article>
+      <article class="vignette" style="--c:#be185d">
+        <a class="v-carte v-plein" href="studio/index.html" aria-label="Entrer dans inerWeb Studio"><img src="icones/reseaux/illustrations/studio-cinema.webp" alt="" loading="lazy" width="400" height="190"><span class="v-pastille">▶ Les films aussi sur YouTube</span></a>
+        <div class="v-corps">
+          <h3 class="v-nom"><a href="studio/index.html">🎬 inerWeb Studio — Les films</a></h3>
+          <p class="v-chiffres">34 films <span class="v-niv">tous niveaux</span></p>
+          <p class="v-det">Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le glissement, le compresseur à vis, le sous-refroidisseur, les centrales frigorifiques et leur régulation, la centrale booster CO₂, le bi-étagé), la série « L’ennemi juré » (le groupe d’eau glacée), les onze films de la régulation, les dix mini-films sécurité « Ça aurait pu mal finir », l’effet de serre et la couche d’ozone. Chaque film mène à son cours.</p>
+          <p class="v-entrees"><a class="v-entree" href="voyage/index.html">▶ Voyage dans tous ses états</a>
+        <a href="studio/index.html#t-editions">Les éditions du Voyage</a>
+        <a href="studio/index.html#t-regules">La régulation en films</a>
+        <a href="studio/index.html#t-securite">Ça aurait pu mal finir</a>
+        <a href="studio/index.html#t-climat">Effet de serre et ozone</a>
+        <a class="v-externe" href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener">▶ La chaîne YouTube inerWeb FR</a></p>
+        </div>
+      </article>
+<!-- RESEAUX FIN -->
+  <!-- ===================================================================
+       LES LIVRES inerWeb (F. Henninot, 20/10/2026 : « un seul et unique pavé où il y a les trois
+       livres… et les livres de cours CAP et bac pro »). Remplace le bandeau HabFluide (27/09) et
+       les couvertures qui vivaient dans les bandeaux-outils HoCourant et R408 : chaque couverture
+       ouvre son ouvrage. Les livres de cours mènent à livres/ (spécimen, extraits).
+       20/10 (soir, F. Henninot : « optimiser l’espace à côté de la tuile des vidéos ») : le pavé vit DANS la
+       grille des réseaux, après la sentinelle RESEAUX FIN (build/accueil.mjs ne réécrit qu’entre les
+       sentinelles) : 13 réseaux = 3 rangées de 4 + Studio seul, le pavé prend les 3 cases restantes.
+       =================================================================== -->
+  <section class="bloc livres" id="livres" aria-labelledby="titre-livres">
+    <div class="titre-bloc">
+      <h2 id="titre-livres">Les livres inerWeb</h2>
+      <span>Trois livres offerts en PDF, et les livres de cours — chaque leçon mène à son cours animé par QR code.</span>
+    </div>
+    <div class="rayon">
+      <a class="livre" href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener">
+        <img src="habfluide/couverture-habfluide.jpg" alt="" loading="lazy" width="672" height="960">
+        <b>HabFluide</b><span>L’attestation d’aptitude A1 · A2 · D · E — extrait offert, 20 pages</span>
+      </a>
+      <a class="livre" href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>
+        <img src="hocourant/livret/couverture-hocourant.jpg?v=v3-1" alt="" loading="lazy" width="672" height="954">
+        <b>HoCourant</b><span>L’habilitation électrique, de B0 à BR — 124 pages</span>
+      </a>
+      <a class="livre" href="r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" download>
+        <img src="r408/livret/couverture-r408-web.jpg" alt="" loading="lazy" width="672" height="955">
+        <b>R408</b><span>Les échafaudages de pied — livret, en relecture</span>
+      </a>
+      <a class="livre" href="livres/#h-cap">
+        <img src="livres/couvertures/cap-tome-1.webp" alt="" loading="lazy" width="560" height="793">
+        <b>Livre CAP IFCA</b><span>Deux tomes, 52 leçons — spécimen et extraits</span>
+      </a>
+      <a class="livre" href="livres/#h-mfer">
+        <img src="livres/couvertures/mfer-tome-1.webp" alt="" loading="lazy" width="560" height="793">
+        <b>Livre Bac Pro MFER</b><span>Tome 1, la 1re, 31 leçons — spécimen et extrait</span>
+      </a>
+    </div>
+    <p class="livres-suite">Avec HabFluide : <a href="f/positionnement/">le test d’entrée</a> (vingt questions corrigées) et <a href="formation.html">l’application de formation</a> (<span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions).</p>
+    <!-- 21/10/2026 (F. Henninot) : la démonstration du dispositif complet, pour les centres de formation. -->
+    <p class="livres-suite">Pour les centres de formation : <a href="habilitations/">la démonstration du dispositif complet</a> — livres, plateforme et logiciel de centre d’examen, pour les trois habilitations.</p>
+  </section>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       NOUVEAUTÉS (demande de F. Henninot, 19/08/2026)
+       « Un menu déroulant, avec les nouveaux modules et les nouvelles
+       stations, cliquables pour y aller directement — et on garde
+       l'archive de tout ce qu'on a mis à jour. »
+
+       POUR AJOUTER UNE MISE À JOUR : une nouvelle section <h3>date</h3>
+       EN HAUT du corps, et la date du <summary> mise au même jour. Les
+       anciennes sections descendent, on n'en supprime aucune : c'est
+       l'archive. Le lien de chaque station pointe vers sa page, pour
+       qu'on y aille d'un clic. Le volet « Actualités » (à gauche) lit
+       ses trois dernières actualités ICI : rien à recopier ailleurs.
+       =================================================================== -->
+  <details class="nouveautes" id="nouveautes">
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 31 octobre 2026</span></summary>
+    <div class="nv-corps">
+      <h3>31 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="bureau-etudes/index.html#plans">📐 inerWeb BE : la ligne « Lire les plans »</a> <span class="d">— inerWeb Plan rejoint le réseau Bureau d’études, qui s’appelle maintenant inerWeb BE. Quinze gares pour tracer, coter, métrer et suivre une installation, chacune avec son cours, son test et ses deux PDF à imprimer en A4 noir et blanc.</span></li>
+      </ul>
+      <h3>30 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="bureau-etudes/index.html">📐 Le réseau Bureau d’études, en relecture</a>
+          <span class="d">— un projet de chauffage, ventilation et climatisation calculé de bout en bout, sur une maison puis sur un bâtiment tertiaire. 34 stations prévues, ouvertes une à une. La première est en ligne.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="bureau-etudes/stations/t1-surfaces-volumes/index.html">📏 Bureau d’études : surfaces et volumes du projet</a>
+          <span class="d">— relever les surfaces des parois, les planchers et le volume chauffé d’une maison avant le calcul des déperditions. Deux niveaux, des aides à chaque exercice, une feuille réponse A4.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="plan/gares/g07b-le-metre-sur-plan/index.html">📐 inerWeb Plan : le métré sur plan</a>
+          <span class="d">— passer une cote en mètres, additionner une chaîne, choisir la bonne hauteur, déduire les ouvertures, compter un réseau et un volume. Pour tous les métiers du bâtiment, avec un exercice papier et son corrigé.</span></li>
+        <li><span class="nv-etiq">amélioration</span><a href="aerorezo/index.html">🧊 La 3D au téléphone : une image quand elle ne s’ouvre pas</a>
+          <span class="d">— sur AéroRézo, HydroMétro, CuivRézo, CartoClim et ÉlectroRézo, l’appareil s’affiche en image si le téléphone refuse la 3D, et un message dit comment la relancer.</span></li>
+      </ul>
+
+      <h3>29 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelle ligne</span><a href="electrorezo/stations/9-1-qui-fait-tourner-quoi/">⚡ ÉlectroRézo : la ligne 9, le moteur monophasé</a>
+          <span class="d">— neuf stations, de « qui fait tourner quoi » à l’inversion du sens de rotation. La voix guide l’écran.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="electrorezo/stations/6-a-d-ou-vient-le-champ/">🧲 ÉlectroRézo : trois stations sur le champ magnétique</a>
+          <span class="d">— d’où vient le champ magnétique, ce qu’il fait, et le courant induit. Les bases de la ligne 6.</span></li>
+      </ul>
+
+      <h3>28 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/bouteilles-fluide/">🧯 Les bouteilles de fluide</a>
+          <span class="d">— types de bouteilles, robinets, plaque, charge maximale et fluides inflammables, avant la mission « Bouteilles ».</span></li>
+        <li><span class="nv-etiq">amélioration</span><a href="plan.html">🔎 La recherche couvre tout le site</a>
+          <span class="d">— elle reconnaît les variantes et les fautes courantes (inverter, invertère…).</span></li>
+      </ul>
+
+      <h3>26 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq">ajout</span><a href="plan.html">❄️ Plan thermo-techno : six stations sortent de la relecture</a>
+          <span class="d">— le circuit d’huile, le manifold 4 voies, la récupération du fluide, les manomètres, le diagramme enthalpique et le fil conducteur, corrigés après relecture.</span></li>
+      </ul>
+
+      <h3>25 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq">amélioration</span><a href="electrorezo/lignes.html">🔊 Toutes les stations parlent</a>
+          <span class="d">— chaque narration a sa voix enregistrée, et 36 stations d’ÉlectroRézo sortent du brouillon après un second audit.</span></li>
+      </ul>
+
+      <h3>23 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq">amélioration</span><a href="hydrometro/index.html">📱 Le site au téléphone</a>
+          <span class="d">— texte à 14 px au moins, bouton « Agrandir » sur les schémas larges, HydroMétro qui défile au doigt.</span></li>
+      </ul>
+
+
+      <h3>22 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="hydrometro/stations/sanitaire-distribution/index.html?line=E">💧 HydroMétro : dimensionner une distribution d’eau sanitaire, puis une évacuation</a>
+          <span class="d">— deux stations de calcul pas à pas : débits de base, simultanéité, vitesse et diamètre ; puis évacuation des eaux usées et vannes. Les données du cas sont dans l’énoncé.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="electrorezo/lignes.html">⚡ ÉlectroRézo : les 63 stations relues, corrigées et toutes parlées</a>
+          <span class="d">— chaque station a été relue contre ses défauts (symboles, valeurs, voix et écran qui se contredisaient, notes retirées). Trois stations nouvelles : du compteur à l’appareil, le tableau d’un logement, l’autocontrôle avant la mise sous tension. Les voix manquantes sont posées.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="mon-parcours/">🧭 Mon parcours : 63 stations de plus</a>
+          <span class="d">— la législation (acteurs, papiers, permis de feu), les détecteurs de fuite, la chambre froide et ses réglages, les centrales, les gestes du Tour de main, la ligne 5 de CuivRézo, la fiche de mise en service de SimuRézo, les nouveaux jeux de JouéRézo et le calcul des déperditions d’une pièce sont rangés dans l’ordre de chaque référentiel.</span></li>
+      </ul>
+
+      <h3>18 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="mon-parcours/#niveau=4&amp;diplome=BAC_MFER_2028&amp;mode=tableau">▦ Mon parcours : tâches, compétences et tableau croisé</a>
+          <span class="d">— chaque station du parcours affiche maintenant ses tâches et ses compétences du référentiel (survolez un code pour son libellé). Et un tableau croisé, pour le professeur : tâches × compétences, par compétence, par savoir, triable ; chaque case dit combien de stations la couvrent, et les trous — ce qu’aucune station n’enseigne encore — sautent aux yeux.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvel outil</span><a href="mon-parcours/">🧭 Mon parcours par diplôme</a>
+          <span class="d">— on choisit son niveau puis son diplôme, et le site range les stations qui servent ce diplôme dans l’ordre de son référentiel, partie par partie : ce qui enseigne chaque point, et sur demande ce qui s’en sert. Trois diplômes pour l’essai : CAP IFCA, Bac Pro MFER (référentiel 2028) et titre professionnel Monteur dépanneur frigoriste. 412 stations rattachées ; d’autres diplômes suivront.</span></li>
+      </ul>
+
+      <h3>12 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvel outil</span><a href="rezotools/calculettes/chapeau.html">🔧 La calculette du chapeau de gendarme, tous les tubes</a>
+          <span class="d">— dans RézoTools : on choisit le tube (frigoriste, plombier, multicouche, tuyauteur), le rayon de la cintreuse et l’obstacle (sa hauteur, sa largeur) ; elle donne la hauteur du chapeau et les trois traits à faire, avec les dessins et le tableau à imprimer.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span><a href="cuivrezo/stations/4-1/">🎩 Le chapeau de gendarme : le premier coude de côté</a>
+          <span class="d">— le sommet cintré d’abord, le coude A bloquait la cintreuse sur un petit chapeau : le 90° venait sous le bras. Désormais, pour A, on retourne la cintreuse (le sommet au crochet) et son trait se place au bord du coude, côté sommet (26 mm au lieu de 37 sur la planche). Station 4.1, film, TP à télécharger et tableau corrigés.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cuivrezo/papier/TP-chapeau-de-gendarme-inerWeb.zip" download>📥 Le TP du chapeau de gendarme, à télécharger</a>
+          <span class="d">— le TP complet de la planche (CAP IFCA, tube 1/4″ flare) : dossier élève, ressource et document professeur, en PDF et en Word. Il se télécharge depuis la station CuivRézo 4.1 et depuis la fiche du film dans inerWeb Studio.</span></li>
+      </ul>
+
+      <h3>11 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cuivrezo/stations/4-1/">🎬 Le chapeau de gendarme, de A à Z</a>
+          <span class="d">— la station CuivRézo 4.1 refaite : X se mesure depuis la base du cône, chaque trait marque le début d’un coude et se pose pile sur le 0 de la cintreuse, la hauteur se contrôle au réglet. Et un film dessiné de 6 min, narré et sous-titré, aussi dans inerWeb Studio.</span></li>
+      </ul>
+
+      <h3>10 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/diagramme-enthalpique/gestes/">📐 Le diagramme en 6 gestes, version 2</a>
+          <span class="d">— chaque geste part du diagramme entier, trois aides par geste, retour au papier. Les six gestes : les axes, la cloche et ses cinq familles, le palier, poser un point, le cycle simplifié, la carte du fabricant.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/diagramme-enthalpique/gestes/">📐 Le diagramme en 6 gestes</a>
+          <span class="d">— six petites animations sous-titrées pour la leçon 5 du livre Bac Pro MFER (1re) : lire les deux axes, repérer les trois zones de la cloche, lire h sous un point, poser un point, tracer le cycle à partir d’un relevé, lire SR et SC sur le dessin. Les phrases s’affichent et une voix, à lancer à la main, les lit ; pas de score, l’élève répond sur le papier. Un QR par geste dans le livre.</span></li>
+      </ul>
+
+      <h3>8 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="livres/">📚 Les livres inerWeb : CAP IFCA et Bac Pro MFER</a>
+          <span class="d">— deux manuels de formation pour le lycée professionnel, une leçon par notion (le cours, un exemple, des exercices, un TP et ses schémas), avec à chaque page des QR codes vers les cours animés, les films et les simulateurs. Les couvertures, un extrait gratuit par tome et, pour les enseignants, un spécimen à leur nom. Édition 2026, en relecture.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvel outil</span><a href="qcm/">✅ inerWeb QCM : réviser seul, à son rythme</a>
+          <span class="d">— trois activités sur téléphone ou ordinateur : « Où j’en suis » (196 questions sur six niveaux, de l’atelier jusqu’au niveau expert, puis la carte de mes compétences en 2de TNE, CAP IFCA ou Bac Pro MFER), lire un manomètre comme sur un vrai manifold, compléter le schéma frigorifique avec les symboles normalisés. Une explication après chaque réponse ; sans compte ni nom, rien n’est envoyé.</span></li>
+      </ul>
+
+      <h3>7 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="tour-de-main/simulateur/pressostat.html">🔧 Le tour de main : le réglage des pressostats</a>
+          <span class="d">— la gestuelle professionnelle du frigoriste a sa porte sur l’accueil. En premier, le jeu de poste des pressostats : on calcule le réglage, on le prérègle sur la face, puis on le prouve au banc d’azote, au manomètre, trois fois de suite ; sept réglages, de la BP de sécurité à la régulation pressostatique d’une chambre froide. Le <a href="tour-de-main/">plan des gestes</a> mène aussi au manifold, à l’azote, à la récupération du fluide, au détendeur, aux KV, à la VAT et au relais thermique.</span></li>
+      </ul>
+
+      <h3>6 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelle ligne</span><a href="plan.html#ligne=detendeurs">🎚 Les détendeurs : sept gares sur le plan thermo-techno</a>
+          <span class="d">— la famille (qui règle quoi), le détendeur thermostatique refait en 3D (l’objet fermé, l’éclaté, la coupe, la boucle pas à pas au ralenti), l’égalisation externe, le MOP, l’automatique, le capillaire et l’électronique ; dans chaque coupe animée on suit d’où vient chaque force, un exercice où l’on fait soi-même, puis six questions corrigées.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau jeu</span><a href="cuivrezo/simulateur/">🔥 Le jeu du chalumeau</a>
+          <span class="d">— CuivRézo, station 2.3 : monter les détendeurs (pas à droite, pas à gauche), mettre en pression, allumer, régler une flamme carburante, neutre ou oxydante, éteindre et refermer le poste dans l’ordre ; niveau 2 : choisir la buse d’après le tube. Aussi dans JouéRézo.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau jeu</span><a href="cuivrezo/simulateur/azote.html">🧪 Le jeu de l’azote</a>
+          <span class="d">— CuivRézo, station 3.3 : pourquoi de l’azote dans un circuit frigorifique, puis le mano-détendeur réglé sous la PS lue sur une vraie plaque, l’épreuve, la vidange et le poste rangé. Aussi dans JouéRézo.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/eau-glacee.html">🧳 L’ennemi juré, la frontière : le groupe d’eau glacée</a>
+          <span class="d">— une nouvelle série de la famille du Voyage : l’eau et le fluide frigorigène, deux ennemis qui travaillent ensemble, se croisent de part et d’autre d’une plaque dans l’évaporateur à plaques d’un groupe d’eau glacée ; puis le voyage de l’eau jusqu’aux ventilo-convecteurs, la sentinelle qui surveille le débit, le gel et les armes du frigoriste, avec le diagramme enthalpique en parallèle : le film (6 min 37, 10 épisodes) et la version interactive, dans inerWeb Studio, avec un lien vers la station CartoClim du groupe d’eau glacée.</span></li>
+      </ul>
+
+      <h3>4 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau jeu</span><a href="jouerezo/heros.html?t=froid">🎮 Le circuit dont vous êtes le héros</a>
+          <span class="d">— l’élève est la molécule de R-134a du Voyage : de la bouteille de liquide, huit organes à passer, une énigme chacun ; la bonne réponse la fait changer d’état, la mauvaise la laisse sur place avec un indice et la station à revoir ; la partie gagnée trace le cycle sur le diagramme enthalpique. Dans JouéRézo, avec une porte depuis le circuit organe par organe.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="legislation/">⚖️ Législation : les onze branches s’animent</a>
+          <span class="d">— dans les 57 stations, une scène dessinée pas à pas remplace l’image fixe : le chargé d’affaires pose la question de l’étape, chaque station s’ouvre sur la sienne, « ▶ Dérouler » joue toute la branche (fluides, risques, électricité, DESP, thermique, acoustique, incendie, certifications, déchets, impact, travail).</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/compresseur-interactif/index.html">🔧 Le compresseur s’anime</a>
+          <span class="d">— la coupe au ralenti : la vapeur entre froide en basse pression et ressort chaude en haute pression, clapets et piston pas à pas, et le point monte sur le diagramme enthalpique pendant la compression.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/evaporateur-interactif/index.html">❄️ L’évaporateur s’anime</a>
+          <span class="d">— le mélange froid entre surtout liquide, la nappe bout en prenant la chaleur de l’air de la chambre, il ne reste que de la vapeur qui se surchauffe avant de sortir ; le point suit la basse pression sur le diagramme enthalpique.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/condenseur-interactif/index.html">🔥 Le condenseur s’anime</a>
+          <span class="d">— la vapeur chaude entre et se désurchauffe, se condense à température constante (gouttes, nappe qui monte), le liquide se sous-refroidit et sort pendant que l’air traverse les ailettes ; le point descend la ligne haute pression du diagramme.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/surchauffe-sous-refroidissement-interactif/index.html">🌡️ Surchauffe et sous-refroidissement mesurés</a>
+          <span class="d">— sur chaque ligne, le manomètre donne la pression et la température de saturation se lit sur son cadran, la sonde pincée sur le tube donne la température réelle, et l’écart se dessine sur le diagramme enthalpique.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/chaine-intervention-interactive/index.html">🛠️ Les gestes s’animent</a>
+          <span class="d">— la chaîne de l’intervention, l’étanchéité, le pupitre de réglage, le régulateur électronique et l’intervention sur hydrocarbures : le technicien dessiné a la main sur l’organe qui agit, la vanne s’ouvre ou se ferme, le fluide passe ou s’arrête, la mesure se lit sur l’instrument.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="hydrometro/">💧 HydroMétro : l’eau coule</a>
+          <span class="d">— dans les 23 stations, l’eau avance en nappe dans les tubes, départ chaud et retour froid en couleur, le circulateur tourne, les vannes se ferment au clic ; dans la Boucle, la vue 3D de l’installation est à côté du schéma dès l’arrivée.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvelle version</span><a href="voyage/">🧳 Voyage dans tous ses états</a>
+          <span class="d">— la carte d’identité de chaque organe montre son symbole, l’organe en vrai et son rôle ; les voix du filtre et de la fuite reprises ; film, version interactive et livret refaits.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="studio/">🎬 inerWeb Studio : la galerie d’affiches</a>
+          <span class="d">— quatre affiches pour entrer (la saga « Les voyages extraordinaires », la série « La régulation », deux documentaires), une affiche dessinée pour chacun des onze épisodes de la régulation et pour les tomes 1 à 3 de la saga.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="studio/index.html#t-securite">🎬 Ça aurait pu mal finir : dix mini-films sécurité</a>
+          <span class="d">— la sécurité à l’atelier façon film d’horreur, pour rire : notre bonhomme fait la bêtise, l’outil râle, on rembobine et il refait le bon geste ; la tenue, les équipements de protection, la meuleuse, la perceuse, le port de charges, le chalumeau, l’azote, le fluide, le point chaud, la coupure, chacun avec sa règle, dans inerWeb Studio.</span></li>
+      </ul>
+
+      <h3>3 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/glissement.html">🧳 Voyage dans tous ses états : le glissement</a>
+          <span class="d">— une molécule de R134a et ses deux sœurs du R407C font le tour d’une climatisation : pourquoi un mélange bout en se réchauffant, la bulle et la rosée sur le diagramme enthalpique, la surchauffe comptée depuis la rosée, le sous-refroidissement depuis la bulle : le film et la version interactive, dans inerWeb Studio ; la porte est aussi dans la station du glissement.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/bietage.html">🧳 Voyage dans tous ses états : l’installation bi-étagée</a>
+          <span class="d">— une molécule d’ammoniac monte en deux étages pour faire très froid : deux compresseurs, la bouteille intermédiaire où elle fait des bulles, la détente en deux fois, et le gain se lit sur le diagramme enthalpique : le film et la version interactive, dans inerWeb Studio ; la porte est aussi sur la page de l’édition NH₃.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/regulation.html">🧳 Voyage dans tous ses états : la régulation d’une centrale</a>
+          <span class="d">— une molécule fait visiter le cerveau d’une centrale à quatre compresseurs : la zone neutre, les temporisations, la permutation, puis la haute pression fixe ou flottante, avec l’écran du régulateur : le film et la version interactive, dans inerWeb Studio ; la porte est aussi dans la station du régulateur électronique.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/centrale.html">🧳 Voyage dans tous ses états : les centrales frigorifiques</a>
+          <span class="d">— une molécule de R-134a, dans le mélange R449A, fait le tour de la centrale d’un supermarché : les meubles, le glissement, les compresseurs en parallèle, la basse pression qui commande, le variateur, avec son cycle sur le diagramme enthalpique : le film et la version interactive, dans inerWeb Studio ; la porte est aussi dans la station du compresseur.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/sous-refroidisseur.html">🧳 Voyage dans tous ses états : le sous-refroidisseur de liquide</a>
+          <span class="d">— une molécule fait deux tours dans l’échangeur à plaques : le liquide principal s’y refroidit, le piquage y bout puis entre dans les vis par l’orifice économiseur, avec le diagramme enthalpique en parallèle : le film et la version interactive, dans inerWeb Studio ; la porte est aussi dans la station du sous-refroidissement.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/booster.html">🧳 Voyage dans tous ses états : la centrale booster CO₂</a>
+          <span class="d">— une molécule de CO₂ passe les deux étages de la booster, froid négatif puis froid positif, et son cycle se dessine, chiffré, sur le diagramme enthalpique : le film et la version interactive, dans inerWeb Studio ; la porte est aussi sur les escales « booster » de la ligne CO₂.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/vis.html">🧳 Voyage dans tous ses états : le compresseur à vis</a>
+          <span class="d">— une molécule traverse les rotors, l’alvéole qui se ferme sans clapet, l’huile injectée, le tiroir et l’économiseur, et dessine son cycle sur le diagramme enthalpique en même temps : le film et la version interactive, dans inerWeb Studio ; la porte est aussi dans la station du compresseur.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/co2.html">🧳 Voyage dans tous ses états, édition CO₂ : la centrale transcritique</a>
+          <span class="d">— le point critique, le refroidisseur de gaz, le détendeur haute pression, la bouteille intermédiaire, la pression à l’arrêt, la neige carbonique : le film, la version interactive et le livret, dans inerWeb Studio.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau film</span><a href="voyage/nh3.html">🧳 Voyage dans tous ses états, édition NH₃ : l’ammoniac en régime noyé</a>
+          <span class="d">— la bouteille séparatrice, l’évaporateur noyé, le compresseur ouvert, le flotteur, le pot à huile, la sécurité : le film, la version interactive et le livret, dans inerWeb Studio.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="studio/">🎬 inerWeb Studio : tous les films dans une seule salle</a>
+          <span class="d">— le Voyage dans tous ses états, les onze films de la régulation, l’effet de serre et la couche d’ozone. Chaque film mène à son cours.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="jouerezo/">🎮 JouéRézo : les jeux du métier</a>
+          <span class="d">— neuf jeux pour retenir le froid classique : Memory, le bon ordre, compléter le schéma, Qui suis-je ?, le pendu du frigo… Un code de partie à rendre en fin de jeu.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="simurezo/">🛠️ SimuRézo : le simulateur de panne</a>
+          <span class="d">— une chambre froide en panne : on relève les valeurs sur l’installation et sur le cadran du manomètre, le cycle se trace sur le diagramme, puis on conclut. Trois niveaux, trois fluides.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="voyage/">🧳 Voyage dans tous ses états</a>
+          <span class="d">— une molécule de fluide fait le tour d’une chambre froide : le film en entier ou épisode par épisode, la version interactive et un livret à imprimer.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="packs/fluides/res/regules-interactif/index.html">🎞️ La régulation : un film et des planches pas à pas pour chaque station</a>
+          <span class="d">— de la commande directe au dégivrage par inversion de cycle, dix stations : le film, puis le schéma repris pas à pas.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cartoclim/stations/3-8-chauffe-eau-thermo/">🌡️ CartoClim : le chauffe-eau thermodynamique</a>
+          <span class="d">— une nouvelle station sur la ligne des installations.</span></li>
+        <li><span class="nv-etiq">amélioration</span><a href="electrorezo/">🚇 On arrive sur le visuel</a>
+          <span class="d">— ÉlectroRézo s’ouvre sur l’armoire en 3D, Législation sur son bâtiment, CuivRézo sur le poste de façonnage, R408 sur son réseau et son livre.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="quartier/">🏙️ Le quartier technique s’agrandit : cinéma, salle d’arcade, dépannage sur le toit</a>
+          <span class="d">— au pied de l’immeuble des règles, le cinéma projette le film « Voyage dans tous ses états » et les onze films des régules. Au bout de la rue, la salle d’arcade ouvre les jeux du métier et le simulateur de panne. Sur le toit du commerce, un technicien dépanne le groupe, manomètres branchés : il mène au simulateur et à la lecture des manomètres. Les calculettes rejoignent la camionnette, et un local attend le prochain réseau.</span></li>
+      </ul>
+
+      <h3>2 octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="aerorezo/">🌬️ AéroRézo en 3D : 13 appareils dans 26 stations</a>
+          <span class="d">— centrale de traitement d’air, caisson double flux, logement en VMC, bouche hygroréglable, batterie à eau, gaines et pertes de charge, tube de Pitot, anémomètre, ventilateur centrifuge, hygromètre, mallette de mesure, mur et fenêtre. Au temps « Comprendre », on tourne l’appareil, on le coupe et on le fait fonctionner pas à pas ; le dessin reste à un clic.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="quartier/">🏙️ Le quartier technique : entrez par ce que vous voyez</a>
+          <span class="d">— un commerce, une maison, l’immeuble des règles et la camionnette du technicien, en 3D. On touche un appareil (frigo, chambre froide, vitrine, clim, pompe à chaleur, VMC, armoire électrique…) et il mène à ses cours. Sept domaines s’allument en calques : le froid, la clim, le chauffage, l’électricité, l’air, les règles, les gestes. Sur un vieux poste, la maquette passe d’elle-même en mode léger.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="hydrometro/">💧 HydroMétro en 3D : 16 appareils à manipuler</a>
+          <span class="d">— circulateur, vase d’expansion, soupape, vanne trois voies, vanne d’équilibrage, échangeur à plaques, ballon tampon, bouteille de découplage, collecteur de plancher, radiateur, installation complète, pompe à chaleur air/eau, compteur d’énergie, thermomètres, banc de pertes de charge, débitmètre : on les tourne, on les coupe, on les démonte, et l’eau circule pas à pas. Le dessin reste à un clic et sort à l’impression. 21 stations sur 22.</span></li>
+        <li><span class="nv-etiq">correction</span><strong>HydroMétro : le ballon tampon se charge dans le bon sens</strong>
+          <span class="d">— en « Charge », la zone d’eau chaude grandit désormais, comme le dit la phrase de la station.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="hydrometro/stations/reglage-equilibrage/index.html?line=D">🔧 HydroMétro : régler une vanne d’équilibrage</a>
+          <span class="d">— une station « pour aller plus loin » après Équilibrage : à quoi sert la vanne, lire le volant, afficher et bloquer un préréglage comme dans la notice, mesurer l’écart de pression pour trouver le bon débit, et pourquoi régler une branche change les autres. La vanne en 3D, avec sa clé six pans et l’appareil de mesure.</span></li>
+      </ul>
+
+      <h3>1er octobre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="sous-tension/">🔌 Sous tension : le parcours des câbles électriques</a>
+          <span class="d">— trois séances et une évaluation pour lire, comprendre et choisir un câble : fil, conducteur ou câble, décoder une désignation (H07V-U, H07RN-F, U-1000 R2V), rigide ou souple, armé ou blindé, cuivre ou aluminium, réaction au feu. Avec un TD sur le triphasé et le couplage d’un moteur. Le calcul de la section se fait dans la station 4.10 d’ÉlectroRézo, qui parle désormais.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="electrorezo/stations/4-10-choisir-section/">⚡ ÉlectroRézo : choisir la section d’un câble</a>
+          <span class="d">— une nouvelle station en fin de ligne « Protéger » : deux curseurs, l’intensité et la longueur, et la section change sous les yeux ; l’écran dit si c’est l’échauffement ou la longueur qui décide, avec le calcul de la chute de tension. Au dernier temps, un tableau à cliquer donne la section selon l’intensité, la longueur, le mode de pose et l’isolant, d’après la norme NF C 15-100. ÉlectroRézo passe à 60 stations.</span></li>
+        <li><span class="nv-etiq nv-neuf">réseau complet</span><a href="legislation/">📜 Le réseau Législation est complet : 57 stations</a>
+          <span class="d">— prototype en relecture, niveau BTS : vingt-huit stations nouvelles (électricité, NF EN 378, traçabilité des fluides, incendie, acoustique, certifications et normes, droit du travail), chacune commentée à voix haute, avec ses illustrations animées et ses sources officielles. On y entre par un <strong>bâtiment en 3D</strong> : on le fait tourner, on touche la toiture, le local technique ou l’escalier, et la bonne branche s’ouvre.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="legislation/carnet.html">📒 Le carnet du chargé d’affaires</a>
+          <span class="d">— chaque station de la Législation devient une mission confiée par une entreprise : un client, une situation, une pièce à produire. Trois bonnes réponses sur quatre donnent un tampon, une branche complète un certificat. Une progression sur l’année en cinq périodes, un carnet papier par période avec un QR vers chaque station, et un livret professeur avec les corrigés et les grilles de 0 à 4.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cuivrezo/">🔥 CuivRézo : le passeport du cuivre</a>
+          <span class="d">— chaque station a maintenant son défi (remettre les gestes dans l’ordre, trouver la cause d’un défaut, dire si une pièce est bonne ou à refaire) et un tampon à gagner ; les pièces se font tourner en 3D, le coude se cintre au curseur ; une voix de professeur commente chaque écran ; et le passeport papier de l’élève et le dossier du professeur (grilles de 0 à 4) s’impriment depuis la page professeur.</span></li>
+      </ul>
+
+      <h3>30 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="cuivrezo/">🔥 CuivRézo : les gestes du cuivre, à votre poste d’atelier</a>
+          <span class="d">— prototype en relecture : 14 stations en quatre lignes (les gestes de base, le chalumeau, braser, les pièces complexes). Chaque station guide l’élève pas à pas jusqu’à une pièce réussie : ce qu’il doit obtenir, le matériel, le geste écran par écran, les pièges, son propre contrôle, puis l’appel au professeur qui confirme le geste. Les <a href="cuivrezo/papier/CuivRezo-fiches-de-poste-ELEVE.pdf">fiches de poste</a> s’impriment ; les petits films du geste restent à tourner.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="electrorezo/stations/2-3-triphase/">💬 Le texte de la voix s’affiche</a>
+          <span class="d">— pendant que le professeur parle, la phrase qu’il dit apparaît dans une petite bulle, posée là où elle cache le moins l’image : l’élève lit ce qu’il entend. Il peut déplacer la bulle ou la replier en un bouton « Texte ». Sur toutes les stations qui parlent : thermo-techno, Législation, HydroMétro, AéroRézo, ÉlectroRézo et CuivRézo.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvelle version</span><a href="hocourant/">🔋 HoCourant sort de sa relecture</a>
+          <span class="d">— l’entraînement à l’habilitation électrique, de B0 à BR : une voix raconte les 29 films, les personnages sont redessinés, chaque film de consignation montre la vérification d’absence de tension, et le contenu suit les textes en vigueur (attestation du médecin du travail, limites de l’intervention BR). Plus aucun diplôme n’est cité : il sert au lycée, en centre de formation ou en entreprise. Le livre passe en version 3.4.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cablage-virtuel/">🔌 Le simulateur de câblage parle</a>
+          <span class="d">— prototype, vos critiques sont les bienvenues : la voix d’un professeur explique chaque fil au moment où l’élève le pose (elle se règle dans Affichage). L’affichage « Schéma sur papier » montre la platine en grand, le bornier est repéré XA / XB / XC comme sur un vrai chantier, les documents Word portent les codes des tâches et des savoirs, les documents professeur sont plus lisibles, et l’horloge de dégivrage du n° 9 fonctionne dans le bon sens.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span><a href="cablage-virtuel/">💬 Câblage virtuel : le texte de la voix s’affiche aussi</a>
+          <span class="d">— la phrase dite par le professeur apparaît dans la bulle discrète, comme sur les autres stations.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span><a href="hocourant/">🔋 HoCourant : la bulle de la voix, et le livre en version 3.5</a>
+          <span class="d">— la phrase dite s’affiche dans la bulle discrète sur les 13 stations ; les limites de l’intervention BR sont corrigées (circuits jusqu’à 1 000 V et 63 A, 500 V pour connecter ou déconnecter en présence de tension) ; le livre gagne un index de conformité au référentiel de formation et cinq pages de cours (124 pages).</span></li>
+      </ul>
+
+      <details class="nv-anciennes"><summary>Actualités précédentes</summary>
+      <h3>29 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cablage-virtuel/">🗺️ Le simulateur de câblage devient un réseau</a>
+          <span class="d">— prototype en construction : vos critiques sont les bienvenues. L’accueil est un plan à cinq lignes, de la maison au niveau avancé, en électrotechnique et en froid : un bouton pour commencer, une station par schéma, la puissance puis sa commande. Chaque exercice se fait en cinq étapes (colorier, repérer, câbler, essayer sous tension, réaliser pour de vrai), et le professeur choisit l’atelier : tout à l’écran, en deux temps, ou fil par fil (un fil posé à l’écran, le même sur la vraie platine, avec un carnet de câblage à remplir). Pour poser un fil, il suffit de toucher une borne puis l’autre. Un <a href="cablage-virtuel/professeur.html">espace professeur</a> prépare la séance : un lien et un QR avec les réglages.</span></li>
+      </ul>
+
+      <h3>28 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cablage-virtuel/#sujets">🎓 Des installations de froid complètes, dans le simulateur de câblage</a>
+          <span class="d">— sept exercices de niveau avancé : un groupe sous porte-fusibles et disjoncteur moteur, avec transformateur 230 / 24 V et sa commande 24 V (arrêt d’urgence, commutateur, pressostats, thermostat, électrovanne et trois voyants), une commande étagée par un relais auxiliaire KA1, une horloge de dégivrage avec quatre voyants et la précoupure du sectionneur, et un ventilateur de condenseur repassé du 380 V biphasé au 230 V mono. Chacun se câble en symboles ou avec les vrais appareils, s’essaie sous tension — le transformateur n’alimente sa commande que si son primaire est sous tension — et a sa feuille élève ; les documents professeur s’ouvrent avec le <a href="demander-un-acces.html">code enseignant</a>. Vingt-huit exercices en tout.</span></li>
+      </ul>
+
+      <h3>27 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cablage-virtuel/">📄 Une feuille élève pour chaque câblage</a>
+          <span class="d">— les vingt et un exercices du simulateur de câblage ont maintenant leur feuille à télécharger : le schéma et son QR, câbler sur l’écran, essayer sous tension et noter ce qu’on observe, puis le réaliser sur la platine. Génériques, sans diplôme ni marque : chaque professeur les adapte. La fiche professeur, la grille d’évaluation par compétences et le plan de séance, en PDF et en Word, s’ouvrent avec le <a href="demander-un-acces.html">code enseignant du Câblage virtuel</a>.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="cablage-virtuel/jouer.html?ex=cablage-1-commande&amp;mode=aide">⚡ La mise sous tension, dans le simulateur de câblage</a>
+          <span class="d">— une fois le câblage posé, l’élève l’essaie comme sur la vraie platine : il enclenche les disjoncteurs, appuie sur le bouton marche, et voit le contacteur coller et le moteur tourner, dans le bon sens ou non. Mal câblé, la protection la plus proche disjoncte, et le logiciel peut montrer le fil en cause (une aide, comptée). Auto-maintien, verrouillage de l’inversion, étoile-triangle et sa temporisation se comprennent en les voyant. En mode Réel, on contrôle d’abord, puis on essaie. La feuille élève (3 feuilles : sécurité, table de vérité, essai réel) se télécharge sur la fiche du Câblage n° 1 — la commande.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvel outil</span><a href="cablage-virtuel/">🔌 Le simulateur de câblage</a>
+          <span class="d">— l’élève lit le schéma, trouve les numéros des bornes et pose les fils sur la platine, au doigt sur la tablette ou à la souris. Trois temps : colorier les conducteurs, repérer les bornes, câbler. Trois modes : guidé, aidé (chaque aide est comptée), réel (contrôle à la fin, comme à l’épreuve). Quinze exercices, de l’allumage simple à la chambre froide négative : la puissance, puis la commande (auto-maintien, inversion du sens de marche, étoile-triangle, pump-down, dégivrage). La platine se montre en symboles ou avec les vrais appareils. <strong>Prototype en relecture</strong> ; sur téléphone, l’écran est trop petit.</span></li>
+        <li><span class="nv-etiq">droits d’auteur</span><a href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>La licence sur chaque page des livrets</a>
+          <span class="d">— le livret HoCourant, les documents de la station FormaRézo (PDF et Word) et la présentation d’inerWeb Fluide portent désormais la mention « © inerWeb — F. Henninot » et leur licence au pied de chaque page : une feuille photocopiée seule garde son auteur. Libre de diffusion gratuite en citant l’auteur, sans usage commercial ni modification ; illustrations tous droits réservés.</span></li>
+        <li><span class="nv-etiq nv-neuf">extrait offert</span><a href="habfluide/inerWeb.fr-HabFluide-extrait.pdf">📘 Le livre HabFluide : les premières pages</a>
+          <span class="d">— le début du livre de théorie de l’attestation d’aptitude fluides (A1, A2, D, E), jusqu’au test d’entrée : vingt questions corrigées sur le téléphone, qui disent quels chapitres reprendre, puis le parcours selon la catégorie. Vingt pages en PDF, à partager librement.</span></li>
+        <li><span class="nv-etiq">amélioration</span><strong>Les outils montrent ce qu’on trouve derrière</strong>
+          <span class="d">— AquiBlue, inerWeb Fluide et le simulateur de câblage ont maintenant leur image sur l’accueil, comme le livre HoCourant : le circuit et ses sondes Bluetooth reliés au diagramme enthalpique, la couverture de la présentation d’inerWeb Fluide, une platine câblée du simulateur.</span></li>
+        <li><span class="nv-etiq">amélioration</span><strong>Les actualités, à jour en haut du panneau</strong>
+          <span class="d">— le panneau de gauche affiche désormais les trois dernières mises à jour du site, datées, avec un lien vers chacune.</span></li>
+      </ul>
+
+      <h3>26 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="formarezo/">🗺️ FormaRézo</a>
+          <span class="d">— le réseau des séances de cours : chaque séance validée devient une station, avec son simulateur et les documents de l’élève à télécharger. Première station : <a href="s/r134a/">« La carte d’identité du R134a »</a>. Partie élève ; l’espace enseignant viendra ensuite.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvelle version</span><a href="hocourant/">🔋 HoCourant, le livre 2.0</a>
+          <span class="d">— l’habilitation électrique en 13 stations et 29 films interactifs : une animation par notion, une question quand l’image s’arrête, une explication si la réponse est fausse. Un réglage « Sans animation » pour qui en a besoin. Le livret élève passe en version 3.1 (116 pages) : chaque QR du livret ouvre la notion dans l’application.</span></li>
+      </ul>
+
+      <h3>17 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvel accueil</span><a href="#reseaux">Six réseaux, une carte chacun</a>
+          <span class="d">— l’accueil montre enfin l’ampleur du site : les six réseaux de cours avec leur vraie carte en vignette, les chiffres relevés (stations, lignes, narrations), la recherche dès l’entrée et une station d’entrée par réseau. Le grand plan du thermo-techno a maintenant <a href="plan.html">sa propre page</a> ; les anciens liens y mènent toujours.</span></li>
+      </ul>
+
+      <h3>5 septembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelle porte d’entrée</span><a href="#reseaux">L’accueil s’ouvre sur l’organigramme</a>
+          <span class="d">— ce que propose le site, en un coup d’œil : les cinq réseaux de cours, les outils, la formation habilitation. Puis trois portes : « Je découvre », « Je me situe » (le positionnement, désormais au niveau du départ) et « Je cherche un cours ».</span></li>
+        <li><span class="nv-etiq">déplacement</span><a href="#outils">Les outils inerWeb</a>
+          <span class="d">— AquiBlue, HoCourant et inerWeb Fluide sont regroupés dans un bloc sous le plan ; les deux premiers ouvraient la page jusqu’ici.</span></li>
+      </ul>
+
+      <h3>28 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="aerorezo/">🌬️ AéroRézo</a>
+          <span class="d">— l’aéraulique en carte de métro, le pendant d’HydroMétro pour l’air : 36 stations sur 6 lignes (air &amp; hygrométrie, VMC, distribution, climatisation &amp; apports, centrale de traitement d’air, mesure &amp; diagnostic), chaque station jouable à trois profondeurs — CAP · Bac pro · BTS —, découverte, méthode, manipulation chiffrée et vérification corrigée sans note. Voix explicative au clic, avec réglage de vitesse. <strong>Prototype en cours d’évaluation</strong> : le contenu attend sa relecture métier.</span></li>
+      </ul>
+
+      <h3>26 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau</span><a href="demander-un-acces.html">🔑 L’espace enseignant ouvre</a>
+          <span class="d">— les documents de travail du dispositif d’habilitation sont désormais accessibles aux enseignants et aux formateurs, sur simple demande et gratuitement. Chaque accès est personnel, valable un an, et s’active en collant un code sur <a href="activer.html">la page d’activation</a> : ni compte à créer, ni mot de passe.</span></li>
+        <li><span class="nv-etiq">sécurité</span><strong>Le coffre change de serrure</strong>
+          <span class="d">— les documents ne sont plus protégés par un code partagé mais par une clé propre à l’année, que transporte l’accès de chacun. Les documents consultés portent le nom de leur lecteur. Rien n’est envoyé sur internet : tout se vérifie dans le navigateur.</span></li>
+      </ul>
+
+      <h3>24 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau logiciel</span><a href="aquiblue/">📡 inerWeb AquiBlue</a>
+          <span class="d">— acquisition de données Bluetooth : les sondes de mesure tracent le cycle frigorifique en direct sur le diagramme enthalpique. Démonstration en ligne sans installation, logiciel libre et gratuit (GPL-3.0) à télécharger, espace professeur sur demande.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouveau réseau</span><a href="hydrometro/">💧 HydroMétro</a>
+          <span class="d">— l’hydraulique CVC en carte de métro : 22 stations sur 4 lignes (principes, équipements, distribution, mesure &amp; diagnostic), chaque station jouable à trois profondeurs — CAP · Bac pro · BTS —, positionnement initial en 20 questions et évaluations corrigées par ligne.</span></li>
+        <li><span class="nv-etiq">progression</span><a href="legislation/">📜 Réseau Législation</a>
+          <span class="d">— 29 stations ouvertes sur 57 : les sous-lignes Thermique, DESP, Risques professionnels, Déchets et Impact environnemental sont complètes.</span></li>
+        <li><span class="nv-etiq">ajout</span><strong>Les trois réseaux en tête de plan</strong>
+          <span class="d">— le plan de formation présente les trois réseaux et leurs correspondances ; on passe de l’un à l’autre depuis chaque carte.</span></li>
+      </ul>
+
+      <h3>22 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelle ligne</span><a href="packs/fluides/res/regules-interactif/index.html">La régulation</a>
+          <span class="d">— 12 stations sur le plan pour comprendre la commande directe, les protections, le pump-down et quatre méthodes de dégivrage. Les 10 stations du parcours proposent 3 leçons, 4 questions corrigées et une voix locale.</span></li>
+        <li><span class="nv-etiq">ajout</span><strong>Six films techniques</strong>
+          <span class="d">— lecture déclenchée par l’utilisateur, commandes tactiles agrandies et conseil de passage en paysage sur téléphone.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span><strong>Lecture mobile</strong>
+          <span class="d">— textes de la nouvelle ligne agrandis, carte du parcours en une colonne et couleurs remises sur la charte inerWeb.</span></li>
+        <li><span class="nv-etiq">progression</span><strong>108 stations</strong> <span class="d">— les nouvelles lignes Huile, Circuit d’huile, CO₂, Centrales, Régulation et Électrotechnique sont visibles depuis le plan.</span></li>
+      </ul>
+
+      <h3>19 août 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouvelles stations</span><a href="packs/fluides/res/pressostat-bp-kp1/index.html">Les trois pressostats</a>
+          <span class="d">— ligne 🎛 CE QUI SE RÈGLE : <a href="packs/fluides/res/pressostat-bp-kp1/index.html">BP KP1</a>, <a href="packs/fluides/res/pressostat-hp-kp5/index.html">HP KP5</a> et <a href="packs/fluides/res/pressostat-combine-kp15/index.html">combiné KP15</a>. Soufflet et ressorts, zone neutre, différentiel et court-cycle, contacts, banc à l’azote, trois cycles mesurés. Voix de synthèse sur chaque écran, illustration décrite à haute voix. 26 écrans chacun. Ce sont des supports de cours : la station <a href="https://frigorx.github.io/inerweb-pressostats/" target="_blank" rel="noopener">Pressostats en autonomie ↗</a> reste à côté, pour s’entraîner seul.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvelle station</span><a href="packs/fluides/res/regulateur-electronique-interactif/index.html">Le régulateur électronique</a>
+          <span class="d">— ligne 🎛 CE QUI SE RÈGLE : la sonde résistive, consigne et différentiel, trois façades de programmation, le dégivrage en cinq temps, le câblage du bornier. 24 écrans.</span></li>
+        <li><span class="nv-etiq nv-neuf">nouvelle ligne</span><a href="#carte">⚡ ÉLECTROTECH</a>
+          <span class="d">— l’électricité entre au plan, avec « Sous tension » et le TD triphasé.</span></li>
+        <li><span class="nv-etiq">ajout</span><a href="https://frigorx.github.io/inerweb-fgaz/" target="_blank" rel="noopener">Mission F-GAZ ↗</a>
+          <span class="d">— rejoint la ceinture 🎯 S’ÉVALUER.</span></li>
+        <li><span class="nv-etiq">amélioration</span><a href="#carte">Les vues de ligne</a>
+          <span class="d">— chaque cartouche ouvre le plan rapproché de sa ligne, correspondances expliquées.</span></li>
+        <li><span class="nv-etiq">amélioration</span>Le site <strong>s’installe sur téléphone</strong> et se consulte <strong>hors ligne</strong>.</li>
+        <li><span class="nv-etiq nv-corr">correction</span>Films narrés <span class="d">— quand le son est bloqué par le téléphone (iPhone surtout), la page le dit au lieu de rester muette.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span>Galerie <span class="d">— les filtres se manipulent au lecteur d’écran et au doigt.</span></li>
+        <li><span class="nv-etiq nv-corr">correction</span>Publication <span class="d">— les fichiers commençant par « . » ou « _ » n’étaient pas mis en ligne.</span></li>
+        <li><span class="nv-etiq">ouverture</span><strong>Le réseau ouvre</strong> <span class="d">— 60 stations sur le plan, la formation habilitation complète dans l’application.</span></li>
+      </ul>
+      </details>
+
+    </div>
+  </details>
+
+  <section class="bloc outils" id="outils" aria-labelledby="titre-outils">
+    <div class="titre-bloc">
+      <h2 id="titre-outils">Les outils inerWeb</h2>
+      <span>Des logiciels libres et gratuits pour l’atelier et la salle — démonstration en ligne, sans installation.</span>
+    </div>
+    <div class="corps">
+
+      <!-- BANNIÈRE inerWeb AquiBlue — a ouvert la page du 24/08 au 05/09, avant
+           même l'accroche ; descendue ici le 05/09 (voir le commentaire du bloc).
+           F. Henninot, 24/08 : « je voulais qu'on la voie en première ligne, avec
+           le logo et une petite explication de ce que c'est ; c'est important de le
+           voir d'entrée de jeu, ça fait partie des moteurs qui peuvent donner de la
+           visibilité et du succès au logiciel ». Elle était posée bas de page, il ne
+           la voyait pas : elle est remontée tout en haut.
+           Logo compact de la charte § 3.4, cartouche « AquiBlue ». Règle absolue du
+           projet : aucun nom de marque d'instruments dans quoi que ce soit de visible. -->
+      <aside class="bandeau-aquiblue" aria-label="inerWeb AquiBlue">
+        <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb AquiBlue">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="100" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="205" y="27" text-anchor="middle">AquiBlue</text>
+        </svg>
+        <p class="ba-texte"><strong>Nouveau — inerWeb AquiBlue.</strong> Les sondes de mesure Bluetooth
+          tracent le cycle frigorifique en direct sur le diagramme enthalpique. Douze configurations de
+          pose, pincements et efficacités d'échangeur, profil de température le long d'un échangeur —
+          et toute valeur peut se saisir à la main quand l'instrument manque. Logiciel libre et
+          gratuit (GPL-3.0), démonstration en ligne sans installation, espace professeur sur demande.</p>
+        <div class="ba-boutons">
+          <a class="bouton" href="aquiblue/">Essayer</a>
+          <a class="bouton creux" href="aquiblue/aquiblue-v1.5.2.zip" download>Télécharger</a>
+          <a class="bouton creux" href="https://github.com/frigorx/aquiblue" rel="noopener nofollow">Code source</a>
+        </div>
+        <!-- Ce que fait le logiciel, en une image (27/09) : symboles frigorifiques de la bibliothèque, sondes, Bluetooth, diagramme enthalpique. -->
+        <a class="ba-couv ba-vign" href="aquiblue/" title="Essayer AquiBlue">
+          <img src="icones/outils/aquiblue-vignette.svg" alt="Le circuit frigorifique, ses sondes Bluetooth et le cycle tracé en direct sur le diagramme enthalpique" loading="lazy" width="360" height="210"></a>
+      </aside>
+
+      <!-- CÂBLER SUR L'ÉCRAN — le simulateur de câblage (F. Henninot, 24/09/2026 : « une extension
+           du logiciel, le service au public, à mettre dans la page de inerweb.fr »). Atelier
+           C:/git/cablage-virtuel, copie servie cablage-virtuel/ par son outils/livrer.py.
+           20/10 : était une porte seule sous son propre titre ; rangé ici avec les autres outils. -->
+      <aside class="bandeau-aquiblue" aria-label="inerWeb Câblage">
+        <svg class="ba-logo" viewBox="0 0 260 50" role="img" aria-label="inerWeb Câblage">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="92" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="201" y="27" text-anchor="middle">Câblage</text>
+        </svg>
+        <p class="ba-texte"><strong>Le simulateur de câblage — câbler sur l’écran.</strong>
+          Lire le schéma, poser les fils sur les bornes — au doigt sur la tablette ou à la souris. Quinze
+          exercices, la puissance puis la commande, de l’allumage simple à la chambre froide négative.
+          <em>En relecture.</em></p>
+        <div class="ba-boutons">
+          <a class="bouton" href="cablage-virtuel/">Câbler</a>
+        </div>
+        <a class="ba-couv ba-vign" href="cablage-virtuel/" title="Ouvrir le simulateur de câblage">
+          <img src="icones/outils/cablage-vignette.jpg" alt="Une platine câblée dans le simulateur : disjoncteurs, contacteurs, relais thermique et fils de couleur" loading="lazy" width="560" height="481"></a>
+      </aside>
+
+      <!-- BANNIÈRE inerWeb QCM (07/10/2026, feu vert F. Henninot) : la version ouverte du
+           « Test de rentrée » de la classe — réviser seul, rien n'est envoyé. La version qui
+           relève les notes reste sur le PC du professeur. Pages fabriquées par
+           test-accueil-mfer/en-ligne/livrer.mjs : ne pas les retoucher ici. -->
+      <aside class="bandeau-aquiblue" style="margin-top:14px" aria-label="inerWeb QCM">
+        <svg class="ba-logo" viewBox="0 0 230 50" role="img" aria-label="inerWeb QCM">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="66" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="188" y="27" text-anchor="middle">QCM</text>
+        </svg>
+        <p class="ba-texte"><strong>inerWeb QCM — réviser seul, à son rythme.</strong>
+          Où j'en suis en froid et climatisation (196 questions sur six niveaux, puis la carte de mes
+          compétences), lire un manomètre, compléter le schéma frigorifique. Une explication après
+          chaque réponse ; sur téléphone ou ordinateur, sans compte ni nom : rien n'est envoyé.</p>
+        <div class="ba-boutons">
+          <a class="bouton" href="qcm/">Commencer</a>
+        </div>
+      </aside>
+
+      <aside class="bandeau-aquiblue bandeau-fluide" aria-label="inerWeb Fluide">
+        <svg class="ba-logo" viewBox="0 0 250 50" role="img" aria-label="inerWeb Fluide">
+          <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+          <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+          <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+          <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+          <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="86" height="24"/>
+          <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="198" y="27" text-anchor="middle">Fluide</text>
+        </svg>
+        <p class="ba-texte"><strong>inerWeb Fluide — la traçabilité des fluides frigorigènes.</strong>
+          CERFA, registre, bilan : le logiciel cherche des centres de formation et des professionnels
+          pour l’essayer avant sa sortie. Démonstration en ligne, présentation en deux pages.</p>
+        <div class="ba-boutons">
+          <a class="bouton" href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener">Essayer la démonstration</a>
+          <a class="bouton creux" href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">Présentation (PDF)</a>
+          <a class="bouton creux" href="mailto:inerweb.fh@gmail.com?subject=B%C3%AAta-test%20inerWeb%20Fluide">Devenir bêta-testeur</a>
+        </div>
+        <!-- La couverture de la présentation, cliquable, comme le livre d'HoCourant (27/09). -->
+        <a class="ba-couv" href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener" title="Ouvrir la présentation d’inerWeb Fluide (PDF)">
+          <img src="couverture-presentation-fluide.jpg" alt="Couverture de la présentation d’inerWeb Fluide" loading="lazy" width="672" height="951"></a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Le mot de l'auteur — TOUT EN BAS de la page, dernier bloc avant le pied
+       (F. Henninot, 03/10/2026 : « par respect, tout en bas » ; il était en tête
+       depuis le 19/08, puis s'était retrouvé au milieu). Texte dicté par lui,
+       mis en forme ; règles tenues : projet personnel, aucune institution ni
+       ancienne société nommée. REPLIÉ par défaut depuis le 21/08 (même
+       famille que .nouveautes) : la photo et le titre
+       restent visibles fermés, personne n'est obligé de lire le texte. -->
+  <details class="mot-auteur">
+    <summary>
+      <!-- Portrait dessiné de l'auteur (illustration, pas une photo), recadré sur
+           le visage : le décor d'origine portait la marque « inerWeb Fluide », qui
+           n'est pas celle de cette page. Servi en 112 px pour rester net sur les
+           écrans fins, affiché en 56. `alt` vide : le nom est juste à côté en
+           texte, un lecteur d'écran le lirait deux fois. Chargement
+           différé : le bloc est en bas de page. -->
+      <img src="icones/auteur-112.webp" alt="" width="56" height="56" loading="lazy">
+      <span class="surtitre">Le mot de l’auteur</span>
+    </summary>
+    <div class="ma-corps">
+      <p>Bonjour,</p>
+      <p>Technicien frigoriste pendant plusieurs années, j’enseigne aujourd’hui le froid et la climatisation. Ce site est un <strong>projet personnel</strong> : ma façon de transmettre le métier. Le contenu technique vient de mon expérience et de mon métier ; les outils, je les construis <strong>avec l’aide de l’intelligence artificielle</strong> — je conçois, je dirige, je vérifie, mais je n’écris pas seul.</p>
+      <p>Tout reste en développement — des prototypes, des essais. Une erreur, une imprécision ? Dites-le-moi : c’est comme ça que le site s’améliore. Et si ces pages vous aident à découvrir le métier, à réviser ou à préparer l’attestation d’aptitude, elles auront fait leur travail.</p>
+      <p>Petite vidéo de présentation, portrait réalisé par la cellule communication d’EQUATIO Formation et Métier — <a href="https://youtu.be/VoUEp_3GV6c">youtu.be/VoUEp_3GV6c</a>.</p>
+      <p style="margin:0;color:var(--mut);font-size:14.5px"><strong style="color:var(--txt)">F. Henninot, enseignant en filière froid et climatisation</strong><br>
+      <a href="mailto:inerweb.fh@gmail.com">inerweb.fh@gmail.com</a></p>
+    </div>
+  </details>
+
+</div>
+
+<!-- Le volet « Infos » : replié à l'arrivée, rouvert par sa poignée (code sorti du script du plan le 17/09). -->
+<script>
+/* =====================================================================
+   LE VOLET — ouvert à l'arrivée, refermé d'un clic.
+   sessionStorage et NON localStorage, comme la frise vivante d'index.html :
+   le volet se rouvre à CHAQUE nouvelle session de navigateur (c'est là qu'il
+   sert), mais une fois refermé il le reste tant que l'onglet vit — sinon il
+   reviendrait à chaque retour sur l'accueil, ce qui serait insupportable en
+   classe. La transition n'est armée qu'après la première image : sans ça, un
+   volet refermé se déplierait sous les yeux au chargement.
+   ===================================================================== */
+(function () {
+  "use strict";
+  var v = document.getElementById("volet"),
+      p = document.getElementById("volet-poignee"),
+      CLE = "edu_volet_replie";
+
+  /* Les actualités du volet sont LUES dans le journal #nouveautes, jamais recopiées :
+     les TROIS DERNIÈRES actualités, une ligne chacune, la plus récente en tête.
+     06/10/2026 — F. Henninot : « actualités prend trop de place, on le réduit aux
+     trois dernières » ; trois DATES avec tous leurs titres (onze le 4 octobre)
+     remplissaient le volet et, sur téléphone, tout le bandeau d'aperçu. */
+  var actus = document.getElementById("volet-actus"),
+      dates = document.querySelectorAll("#nouveautes .nv-corps > h3"),
+      MAX_ACTUS = 3, n = 0;
+  for (var d = 0; actus && d < dates.length && n < MAX_ACTUS; d++) {
+    var ul = dates[d].nextElementSibling;
+    var titres = ul ? ul.querySelectorAll(":scope > li > a, :scope > li > strong") : [];
+    for (var t = 0; t < titres.length && n < MAX_ACTUS; t++, n++) {
+      var li = document.createElement("li"), date = document.createElement("strong");
+      date.textContent = dates[d].textContent.replace(/\s+\d{4}\s*$/, "") + " — ";
+      li.appendChild(date);
+      li.appendChild(titres[t].cloneNode(true));
+      actus.appendChild(li);
+    }
+  }
+
+  function poser(replie) {
+    v.classList.toggle("replie", replie);
+    v.setAttribute("aria-hidden", replie ? "true" : "false");
+    /* Replié, le volet n'est que poussé hors écran : ses liens restaient
+       atteignables à la tabulation, dans un panneau invisible et pourtant
+       déjà déclaré aria-hidden — on tabulait dans le vide. `inert` les sort
+       du parcours clavier ET de l'arbre d'accessibilité, d'un seul geste. */
+    v.inert = replie;
+    p.style.display = replie ? "block" : "none";
+    document.body.classList.toggle("volet-ouvert", !replie);
+  }
+  function replier() {
+    poser(true);
+    try { sessionStorage.setItem(CLE, "oui"); } catch (e) {}
+    /* Clavier : le focus suit — il revient sur la poignée, seul point
+       d'entrée restant, au lieu de se perdre dans un panneau caché. */
+    p.focus();
+  }
+
+  var replie = false;
+  try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
+  /* Sur téléphone, le volet ouvert mangeait tout l'écran (« un peu chargé
+     sur smartphone » — retour F. Henninot, 19/08) : il démarre replié, la
+     poignée « Infos ▸ » reste visible. Depuis le 12/09, replié partout à
+     l'arrivée : sur ordinateur, à 1 280 px, il couvrait le début du titre. */
+  /* 17/09/2026 — F. Henninot : le volet est la vitrine (« la cerise sur le gâteau pour mon
+     lycée »), il doit apparaître dès qu'on arrive. Le repli forcé du 12/09 est levé : il ne reste
+     replié que si on l'a fermé dans cette session. */
+  /* Sur téléphone (≤ 700 px), le volet ouvert masquait tout le contenu (F. Henninot, 17/09) : il
+     démarre replié, sa poignée est une bande visible sous le menu. Ailleurs, ouvert à l'arrivée. */
+  var telephone = !!(window.matchMedia && window.matchMedia("(max-width: 700px)").matches);
+  if (telephone) {
+    replie = true;
+    /* 18/09 — F. Henninot : « replié, personne ne le dépliera ; il faut quelque chose d'intermédiaire
+       qui donne envie ». La poignée devient un APERÇU : les titres lus dans le volet lui-même (une seule
+       source), jamais recopiés — l'actualité du jour, l'appel aux partenaires, les espaces en pastilles. */
+    var blocs = v.querySelectorAll(".volet-bloc");
+    var texte = function (el) { return el ? el.textContent.replace(/\s+/g, " ").trim() : ""; };
+    var span = function (classe, contenu) { var s = document.createElement("span"); s.className = classe; s.textContent = contenu; return s; };
+    p.className += " apercu";
+    p.textContent = "";
+    var tete = span("ap-tete", ""); tete.appendChild(span("", "📰 Actualités & espaces")); tete.appendChild(span("ap-tout", "Tout voir ▸"));
+    p.appendChild(tete);
+    var actu = blocs[0] && (blocs[0].querySelector("li") || blocs[0].querySelector("strong"));
+    if (actu) p.appendChild(span("ap-actu", texte(actu)));
+    if (blocs[1]) p.appendChild(span("ap-appel", texte(blocs[1].querySelector("h3")) + " — " + texte(blocs[1].querySelector("strong")) + " cherche des bêta-testeurs"));
+    var puces = span("ap-puces", "");
+    for (var i = 2; i < blocs.length; i++) { var h = blocs[i].querySelector("h3"); if (h) puces.appendChild(span("", texte(h))); }
+    p.appendChild(puces);
+  }
+  poser(replie);
+  requestAnimationFrame(function () { v.classList.add("pret"); });
+
+  document.getElementById("volet-fermer").addEventListener("click", replier);
+  p.addEventListener("click", function () {
+    poser(false);
+    try { sessionStorage.removeItem(CLE); } catch (e) {}
+    document.getElementById("volet-fermer").focus();
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && !v.classList.contains("replie")) replier();
+  });
+})();
+</script>
+
+<!-- Le journal s'ouvre pour de bon quand on suit un lien qui y mène : sinon on
+     atterrit sur un bloc replié, et on croit qu'il n'y a rien à voir. -->
+<script>
+(function () {
+  var journal = document.getElementById("nouveautes");
+  if (!journal) return;
+  function ouvrir() {
+    journal.open = true;
+    journal.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  document.querySelectorAll("[data-vers-journal]").forEach(function (lien) {
+    lien.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var fermer = document.getElementById("volet-fermer");
+      if (fermer) fermer.click();      /* le volet couvrirait la lecture */
+      ouvrir();
+    });
+  });
+  if (location.hash === "#nouveautes") ouvrir();
+})();
+</script>
+
+
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
+<script src="moteur/lisibilite.js?v=1bc680f77e"></script>
+<script src="chiffres.gen.js?v=1bc680f77e"></script>
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
+     écrit à la main : une page qui circule seule doit porter sa licence. -->
+<script src="moteur/marque.js?v=1bc680f77e" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script>
+  // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
+  // Le catch : certains navigateurs (vie privée renforcée, webviews)
+  // refusent l'enregistrement — le site marche pareil, juste sans hors-ligne.
+  if ("serviceWorker" in navigator)
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+</script>
+</body>
+</html>
+
