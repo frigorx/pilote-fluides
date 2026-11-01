@@ -30,7 +30,9 @@ window.INERWEB_ETABLISSEMENT = {
   nom: "", ville: "", adresse: "", codePostal: "", site: "", telephone: "", courriel: "",
   logo: "",                // chemin du logo de l'établissement (fourni le jour J, jamais avant)
   groupe: "", logoGroupe: "",   // réseau d'établissements et son logo (idem)
-  couleur: "#16163a", couleur2: "#6d5cf0",   // charte de l'établissement, à confirmer le jour J
+  // Charte graphique du campus (usine-contenu, CHARTE-GRAPHIQUE-INERWEB.md § 3.1) : bleu, violet, vert d'eau.
+  // Les logos (établissement et campus) existent dans usine-contenu/gabarits/logos/ : à copier ici le jour J seulement.
+  couleur: "#0C4B88", couleur2: "#706EED", couleur3: "#60CAB3",
   formations: [
     { sigle: "CAP IFCA", nom: "Installateur en froid et conditionnement d’air", duree: "2 ans", voie: "scolaire ou apprentissage" },
     { sigle: "Bac pro MFER", nom: "Métiers du froid et des énergies renouvelables", duree: "3 ans", voie: "scolaire ou apprentissage" },
@@ -207,7 +209,7 @@ window.INERWEB_ETABLISSEMENT = {
     'border:1px solid var(--ligne,#d6dee7);border-radius:var(--r,14px);box-shadow:var(--ombre,0 2px 10px rgba(27,58,99,.10));',
     'overflow:hidden;line-height:1.55}',
     '.etab-entete{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;padding:20px 28px;',
-    'background:var(--etab-c,#16163a);color:var(--etab-c-encre,#fff)}',
+    'background:var(--etab-c,#0C4B88);color:var(--etab-c-encre,#fff);border-bottom:6px solid var(--etab-c2,#706EED)}',
     '.etab-ident{flex:1 1 16em;min-width:0}',
     '.etab-titre{margin:0;font-family:var(--titre,inherit);font-weight:bold;line-height:1.2}',
     '.etab-type{display:block;font-size:16px;font-weight:normal}',
@@ -222,33 +224,33 @@ window.INERWEB_ETABLISSEMENT = {
     '.etab-corps{padding:26px 28px 6px}',
     '.etab-accroche{margin:0 0 8px;font-family:var(--titre,inherit);font-size:30px;font-weight:bold;line-height:1.2;text-wrap:pretty}',
     '.etab-sous{margin:0 0 6px;max-width:46em;font-size:17px;color:var(--mut,#5a6b7d);text-wrap:pretty}',
-    '.etab-rubrique{margin:24px 0 10px;padding-left:12px;border-left:5px solid var(--etab-c2,#6d5cf0);',
-    'font-family:var(--titre,inherit);font-size:19px;line-height:1.3;color:var(--etab-t,#16163a)}',
+    '.etab-rubrique{margin:24px 0 10px;padding-left:12px;border-left:5px solid var(--etab-c2,#706EED);',
+    'font-family:var(--titre,inherit);font-size:19px;line-height:1.3;color:var(--etab-t,#0C4B88)}',
     '.etab-formations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}',
-    '.etab-formation{padding:10px 14px;border:1px solid var(--ligne,#d6dee7);border-left:5px solid var(--etab-c2,#6d5cf0);',
+    '.etab-formation{padding:10px 14px;border:1px solid var(--ligne,#d6dee7);border-left:5px solid var(--etab-c3,#60CAB3);',
     'border-radius:10px;background:#fbfdff}',
-    '.etab-sigle{display:block;font-family:var(--titre,inherit);font-size:18px;color:var(--etab-t,#16163a)}',
+    '.etab-sigle{display:block;font-family:var(--titre,inherit);font-size:18px;color:var(--etab-t,#0C4B88)}',
     '.etab-fnom{display:block;font-size:15.5px;line-height:1.4}',
     '.etab-fdetail{display:block;margin-top:2px;font-size:15px;color:var(--mut,#5a6b7d)}',
     '.etab-offres{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}',
     '.etab-offre{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--ligne,#d6dee7);',
-    'border-top:5px solid var(--etab-c2,#6d5cf0);border-radius:var(--r,14px);background:#fbfdff}',
+    'border-top:5px solid var(--etab-c2,#706EED);border-radius:var(--r,14px);background:#fbfdff}',
     '.etab-offre-tete{display:flex;align-items:center;gap:12px}',
     '.etab-emoji{flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;',
-    'border-radius:50%;background:#eef1fb;font-size:26px;line-height:1}',
-    '.etab-offre-titre{margin:0;font-family:var(--titre,inherit);font-size:20px;line-height:1.25;color:var(--etab-t,#16163a)}',
+    'border-radius:50%;background:#e4f6f1;background:color-mix(in srgb,var(--etab-c3,#60CAB3) 24%,white);font-size:26px;line-height:1}',
+    '.etab-offre-titre{margin:0;font-family:var(--titre,inherit);font-size:20px;line-height:1.25;color:var(--etab-t,#0C4B88)}',
     '.etab-offre-texte{margin:0;font-size:16px}',
     '.etab-offre-action{margin-top:auto;padding-top:8px}',
     '.etab-bouton{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 20px;border-radius:999px;',
-    'background:var(--etab-c2,#6d5cf0);color:var(--etab-c2-encre,#fff);font-size:16px;font-weight:bold;line-height:1.3;text-decoration:none}',
+    'background:var(--etab-c2,#706EED);color:var(--etab-c2-encre,#fff);font-size:16px;font-weight:bold;line-height:1.3;text-decoration:none}',
     'a.etab-bouton:hover,a.etab-v-puce:hover{color:var(--etab-c2-encre,#fff);text-decoration:underline}',
     '.etab-inerte{background:#eceff3;color:#4a5663;border:2px dashed #aab4c0;cursor:not-allowed}',
-    '.etab-badge{display:inline-block;padding:1px 9px;border-radius:999px;background:#4a5663;color:#fff;',
+    '.etab-badge{display:inline-block;padding:1px 9px;border-radius:999px;background:var(--etab-c2,#706EED);color:var(--etab-c2-encre,#fff);',
     'font-family:var(--titre,inherit);font-size:15px;font-weight:bold;line-height:1.4}',
     '.etab-pied{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin-top:24px;padding:16px 28px;',
     'border-top:1px solid var(--ligne,#d6dee7);background:#f3f5fa;font-size:15px;color:var(--mut,#5a6b7d)}',
     '.etab-pied address{font-style:normal;color:var(--txt,#10233c)}',
-    '.etab-pied a{color:var(--etab-t,#16163a);font-weight:bold}',
+    '.etab-pied a{color:var(--etab-t,#0C4B88);font-weight:bold}',
     '.etab-note{margin:0;flex:1 1 20em;font-size:15px}',
     /* L'emplacement vide de la maquette */
     '.etab-vide{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border:2px dashed currentColor;',
@@ -258,13 +260,13 @@ window.INERWEB_ETABLISSEMENT = {
     '.etab-vide.etab-groupe{min-width:130px;min-height:56px}',
     '.etab-nom .etab-vide{margin:6px 0;font-size:20px}',
     /* Version compacte */
-    '.etab-volet{border:1px solid var(--ligne,#d6dee7);border-radius:10px;padding:11px 13px;background:#fbfdff}',
-    '.etab-volet .etab-v-titre{margin:0 0 4px;font-family:var(--titre,inherit);font-size:16px;line-height:1.3;color:var(--etab-t,#16163a)}',
+    '.etab-volet{border:1px solid var(--ligne,#d6dee7);border-left:6px solid var(--etab-c2,#706EED);border-radius:10px;padding:11px 13px;background:#f3f6fb;background:color-mix(in srgb,var(--etab-c,#0C4B88) 7%,white)}',
+    '.etab-volet .etab-v-titre{margin:0 0 4px;font-family:var(--titre,inherit);font-size:16px;line-height:1.3;color:var(--etab-t,#0C4B88)}',
     '.etab-volet .etab-v-nom{margin:0 0 3px;font-size:15px;font-weight:bold;color:var(--txt,#10233c)}',
     '.etab-volet .etab-v-phrase{font-size:15px;line-height:1.45;color:var(--txt,#10233c)}',
     '.etab-v-puces{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}',
     '.etab-v-puce{display:inline-flex;align-items:center;min-height:40px;padding:5px 13px;border-radius:999px;',
-    'background:var(--etab-c2,#6d5cf0);color:var(--etab-c2-encre,#fff);font-size:15px;font-weight:bold;line-height:1.2;text-decoration:none}',
+    'background:var(--etab-c2,#706EED);color:var(--etab-c2-encre,#fff);font-size:15px;font-weight:bold;line-height:1.2;text-decoration:none}',
     '.etab a:focus-visible,.etab-volet a:focus-visible{outline:3px solid var(--orange,#ff6b35);outline-offset:2px}',
     /* Téléphone */
     '@media (max-width:760px){',
@@ -288,7 +290,8 @@ window.INERWEB_ETABLISSEMENT = {
 
   /* Les deux couleurs de la charte de l'établissement, posées sur l'élément rempli. */
   function poserCouleurs(el, c) {
-    var c1 = couleurSure(c.couleur, "#16163a"), c2 = couleurSure(c.couleur2, "#6d5cf0");
+    var c1 = couleurSure(c.couleur, "#0C4B88"), c2 = couleurSure(c.couleur2, "#706EED"), c3 = couleurSure(c.couleur3, "#60CAB3");
+    el.style.setProperty("--etab-c3", c3);
     el.style.setProperty("--etab-c", c1);
     el.style.setProperty("--etab-c-encre", encre(c1));
     el.style.setProperty("--etab-c2", c2);
