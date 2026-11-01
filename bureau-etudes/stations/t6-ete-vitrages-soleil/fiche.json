@@ -1,0 +1,74 @@
+{
+  "numero": 9,
+  "titre": "Calculer les apports solaires par les vitrages et trouver l’heure de pointe",
+  "ligne": "Thermique",
+  "code": "BE-T6",
+  "quand": "Au début du bilan d’été, après le relevé des baies (station T1) et les conditions d’été du site (station E1). Vous avez le tableau des menuiseries, le rayonnement solaire du projet, le facteur solaire des baies et leurs masques. Vous obtenez l’apport solaire de chaque local et du bâtiment, heure par heure, et l’heure de pointe. Les parois opaques, les apports internes et l’air neuf suivent (stations T7 et T8).",
+  "methode": [
+    "Relevez les baies vitrées des locaux traités : repère, L × H en dimensions de tableau, orientation. Les portes pleines n’ont pas de ligne.",
+    "A (m²) : somme des L × H des baies d’une même orientation, par local ou pour le bâtiment.",
+    "A × Sw × Fm (m²), au centième. Sw : facteur solaire de la baie, protection comprise. Fm : coefficient de masque, 1 sans ombre.",
+    "Φ (W) = A × Sw × Fm × I, au watt, avec I (W/m²) le rayonnement reçu par la façade à l’heure choisie.",
+    "Une colonne par heure : somme des lignes de toutes les orientations.",
+    "Heure de pointe : la colonne dont la somme est la plus forte. Φ max : cette somme.",
+    "Chaque local a sa propre heure de pointe. La somme des maximums des locaux dépasse le maximum du bâtiment : le bâtiment se compte à sa propre pointe.",
+    "Protection : refaites les colonnes avec le Sw de la baie protégée. Une protection posée sur une seule façade peut déplacer l’heure de pointe.",
+    "Note de calcul : jour, heures (solaires), origine de I, Sw et Fm, heure de pointe et Φ max."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Rayonnement I sur une façade verticale, juillet, ciel clair, 43° N",
+      "valeur": "est 730 W/m² à 8 h ; sud 490 W/m² à 12 h ; ouest 730 W/m² à 16 h ; nord 150 W/m² à 12 h",
+      "source": "Données de l’exercice (modèle de ciel clair), à remplacer par les données climatiques du projet"
+    },
+    {
+      "grandeur": "Sw, baie à double vitrage sans protection",
+      "valeur": "0,45",
+      "source": "Donnée de l’exercice ; en vrai, fiche du fabricant"
+    },
+    {
+      "grandeur": "Sw, store intérieur clair baissé",
+      "valeur": "0,35",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Sw, protection extérieure baissée (volet roulant, store extérieur)",
+      "valeur": "0,12",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Fm, baie sans ombre portée",
+      "valeur": "1",
+      "source": "Définition du coefficient de masque"
+    },
+    {
+      "grandeur": "Fm, baie sous un balcon (exemple)",
+      "valeur": "0,70",
+      "source": "Donnée de l’exercice ; en vrai, calcul par logiciel"
+    }
+  ],
+  "exemple": {
+    "enonce": "Petit bâtiment de bureaux de plain-pied, trois locaux. Baies : nord 1,61 m² (bureau), sud 2,40 m² et ouest 4,00 m² (salle de réunion), est 0,60 m² (sanitaires). Sw = 0,45, Fm = 1. Rayonnement I de juillet, heures solaires.",
+    "lignes": [
+      "Sud : A × Sw = 2,40 × 0,45 = 1,08 m².",
+      "Est : A × Sw = 0,60 × 0,45 = 0,27 m².",
+      "Ouest : A × Sw = 4,00 × 0,45 = 1,80 m².",
+      "Nord : A × Sw = 1,61 × 0,45 = 0,72 m².",
+      "Ligne ouest à 16 h : 1,80 × 730 = 1314 W.",
+      "Sommes : 8 h 647 W ; 10 h 931 W ; 12 h 948 W ; 14 h 1543 W ; 16 h 1596 W.",
+      "Somme des maximums des locaux : 1792 W, à ne pas retenir."
+    ],
+    "resultat": "heure de pointe 16 h, Φ max 1596 W"
+  },
+  "pieges": [
+    "L’heure de pointe prise à midi par habitude : elle dépend des façades vitrées du bâtiment.",
+    "Les maximums des locaux ou des façades additionnés : ils n’arrivent pas à la même heure.",
+    "Un store intérieur compté comme une protection extérieure : il retire bien moins de chaleur."
+  ],
+  "sources": [
+    "Φ = A × Sw × Fm × I : définition du facteur solaire de la baie et du coefficient de masque. I, Sw et Fm : données de l’exercice.",
+    "Stations en correspondance : BE-T1 (baies), BE-T7 (parois et apports internes), BE-T8 (synthèse), AéroRézo « Occupants, équipements et soleil ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

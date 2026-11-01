@@ -1,0 +1,50 @@
+{
+  "cle": "a3-reseau-gaines",
+  "code": "BE-A3",
+  "titre": "Le réseau de gaines",
+  "ligne": "Aéraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 15,
+    "chapitre": 4
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP4",
+        "libelle": "Réaliser l'étude d'une installation de ventilation mécanique contrôlée (dimensionnement des réseaux ; schéma de principe fonctionnel et renseigné)"
+      },
+      {
+        "code": "CP7",
+        "libelle": "Réaliser l'étude d'une installation de ventilation d'un bâtiment tertiaire (dimensionnement des réseaux ; volet tertiaire, niveau 3 en partie dédiée)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (réseaux aérauliques circulaires ou rectangulaires ; à confirmer pour un réseau de VMC)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A et B",
+      "competences": [],
+      "savoirs": [
+        {
+          "code": "A3",
+          "libelle": "Aéraulique (à confirmer : code relevé dans CADRAGE.md, C.3, ligne A3)"
+        },
+        {
+          "code": "B4-2",
+          "libelle": "Réseaux aérauliques (à confirmer : code relevé dans CADRAGE.md, C.3, ligne A3)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

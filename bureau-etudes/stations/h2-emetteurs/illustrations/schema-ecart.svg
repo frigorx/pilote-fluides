@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 112" width="180mm" height="112mm" role="img">
+<title>L’écart moyen entre l’eau et l’air, régime 50/40, air 19 °C</title>
+<rect width="180" height="112" fill="#fff"/>
+<g><text x="90" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 62)">inerWeb, by inerweb.fr</text><text x="40" y="34" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 34)">inerWeb, by inerweb.fr</text><text x="140" y="92" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 92)">inerWeb, by inerweb.fr</text></g>
+<line x1="66.00" y1="17.84" x2="134.00" y2="17.84" stroke="#c9451a" stroke-width="0.7"/>
+<text x="63.00" y="19.44" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#c9451a">Départ 50 °C</text>
+<line x1="66.00" y1="27.57" x2="134.00" y2="27.57" stroke="#1b3a63" stroke-width="0.7" stroke-dasharray="2 1.5"/>
+<text x="63.00" y="29.17" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#1b3a63">Moyenne de l’eau 45 °C</text>
+<line x1="66.00" y1="37.30" x2="134.00" y2="37.30" stroke="#3d7fca" stroke-width="0.7"/>
+<text x="63.00" y="38.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#3d7fca">Retour 40 °C</text>
+<line x1="66.00" y1="78.16" x2="134.00" y2="78.16" stroke="#555" stroke-width="0.7"/>
+<text x="63.00" y="79.76" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#555">Air de la pièce 19 °C</text>
+<line x1="122.00" y1="18.44" x2="122.00" y2="36.70" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="122.00" y1="36.70" x2="120.75" y2="34.42" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="122.00" y1="36.70" x2="123.25" y2="34.42" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="122.00" y1="18.44" x2="123.25" y2="20.72" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="122.00" y1="18.44" x2="120.75" y2="20.72" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="130.00" y1="28.17" x2="130.00" y2="77.56" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="130.00" y1="77.56" x2="128.75" y2="75.28" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="130.00" y1="77.56" x2="131.25" y2="75.28" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="130.00" y1="28.17" x2="131.25" y2="30.45" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="130.00" y1="28.17" x2="128.75" y2="30.45" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="137.00" y="19.44" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">ΔT eau 10 K</text>
+<text x="137.00" y="51.36" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Écart moyen</text>
+<text x="137.00" y="57.86" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">26 K</text>
+<text x="6.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Écart moyen = 45 − 19 = 26 K</text>
+<line x1="4.00" y1="101.50" x2="176.00" y2="101.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

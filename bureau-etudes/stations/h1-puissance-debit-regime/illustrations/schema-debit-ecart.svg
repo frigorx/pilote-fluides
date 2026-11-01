@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 92" width="180mm" height="92mm" role="img">
+<title>La puissance divisée par 1,16 × ΔT donne le débit</title>
+<rect width="180" height="92" fill="#fff"/>
+<g><text x="90" y="51" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 51)">inerWeb, by inerweb.fr</text><text x="40" y="28" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 28)">inerWeb, by inerweb.fr</text><text x="140" y="75" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 75)">inerWeb, by inerweb.fr</text></g>
+<rect x="4.00" y="12.00" width="52.00" height="38.00" fill="#fff" stroke="#c9451a" stroke-width="0.6"/>
+<text x="30.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Puissance</text>
+<text x="30.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">de l’émetteur</text>
+<text x="30.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#c9451a">1000 W</text>
+<rect x="66.00" y="12.00" width="52.00" height="38.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="92.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">÷ (1,16 × ΔT)</text>
+<text x="92.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">ΔT = 50 − 40</text>
+<text x="92.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">= 10 K, ÷ 11,6</text>
+<rect x="128.00" y="12.00" width="52.00" height="38.00" fill="#fff" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="154.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Débit d’eau</text>
+<text x="154.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">de l’émetteur</text>
+<text x="154.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#3d7fca">86 L/h</text>
+<line x1="57.00" y1="31.00" x2="65.00" y2="31.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="65.00" y1="31.00" x2="62.40" y2="29.70" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="65.00" y1="31.00" x2="62.40" y2="32.30" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="119.00" y1="31.00" x2="127.00" y2="31.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="127.00" y1="31.00" x2="124.40" y2="29.70" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="127.00" y1="31.00" x2="124.40" y2="32.30" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="6.00" y="60.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Régime 50/40 : départ 50 °C, retour 40 °C</text>
+<text x="6.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Régime 45/40, ΔT = 5 K : 1000 ÷ 5,8 = 172 L/h.</text>
+<line x1="4.00" y1="81.50" x2="176.00" y2="81.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

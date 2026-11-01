@@ -1,0 +1,47 @@
+{
+  "cle": "a2-debits-projet",
+  "code": "BE-A2",
+  "titre": "Les débits du projet",
+  "ligne": "Aéraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 16,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 14,
+    "chapitre": 4
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP4",
+        "libelle": "Réaliser l'étude d'une installation de ventilation mécanique contrôlée (critère : « le calcul des débits de ventilation est conforme à la réglementation dans le bâtiment » ; schéma de principe fonctionnel et renseigné)"
+      },
+      {
+        "code": "CP7",
+        "libelle": "Réaliser l'étude d'une installation de ventilation d'un bâtiment tertiaire (volet tertiaire, niveau 3 en partie dédiée)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A et B",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système (à confirmer : la station se fait à la main)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B2-1",
+          "libelle": "Ventilation (à confirmer : le référentiel écrit « B2-1 ventilation » dans le bloc « Ventilation et climatisation »)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

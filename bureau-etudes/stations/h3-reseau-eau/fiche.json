@@ -1,0 +1,70 @@
+{
+  "numero": 21,
+  "titre": "Dimensionner le réseau d’eau et trouver le circuit le plus défavorisé",
+  "ligne": "Hydraulique",
+  "code": "BE-H3",
+  "quand": "Après les débits (station H1) et les émetteurs (station H2), avant la pompe (station H4). Vous avez le débit de chaque radiateur et le tracé du réseau. Vous obtenez le tube et la vitesse de chaque tronçon, les pertes de charge, le circuit le plus défavorisé et la hauteur manométrique que la pompe doit fournir.",
+  "methode": [
+    "Numérotez les tronçons sur le schéma : tronçon commun, branches, une ligne par radiateur. Longueur aller-retour = 2 × longueur à l’aller.",
+    "Débit d’un tronçon (L/h) = somme des débits des radiateurs qu’il alimente.",
+    "Vitesse (m/s) = débit (L/h) ÷ (3,6 × S), S section intérieure en mm². Tube : le plus petit de la série dont la vitesse ne dépasse pas sa vitesse maximale.",
+    "Perte linéaire : R (Pa/m) = R à 100 L/h × (débit ÷ 100) puissance 1,75 ; perte linéaire (Pa) = R × longueur aller-retour.",
+    "Perte singulière : Z (Pa) = Σζ × ρv²/2, avec ρ = 990 kg/m³ ; une ligne de radiateur compte 15,5, plus 1,0 par coude.",
+    "Perte d’un tronçon = linéaire + singulière. Circuit d’un radiateur = somme des tronçons qu’il traverse, aller et retour.",
+    "Circuit le plus défavorisé : celui qui a la plus grande perte de charge ; on le trouve en calculant chaque circuit.",
+    "Hauteur manométrique (m) = (circuit le plus défavorisé + générateur) (Pa) ÷ (ρ × g), au débit du circuit."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Tubes de cuivre, vitesse maximale",
+      "valeur": "12 × 1 : 0,50 m/s ; 14 × 1 : 0,50 m/s ; 16 × 1 : 0,60 m/s ; 18 × 1 : 0,60 m/s ; 22 × 1 : 0,80 m/s",
+      "source": "Fiche pratique n° 22 du Centre d’information du cuivre (14 × 1, 18 × 1, 25 × 1) ; autres tubes : donnée de l’exercice"
+    },
+    {
+      "grandeur": "R à 100 L/h, eau vers 40 °C",
+      "valeur": "12 × 1 : 229 Pa/m ; 14 × 1 : 96,3 Pa/m ; 16 × 1 : 46,3 Pa/m ; 18 × 1 : 24,6 Pa/m ; 22 × 1 : 8,51 Pa/m",
+      "source": "Table de l’exercice (Darcy-Weisbach, λ de Blasius, ν = 0,66 mm²/s)"
+    },
+    {
+      "grandeur": "Masse volumique de l’eau à 40 °C",
+      "valeur": "990 kg/m³",
+      "source": "Règles Th-Bât 2017, fascicule Matériaux, § 2.9.8, p. 29"
+    },
+    {
+      "grandeur": "Coefficients ζ",
+      "valeur": "coude à 90° 1,0 ; té, en dérivation 1,5 ; té, en passage direct 0,5 ; vanne d’isolement ouverte 0,5 ; piquage de collecteur (départ ou retour d’une ligne) 1,5 ; robinet thermostatique du radiateur 8,0 ; radiateur 2,5 ; té de réglage du radiateur 2,0",
+      "source": "Données de l’exercice"
+    },
+    {
+      "grandeur": "Régime du bâtiment d’exemple",
+      "valeur": "50/40 °C ; pompe à chaleur 8000 Pa",
+      "source": "Station H1 ; donnée de l’exercice"
+    },
+    {
+      "grandeur": "Régime de la maison",
+      "valeur": "45/40 °C ; pompe à chaleur 10000 Pa",
+      "source": "Station H1 ; donnée de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : tronçon commun 297 L/h, 2,0 m ; ligne du bureau 117 L/h, 7,0 m, ligne de radiateur, 6 coudes.",
+    "lignes": [
+      "Tronçon commun : 16 × 1, v = 297 ÷ (3,6 × 153,9) = 0,54 m/s ; R = 311 Pa/m ; 311 × 4,0 = 1244 Pa ; Z = 5,0 × 144,3 = 722 Pa ; 1966 Pa.",
+      "Ligne du bureau : 12 × 1, v = 0,41 m/s ; R = 301 Pa/m ; 301 × 14,0 = 4214 Pa ; Z = 21,5 × 83,2 = 1789 Pa ; 6003 Pa.",
+      "Circuit du bureau : 1966 + 6003 = 7969 Pa, le plus défavorisé.",
+      "Hauteur manométrique : (7969 + 8000) ÷ (990 × 9,81) = 1,64 m."
+    ],
+    "resultat": "circuit le plus défavorisé 7,97 kPa ; pompe : 1,64 m"
+  },
+  "pieges": [
+    "Compter la longueur à l’aller seulement : le radiateur est alimenté par un départ et un retour.",
+    "Prendre la ligne la plus longue pour la plus défavorisée : un débit plus fort dans un tube plus fin pèse davantage.",
+    "Oublier le tronçon commun et le générateur dans la hauteur manométrique."
+  ],
+  "sources": [
+    "Débits : station BE-H1 ; radiateurs : station BE-H2 ; masse volumique : règles Th-Bât 2017, Matériaux, § 2.9.8, p. 29.",
+    "Tubes et vitesses maximales : fiche pratique n° 22 du Centre d’information du cuivre et du CCCA-BTP ; table R, ζ, tracé : données de l’exercice.",
+    "Stations en correspondance : BE-H4 (pompe), BE-H5 (équilibrage), HydroMétro « Pertes de charge », « Bitube »."
+  ],
+  "calculette": null
+}

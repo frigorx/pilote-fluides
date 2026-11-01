@@ -1,0 +1,55 @@
+{
+  "cle": "h3-reseau-eau",
+  "code": "BE-H3",
+  "titre": "Le réseau d’eau",
+  "ligne": "Hydraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 21,
+    "chapitre": 5
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire"
+      },
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (réseaux d'eau, même méthode)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (réseaux hydrauliques des batteries, même méthode)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques (à confirmer : la station se fait à la main)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A3",
+          "libelle": "Dynamique des fluides : tronçons et réseaux ; pertes de charge singulières et linéiques d'un réseau hydraulique ou aéraulique (inventaire des référentiels, p. 64 du référentiel)"
+        },
+        {
+          "code": "B4-1",
+          "libelle": "Réseaux hydrauliques (dont circulateurs/pompes) (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 68 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

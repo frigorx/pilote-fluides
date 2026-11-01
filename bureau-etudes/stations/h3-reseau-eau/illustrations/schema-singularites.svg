@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110.00" width="180mm" height="110.00mm" role="img">
+<title>Une ligne de radiateur et ses singularités</title>
+<rect width="180" height="110.00" fill="#fff"/>
+<g><text x="90" y="61" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 61)">inerWeb, by inerweb.fr</text><text x="40" y="33" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 33)">inerWeb, by inerweb.fr</text><text x="140" y="90" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 90)">inerWeb, by inerweb.fr</text></g>
+<rect x="6.00" y="28.00" width="12.00" height="38.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="6.00" y="74.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Collecteur</text>
+<line x1="18.00" y1="36.00" x2="70.00" y2="36.00" stroke="#c9451a" stroke-width="0.6"/>
+<g transform="translate(70.00 33.00)"><svg x="0" y="0" width="12.00" height="6.00" viewBox="-29.0 -15.0 60 30" overflow="visible"><line x1="-10.13" y1="0" x2="-19.5" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="10.05" y1="0" x2="19.46" y2="0" stroke="#000" stroke-width="1"/>
+<polyline points="-10.05,-10.05 -10.05,9.89 9.89,-10.05 9.89,9.81 -9.81,-10.05 -9.57,-9.81" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="-19" cy="0" r="1.5" fill="#000"/>
+<circle cx="19" cy="0" r="1.5" fill="#000"/></svg></g>
+<line x1="82.00" y1="36.00" x2="120.67" y2="36.00" stroke="#c9451a" stroke-width="0.6"/>
+<g transform="translate(120.00 32.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="135.33" y1="40.00" x2="135.33" y2="58.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="135.33" y1="58.00" x2="112.00" y2="58.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(100.00 55.00)"><svg x="0" y="0" width="12.00" height="6.00" viewBox="-29.0 -15.0 60 30" overflow="visible"><line x1="-10.13" y1="0" x2="-19.5" y2="0" stroke="#000" stroke-width="1"/>
+<line x1="10.05" y1="0" x2="19.46" y2="0" stroke="#000" stroke-width="1"/>
+<polyline points="-10.05,-10.05 -10.05,9.89 9.89,-10.05 9.89,9.81 -9.81,-10.05 -9.57,-9.81" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="-19" cy="0" r="1.5" fill="#000"/>
+<circle cx="19" cy="0" r="1.5" fill="#000"/></svg></g>
+<line x1="100.00" y1="58.00" x2="18.00" y2="58.00" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="22.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Piquage 1,5</text>
+<text x="76.00" y="27.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Robinet thermostatique 8,0</text>
+<text x="150.00" y="29.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Radiateur 2,5</text>
+<text x="139.33" y="60.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Coude 1,0</text>
+<text x="106.00" y="67.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Té de réglage 2,0</text>
+<text x="22.00" y="67.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Piquage 1,5</text>
+<text x="40.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#c9451a">Départ</text>
+<text x="60.00" y="55.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#3d7fca">Retour</text>
+<text x="6.00" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Σζ = 2 × 1,5 + 8,0 + 2,5 + 2,0 = 15,5, plus 1,0 par coude.</text>
+<text x="6.00" y="93.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Perte singulière Z = Σζ × ρv² ÷ 2.</text>
+<line x1="4.00" y1="99.50" x2="176.00" y2="99.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

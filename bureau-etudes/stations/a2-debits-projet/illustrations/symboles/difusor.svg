@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-29.0 -31.0 58.0 48.0" width="58" height="48">
+<!-- diffuseur d'air — converti de difusor.elmt par outils\elmt-vers-svg.py -->
+<rect x="-29.0" y="-31.0" width="58.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="-0.50" cy="0.50" rx="11.50" ry="3.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-0.50" cy="0.50" rx="14.50" ry="5.50" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 11.35,-9.00 A 10.62,3.00 0 0 0 -9.90,-9.00" stroke="black" stroke-width="0.4" fill="none"/>
+<ellipse cx="0.00" cy="0.50" rx="17.00" ry="7.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.50" rx="20.00" ry="9.50" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.50" rx="6.00" ry="1.50" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-15,-6 -9.9,-10 -9.9,-15" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="14.75,-6 11.23,-10 11.23,-15" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 11.35,-16.00 A 10.62,3.00 0 0 0 -9.90,-16.00" stroke="black" stroke-width="1" fill="none"/>
+</svg>

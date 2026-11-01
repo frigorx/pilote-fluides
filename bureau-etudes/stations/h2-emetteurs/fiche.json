@@ -1,0 +1,70 @@
+{
+  "numero": 20,
+  "titre": "Choisir les émetteurs au régime réel de l’eau",
+  "ligne": "Hydraulique",
+  "code": "BE-H2",
+  "quand": "Après les débits (station H1), avant le réseau d’eau (station H3). Vous avez la puissance de chaque émetteur, le régime d’eau et la température de chaque pièce. Vous obtenez la puissance du catalogue nécessaire et le radiateur à poser dans chaque pièce, ou l’écart de température qu’un plancher chauffant demande.",
+  "methode": [
+    "Le catalogue donne la puissance d’un radiateur pour un écart moyen de 50 K entre l’eau et l’air (eau 75/65 °C, air 20 °C dans le catalogue de l’exercice).",
+    "Écart moyen arithmétique (K) = (θ départ + θ retour) ÷ 2 − θi.",
+    "Écart moyen logarithmique (K) = (θ départ − θ retour) ÷ ln((θ départ − θi) ÷ (θ retour − θi)), au dixième.",
+    "Coefficient = (écart moyen ÷ 50) puissance n, au millième ; n = 1,3 pour le radiateur de l’exercice.",
+    "Puissance du catalogue nécessaire (W) = puissance de l’émetteur au régime ÷ coefficient.",
+    "Choix : la plus petite longueur du catalogue qui donne au moins cette puissance ; pour deux radiateurs identiques, chacun donne la moitié.",
+    "Contrôle : puissance du catalogue du choix × coefficient ≥ puissance de l’émetteur.",
+    "Plancher chauffant : densité (W/m²) = puissance ÷ surface ; écart moyen nécessaire = densité ÷ 6,5 W/(m².K) (plancher de l’exercice)."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Écart moyen du catalogue",
+      "valeur": "50 K (eau 75/65 °C, air 20 °C)",
+      "source": "Catalogue de l’exercice, écrit pour la station"
+    },
+    {
+      "grandeur": "Exposant du radiateur",
+      "valeur": "n = 1,3",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Radiateur à panneaux de l’exercice, hauteur 600 mm",
+      "valeur": "400 mm : 770 W ; 600 mm : 1150 W ; 800 mm : 1540 W ; 1000 mm : 1920 W ; 1200 mm : 2300 W ; 1400 mm : 2690 W ; 1600 mm : 3070 W ; 1800 mm : 3460 W ; 2000 mm : 3840 W",
+      "source": "Catalogue de l’exercice, aucun fabricant"
+    },
+    {
+      "grandeur": "Plancher chauffant de l’exercice",
+      "valeur": "6,5 W/m² par kelvin d’écart moyen eau-air",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Régime du bâtiment d’exemple",
+      "valeur": "50/40 °C, air 19 °C",
+      "source": "Stations H1 et T5, valeurs d’exercice"
+    },
+    {
+      "grandeur": "Régime de la maison",
+      "valeur": "45/40 °C ; variante 45/35 °C ; air 20 °C",
+      "source": "Station H1 (données de l’exercice) et station T5"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bureau du bâtiment d’exemple : émetteur de 1356 W (station H1), régime 50/40 °C, air 19 °C, catalogue de l’exercice.",
+    "lignes": [
+      "Moyenne de l’eau : (50 + 40) ÷ 2 = 45 °C ; écart moyen : 45 − 19 = 26 K.",
+      "Coefficient : (26 ÷ 50) puissance 1,3 = 0,427.",
+      "Puissance du catalogue nécessaire : 1356 ÷ 0,427 = 3176 W.",
+      "Choix : 1800 mm, 3460 W au catalogue ; au régime : 3460 × 0,427 = 1477 W, au moins 1356 W."
+    ],
+    "resultat": "radiateur de 1800 mm, 1477 W au régime 50/40"
+  },
+  "pieges": [
+    "Comparer la puissance du catalogue au besoin de la pièce sans la corriger : le radiateur choisi est deux à trois fois trop petit en basse température.",
+    "Prendre ΔT de l’eau (départ − retour) ou le départ seul à la place de l’écart moyen entre l’eau et l’air.",
+    "Multiplier par le coefficient au lieu de diviser : le besoin au catalogue est toujours plus grand que le besoin au régime quand l’eau est sous 70 °C en moyenne."
+  ],
+  "sources": [
+    "Puissance de chaque émetteur : station BE-H1 ; température des pièces et surfaces : stations BE-T5 et BE-T1.",
+    "Catalogue, exposant et plancher : données de l’exercice, écrites pour la station (aucun catalogue de fabricant).",
+    "Stations en correspondance : BE-H1 (débits), BE-H3 (réseau d’eau), HydroMétro « Plancher chauffant », « Bitube »."
+  ],
+  "calculette": null
+}

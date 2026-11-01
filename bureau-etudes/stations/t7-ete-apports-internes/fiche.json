@@ -1,0 +1,71 @@
+{
+  "numero": 10,
+  "titre": "Calculer les apports des occupants, de l’éclairage, des appareils et des parois en été",
+  "ligne": "Thermique",
+  "code": "BE-T7",
+  "quand": "Au bilan d’été, après les apports solaires par les vitrages (station T6). Vous avez les occupants et la consigne d’été de chaque local, les surfaces, les U des parois et l’heure de pointe. Vous obtenez, local par local, l’apport sensible et l’apport latent à l’heure de pointe. L’air neuf et la somme du bilan d’été suivent (station T8).",
+  "methode": [
+    "Une ligne par local, à l’heure de pointe du bâtiment. Sensible et latent dans deux colonnes, jamais additionnés.",
+    "Occupants : nombre × apport sensible, et nombre × apport latent, selon l’activité.",
+    "Éclairage : surface × puissance au m², au watt. Appareils : leur puissance en marche. Tout en sensible.",
+    "Parois : U × A au centième, × l’écart de la ligne, au watt.",
+    "Fenêtre ou porte, même pleine, qui donne dehors : écart θe − θi. Toute paroi sur un local non chauffé, porte comprise : b × (θe − θi). Plafond sous comble : θcomble − θi.",
+    "Mur extérieur : écart équivalent = θe − θi + αp × Rse × I, avec I de sa façade à l’heure de pointe. Écarts au dixième de K, un 5 arrondi vers le haut.",
+    "Le soleil des vitrages (station T6) et l’air neuf (station T8) ne se comptent pas ici.",
+    "Note de calcul : heure, températures, origine des apports par occupant, de l’éclairage, des appareils, de αp et de Rse."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Occupant assis, activité légère, à 26 °C",
+      "valeur": "70 W sensible, 50 W latent",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Occupant debout, travail léger",
+      "valeur": "80 W sensible, 140 W latent",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Éclairage à LED",
+      "valeur": "5 W/m² (logement), 8 W/m² (bureaux)",
+      "source": "Données de l’exercice"
+    },
+    {
+      "grandeur": "αp, coefficient d’absorption solaire",
+      "valeur": "clair 0,4 ; moyen 0,6 ; sombre 0,8 ; noir 1,0",
+      "source": "Règles Th-Bât, Parois opaques 2017, tableau XIV, p. 28"
+    },
+    {
+      "grandeur": "Rse en conditions d’été (E)",
+      "valeur": "0,07 m².K/W",
+      "source": "Règles Th-Bât, Parois opaques 2017, tableau XV, p. 28"
+    },
+    {
+      "grandeur": "Facteur solaire d’une paroi opaque",
+      "valeur": "Sp = αp × U × Rse",
+      "source": "Règles Th-Bât, Parois opaques 2017, § 3.1.3.1, formule 40, p. 28"
+    }
+  ],
+  "exemple": {
+    "enonce": "Salle de réunion d’exemple à 16 h solaires : 8 personnes, 24,60 m² à 8 W/m², vidéoprojecteur de 300 W ; θe = 32 °C, θi = 26 °C, comble à 38 °C, teinte moyen (αp 0,6).",
+    "lignes": [
+      "Occupants : 8 × 70 = 560 W sensible ; 8 × 50 = 400 W latent.",
+      "Éclairage : 24,60 × 8 = 197 W. Appareil : 300 W.",
+      "Mur ouest : écart 6 + 0,6 × 0,07 × 730 = 36,7 K ; 3,97 × 36,7 = 146 W.",
+      "Parois de la salle : 307 W."
+    ],
+    "resultat": "sensible 1364 W, latent 400 W"
+  },
+  "pieges": [
+    "Le latent ajouté au sensible : il se garde à part, il servira au traitement de l’air.",
+    "Le mur au soleil compté avec le seul écart de l’air : l’après-midi, un mur ouest sombre prend plusieurs fois cet écart.",
+    "Le soleil des vitrages compté deux fois : il est à la station T6."
+  ],
+  "sources": [
+    "Facteur solaire d’une paroi opaque, αp et Rse : règles Th-Bât, fascicule Parois opaques, version 2017, § 3.1.3.1, formule 40, tableaux XIV et XV, p. 28 ; conditions E (confort d’été et refroidissement), § 1.3.2.2, p. 6.",
+    "Apports des occupants, puissance d’éclairage, appareils, température du comble : données de l’exercice.",
+    "Stations en correspondance : BE-E2 (occupants, consigne d’été), BE-T6 (soleil des vitrages, heure de pointe), BE-T8 (air neuf et somme), AéroRézo « Apport sensible » et « Apport latent ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}
