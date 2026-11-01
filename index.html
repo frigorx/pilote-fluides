@@ -469,12 +469,9 @@
 
   var replie = false;
   try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
-  /* 01/11/2026, F. Henninot : « dès qu'on arrive sur le site, on est obligé de le voir et de le fermer ».
-     Ouvert à l'arrivée sur ordinateur et tablette ; sur téléphone (≤ 700 px) il couvrirait tout l'écran :
-     replié, avec la bande du bas pour l'ouvrir. */
-  var etroit = !!(window.matchMedia && window.matchMedia("(max-width: 700px)").matches);
+  /* 01/11/2026, F. Henninot : « dès qu'on arrive sur le site, on est obligé de le voir et de le fermer »,
+     téléphone compris (décision du 01/11, 15 h). Fermé une fois, il reste fermé le temps de la session. */
   var apercuActu = null;
-  if (etroit) replie = true;
   /* La bande d'aperçu, à toute largeur : les titres lus dans le volet lui-même, jamais recopiés. */
   {
     var blocs = v.querySelectorAll(".volet-bloc");
@@ -538,9 +535,9 @@
 <script src="moteur/etablissement.js"></script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=b6373ad9c0"></script>
+<script src="moteur/lisibilite.js?v=6456de9d02"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais écrit à la main. -->
-<script src="moteur/marque.js?v=b6373ad9c0" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=6456de9d02" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   if ("serviceWorker" in navigator)
