@@ -175,28 +175,26 @@
   .volet-libre { display:inline-block; margin-top:6px; font-size:11px; font-weight:bold; color:var(--mut);
                  background:#e7eff7; border-radius:999px; padding:2px 9px; }
   .volet-pied { margin:4px 0 0; font-size:11.5px; line-height:1.5; color:var(--mut); }
-  .volet-poignee { position:fixed; top:96px; left:0; z-index:59; display:none; font:inherit; font-size:13px; font-weight:bold;
-                   cursor:pointer; background:var(--bleu); color:#fff; border:0; border-radius:0 10px 10px 0;
-                   padding:9px 13px; box-shadow:2px 2px 8px rgba(27,58,99,.2); }
-  .volet-poignee:hover { background:var(--bleu-clair); }
-  @media (max-width: 1099px) {
-    .volet-poignee { position:static; display:block; width:100%; border-radius:0; padding:12px 16px;
-                     text-align:left; font-size:14.5px; box-shadow:none; }
-    .volet-poignee.apercu { display:flex; flex-direction:column; gap:6px; background:var(--carte);
-                            color:var(--txt); border:1px solid var(--ligne); border-left:5px solid var(--orange);
-                            font-weight:normal; font-size:14px; line-height:1.4; cursor:pointer; }
-    .volet-poignee.apercu:hover { background:var(--carte); }
-    .volet-poignee.apercu > span { display:block; margin-top:5px; }
-    .volet-poignee.apercu > .ap-tete { display:flex; margin-top:0; }
-    .volet-poignee.apercu > .ap-puces { display:flex; }
-    .ap-tete { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
-               font-family:var(--titre); font-weight:bold; font-size:14.5px; color:var(--bleu); }
-    .ap-tout { color:var(--orange); white-space:nowrap; }
-    .ap-actu { font-weight:bold; color:var(--txt); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .ap-appel { color:var(--mut); font-size:13.5px; }
-    .ap-puces { display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
-    .ap-puces span { background:#eef3f9; color:var(--bleu); border-radius:999px; padding:3px 10px; font-size:12.5px; font-weight:bold; }
-  }
+  /* La bande « Actualités & espaces » (01/11/2026, F. Henninot : « elle n'a pas besoin de rester
+     fixe, elle cache le contenu ») : jamais fixée, jamais au-dessus du contenu. Elle vit en bas de
+     la page, défile avec elle, ouvre le volet d'un clic et se masque d'une croix pour la session. */
+  .volet-poignee { display:none; margin:18px 0 6px; background:var(--carte); color:var(--txt);
+                   border:1px solid var(--ligne); border-left:5px solid var(--orange); border-radius:var(--r);
+                   box-shadow:var(--ombre); font-size:15px; line-height:1.4; }
+  .volet-poignee.visible { display:flex; align-items:flex-start; gap:8px; }
+  .vp-corps { flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; padding:12px 16px;
+              font:inherit; text-align:left; cursor:pointer; background:transparent; color:inherit; border:0; }
+  .vp-corps:hover .ap-tout { text-decoration:underline; }
+  .vp-x { flex:none; margin:8px 8px 0 0; width:40px; height:40px; font:inherit; font-size:22px; line-height:1;
+          cursor:pointer; background:none; border:1.5px solid var(--ligne); border-radius:50%; color:var(--mut); }
+  .vp-x:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+  .ap-tete { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+             font-family:var(--titre); font-weight:bold; font-size:16px; color:var(--bleu); }
+  .ap-tout { color:var(--orange); white-space:nowrap; }
+  .ap-actu { font-weight:bold; color:var(--txt); }
+  .ap-appel { color:var(--mut); font-size:15px; }
+  .ap-puces { display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
+  .ap-puces span { background:#eef3f9; color:var(--bleu); border-radius:999px; padding:4px 10px; font-size:14px; font-weight:bold; }
   @media (prefers-reduced-motion: reduce) { .volet.pret { transition:none; } }
   .page { transition:margin-left .22s ease; }
   @media (min-width:1100px) { body.volet-ouvert .page, body.volet-ouvert .entete .dedans { margin-left:350px; margin-right:auto; } }
@@ -282,8 +280,6 @@
     </nav>
   </div>
 </div>
-
-<button type="button" class="volet-poignee" id="volet-poignee" aria-label="Ouvrir le panneau d’actualités">📰 Actualités &amp; espaces ▸</button>
 
 <div class="page" role="main" id="contenu" tabindex="-1">
 
@@ -434,6 +430,12 @@
     </div>
   </div>
 
+  <!-- La bande du volet : en bas, dans le flux, jamais fixe (voir le CSS). -->
+  <div class="volet-poignee" id="volet-poignee">
+    <button type="button" class="vp-corps" id="volet-ouvrir" aria-label="Ouvrir le panneau Actualités et espaces"></button>
+    <button type="button" class="vp-x" id="volet-cacher" aria-label="Masquer cette bande">×</button>
+  </div>
+
 </div>
 
 <!-- Le volet : ouvert à l'arrivée à partir de 1100 px, refermé d'un clic, replié en dessous avec
@@ -445,48 +447,56 @@
   "use strict";
   var v = document.getElementById("volet"),
       p = document.getElementById("volet-poignee"),
-      CLE = "edu_volet_replie";
-  if (!v || !p) return;
+      ouvrir = document.getElementById("volet-ouvrir"),
+      cacher = document.getElementById("volet-cacher"),
+      CLE = "edu_volet_replie", CLE_BANDE = "edu_bande_cachee";
+  if (!v || !p || !ouvrir || !cacher) return;
+  var bandeCachee = false;
+  try { bandeCachee = sessionStorage.getItem(CLE_BANDE) === "oui"; } catch (e) {}
 
   function poser(replie) {
     v.classList.toggle("replie", replie);
     v.setAttribute("aria-hidden", replie ? "true" : "false");
     v.inert = replie;
-    p.style.display = replie ? "block" : "none";
+    p.classList.toggle("visible", replie && !bandeCachee);
     document.body.classList.toggle("volet-ouvert", !replie);
   }
   function replier() {
     poser(true);
     try { sessionStorage.setItem(CLE, "oui"); } catch (e) {}
-    p.focus();
+    if (p.classList.contains("visible")) ouvrir.focus();
   }
 
   var replie = false;
   try { replie = sessionStorage.getItem(CLE) === "oui"; } catch (e) {}
   var etroit = !!(window.matchMedia && window.matchMedia("(max-width: 1099px)").matches);
   var apercuActu = null;
-  if (etroit) {
-    replie = true;
+  if (etroit) replie = true;
+  /* La bande d'aperçu, à toute largeur : les titres lus dans le volet lui-même, jamais recopiés. */
+  {
     var blocs = v.querySelectorAll(".volet-bloc");
     var texte = function (el) { return el ? el.textContent.replace(/\s+/g, " ").trim() : ""; };
     var span = function (classe, contenu) { var s = document.createElement("span"); s.className = classe; s.textContent = contenu; return s; };
-    p.className += " apercu";
-    p.textContent = "";
     var tete = span("ap-tete", ""); tete.appendChild(span("", "📰 Actualités & espaces")); tete.appendChild(span("ap-tout", "Tout voir ▸"));
-    p.appendChild(tete);
-    p.appendChild(span("ap-appel", "🏫 L’établissement partenaire : stages, apprentis, taxe d’apprentissage"));
+    ouvrir.appendChild(tete);
+    ouvrir.appendChild(span("ap-appel", "🏫 L’établissement partenaire : stages, apprentis, taxe d’apprentissage"));
     apercuActu = span("ap-actu", "");
-    p.appendChild(apercuActu);
+    ouvrir.appendChild(apercuActu);
     var puces = span("ap-puces", "");
     for (var i = 2; i < blocs.length; i++) { var h = blocs[i].querySelector("h3"); if (h) puces.appendChild(span("", texte(h))); }
-    p.appendChild(puces);
+    ouvrir.appendChild(puces);
   }
   poser(replie);
   requestAnimationFrame(function () { v.classList.add("pret"); });
 
   document.getElementById("volet-fermer").addEventListener("click", replier);
   document.getElementById("volet-fermer-bas").addEventListener("click", replier);
-  p.addEventListener("click", function () {
+  cacher.addEventListener("click", function () {
+    bandeCachee = true;
+    try { sessionStorage.setItem(CLE_BANDE, "oui"); } catch (e) {}
+    p.classList.remove("visible");
+  });
+  ouvrir.addEventListener("click", function () {
     poser(false);
     try { sessionStorage.removeItem(CLE); } catch (e) {}
     document.getElementById("volet-fermer").focus();
@@ -525,9 +535,9 @@
 <script src="moteur/etablissement.js"></script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=ae062fd5f8"></script>
+<script src="moteur/lisibilite.js?v=bb1c97bbaa"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais écrit à la main. -->
-<script src="moteur/marque.js?v=ae062fd5f8" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=bb1c97bbaa" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   if ("serviceWorker" in navigator)
