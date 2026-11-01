@@ -38,3 +38,11 @@ fournit les illustrations des huit portes.
 - Chiffres relevés : `prevues: 34` sur le Bureau d'études ; accueil.mjs écrit « 14 réseaux, 421 stations en ligne, 26 en préparation et plus de 8 900 narrations audio » entre les sentinelles CHIFFRES-PORTES de index.html.
 - Fait par deux sous-agents Sonnet, vérifié à l'écran (1 280, 1 000, 375 px), contrôle téléphone OK, style 0 à réécrire.
 - Reste : brancher le composant sur le tableau de bord HAL (autre dépôt, chat neuf) ; le jour J, remplir `moteur/etablissement.js` (nom, adresse, logos, courriels, `actif:true`).
+
+## Lots 3 et 4, mise en ligne (01/11/2026, 15 h 10)
+- Bande « Actualités & espaces » : plus jamais fixe, en bas de page, croix de session.
+- Volet ouvert à chaque arrivée, téléphone compris (décision de Franck), fermé pour la session d'un clic.
+- Charte du campus (bleu #0C4B88, violet #706EED, vert d'eau #60CAB3) sur les bulles établissement ; actualités en charte inerWeb.
+- Fusion du commit BE (H6, T4, T5) de main : conflits index.html et sw.js réglés en gardant la page à huit portes, accueil.mjs et version.mjs relancés (424 stations, 23 en préparation).
+- EN LIGNE : `git push origin accueil-huit-portes:main` → main 506904b70.
+- Reste : composant établissement sur le tableau de bord HAL (autre dépôt, chat neuf) ; le jour J, remplir `moteur/etablissement.js` (nom, adresse, logos depuis usine-contenu/gabarits/logos/, courriels, `actif:true`).
