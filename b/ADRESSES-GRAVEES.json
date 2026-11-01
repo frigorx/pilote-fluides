@@ -265,6 +265,37 @@
         "e2-5",
         "e2-6"
       ]
+    },
+    {
+      "edition": "h6-t4-t5-2026-11-01",
+      "statut": "epreuve",
+      "commentaire": "Feuilles N1 et N2 des stations H6, T4 et T5, QR posés les 31/10 (H6) et 01/11/2026 (T4, T5), publiées le 01/11/2026, rien d’imprimé encore.",
+      "slugs": [
+        "h6-1",
+        "h6-2",
+        "h6-3",
+        "h6-4",
+        "h6-5",
+        "h6-6",
+        "h6-7",
+        "h6-8",
+        "h6-9",
+        "h6-10",
+        "h6-11",
+        "t4-1",
+        "t4-2",
+        "t4-3",
+        "t4-4",
+        "t4-5",
+        "t4-6",
+        "t4-7",
+        "t5-1",
+        "t5-2",
+        "t5-3",
+        "t5-4",
+        "t5-5",
+        "t5-6"
+      ]
     }
   ]
 }

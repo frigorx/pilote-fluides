@@ -1,0 +1,47 @@
+{
+  "cle": "h6-eau-chaude-sanitaire",
+  "code": "BE-H6",
+  "titre": "L’eau chaude sanitaire",
+  "ligne": "Hydraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 24,
+    "chapitre": 5
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP3",
+        "libelle": "Réaliser l'étude des réseaux de distribution et d'évacuation sanitaires"
+      },
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques (à confirmer : la station se fait à la main, et le référentiel contrôle C3-3 en E61)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B3-2",
+          "libelle": "Production et distribution d'eau chaude sanitaire (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, « production et distribution ECS », p. 67 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}
