@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 76.00" width="180mm" height="76.00mm" role="img">
+<title>Logement d’exemple : perte de charge de chaque gaine</title>
+<rect width="180" height="76.00" fill="#fff"/>
+<g><text x="90" y="42" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 42)">inerWeb, by inerweb.fr</text><text x="40" y="23" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 23)">inerWeb, by inerweb.fr</text><text x="140" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 62)">inerWeb, by inerweb.fr</text></g>
+<rect x="4.00" y="3.00" width="7.00" height="4.40" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="13.00" y="7.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Débit de pointe</text>
+<rect x="70.00" y="3.00" width="7.00" height="4.40" fill="#d9771f" stroke="#d9771f" stroke-width="0.2"/>
+<text x="79.00" y="7.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Débit de base</text>
+<line x1="46.00" y1="11.00" x2="46.00" y2="74.00" stroke="#000" stroke-width="0.4" stroke-linecap="square"/>
+<text x="44.00" y="21.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Cuisine</text>
+<rect x="46.00" y="15.00" width="104.00" height="6.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="151.50" y="19.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3,64 Pa</text>
+<rect x="46.00" y="23.00" width="22.00" height="6.00" fill="#d9771f" stroke="#d9771f" stroke-width="0.2"/>
+<text x="69.50" y="27.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">0,77 Pa</text>
+<text x="44.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Salle de bains</text>
+<rect x="46.00" y="36.00" width="89.14" height="6.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="136.64" y="40.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3,12 Pa</text>
+<rect x="46.00" y="44.00" width="25.14" height="6.00" fill="#d9771f" stroke="#d9771f" stroke-width="0.2"/>
+<text x="72.64" y="48.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">0,88 Pa</text>
+<text x="44.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">WC</text>
+<rect x="46.00" y="57.00" width="23.43" height="6.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="70.93" y="61.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">0,82 Pa</text>
+<rect x="46.00" y="65.00" width="23.43" height="6.00" fill="#d9771f" stroke="#d9771f" stroke-width="0.2"/>
+<text x="70.93" y="69.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">0,82 Pa</text>
+</svg>

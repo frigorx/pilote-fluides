@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**566 stations** réparties en 19 réseaux.
+**575 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -233,13 +233,19 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Se former](https://inerweb.fr/legislation/stations/travail-se-former/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires. |
 | [Temps & paie](https://inerweb.fr/legislation/stations/travail-temps-et-paie/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés. |
 
-## Bureau d'études — 11 stations
+## Bureau d'études — 19 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
+| [BE-A1, L’air humide](https://inerweb.fr/bureau-etudes/stations/a1-air-humide/) | Aéraulique | BTS | CP10 A4 A1-2 | — |
+| [BE-A2, Les débits du projet](https://inerweb.fr/bureau-etudes/stations/a2-debits-projet/) | Aéraulique | BTS | CP4 CP7 C3-3 B2-1 | — |
+| [BE-A3, Le réseau de gaines](https://inerweb.fr/bureau-etudes/stations/a3-reseau-gaines/) | Aéraulique | BTS | CP4 CP7 CP10 A3 B4-2 | — |
 | [BE-D0, Le dossier projet](https://inerweb.fr/bureau-etudes/stations/d0-dossier-projet/) | Lire les plans | BTS | CP1 CP2 CP5 CP8 C4-3 C12-1 C12-2 C1-2 A2-1 | — |
 | [BE-E1, Le climat du site](https://inerweb.fr/bureau-etudes/stations/e1-climat-site/) | Données d’entrée | BTS | CP5 CP8 C5-2 A2-4 S5.1 | — |
 | [BE-E2, Les conditions intérieures](https://inerweb.fr/bureau-etudes/stations/e2-conditions-interieures/) | Données d’entrée | BTS | CP4 CP7 CP5 CP8 CP10 C1-2 C5-2 B2-1 | — |
+| [BE-H1, Puissance et débit](https://inerweb.fr/bureau-etudes/stations/h1-puissance-debit-regime/) | Hydraulique | BTS | CP6 CP9 C3-3 A3 B4-1 | — |
+| [BE-H2, Les émetteurs](https://inerweb.fr/bureau-etudes/stations/h2-emetteurs/) | Hydraulique | BTS | CP6 CP9 C3-1 B1-2 | — |
+| [BE-H3, Le réseau d’eau](https://inerweb.fr/bureau-etudes/stations/h3-reseau-eau/) | Hydraulique | BTS | CP6 CP9 CP10 C3-3 A3 B4-1 | — |
 | [BE-H6, L’eau chaude sanitaire](https://inerweb.fr/bureau-etudes/stations/h6-eau-chaude-sanitaire/) | Hydraulique | BTS | CP3 CP6 C3-3 B3-2 | — |
 | [BE-P2b, Traits cachés et vues](https://inerweb.fr/bureau-etudes/stations/p2b-traits-caches-et-vues/) | Lire les plans | BTS | CP1 CP2 C4-3 | — |
 | [BE-P5b, Coupes et sections](https://inerweb.fr/bureau-etudes/stations/p5b-coupes-et-sections/) | Lire les plans | BTS | CP1 CP2 C4-3 | — |
@@ -248,6 +254,8 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [BE-T3, Déperditions d’un local par les parois](https://inerweb.fr/bureau-etudes/stations/t3-deperditions-local/) | Thermique | BTS | CP5 C3-3 A2-3 | — |
 | [BE-T4, Déperditions par l’air](https://inerweb.fr/bureau-etudes/stations/t4-deperditions-air/) | Thermique | BTS | CP5 A2-3 B2-1 | — |
 | [BE-T5, Le bilan d’hiver](https://inerweb.fr/bureau-etudes/stations/t5-bilan-hiver/) | Thermique | BTS | CP5 C3-3 C12-3 A2-3 | — |
+| [BE-T6, Été 1 : le soleil](https://inerweb.fr/bureau-etudes/stations/t6-ete-vitrages-soleil/) | Thermique | BTS | CP8 A2-3 | — |
+| [BE-T7, Été 2 : apports internes](https://inerweb.fr/bureau-etudes/stations/t7-ete-apports-internes/) | Thermique | BTS | CP8 A2-3 | — |
 
 ## HydroMétro — 27 stations
 
@@ -636,7 +644,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Voyage dans tous ses états, le compresseur à vis — raconté par une molécule](https://inerweb.fr/voyage/vis.html) | — | — | — | Suivez une molécule de fluide frigorigène dans un compresseur à vis : les rotors mâle et femelle, l’alvéole qui se ferme sans clapet puis rétrécit, l’huile injectée, le Vi, le tiroir, le séparateur d’huile, l’économiseur — avec son cycle sur le diagramme enthalpique, en même temps. |
 | [les films d'inerweb.fr](https://inerweb.fr/studio/) | — | — | — | Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours. |
 
-## Pages du site — 11 stations
+## Pages du site — 12 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -646,10 +654,11 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Utiliser inerWeb en classe et demander une réutilisation. Droits réservés sur les nouvelles créations ; licences antérieures et tierces conservées. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
 | [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
-| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte. |
+| [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Cours, habilitations, livres, outils et logiciels du froid et de la climatisation, du CAP au BTS. Gratuit, sans compte, en français. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
 | [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
 | [Le plan du réseau thermo-techno](https://inerweb.fr/plan.html) | — | — | — | Le plan de formation inerweb.fr : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte. |
+| [Tout inerWeb, réseau par réseau](https://inerweb.fr/reseaux.html) | — | — | — | Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte. |
 | [Ouvrir une séance à une classe](https://inerweb.fr/seances.html) | — | — | — | Fabriquer le code d'une séance : un lien et un QR code à projeter. Réservé aux titulaires d'un accès enseignant. |
 
 ## Modules externes — 8 stations

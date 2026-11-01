@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 168.50" width="180mm" height="168.50mm" role="img">
+<title>Logement d’exemple : réseau de gaines dans les combles</title>
+<rect width="180" height="168.50" fill="#fff"/>
+<g><text x="90" y="93" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 93)">inerWeb, by inerweb.fr</text><text x="40" y="51" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 51)">inerWeb, by inerweb.fr</text><text x="140" y="138" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 138)">inerWeb, by inerweb.fr</text></g>
+<text x="3.00" y="5.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Logement d’exemple : les gaines dans les combles, sur le plan</text>
+<rect x="3.00" y="69.00" width="96.00" height="63.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="51.00" y="100.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Séjour</text>
+<rect x="99.00" y="93.00" width="48.00" height="39.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="131.25" y="123.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Cuisine</text>
+<rect x="129.00" y="69.00" width="18.00" height="24.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="141.75" y="89.25" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">WC</text>
+<rect x="3.00" y="54.00" width="144.00" height="15.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<rect x="99.00" y="69.00" width="30.00" height="24.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="48.00" y="63.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Dégagement</text>
+<rect x="3.00" y="9.00" width="60.00" height="45.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="33.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Chambre 1</text>
+<rect x="63.00" y="9.00" width="54.00" height="45.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="87.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Chambre 2</text>
+<rect x="117.00" y="9.00" width="30.00" height="45.00" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="132.00" y="15.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Salle de</text>
+<text x="132.00" y="24.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">bains</text>
+<line x1="114.00" y1="112.50" x2="114.00" y2="66.00" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<g transform="translate(110.50 109.00)"><svg x="0" y="0" width="7.00" height="7.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<circle cx="114.00" cy="66.00" r="1.2" fill="#d9771f"/>
+<rect x="102.45" y="78.80" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="105.75" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">1</text>
+<line x1="120.80" y1="110.80" x2="117.49" y2="111.63" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="124.00" cy="110.00" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="124.00" y="111.38" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<line x1="132.00" y1="34.50" x2="114.00" y2="34.50" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<line x1="114.00" y1="34.50" x2="114.00" y2="57.00" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<g transform="translate(128.50 31.00)"><svg x="0" y="0" width="7.00" height="7.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<circle cx="114.00" cy="57.00" r="1.2" fill="#d9771f"/>
+<rect x="119.70" y="38.30" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="123.00" y="43.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">2</text>
+<line x1="132.00" y1="41.70" x2="132.00" y2="38.10" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="132.00" cy="45.00" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="132.00" y="46.38" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<line x1="110.24" y1="30.42" x2="113.32" y2="33.77" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="108.00" cy="28.00" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="108.00" y="29.38" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">2</text>
+<line x1="138.00" y1="78.00" x2="138.00" y2="61.50" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<line x1="138.00" y1="61.50" x2="118.50" y2="61.50" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<g transform="translate(134.50 74.50)"><svg x="0" y="0" width="7.00" height="7.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<circle cx="118.50" cy="61.50" r="1.2" fill="#d9771f"/>
+<rect x="121.20" y="74.30" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="124.50" y="79.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">3</text>
+<line x1="134.67" y1="83.66" x2="136.17" y2="81.10" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="133.00" cy="86.50" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="133.00" y="87.88" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<line x1="140.60" y1="60.08" x2="138.88" y2="61.02" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="143.50" cy="58.50" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="143.50" y="59.88" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">2</text>
+<line x1="109.50" y1="61.50" x2="105.00" y2="61.50" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<g transform="translate(100.50 57.00)"><svg x="0" y="0" width="9.00" height="7.45" viewBox="-29.0 -25.0 58.0 48.0" overflow="visible"><rect x="-29.0" y="-25.0" width="58.0" height="48.0" fill="#ffffff"/>
+<path d="M -5.00,8.00 A 5.00,1.00 0 0 0 5.00,8.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,-1.00 A 12.50,2.00 0 0 0 12.00,-1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,1.00 A 12.50,2.00 0 0 0 12.00,1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 21.00,-9.50 A 21.50,8.50 0 0 0 -22.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-17" y1="-7" x2="-13" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-6" x2="-9" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="-6" x2="-3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-6" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-6" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15" y1="-6" x2="12" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -22.00,-9.00 A 21.50,3.00 0 0 0 21.00,-9.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-13" y1="-1" x2="-13" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-1" x2="12" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="7" x2="-5" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="8" x2="5" y2="3" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<rect x="80.70" y="57.80" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="84.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">4</text>
+<line x1="98.30" y1="61.50" x2="100.40" y2="61.50" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="95.00" cy="61.50" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="95.00" y="62.88" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<rect x="109.50" y="57.00" width="9.00" height="9.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<g transform="translate(109.80 58.38)"><svg x="0" y="0" width="8.40" height="6.25" viewBox="-34.0 -24.0 78.0 58.0" overflow="visible"><rect x="-34.0" y="-24.0" width="78.0" height="58.0" fill="#ffffff"/>
+<line x1="21.18" y1="7.73" x2="28" y2="3.14" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18.25" y1="-6" x2="25.08" y2="-10.63" stroke="black" stroke-width="1" fill="none"/>
+<line x1="21.18" y1="-6" x2="28" y2="-10.63" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-19.78" y="-6" width="1.95" height="19.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-3.59" cy="4.84" rx="5.74" ry="4.96" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="-3.6,-5.08 12.89,-5.08 12.89,3 7.87,3" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -3.19,-5.07 A 11.46,9.62 0 1 0 7.76,3.20" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-17.83" y="-8.8" width="34.13" height="24.8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="18.25" y="-6" width="2.93" height="13.78" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="16.3" y1="-8.8" x2="26.05" y2="-15.23" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-19.78" y1="-6" x2="-17.83" y2="-7.88" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="25.08,-10.63 28,-10.63 28,3.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="25.08,-7.88 25.08,2.22 21.18,5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="25.08" y1="2.22" x2="28" y2="2.22" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-16.85,-8.8 -7.1,-15.23 26.05,-15.23 26.05,-10.63" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="26.05,5 26.05,9.57 16.3,16" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.18,11.56 12.08,9.73 11.1,11.56 16,8.81" stroke="black" stroke-width="1" fill="none"/>
+<rect x="9.8" y="8.57" width="5.2" height="6.19" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/></svg></g>
+<rect x="3.10" y="134.20" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="6.40" y="139.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">1</text>
+<text x="11.50" y="139.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Cuisine : 3,40 m, 1 coude</text>
+<rect x="92.10" y="134.20" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="95.40" y="139.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">2</text>
+<text x="100.50" y="139.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Salle de bains : 3,00 m, 2 coudes</text>
+<rect x="3.10" y="142.70" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="6.40" y="147.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">3</text>
+<text x="11.50" y="148.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">WC : 2,70 m, 2 coudes</text>
+<rect x="92.10" y="142.70" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
+<text x="95.40" y="147.90" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">4</text>
+<text x="100.50" y="148.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Rejet : 1,00 m, 1 coude</text>
+<g transform="translate(3.00 151.40)"><svg x="0" y="0" width="7.00" height="7.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<text x="12.00" y="156.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Bouche</text>
+<circle cx="66.40" cy="154.90" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="66.40" y="156.28" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<text x="72.00" y="156.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Coude à 90°</text>
+<circle cx="126.50" cy="154.70" r="1.2" fill="#d9771f"/>
+<text x="132.00" y="156.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Piquage</text>
+<rect x="3.00" y="159.40" width="8.00" height="6.60" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<g transform="translate(3.60 160.17)"><svg x="0" y="0" width="6.80" height="5.06" viewBox="-34.0 -24.0 78.0 58.0" overflow="visible"><rect x="-34.0" y="-24.0" width="78.0" height="58.0" fill="#ffffff"/>
+<line x1="21.18" y1="7.73" x2="28" y2="3.14" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18.25" y1="-6" x2="25.08" y2="-10.63" stroke="black" stroke-width="1" fill="none"/>
+<line x1="21.18" y1="-6" x2="28" y2="-10.63" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-19.78" y="-6" width="1.95" height="19.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-3.59" cy="4.84" rx="5.74" ry="4.96" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="-3.6,-5.08 12.89,-5.08 12.89,3 7.87,3" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -3.19,-5.07 A 11.46,9.62 0 1 0 7.76,3.20" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-17.83" y="-8.8" width="34.13" height="24.8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="18.25" y="-6" width="2.93" height="13.78" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="16.3" y1="-8.8" x2="26.05" y2="-15.23" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-19.78" y1="-6" x2="-17.83" y2="-7.88" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="25.08,-10.63 28,-10.63 28,3.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="25.08,-7.88 25.08,2.22 21.18,5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="25.08" y1="2.22" x2="28" y2="2.22" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-16.85,-8.8 -7.1,-15.23 26.05,-15.23 26.05,-10.63" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="26.05,5 26.05,9.57 16.3,16" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.18,11.56 12.08,9.73 11.1,11.56 16,8.81" stroke="black" stroke-width="1" fill="none"/>
+<rect x="9.8" y="8.57" width="5.2" height="6.19" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/></svg></g>
+<text x="12.50" y="165.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Caisson</text>
+<g transform="translate(63.00 159.00)"><svg x="0" y="0" width="8.00" height="6.62" viewBox="-29.0 -25.0 58.0 48.0" overflow="visible"><rect x="-29.0" y="-25.0" width="58.0" height="48.0" fill="#ffffff"/>
+<path d="M -5.00,8.00 A 5.00,1.00 0 0 0 5.00,8.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,-1.00 A 12.50,2.00 0 0 0 12.00,-1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,1.00 A 12.50,2.00 0 0 0 12.00,1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 21.00,-9.50 A 21.50,8.50 0 0 0 -22.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-17" y1="-7" x2="-13" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-6" x2="-9" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="-6" x2="-3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-6" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-6" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15" y1="-6" x2="12" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -22.00,-9.00 A 21.50,3.00 0 0 0 21.00,-9.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-13" y1="-1" x2="-13" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-1" x2="12" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="7" x2="-5" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="8" x2="5" y2="3" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<text x="72.50" y="165.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Sortie de toit</text>
+</svg>

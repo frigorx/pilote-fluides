@@ -1,0 +1,66 @@
+{
+  "numero": 15,
+  "titre": "Dimensionner un réseau de gaines et trouver le tronçon le plus défavorisé",
+  "ligne": "Aéraulique",
+  "code": "BE-A3",
+  "quand": "Après les débits du projet (station A2), avant le ventilateur et le caisson (station A4). Vous avez le débit de chaque bouche en base et en pointe, le tracé du réseau et les données des conduits. Vous obtenez le diamètre et la vitesse de chaque gaine, ses pertes de charge, le tronçon le plus défavorisé et la pression que le caisson doit fournir.",
+  "methode": [
+    "Numéroter les tronçons : une gaine par bouche jusqu’à son piquage sur le caisson, puis le rejet jusqu’à la sortie de toiture.",
+    "Relever sur le tracé la longueur et le nombre de coudes de chaque tronçon.",
+    "Section : S = π × D² ÷ 4 (D en m) ; vitesse : v = q ÷ 3 600 ÷ S (q en m³/h).",
+    "Diamètre : le plus petit de la série où v ne dépasse pas la vitesse maximale (3 m/s), au débit de pointe.",
+    "Perte linéaire : j lu sur l’abaque (débit et diamètre), Δp = j × L.",
+    "Perte singulière : Δp = Σζ × ρ × v² ÷ 2, avec ρ = 1,2 kg/m³.",
+    "Pression au piquage d’une gaine : pression de la bouche + perte de charge de la gaine.",
+    "Tronçon le plus défavorisé : celui qui demande la plus forte pression au piquage ; pas forcément le plus long.",
+    "Pression du caisson : pression au piquage du tronçon le plus défavorisé + perte de charge du rejet ; en base et en pointe."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Diamètres disponibles",
+      "valeur": "80, 100, 125, 160 et 200 mm",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Vitesse maximale dans une gaine de logement",
+      "valeur": "3 m/s",
+      "source": "Donnée de l’exercice (confort acoustique)"
+    },
+    {
+      "grandeur": "Coefficients ζ",
+      "valeur": "coude à 90° 0,3 ; sortie de toiture 1",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Pression minimale de la bouche d’extraction",
+      "valeur": "80 Pa",
+      "source": "Donnée de l’exercice ; sur un vrai projet, l’avis technique du système"
+    },
+    {
+      "grandeur": "Abaque des pertes linéaires",
+      "valeur": "Conduits circulaires en acier galvanisé, rugosité 0,15 mm, ρ = 1,2 kg/m³",
+      "source": "Tracé par le calcul (Darcy-Weisbach, Colebrook-White) ; rugosité : donnée de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Logement d’exemple de plain-pied (station A2), gaine de la cuisine : 105 m³/h en pointe, 3,40 m, 1 coude.",
+    "lignes": [
+      "Ø125 : S = 0,01227 m², v = 2,38 m/s (Ø100 dépasserait 3 m/s).",
+      "Abaque : j = 0,77 Pa/m ; Δp linéaire = 2,62 Pa.",
+      "Pd = 3,40 Pa ; Δp singulière = 0,3 × 3,40 = 1,02 Pa.",
+      "Gaine : 3,64 Pa ; caisson : 80 + 3,64 + rejet 3,78 = 87,42 Pa à 150 m³/h."
+    ],
+    "resultat": "Tronçon le plus défavorisé en pointe : la gaine de la cuisine ; caisson 87,42 Pa à 150 m³/h"
+  },
+  "pieges": [
+    "Prendre la gaine la plus longue pour la plus défavorisée : le débit et les coudes comptent autant que les mètres.",
+    "Oublier la pression de la bouche ou le rejet dans la pression du caisson.",
+    "Rechoisir les diamètres au débit de base : on les choisit au débit de pointe, une fois pour toutes."
+  ],
+  "sources": [
+    "Formules de la mécanique des fluides : débit, section, Darcy-Weisbach, Colebrook-White, pression dynamique.",
+    "Données des conduits, des coudes, des bouches et vitesse maximale : données de l’exercice (sur un vrai projet, la documentation des fabricants et l’avis technique du système).",
+    "Stations en correspondance : BE-A2 (débits des bouches), BE-A4 (ventilateur et caisson), AéroRézo « Débit, vitesse, section », « Sections circulaires et rectangulaires », « Choisir les conduits », « Pertes de charge linéaires », « Accidents de parcours », « Étudier un réseau VMC »."
+  ],
+  "calculette": null
+}

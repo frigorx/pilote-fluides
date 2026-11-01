@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-21.0 -36.0 38.0 58.0" width="38" height="58">
+<!-- Grille extérieur — converti de rejilla-ext.elmt par outils\elmt-vers-svg.py -->
+<rect x="-21.0" y="-36.0" width="38.0" height="58.0" fill="#ffffff"/>
+<polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="1" fill="none"/>
+</svg>

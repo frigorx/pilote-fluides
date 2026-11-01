@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 168.00" width="180mm" height="168.00mm" role="img">
+<title>Réseau du bâtiment d’exemple, régime 50/40</title>
+<rect width="180" height="168.00" fill="#fff"/>
+<g><text x="90" y="92" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 92)">inerWeb, by inerweb.fr</text><text x="40" y="50" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 50)">inerWeb, by inerweb.fr</text><text x="140" y="138" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 138)">inerWeb, by inerweb.fr</text></g>
+<text x="52.00" y="7.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Collecteur, local technique</text>
+<rect x="52.00" y="12.00" width="10.00" height="57.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="62.00" y1="14.50" x2="100.58" y2="14.50" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="62.00" y1="23.00" x2="113.42" y2="23.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="113.42" y1="23.00" x2="113.42" y2="18.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(100.00 11.00)"><svg x="0" y="0" width="14.00" height="10.50" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<text x="118.00" y="18.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">2. Bureau, 7,0 m</text>
+<line x1="62.00" y1="29.50" x2="100.58" y2="29.50" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="62.00" y1="38.00" x2="113.42" y2="38.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="113.42" y1="38.00" x2="113.42" y2="33.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(100.00 26.00)"><svg x="0" y="0" width="14.00" height="10.50" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<text x="118.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3. Réunion 1, 9,0 m</text>
+<line x1="62.00" y1="44.50" x2="100.58" y2="44.50" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="62.00" y1="53.00" x2="113.42" y2="53.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="113.42" y1="53.00" x2="113.42" y2="48.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(100.00 41.00)"><svg x="0" y="0" width="14.00" height="10.50" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<text x="118.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4. Réunion 2, 13,0 m</text>
+<line x1="62.00" y1="59.50" x2="100.58" y2="59.50" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="62.00" y1="68.00" x2="113.42" y2="68.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="113.42" y1="68.00" x2="113.42" y2="63.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(100.00 56.00)"><svg x="0" y="0" width="14.00" height="10.50" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<text x="118.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5. Sanitaires, 11,0 m</text>
+<line x1="34.00" y1="38.00" x2="52.00" y2="38.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="42.00" y1="43.00" x2="52.00" y2="43.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="34.00" y1="38.00" x2="34.00" y2="81.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="34.00" y1="90.60" x2="34.00" y2="96.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="42.00" y1="43.00" x2="42.00" y2="100.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(27.20 79.00)"><svg x="0" y="0" width="12.00" height="14.00" viewBox="-34.0 -34.0 60 70" overflow="visible"><ellipse cx="0.0" cy="0.0" rx="20.0" ry="20.0" fill="none" stroke="#000" stroke-width="1"/>
+<polygon points="0.24,-19.93 -2.25,-15 2.25,-15 4.16,-19.58 4.16,-19.46" fill="black" stroke="#000" stroke-width="1"/>
+<line x1="0" y1="20" x2="0" y2="24.5" stroke="#000" stroke-width="1"/>
+<line x1="0" y1="-20.4" x2="0" y2="-24.5" stroke="#000" stroke-width="1"/>
+<line x1="-20.5" y1="0" x2="-24.5" y2="0" stroke="#000" stroke-width="1"/>
+<circle cx="0" cy="-24" r="1.5" fill="#000"/>
+<circle cx="0" cy="24" r="1.5" fill="#000"/>
+<circle cx="-24" cy="0" r="1.5" fill="#000"/></svg></g>
+<g transform="translate(6.00 126.40) scale(1 -1)"><svg x="0" y="0" width="20.40" height="23.40" viewBox="-42.0 -29.0 68.0 78.0" overflow="visible"><rect x="-42.0" y="-29.0" width="68.0" height="78.0" fill="#ffffff"/>
+<rect x="-22.5" y="-20" width="35" height="50" rx="0" ry="0" stroke="black" stroke-width="1" fill="lightgray"/>
+<line x1="-10" y1="25" x2="-10" y2="20" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-20" y1="25" x2="-20" y2="20" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="0" y1="25" x2="0" y2="20" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="10" y1="25" x2="10" y2="20" stroke="black" stroke-width="0.4" fill="none"/></svg></g>
+<line x1="15.60" y1="108.70" x2="15.60" y2="96.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="15.60" y1="96.00" x2="34.00" y2="96.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="21.60" y1="108.70" x2="21.60" y2="100.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="21.60" y1="100.00" x2="42.00" y2="100.00" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="28.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<text x="52.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#c9451a">Départ 50 °C</text>
+<text x="110.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#3d7fca">Retour 40 °C</text>
+<text x="52.00" y="93.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1. commun, 2,0 m</text>
+<text x="52.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pompe à chaleur air/eau et pompe</text>
+<text x="52.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">de circulation, local technique</text>
+<text x="6.00" y="139.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Longueurs à l’aller : le retour a la même longueur.</text>
+<text x="6.00" y="146.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Symboles : QElectroTech (CC BY 3.0), adaptés par</text>
+<text x="6.00" y="153.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">inerWeb ; radiateur : HydroMétro.</text>
+<line x1="4.00" y1="157.50" x2="176.00" y2="157.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="164.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="164.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

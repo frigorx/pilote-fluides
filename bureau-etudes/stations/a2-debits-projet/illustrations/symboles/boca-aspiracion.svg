@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-23.0 -31.0 48.0 48.0" width="48" height="48">
+<!-- boca-aspiracion — converti de boca-aspiracion.elmt par outils\elmt-vers-svg.py -->
+<rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/>
+</svg>

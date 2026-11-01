@@ -1,0 +1,67 @@
+{
+  "numero": 13,
+  "titre": "Lire le diagramme de l’air humide et tracer une évolution",
+  "ligne": "Aéraulique",
+  "code": "BE-A1",
+  "quand": "Après les conditions extérieures (station E1) et intérieures (station E2), avant les débits (station A2), l’air neuf du bilan d’été (station T8) et la centrale de traitement d’air (station A5). Vous avez la température et l’humidité relative de chaque air. Vous obtenez x, h et la rosée de chaque point, le risque de buée, et la puissance d’un chauffage ou d’un refroidissement.",
+  "methode": [
+    "Placer un point : verticale de la température sèche θ, courbe de l’humidité relative HR ; à leur croisée, le point.",
+    "Lire x (g/kg d’air sec) : horizontale du point vers l’échelle de droite.",
+    "Lire h (kJ/kg d’air sec) : droite en tirets qui passe par le point, jusqu’à l’échelle au-dessus de la saturation.",
+    "Lire la rosée θr (°C) : horizontale du point vers la gauche jusqu’à la saturation, puis verticale vers l’échelle des températures.",
+    "Buée : une surface plus froide que θr se couvre d’eau.",
+    "HR à ne pas dépasser devant une surface à θs : x lu sur la saturation à θs ; HR de l’air intérieur qui a ce x.",
+    "Chauffer : x ne change pas, le point glisse vers la droite et HR baisse.",
+    "Refroidir : horizontale jusqu’à la saturation (la rosée), puis le long de la saturation ; l’eau retirée vaut qm × Δx.",
+    "Puissance : qm = ρ × qv ÷ 3 600 (kg/s, qv en m³/h) ; Φ = qm × Δh (kW, Δh en kJ/kg)."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Pression de vapeur saturante",
+      "valeur": "ps = 610,78 × exp(17,27 θ ÷ (θ + 237,3)), en Pa",
+      "source": "Formule de Tetens, constantes de Murray (1967) ; calculette inerWeb Frigolo"
+    },
+    {
+      "grandeur": "Humidité absolue",
+      "valeur": "x = 0,622 × pv ÷ (p − pv), p = 101 325 Pa",
+      "source": "ASHRAE Handbook Fundamentals, chapitre 1"
+    },
+    {
+      "grandeur": "Enthalpie",
+      "valeur": "h = 1,006 θ + x (2 501 + 1,86 θ), x en kg/kg",
+      "source": "ASHRAE Handbook Fundamentals, chapitre 1"
+    },
+    {
+      "grandeur": "Masse volumique de l’air",
+      "valeur": "1,2 kg/m³",
+      "source": "Donnée de l’exercice, cohérente avec 0,34 Wh/(m³.K) (Th-Bât Généralités, § 5.1, p. 18)"
+    },
+    {
+      "grandeur": "Repère de confort dans un logement",
+      "valeur": "40 à 60 % d’humidité relative",
+      "source": "Station E2, valeur d’exercice, aucun texte ne l’impose"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment de bureaux d’exemple : air extérieur −7 °C et 90 %, chauffé à 19 °C ; qv = 110 m³/h (valeurs d’exercice).",
+    "lignes": [
+      "Point extérieur : x ≈ 2,0 g/kg, h ≈ −2 kJ/kg.",
+      "Chauffage à x constant jusqu’à 19 °C : h ≈ 24 kJ/kg, HR ≈ 15 %.",
+      "Δh ≈ 24 − (−2) = 26 kJ/kg.",
+      "qm = 1,2 × 110 ÷ 3 600 = 0,0367 kg/s.",
+      "Φ = 0,0367 × 26 = 0,95 kW."
+    ],
+    "resultat": "Φ ≈ 0,95 kW pour chauffer l’air neuf"
+  },
+  "pieges": [
+    "Comparer des pourcentages : la buée se décide en comparant deux températures, la surface et la rosée.",
+    "Garder l’humidité relative pendant un chauffage : c’est x qui reste constant, HR baisse.",
+    "Oublier la masse volumique ou la division par 3 600 dans qm."
+  ],
+  "sources": [
+    "Formules de l’air humide : Tetens et Murray (1967) pour ps ; ASHRAE Handbook Fundamentals, chapitre 1, pour x et h. Diagramme tracé par le script de la station.",
+    "Stations en correspondance : BE-E1, BE-E2, BE-T4 (0,34 × qv × ΔT), BE-A2, AéroRézo « L’humidité relative » et « Point de rosée et air humide ».",
+    "Calculette : inerWeb Frigolo, psychrométrie (mêmes formules)."
+  ],
+  "calculette": null
+}

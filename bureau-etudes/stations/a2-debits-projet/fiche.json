@@ -1,0 +1,60 @@
+{
+  "numero": 14,
+  "titre": "Établir les débits d’air d’un logement et l’équilibre du bâtiment",
+  "ligne": "Aéraulique",
+  "code": "BE-A2",
+  "quand": "Après les conditions intérieures (station E2) et les déperditions par l’air (station T4), avant le réseau de gaines (station A3). Vous avez les pièces et leurs volumes (station T1), le système de ventilation et les débits du CCTP. Vous obtenez le débit de chaque bouche, en base et en pointe, l’équilibre du logement, le taux de renouvellement et le tableau des bouches.",
+  "methode": [
+    "Compter les pièces principales (séjour et chambres) ; cuisine, salle d’eau et WC sont des pièces de service.",
+    "Débits de pointe : article 3 de l’arrêté du 24 mars 1982, ligne du nombre de pièces principales, une valeur par pièce de service.",
+    "Débits de base (dispositif de réglage, hygroréglable) : pas sous le débit total minimal ni sous le minimum de la cuisine de l’article 4.",
+    "Équilibre : la somme des entrées d’air (ou du soufflage) égale la somme des extractions.",
+    "Entrée d’air d’une pièce principale = débit total × V de la pièce ÷ somme des V des pièces principales.",
+    "L’air passe des pièces principales aux circulations, puis aux pièces de service, sous les portes (détalonnage).",
+    "Taux de renouvellement : n = qv ÷ V (vol/h), avec le volume chauffé du logement.",
+    "Double flux : une bouche de soufflage remplace chaque entrée d’air, même débit ; le caisson souffle ce qu’il extrait.",
+    "Tableau des bouches : repère, local, niveau, type, débit de base, débit de pointe ; il sert au réseau de gaines."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Débits extraits à atteindre (pointe)",
+      "valeur": "Tableau de l’article 3, par pièce de service, selon le nombre de pièces principales",
+      "source": "Arrêté du 24 mars 1982 modifié, art. 3"
+    },
+    {
+      "grandeur": "Débit total minimal et minimum de la cuisine (base)",
+      "valeur": "Tableau de l’article 4, selon le nombre de pièces principales",
+      "source": "Arrêté du 24 mars 1982 modifié, art. 4"
+    },
+    {
+      "grandeur": "Partage des débits de base entre les bouches",
+      "valeur": "Choix du bureau d’études, dans les limites de l’article 4",
+      "source": "Donnée de l’exercice ; sur un vrai projet, l’avis technique du système"
+    },
+    {
+      "grandeur": "Partage de l’air neuf entre pièces principales",
+      "valeur": "Au prorata du volume",
+      "source": "Choix de l’exercice, le même qu’à la station T4"
+    }
+  ],
+  "exemple": {
+    "enonce": "Logement d’exemple de plain-pied, 3 pièces principales, V = 196,8 m³ (valeurs d’exercice).",
+    "lignes": [
+      "Pointe (art. 3, ligne 3) : cuisine 105, wc 15, salle de bains 30, soit 150 m³/h.",
+      "Base (art. 4 : 75 m³/h au moins, cuisine 45 au moins) : cuisine 45, wc 15, salle de bains 15, soit 75 m³/h.",
+      "Entrées d’air, base : séjour 40,6, chambre 1 18,1, chambre 2 16,3 m³/h (somme 75).",
+      "n = 75 ÷ 196,8 = 0,38 vol/h en base ; 0,76 vol/h en pointe."
+    ],
+    "resultat": "75 m³/h en base, 150 m³/h en pointe ; 0,38 vol/h"
+  },
+  "pieges": [
+    "Compter la cuisine comme une pièce principale : on lit alors la mauvaise ligne de l’article 3.",
+    "Prendre le minimum de l’article 4 pour dimensionner les bouches de pointe.",
+    "Partager l’air neuf sur toutes les pièces : seules les pièces principales reçoivent l’air neuf."
+  ],
+  "sources": [
+    "Arrêté du 24 mars 1982 relatif à l’aération des logements, modifié par l’arrêté du 28 octobre 1983, art. 3 et 4 (Légifrance), cité page 4 du CCTP de la maison.",
+    "Stations en correspondance : BE-T1 (volumes), BE-E2 (occupation), BE-T4 (débit d’air neuf retenu), BE-A3 (réseau de gaines), AéroRézo « Le besoin d’air », « Simple flux », « Double flux », « L’hygroréglable »."
+  ],
+  "calculette": null
+}

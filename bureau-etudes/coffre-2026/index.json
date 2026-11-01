@@ -149,6 +149,150 @@
   },
   {
    "id": "d017",
+   "groupe": "t6-ete-vitrages-soleil",
+   "exercice": "BE-T6, Été 1 : le soleil",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-T6-corrige-N1.pdf",
+   "taille": 249639
+  },
+  {
+   "id": "d018",
+   "groupe": "t6-ete-vitrages-soleil",
+   "exercice": "BE-T6, Été 1 : le soleil",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-T6-corrige-N2.pdf",
+   "taille": 241507
+  },
+  {
+   "id": "d019",
+   "groupe": "t7-ete-apports-internes",
+   "exercice": "BE-T7, Été 2 : apports internes",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-T7-corrige-N1.pdf",
+   "taille": 249290
+  },
+  {
+   "id": "d020",
+   "groupe": "t7-ete-apports-internes",
+   "exercice": "BE-T7, Été 2 : apports internes",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-T7-corrige-N2.pdf",
+   "taille": 232698
+  },
+  {
+   "id": "d021",
+   "groupe": "a1-air-humide",
+   "exercice": "BE-A1, L'air humide",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-A1-corrige-N1.pdf",
+   "taille": 443497
+  },
+  {
+   "id": "d022",
+   "groupe": "a1-air-humide",
+   "exercice": "BE-A1, L'air humide",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-A1-corrige-N2.pdf",
+   "taille": 460851
+  },
+  {
+   "id": "d023",
+   "groupe": "a2-debits-projet",
+   "exercice": "BE-A2, Les débits du projet",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-A2-corrige-N1.pdf",
+   "taille": 245963
+  },
+  {
+   "id": "d024",
+   "groupe": "a2-debits-projet",
+   "exercice": "BE-A2, Les débits du projet",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-A2-corrige-N2.pdf",
+   "taille": 235752
+  },
+  {
+   "id": "d025",
+   "groupe": "a3-reseau-gaines",
+   "exercice": "BE-A3, Le réseau de gaines",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-A3-corrige-N1.pdf",
+   "taille": 273683
+  },
+  {
+   "id": "d026",
+   "groupe": "a3-reseau-gaines",
+   "exercice": "BE-A3, Le réseau de gaines",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-A3-corrige-N2.pdf",
+   "taille": 238048
+  },
+  {
+   "id": "d027",
+   "groupe": "h1-puissance-debit-regime",
+   "exercice": "BE-H1, Puissance et débit",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-H1-corrige-N1.pdf",
+   "taille": 234606
+  },
+  {
+   "id": "d028",
+   "groupe": "h1-puissance-debit-regime",
+   "exercice": "BE-H1, Puissance et débit",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-H1-corrige-N2.pdf",
+   "taille": 220473
+  },
+  {
+   "id": "d029",
+   "groupe": "h2-emetteurs",
+   "exercice": "BE-H2, Les émetteurs",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-H2-corrige-N1.pdf",
+   "taille": 237595
+  },
+  {
+   "id": "d030",
+   "groupe": "h2-emetteurs",
+   "exercice": "BE-H2, Les émetteurs",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-H2-corrige-N2.pdf",
+   "taille": 221806
+  },
+  {
+   "id": "d031",
+   "groupe": "h3-reseau-eau",
+   "exercice": "BE-H3, Le réseau d'eau",
+   "titre": "Corrigé de la feuille, niveau 1",
+   "format": "pdf",
+   "fichier": "BE-H3-corrige-N1.pdf",
+   "taille": 249075
+  },
+  {
+   "id": "d032",
+   "groupe": "h3-reseau-eau",
+   "exercice": "BE-H3, Le réseau d'eau",
+   "titre": "Corrigé de la feuille, niveau 2",
+   "format": "pdf",
+   "fichier": "BE-H3-corrige-N2.pdf",
+   "taille": 225055
+  },
+  {
+   "id": "d033",
    "groupe": "h6-eau-chaude-sanitaire",
    "exercice": "BE-H6, L'eau chaude sanitaire",
    "titre": "Corrigé de la feuille, niveau 1",
@@ -157,7 +301,7 @@
    "taille": 200097
   },
   {
-   "id": "d018",
+   "id": "d034",
    "groupe": "h6-eau-chaude-sanitaire",
    "exercice": "BE-H6, L'eau chaude sanitaire",
    "titre": "Corrigé de la feuille, niveau 2",
@@ -166,7 +310,7 @@
    "taille": 226274
   },
   {
-   "id": "d019",
+   "id": "d035",
    "groupe": "g01-bases-graphiques",
    "exercice": "Ligne P, gare 1, Bases graphiques",
    "titre": "Corrigé de l’exercice",
@@ -175,7 +319,7 @@
    "taille": 157041
   },
   {
-   "id": "d020",
+   "id": "d036",
    "groupe": "g02-les-vues",
    "exercice": "Ligne P, gare 2, Les vues",
    "titre": "Corrigé de l’exercice",
@@ -184,7 +328,7 @@
    "taille": 181037
   },
   {
-   "id": "d021",
+   "id": "d037",
    "groupe": "p2b-traits-caches-et-vues",
    "exercice": "Ligne P, gare 2b, Traits cachés et vues",
    "titre": "Corrigé de la feuille, niveau 1",
@@ -193,7 +337,7 @@
    "taille": 157170
   },
   {
-   "id": "d022",
+   "id": "d038",
    "groupe": "p2b-traits-caches-et-vues",
    "exercice": "Ligne P, gare 2b, Traits cachés et vues",
    "titre": "Corrigé de la feuille, niveau 2",
@@ -202,7 +346,7 @@
    "taille": 160388
   },
   {
-   "id": "d023",
+   "id": "d039",
    "groupe": "p2b-traits-caches-et-vues",
    "exercice": "Ligne P, gare 2b, Traits cachés et vues",
    "titre": "Corrigé de la feuille, niveau 3",
@@ -211,7 +355,7 @@
    "taille": 159921
   },
   {
-   "id": "d024",
+   "id": "d040",
    "groupe": "g03-dossier-technique",
    "exercice": "Ligne P, gare 3, Le dossier technique",
    "titre": "Corrigé de l’exercice",
@@ -220,7 +364,7 @@
    "taille": 190086
   },
   {
-   "id": "d025",
+   "id": "d041",
    "groupe": "g04-types-de-plans",
    "exercice": "Ligne P, gare 4, Les types de plans",
    "titre": "Corrigé de l’exercice",
@@ -229,7 +373,7 @@
    "taille": 165009
   },
   {
-   "id": "d026",
+   "id": "d042",
    "groupe": "g05-conventions",
    "exercice": "Ligne P, gare 5, Conventions graphiques",
    "titre": "Corrigé de l’exercice",
@@ -238,7 +382,7 @@
    "taille": 174882
   },
   {
-   "id": "d027",
+   "id": "d043",
    "groupe": "p5b-coupes-et-sections",
    "exercice": "Ligne P, gare 5b, Coupes et sections",
    "titre": "Corrigé de la feuille, niveau 1",
@@ -247,7 +391,7 @@
    "taille": 162211
   },
   {
-   "id": "d028",
+   "id": "d044",
    "groupe": "p5b-coupes-et-sections",
    "exercice": "Ligne P, gare 5b, Coupes et sections",
    "titre": "Corrigé de la feuille, niveau 2",
@@ -256,7 +400,7 @@
    "taille": 162159
   },
   {
-   "id": "d029",
+   "id": "d045",
    "groupe": "p5b-coupes-et-sections",
    "exercice": "Ligne P, gare 5b, Coupes et sections",
    "titre": "Corrigé de la feuille, niveau 3",
@@ -265,7 +409,7 @@
    "taille": 158216
   },
   {
-   "id": "d030",
+   "id": "d046",
    "groupe": "g06-les-echelles",
    "exercice": "Ligne P, gare 6, Les échelles",
    "titre": "Corrigé de l’exercice",
@@ -274,7 +418,7 @@
    "taille": 182228
   },
   {
-   "id": "d031",
+   "id": "d047",
    "groupe": "g07-la-cotation",
    "exercice": "Ligne P, gare 7, La cotation",
    "titre": "Corrigé de l’exercice",
@@ -283,7 +427,7 @@
    "taille": 167210
   },
   {
-   "id": "d032",
+   "id": "d048",
    "groupe": "g07b-le-metre-sur-plan",
    "exercice": "Ligne P, gare 7b, Le métré sur plan",
    "titre": "Corrigé de l’exercice",
@@ -292,7 +436,7 @@
    "taille": 182853
   },
   {
-   "id": "d033",
+   "id": "d049",
    "groupe": "g08-le-croquis-cote",
    "exercice": "Ligne P, gare 8, Le croquis coté",
    "titre": "Corrigé de l’exercice",
@@ -301,7 +445,7 @@
    "taille": 151392
   },
   {
-   "id": "d034",
+   "id": "d050",
    "groupe": "g09-la-maquette-bim",
    "exercice": "Ligne P, gare 9, La maquette BIM",
    "titre": "Corrigé de l’exercice",
@@ -310,7 +454,7 @@
    "taille": 237311
   },
   {
-   "id": "d035",
+   "id": "d051",
    "groupe": "g10-le-sujet-guide",
    "exercice": "Ligne P, gare 10, Le sujet guidé",
    "titre": "Corrigé de l’exercice",
@@ -319,7 +463,7 @@
    "taille": 175090
   },
   {
-   "id": "d036",
+   "id": "d052",
    "groupe": "g11-suivre-une-installation",
    "exercice": "Ligne P, gare 11, Suivre une installation",
    "titre": "Corrigé de l’exercice",
@@ -328,7 +472,7 @@
    "taille": 191332
   },
   {
-   "id": "d037",
+   "id": "d053",
    "groupe": "g12-croquer-et-relever",
    "exercice": "Ligne P, gare 12, Croquer et relever",
    "titre": "Corrigé de l’exercice",
@@ -337,7 +481,7 @@
    "taille": 185311
   },
   {
-   "id": "d038",
+   "id": "d054",
    "groupe": "g13-schema-isometrique",
    "exercice": "Ligne P, gare 13, Le schéma isométrique",
    "titre": "Corrigé de l’exercice",
@@ -346,7 +490,7 @@
    "taille": 250111
   },
   {
-   "id": "d039",
+   "id": "d055",
    "groupe": "mpi1-plan-de-distribution",
    "exercice": "Ligne P, Plâtrerie 1, Le plan de distribution",
    "titre": "Corrigé de l’exercice",
@@ -355,7 +499,7 @@
    "taille": 151983
   },
   {
-   "id": "d040",
+   "id": "d056",
    "groupe": "mpi2-calepinage-implantation",
    "exercice": "Ligne P, Plâtrerie 2, Calepinage et implantation",
    "titre": "Corrigé de l’exercice",
@@ -364,7 +508,7 @@
    "taille": 146568
   },
   {
-   "id": "d041",
+   "id": "d057",
    "groupe": "mpi3-details-second-oeuvre",
    "exercice": "Ligne P, Plâtrerie 3, Les détails du second œuvre",
    "titre": "Corrigé de l’exercice",
@@ -373,7 +517,7 @@
    "taille": 146164
   },
   {
-   "id": "d042",
+   "id": "d058",
    "groupe": "mpi4-bim-du-plaquiste",
    "exercice": "Ligne P, Plâtrerie 4, Le BIM du plaquiste",
    "titre": "Corrigé de l’exercice",
@@ -382,7 +526,7 @@
    "taille": 161042
   },
   {
-   "id": "d043",
+   "id": "d059",
    "groupe": "mpi5-du-plan-au-devis",
    "exercice": "Ligne P, Plâtrerie 5, Du plan au devis",
    "titre": "Corrigé de l’exercice",
@@ -391,7 +535,7 @@
    "taille": 158715
   },
   {
-   "id": "d044",
+   "id": "d060",
    "groupe": "mpi6-cap-sur-ep1",
    "exercice": "Ligne P, Plâtrerie 6, Terminus : un dossier complet, seul",
    "titre": "Corrigé de l’exercice",
@@ -400,7 +544,7 @@
    "taille": 161039
   },
   {
-   "id": "d045",
+   "id": "d061",
    "groupe": "etam1-plan-toiture-terrasse",
    "exercice": "Ligne P, Toiture 1, Le plan de toiture-terrasse",
    "titre": "Corrigé de l’exercice",
@@ -409,7 +553,7 @@
    "taille": 152069
   },
   {
-   "id": "d046",
+   "id": "d062",
    "groupe": "etam2-coupe-du-complexe",
    "exercice": "Ligne P, Toiture 2, La coupe du complexe",
    "titre": "Corrigé de l’exercice",
@@ -418,7 +562,7 @@
    "taille": 147933
   },
   {
-   "id": "d047",
+   "id": "d063",
    "groupe": "etam3-points-singuliers",
    "exercice": "Ligne P, Toiture 3, Les points singuliers",
    "titre": "Corrigé de l’exercice",
@@ -427,7 +571,7 @@
    "taille": 149029
   },
   {
-   "id": "d048",
+   "id": "d064",
    "groupe": "etam4-bim-de-l-etancheur",
    "exercice": "Ligne P, Toiture 4, Le BIM de l'étancheur",
    "titre": "Corrigé de l’exercice",
@@ -436,7 +580,7 @@
    "taille": 164876
   },
   {
-   "id": "d049",
+   "id": "d065",
    "groupe": "etam5-surfaces-et-quantites",
    "exercice": "Ligne P, Toiture 5, Surfaces et quantités",
    "titre": "Corrigé de l’exercice",
@@ -445,7 +589,7 @@
    "taille": 149578
   },
   {
-   "id": "d050",
+   "id": "d066",
    "groupe": "etam6-cap-sur-ep1",
    "exercice": "Ligne P, Toiture 6, Terminus : un dossier complet, seul",
    "titre": "Corrigé de l’exercice",
@@ -454,7 +598,7 @@
    "taille": 152859
   },
   {
-   "id": "d051",
+   "id": "d067",
    "groupe": "tecvc1-plan-implantation-cvc",
    "exercice": "Ligne P, CVC-R 1, Le plan d'implantation",
    "titre": "Corrigé de l’exercice",
@@ -463,7 +607,7 @@
    "taille": 219380
   },
   {
-   "id": "d052",
+   "id": "d068",
    "groupe": "cvcr2-schema-hydraulique",
    "exercice": "Ligne P, CVC-R 2, Le schéma hydraulique",
    "titre": "Corrigé de l’exercice",
@@ -472,7 +616,7 @@
    "taille": 199179
   },
   {
-   "id": "d053",
+   "id": "d069",
    "groupe": "cvcr3-reseau-aeraulique",
    "exercice": "Ligne P, CVC-R 3, Le réseau aéraulique",
    "titre": "Corrigé de l’exercice",
@@ -481,7 +625,7 @@
    "taille": 165091
   },
   {
-   "id": "d054",
+   "id": "d070",
    "groupe": "cvcr4-schema-frigorifique",
    "exercice": "Ligne P, CVC-R 4, Le schéma frigorifique",
    "titre": "Corrigé de l’exercice",
@@ -490,7 +634,7 @@
    "taille": 170882
   },
   {
-   "id": "d055",
+   "id": "d071",
    "groupe": "cvcr5-synoptique-regulation",
    "exercice": "Ligne P, CVC-R 5, Le synoptique de régulation",
    "titre": "Corrigé de l’exercice",
@@ -499,7 +643,7 @@
    "taille": 194335
   },
   {
-   "id": "d056",
+   "id": "d072",
    "groupe": "cvcr6-terminus-dossier",
    "exercice": "Ligne P, CVC-R 6, Terminus : un dossier complet, seul",
    "titre": "Corrigé de l’exercice",

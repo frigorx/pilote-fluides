@@ -1,0 +1,51 @@
+{
+  "cle": "h1-puissance-debit-regime",
+  "code": "BE-H1",
+  "titre": "Puissance et débit",
+  "ligne": "Hydraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 19,
+    "chapitre": 5
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire"
+      },
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques (à confirmer : la station se fait à la main, et le référentiel contrôle C3-3 en E61)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A3",
+          "libelle": "Dynamique des fluides : tronçons et réseaux ; caractéristique circulateur/pompe/ventilateur ; association réseau - circulateur/pompe/ventilateur (point de fonctionnement) ; cavitation ; répartition naturelle des débits ; équilibrage (à confirmer : libellé relevé dans l'inventaire des référentiels, p. 64 du référentiel)"
+        },
+        {
+          "code": "B4-1",
+          "libelle": "Réseaux hydrauliques (dont circulateurs/pompes) (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 68 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

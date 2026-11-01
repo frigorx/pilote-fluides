@@ -1,0 +1,47 @@
+{
+  "cle": "h2-emetteurs",
+  "code": "BE-H2",
+  "titre": "Les émetteurs",
+  "ligne": "Hydraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 20,
+    "chapitre": 5
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire"
+      },
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (écran du ventilo-convecteur, eau chaude et eau glacée)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-1",
+          "libelle": "Choisir les éléments d'un système ou d'une installation (inventaire des référentiels, p. 28 du référentiel)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B1-2",
+          "libelle": "Équipements de chauffage : émission (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 66 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

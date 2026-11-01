@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 194" width="180mm" height="194mm" role="img">
+<title>Circuit de chauffage de la maison, régime 45/40</title>
+<rect width="180" height="194" fill="#fff"/>
+<g><text x="90" y="107" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 107)">inerWeb, by inerweb.fr</text><text x="40" y="58" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 58)">inerWeb, by inerweb.fr</text><text x="140" y="159" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 159)">inerWeb, by inerweb.fr</text></g>
+<text x="48.00" y="7.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Branche de l’étage : … L/h</text>
+<line x1="34.00" y1="25.00" x2="176.00" y2="25.00" stroke="#c9451a" stroke-width="0.6"/>
+<circle cx="34.00" cy="25.00" r="0.9" fill="#c9451a"/>
+<line x1="42.00" y1="45.00" x2="176.00" y2="45.00" stroke="#3d7fca" stroke-width="0.6"/>
+<circle cx="42.00" cy="45.00" r="0.9" fill="#3d7fca"/>
+<g transform="translate(56.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="56.67" y1="25.00" x2="56.67" y2="33.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="56.67" cy="25.00" r="0.9" fill="#c9451a"/>
+<line x1="71.33" y1="37.00" x2="71.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="71.33" cy="45.00" r="0.9" fill="#3d7fca"/>
+<text x="64.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 1</text>
+<text x="64.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(82.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="82.67" y1="25.00" x2="82.67" y2="33.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="82.67" cy="25.00" r="0.9" fill="#c9451a"/>
+<line x1="97.33" y1="37.00" x2="97.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="97.33" cy="45.00" r="0.9" fill="#3d7fca"/>
+<text x="90.00" y="21.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 2</text>
+<text x="90.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(108.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="108.67" y1="25.00" x2="108.67" y2="33.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="108.67" cy="25.00" r="0.9" fill="#c9451a"/>
+<line x1="123.33" y1="37.00" x2="123.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="123.33" cy="45.00" r="0.9" fill="#3d7fca"/>
+<text x="116.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 3</text>
+<text x="116.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(134.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="134.67" y1="25.00" x2="134.67" y2="33.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="134.67" cy="25.00" r="0.9" fill="#c9451a"/>
+<line x1="149.33" y1="37.00" x2="149.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="149.33" cy="45.00" r="0.9" fill="#3d7fca"/>
+<text x="142.00" y="21.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Salle d'eau</text>
+<text x="142.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(160.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="160.67" y1="25.00" x2="160.67" y2="33.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="160.67" cy="25.00" r="0.9" fill="#c9451a"/>
+<line x1="175.33" y1="37.00" x2="175.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="175.33" cy="45.00" r="0.9" fill="#3d7fca"/>
+<text x="168.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Palier</text>
+<text x="168.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<text x="48.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Branche du rez-de-chaussée : … L/h</text>
+<line x1="34.00" y1="81.00" x2="176.00" y2="81.00" stroke="#c9451a" stroke-width="0.6"/>
+<circle cx="34.00" cy="81.00" r="0.9" fill="#c9451a"/>
+<line x1="42.00" y1="101.00" x2="176.00" y2="101.00" stroke="#3d7fca" stroke-width="0.6"/>
+<circle cx="42.00" cy="101.00" r="0.9" fill="#3d7fca"/>
+<g transform="translate(56.00 85.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="56.67" y1="81.00" x2="56.67" y2="89.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="56.67" cy="81.00" r="0.9" fill="#c9451a"/>
+<line x1="71.33" y1="93.00" x2="71.33" y2="101.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="71.33" cy="101.00" r="0.9" fill="#3d7fca"/>
+<text x="64.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Séjour-cuisine</text>
+<text x="64.00" y="109.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(96.00 85.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="96.67" y1="81.00" x2="96.67" y2="89.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="96.67" cy="81.00" r="0.9" fill="#c9451a"/>
+<line x1="111.33" y1="93.00" x2="111.33" y2="101.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="111.33" cy="101.00" r="0.9" fill="#3d7fca"/>
+<text x="104.00" y="77.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Entrée</text>
+<text x="104.00" y="109.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(136.00 85.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="136.67" y1="81.00" x2="136.67" y2="89.00" stroke="#c9451a" stroke-width="0.5"/>
+<circle cx="136.67" cy="81.00" r="0.9" fill="#c9451a"/>
+<line x1="151.33" y1="93.00" x2="151.33" y2="101.00" stroke="#3d7fca" stroke-width="0.5"/>
+<circle cx="151.33" cy="101.00" r="0.9" fill="#3d7fca"/>
+<text x="144.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">WC</text>
+<text x="144.00" y="109.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">… L/h</text>
+<g transform="translate(6.00 163.40) scale(1 -1)"><svg x="0" y="0" width="20.40" height="23.40" viewBox="-42.0 -29.0 68.0 78.0" overflow="visible"><rect x="-42.0" y="-29.0" width="68.0" height="78.0" fill="#ffffff"/>
+<rect x="-22.5" y="-20" width="35" height="50" rx="0" ry="0" stroke="black" stroke-width="1" fill="lightgray"/>
+<line x1="-10" y1="25" x2="-10" y2="20" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-20" y1="25" x2="-20" y2="20" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="0" y1="25" x2="0" y2="20" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="10" y1="25" x2="10" y2="20" stroke="black" stroke-width="0.4" fill="none"/></svg></g>
+<line x1="15.60" y1="145.70" x2="15.60" y2="131.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="15.60" y1="131.00" x2="34.00" y2="131.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="21.60" y1="145.70" x2="21.60" y2="135.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="21.60" y1="135.00" x2="42.00" y2="135.00" stroke="#3d7fca" stroke-width="0.6"/>
+<g transform="translate(27.20 116.00)"><svg x="0" y="0" width="12.00" height="14.00" viewBox="-34.0 -34.0 60 70" overflow="visible"><ellipse cx="0.0" cy="0.0" rx="20.0" ry="20.0" fill="none" stroke="#000" stroke-width="1"/>
+<polygon points="0.24,-19.93 -2.25,-15 2.25,-15 4.16,-19.58 4.16,-19.46" fill="black" stroke="#000" stroke-width="1"/>
+<line x1="0" y1="20" x2="0" y2="24.5" stroke="#000" stroke-width="1"/>
+<line x1="0" y1="-20.4" x2="0" y2="-24.5" stroke="#000" stroke-width="1"/>
+<line x1="-20.5" y1="0" x2="-24.5" y2="0" stroke="#000" stroke-width="1"/>
+<circle cx="0" cy="-24" r="1.5" fill="#000"/>
+<circle cx="0" cy="24" r="1.5" fill="#000"/>
+<circle cx="-24" cy="0" r="1.5" fill="#000"/></svg></g>
+<line x1="34.00" y1="25.00" x2="34.00" y2="118.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="34.00" y1="127.60" x2="34.00" y2="131.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="42.00" y1="45.00" x2="42.00" y2="135.00" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="48.00" y="123.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#c9451a">Départ 45 °C</text>
+<text x="100.00" y="123.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#3d7fca">Retour 40 °C</text>
+<text x="48.00" y="132.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Circuit : … L/h</text>
+<text x="48.00" y="141.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pompe de circulation sur le départ</text>
+<text x="48.00" y="150.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pompe à chaleur air/eau,</text>
+<text x="48.00" y="157.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">dans le garage (CCTP page 4)</text>
+<text x="6.00" y="172.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Symboles : QElectroTech (CC BY 3.0), adaptés</text>
+<text x="6.00" y="179.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">par inerWeb ; radiateur : HydroMétro.</text>
+<line x1="4.00" y1="183.50" x2="176.00" y2="183.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="190.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="190.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

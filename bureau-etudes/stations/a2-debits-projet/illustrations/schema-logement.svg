@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 97.00" width="180mm" height="97.00mm" role="img">
+<title>Logement d’exemple en simple flux</title>
+<rect width="180" height="97.00" fill="#fff"/>
+<g><text x="90" y="53" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 53)">inerWeb, by inerweb.fr</text><text x="40" y="29" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 29)">inerWeb, by inerweb.fr</text><text x="140" y="80" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 80)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="8.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Combles</text>
+<line x1="2.00" y1="31.00" x2="178.00" y2="31.00" stroke="#1b3a63" stroke-width="0.3" stroke-dasharray="1.5 1"/>
+<g transform="translate(150.00 12.14)"><svg x="0" y="0" width="22.00" height="16.36" viewBox="-34.0 -24.0 78.0 58.0" overflow="visible"><rect x="-34.0" y="-24.0" width="78.0" height="58.0" fill="#ffffff"/>
+<line x1="21.18" y1="7.73" x2="28" y2="3.14" stroke="black" stroke-width="1" fill="none"/>
+<line x1="18.25" y1="-6" x2="25.08" y2="-10.63" stroke="black" stroke-width="1" fill="none"/>
+<line x1="21.18" y1="-6" x2="28" y2="-10.63" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-19.78" y="-6" width="1.95" height="19.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-3.59" cy="4.84" rx="5.74" ry="4.96" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="-3.6,-5.08 12.89,-5.08 12.89,3 7.87,3" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -3.19,-5.07 A 11.46,9.62 0 1 0 7.76,3.20" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-17.83" y="-8.8" width="34.13" height="24.8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="18.25" y="-6" width="2.93" height="13.78" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="16.3" y1="-8.8" x2="26.05" y2="-15.23" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-19.78" y1="-6" x2="-17.83" y2="-7.88" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="25.08,-10.63 28,-10.63 28,3.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="25.08,-7.88 25.08,2.22 21.18,5" stroke="black" stroke-width="1" fill="none"/>
+<line x1="25.08" y1="2.22" x2="28" y2="2.22" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-16.85,-8.8 -7.1,-15.23 26.05,-15.23 26.05,-10.63" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="26.05,5 26.05,9.57 16.3,16" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.18,11.56 12.08,9.73 11.1,11.56 16,8.81" stroke="black" stroke-width="1" fill="none"/>
+<rect x="9.8" y="8.57" width="5.2" height="6.19" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="none"/></svg></g>
+<text x="147.00" y="22.22" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Caisson d’extraction</text>
+<g transform="translate(154.00 1.50)"><svg x="0" y="0" width="14.00" height="11.59" viewBox="-29.0 -25.0 58.0 48.0" overflow="visible"><rect x="-29.0" y="-25.0" width="58.0" height="48.0" fill="#ffffff"/>
+<path d="M -5.00,8.00 A 5.00,1.00 0 0 0 5.00,8.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,-1.00 A 12.50,2.00 0 0 0 12.00,-1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,1.00 A 12.50,2.00 0 0 0 12.00,1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 21.00,-9.50 A 21.50,8.50 0 0 0 -22.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-17" y1="-7" x2="-13" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-6" x2="-9" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="-6" x2="-3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-6" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-6" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15" y1="-6" x2="12" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -22.00,-9.00 A 21.50,3.00 0 0 0 21.00,-9.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-13" y1="-1" x2="-13" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-1" x2="12" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="7" x2="-5" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="8" x2="5" y2="3" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<text x="151.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Rejet</text>
+<line x1="161.00" y1="13.09" x2="161.00" y2="12.14" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="169.00" y1="28.50" x2="169.00" y2="85.75" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="2 1"/>
+<text x="4.00" y="40.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Logement d’exemple, de plain-pied</text>
+<rect x="19.00" y="43.50" width="46.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="42.00" y="49.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Séjour</text>
+<text x="42.00" y="55.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40,6 m³/h</text>
+<g transform="translate(7.00 45.03)"><svg x="0" y="0" width="7.50" height="11.45" viewBox="-21.0 -36.0 38.0 58.0" overflow="visible"><rect x="-21.0" y="-36.0" width="38.0" height="58.0" fill="#ffffff"/>
+<polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<line x1="16.50" y1="50.75" x2="19.00" y2="50.75" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="19.00,50.75 16.61,51.76 16.61,49.74" fill="#d9771f"/>
+<rect x="19.00" y="61.00" width="46.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="42.00" y="67.35" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 1</text>
+<text x="42.00" y="73.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">18,1 m³/h</text>
+<g transform="translate(7.00 62.53)"><svg x="0" y="0" width="7.50" height="11.45" viewBox="-21.0 -36.0 38.0 58.0" overflow="visible"><rect x="-21.0" y="-36.0" width="38.0" height="58.0" fill="#ffffff"/>
+<polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<line x1="16.50" y1="68.25" x2="19.00" y2="68.25" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="19.00,68.25 16.61,69.26 16.61,67.24" fill="#d9771f"/>
+<rect x="19.00" y="78.50" width="46.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="42.00" y="84.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 2</text>
+<text x="42.00" y="90.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">16,3 m³/h</text>
+<g transform="translate(7.00 80.03)"><svg x="0" y="0" width="7.50" height="11.45" viewBox="-21.0 -36.0 38.0 58.0" overflow="visible"><rect x="-21.0" y="-36.0" width="38.0" height="58.0" fill="#ffffff"/>
+<polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<line x1="16.50" y1="85.75" x2="19.00" y2="85.75" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="19.00,85.75 16.61,86.76 16.61,84.74" fill="#d9771f"/>
+<rect x="77.00" y="61.00" width="32.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="93.00" y="70.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Dégagement</text>
+<line x1="65.00" y1="50.75" x2="77.00" y2="64.00" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="77.00,64.00 74.64,62.90 76.14,61.55" fill="#d9771f"/>
+<line x1="69.00" y1="50.17" x2="69.00" y2="53.77" stroke="#1b3a63" stroke-width="0.9"/>
+<line x1="65.00" y1="68.25" x2="77.00" y2="68.25" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="77.00,68.25 74.61,69.26 74.61,67.24" fill="#d9771f"/>
+<line x1="69.00" y1="63.25" x2="69.00" y2="66.85" stroke="#1b3a63" stroke-width="0.9"/>
+<line x1="65.00" y1="85.75" x2="77.00" y2="72.50" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="77.00,72.50 76.14,74.95 74.64,73.60" fill="#d9771f"/>
+<line x1="69.00" y1="76.33" x2="69.00" y2="79.93" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="119.00" y="43.50" width="35.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="136.50" y="49.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Cuisine</text>
+<text x="136.50" y="55.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">45 m³/h</text>
+<g transform="translate(156.00 45.75)"><svg x="0" y="0" width="10.00" height="10.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<line x1="166.00" y1="50.75" x2="169.00" y2="50.75" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="2 1"/>
+<line x1="109.00" y1="68.25" x2="119.00" y2="55.00" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="119.00,55.00 118.37,57.52 116.75,56.30" fill="#d9771f"/>
+<line x1="114.00" y1="56.63" x2="114.00" y2="60.23" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="119.00" y="61.00" width="35.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="136.50" y="67.35" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Salle de bains</text>
+<text x="136.50" y="73.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">15 m³/h</text>
+<g transform="translate(156.00 63.25)"><svg x="0" y="0" width="10.00" height="10.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<line x1="166.00" y1="68.25" x2="169.00" y2="68.25" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="2 1"/>
+<line x1="109.00" y1="68.25" x2="119.00" y2="68.25" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="119.00,68.25 116.61,69.26 116.61,67.24" fill="#d9771f"/>
+<line x1="114.00" y1="63.25" x2="114.00" y2="66.85" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="119.00" y="78.50" width="35.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
+<text x="136.50" y="84.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">WC</text>
+<text x="136.50" y="90.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">15 m³/h</text>
+<g transform="translate(156.00 80.75)"><svg x="0" y="0" width="10.00" height="10.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<line x1="166.00" y1="85.75" x2="169.00" y2="85.75" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="2 1"/>
+<line x1="109.00" y1="68.25" x2="119.00" y2="81.50" stroke="#d9771f" stroke-width="0.7"/>
+<polygon points="119.00,81.50 116.75,80.20 118.37,78.98" fill="#d9771f"/>
+<line x1="114.00" y1="69.88" x2="114.00" y2="73.47" stroke="#1b3a63" stroke-width="0.9"/>
+</svg>

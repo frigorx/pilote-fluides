@@ -1,0 +1,38 @@
+{
+  "cle": "t6-ete-vitrages-soleil",
+  "code": "BE-T6",
+  "titre": "Été 1 : le soleil",
+  "ligne": "Thermique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 16,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 9,
+    "chapitre": 3
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP8",
+        "libelle": "Réaliser les calculs d'apports thermiques"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [],
+      "savoirs": [
+        {
+          "code": "A2-3",
+          "libelle": "Bilan thermique (déperditions, apports de chaleur et d'humidité) (à confirmer : le référentiel porte aussi le libellé « Bilan thermique en régime permanent d'une enceinte fermée ou ouverte »)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

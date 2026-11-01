@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 566,
+  "total": 575,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2592,6 +2592,63 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "a1-air-humide",
+      "titre": "BE-A1, L’air humide",
+      "ligne": "Aéraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP10",
+        "A4",
+        "A1-2"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/a1-air-humide/",
+      "chemin": "bureau-etudes/stations/a1-air-humide/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "a2-debits-projet",
+      "titre": "BE-A2, Les débits du projet",
+      "ligne": "Aéraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP4",
+        "CP7",
+        "C3-3",
+        "B2-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/a2-debits-projet/",
+      "chemin": "bureau-etudes/stations/a2-debits-projet/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "a3-reseau-gaines",
+      "titre": "BE-A3, Le réseau de gaines",
+      "ligne": "Aéraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP4",
+        "CP7",
+        "CP10",
+        "A3",
+        "B4-2"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/a3-reseau-gaines/",
+      "chemin": "bureau-etudes/stations/a3-reseau-gaines/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "d0-dossier-projet",
       "titre": "BE-D0, Le dossier projet",
       "ligne": "Lire les plans",
@@ -2656,6 +2713,66 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/e2-conditions-interieures/",
       "chemin": "bureau-etudes/stations/e2-conditions-interieures/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "h1-puissance-debit-regime",
+      "titre": "BE-H1, Puissance et débit",
+      "ligne": "Hydraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP9",
+        "C3-3",
+        "A3",
+        "B4-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/h1-puissance-debit-regime/",
+      "chemin": "bureau-etudes/stations/h1-puissance-debit-regime/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "h2-emetteurs",
+      "titre": "BE-H2, Les émetteurs",
+      "ligne": "Hydraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP9",
+        "C3-1",
+        "B1-2"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/h2-emetteurs/",
+      "chemin": "bureau-etudes/stations/h2-emetteurs/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "h3-reseau-eau",
+      "titre": "BE-H3, Le réseau d’eau",
+      "ligne": "Hydraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP9",
+        "CP10",
+        "C3-3",
+        "A3",
+        "B4-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/h3-reseau-eau/",
+      "chemin": "bureau-etudes/stations/h3-reseau-eau/"
     },
     {
       "reseau": "Bureau d'études",
@@ -2806,6 +2923,40 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/t5-bilan-hiver/",
       "chemin": "bureau-etudes/stations/t5-bilan-hiver/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t6-ete-vitrages-soleil",
+      "titre": "BE-T6, Été 1 : le soleil",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP8",
+        "A2-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t6-ete-vitrages-soleil/",
+      "chemin": "bureau-etudes/stations/t6-ete-vitrages-soleil/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t7-ete-apports-internes",
+      "titre": "BE-T7, Été 2 : apports internes",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP8",
+        "A2-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t7-ete-apports-internes/",
+      "chemin": "bureau-etudes/stations/t7-ete-apports-internes/"
     },
     {
       "reseau": "HydroMétro",
@@ -7223,7 +7374,7 @@
       "id": "index",
       "titre": "le froid et la climatisation, station par station",
       "ligne": null,
-      "resume": "Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte.",
+      "resume": "Cours, habilitations, livres, outils et logiciels du froid et de la climatisation, du CAP au BTS. Gratuit, sans compte, en français.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -7268,6 +7419,18 @@
     },
     {
       "reseau": "Pages du site",
+      "id": "reseaux",
+      "titre": "Tout inerWeb, réseau par réseau",
+      "ligne": null,
+      "resume": "Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/reseaux.html",
+      "chemin": "reseaux.html"
+    },
+    {
+      "reseau": "Pages du site",
       "id": "seances",
       "titre": "Ouvrir une séance à une classe",
       "ligne": null,
@@ -7288,7 +7451,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7300,7 +7463,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7312,7 +7475,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7324,7 +7487,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7336,7 +7499,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7348,7 +7511,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-pub-rush\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

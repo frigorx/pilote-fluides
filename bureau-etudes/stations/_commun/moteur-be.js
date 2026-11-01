@@ -190,7 +190,18 @@
   const choix = (choices, good, messages) => ({ render: () => choiceMarkup(choices), wire: () => wireChoice(good, messages) });
   const checklist = items => ({ render: () => checklistMarkup(items), wire: () => wireChecklist(items) });
   const sequence = items => ({ render: () => sequenceMarkup(items), wire: () => wireSequence(items) });
-  const quiz = q => ({ quiz: q, render: item => quizMarkup(item, q), wire: item => wireQuiz(item, q) });
+  /* Les choix d'un quiz tournent d'un cran tiré de leur texte (01/11/2026 : dans les stations écrites par script, la bonne réponse
+     était toujours la B). Même ordre à chaque visite. Un quiz dont l'explication cite une lettre seule (« la réponse C », « A donne… »)
+     garde son ordre. */
+  function tourner(q) {
+    const n = q.choices.length;
+    if (n < 2 || /(^|[\s(«’'])[A-E](?=[\s,.;:)»]|$)/.test(q.explain || "")) return q;
+    let h = 0;
+    for (const c of q.choices.join("|")) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    const k = h % n;
+    return { ...q, choices: q.choices.slice(k).concat(q.choices.slice(0, k)), good: (q.good - k + n) % n };
+  }
+  const quiz = q => { const r = tourner(q); return { quiz: r, render: item => quizMarkup(item, r), wire: item => wireQuiz(item, r) }; };
   const tri = (rows, labels, example) => ({ render: () => sortMarkup(rows, labels, example), wire: () => wireSort(rows) });
   const ordre = (items, hints, shown) => ({ render: () => orderMarkup(items, shown || melange(items.length)), wire: () => wireOrder(items, hints) });
   /* Une activité par niveau : BE.parNiveau({ 1: BE.quiz(...), 2: BE.tri(...) }). Le niveau courant, sinon le plus proche en dessous. */

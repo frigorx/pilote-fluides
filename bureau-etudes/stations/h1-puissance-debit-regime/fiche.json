@@ -1,0 +1,72 @@
+{
+  "numero": 19,
+  "titre": "Passer de la puissance de chaque pièce au débit d’eau du réseau",
+  "ligne": "Hydraulique",
+  "code": "BE-H1",
+  "quand": "Après le bilan d’hiver (station T5), avant le choix des émetteurs (station H2) et le réseau d’eau (station H3). Vous avez le Φ de chaque pièce, la relance et la puissance à installer de T5, et le régime d’eau du CCTP. Vous obtenez le débit d’eau de chaque pièce, de chaque branche, du circuit et de la pompe à chaleur.",
+  "methode": [
+    "Régime départ/retour, en °C : ΔT eau = θ départ − θ retour, en K. En eau glacée : ΔT = θ retour − θ départ.",
+    "Puissance de l’émetteur d’une pièce (W) = Φ du local (T5) + relance, relance = forfait de T5 × Φ du local.",
+    "Formule : Φ (W) = qv (L/h) × 1,16 × ΔT (K), donc qv (L/h) = Φ (W) ÷ (1,16 × ΔT).",
+    "Formule de base : Φ (W) = qm (kg/s) × Cp (J/(kg.K)) × ΔT (K), avec Cp = 4 190 J/(kg.K).",
+    "Débit d’une branche ou du circuit = somme des débits des pièces qu’il alimente. Contrôle : somme des puissances ÷ (1,16 × ΔT).",
+    "Débit de la pompe à chaleur (L/h) = puissance à installer (W) ÷ (1,16 × ΔT).",
+    "Unités : 1 m³/h = 1 000 L/h ; L/s = L/h ÷ 3 600 ; kg/s = L/h × masse volumique (kg/L) ÷ 3 600.",
+    "Le régime change le débit : à même puissance, un ΔT deux fois plus grand donne un débit deux fois plus petit, et une eau moins chaude en moyenne dans l’émetteur (station H2)."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Capacité thermique massique de l’eau",
+      "valeur": "4 190 J/(kg.K) (eau à 10, 40 et 80 °C)",
+      "source": "Th-Bât 2017, fascicule Matériaux, § 2.9.8, p. 29"
+    },
+    {
+      "grandeur": "Masse volumique de l’eau",
+      "valeur": "1 000 kg/m³ à 10 °C ; 990 à 40 °C ; 970 à 80 °C",
+      "source": "Th-Bât 2017, fascicule Matériaux, § 2.9.8, p. 29"
+    },
+    {
+      "grandeur": "Coefficient pratique",
+      "valeur": "1 kg/L × 4 190 ÷ 3 600 = 1,164, écrit 1,16 Wh/(L.K)",
+      "source": "Calcul sur la ligne précédente ; HydroMétro « Puissance »"
+    },
+    {
+      "grandeur": "Régime du bâtiment d’exemple",
+      "valeur": "50/40 °C, ΔT 10 K",
+      "source": "Valeur d’exercice"
+    },
+    {
+      "grandeur": "Régime de la maison",
+      "valeur": "45/40 °C ; variante 45/35 °C",
+      "source": "Commande du bureau d’études, données de l’exercice (CCTP p. 4 sans régime)"
+    },
+    {
+      "grandeur": "Relance",
+      "valeur": "15 % (exemple), 10 % (maison)",
+      "source": "Station T5, données de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Petit bâtiment de bureaux de la station T5 : Φ du local bureau 1179 W, salle de réunion 1585 W, sanitaires 233 W ; relance 15 % ; puissance à installer 3,5 kW ; régime 50/40 °C (valeurs d’exercice).",
+    "lignes": [
+      "ΔT = 50 − 40 = 10 K ; 1,16 × 10 = 11,6.",
+      "Bureau : 1179 + 177 = 1356 W ; 1356 ÷ 11,6 = 117 L/h.",
+      "Salle de réunion : 1585 + 238 = 1823 W ; 1823 ÷ 11,6 = 157 L/h.",
+      "Sanitaires : 233 + 35 = 268 W ; 268 ÷ 11,6 = 23 L/h.",
+      "Circuit : 117 + 157 + 23 = 297 L/h, soit 0,297 m³/h (contrôle : 3447 ÷ 11,6 = 297 L/h).",
+      "Pompe à chaleur : 3500 ÷ 11,6 = 302 L/h."
+    ],
+    "resultat": "débit du circuit 297 L/h ; pompe à chaleur 302 L/h"
+  },
+  "pieges": [
+    "ΔT de l’air (θi − θe de la station T5) pris à la place de ΔT de l’eau (départ moins retour).",
+    "La relance oubliée : la somme des émetteurs ne redonne plus la puissance à installer.",
+    "Le débit en m³/h écrit en L/h, ou l’inverse : 1 m³/h = 1 000 L/h."
+  ],
+  "sources": [
+    "Règles Th-Bât 2017, fascicule Matériaux, § 2.9.8 « Eau », p. 29 (masse volumique, capacité thermique).",
+    "Stations en correspondance : BE-T5 (bilan d’hiver), BE-H2 (émetteurs), BE-H3 (réseau d’eau), HydroMétro « Puissance », « Débit », « Écart ΔT ».",
+    "Calculette RézoTools « Débit d’eau » pour vérifier un calcul posé sur la feuille."
+  ],
+  "calculette": null
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-29.0 -25.0 58.0 48.0" width="58" height="48">
+<!-- extractor-tejado — converti de extractor-tejado.elmt par outils\elmt-vers-svg.py -->
+<rect x="-29.0" y="-25.0" width="58.0" height="48.0" fill="#ffffff"/>
+<path d="M -5.00,8.00 A 5.00,1.00 0 0 0 5.00,8.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,-1.00 A 12.50,2.00 0 0 0 12.00,-1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -13.00,1.00 A 12.50,2.00 0 0 0 12.00,1.00" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 21.00,-9.50 A 21.50,8.50 0 0 0 -22.00,-9.50" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-17" y1="-7" x2="-13" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-12" y1="-6" x2="-9" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="-6" x2="-3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="-6" x2="3" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-6" x2="7" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15" y1="-6" x2="12" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -22.00,-9.00 A 21.50,3.00 0 0 0 21.00,-9.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-13" y1="-1" x2="-13" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="12" y1="-1" x2="12" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5" y1="7" x2="-5" y2="3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5" y1="8" x2="5" y2="3" stroke="black" stroke-width="1" fill="none"/>
+</svg>
