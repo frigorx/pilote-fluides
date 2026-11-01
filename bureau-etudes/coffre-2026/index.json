@@ -100,7 +100,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-1-corrige.pdf",
-   "taille": 68746
+   "taille": 157041
   },
   {
    "id": "d012",
@@ -109,7 +109,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-2-corrige.pdf",
-   "taille": 82414
+   "taille": 181037
   },
   {
    "id": "d013",
@@ -145,7 +145,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-3-corrige.pdf",
-   "taille": 76854
+   "taille": 190086
   },
   {
    "id": "d017",
@@ -154,7 +154,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-4-corrige.pdf",
-   "taille": 72105
+   "taille": 165009
   },
   {
    "id": "d018",
@@ -163,7 +163,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-5-corrige.pdf",
-   "taille": 73465
+   "taille": 174882
   },
   {
    "id": "d019",
@@ -199,7 +199,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-6-corrige.pdf",
-   "taille": 77228
+   "taille": 182228
   },
   {
    "id": "d023",
@@ -208,7 +208,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-7-corrige.pdf",
-   "taille": 71420
+   "taille": 167210
   },
   {
    "id": "d024",
@@ -217,7 +217,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-7b-corrige.pdf",
-   "taille": 141493
+   "taille": 182853
   },
   {
    "id": "d025",
@@ -226,7 +226,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-8-corrige.pdf",
-   "taille": 78157
+   "taille": 151392
   },
   {
    "id": "d026",
@@ -235,7 +235,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-9-corrige.pdf",
-   "taille": 119761
+   "taille": 237311
   },
   {
    "id": "d027",
@@ -244,7 +244,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-10-corrige.pdf",
-   "taille": 79269
+   "taille": 175090
   },
   {
    "id": "d028",
@@ -253,7 +253,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-11-corrige.pdf",
-   "taille": 120950
+   "taille": 191332
   },
   {
    "id": "d029",
@@ -262,7 +262,7 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-12-corrige.pdf",
-   "taille": 131813
+   "taille": 185311
   },
   {
    "id": "d030",
@@ -271,16 +271,169 @@
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
    "fichier": "gare-13-corrige.pdf",
-   "taille": 185221
+   "taille": 250111
   },
   {
    "id": "d031",
-   "groupe": "tecvc1-plan-implantation-cvc",
-   "exercice": "Ligne P, gare CVC, Plan d'implantation CVC",
+   "groupe": "mpi1-plan-de-distribution",
+   "exercice": "Ligne P, Plâtrerie 1, Le plan de distribution",
    "titre": "Corrigé de l’exercice",
    "format": "pdf",
-   "fichier": "gare-CVC-corrige.pdf",
-   "taille": 167416
+   "fichier": "Platrerie-1-corrige.pdf",
+   "taille": 151983
+  },
+  {
+   "id": "d032",
+   "groupe": "mpi2-calepinage-implantation",
+   "exercice": "Ligne P, Plâtrerie 2, Calepinage et implantation",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Platrerie-2-corrige.pdf",
+   "taille": 146568
+  },
+  {
+   "id": "d033",
+   "groupe": "mpi3-details-second-oeuvre",
+   "exercice": "Ligne P, Plâtrerie 3, Les détails du second œuvre",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Platrerie-3-corrige.pdf",
+   "taille": 146164
+  },
+  {
+   "id": "d034",
+   "groupe": "mpi4-bim-du-plaquiste",
+   "exercice": "Ligne P, Plâtrerie 4, Le BIM du plaquiste",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Platrerie-4-corrige.pdf",
+   "taille": 161042
+  },
+  {
+   "id": "d035",
+   "groupe": "mpi5-du-plan-au-devis",
+   "exercice": "Ligne P, Plâtrerie 5, Du plan au devis",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Platrerie-5-corrige.pdf",
+   "taille": 158715
+  },
+  {
+   "id": "d036",
+   "groupe": "mpi6-cap-sur-ep1",
+   "exercice": "Ligne P, Plâtrerie 6, Terminus : un dossier complet, seul",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Platrerie-6-corrige.pdf",
+   "taille": 161039
+  },
+  {
+   "id": "d037",
+   "groupe": "etam1-plan-toiture-terrasse",
+   "exercice": "Ligne P, Toiture 1, Le plan de toiture-terrasse",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Toiture-1-corrige.pdf",
+   "taille": 152069
+  },
+  {
+   "id": "d038",
+   "groupe": "etam2-coupe-du-complexe",
+   "exercice": "Ligne P, Toiture 2, La coupe du complexe",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Toiture-2-corrige.pdf",
+   "taille": 147933
+  },
+  {
+   "id": "d039",
+   "groupe": "etam3-points-singuliers",
+   "exercice": "Ligne P, Toiture 3, Les points singuliers",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Toiture-3-corrige.pdf",
+   "taille": 149029
+  },
+  {
+   "id": "d040",
+   "groupe": "etam4-bim-de-l-etancheur",
+   "exercice": "Ligne P, Toiture 4, Le BIM de l'étancheur",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Toiture-4-corrige.pdf",
+   "taille": 164876
+  },
+  {
+   "id": "d041",
+   "groupe": "etam5-surfaces-et-quantites",
+   "exercice": "Ligne P, Toiture 5, Surfaces et quantités",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Toiture-5-corrige.pdf",
+   "taille": 149578
+  },
+  {
+   "id": "d042",
+   "groupe": "etam6-cap-sur-ep1",
+   "exercice": "Ligne P, Toiture 6, Terminus : un dossier complet, seul",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "Toiture-6-corrige.pdf",
+   "taille": 152859
+  },
+  {
+   "id": "d043",
+   "groupe": "tecvc1-plan-implantation-cvc",
+   "exercice": "Ligne P, CVC-R 1, Le plan d'implantation",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "CVC-R-1-corrige.pdf",
+   "taille": 219380
+  },
+  {
+   "id": "d044",
+   "groupe": "cvcr2-schema-hydraulique",
+   "exercice": "Ligne P, CVC-R 2, Le schéma hydraulique",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "CVC-R-2-corrige.pdf",
+   "taille": 199179
+  },
+  {
+   "id": "d045",
+   "groupe": "cvcr3-reseau-aeraulique",
+   "exercice": "Ligne P, CVC-R 3, Le réseau aéraulique",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "CVC-R-3-corrige.pdf",
+   "taille": 165091
+  },
+  {
+   "id": "d046",
+   "groupe": "cvcr4-schema-frigorifique",
+   "exercice": "Ligne P, CVC-R 4, Le schéma frigorifique",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "CVC-R-4-corrige.pdf",
+   "taille": 170882
+  },
+  {
+   "id": "d047",
+   "groupe": "cvcr5-synoptique-regulation",
+   "exercice": "Ligne P, CVC-R 5, Le synoptique de régulation",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "CVC-R-5-corrige.pdf",
+   "taille": 194335
+  },
+  {
+   "id": "d048",
+   "groupe": "cvcr6-terminus-dossier",
+   "exercice": "Ligne P, CVC-R 6, Terminus : un dossier complet, seul",
+   "titre": "Corrigé de l’exercice",
+   "format": "pdf",
+   "fichier": "CVC-R-6-corrige.pdf",
+   "taille": 173919
   }
  ]
 }

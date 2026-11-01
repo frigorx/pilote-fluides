@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Plâtrerie 3 — Les détails du second œuvre : jonctions et points singuliers</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.illus{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="Logo inerWeb, module Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · Plâtrerie et isolation</p>
+    <h1>Plâtrerie 3 — Les détails du second œuvre : jonctions et points singuliers</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Une cloison rate le plus souvent aux <strong>jonctions</strong>, là où votre ouvrage rencontre autre chose : le sol, le plafond, une porte. Le dossier les dessine dans les <strong>plans de détail</strong>.</p>
+  <p>Dans l'exercice, vous lirez le détail de la cloison C1 du vestiaire, dessinée à la gare Plâtrerie 1, et celui de sa porte.</p>
+  <p>Environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>lire un dessin de détail du second œuvre, au 1/10 ou au 1/5 ;</li>
+    <li>reconnaître les jonctions types : cloison-plafond, cloison-sol, huisserie, joint de dilatation ;</li>
+    <li>tirer du détail l'ordre de pose : quoi poser, et dans quel ordre.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Le détail : une coupe qui zoome</h2>
+  <img class="illus" src="illustrations/cloison-ecorchee.webp" width="1200" height="800" alt="Une cloison en cours de montage dans une pièce vide. Un rail métallique est fixé au sol, un autre au plafond. Des montants verticaux sont emboîtés dans les deux rails. L'isolant, en orange, remplit l'espace entre les montants. À droite, des plaques vissées ferment déjà une face.">
+  <p>Voici une cloison en cours de montage : les rails au sol et au plafond, les montants, l'isolant, puis les plaques. Le détail dessine ces mêmes pièces en coupe.</p>
+  <p>Un détail est presque toujours une <strong>coupe</strong> à grande échelle (gares 4 et 6). Au 1/5, une plaque de 12,5 mm se dessine 12,5 ÷ 5 = 2,5 mm. Chaque couche devient lisible.</p>
+  <p>Dans l'autre sens, on multiplie : une couche qui mesure 3 mm à la règle sur un détail au 1/5 vaut 3 × 5 = 15 mm en vrai.</p>
+  <p class="cle">Sur un détail, tout se lit avec les conventions de la gare 5 : trait fort pour ce qui est coupé, vagues pour l'isolant. La légende nomme chaque composant : rail, montant, plaque, bande.</p>
+</section>
+
+<section>
+  <h2>Jonction n° 1 : cloison-plafond et cloison-sol</h2>
+  <div class="svgbox">
+  <svg viewBox="0 0 640 300" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Détail en coupe verticale d'une cloison sur ossature : un rail fixé au plafond, un rail fixé au sol, le montant vertical entre les deux, une plaque de chaque côté et l'isolant en vagues au centre.">
+    <line x1="60" y1="40" x2="580" y2="40" stroke="#10233c" stroke-width="6"/>
+    <line x1="60" y1="270" x2="580" y2="270" stroke="#10233c" stroke-width="6"/>
+    <g stroke="#10233c" stroke-width="2.5" fill="none">
+      <path d="M 290 46 L 290 60 M 290 46 L 350 46 M 350 46 L 350 60"/>
+      <path d="M 290 264 L 290 250 M 290 264 L 350 264 M 350 264 L 350 250"/>
+    </g>
+    <rect x="304" y="46" width="32" height="218" fill="#fffdf8" stroke="#10233c" stroke-width="1.6"/>
+    <g stroke="#10233c" stroke-width="1" fill="none">
+      <path d="M 304 90 q 8 -11 16 0 q 8 11 16 0"/>
+      <path d="M 304 150 q 8 -11 16 0 q 8 11 16 0"/>
+      <path d="M 304 210 q 8 -11 16 0 q 8 11 16 0"/>
+    </g>
+    <rect x="290" y="46" width="14" height="218" fill="#fff" stroke="#10233c" stroke-width="2.5"/>
+    <rect x="336" y="46" width="14" height="218" fill="#fff" stroke="#10233c" stroke-width="2.5"/>
+    <g fill="#c9451a" font-size="15" font-family="Segoe UI, sans-serif">
+      <text x="380" y="58">rail haut, fixé au plafond</text>
+      <text x="380" y="262">rail bas, fixé au sol</text>
+      <text x="380" y="130">plaque (trait fort)</text>
+      <text x="380" y="200">isolant (vagues)</text>
+      <text x="120" y="145" text-anchor="middle">montant vertical,</text>
+      <text x="120" y="165" text-anchor="middle">vu derrière l'isolant</text>
+    </g>
+    <line x1="376" y1="54" x2="352" y2="54" stroke="#c9451a" stroke-width="1"/>
+    <line x1="376" y1="258" x2="352" y2="258" stroke="#c9451a" stroke-width="1"/>
+    <line x1="376" y1="126" x2="352" y2="126" stroke="#c9451a" stroke-width="1"/>
+    <line x1="376" y1="196" x2="330" y2="208" stroke="#c9451a" stroke-width="1"/>
+    <line x1="190" y1="150" x2="306" y2="150" stroke="#c9451a" stroke-width="1" stroke-dasharray="4 4"/>
+  </svg>
+  <figcaption>La coupe verticale type d'une cloison : rails, montant, plaques, isolant.</figcaption>
+  </div>
+  <p class="cle">L'ordre de lecture donne l'ordre de pose : les rails, les montants, une première face de plaques, l'isolant, puis l'autre face. Le détail vous donne le mode opératoire.</p>
+</section>
+
+<section>
+  <h2>Jonction n° 2 : l'huisserie</h2>
+  <p>L'huisserie est le cadre de la porte. C'est le point de rencontre entre votre ouvrage et celui du menuisier. Le détail précise :</p>
+  <ul>
+    <li>le <strong>renfort</strong> de l'ossature autour de la baie : montants renforcés ou doublés ;</li>
+    <li>la <strong>cote de réservation</strong> : l'ouverture à laisser, plus grande que la porte pour la poser et la régler ;</li>
+    <li>qui pose quoi, et quand : l'huisserie se pose souvent avant les plaques.</li>
+  </ul>
+  <p>Le <strong>jeu</strong> est la différence entre la réservation et la porte. Exemple résolu : pour une porte de 930 mm et une réservation de 1000 mm, le jeu total en largeur vaut 1000 − 930 = 70 mm, partagé entre les deux côtés de l'huisserie.</p>
+  <p class="cle">La cote de réservation se lit sur le détail ou sur la fiche du fabricant de la porte. Comme à la gare 7, un écart entre la cote et le matériel livré se signale avant de poser.</p>
+</section>
+
+<section>
+  <h2>Jonction n° 3 : le joint de dilatation</h2>
+  <p>Un grand bâtiment bouge : il se dilate, il travaille. Sur une grande longueur, un <strong>joint de dilatation</strong> coupe exprès la cloison ou le plafond : deux ossatures indépendantes, et un profil souple entre les deux.</p>
+  <p class="cle">Sur le plan, le joint est marqué, souvent « JD ». Si un JD traverse le bâtiment sur le plan de niveau, il traverse aussi vos cloisons et vos plafonds. Un JD oublié à la lecture donne un ouvrage qui fissure.</p>
+</section>
+
+<section>
+  <h2>Du détail au mode opératoire</h2>
+  <p>Devant un détail, posez-vous quatre questions, dans cet ordre :</p>
+  <ol>
+    <li><strong>Où est-ce ?</strong> Retrouvez le renvoi sur le plan de niveau : le cercle repère de la gare 4.</li>
+    <li><strong>Quelles couches ?</strong> Nommez chaque composant, de la structure vers la finition.</li>
+    <li><strong>Quel ordre ?</strong> Déduisez l'ordre de pose.</li>
+    <li><strong>Quelles cotes ?</strong> Relevez les dimensions imposées : réservations, jeux, recouvrements.</li>
+  </ol>
+  <p class="cle">Avec ces quatre réponses, vous préparez l'intervention à partir du dessin d'exécution.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus Plâtrerie 3</h2>
+  <p>Rails, huisseries, joints de dilatation : les points singuliers du plaquiste se lisent dans les détails, et le détail donne l'ordre de pose.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait légender et mesurer le détail de la cloison C1 au 1/5, déduire l'ordre de pose, lire la réservation de sa porte et répondre sur un joint de dilatation.</p>
+  <p>Gare suivante : <strong>Plâtrerie 4, le BIM du plaquiste</strong>.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Un plan de détail du second œuvre est le plus souvent :",
+  "r": [
+   "une coupe à grande échelle (1/10, 1/5)",
+   "une vue de dessus à l'échelle 1/100",
+   "une photo",
+   "un texte sans dessin"
+  ],
+  "bon": 0,
+  "x": "On zoome en coupe : chaque couche et chaque fixation deviennent lisibles."
+ },
+ {
+  "e": "Dans une cloison sur ossature, l'élément fixé au sol et au plafond est :",
+  "r": [
+   "le montant",
+   "la plaque",
+   "le rail",
+   "la bande à joint"
+  ],
+  "bon": 2,
+  "x": "Les rails guident tout ; les montants verticaux s'y emboîtent."
+ },
+ {
+  "e": "L'ordre de pose déduit du détail d'une cloison :",
+  "r": [
+   "les plaques d'abord",
+   "rails, montants, une face de plaques, isolant, l'autre face",
+   "l'isolant d'abord, l'ossature ensuite",
+   "dans n'importe quel ordre"
+  ],
+  "bon": 1,
+  "x": "La structure d'abord, puis on ferme une face, on loge l'isolant, on ferme l'autre face."
+ },
+ {
+  "e": "La cote de réservation d'une huisserie est :",
+  "r": [
+   "la largeur de la porte, au millimètre",
+   "plus grande que la porte",
+   "plus petite que la porte, pour bien serrer",
+   "une cote décorative"
+  ],
+  "bon": 1,
+  "x": "Le jeu permet la pose et le réglage : la valeur vient du détail ou du fabricant."
+ },
+ {
+  "e": "Autour d'une baie de porte, l'ossature est :",
+  "r": [
+   "supprimée",
+   "identique au reste",
+   "renforcée",
+   "remplacée par une ossature en bois massif"
+  ],
+  "bon": 2,
+  "x": "La porte pèse et claque : la baie se renforce, le détail le montre."
+ },
+ {
+  "e": "Un joint de dilatation (JD) sert à :",
+  "r": [
+   "décorer les grands plafonds",
+   "absorber les mouvements du bâtiment",
+   "économiser des plaques",
+   "évacuer l'eau"
+  ],
+  "bon": 1,
+  "x": "Deux ossatures indépendantes et un profil souple : l'ouvrage bouge sans fissurer."
+ },
+ {
+  "e": "Un JD traverse le bâtiment sur le plan de niveau. Vos plafonds :",
+  "r": [
+   "l'ignorent, c'est l'affaire du maçon",
+   "sont coupés au droit du JD",
+   "le recouvrent pour le cacher",
+   "sont supprimés"
+  ],
+  "bon": 1,
+  "x": "Le joint traverse tout : structure, cloisons, plafonds. Oublié, il donne des fissures."
+ },
+ {
+  "e": "Le cercle avec un repère sur le plan de niveau indique :",
+  "r": [
+   "une erreur",
+   "un luminaire encastré",
+   "le renvoi vers un plan de détail",
+   "le nord"
+  ],
+  "bon": 2,
+  "x": "C'est l'adresse du détail : ce point est dessiné en grand ailleurs."
+ },
+ {
+  "e": "Sur un détail au 1/5, une plaque de 12,5 mm mesure sur le papier :",
+  "r": [
+   "12,5 mm",
+   "2,5 mm",
+   "62,5 mm",
+   "0,5 mm"
+  ],
+  "bon": 1,
+  "x": "Sur le plan, on divise par 5 : 12,5 ÷ 5 = 2,5 mm (gare 6)."
+ },
+ {
+  "e": "Les quatre questions devant un détail, dans l'ordre :",
+  "r": [
+   "où ? quelles couches ? quel ordre ? quelles cotes ?",
+   "combien ça coûte ? qui ? quand ? pourquoi ?",
+   "quelle couleur ? quelle marque ? quel poids ? quelle date ?",
+   "aucune : on pose tout de suite"
+  ],
+  "bon": 0,
+  "x": "Localiser, nommer, ordonner, coter : le détail devient un mode opératoire."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

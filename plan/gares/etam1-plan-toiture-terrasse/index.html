@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Toiture 1 — Le plan de toiture-terrasse : pentes et altimétries</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.seul{display:inline-block;background:#fff4e0;color:#8a5200;border:1px solid #e0b36a;border-radius:6px;padding:0 8px;font-size:.7em;vertical-align:middle}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0}
+figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="Logo inerWeb, module Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg>
+<div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · Étanchéité des toitures</p>
+    <h1>Toiture 1 — Le plan de toiture-terrasse : pentes et altimétries</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <img class="illus" src="illustrations/1-terrasse-du-vestiaire.webp" width="1200" height="800" alt="Le vestiaire vu d'en haut. Son toit plat est couvert de gravillon et bordé d'un muret. Dans l'angle avant droit, une entrée d'eaux pluviales. Un peu à gauche du centre, une petite costière porte une sortie de ventilation. De fines traces bleues montrent l'eau qui coule vers l'angle.">
+  <p>Le vestiaire de la gare 10 a un toit plat : une <strong>toiture-terrasse</strong>.
+  Son plan de toiture est la vue de dessus du toit, comme la vue de dessus du dé en gare 2.
+  C'est le document principal de l'étancheur.</p>
+  <p>Environ 2 heures, test compris. À la fin, vous saurez :</p>
+  <ul>
+    <li>dérouler la liste de contrôle d'un plan de toiture ;</li>
+    <li>lire le plan de pentes : la pente en %, le point haut, le point bas ;</li>
+    <li>lire les altimétries, c'est-à-dire les niveaux du toit ;</li>
+    <li>reconnaître les zones de la toiture.</li>
+  </ul>
+  <p class="cle">L'exercice papier se fait sur le plan de toiture du vestiaire, au 1/50.
+  Gardez une règle graduée : vous y mesurerez comme en gare 6.</p>
+</section>
+
+<section>
+  <h2>La liste de contrôle du plan de toiture</h2>
+  <p>Lisez d'abord la légende du plan, comme en gare 5 : elle donne le dessin de chaque élément.
+  Puis cherchez dans cet ordre :</p>
+  <ul>
+    <li>☐ les <strong>acrotères</strong>. Un acrotère est le muret qui borde la toiture ;</li>
+    <li>☐ les entrées d'eaux pluviales (EP), aussi appelées naissances : combien, et où ;</li>
+    <li>☐ les trop-pleins. Un trop-plein est une évacuation de secours qui traverse l'acrotère ;</li>
+    <li>☐ les émergences, tout ce qui traverse la toiture. Une costière est la rehausse qui porte
+    un lanterneau ou une sortie de ventilation ;</li>
+    <li>☐ les joints de dilatation (JD). Leur trait mixte traverse toute la toiture ;</li>
+    <li>☐ les zones : courante, technique, accessible.</li>
+  </ul>
+  <p class="cle">Chacun de ces éléments est un endroit où l'eau peut entrer. Vous y travaillerez
+  en Toiture 3.</p>
+</section>
+
+<section>
+  <h2>Lisez un plan de toiture</h2>
+  <figure class="svgbox">
+    <svg viewBox="-40 0 700 380" width="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan d'une toiture-terrasse : acrotères au pourtour, deux entrées d'eaux pluviales dans les angles du bas, un trop-plein dans l'acrotère gauche, un lanterneau sur costière en haut à droite, un joint de dilatation vertical au milieu, deux flèches de pente à 2 pour cent, le point haut à plus 6,45 et l'entrée de gauche à plus 6,32.">
+      <defs><g id="ep-t1" fill="none" stroke="#10233c" stroke-width="1"><circle cx="5.5" cy="6.5" r="8.5"/><circle cx="5.5" cy="6.5" r="1.5"/><line x1="6" y1="9.84" x2="6" y2="13.08"/><line x1="-1" y1="7" x2="2" y2="7"/><line x1="1" y1="12" x2="4" y2="9"/><line x1="8" y1="9" x2="11" y2="11"/><line x1="6" y1="-0.16" x2="6" y2="3.08"/><line x1="9" y1="7" x2="12" y2="7"/><line x1="8" y1="5" x2="11" y2="3"/><line x1="0" y1="2" x2="3" y2="4"/><rect x="14" y="5" width="2" height="4"/></g></defs>
+      <rect x="60" y="40" width="540" height="280" fill="#fffdf8" stroke="#10233c" stroke-width="7"/>
+      <rect x="76" y="56" width="508" height="248" fill="none" stroke="#10233c" stroke-width="1.5"/>
+      <line x1="330" y1="40" x2="330" y2="320" stroke="#10233c" stroke-width="2" stroke-dasharray="14 4 3 4"/>
+      <text x="330" y="32" text-anchor="middle" fill="#c9451a" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">JD</text>
+      <use href="#ep-t1" transform="translate(110 280) scale(1.3) translate(-5.5 -6.5)"/>
+      <use href="#ep-t1" transform="translate(550 280) scale(1.3) translate(-5.5 -6.5)"/>
+      <rect x="60" y="240" width="14" height="22" fill="#fffdf8" stroke="#10233c" stroke-width="2"/>
+      <text x="50" y="256" text-anchor="end" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">trop-plein</text>
+      <rect x="420" y="90" width="90" height="60" fill="none" stroke="#10233c" stroke-width="2.5"/>
+      <rect x="428" y="98" width="74" height="44" fill="none" stroke="#10233c" stroke-width="1.3"/>
+      <text x="465" y="175" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">lanterneau sur costière</text>
+      <g stroke="#3d7fca" stroke-width="2" fill="#3d7fca">
+        <line x1="160" y1="120" x2="125" y2="240"/><polygon points="121,232 122,252 133,240"/>
+        <line x1="480" y1="220" x2="530" y2="262"/><polygon points="524,264 542,272 532,252"/>
+      </g>
+      <text x="178" y="120" fill="#3d7fca" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">pente 2 %</text>
+      <text x="400" y="215" fill="#3d7fca" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">pente 2 %</text>
+      <g fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">
+        <text x="92" y="82">+ 6,45</text>
+        <text x="132" y="298">+ 6,32</text>
+      </g>
+      <text x="330" y="356" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">acrotères au pourtour (double trait) ; l'eau descend vers les entrées EP</text>
+    </svg>
+    <figcaption>Plan de toiture d'un autre bâtiment. Les entrées d'eaux pluviales sont dessinées avec le symbole d'avaloir de la bibliothèque inerWeb.</figcaption>
+  </figure>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je déroule la liste de contrôle sur ce plan.</p>
+    <p>Acrotères : au pourtour, le double trait. EP : 2, dans les angles bas gauche et bas droit.
+    Trop-plein : 1, dans l'acrotère gauche. Émergence : 1 lanterneau sur costière, en haut à droite.
+    JD : 1, le trait mixte vertical au milieu. Zones : aucune zone accessible n'est dessinée,
+    toute la toiture est en zone courante.</p>
+  </div>
+  <p class="cle">L'eau ne remonte jamais. Suivez les flèches de pente : elles mènent toutes à une EP.
+  Une zone sans chemin vers une EP est une erreur du plan, à signaler.</p>
+</section>
+
+<section>
+  <h2>Le plan de pentes</h2>
+  <ul>
+    <li>la flèche donne le sens de l'écoulement, le % donne la valeur : 2 % veut dire que l'eau
+    descend de 2 cm par mètre ;</li>
+    <li>le <strong>point haut</strong> est l'endroit d'où l'eau part ;</li>
+    <li>le point bas est l'endroit où l'eau arrive : une EP ;</li>
+    <li>la course est la longueur parcourue par l'eau, mesurée à plat sur le plan.</li>
+  </ul>
+  <p>La pente vient du descriptif du dossier. Sa valeur minimale est fixée par le DTU de la série 43
+  qui s'applique, le NF DTU 43.1 pour un toit en béton. Dans les exercices de cette ligne, la pente
+  est une donnée de l'exercice.</p>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Course de 8,00 m à 2 % : l'eau descend de 8 × 2 = 16 cm.</p>
+  </div>
+  <p class="cle">Descente en cm = course en m × pente en %.</p>
+</section>
+
+<section>
+  <h2>Les altimétries : les niveaux de la toiture</h2>
+  <p>Une altimétrie est un niveau. Elle s'écrit en mètres, avec son signe :
+  <strong>+ 6,45</strong> veut dire 6,45 m au-dessus du niveau de référence du projet, le ± 0,00.
+  Le ± 0,00 est en général le sol fini du rez-de-chaussée.</p>
+  <ul>
+    <li>le plan de toiture donne les niveaux des points hauts et des points bas ;</li>
+    <li>la légende dit quel niveau est coté : dessus de la dalle, de la forme de pente ou de la protection ;</li>
+    <li>les altitudes du terrain se rapportent au NGF, le nivellement général de la France.
+    Sur le chantier, on travaille depuis le ± 0,00 du projet.</li>
+  </ul>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Sur le plan de l'écran 3, le point haut est à + 6,45 et l'EP de gauche à + 6,32.
+    La course entre les deux mesure 6,50 m, à 2 %.</p>
+    <p>Différence des niveaux : 6,45 − 6,32 = 0,13 m, soit 13 cm.</p>
+    <p>Pente × course : 6,50 × 2 = 13 cm. Les deux valeurs s'accordent.</p>
+  </div>
+  <p class="cle">Point haut − point bas, passé en cm = course en m × pente en %. Si les valeurs du plan ne s'accordent pas,
+  vous le signalez : on signale, on ne devine pas (gare 7).</p>
+</section>
+
+<section>
+  <h2>Les zones de la toiture</h2>
+  <table class="doc">
+    <tr><th>Zone</th><th>Ce que montre le plan</th><th>Ce que cela change pour vous</th></tr>
+    <tr><td><strong>courante</strong> (inaccessible)</td><td>membrane autoprotégée ou gravillon</td><td>le complexe courant</td></tr>
+    <tr><td>technique</td><td>autour des équipements (climatisation…)</td><td>protection renforcée, chemin d'accès</td></tr>
+    <tr><td>accessible</td><td>dalles sur plots, terrasse</td><td>protection lourde, d'autres exigences</td></tr>
+  </table>
+  <p class="cle">La zone décide de la protection, donc d'une partie du complexe (Toiture 2) et des
+  quantités (Toiture 5). Elle se lit sur le plan de toiture.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à toutes les questions, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus Toiture 1</h2>
+  <p>Vous savez dérouler la liste de contrôle, lire les pentes, les altimétries et les zones d'un
+  plan de toiture.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
+  L'exercice fait dérouler la liste de contrôle sur le plan de toiture du vestiaire, mesurer au 1/50
+  et contrôler les altimétries.</p>
+  <p>Gare suivante : <strong>la coupe du complexe</strong>, Toiture 2.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "L'acrotère, c'est :",
+  "r": [
+   "l'évacuation des eaux pluviales de la terrasse",
+   "la rehausse périphérique de la toiture",
+   "le lanterneau",
+   "la couche d'isolant posée sous la membrane"
+  ],
+  "bon": 1,
+  "x": "Le petit muret qui borde la terrasse, futur support de vos relevés (Toiture 3)."
+ },
+ {
+  "e": "La naissance EP est :",
+  "r": [
+   "l'entrée de l'évacuation des eaux pluviales",
+   "une plante en terrasse",
+   "le point le plus haut de la forme de pente de la toiture",
+   "une fissure"
+  ],
+  "bon": 0,
+  "x": "Le point bas où l'eau doit arriver : on les compte et on les situe en premier."
+ },
+ {
+  "e": "Le trop-plein sert :",
+  "r": [
+   "à décorer l'acrotère",
+   "d'évacuation de secours si l'EP se bouche",
+   "à ventiler l'isolant sous la membrane pendant l'été",
+   "de repère d'altimétrie"
+  ],
+  "bon": 1,
+  "x": "Si l'EP se bouche, l'eau sort par le trop-plein avant de monter trop haut."
+ },
+ {
+  "e": "Une pente de 2 % veut dire :",
+  "r": [
+   "2 cm de descente par mètre",
+   "2 m de descente par mètre",
+   "2 % de la surface en pente",
+   "2° d'inclinaison"
+  ],
+  "bon": 0,
+  "x": "% = cm par mètre : sur 5 m, l'eau descend de 10 cm."
+ },
+ {
+  "e": "Sur 6 m de course à 1,5 %, l'eau descend de :",
+  "r": [
+   "6 cm",
+   "9 cm",
+   "15 cm",
+   "1,5 cm"
+  ],
+  "bon": 1,
+  "x": "6 × 1,5 = 9 cm."
+ },
+ {
+  "e": "Les flèches de pente mènent toutes :",
+  "r": [
+   "au point le plus haut de la toiture",
+   "vers une naissance EP",
+   "vers l'acrotère nord",
+   "au lanterneau"
+  ],
+  "bon": 1,
+  "x": "L'eau ne remonte jamais : chaque zone doit avoir son chemin vers une EP."
+ },
+ {
+  "e": "« + 6,45 » sur le plan de toiture est :",
+  "r": [
+   "une altimétrie en mètres depuis le ± 0,00 du projet",
+   "une pente exprimée en centimètres par mètre de course",
+   "un prix",
+   "une température"
+  ],
+  "bon": 0,
+  "x": "Les niveaux se lisent en mètres depuis la référence du projet."
+ },
+ {
+  "e": "Point haut + 6,45, naissance + 6,32 : la descente est de :",
+  "r": [
+   "6,45 m",
+   "13 mm",
+   "13 cm",
+   "1,3 m"
+  ],
+  "bon": 2,
+  "x": "6,45 − 6,32 = 0,13 m = 13 cm, à confronter à pente × course."
+ },
+ {
+  "e": "Le trait mixte marqué « JD » qui traverse la toiture est :",
+  "r": [
+   "un joint de dilatation, qui coupe toute la toiture",
+   "un chemin de circulation",
+   "une gouttière",
+   "un trait de cotation"
+  ],
+  "bon": 0,
+  "x": "Le JD est un point singulier : son traitement est vu en Toiture 3."
+ },
+ {
+  "e": "Une zone « dalles sur plots » sur le plan vous annonce :",
+  "r": [
+   "une zone accessible, à protection lourde",
+   "une zone interdite",
+   "une zone qui ne reçoit aucune étanchéité",
+   "un parking"
+  ],
+  "bon": 0,
+  "x": "La zone détermine protection et complexe : elle se lit sur le plan de toiture."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

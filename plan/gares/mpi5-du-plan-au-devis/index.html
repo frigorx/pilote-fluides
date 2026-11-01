@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Plâtrerie 5 — Du plan au devis : surfaces et quantités</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.illus{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="Logo inerWeb, module Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · Plâtrerie et isolation</p>
+    <h1>Plâtrerie 5 — Du plan au devis : surfaces et quantités</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <img class="illus" src="illustrations/livraison-cloison.webp" width="1200" height="800" alt="Sur un chantier, un plaquiste en tenue de travail et chaussures de sécurité tient une planchette avec un plan, en orange, et compte une livraison : une pile de plaques sur une palette, des bottes de rails et de montants, deux rouleaux d'isolant et un carton de vis.">
+  <p>Le plaquiste tire sa commande du plan : des plaques, des rails, des montants, de l'isolant. Dans l'exercice, vous chiffrez la cloison C1 du vestiaire, dessinée à la gare Plâtrerie 1.</p>
+  <p>Environ <strong>2 heures</strong>, calculatrice en main. À la fin, vous saurez :</p>
+  <ul>
+    <li>calculer les surfaces de cloisons, doublages et plafonds depuis le plan ;</li>
+    <li>passer de la surface au nombre de plaques, rails et montants ;</li>
+    <li>lire les éléments d'un devis et vérifier des quantités.</li>
+  </ul>
+  <p class="cle">Cette gare reprend les gestes de la gare 7 bis,
+  <a href="../g07b-le-metre-sur-plan/index.html">« Le métré sur plan »</a> :
+  passer une cote en mètres, additionner une chaîne de cotes, choisir la hauteur,
+  passer de la surface brute à la surface nette. Chaque geste y a son exemple résolu,
+  aux écrans 3 à 7 de la gare 7 bis.</p>
+</section>
+
+<section>
+  <h2>Les surfaces du plaquiste</h2>
+  <ul>
+    <li><strong>Cloison</strong> : longueur (lue au plan de niveau) × hauteur
+    sous plafond (lue à la coupe) ;</li>
+    <li><strong>Doublage</strong> : longueur de mur doublé × hauteur sous plafond ;</li>
+    <li><strong>Plafond</strong> : surface de la pièce (longueur × largeur),
+    que le calepin de Plâtrerie 2 donne déjà.</li>
+  </ul>
+  <p>La longueur, la hauteur et la surface brute d'un mur se calculent comme à la
+  gare 7 bis, écrans 4 à 6. L'écran 6 montre aussi qu'une cloison a deux faces.</p>
+  <p class="cle">Les ouvertures (portes, fenêtres, portes-fenêtres) se déduisent
+  toutes, <strong>sauf consigne contraire du descriptif</strong>. La méthode et son
+  exemple résolu sont à la gare 7 bis, écran 7 « Déduire les ouvertures ». Si le
+  descriptif dit « ne pas déduire la porte », la surface de la cloison reste sa
+  surface brute.</p>
+</section>
+
+<section>
+  <h2>De la surface aux plaques</h2>
+  <p>La plaque prise dans cette gare mesure <strong>2,50 m × 1,20 m = 3 m²</strong>. Sur un vrai chantier, le format se lit dans le descriptif.</p>
+  <p>Exemple résolu : une cloison de 21 m², une plaque par face.</p>
+  <ul>
+    <li>Deux faces : 2 × 21 = 42 m² de plaques ;</li>
+    <li>la pose fait des chutes : on ajoute une marge, souvent de 5 à 10 %, fixée
+    par le descriptif ou l'enseignant. Avec 10 % : 42 × 1,10 = 46,2 m² ;</li>
+    <li>46,2 ÷ 3 = 15,4, soit 16 plaques.</li>
+  </ul>
+  <p class="cle">Une surface s'arrondit au centième. Un nombre de plaques
+  s'arrondit toujours à l'<strong>entier supérieur</strong> : on commande des plaques
+  entières. Une plaque de trop se stocke, une plaque manquante arrête le chantier.</p>
+</section>
+
+<section>
+  <h2>L'ossature se compte aussi</h2>
+  <ul>
+    <li><strong>Rails</strong> : deux fois la longueur de la cloison, un rail au sol
+    et un au plafond ;</li>
+    <li><strong>Montants courants</strong> : longueur de la cloison ÷ entraxe, plus 1
+    pour fermer. L'entraxe est la distance d'axe en axe entre deux montants, 0,60 m dans cette gare. Sur un vrai chantier, il se lit dans le descriptif ;</li>
+    <li><strong>Renforts de baie</strong> : une porte demande un montant de renfort de
+    chaque côté, soit 2 montants en plus (le détail est à la gare Plâtrerie 3) ;</li>
+    <li><strong>Isolant</strong> : la surface de la cloison en m², comptée une seule
+    fois, puis convertie en rouleaux ou panneaux selon la fiche produit ;</li>
+    <li><strong>Visserie, bandes, enduit</strong> : au ratio de la fiche fabricant.</li>
+  </ul>
+  <p class="cle">Exemple résolu : cloison de 6,00 m sur 2,50 m avec une porte que le
+  descriptif dit de ne pas déduire, entraxe 0,60 m. Rails : 2 × 6,00 = 12,00 m. Montants courants : 6,00 ÷ 0,60 + 1 = 11.
+  Renforts de baie : 2. Isolant : 6,00 × 2,50 = 15,00 m², compté une seule fois.</p>
+</section>
+
+<section>
+  <h2>Lire un devis</h2>
+  <p>Chaque ligne d'un devis donne la désignation, l'unité, la quantité, le prix
+  unitaire et le total. Le lecteur de plans <strong>vérifie la colonne quantité</strong> :</p>
+  <ul>
+    <li>la surface de cloisons du devis correspond-elle au plan ?</li>
+    <li>les plaques sont-elles comptées sur les deux faces ? Avec une plaque par face, un m² de cloison demande 2 m² de plaques, avant la marge de chutes ;</li>
+    <li>l'isolant est-il compté une seule fois ?</li>
+    <li>les zones hydro sont-elles comptées à part (Plâtrerie 1) ?</li>
+  </ul>
+  <p>Exemple résolu : pour la cloison de 6,00 m de l'écran 4, le devis porte
+  « Rails, m, 12 ». Le calcul donne 2 × 6,00 = 12,00 m : la ligne est juste. S'il
+  portait « Isolant, m², 30 », la ligne serait fausse : l'isolant compte 15,00 m²,
+  une seule fois.</p>
+  <p class="cle">Ce calcul sert à établir un inventaire des matériaux et un bon de commande.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas. Calculatrice autorisée.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus Plâtrerie 5</h2>
+  <p>Vous savez passer du plan à la commande : surfaces, plaques, ossature, et
+  contrôle de la colonne quantité d'un devis.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait chiffrer la cloison C1 du vestiaire (plaques standard et hydrofuges, ossature, isolant), puis vérifier un petit devis qui contient deux erreurs.</p>
+  <p>Gare suivante : <strong>Plâtrerie 6, un dossier complet, seul et en temps limité</strong>.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "La surface d'une cloison se calcule :",
+  "r": [
+   "longueur de la pièce × largeur de la pièce au sol",
+   "longueur × hauteur",
+   "périmètre × 2",
+   "au jugé"
+  ],
+  "bon": 1,
+  "x": "La longueur se lit sur le plan, la hauteur sous plafond sur la coupe (gare 7 bis, écrans 4 à 6)."
+ },
+ {
+  "e": "Une plaque de 2,50 × 1,20 fait :",
+  "r": [
+   "3 m²",
+   "2,5 m²",
+   "3,7 m²",
+   "1,2 m²"
+  ],
+  "bon": 0,
+  "x": "2,50 × 1,20 = 3 m². Retenez cette valeur."
+ },
+ {
+  "e": "Une cloison a deux faces. Pour 20 m² de cloison, avec une plaque par face, il faut :",
+  "r": [
+   "20 m² de plaques",
+   "40 m² de plaques",
+   "10 m² de plaques",
+   "60 m² de plaques"
+  ],
+  "bon": 1,
+  "x": "Chaque face reçoit ses plaques : 2 × 20 = 40 m². Oublier une face fait commander la moitié des plaques."
+ },
+ {
+  "e": "40 m² de plaques + 10 % de marge, en plaques de 3 m² :",
+  "r": [
+   "13 plaques",
+   "14 plaques",
+   "15 plaques",
+   "44 plaques"
+  ],
+  "bon": 2,
+  "x": "40 × 1,10 = 44 m², puis 44 ÷ 3 = 14,67. Le nombre de plaques s'arrondit à l'entier supérieur : 15 plaques."
+ },
+ {
+  "e": "On arrondit toujours au-dessus parce que :",
+  "r": [
+   "c'est plus joli",
+   "une plaque manquante arrête le chantier",
+   "le fournisseur l'exige",
+   "les plaques rétrécissent en séchant sur le chantier"
+  ],
+  "bon": 1,
+  "x": "Le coût d'un arrêt de chantier dépasse largement celui d'une plaque."
+ },
+ {
+  "e": "Les rails d'une cloison de 8 m :",
+  "r": [
+   "8 m : un seul rail suffit",
+   "16 m (sol + plafond)",
+   "24 m",
+   "4 m"
+  ],
+  "bon": 1,
+  "x": "Un rail en bas, un rail en haut : 2 × la longueur."
+ },
+ {
+  "e": "Montants pour 6 m de cloison à entraxe 0,60 :",
+  "r": [
+   "10 montants tout juste",
+   "11 (6 ÷ 0,6 + 1 pour fermer)",
+   "12",
+   "6"
+  ],
+  "bon": 1,
+  "x": "6 ÷ 0,60 = 10 intervalles, plus 1 montant pour fermer : 11 montants."
+ },
+ {
+  "e": "Le devis porte « cloison 72/48, unité m², quantité 35 ». Vous vérifiez cette quantité sur :",
+  "r": [
+   "la météo",
+   "le plan",
+   "le prix du concurrent sur le même chantier",
+   "l'année du devis"
+  ],
+  "bon": 1,
+  "x": "La colonne quantité se contrôle sur le plan, ou sur la maquette (gare Plâtrerie 4)."
+ },
+ {
+  "e": "m² de cloison et m² de plaques :",
+  "r": [
+   "c'est pareil",
+   "les plaques font le double : deux faces",
+   "les plaques ne font que la moitié de la cloison",
+   "aucun rapport"
+  ],
+  "bon": 1,
+  "x": "Un m² de cloison consomme 2 m² de plaques en parement simple, une plaque par face. L'erreur revient souvent sur les devis."
+ },
+ {
+  "e": "Pour les ouvertures (portes, fenêtres) dans le calcul des surfaces :",
+  "r": [
+   "on ne déduit rien : l'excédent de plaques couvre les chutes et la casse",
+   "on déduit seulement les fenêtres, jamais les portes",
+   "on déduit toutes les ouvertures, sauf si le descriptif dit autre chose",
+   "on déduit la moitié de chaque ouverture"
+  ],
+  "bon": 2,
+  "x": "Toutes les ouvertures se déduisent. Si le descriptif donne une autre consigne, on la suit (gare 7 bis, écran 7)."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

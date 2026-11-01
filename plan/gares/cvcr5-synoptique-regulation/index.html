@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>CVC-R 5 — Le synoptique de régulation</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.kicker{color:#c9451a;font-weight:bold;font-size:.9em;margin:0 0 4px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.q p.consigne{margin:0 0 10px}
+.aides{margin:12px 0}
+.aides button,button.revoir{font:inherit;padding:8px 16px;border-radius:9px;border:2px solid var(--blue);background:var(--paper);color:var(--navy);cursor:pointer;min-height:44px}
+.aides button[disabled]{opacity:.6;cursor:default}
+.aides ol{margin:8px 0 0;padding-left:22px}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0;text-align:center}
+figure.svgbox svg{background:#fff;border-radius:8px}
+table.legende{border-collapse:collapse;margin:8px 0}
+table.legende td{padding:2px 10px 2px 0;vertical-align:middle;text-align:left}
+.descriptif{background:#fffdf8;border:1px solid rgba(27,58,99,.25);border-radius:10px;padding:8px 14px;margin:12px 0}
+.descriptif p{margin:6px 0}
+.credit{font-size:.8em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb BE, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · ligne CVC-R <span class="statut">en cours de relecture</span></p>
+    <h1>CVC-R 5 — Le synoptique de régulation</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>Le chauffage de la maison ne tourne pas à plein tout le temps. Un régulateur mesure des températures et commande la pompe à chaleur et le circulateur. Le <strong>synoptique de régulation</strong> montre ces mesures et ces commandes sur un seul dessin.</p>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="640" height="369.8" style="max-width:100%;height:auto" viewBox="0 0 180 104" role="img" aria-label="Synoptique de régulation du chauffage : le régulateur RG1 reçoit les mesures des sondes SE1, SD1 et SA1 et commande la pompe à chaleur PAC1 et le circulateur C1."><text x="3" y="6" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285">extérieur</text>
+<text x="178" y="6" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="end">séjour</text>
+<g transform="translate(24 79) rotate(0) scale(0.3714) translate(0 -6)"><rect x="-35" y="-20" width="70" height="52" fill="#fff"/><rect x="-35" y="-20" width="70" height="50" rx="0" ry="0" stroke="black" stroke-width="1.08" fill="#e6edf5"/>
+<ellipse cx="-12.00" cy="5.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1.08" fill="white"/>
+<line x1="-19" y1="-8" x2="-5" y2="-8" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-22" y1="-6" x2="-2" y2="-6" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-24" y1="-4" x2="-1" y2="-4" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-25" y1="-2" x2="1" y2="-2" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-26" y1="0" x2="2" y2="0" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-27" y1="2" x2="2" y2="2" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-27" y1="4" x2="2" y2="4" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-27" y1="6" x2="3" y2="6" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-27" y1="8" x2="2" y2="8" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-26" y1="10" x2="2" y2="10" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-25" y1="12" x2="1" y2="12" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-24" y1="14" x2="0" y2="14" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-22" y1="16" x2="-2" y2="16" stroke="black" stroke-width="0.54" fill="none"/>
+<line x1="-19" y1="18" x2="-5" y2="18" stroke="black" stroke-width="0.54" fill="none"/>
+<rect x="-26" y="31" width="2" height="1" rx="0" ry="0" stroke="black" stroke-width="1.08" fill="none"/>
+<rect x="24" y="31" width="2" height="1" rx="0" ry="0" stroke="black" stroke-width="1.08" fill="none"/>
+<path d="M -12.00,-10.00 A 15.00,15.00 0 0 1 -12.00,-10.00" stroke="black" stroke-width="1.08" fill="white"/></g>
+<text x="24" y="99" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">PAC1</text>
+<polyline points="37,72 147.5,72 147.5,79" stroke="#c9451a" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#c9451a" transform="translate(118 72) rotate(0)"/>
+<polyline points="168.5,81 168.5,87 37,87" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(118 87) rotate(180)"/>
+<g transform="translate(60 72) rotate(0) scale(0.4130) translate(0.009999999999999787 0.009999999999999787)"><rect x="-10.299999999999999" y="-10.299999999999999" width="20.58" height="20.58" fill="#fff"/><polygon points="8,0 -4,-7 -4,7" stroke="black" stroke-width="0.85" fill="none"/>
+<ellipse cx="-0.01" cy="-0.01" rx="10.29" ry="10.29" stroke="black" stroke-width="0.85" fill="none"/></g>
+<text x="60" y="82" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">C1</text>
+<g transform="translate(158 80) rotate(0) scale(0.5500) translate(0 0.18500000000000005)"><rect x="-20" y="-3.37" width="40" height="6.37" fill="#fff"/><rect x="-20" y="-3.37" width="40" height="6.37" rx="0" ry="0" stroke="black" stroke-width="0.64" fill="none"/>
+<polyline points="-19,-3.37 -15,3 -9,-3.37 -3,3 4,-3.37 11,3 18,-3.37" stroke="black" stroke-width="0.64" fill="none"/></g>
+<text x="158" y="69" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">R1 à R8</text>
+<circle cx="100" cy="72" r="0.9" fill="#10233c"/>
+<g transform="translate(100 66) rotate(0) scale(0.2144) translate(-0.09999999999999964 -15.35)"><rect x="-11.25" y="-10.3" width="22.7" height="51.3" fill="#fff"/><line x1="-4.65" y1="18.18" x2="0.3" y2="16.8" stroke="black" stroke-width="1.63" fill="none"/>
+<line x1="-5.2" y1="15.41" x2="-0.25" y2="14" stroke="black" stroke-width="1.63" fill="none"/>
+<rect x="-5.2" y="12.65" width="5.5" height="6.91" rx="0" ry="0" stroke="black" stroke-width="1.63" fill="none"/>
+<rect x="-6.95" y="6.29" width="9" height="6.37" rx="0" ry="0" stroke="black" stroke-width="1.63" fill="none"/>
+<polygon points="3.05,6.29 -11.25,6.29 -11.25,-2 6.35,-7.54 6.35,6.29" stroke="black" stroke-width="1.63" fill="none"/>
+<path d="M -3.55,-10.30 A 7.15,7.25 0 0 0 -10.70,-3.05" stroke="black" stroke-width="1.63" fill="none"/>
+<path d="M 4.14,-7.12 A 9.35,4.83 0 0 0 -4.65,-10.30" stroke="black" stroke-width="1.63" fill="none"/>
+<rect x="6.35" y="-2" width="5.1" height="4.84" rx="0" ry="0" stroke="black" stroke-width="1.63" fill="none"/>
+<rect x="-3.55" y="19.56" width="1.65" height="21.44" rx="0" ry="0" stroke="black" stroke-width="1.63" fill="none"/></g>
+<text x="105" y="66" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">SD1</text>
+<g transform="translate(90 16) rotate(0) scale(0.4971) translate(-8.27 1.5699999999999994)"><rect x="-13.86" y="-12.68" width="44.26" height="22.22" fill="#fff"/><rect x="-6.36" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<ellipse cx="20.65" cy="-0.18" rx="1.50" ry="1.39" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="21.4" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-1.11" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<ellipse cx="20.65" cy="4.68" rx="1.50" ry="1.39" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="10.15" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="15.4" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<line x1="9.4" y1="-4.35" x2="9.4" y2="5.37" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="7.15" y1="-1.57" x2="17.65" y2="-1.57" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="17.65" y1="-4.35" x2="17.65" y2="5.37" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="7.15" y1="-3.65" x2="17.65" y2="-3.65" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="7.15" y1="0.51" x2="17.65" y2="0.51" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="12" y1="-4.35" x2="12" y2="5.37" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="14.65" y1="-4.35" x2="14.65" y2="5.37" stroke="black" stroke-width="0.35" fill="none"/>
+<rect x="-0.92" y="2.6" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<ellipse cx="-4.01" cy="0.21" rx="6.09" ry="5.21" stroke="black" stroke-width="0.35" fill="none"/>
+<rect x="-8.42" y="-3.65" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<line x1="19.15" y1="-0.18" x2="22.15" y2="-0.18" stroke="black" stroke-width="0.70" fill="none"/>
+<ellipse cx="-4.11" cy="0.16" rx="6.75" ry="5.90" stroke="black" stroke-width="0.35" fill="none"/>
+<polygon points="-4.48,1 -3.54,0.17 -7.29,-3.31" stroke="black" stroke-width="0.70" fill="none"/>
+<polyline points="-3.54,1 1.15,-0.7 -3.54,0.17" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-9.92" y="-0.18" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-4.48" y="-4.87" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-4.48" y="4.33" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-8.23" y="2.77" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="0.77" y="-0.18" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-0.73" y="-3.31" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="5.65" y="-5.74" width="12" height="11.8" rx="0" ry="0" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="6.4" y1="5.37" x2="12.4" y2="-4.35" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="6.4" y1="5.37" x2="16.15" y2="-3" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="6.4" y1="5.37" x2="16.9" y2="0.51" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="6.4" y1="5.37" x2="16.9" y2="4" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="6.4" y1="5.37" x2="8.65" y2="-4.35" stroke="black" stroke-width="0.35" fill="none"/>
+<rect x="-12.36" y="-8.51" width="37.51" height="16.66" rx="0" ry="0" stroke="black" stroke-width="0.35" fill="none"/>
+<ellipse cx="20.65" cy="-5.04" rx="1.50" ry="1.39" stroke="black" stroke-width="0.70" fill="none"/>
+<line x1="19.9" y1="-4.35" x2="22.15" y2="-6.43" stroke="black" stroke-width="0.70" fill="none"/>
+<line x1="19.15" y1="4" x2="22.15" y2="5.37" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-12.36" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<rect x="-13.86" y="-9.9" width="40.51" height="18.75" rx="0" ry="0" stroke="black" stroke-width="0.70" fill="none"/>
+<polyline points="-13.86,-9.9 -7.86,-12.68 30.4,-12.68 26.65,-9.9" stroke="black" stroke-width="0.70" fill="none"/>
+<polyline points="30.4,-12.68 30.4,6.07 26.65,8.84" stroke="black" stroke-width="0.70" fill="none"/>
+<line x1="7.15" y1="3.29" x2="17.65" y2="3.29" stroke="black" stroke-width="0.35" fill="none"/>
+<line x1="6.4" y1="-4.35" x2="6.4" y2="5.37" stroke="black" stroke-width="0.35" fill="none"/></g>
+<text x="90" y="7.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">RG1</text>
+<g transform="translate(20 18) rotate(0) scale(0.4798) translate(0.8500000000000001 -0.5800000000000001)"><rect x="-4" y="-9.84" width="6.3" height="20.84" fill="#fff"/><rect x="-4" y="0.18" width="6.3" height="10.82" rx="0" ry="0" stroke="black" stroke-width="0.73" fill="none"/>
+<rect x="-0.9" y="-9.84" width="1.4" height="10" rx="0" ry="0" stroke="black" stroke-width="0.73" fill="none"/></g>
+<text x="26" y="26" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">SE1</text>
+<g transform="translate(160 18) rotate(0) scale(0.5417) translate(-1 2)"><rect x="-11" y="-14" width="24" height="24" fill="#fff"/><line x1="9" y1="-6" x2="13" y2="-6" stroke="black" stroke-width="0.65" fill="none"/>
+<line x1="9" y1="-8" x2="13" y2="-8" stroke="black" stroke-width="0.65" fill="none"/>
+<line x1="9" y1="-10" x2="13" y2="-10" stroke="black" stroke-width="0.65" fill="none"/>
+<rect x="-11" y="-14" width="24" height="24" rx="0" ry="0" stroke="black" stroke-width="0.65" fill="none"/>
+<ellipse cx="0.00" cy="-3.00" rx="7.00" ry="7.00" stroke="black" stroke-width="0.65" fill="none"/>
+<line x1="-4" y1="-6" x2="1" y2="-2" stroke="black" stroke-width="0.65" fill="none"/>
+<ellipse cx="-7.50" cy="2.50" rx="0.50" ry="0.50" stroke="black" stroke-width="0.65" fill="none"/>
+<ellipse cx="-8.50" cy="-4.50" rx="0.50" ry="0.50" stroke="black" stroke-width="0.65" fill="none"/>
+<ellipse cx="-6.50" cy="-9.50" rx="0.50" ry="0.50" stroke="black" stroke-width="0.65" fill="none"/>
+<ellipse cx="4.50" cy="-10.50" rx="0.50" ry="0.50" stroke="black" stroke-width="0.65" fill="none"/>
+<ellipse cx="-1.50" cy="-11.50" rx="0.50" ry="0.50" stroke="black" stroke-width="0.65" fill="none"/>
+<rect x="2" y="6" width="7" height="2" rx="0" ry="0" stroke="black" stroke-width="0.65" fill="none"/>
+<line x1="6" y1="7" x2="8" y2="7" stroke="black" stroke-width="0.65" fill="none"/>
+<line x1="9" y1="-12" x2="13" y2="-12" stroke="black" stroke-width="0.65" fill="none"/></g>
+<text x="160" y="31" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">SA1</text>
+<polyline points="24,16 77,16" stroke="#10233c" stroke-width="0.6" stroke-dasharray="0.6 1.2" stroke-linecap="round" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(77.5 16) rotate(0)"/>
+<polyline points="152,16 103,16" stroke="#10233c" stroke-width="0.6" stroke-dasharray="0.6 1.2" stroke-linecap="round" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(102.5 16) rotate(180)"/>
+<polyline points="100,60 100,34 96,34 96,24" stroke="#10233c" stroke-width="0.6" stroke-dasharray="0.6 1.2" stroke-linecap="round" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(96 24.3) rotate(-90)"/>
+<polyline points="84,24 84,40 24,40 24,68.5" stroke="#10233c" stroke-width="0.6" stroke-dasharray="4 1.3 0.9 1.3" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(24 68.8) rotate(90)"/>
+<polyline points="88,24 88,47 60,47 60,66.6" stroke="#10233c" stroke-width="0.6" stroke-dasharray="4 1.3 0.9 1.3" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(60 66.9) rotate(90)"/></svg><figcaption>Le synoptique de régulation du chauffage de la maison d'étude.</figcaption></figure>
+  <p>Environ <strong>1 h 30</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>reconnaître les sondes, le régulateur et les appareils commandés ;</li>
+    <li>suivre une liaison de mesure et une liaison de commande ;</li>
+    <li>lire une consigne et une loi d'eau dans un tableau ;</li>
+    <li>vérifier le synoptique avec le descriptif.</li>
+  </ul>
+  <p class="cle">Le réseau d'eau du dessin est celui de la gare CVC-R 2, simplifié. Les huit radiateurs n'y forment qu'un seul symbole.</p>
+</section>
+
+<section>
+  <h2>Mesurer, comparer, commander</h2>
+  <p>Une régulation fait toujours trois choses :</p>
+  <ul>
+    <li>une <strong>sonde</strong> mesure une température ;</li>
+    <li>le <strong>régulateur</strong> compare cette mesure à la <strong>consigne</strong>, la température voulue ;</li>
+    <li>il commande un appareil : la pompe à chaleur chauffe plus ou moins, le circulateur marche ou s'arrête.</li>
+  </ul>
+  <p>Sur la maison, le régulateur RG1 est intégré à la pompe à chaleur. Il chauffe l'eau d'autant plus qu'il fait froid dehors : c'est la <strong>loi d'eau</strong>.</p>
+</section>
+
+<section id="ecran-legende">
+  <h2>La légende du synoptique</h2>
+  <p>Ce dessin a quatre sortes de traits. Deux pour l'eau, comme en gare CVC-R 2, deux pour les liaisons du régulateur.</p>
+  <table class="legende"><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 21,5" stroke="#c9451a" stroke-width="0.9" fill="none"/><polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#c9451a" transform="translate(11 5) rotate(0)"/></svg></td><td class="leg-nom">Départ du chauffage</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 21,5" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/><polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(11 5) rotate(180)"/></svg></td><td class="leg-nom">Retour du chauffage</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 20,5" stroke="#10233c" stroke-width="0.6" stroke-dasharray="0.6 1.2" stroke-linecap="round" fill="none"/><polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(20.5 5) rotate(0)"/></svg></td><td class="leg-nom">Liaison de mesure, vers le régulateur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 20,5" stroke="#10233c" stroke-width="0.6" stroke-dasharray="4 1.3 0.9 1.3" fill="none"/><polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(20.5 5) rotate(0)"/></svg></td><td class="leg-nom">Liaison de commande, vers l'appareil commandé</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3163) translate(-8.27 1.5699999999999994)"><rect x="-13.86" y="-12.68" width="44.26" height="22.22" fill="#fff"/><rect x="-6.36" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<ellipse cx="20.65" cy="-0.18" rx="1.50" ry="1.39" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="21.4" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-1.11" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<ellipse cx="20.65" cy="4.68" rx="1.50" ry="1.39" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="10.15" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="15.4" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<line x1="9.4" y1="-4.35" x2="9.4" y2="5.37" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="7.15" y1="-1.57" x2="17.65" y2="-1.57" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="17.65" y1="-4.35" x2="17.65" y2="5.37" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="7.15" y1="-3.65" x2="17.65" y2="-3.65" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="7.15" y1="0.51" x2="17.65" y2="0.51" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="12" y1="-4.35" x2="12" y2="5.37" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="14.65" y1="-4.35" x2="14.65" y2="5.37" stroke="black" stroke-width="0.55" fill="none"/>
+<rect x="-0.92" y="2.6" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<ellipse cx="-4.01" cy="0.21" rx="6.09" ry="5.21" stroke="black" stroke-width="0.55" fill="none"/>
+<rect x="-8.42" y="-3.65" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<line x1="19.15" y1="-0.18" x2="22.15" y2="-0.18" stroke="black" stroke-width="1.11" fill="none"/>
+<ellipse cx="-4.11" cy="0.16" rx="6.75" ry="5.90" stroke="black" stroke-width="0.55" fill="none"/>
+<polygon points="-4.48,1 -3.54,0.17 -7.29,-3.31" stroke="black" stroke-width="1.11" fill="none"/>
+<polyline points="-3.54,1 1.15,-0.7 -3.54,0.17" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-9.92" y="-0.18" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-4.48" y="-4.87" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-4.48" y="4.33" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-8.23" y="2.77" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="0.77" y="-0.18" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-0.73" y="-3.31" width="0.94" height="0.87" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="5.65" y="-5.74" width="12" height="11.8" rx="0" ry="0" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="6.4" y1="5.37" x2="12.4" y2="-4.35" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="6.4" y1="5.37" x2="16.15" y2="-3" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="6.4" y1="5.37" x2="16.9" y2="0.51" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="6.4" y1="5.37" x2="16.9" y2="4" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="6.4" y1="5.37" x2="8.65" y2="-4.35" stroke="black" stroke-width="0.55" fill="none"/>
+<rect x="-12.36" y="-8.51" width="37.51" height="16.66" rx="0" ry="0" stroke="black" stroke-width="0.55" fill="none"/>
+<ellipse cx="20.65" cy="-5.04" rx="1.50" ry="1.39" stroke="black" stroke-width="1.11" fill="none"/>
+<line x1="19.9" y1="-4.35" x2="22.15" y2="-6.43" stroke="black" stroke-width="1.11" fill="none"/>
+<line x1="19.15" y1="4" x2="22.15" y2="5.37" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-12.36" y="8.15" width="3" height="1.39" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<rect x="-13.86" y="-9.9" width="40.51" height="18.75" rx="0" ry="0" stroke="black" stroke-width="1.11" fill="none"/>
+<polyline points="-13.86,-9.9 -7.86,-12.68 30.4,-12.68 26.65,-9.9" stroke="black" stroke-width="1.11" fill="none"/>
+<polyline points="30.4,-12.68 30.4,6.07 26.65,8.84" stroke="black" stroke-width="1.11" fill="none"/>
+<line x1="7.15" y1="3.29" x2="17.65" y2="3.29" stroke="black" stroke-width="0.55" fill="none"/>
+<line x1="6.4" y1="-4.35" x2="6.4" y2="5.37" stroke="black" stroke-width="0.55" fill="none"/></g></svg></td><td class="leg-nom">Régulateur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3839) translate(0.8500000000000001 -0.5800000000000001)"><rect x="-4" y="-9.84" width="6.3" height="20.84" fill="#fff"/><rect x="-4" y="0.18" width="6.3" height="10.82" rx="0" ry="0" stroke="black" stroke-width="0.91" fill="none"/>
+<rect x="-0.9" y="-9.84" width="1.4" height="10" rx="0" ry="0" stroke="black" stroke-width="0.91" fill="none"/></g></svg></td><td class="leg-nom">Sonde de température extérieure</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.1754) translate(-0.09999999999999964 -15.35)"><rect x="-11.25" y="-10.3" width="22.7" height="51.3" fill="#fff"/><line x1="-4.65" y1="18.18" x2="0.3" y2="16.8" stroke="black" stroke-width="1.99" fill="none"/>
+<line x1="-5.2" y1="15.41" x2="-0.25" y2="14" stroke="black" stroke-width="1.99" fill="none"/>
+<rect x="-5.2" y="12.65" width="5.5" height="6.91" rx="0" ry="0" stroke="black" stroke-width="1.99" fill="none"/>
+<rect x="-6.95" y="6.29" width="9" height="6.37" rx="0" ry="0" stroke="black" stroke-width="1.99" fill="none"/>
+<polygon points="3.05,6.29 -11.25,6.29 -11.25,-2 6.35,-7.54 6.35,6.29" stroke="black" stroke-width="1.99" fill="none"/>
+<path d="M -3.55,-10.30 A 7.15,7.25 0 0 0 -10.70,-3.05" stroke="black" stroke-width="1.99" fill="none"/>
+<path d="M 4.14,-7.12 A 9.35,4.83 0 0 0 -4.65,-10.30" stroke="black" stroke-width="1.99" fill="none"/>
+<rect x="6.35" y="-2" width="5.1" height="4.84" rx="0" ry="0" stroke="black" stroke-width="1.99" fill="none"/>
+<rect x="-3.55" y="19.56" width="1.65" height="21.44" rx="0" ry="0" stroke="black" stroke-width="1.99" fill="none"/></g></svg></td><td class="leg-nom">Sonde de température sur un tube</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3333) translate(-1 2)"><rect x="-11" y="-14" width="24" height="24" fill="#fff"/><line x1="9" y1="-6" x2="13" y2="-6" stroke="black" stroke-width="1.05" fill="none"/>
+<line x1="9" y1="-8" x2="13" y2="-8" stroke="black" stroke-width="1.05" fill="none"/>
+<line x1="9" y1="-10" x2="13" y2="-10" stroke="black" stroke-width="1.05" fill="none"/>
+<rect x="-11" y="-14" width="24" height="24" rx="0" ry="0" stroke="black" stroke-width="1.05" fill="none"/>
+<ellipse cx="0.00" cy="-3.00" rx="7.00" ry="7.00" stroke="black" stroke-width="1.05" fill="none"/>
+<line x1="-4" y1="-6" x2="1" y2="-2" stroke="black" stroke-width="1.05" fill="none"/>
+<ellipse cx="-7.50" cy="2.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1.05" fill="none"/>
+<ellipse cx="-8.50" cy="-4.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1.05" fill="none"/>
+<ellipse cx="-6.50" cy="-9.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1.05" fill="none"/>
+<ellipse cx="4.50" cy="-10.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1.05" fill="none"/>
+<ellipse cx="-1.50" cy="-11.50" rx="0.50" ry="0.50" stroke="black" stroke-width="1.05" fill="none"/>
+<rect x="2" y="6" width="7" height="2" rx="0" ry="0" stroke="black" stroke-width="1.05" fill="none"/>
+<line x1="6" y1="7" x2="8" y2="7" stroke="black" stroke-width="1.05" fill="none"/>
+<line x1="9" y1="-12" x2="13" y2="-12" stroke="black" stroke-width="1.05" fill="none"/></g></svg></td><td class="leg-nom">Sonde de température d'ambiance</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.1714) translate(0 -6)"><rect x="-35" y="-20" width="70" height="52" fill="#fff"/><rect x="-35" y="-20" width="70" height="50" rx="0" ry="0" stroke="black" stroke-width="2.33" fill="#e6edf5"/>
+<ellipse cx="-12.00" cy="5.00" rx="15.00" ry="15.00" stroke="black" stroke-width="2.33" fill="white"/>
+<line x1="-19" y1="-8" x2="-5" y2="-8" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-22" y1="-6" x2="-2" y2="-6" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-24" y1="-4" x2="-1" y2="-4" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-25" y1="-2" x2="1" y2="-2" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-26" y1="0" x2="2" y2="0" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-27" y1="2" x2="2" y2="2" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-27" y1="4" x2="2" y2="4" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-27" y1="6" x2="3" y2="6" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-27" y1="8" x2="2" y2="8" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-26" y1="10" x2="2" y2="10" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-25" y1="12" x2="1" y2="12" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-24" y1="14" x2="0" y2="14" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-22" y1="16" x2="-2" y2="16" stroke="black" stroke-width="1.17" fill="none"/>
+<line x1="-19" y1="18" x2="-5" y2="18" stroke="black" stroke-width="1.17" fill="none"/>
+<rect x="-26" y="31" width="2" height="1" rx="0" ry="0" stroke="black" stroke-width="2.33" fill="none"/>
+<rect x="24" y="31" width="2" height="1" rx="0" ry="0" stroke="black" stroke-width="2.33" fill="none"/>
+<path d="M -12.00,-10.00 A 15.00,15.00 0 0 1 -12.00,-10.00" stroke="black" stroke-width="2.33" fill="white"/></g></svg></td><td class="leg-nom">Pompe à chaleur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="2,5 20,5" stroke="#c9451a" stroke-width="0.9" fill="none"/><g transform="translate(11 5) rotate(0) scale(0.3887) translate(0.009999999999999787 0.009999999999999787)"><rect x="-10.299999999999999" y="-10.299999999999999" width="20.58" height="20.58" fill="#fff"/><polygon points="8,0 -4,-7 -4,7" stroke="black" stroke-width="0.90" fill="none"/>
+<ellipse cx="-0.01" cy="-0.01" rx="10.29" ry="10.29" stroke="black" stroke-width="0.90" fill="none"/></g></svg></td><td class="leg-nom">Circulateur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.4000) translate(0 0.18500000000000005)"><rect x="-20" y="-3.37" width="40" height="6.37" fill="#fff"/><rect x="-20" y="-3.37" width="40" height="6.37" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<polyline points="-19,-3.37 -15,3 -9,-3.37 -3,3 4,-3.37 11,3 18,-3.37" stroke="black" stroke-width="0.87" fill="none"/></g></svg></td><td class="leg-nom">Radiateurs</td></tr></table>
+  <div class="calc"><h3>Exemple résolu</h3><p>SE1 est un petit boîtier dessiné côté « extérieur », relié à RG1 par un trait pointillé. Dans la légende, c'est la sonde de température extérieure, et le pointillé une liaison de mesure.</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 1 · repérer</p>
+  <h2>L'appareil du séjour</h2>
+  <div class="calc"><h3>L'exemple, à imiter</h3><p>SE1 : boîtier côté extérieur, relié en pointillé à RG1 : sonde de température extérieure.</p></div>
+  <div class="q exo" data-bon="3">
+  <p class="enonce">Quel appareil porte le repère SA1, à droite du synoptique ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>SA1 est dessiné côté « séjour », en haut à droite.</li><li hidden>Cherchez son symbole dans la légende : un boîtier mural avec un cadran. <button type="button" class="revoir" data-va="ecran-legende">Revoir la légende</button></li><li hidden>Regardez aussi son trait : pointillé, vers RG1. Il envoie donc une mesure.</li></ol></div>
+  <button class="rep" type="button">le régulateur</button>
+  <button class="rep" type="button">la sonde de départ</button>
+  <button class="rep" type="button">un appareil commandé par RG1</button>
+  <button class="rep" type="button">la sonde de température d'ambiance</button>
+  <p class="explic">SA1 est la sonde d'ambiance du séjour : son trait pointillé va vers RG1, c'est une mesure. La sonde de départ est SD1, sur le tube. Le régulateur est RG1.</p>
+  </div>
+</section>
+
+<section id="ecran-liaisons">
+  <h2>Les liaisons : mesure et commande</h2>
+  <p>Une <strong>liaison de mesure</strong>, en trait pointillé, part d'une sonde. Sa flèche pointe vers le régulateur.</p>
+  <p>Une <strong>liaison de commande</strong>, en trait mixte (un trait, un point), part du régulateur. Sa flèche pointe vers l'appareil commandé.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>La sonde SE1 envoie la température extérieure à RG1 : pointillé, flèche vers RG1. RG1 commande le circulateur C1 : trait mixte, flèche vers C1.</p></div>
+  <p class="cle">Pour savoir qui commande qui, suivez le trait jusqu'à sa flèche.</p>
+</section>
+
+<section>
+  <p class="kicker">Exercice 2 · suivre les liaisons</p>
+  <h2>Ce que RG1 commande</h2>
+  <p>L'exemple est sur l'écran précédent. <button type="button" class="revoir" data-va="ecran-liaisons">Revoir l'exemple</button></p>
+  <div class="q exo" data-bon="0">
+  <p class="enonce">Quels appareils RG1 commande-t-il ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Cherchez les traits mixtes : un trait, un point.</li><li hidden>Partez de RG1 et suivez chaque trait mixte jusqu'à sa flèche.</li><li hidden>Ne comptez pas les traits pointillés : ils apportent des mesures à RG1.</li></ol></div>
+  <button class="rep" type="button">PAC1 et C1</button>
+  <button class="rep" type="button">SE1, SD1 et SA1</button>
+  <button class="rep" type="button">C1 seulement</button>
+  <button class="rep" type="button">les radiateurs R1 à R8</button>
+  <p class="explic">Deux traits mixtes partent de RG1 : l'un va à PAC1, l'autre à C1. SE1, SD1 et SA1 sont des sondes : elles envoient des mesures. Les radiateurs ne reçoivent pas de liaison.</p>
+  </div>
+</section>
+
+<section id="ecran-consignes">
+  <h2>Les consignes et la loi d'eau</h2>
+  <p>Le descriptif donne les consignes d'ambiance de chaque allure :</p>
+  <table class="doc">
+    <tr><th>Allure</th><th>Consigne</th></tr>
+    <tr><td>Confort, le jour</td><td>20 °C</td></tr>
+    <tr><td>Réduit, la nuit</td><td>17 °C</td></tr>
+    <tr><td>Absence de 24 à 48 h</td><td>16 °C au plus</td></tr>
+    <tr><td>Absence de plus de 48 h</td><td>8 °C au plus</td></tr>
+  </table>
+  <p>Les deux dernières lignes viennent du Code de l'énergie (article R. 241-27). Le même code demande des consignes programmables : confort, réduit, hors gel, arrêt (article R. 241-31-1).</p>
+  <p>La loi d'eau, réglée dans RG1, donne la température de l'eau de départ selon la température extérieure (données de l'exercice) :</p>
+  <table class="doc">
+    <tr><th>Température extérieure</th><td>−5 °C</td><td>0 °C</td><td>5 °C</td><td>10 °C</td><td>15 °C</td></tr>
+    <tr><th>Départ demandé</th><td>45 °C</td><td>41 °C</td><td>37 °C</td><td>33 °C</td><td>29 °C</td></tr>
+  </table>
+  <div class="calc"><h3>Exemple résolu</h3><p>Il fait −5 °C dehors. Dans la ligne du haut, on trouve −5 °C ; en dessous, on lit 45 °C. RG1 fait partir l'eau à 45 °C. SD1 vérifie qu'elle part bien à cette température.</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 3 · lire un tableau</p>
+  <h2>Un jour doux</h2>
+  <div class="calc"><h3>L'exemple, à imiter</h3><p>À −5 °C dehors, le départ demandé est 45 °C.</p></div>
+  <div class="q exo" data-bon="2">
+  <p class="enonce">Il fait 15 °C dehors. Quelle température de départ RG1 demande-t-il ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Prenez le tableau de la loi d'eau. <button type="button" class="revoir" data-va="ecran-consignes">Revoir le tableau</button></li><li hidden>Trouvez 15 °C dans la ligne « Température extérieure ».</li><li hidden>Lisez la case juste en dessous, dans la ligne « Départ demandé ».</li></ol></div>
+  <button class="rep" type="button">20 °C</button>
+  <button class="rep" type="button">45 °C</button>
+  <button class="rep" type="button">29 °C</button>
+  <button class="rep" type="button">15 °C</button>
+  <p class="explic">Sous 15 °C, la loi d'eau donne 29 °C. 20 °C est la consigne d'ambiance, 45 °C le départ par −5 °C.</p>
+  </div>
+</section>
+
+<section id="ecran-verifier">
+  <h2>Vérifier le synoptique avec le descriptif</h2>
+  <div class="descriptif">
+    <p><strong>Extrait du descriptif de régulation</strong> (donnée de l'exercice)</p>
+    <p>Régulation du chauffage selon la température extérieure. Le régulateur RG1, intégré à PAC1, reçoit la température extérieure (sonde SE1), la température de départ (sonde SD1, sur le départ, après C1) et la température du séjour (sonde SA1). Il commande la puissance de PAC1 et la marche du circulateur C1.</p>
+  </div>
+  <div class="calc"><h3>Exemple résolu</h3><p>Le descriptif demande SD1 sur le départ, après C1. Sur le synoptique, SD1 est piquée sur le trait plein, à droite de C1. C'est conforme.</p></div>
+  <p class="cle">Comme en gares CVC-R 2 et 3, notez chaque écart : le repère, ce que montre le dessin, ce que demande le descriptif.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare CVC-R 5</h2>
+  <p>Vous savez reconnaître les sondes, le régulateur et les appareils commandés, suivre une liaison, lire une consigne et une loi d'eau, et vérifier le synoptique avec le descriptif.</p>
+  <p style="text-align:center;margin:22px 0"><a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a></p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait compléter la nomenclature, suivre les liaisons, lire deux valeurs dans les tableaux et relever une sonde mal placée.</p>
+  <p>Gare suivante : <strong>le terminus, un dossier CVC-R complet</strong>, gare CVC-R 6.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="credit">Symboles : collection QElectroTech (CC BY 3.0), adaptés par inerWeb. Maison d'étude et consignes : réseau Bureau d'études d'inerWeb.</p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {"e": "Dans une régulation, la sonde :", "r": ["commande la pompe à chaleur", "mesure une température", "fixe la consigne", "fait tourner l'eau"], "bon": 1, "x": "La sonde mesure. Le régulateur compare à la consigne et commande."},
+ {"e": "Sur ce synoptique, une liaison de mesure est dessinée en :", "r": ["trait plein", "trait tireté", "pointillé", "trait mixte"], "bon": 2, "x": "La légende : mesure en pointillé, commande en trait mixte."},
+ {"e": "La flèche d'une liaison de commande pointe vers :", "r": ["la sonde", "l'appareil commandé", "le régulateur", "l'extérieur"], "bon": 1, "x": "Une commande part du régulateur et arrive à l'appareil qu'il commande."},
+ {"e": "La loi d'eau donne :", "r": ["la consigne de la nuit", "la température de départ selon la température extérieure", "le débit du circulateur", "la puissance des radiateurs"], "bon": 1, "x": "Plus il fait froid dehors, plus l'eau part chaude : c'est la loi d'eau."},
+ {"e": "La nuit, en allure réduite, la consigne d'ambiance du descriptif est :", "r": ["20 °C", "17 °C", "8 °C", "45 °C"], "bon": 1, "x": "Tableau des consignes : réduit, la nuit, 17 °C."},
+ {"e": "Une sonde de départ piquée sur le tube du retour :", "r": ["est à sa place", "est mal placée : elle mesure l'eau qui revient des radiateurs", "commande le circulateur", "mesure la température extérieure"], "bon": 1, "x": "La sonde de départ doit mesurer l'eau qui part vers les radiateurs, sur le départ."}
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script>
+/* Exercices de la gare : trois aides qui s'affichent une à une, une réponse. */
+document.querySelectorAll(".exo").forEach(exo => {
+  const bouton = exo.querySelector(".aides > button"), aides = [...exo.querySelectorAll(".aides li")];
+  let vues = 0;
+  bouton.addEventListener("click", () => {
+    if (vues < aides.length) aides[vues++].hidden = false;
+    bouton.textContent = vues < aides.length ? "Afficher l'aide " + (vues + 1) + " sur " + aides.length : "Les " + aides.length + " aides sont affichées";
+    bouton.disabled = vues >= aides.length;
+  });
+  const bon = Number(exo.dataset.bon), reps = [...exo.querySelectorAll(".rep")];
+  reps.forEach((b, i) => b.addEventListener("click", () => {
+    if (exo.classList.contains("fini")) return;
+    exo.classList.add("fini");
+    b.classList.add(i === bon ? "ok" : "ko");
+    reps[bon].classList.add("ok");
+  }));
+});
+document.querySelectorAll("[data-va]").forEach(b => b.addEventListener("click", () => montre(ecrans.indexOf(document.getElementById(b.dataset.va)))));
+</script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

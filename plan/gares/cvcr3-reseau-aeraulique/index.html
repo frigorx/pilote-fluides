@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>CVC-R 3 — Le plan de réseau aéraulique</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.kicker{color:#c9451a;font-weight:bold;font-size:.9em;margin:0 0 4px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.q p.consigne{margin:0 0 10px}
+.aides{margin:12px 0}
+.aides button,button.revoir{font:inherit;padding:8px 16px;border-radius:9px;border:2px solid var(--blue);background:var(--paper);color:var(--navy);cursor:pointer;min-height:44px}
+.aides button[disabled]{opacity:.6;cursor:default}
+.aides ol{margin:8px 0 0;padding-left:22px}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0;text-align:center}
+figure.svgbox svg{background:#fff;border-radius:8px}
+table.legende{border-collapse:collapse;margin:8px 0}
+table.legende td{padding:2px 10px 2px 0;vertical-align:middle;text-align:left}
+.descriptif{background:#fffdf8;border:1px solid rgba(27,58,99,.25);border-radius:10px;padding:8px 14px;margin:12px 0}
+.descriptif p{margin:6px 0}
+.credit{font-size:.8em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb BE, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · ligne CVC-R <span class="statut">en cours de relecture</span></p>
+    <h1>CVC-R 3 — Le plan de réseau aéraulique</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>L'air aussi circule dans des tubes : les <strong>gaines</strong>. Le plan de réseau aéraulique montre où passent les gaines, où sont les bouches et quel débit d'air chacune doit extraire.</p>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="560" height="274.5" style="max-width:100%;height:auto" viewBox="0 0 102 50" role="img" aria-label="Le rez-de-chaussée de la maison d'étude : la bouche B1 dans la cuisine et la bouche B2 dans le WC, reliées par des gaines à la gaine verticale GV."><g transform="translate(0 7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="46.67" width="93.33" height="56.00" fill="#fff"/><rect x="58.67" y="4" width="38.67" height="42.67" fill="#fff"/><rect x="4" y="4" width="36.00" height="41.33" fill="#fff"/><rect x="40" y="26.67" width="17.33" height="18.67" fill="#fff"/><rect x="41.33" y="4" width="16.00" height="21.33" fill="#fff"/><rect x="58.67" y="45.07" width="38.67" height="1.87" fill="#fff"/><rect x="39.73" y="26.67" width="1.87" height="18.67" fill="#fff"/></g>
+<g transform="translate(0 125.7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="54.67" width="45.33" height="48.00" fill="#fff"/><rect x="50.67" y="54.67" width="46.67" height="48.00" fill="#fff"/><rect x="4" y="4" width="36.00" height="49.33" fill="#fff"/><rect x="41.33" y="4" width="30.67" height="49.33" fill="#fff"/><rect x="73.33" y="4" width="24.00" height="49.33" fill="#fff"/><rect x="24" y="4" width="16.00" height="29.33" fill="none" stroke="#637285" stroke-width="0.35"/><line x1="24" y1="4" x2="40" y2="33.33" stroke="#637285" stroke-width="0.35"/></g>
+<text x="0.00" y="5.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Rez-de-chaussée</text>
+<text x="0.00" y="123.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Étage</text>
+<text x="44.00" y="87.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Séjour-cuisine</text>
+<text x="74.67" y="43.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">cuisine</text>
+<text x="22.00" y="44.33" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Entrée</text>
+<text x="45.33" y="17.67" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">WC</text>
+<g transform="translate(26.67 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(76 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(93.07 81.67) rotate(90) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<polyline points="89.33,30.67 89.33,19.00 56.20,19.00" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(75.33 19.00) rotate(180)"/>
+<polyline points="54.00,26.77 54.00,21.20" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(54.00 24.67) rotate(-90)"/>
+<g transform="translate(89.33 33.67) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(54 29.27) rotate(0) scale(0.1701) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="1.03" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="2.06" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="2.06" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="2.06" fill="none"/></g>
+<circle cx="54" cy="19" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 17.5L55.5 20.5M52.5 20.5L55.5 17.5" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="89.33" y="43.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B1</text>
+<text x="86.33" y="49.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">120 m³/h</text>
+<text x="39.33" y="25.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">B2</text>
+<text x="39.33" y="31.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">30 m³/h</text>
+<text x="39.33" y="37.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">Ø80</text>
+<line x1="40.33" y1="29.27" x2="51.30" y2="29.27" stroke="#10233c" stroke-width="0.35"/>
+<text x="80.00" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø125</text>
+<text x="64.67" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">GV</text>
+<text x="26.67" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 1</text>
+<text x="74.00" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 2</text>
+<text x="17.33" y="175.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Palier</text>
+<text x="56.67" y="175.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 3</text>
+<text x="85.33" y="138.37" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Salle</text>
+<text x="85.33" y="144.10" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">d'eau</text>
+<g transform="translate(26.67 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(74 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(62 133.97) rotate(180) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<text x="57.40" y="146.23" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">B1, B2</text>
+<text x="50.50" y="143.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">GV</text>
+<polyline points="82.33,159.03 59.12,159.03" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(76.33 159.03) rotate(180)"/>
+<text x="66.00" y="156.73" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø80</text>
+<text x="85.33" y="168.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B3</text>
+<text x="85.33" y="174.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">30 m³/h</text>
+<g transform="translate(85.33 159.03) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(52.61521739130434 159.03) rotate(0) scale(0.4037) translate(-10.2 -2.0650000000000004)"><rect x="-5.9" y="-10.87" width="32.2" height="25.869999999999997" fill="#fff"/><rect x="22.8" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<polyline points="22.8,15 -2.4,15 -2.4,1 0.4,-3.18 0.4,-10.87 6.7,-10.87 6.7,-3.88 10.2,-4.58 13.7,-3.88 13.7,-10.87 20,-10.87 20,-3.18 22.8,-0.38 22.8,15 22.8,14.3" stroke="black" stroke-width="0.87" fill="none"/>
+<rect x="-5.9" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="-1" y1="1" x2="20.7" y2="1" stroke="black" stroke-width="0.43" fill="none"/>
+<rect x="8.1" y="-8.77" width="4.2" height="4.2" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="1.8" y1="-3.18" x2="5.3" y2="-3.88" stroke="black" stroke-width="0.43" fill="none"/>
+<line x1="14.4" y1="-3.88" x2="18.6" y2="-3.18" stroke="black" stroke-width="0.43" fill="none"/>
+<polyline points="17.9,9.41 21.4,9.41 19.3,8.71 19.3,10.11 21.4,9.41" stroke="black" stroke-width="0.87" fill="none"/></g>
+<text x="52.62" y="169.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">VMC1</text>
+<polyline points="55.30,153.81 55.30,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none" stroke-dashoffset="0.9"/>
+<polyline points="49.93,153.81 49.93,148.31 52.70,148.31 52.70,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<circle cx="54" cy="137.7" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 136.2L55.5 139.2M52.5 139.2L55.5 136.2" stroke="#3d7fca" stroke-width="0.6"/>
+<polyline points="46.12,161.03 22.67,161.03 22.67,163.43" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(28.67 161.03) rotate(180)"/>
+<g transform="translate(22.67 167.03) rotate(0) scale(0.2817) translate(0.10999999999999943 2.5749999999999993)"><rect x="-17" y="-15" width="33.78" height="24.85" fill="#fff"/><rect x="-5.2" y="4.69" width="10.73" height="5.16" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<rect x="-6.28" y="-3.29" width="12.33" height="8" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-5.74,-3.29 -9.49,-5.64 -9.49,-12.21 9.81,-12.21 9.81,-5.64 5.52,-3.29 6.06,-3.29" stroke="black" stroke-width="1.24" fill="none"/>
+<line x1="0.16" y1="-12.21" x2="0.16" y2="-3.76" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-16.46,-12.21 16.78,-12.21 9.28,-14.09 -0.38,-15 -11.1,-14.09 -17,-12.21" stroke="black" stroke-width="1.24" fill="none"/></g>
+<text x="18.17" y="169.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">ST1</text>
+<text x="33.47" y="167.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø160</text></svg><figcaption>Le haut du plan du rez-de-chaussée : deux bouches d'extraction et leurs gaines.</figcaption></figure>
+  <p>Environ <strong>1 h 30</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>lire la légende d'un plan de réseau d'air ;</li>
+    <li>lire le repère, le débit et le diamètre d'une bouche ;</li>
+    <li>suivre une gaine d'un niveau à l'autre, jusqu'au caisson ;</li>
+    <li>dire par où l'air entre et par où il sort ;</li>
+    <li>vérifier le plan avec le descriptif.</li>
+  </ul>
+  <p class="cle">Le plan est celui de la maison d'étude du Bureau d'études, déjà vue en gare CVC-R 2 pour son chauffage. Gardez un crayon et des crayons de couleur.</p>
+</section>
+
+<section>
+  <h2>Le plan de réseau aéraulique</h2>
+  <p>La maison est ventilée par une <strong>VMC simple flux</strong> (ventilation mécanique contrôlée). Un caisson, le ventilateur, aspire l'air des pièces humides et le rejette dehors. L'air neuf entre par les fenêtres des autres pièces.</p>
+  <p>Le plan a deux niveaux : le rez-de-chaussée en haut, l'étage en bas. Le réseau d'air est dessiné par-dessus le plan des pièces, en trait plein ou tireté, avec des flèches.</p>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="400" height="917.6" style="max-width:100%;height:auto" viewBox="0 0 102 234" role="img" aria-label="Plan de réseau de VMC de la maison : au rez-de-chaussée les bouches B1 et B2 et la gaine verticale GV ; à l'étage la bouche B3, le caisson VMC1 dans les combles et la sortie de toiture ST1."><g transform="translate(0 7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="46.67" width="93.33" height="56.00" fill="#fff"/><rect x="58.67" y="4" width="38.67" height="42.67" fill="#fff"/><rect x="4" y="4" width="36.00" height="41.33" fill="#fff"/><rect x="40" y="26.67" width="17.33" height="18.67" fill="#fff"/><rect x="41.33" y="4" width="16.00" height="21.33" fill="#fff"/><rect x="58.67" y="45.07" width="38.67" height="1.87" fill="#fff"/><rect x="39.73" y="26.67" width="1.87" height="18.67" fill="#fff"/></g>
+<g transform="translate(0 125.7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="54.67" width="45.33" height="48.00" fill="#fff"/><rect x="50.67" y="54.67" width="46.67" height="48.00" fill="#fff"/><rect x="4" y="4" width="36.00" height="49.33" fill="#fff"/><rect x="41.33" y="4" width="30.67" height="49.33" fill="#fff"/><rect x="73.33" y="4" width="24.00" height="49.33" fill="#fff"/><rect x="24" y="4" width="16.00" height="29.33" fill="none" stroke="#637285" stroke-width="0.35"/><line x1="24" y1="4" x2="40" y2="33.33" stroke="#637285" stroke-width="0.35"/></g>
+<text x="0.00" y="5.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Rez-de-chaussée</text>
+<text x="0.00" y="123.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Étage</text>
+<text x="44.00" y="87.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Séjour-cuisine</text>
+<text x="74.67" y="43.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">cuisine</text>
+<text x="22.00" y="44.33" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Entrée</text>
+<text x="45.33" y="17.67" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">WC</text>
+<g transform="translate(26.67 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(76 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(93.07 81.67) rotate(90) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<polyline points="89.33,30.67 89.33,19.00 56.20,19.00" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(75.33 19.00) rotate(180)"/>
+<polyline points="54.00,26.77 54.00,21.20" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(54.00 24.67) rotate(-90)"/>
+<g transform="translate(89.33 33.67) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(54 29.27) rotate(0) scale(0.1701) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="1.03" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="2.06" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="2.06" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="2.06" fill="none"/></g>
+<circle cx="54" cy="19" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 17.5L55.5 20.5M52.5 20.5L55.5 17.5" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="89.33" y="43.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B1</text>
+<text x="86.33" y="49.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">120 m³/h</text>
+<text x="39.33" y="25.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">B2</text>
+<text x="39.33" y="31.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">30 m³/h</text>
+<text x="39.33" y="37.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">Ø80</text>
+<line x1="40.33" y1="29.27" x2="51.30" y2="29.27" stroke="#10233c" stroke-width="0.35"/>
+<text x="80.00" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø125</text>
+<text x="64.67" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">GV</text>
+<text x="26.67" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 1</text>
+<text x="74.00" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 2</text>
+<text x="17.33" y="175.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Palier</text>
+<text x="56.67" y="175.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 3</text>
+<text x="85.33" y="138.37" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Salle</text>
+<text x="85.33" y="144.10" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">d'eau</text>
+<g transform="translate(26.67 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(74 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(62 133.97) rotate(180) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<text x="57.40" y="146.23" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">B1, B2</text>
+<text x="50.50" y="143.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">GV</text>
+<polyline points="82.33,159.03 59.12,159.03" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(76.33 159.03) rotate(180)"/>
+<text x="66.00" y="156.73" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø80</text>
+<text x="85.33" y="168.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B3</text>
+<text x="85.33" y="174.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">30 m³/h</text>
+<g transform="translate(85.33 159.03) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(52.61521739130434 159.03) rotate(0) scale(0.4037) translate(-10.2 -2.0650000000000004)"><rect x="-5.9" y="-10.87" width="32.2" height="25.869999999999997" fill="#fff"/><rect x="22.8" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<polyline points="22.8,15 -2.4,15 -2.4,1 0.4,-3.18 0.4,-10.87 6.7,-10.87 6.7,-3.88 10.2,-4.58 13.7,-3.88 13.7,-10.87 20,-10.87 20,-3.18 22.8,-0.38 22.8,15 22.8,14.3" stroke="black" stroke-width="0.87" fill="none"/>
+<rect x="-5.9" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="-1" y1="1" x2="20.7" y2="1" stroke="black" stroke-width="0.43" fill="none"/>
+<rect x="8.1" y="-8.77" width="4.2" height="4.2" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="1.8" y1="-3.18" x2="5.3" y2="-3.88" stroke="black" stroke-width="0.43" fill="none"/>
+<line x1="14.4" y1="-3.88" x2="18.6" y2="-3.18" stroke="black" stroke-width="0.43" fill="none"/>
+<polyline points="17.9,9.41 21.4,9.41 19.3,8.71 19.3,10.11 21.4,9.41" stroke="black" stroke-width="0.87" fill="none"/></g>
+<text x="52.62" y="169.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">VMC1</text>
+<polyline points="55.30,153.81 55.30,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none" stroke-dashoffset="0.9"/>
+<polyline points="49.93,153.81 49.93,148.31 52.70,148.31 52.70,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<circle cx="54" cy="137.7" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 136.2L55.5 139.2M52.5 139.2L55.5 136.2" stroke="#3d7fca" stroke-width="0.6"/>
+<polyline points="46.12,161.03 22.67,161.03 22.67,163.43" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(28.67 161.03) rotate(180)"/>
+<g transform="translate(22.67 167.03) rotate(0) scale(0.2817) translate(0.10999999999999943 2.5749999999999993)"><rect x="-17" y="-15" width="33.78" height="24.85" fill="#fff"/><rect x="-5.2" y="4.69" width="10.73" height="5.16" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<rect x="-6.28" y="-3.29" width="12.33" height="8" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-5.74,-3.29 -9.49,-5.64 -9.49,-12.21 9.81,-12.21 9.81,-5.64 5.52,-3.29 6.06,-3.29" stroke="black" stroke-width="1.24" fill="none"/>
+<line x1="0.16" y1="-12.21" x2="0.16" y2="-3.76" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-16.46,-12.21 16.78,-12.21 9.28,-14.09 -0.38,-15 -11.1,-14.09 -17,-12.21" stroke="black" stroke-width="1.24" fill="none"/></g>
+<text x="18.17" y="169.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">ST1</text>
+<text x="33.47" y="167.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø160</text></svg><figcaption>Plan de réseau de VMC de la maison d'étude, rez-de-chaussée et étage.</figcaption></figure>
+  <p>Deux sortes de pièces comptent. Les <strong>pièces principales</strong> sont le séjour et les chambres : l'air neuf y entre. Les <strong>pièces de service</strong> sont la cuisine, la salle d'eau et le WC : l'air y est extrait.</p>
+</section>
+
+<section id="ecran-legende">
+  <h2>La légende du réseau</h2>
+  <p>Lisez la légende avant le plan (gare 5). Ici, le type de trait dit à quelle hauteur passe la gaine.</p>
+  <table class="legende"><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 21,5" stroke="#3d7fca" stroke-width="1.3" fill="none"/><polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(11.00 5.00) rotate(180)"/></svg></td><td class="leg-nom">Gaine sous le plafond du niveau</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 21,5" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/><polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(11.00 5.00) rotate(180)"/></svg></td><td class="leg-nom">Gaine dans les combles</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><circle cx="11" cy="5" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M9.5 3.5L12.5 6.5M9.5 6.5L12.5 3.5" stroke="#3d7fca" stroke-width="0.6"/></svg></td><td class="leg-nom">Gaine verticale : passage des gaines à travers le plancher</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3092) translate(-10.2 -2.0650000000000004)"><rect x="-5.9" y="-10.87" width="32.2" height="25.869999999999997" fill="#fff"/><rect x="22.8" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="1.13" fill="none"/>
+<polyline points="22.8,15 -2.4,15 -2.4,1 0.4,-3.18 0.4,-10.87 6.7,-10.87 6.7,-3.88 10.2,-4.58 13.7,-3.88 13.7,-10.87 20,-10.87 20,-3.18 22.8,-0.38 22.8,15 22.8,14.3" stroke="black" stroke-width="1.13" fill="none"/>
+<rect x="-5.9" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="1.13" fill="none"/>
+<line x1="-1" y1="1" x2="20.7" y2="1" stroke="black" stroke-width="0.57" fill="none"/>
+<rect x="8.1" y="-8.77" width="4.2" height="4.2" rx="0" ry="0" stroke="black" stroke-width="1.13" fill="none"/>
+<line x1="1.8" y1="-3.18" x2="5.3" y2="-3.88" stroke="black" stroke-width="0.57" fill="none"/>
+<line x1="14.4" y1="-3.88" x2="18.6" y2="-3.18" stroke="black" stroke-width="0.57" fill="none"/>
+<polyline points="17.9,9.41 21.4,9.41 19.3,8.71 19.3,10.11 21.4,9.41" stroke="black" stroke-width="1.13" fill="none"/></g></svg></td><td class="leg-nom">Caisson de VMC</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.2828) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.24" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.24" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.62" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.24" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.24" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.24" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.24" fill="none"/></g></svg></td><td class="leg-nom">Bouche d'extraction</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.2022) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="1.73" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="1.73" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="1.73" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="1.73" fill="none"/></g></svg></td><td class="leg-nom">Entrée d'air dans la fenêtre</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3219) translate(0.10999999999999943 2.5749999999999993)"><rect x="-17" y="-15" width="33.78" height="24.85" fill="#fff"/><rect x="-5.2" y="4.69" width="10.73" height="5.16" rx="0" ry="0" stroke="black" stroke-width="1.09" fill="none"/>
+<rect x="-6.28" y="-3.29" width="12.33" height="8" rx="0" ry="0" stroke="black" stroke-width="1.09" fill="none"/>
+<polyline points="-5.74,-3.29 -9.49,-5.64 -9.49,-12.21 9.81,-12.21 9.81,-5.64 5.52,-3.29 6.06,-3.29" stroke="black" stroke-width="1.09" fill="none"/>
+<line x1="0.16" y1="-12.21" x2="0.16" y2="-3.76" stroke="black" stroke-width="1.09" fill="none"/>
+<polyline points="-16.46,-12.21 16.78,-12.21 9.28,-14.09 -0.38,-15 -11.1,-14.09 -17,-12.21" stroke="black" stroke-width="1.09" fill="none"/></g></svg></td><td class="leg-nom">Sortie de toiture</td></tr></table>
+  <p>Au rez-de-chaussée, les gaines passent sous le plafond : trait plein. À l'étage, elles passent dans les <strong>combles</strong>, le volume sous le toit, au-dessus du plafond : trait tireté. Le caisson VMC1 et la sortie de toiture ST1 sont aussi dans les combles.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Le rond barré d'une croix porte le repère GV. Dans la légende, c'est une gaine verticale : le passage des gaines à travers le plancher. Le même rond GV est dessiné sur les deux niveaux, au même endroit : c'est le passage du rez-de-chaussée vers l'étage.</p></div>
+</section>
+
+<section id="ecran-bouche">
+  <h2>Lire une bouche : repère, débit, diamètre</h2>
+  <p>À côté de chaque bouche, le plan donne trois choses :</p>
+  <ul>
+    <li>le <strong>repère</strong> : B1, B2… ;</li>
+    <li>le <strong>débit</strong>, en m³/h : le volume d'air que la bouche doit extraire en une heure ;</li>
+    <li>le <strong>diamètre</strong> de la gaine, écrit Ø et donné en millimètres : Ø125 veut dire une gaine ronde de 125 mm.</li>
+  </ul>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="293.6" style="max-width:100%;height:auto" viewBox="6 7 94 46" role="img" aria-label="Zoom sur la cuisine et le WC : B1, 120 mètres cubes par heure, gaine de diamètre 125 ; B2, 30 mètres cubes par heure, gaine de diamètre 80."><g transform="translate(0 7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="46.67" width="93.33" height="56.00" fill="#fff"/><rect x="58.67" y="4" width="38.67" height="42.67" fill="#fff"/><rect x="4" y="4" width="36.00" height="41.33" fill="#fff"/><rect x="40" y="26.67" width="17.33" height="18.67" fill="#fff"/><rect x="41.33" y="4" width="16.00" height="21.33" fill="#fff"/><rect x="58.67" y="45.07" width="38.67" height="1.87" fill="#fff"/><rect x="39.73" y="26.67" width="1.87" height="18.67" fill="#fff"/></g>
+<g transform="translate(0 125.7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="54.67" width="45.33" height="48.00" fill="#fff"/><rect x="50.67" y="54.67" width="46.67" height="48.00" fill="#fff"/><rect x="4" y="4" width="36.00" height="49.33" fill="#fff"/><rect x="41.33" y="4" width="30.67" height="49.33" fill="#fff"/><rect x="73.33" y="4" width="24.00" height="49.33" fill="#fff"/><rect x="24" y="4" width="16.00" height="29.33" fill="none" stroke="#637285" stroke-width="0.35"/><line x1="24" y1="4" x2="40" y2="33.33" stroke="#637285" stroke-width="0.35"/></g>
+<text x="0.00" y="5.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Rez-de-chaussée</text>
+<text x="0.00" y="123.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Étage</text>
+<text x="44.00" y="87.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Séjour-cuisine</text>
+<text x="74.67" y="43.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">cuisine</text>
+<text x="22.00" y="44.33" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Entrée</text>
+<text x="45.33" y="17.67" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">WC</text>
+<g transform="translate(26.67 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(76 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(93.07 81.67) rotate(90) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<polyline points="89.33,30.67 89.33,19.00 56.20,19.00" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(75.33 19.00) rotate(180)"/>
+<polyline points="54.00,26.77 54.00,21.20" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(54.00 24.67) rotate(-90)"/>
+<g transform="translate(89.33 33.67) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(54 29.27) rotate(0) scale(0.1701) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="1.03" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="2.06" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="2.06" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="2.06" fill="none"/></g>
+<circle cx="54" cy="19" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 17.5L55.5 20.5M52.5 20.5L55.5 17.5" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="89.33" y="43.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B1</text>
+<text x="86.33" y="49.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">120 m³/h</text>
+<text x="39.33" y="25.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">B2</text>
+<text x="39.33" y="31.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">30 m³/h</text>
+<text x="39.33" y="37.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">Ø80</text>
+<line x1="40.33" y1="29.27" x2="51.30" y2="29.27" stroke="#10233c" stroke-width="0.35"/>
+<text x="80.00" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø125</text>
+<text x="64.67" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">GV</text>
+<text x="26.67" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 1</text>
+<text x="74.00" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 2</text>
+<text x="17.33" y="175.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Palier</text>
+<text x="56.67" y="175.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 3</text>
+<text x="85.33" y="138.37" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Salle</text>
+<text x="85.33" y="144.10" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">d'eau</text>
+<g transform="translate(26.67 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(74 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(62 133.97) rotate(180) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<text x="57.40" y="146.23" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">B1, B2</text>
+<text x="50.50" y="143.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">GV</text>
+<polyline points="82.33,159.03 59.12,159.03" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(76.33 159.03) rotate(180)"/>
+<text x="66.00" y="156.73" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø80</text>
+<text x="85.33" y="168.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B3</text>
+<text x="85.33" y="174.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">30 m³/h</text>
+<g transform="translate(85.33 159.03) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(52.61521739130434 159.03) rotate(0) scale(0.4037) translate(-10.2 -2.0650000000000004)"><rect x="-5.9" y="-10.87" width="32.2" height="25.869999999999997" fill="#fff"/><rect x="22.8" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<polyline points="22.8,15 -2.4,15 -2.4,1 0.4,-3.18 0.4,-10.87 6.7,-10.87 6.7,-3.88 10.2,-4.58 13.7,-3.88 13.7,-10.87 20,-10.87 20,-3.18 22.8,-0.38 22.8,15 22.8,14.3" stroke="black" stroke-width="0.87" fill="none"/>
+<rect x="-5.9" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="-1" y1="1" x2="20.7" y2="1" stroke="black" stroke-width="0.43" fill="none"/>
+<rect x="8.1" y="-8.77" width="4.2" height="4.2" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="1.8" y1="-3.18" x2="5.3" y2="-3.88" stroke="black" stroke-width="0.43" fill="none"/>
+<line x1="14.4" y1="-3.88" x2="18.6" y2="-3.18" stroke="black" stroke-width="0.43" fill="none"/>
+<polyline points="17.9,9.41 21.4,9.41 19.3,8.71 19.3,10.11 21.4,9.41" stroke="black" stroke-width="0.87" fill="none"/></g>
+<text x="52.62" y="169.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">VMC1</text>
+<polyline points="55.30,153.81 55.30,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none" stroke-dashoffset="0.9"/>
+<polyline points="49.93,153.81 49.93,148.31 52.70,148.31 52.70,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<circle cx="54" cy="137.7" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 136.2L55.5 139.2M52.5 139.2L55.5 136.2" stroke="#3d7fca" stroke-width="0.6"/>
+<polyline points="46.12,161.03 22.67,161.03 22.67,163.43" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(28.67 161.03) rotate(180)"/>
+<g transform="translate(22.67 167.03) rotate(0) scale(0.2817) translate(0.10999999999999943 2.5749999999999993)"><rect x="-17" y="-15" width="33.78" height="24.85" fill="#fff"/><rect x="-5.2" y="4.69" width="10.73" height="5.16" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<rect x="-6.28" y="-3.29" width="12.33" height="8" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-5.74,-3.29 -9.49,-5.64 -9.49,-12.21 9.81,-12.21 9.81,-5.64 5.52,-3.29 6.06,-3.29" stroke="black" stroke-width="1.24" fill="none"/>
+<line x1="0.16" y1="-12.21" x2="0.16" y2="-3.76" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-16.46,-12.21 16.78,-12.21 9.28,-14.09 -0.38,-15 -11.1,-14.09 -17,-12.21" stroke="black" stroke-width="1.24" fill="none"/></g>
+<text x="18.17" y="169.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">ST1</text>
+<text x="33.47" y="167.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø160</text></svg></figure>
+  <div class="calc"><h3>Exemple résolu</h3><p>La bouche B1 est dans la cuisine. Son débit est écrit sous elle : 120 m³/h. Sa gaine porte Ø125 : une gaine de 125 mm de diamètre.</p></div>
+  <p class="cle">Un diamètre se lit écrit à côté de la gaine. Sur un plan de réseau, on ne le mesure pas à la règle.</p>
+</section>
+
+<section>
+  <p class="kicker">Exercice 1 · lire une bouche</p>
+  <h2>La bouche de la salle d'eau</h2>
+  <div class="calc"><h3>L'exemple, à imiter</h3><p>B1 : cuisine, 120 m³/h, gaine Ø125.</p></div>
+  <div class="q exo" data-bon="3">
+  <p class="enonce">Sur le plan de l'étage, quel est le débit de la bouche B3, et quel est le diamètre de sa gaine ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>B3 est sur le plan de l'étage, en bas de la page, dans la salle d'eau.</li><li hidden>Le débit est écrit sous la bouche, avec l'unité m³/h. <button type="button" class="revoir" data-va="ecran-bouche">Revoir l'exemple</button></li><li hidden>Le diamètre est écrit le long de la gaine qui part de B3 vers le caisson, avec le signe Ø.</li></ol></div>
+  <button class="rep" type="button">120 m³/h, Ø125</button>
+  <button class="rep" type="button">30 m³/h, Ø160</button>
+  <button class="rep" type="button">80 m³/h, Ø30</button>
+  <button class="rep" type="button">30 m³/h, Ø80</button>
+  <p class="explic">Sous B3, le plan écrit 30 m³/h. Sa gaine porte Ø80. Le Ø160 est la gaine de rejet, après le caisson. 80 est un diamètre, pas un débit.</p>
+  </div>
+</section>
+
+<section id="ecran-gaine">
+  <h2>Suivre une gaine d'un niveau à l'autre</h2>
+  <p>Partez de la bouche et suivez le trait de la gaine. Les flèches donnent le sens de l'air : de la bouche vers le caisson, puis du caisson vers la sortie de toiture.</p>
+  <p>Une gaine du rez-de-chaussée monte par la gaine verticale GV. Retrouvez GV sur le plan de l'étage : la gaine continue dans les combles jusqu'au caisson VMC1.</p>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="520" height="316.1" style="max-width:100%;height:auto" viewBox="0 119 102 62" role="img" aria-label="La partie nord de l'étage : la gaine verticale GV, deux gaines tiretées jusqu'au caisson VMC1, la bouche B3 de la salle d'eau et la gaine de rejet vers la sortie de toiture ST1."><g transform="translate(0 7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="46.67" width="93.33" height="56.00" fill="#fff"/><rect x="58.67" y="4" width="38.67" height="42.67" fill="#fff"/><rect x="4" y="4" width="36.00" height="41.33" fill="#fff"/><rect x="40" y="26.67" width="17.33" height="18.67" fill="#fff"/><rect x="41.33" y="4" width="16.00" height="21.33" fill="#fff"/><rect x="58.67" y="45.07" width="38.67" height="1.87" fill="#fff"/><rect x="39.73" y="26.67" width="1.87" height="18.67" fill="#fff"/></g>
+<g transform="translate(0 125.7)"><rect x="0" y="0" width="101.33" height="106.67" fill="#c3cdd9" stroke="#1b3a63" stroke-width="0.5"/><rect x="4" y="54.67" width="45.33" height="48.00" fill="#fff"/><rect x="50.67" y="54.67" width="46.67" height="48.00" fill="#fff"/><rect x="4" y="4" width="36.00" height="49.33" fill="#fff"/><rect x="41.33" y="4" width="30.67" height="49.33" fill="#fff"/><rect x="73.33" y="4" width="24.00" height="49.33" fill="#fff"/><rect x="24" y="4" width="16.00" height="29.33" fill="none" stroke="#637285" stroke-width="0.35"/><line x1="24" y1="4" x2="40" y2="33.33" stroke="#637285" stroke-width="0.35"/></g>
+<text x="0.00" y="5.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Rez-de-chaussée</text>
+<text x="0.00" y="123.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">Étage</text>
+<text x="44.00" y="87.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Séjour-cuisine</text>
+<text x="74.67" y="43.00" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">cuisine</text>
+<text x="22.00" y="44.33" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Entrée</text>
+<text x="45.33" y="17.67" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">WC</text>
+<g transform="translate(26.67 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(76 105.4) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(93.07 81.67) rotate(90) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<polyline points="89.33,30.67 89.33,19.00 56.20,19.00" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(75.33 19.00) rotate(180)"/>
+<polyline points="54.00,26.77 54.00,21.20" stroke="#3d7fca" stroke-width="1.3" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(54.00 24.67) rotate(-90)"/>
+<g transform="translate(89.33 33.67) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(54 29.27) rotate(0) scale(0.1701) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="1.03" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="2.06" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="2.06" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="2.06" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="2.06" fill="none"/></g>
+<circle cx="54" cy="19" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 17.5L55.5 20.5M52.5 20.5L55.5 17.5" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="89.33" y="43.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B1</text>
+<text x="86.33" y="49.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">120 m³/h</text>
+<text x="39.33" y="25.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">B2</text>
+<text x="39.33" y="31.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">30 m³/h</text>
+<text x="39.33" y="37.17" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="end">Ø80</text>
+<line x1="40.33" y1="29.27" x2="51.30" y2="29.27" stroke="#10233c" stroke-width="0.35"/>
+<text x="80.00" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø125</text>
+<text x="64.67" y="16.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">GV</text>
+<text x="26.67" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 1</text>
+<text x="74.00" y="205.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 2</text>
+<text x="17.33" y="175.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Palier</text>
+<text x="56.67" y="175.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Chambre 3</text>
+<text x="85.33" y="138.37" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">Salle</text>
+<text x="85.33" y="144.10" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285" text-anchor="middle">d'eau</text>
+<g transform="translate(26.67 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(74 224.10000000000002) rotate(0) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<g transform="translate(62 133.97) rotate(180) scale(0.1516) translate(-0.9000000000000004 6.785)"><rect x="-9.6" y="-26.57" width="21" height="39.57" fill="#fff"/><polyline points="8.6,-7.95 10,-7.17 -2.6,5.24" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-14.15 10,-13.38 -2.6,-1" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-11.05 10,-10.27 -2.6,2.14" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-4.84 10,-4.07 -2.6,8.35" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-17.26 10,-16.48 -2.6,-4.07" stroke="black" stroke-width="2.31" fill="none"/>
+<rect x="-9.6" y="-11.05" width="4.9" height="24.05" rx="0" ry="0" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-9.6,-11.05 6.5,-26.57 11.4,-26.57 -4.7,-11.05" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="-4.7,13 11.4,-2.52 11.4,-26.57" stroke="black" stroke-width="2.31" fill="none"/>
+<polygon points="-2.6,-10.27 -2.6,8.35 10,-3.29 10,-22.69" stroke="black" stroke-width="2.31" fill="none"/>
+<polyline points="8.6,-20.36 10,-19.58 -2.6,-7.17" stroke="black" stroke-width="2.31" fill="none"/></g>
+<text x="57.40" y="146.23" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">B1, B2</text>
+<text x="50.50" y="143.70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">GV</text>
+<polyline points="82.33,159.03 59.12,159.03" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(76.33 159.03) rotate(180)"/>
+<text x="66.00" y="156.73" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø80</text>
+<text x="85.33" y="168.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">B3</text>
+<text x="85.33" y="174.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">30 m³/h</text>
+<g transform="translate(85.33 159.03) rotate(0) scale(0.2041) translate(-0.6999999999999993 2.375)"><rect x="-14" y="-14.75" width="29.4" height="24.75" fill="#fff"/><ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.86" fill="none"/>
+<line x1="5.95" y1="-14.75" x2="5.95" y2="-10.61" stroke="black" stroke-width="1.71" fill="none"/>
+<ellipse cx="1.12" cy="0.43" rx="10.92" ry="7.83" stroke="black" stroke-width="1.71" fill="none"/>
+<path d="M 5.53,-7.16 A 11.34,8.27 0 1 0 -0.14,8.26" stroke="black" stroke-width="1.71" fill="none"/>
+<line x1="-6.13" y1="-14.42" x2="-6.13" y2="-9.77" stroke="black" stroke-width="1.71" fill="none"/></g>
+<g transform="translate(52.61521739130434 159.03) rotate(0) scale(0.4037) translate(-10.2 -2.0650000000000004)"><rect x="-5.9" y="-10.87" width="32.2" height="25.869999999999997" fill="#fff"/><rect x="22.8" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<polyline points="22.8,15 -2.4,15 -2.4,1 0.4,-3.18 0.4,-10.87 6.7,-10.87 6.7,-3.88 10.2,-4.58 13.7,-3.88 13.7,-10.87 20,-10.87 20,-3.18 22.8,-0.38 22.8,15 22.8,14.3" stroke="black" stroke-width="0.87" fill="none"/>
+<rect x="-5.9" y="5.91" width="3.5" height="7" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="-1" y1="1" x2="20.7" y2="1" stroke="black" stroke-width="0.43" fill="none"/>
+<rect x="8.1" y="-8.77" width="4.2" height="4.2" rx="0" ry="0" stroke="black" stroke-width="0.87" fill="none"/>
+<line x1="1.8" y1="-3.18" x2="5.3" y2="-3.88" stroke="black" stroke-width="0.43" fill="none"/>
+<line x1="14.4" y1="-3.88" x2="18.6" y2="-3.18" stroke="black" stroke-width="0.43" fill="none"/>
+<polyline points="17.9,9.41 21.4,9.41 19.3,8.71 19.3,10.11 21.4,9.41" stroke="black" stroke-width="0.87" fill="none"/></g>
+<text x="52.62" y="169.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">VMC1</text>
+<polyline points="55.30,153.81 55.30,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none" stroke-dashoffset="0.9"/>
+<polyline points="49.93,153.81 49.93,148.31 52.70,148.31 52.70,139.70" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<circle cx="54" cy="137.7" r="2.2" fill="#fff" stroke="#3d7fca" stroke-width="1"/><path d="M52.5 136.2L55.5 139.2M52.5 139.2L55.5 136.2" stroke="#3d7fca" stroke-width="0.6"/>
+<polyline points="46.12,161.03 22.67,161.03 22.67,163.43" stroke="#3d7fca" stroke-width="1.3" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.8,0 -1.5,-1.6 -1.5,1.6" fill="#3d7fca" transform="translate(28.67 161.03) rotate(180)"/>
+<g transform="translate(22.67 167.03) rotate(0) scale(0.2817) translate(0.10999999999999943 2.5749999999999993)"><rect x="-17" y="-15" width="33.78" height="24.85" fill="#fff"/><rect x="-5.2" y="4.69" width="10.73" height="5.16" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<rect x="-6.28" y="-3.29" width="12.33" height="8" rx="0" ry="0" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-5.74,-3.29 -9.49,-5.64 -9.49,-12.21 9.81,-12.21 9.81,-5.64 5.52,-3.29 6.06,-3.29" stroke="black" stroke-width="1.24" fill="none"/>
+<line x1="0.16" y1="-12.21" x2="0.16" y2="-3.76" stroke="black" stroke-width="1.24" fill="none"/>
+<polyline points="-16.46,-12.21 16.78,-12.21 9.28,-14.09 -0.38,-15 -11.1,-14.09 -17,-12.21" stroke="black" stroke-width="1.24" fill="none"/></g>
+<text x="18.17" y="169.03" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">ST1</text>
+<text x="33.47" y="167.53" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c" text-anchor="middle">Ø160</text></svg><figcaption>À l'étage, deux gaines sortent de GV : celle de B1 à gauche, celle de B2 à droite.</figcaption></figure>
+  <div class="calc"><h3>Exemple résolu</h3><p>L'air de la bouche B1 : gaine Ø125 sous le plafond de la cuisine, gaine verticale GV, gaine dans les combles, caisson VMC1, gaine Ø160, sortie de toiture ST1.</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 2 · suivre une gaine</p>
+  <h2>Le chemin de l'air de la salle d'eau</h2>
+  <p>L'exemple est sur l'écran précédent. <button type="button" class="revoir" data-va="ecran-gaine">Revoir l'exemple</button></p>
+  <div class="q exo" data-bon="1">
+  <p class="enonce">Par où passe l'air extrait par B3, dans l'ordre, jusqu'à la sortie ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Partez de B3, dans la salle d'eau de l'étage.</li><li hidden>Suivez la flèche posée sur la gaine : elle va vers la gauche, vers le caisson.</li><li hidden>Après le caisson, cherchez la gaine qui part vers la sortie de toiture, comme dans l'exemple de B1.</li></ol></div>
+  <button class="rep" type="button">B3, GV, gaine sous le plafond, VMC1</button>
+  <button class="rep" type="button">B3, gaine Ø80 dans les combles, VMC1, gaine Ø160, ST1</button>
+  <button class="rep" type="button">B3, VMC1, GV, B1</button>
+  <button class="rep" type="button">B3, ST1, VMC1</button>
+  <p class="explic">B3 est à l'étage : sa gaine Ø80 passe dans les combles jusqu'à VMC1, puis l'air sort par la gaine Ø160 et ST1. GV sert aux bouches du rez-de-chaussée. L'air ne passe pas par ST1 avant le caisson.</p>
+  </div>
+</section>
+
+<section id="ecran-air">
+  <h2>Le chemin de l'air dans la maison</h2>
+  <p>L'air neuf entre par les <strong>entrées d'air</strong>, posées dans les fenêtres des pièces principales. Il traverse la maison en passant sous les portes. Les bouches l'extraient dans les pièces de service. Le caisson le rejette dehors par la sortie de toiture.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Au rez-de-chaussée, l'air entre par les trois entrées d'air du séjour. Il traverse le séjour-cuisine et sort par la bouche B1 de la cuisine.</p></div>
+  <p class="cle">Une entrée d'air ne se met jamais dans une pièce de service, et une bouche d'extraction jamais dans une pièce principale : l'air irait dans le mauvais sens.</p>
+</section>
+
+<section>
+  <p class="kicker">Exercice 3 · repérer les entrées d'air</p>
+  <h2>Les entrées d'air de l'étage</h2>
+  <div class="q exo" data-bon="2">
+  <p class="enonce">Combien d'entrées d'air comptez-vous sur le plan de l'étage, et dans quelles pièces ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Cherchez dans la légende le symbole de l'entrée d'air : une petite grille. <button type="button" class="revoir" data-va="ecran-legende">Revoir la légende</button></li><li hidden>Sur le plan de l'étage, regardez chaque fenêtre, sur les murs extérieurs.</li><li hidden>Comme au rez-de-chaussée, les entrées d'air sont dans les pièces principales : ici, les chambres.</li></ol></div>
+  <button class="rep" type="button">2 : chambre 1 et chambre 2</button>
+  <button class="rep" type="button">4 : les trois chambres et la salle d'eau</button>
+  <button class="rep" type="button">3 : chambre 1, chambre 2 et chambre 3</button>
+  <button class="rep" type="button">1 : le palier</button>
+  <p class="explic">L'étage a trois entrées d'air, une par chambre. La salle d'eau a une bouche d'extraction, pas d'entrée d'air. Le palier n'en a pas.</p>
+  </div>
+</section>
+
+<section id="ecran-verifier">
+  <h2>Vérifier le plan avec le descriptif</h2>
+  <p>Comme en gare CVC-R 2, prenez chaque phrase du descriptif et cherchez sur le plan ce qu'elle demande.</p>
+  <div class="descriptif">
+    <p><strong>Extrait du descriptif de la maison d'étude</strong></p>
+    <p>1. VMC simple flux hygroréglable : entrées d'air dans le séjour et les chambres, bouches d'extraction en cuisine, salle d'eau et WC.</p>
+    <p>2. Débits extraits à atteindre : cuisine 120 m³/h, salle d'eau 30 m³/h, WC 30 m³/h (arrêté du 24 mars 1982, article 3).</p>
+    <p>3. Chaque bouche doit pouvoir atteindre son débit : 120 + 30 + 30 = 180 m³/h en tout.</p>
+  </div>
+  <div class="calc"><h3>Exemple résolu</h3><p>Phrase 2, cuisine : le descriptif demande 120 m³/h. Sur le plan, B1 est dans la cuisine et porte 120 m³/h. C'est conforme.</p><p>Phrase 1, entrées d'air : le séjour en a. C'est conforme.</p></div>
+  <p class="cle">Notez chaque écart avec trois éléments : le repère, ce que montre le plan, ce que demande le descriptif.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare CVC-R 3</h2>
+  <p>Vous savez lire la légende d'un réseau d'air, lire une bouche, suivre une gaine sur deux niveaux, dire par où l'air entre et sort, et vérifier le plan avec le descriptif.</p>
+  <p style="text-align:center;margin:22px 0"><a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a></p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait lire les trois bouches, suivre une gaine du rez-de-chaussée au caisson, dire par où l'air entre et sort, vérifier les débits et relever l'erreur d'une variante du plan.</p>
+  <p>Gare suivante : <strong>le schéma frigorifique</strong>, gare CVC-R 4.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="credit">Symboles : collection QElectroTech (CC BY 3.0), adaptés par inerWeb. Maison d'étude, plan et descriptif : réseau Bureau d'études d'inerWeb.</p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {"e": "Dans une VMC simple flux, l'air est extrait :", "r": ["dans le séjour et les chambres", "dans la cuisine, la salle d'eau et le WC", "dans toutes les pièces", "seulement dans le garage"], "bon": 1, "x": "Les bouches d'extraction sont dans les pièces de service. L'air neuf entre par les pièces principales."},
+ {"e": "Sur le plan, « Ø125 » écrit le long d'une gaine veut dire :", "r": ["un débit de 125 m³/h", "une gaine ronde de 125 mm de diamètre", "une gaine de 125 cm de long", "la 125e bouche"], "bon": 1, "x": "Le signe Ø annonce un diamètre, en millimètres. Le débit s'écrit en m³/h."},
+ {"e": "Une gaine dessinée en tireté sur le plan de l'étage passe :", "r": ["sous le plancher", "dans les combles, au-dessus du plafond", "dehors, sur la façade", "dans le mur"], "bon": 1, "x": "La légende du plan : trait tireté, gaine dans les combles."},
+ {"e": "Le rond barré GV dessiné sur les deux niveaux, au même endroit, montre :", "r": ["une bouche d'extraction", "une gaine verticale qui traverse le plancher", "une entrée d'air", "le caisson"], "bon": 1, "x": "GV est le passage des gaines du rez-de-chaussée vers les combles."},
+ {"e": "Dans quel sens l'air circule-t-il dans une gaine de VMC simple flux ?", "r": ["du caisson vers la bouche", "de la bouche vers le caisson", "dans les deux sens", "de la sortie de toiture vers la bouche"], "bon": 1, "x": "Les flèches du plan vont de la bouche vers le caisson : la bouche aspire l'air de la pièce."},
+ {"e": "Une entrée d'air dessinée dans la salle d'eau est :", "r": ["normale", "une erreur : l'entrée d'air va dans une pièce principale", "obligatoire", "une sortie de toiture"], "bon": 1, "x": "La salle d'eau est une pièce de service : on y met une bouche d'extraction, pas une entrée d'air."}
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script>
+/* Exercices de la gare : trois aides qui s'affichent une à une, une réponse. */
+document.querySelectorAll(".exo").forEach(exo => {
+  const bouton = exo.querySelector(".aides > button"), aides = [...exo.querySelectorAll(".aides li")];
+  let vues = 0;
+  bouton.addEventListener("click", () => {
+    if (vues < aides.length) aides[vues++].hidden = false;
+    bouton.textContent = vues < aides.length ? "Afficher l'aide " + (vues + 1) + " sur " + aides.length : "Les " + aides.length + " aides sont affichées";
+    bouton.disabled = vues >= aides.length;
+  });
+  const bon = Number(exo.dataset.bon), reps = [...exo.querySelectorAll(".rep")];
+  reps.forEach((b, i) => b.addEventListener("click", () => {
+    if (exo.classList.contains("fini")) return;
+    exo.classList.add("fini");
+    b.classList.add(i === bon ? "ok" : "ko");
+    reps[bon].classList.add("ok");
+  }));
+});
+document.querySelectorAll("[data-va]").forEach(b => b.addEventListener("click", () => montre(ecrans.indexOf(document.getElementById(b.dataset.va)))));
+</script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Toiture 4 — Le BIM de l'étancheur : la toiture en maquette</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.seul{display:inline-block;background:#fff4e0;color:#8a5200;border:1px solid #e0b36a;border-radius:6px;padding:0 8px;font-size:.7em;vertical-align:middle}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0}
+figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="Logo inerWeb, module Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg>
+<div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · Étanchéité des toitures</p>
+    <h1>Toiture 4 — Le BIM de l'étancheur : la toiture en maquette</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-04-vues.webp" width="1200" height="728" alt="En haut, le groupe Vue du ruban, boutons Dessus et Avant encadrés. En bas à gauche, la maquette vue de dessus : la toiture verte et ses deux fenêtres de toit. En bas à droite, la maquette vue de face.">
+  <p>En gare 9, vous avez appris dix gestes dans BIM Vision, sur la maquette Duplex. Son toit est
+  une <strong>toiture plate végétalisée</strong>, bordée d'acrotères : un vrai terrain d'étancheur.
+  Cette gare applique les gestes de la gare 9 à cette toiture.</p>
+  <p>Environ 2 heures sur poste, test compris ; la fiche de TP prend 1 h 30. À la fin, vous saurez :</p>
+  <ul>
+    <li>isoler la toiture dans la maquette ;</li>
+    <li>compter ce qui la traverse et ce qui la borde ;</li>
+    <li>lire ses couches et les comparer à la pile de Toiture 2 ;</li>
+    <li>mesurer sa surface et vérifier la hauteur possible du relevé.</li>
+  </ul>
+  <p class="cle">Ouvrez la maquette Duplex comme en gare 9, geste 1 (lien de téléchargement dans la
+  gare 9). Gardez la gare 9 ouverte dans un autre onglet : chaque écran renvoie à son geste.</p>
+</section>
+
+<section>
+  <h2>Isoler la toiture</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-09-masquer.webp" width="1200" height="705" alt="Dans la colonne Actif de la structure IFC, les cases de Level 2 et de Roof sont décochées. La vue 3D montre le rez-de-chaussée seul.">
+  <p>La capture de la gare 9 montre le geste 8 à l'envers : elle cache Level 2 et Roof. Pour l'étancheur,
+  faites l'inverse.</p>
+  <ol>
+    <li>Dans la colonne « Actif » de la structure IFC, décochez Level 1, Level 2 et T/FDN.</li>
+    <li>Il reste l'étage Roof : la toiture, les murs qui la bordent et les fenêtres de toit.</li>
+    <li>Tournez autour (geste 2) : la toiture se voit de tous les côtés.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Ce que contient l'étage Roof</h2>
+  <p>Dans la structure IFC, cliquez le petit + devant Roof : ses familles apparaissent, comme en
+  gare 9, geste 5. Dépliez chaque famille et comptez ses lignes.</p>
+  <ul>
+    <li>la toiture : une ligne, nommée Basic Roof:Live Roof over Wood Joist Flat Roof, c'est-à-dire
+    toiture plate végétalisée sur solives en bois ;</li>
+    <li>les murs : ce sont les <strong>acrotères</strong>, les murets qui bordent la toiture (Toiture 1) ;</li>
+    <li>les fenêtres de toit : elles traversent la toiture, ce sont des émergences.</li>
+  </ul>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je déplie la famille des murs de l'étage Roof. Je compte 4 lignes Basic Wall:Exterior - Brick on Block.
+    La toiture est bordée de 4 acrotères, un par côté.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Les couches de la toiture</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-08-epaisseur.webp" width="1200" height="690" alt="À gauche, le panneau des propriétés d'un mur. À droite, la structure IFC du même mur dépliée sur la ligne IfcMaterialLayerSet et ses six couches ; la première couche est cliquée : LayerThickness 0,092, Material Masonry - Brick.">
+  <p>Le geste 7 de la gare 9, sur la toiture au lieu du mur :</p>
+  <ol>
+    <li>Dans la structure IFC, cliquez le + devant la toiture, puis devant IfcMaterialLayerSet.</li>
+    <li>Chaque ligne en dessous est une couche, de haut en bas.</li>
+    <li>Cliquez une couche : LayerThickness donne son épaisseur en mètres, Material son matériau.</li>
+  </ol>
+  <p>Les six couches de la toiture du Duplex, de haut en bas, et leur nom en français :</p>
+  <table class="doc">
+    <tr><th>Material (anglais)</th><th>En français</th></tr>
+    <tr><td>Site - Grass</td><td>herbe et terre : la végétalisation</td></tr>
+    <tr><td>Roofing - Barrier</td><td>barrière posée sur la membrane</td></tr>
+    <tr><td>Roofing - EPDM Membrane</td><td>membrane d'étanchéité en EPDM, un caoutchouc synthétique</td></tr>
+    <tr><td>Insulation / Thermal Barriers - Rigid insulation</td><td>isolant rigide</td></tr>
+    <tr><td>Wood - Sheathing - plywood</td><td>panneau de contreplaqué</td></tr>
+    <tr><td>Wood - Dimensional Lumber</td><td>bois de charpente : les solives</td></tr>
+  </table>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Je clique la première couche. Material : Site - Grass. LayerThickness : 0,064 m.
+    La couche du dessus est la végétalisation, épaisse de 64 mm.</p>
+  </div>
+</section>
+
+<section>
+  <h2>La maquette et la pile de Toiture 2</h2>
+  <p>Rangez chaque couche de la maquette dans la pile de Toiture 2 : protection, étanchéité, isolant,
+  pare-vapeur, forme de pente, porteur.</p>
+  <table class="doc">
+    <tr><th>Couche de la maquette</th><th>Place dans la pile</th></tr>
+    <tr><td>Site - Grass</td><td>protection (la végétalisation)</td></tr>
+    <tr><td>Roofing - Barrier</td><td>rôle non dit par la maquette : à demander</td></tr>
+    <tr><td>Roofing - EPDM Membrane</td><td>étanchéité</td></tr>
+    <tr><td>Rigid insulation</td><td>isolant</td></tr>
+    <tr><td>Wood - Sheathing - plywood</td><td>porteur : le contreplaqué est posé sur les solives</td></tr>
+    <tr><td>Wood - Dimensional Lumber</td><td>porteur : les solives</td></tr>
+  </table>
+  <p>Deux couches de la pile n'ont pas de ligne dans la maquette : le pare-vapeur et la forme de pente.</p>
+  <p class="cle">Une couche de la pile peut manquer dans la maquette. Ce n'est pas à vous de décider
+  qu'elle est inutile : on signale, on ne devine pas (gare 7). Écrivez la question et posez-la
+  avant de commander le matériel.</p>
+</section>
+
+<section>
+  <h2>Mesurer, puis vérifier le relevé</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-11-mesurer.webp" width="1200" height="749" alt="En haut, l'onglet Mesure : boutons Surface et Longueur encadrés, puis la case Résultat. En bas à gauche, la toiture surlignée en rose avec la mesure 132,926 mètres carrés.">
+  <p>La surface : onglet « MESURE », « Ignorer transparents » coché, puis « Surface » et clic sur
+  la toiture (gare 9, geste 10). La gare 9 trouve 132,926 m².</p>
+  <p>La hauteur possible du relevé se calcule avec trois valeurs de la maquette :</p>
+  <ul>
+    <li>l'altitude de l'étage Roof : cliquez la ligne Roof, lisez Elevation (gare 9, geste 4) ;</li>
+    <li>l'épaisseur de la toiture : la somme de ses couches ;</li>
+    <li>la hauteur des acrotères : cliquez un mur de l'étage Roof, lisez Unconnected Height (gare 9, geste 6).</li>
+  </ul>
+  <p>Dans le Duplex, la toiture et les acrotères partent tous deux du niveau de l'étage Roof : leurs
+  propriétés Base Level et Base Constraint valent Roof.</p>
+  <div class="calc">
+    <h3>Exemple résolu, sur une autre maquette</h3>
+    <p>Elevation de l'étage : 3,00 m. Épaisseur de la toiture : 0,40 m. Hauteur des acrotères : 0,60 m.</p>
+    <p>Dessus de la toiture : 3,00 + 0,40 = 3,40. Haut de l'acrotère : 3,00 + 0,60 = 3,60.</p>
+    <p>Le relevé peut monter de 3,60 − 3,40 = 0,20 m au-dessus de la toiture, soit 200 mm.</p>
+  </div>
+  <p class="cle">Dans les exercices de cette ligne, le relevé dépasse la protection d'au moins 150 mm
+  (Toiture 2). Si la maquette et un plan coté ne disent pas la même chose, le plan coté au dernier indice
+  l'emporte et l'écart se signale (gare 3).</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus Toiture 4</h2>
+  <p>Vous savez isoler une toiture dans la maquette, lire ses couches, la mesurer et vérifier la
+  hauteur de son relevé.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>Télécharger la fiche de TP (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
+  La fiche fait relever, sur la toiture du Duplex, ses éléments, ses six couches, sa surface et la
+  hauteur possible de son relevé.</p>
+  <p>Gare suivante : <strong>surfaces et quantités</strong>, Toiture 5.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Pour étudier la toiture du Duplex seule, vous :",
+  "r": [
+   "zoomez depuis la rue",
+   "décochez Level 1, Level 2 et T/FDN dans la colonne Actif",
+   "imprimez le plan de niveau",
+   "supprimez des éléments de la maquette"
+  ],
+  "bon": 1,
+  "x": "Les étages décochés disparaissent : il reste l'étage Roof, avec la toiture, ses acrotères et ses fenêtres de toit."
+ },
+ {
+  "e": "Sur l'étage Roof du Duplex, les murs sont :",
+  "r": [
+   "des cloisons intérieures",
+   "les acrotères qui bordent la toiture",
+   "des cheminées",
+   "des erreurs de la maquette"
+  ],
+  "bon": 1,
+  "x": "Ce sont les murets qui bordent la toiture : le support des relevés."
+ },
+ {
+  "e": "Une fenêtre de toit, pour l'étancheur, est :",
+  "r": [
+   "une émergence : elle traverse la toiture",
+   "une zone accessible",
+   "une entrée d'eaux pluviales",
+   "sans importance"
+  ],
+  "bon": 0,
+  "x": "Elle retire de la surface et ajoute du relevé tout autour (Toiture 5)."
+ },
+ {
+  "e": "Les couches de la toiture se lisent :",
+  "r": [
+   "à la couleur de la toiture en 3D",
+   "dans la structure IFC, sous la ligne IfcMaterialLayerSet de la toiture",
+   "dans le cartouche",
+   "nulle part"
+  ],
+  "bon": 1,
+  "x": "Comme pour le mur de la gare 9, geste 7 : une ligne par couche, de haut en bas."
+ },
+ {
+  "e": "LayerThickness 0,064 se lit :",
+  "r": [
+   "64 mm",
+   "6,4 mm",
+   "640 mm",
+   "0,064 mm"
+  ],
+  "bon": 0,
+  "x": "La maquette donne les longueurs en mètres : 0,064 m = 64 mm."
+ },
+ {
+  "e": "Dans la pile de Toiture 2, la couche Roofing - EPDM Membrane est :",
+  "r": [
+   "la protection",
+   "l'étanchéité",
+   "l'isolant",
+   "le porteur"
+  ],
+  "bon": 1,
+  "x": "L'EPDM est un caoutchouc synthétique : c'est la membrane qui arrête l'eau."
+ },
+ {
+  "e": "Une couche de la pile manque dans la maquette. Vous :",
+  "r": [
+   "la rajoutez vous-même dans la maquette",
+   "posez la question avant de commander le matériel",
+   "décidez qu'elle est inutile",
+   "attendez la fin du chantier"
+  ],
+  "bon": 1,
+  "x": "On signale, on ne devine pas (gare 7)."
+ },
+ {
+  "e": "Elevation de l'étage 3,00 m, toiture de 0,40 m, acrotères de 0,60 m. Le relevé peut monter au-dessus de la toiture de :",
+  "r": [
+   "0,20 m",
+   "0,60 m",
+   "1,00 m",
+   "3,40 m"
+  ],
+  "bon": 0,
+  "x": "Haut de l'acrotère 3,60, dessus de la toiture 3,40 : 3,60 − 3,40 = 0,20 m."
+ },
+ {
+  "e": "La maquette donne 412 m², le plan coté au dernier indice 405 m². Vous :",
+  "r": [
+   "prenez 412, la 3D est plus récente",
+   "prenez la moyenne",
+   "prenez le plan coté et signalez l'écart",
+   "prenez le plus grand des deux"
+  ],
+  "bon": 2,
+  "x": "Le plan coté au dernier indice l'emporte ; l'écart se signale (gare 3)."
+ },
+ {
+  "e": "Les gestes appris ici (isoler, compter, lire les couches, mesurer) :",
+  "r": [
+   "ne marchent que sur la maquette Duplex",
+   "se refont sur d'autres fichiers IFC, selon ce qu'ils contiennent",
+   "demandent un logiciel payant",
+   "changent chaque année"
+  ],
+  "bon": 1,
+  "x": "Le format IFC sert à échanger les maquettes entre logiciels : les mêmes gestes valent pour d'autres maquettes, si elles portent les informations."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

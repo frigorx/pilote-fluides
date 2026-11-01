@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Toiture 3 — Les points singuliers : là où ça fuit</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.seul{display:inline-block;background:#fff4e0;color:#8a5200;border:1px solid #e0b36a;border-radius:6px;padding:0 8px;font-size:.7em;vertical-align:middle}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0}
+figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="Logo inerWeb, module Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg>
+<div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · Étanchéité des toitures</p>
+    <h1>Toiture 3 — Les points singuliers : là où ça fuit</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <img class="illus" src="../g07b-le-metre-sur-plan/illustrations/3-toiture-releve.webp" width="1200" height="800" alt="Sur une toiture-terrasse bordée d'un garde-corps, un étancheur colle une bande de relevé sur l'acrotère. Au milieu de la toiture, un lanterneau.">
+  <p>Une toiture fuit rarement en plein milieu. Elle fuit là où la membrane s'arrête, tourne ou
+  se perce : ce sont les <strong>points singuliers</strong>. Le dossier les dessine en plans de
+  détail, au 1/10 ou au 1/5, le zoom final de la gare 4.</p>
+  <p>Environ 2 heures, test compris. À la fin, vous saurez :</p>
+  <ul>
+    <li>nommer les points singuliers d'une toiture-terrasse ;</li>
+    <li>lire le détail d'un relevé ;</li>
+    <li>relier chaque point du plan de toiture (Toiture 1) à son détail.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Le lexique des points singuliers</h2>
+  <table class="doc">
+    <tr><th>Terme</th><th>Ce que c'est</th></tr>
+    <tr><td><strong>Relevé d'étanchéité</strong></td><td>la membrane qui remonte sur l'acrotère ou sur une costière</td></tr>
+    <tr><td>Entrée d'eaux pluviales (EP)</td><td>l'entrée de l'évacuation ; la membrane se raccorde sur sa platine</td></tr>
+    <tr><td>Trop-plein</td><td>l'évacuation de secours, au travers de l'acrotère</td></tr>
+    <tr><td>Costière</td><td>la rehausse qui porte un lanterneau ou une sortie de ventilation</td></tr>
+    <tr><td>Joint de dilatation (JD)</td><td>la coupure voulue du bâtiment, traitée par une pièce souple</td></tr>
+    <tr><td>Noue</td><td>l'angle rentrant entre deux pentes : l'eau s'y rassemble</td></tr>
+    <tr><td>Arêtier</td><td>l'angle saillant entre deux pentes : l'eau s'en écarte</td></tr>
+    <tr><td>Pontage</td><td>le renfort posé sous la membrane sur une fissure ou un joint</td></tr>
+  </table>
+  <p class="cle">Noue et arêtier se repèrent sur le plan de pentes avant d'aller voir leur détail.</p>
+</section>
+
+<section>
+  <h2>Le détail du relevé</h2>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 12 168 110" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Coupe B-B au 1/10 sur l'acrotère gauche du vestiaire. De bas en haut sur la dalle : forme de pente, pare-vapeur, isolant, membrane d'étanchéité, gravillon. La membrane remonte sur l'acrotère jusqu'à plus 3,25 ; une bande de solin couvre sa tête. Arase de l'acrotère à plus 3,30, dessus de la dalle à plus 2,70, dessous à plus 2,50.">
+<path d="M30 98.0 V117 l3 -1.5 l4 3 l4 -3 l4 3 l5 -1.5 V98.0 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<path d="M30 78.0 H110 l-1.5 4 l3 4 l-3 4 l3 4 l-1.5 4 H30 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<rect x="30" y="18.0" width="20" height="60.0" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<rect x="50" y="58.0" width="60" height="20" fill="#f3efe6" stroke="#10233c" stroke-width="0.35"/>
+<rect x="50" y="48.0" width="60" height="10" fill="#fdf3c4" stroke="#10233c" stroke-width="0.35"/>
+<rect x="51.2" y="43.0" width="58.8" height="4.6" fill="#d9dde3" stroke="#10233c" stroke-width="0.35"/>
+<line x1="50" y1="58.0" x2="110" y2="58.0" stroke="#10233c" stroke-width="0.6" stroke-dasharray="2 1"/>
+<polyline points="110,48.0 50.6,48.0 50.6,23.0" fill="none" stroke="#c9451a" stroke-width="1"/>
+<polyline points="50,20.0 51.8,20.0 51.8,24.5 54,26.0" fill="none" stroke="#10233c" stroke-width="0.6"/>
+<line x1="22" y1="18.0" x2="30" y2="18.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="21" y="19.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 3,30</text>
+<line x1="22" y1="78.0" x2="30" y2="78.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="21" y="79.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 2,70</text>
+<line x1="22" y1="98.0" x2="30" y2="98.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="21" y="99.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 2,50</text>
+<line x1="51" y1="23.0" x2="57" y2="23.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="58" y="24.7" text-anchor="start" font-size="5" font-weight="bold" fill="#10233c" >+ 3,25</text>
+<text x="40" y="49.7" text-anchor="middle" font-size="5" fill="#10233c" >acro-</text><text x="40" y="55.7" text-anchor="middle" font-size="5" fill="#10233c" >tère</text>
+<line x1="50.6" y1="36.0" x2="65" y2="34.4" stroke="#637285" stroke-width="0.3"/><circle cx="50.6" cy="36.0" r="0.6" fill="#637285"/>
+<text x="66.5" y="36.0" text-anchor="start" font-size="5" fill="#10233c" >relevé</text>
+<line x1="51.8" y1="21.0" x2="65" y2="16.4" stroke="#637285" stroke-width="0.3"/><circle cx="51.8" cy="21.0" r="0.6" fill="#637285"/>
+<text x="66.5" y="18.0" text-anchor="start" font-size="5" fill="#10233c" >bande de solin</text>
+<line x1="104" y1="45.5" x2="119" y2="34.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="45.5" r="0.6" fill="#637285"/>
+<text x="120.5" y="36" text-anchor="start" font-size="5" fill="#10233c" >gravillon</text>
+<line x1="104" y1="53.0" x2="119" y2="49.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="53.0" r="0.6" fill="#637285"/>
+<text x="120.5" y="51" text-anchor="start" font-size="5" fill="#10233c" >isolant</text>
+<text x="56" y="106.0" text-anchor="start" font-size="5" font-weight="bold" fill="#10233c" >COUPE B-B</text><text x="56" y="112.5" text-anchor="start" font-size="5" fill="#10233c" >éch. 1/10 · niveaux en m</text>
+</svg>
+    <figcaption>Coupe B-B du toit du vestiaire, au 1/10 : le relevé sur l'acrotère gauche (Toiture 2).</figcaption>
+  </figure>
+  <p>Le détail se lit comme une suite de gestes. La membrane de la partie courante remonte sur
+  l'acrotère. Elle dépasse la protection. Sa tête est protégée, ici par une <strong>bande de solin</strong>,
+  une bande de métal fixée sur l'acrotère au-dessus du relevé.</p>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>La cote qui compte est la hauteur du relevé au-dessus de la protection. Dans les exercices
+    de cette ligne, elle doit valoir au moins 150 mm (donnée de l'exercice ; sur un chantier,
+    le DTU qui s'applique fixe le minimum).</p>
+    <p>Sur ce détail, la protection est à + 3,05 (Toiture 2 : 2,70 + 0,20 + 0,10 + 0,05) et le relevé monte à + 3,25.
+    3,25 − 3,05 = 0,20 m, soit 200 mm : le relevé est conforme.</p>
+  </div>
+  <p class="cle">Autour d'une émergence, la protection n'est pas au même niveau partout, à cause de la
+  pente. Vérifiez le relevé du côté où la protection est la plus haute : c'est là qu'il dépasse le moins.</p>
+</section>
+
+<section>
+  <h2>L'entrée d'eaux pluviales en détail</h2>
+  <p>Le détail d'une EP montre :</p>
+  <ul>
+    <li>la <strong>platine</strong> de l'entrée, prise en sandwich dans l'étanchéité : la membrane se raccorde dessus ;</li>
+    <li>le point bas : la forme de pente y arrive (Toiture 1) ;</li>
+    <li>le tuyau qui descend vers la descente d'eaux pluviales ;</li>
+    <li>souvent, une pièce de membrane en renfort autour.</li>
+  </ul>
+  <p class="cle">Une EP se place là où le plan la met. Ailleurs, l'eau ne l'atteint pas.</p>
+</section>
+
+<section>
+  <h2>Le joint de dilatation en détail</h2>
+  <p>Le JD coupe le bâtiment en deux, et la toiture avec. Le détail montre :</p>
+  <ul>
+    <li>deux relevés face à face, souvent sur deux costières ;</li>
+    <li>une pièce souple qui passe au-dessus du joint (lyre, soufflet, capot) : il doit pouvoir bouger.</li>
+  </ul>
+  <p class="cle">Un JD ne se ponte jamais avec une pièce rigide : le bâtiment bouge, la pièce casserait.
+  Sur le plan de toiture, le JD est un trait mixte.</p>
+</section>
+
+<section>
+  <h2>Du plan de toiture aux détails : le jeu de piste</h2>
+  <p>Dossier en main :</p>
+  <ol>
+    <li>Déroulez la liste de contrôle de Toiture 1 sur le plan de toiture : notez chaque point singulier.</li>
+    <li>Pour chacun, cherchez son renvoi de détail (gare 4) ou sa coupe.</li>
+    <li>Chaque détail vous donne les couches, les cotes à tenir et l'ordre des gestes.</li>
+    <li>Comparez au descriptif : un élément demandé mais non dessiné se signale aussi.</li>
+    <li>Un point singulier sans détail est une question à poser avant d'exécuter : on signale, on ne devine pas (gare 7).</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu</h3>
+    <p>Sur le plan de l'écran 3 de Toiture 1, je note : les relevés sur les acrotères, 2 EP,
+    1 trop-plein, 1 lanterneau sur costière et 1 JD : 5 sortes de points singuliers, et un même détail peut servir aux deux EP. Si un détail manque, je le demande.</p>
+  </div>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à toutes les questions, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus Toiture 3</h2>
+  <p>Relevés, EP, trop-pleins, costières, JD, noues : vous savez les nommer, les retrouver sur
+  le plan et lire leur détail.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
+  L'exercice fait légender le détail du relevé du vestiaire, mener le jeu de piste sur son plan de
+  toiture et vérifier le relevé d'une costière.</p>
+  <p>Gare suivante : <strong>le BIM de l'étancheur</strong>, Toiture 4.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "Une toiture fuit le plus souvent :",
+  "r": [
+   "en plein milieu de la partie courante",
+   "aux points singuliers : relevés, naissances, joints",
+   "sous l'isolant",
+   "jamais"
+  ],
+  "bon": 1,
+  "x": "Là où la membrane s'arrête, tourne ou se perce : les points singuliers."
+ },
+ {
+  "e": "La noue est :",
+  "r": [
+   "l'angle saillant entre deux versants",
+   "l'angle rentrant",
+   "une évacuation de secours placée dans l'acrotère",
+   "une rehausse métallique"
+  ],
+  "bon": 1,
+  "x": "Rentrant = l'eau s'y rassemble : un point à surveiller de près."
+ },
+ {
+  "e": "La costière est :",
+  "r": [
+   "la rehausse métallique qui porte un lanterneau",
+   "le bord de la membrane replié sur lui-même",
+   "une pente inversée vers l'intérieur du bâtiment",
+   "un outil de pose"
+  ],
+  "bon": 0,
+  "x": "Elle rehausse l'émergence pour que le relevé d'étanchéité ait sa hauteur."
+ },
+ {
+  "e": "Dans les exercices de cette ligne, le relevé dépasse la protection d'au moins :",
+  "r": [
+   "50 mm",
+   "100 mm",
+   "150 mm",
+   "500 mm"
+  ],
+  "bon": 2,
+  "x": "150 mm, donnée de l'exercice. Sur un chantier, le minimum vient du DTU qui s'applique (NF DTU 43.1 pour un toit en béton)."
+ },
+ {
+  "e": "Sur le détail d'une naissance EP, la platine :",
+  "r": [
+   "se pose par-dessus la protection",
+   "se prend en sandwich dans l'étanchéité",
+   "se visse sur l'acrotère",
+   "est décorative"
+  ],
+  "bon": 1,
+  "x": "La membrane se raccorde sur la platine : l'eau ne doit trouver aucun passage."
+ },
+ {
+  "e": "Un joint de dilatation se traite :",
+  "r": [
+   "par un pontage rigide bien collé sur les deux lèvres du joint",
+   "par un dispositif souple qui peut bouger",
+   "en le remplissant de mortier",
+   "en l'ignorant"
+  ],
+  "bon": 1,
+  "x": "Le JD bouge : tout traitement rigide casse. Lyre, soufflet ou capot souple."
+ },
+ {
+  "e": "La tête d'un relevé (en haut) :",
+  "r": [
+   "reste nue",
+   "est protégée, par exemple par une bande de solin, selon le détail",
+   "se peint",
+   "se recouvre de gravillon"
+  ],
+  "bon": 1,
+  "x": "L'eau qui ruisselle sur l'acrotère ne doit pas passer derrière la membrane."
+ },
+ {
+  "e": "Un point singulier du plan de toiture n'a pas de détail dans le dossier. Vous :",
+  "r": [
+   "improvisez selon l'habitude",
+   "faites remonter la question avant d'exécuter",
+   "le traitez comme le relevé courant des acrotères voisins",
+   "le laissez sans étanchéité"
+  ],
+  "bon": 1,
+  "x": "On signale, on ne devine pas (gare 7) : un détail manquant se demande."
+ },
+ {
+  "e": "Le pontage est :",
+  "r": [
+   "un pont provisoire posé pour accéder à la toiture en chantier",
+   "un renfort sous la membrane sur une fissure ou un joint",
+   "un type d'échafaudage",
+   "une pente double"
+  ],
+  "bon": 1,
+  "x": "Renfort local : la membrane est aidée là où le support peut travailler."
+ },
+ {
+  "e": "Les détails de points singuliers se dessinent :",
+  "r": [
+   "au 1/100",
+   "au 1/10 ou au 1/5",
+   "à main levée uniquement",
+   "à l'échelle 1"
+  ],
+  "bon": 1,
+  "x": "Le plan de détail est le zoom final (gare 4) : chaque couche y est lisible et cotée."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

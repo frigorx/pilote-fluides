@@ -74,7 +74,8 @@
      avec leur cours, leur test et leurs deux PDF. Elle est donc hors de STATIONS : les 34 stations,
      le livre et les tests ne bougent pas. Le plan du réseau la dessine en tête ; la page la liste.
      États : "relecture" (en ligne, noindex, ouverte), "fermee" (écrite, en relecture, pas cliquable).
-     Les gares Toiture et Plâtrerie sont les deux embranchements « métiers du bâtiment ». */
+     Plâtrerie, Toiture et CVC-R sont les trois lignes de métier, embranchements de la ligne P (01/11/2026),
+     ouvertes en relecture après la P3 de Franck ; ni diplôme ni année sur les pages. */
   const GARES_PLANS = [
     ["1", "g01-bases-graphiques", "Bases graphiques", "Tracer et présenter"],
     ["2", "g02-les-vues", "Les vues", "Le dé à six faces"],
@@ -91,23 +92,26 @@
     ["10", "g10-le-sujet-guide", "Le sujet guidé", "Un vrai sujet, pas à pas"],
     ["11", "g11-suivre-une-installation", "Suivre une installation", "Dans la maquette 3D"],
     ["12", "g12-croquer-et-relever", "Croquer et relever", "Une installation frigorifique"],
-    ["13", "g13-schema-isometrique", "Le schéma isométrique", "Lire et tracer un réseau"],
-    ["CVC", "tecvc1-plan-implantation-cvc", "Plan d'implantation CVC", "Équipements, réseaux, nomenclature"]
+    ["13", "g13-schema-isometrique", "Le schéma isométrique", "Lire et tracer un réseau"]
   ].map(([code, cle, titre, rendu, be]) => be
     /* Gare écrite au moteur des stations BE (décision 38, sprint du 31/10/2026) : elle vit dans stations/<clé>/, son corrigé au coffre. */
     ? {code, cle, titre, rendu, ligne: "P", etat: "relecture", href: `stations/${cle}/`, exercice: `stations/${cle}/feuille-N1.pdf`, be: true}
     : {code, cle, titre, rendu, ligne: "P", etat: "relecture", href: `../plan/gares/${cle}/index.html`,
     exercice: `../plan/gares/${cle}/exercice.pdf`, corrige: `../plan/gares/${cle}/corrige.pdf`});
   const METIERS = [
-    {nom: "Plâtrerie et isolation", detail: "niveau CAP du bâtiment", gares: [
+    {nom: "Plâtrerie et isolation", detail: "cloisons, doublages, plafonds", gares: [
       ["Plâtrerie 1", "mpi1-plan-de-distribution", "Le plan de distribution"], ["Plâtrerie 2", "mpi2-calepinage-implantation", "Calepinage et implantation"],
       ["Plâtrerie 3", "mpi3-details-second-oeuvre", "Les détails du second œuvre"], ["Plâtrerie 4", "mpi4-bim-du-plaquiste", "Le BIM du plaquiste"],
-      ["Plâtrerie 5", "mpi5-du-plan-au-devis", "Du plan au devis"], ["Plâtrerie 6", "mpi6-cap-sur-ep1", "Terminus : sujets et sujet blanc"]]},
-    {nom: "Étanchéité des toitures", detail: "niveau CAP du bâtiment", gares: [
+      ["Plâtrerie 5", "mpi5-du-plan-au-devis", "Du plan au devis"], ["Plâtrerie 6", "mpi6-cap-sur-ep1", "Terminus : un dossier complet, seul"]]},
+    {nom: "Étanchéité des toitures", detail: "toitures-terrasses", gares: [
       ["Toiture 1", "etam1-plan-toiture-terrasse", "Le plan de toiture-terrasse"], ["Toiture 2", "etam2-coupe-du-complexe", "La coupe du complexe"],
       ["Toiture 3", "etam3-points-singuliers", "Les points singuliers"], ["Toiture 4", "etam4-bim-de-l-etancheur", "Le BIM de l'étancheur"],
-      ["Toiture 5", "etam5-surfaces-et-quantites", "Surfaces et quantités"], ["Toiture 6", "etam6-cap-sur-ep1", "Terminus : sujets et sujet blanc"]]}
-  ].map(m => ({nom: m.nom, detail: m.detail, gares: m.gares.map(([code, cle, titre]) => ({code, cle, titre, ligne: "P", etat: "fermee", href: `../plan/gares/${cle}/index.html`}))}));
+      ["Toiture 5", "etam5-surfaces-et-quantites", "Surfaces et quantités"], ["Toiture 6", "etam6-cap-sur-ep1", "Terminus : un dossier complet, seul"]]},
+    {nom: "CVC-R", detail: "chauffage, ventilation, climatisation, réfrigération", gares: [
+      ["CVC-R 1", "tecvc1-plan-implantation-cvc", "Le plan d'implantation"], ["CVC-R 2", "cvcr2-schema-hydraulique", "Le schéma hydraulique"],
+      ["CVC-R 3", "cvcr3-reseau-aeraulique", "Le réseau aéraulique"], ["CVC-R 4", "cvcr4-schema-frigorifique", "Le schéma frigorifique"],
+      ["CVC-R 5", "cvcr5-synoptique-regulation", "Le synoptique de régulation"], ["CVC-R 6", "cvcr6-terminus-dossier", "Terminus : un dossier complet, seul"]]}
+  ].map(m => ({nom: m.nom, detail: m.detail, gares: m.gares.map(([code, cle, titre]) => ({code, cle, titre, ligne: "P", etat: "relecture", href: `../plan/gares/${cle}/index.html`, exercice: `../plan/gares/${cle}/exercice.pdf`}))}));
   const PLANS = {code: "P", nom: "Lire les plans", detail: "du trait au plan, de la cote à la maquette", couleur: "#8a5200", carte: "../plan/index.html", GARES: GARES_PLANS, METIERS};
 
   window.BE_PROGRAMME = {LIGNES, STATIONS, GARE, TERMINUS, PLANS,

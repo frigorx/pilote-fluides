@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**545 stations** réparties en 19 réseaux.
+**562 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -473,10 +473,21 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Remplacer un composant électrique sous consignation · Le tour de main](https://inerweb.fr/tour-de-main/interventions/remplacer-composant-electrique/) | — | — | — | Guidance au poste : remplacer un contacteur (ou un pressostat) dans une armoire électrique, sous consignation. Je sépare, je condamne, j'identifie, je fais la VAT, je repère les fils avant de les retirer, je recâble, je déconsigne, je fais l'essai. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
 | [Remplacer un composant du circuit frigorifique · Le tour de main](https://inerweb.fr/tour-de-main/interventions/remplacer-composant-frigo/) | — | — | — | Guidance au poste : remplacer un composant du circuit frigorifique, le filtre déshydrateur (le voyant en variante). Je récupère, je dépose, je monte le composant neuf dans le bon sens sous balayage d'azote, je referme, je recharge, je trace. Je m'entraîne sur le dessin, je le fais sur la vraie machine, je garde la trace de mes relevés. |
 
-## inerWeb Plan — 15 stations
+## inerWeb Plan — 32 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
+| [CVC-R 2 — Le schéma de principe hydraulique](https://inerweb.fr/plan/gares/cvcr2-schema-hydraulique/) | — | — | — | ⬅ La ligne Lire les plans · ligne CVC-R en cours de relecture |
+| [CVC-R 3 — Le plan de réseau aéraulique](https://inerweb.fr/plan/gares/cvcr3-reseau-aeraulique/) | — | — | — | ⬅ La ligne Lire les plans · ligne CVC-R en cours de relecture |
+| [CVC-R 4 — Le schéma frigorifique](https://inerweb.fr/plan/gares/cvcr4-schema-frigorifique/) | — | — | — | ⬅ La ligne Lire les plans · ligne CVC-R en cours de relecture |
+| [CVC-R 5 — Le synoptique de régulation](https://inerweb.fr/plan/gares/cvcr5-synoptique-regulation/) | — | — | — | ⬅ La ligne Lire les plans · ligne CVC-R en cours de relecture |
+| [CVC-R 6 — Terminus : un dossier CVC-R complet](https://inerweb.fr/plan/gares/cvcr6-terminus-dossier/) | — | — | — | ⬅ La ligne Lire les plans · ligne CVC-R en cours de relecture |
+| [Toiture 1 — Le plan de toiture-terrasse : pentes et altimétries](https://inerweb.fr/plan/gares/etam1-plan-toiture-terrasse/) | — | — | — | Le vestiaire de la gare 10 a un toit plat : une toiture-terrasse . Son plan de toiture est la vue de dessus du toit, comme la vue de dessus du dé en gare 2. C'est le document principal de l'étancheur. |
+| [Toiture 2 — La coupe du complexe : les couches en pile](https://inerweb.fr/plan/gares/etam2-coupe-du-complexe/) | — | — | — | Le plan de toiture de Toiture 1 montre le toit vu de dessus. La coupe le montre tranché, comme les coupes verticales de la gare 4. On y voit la pile des couches posées sur la dalle : le complexe d'étanchéité. |
+| [Toiture 3 — Les points singuliers : là où ça fuit](https://inerweb.fr/plan/gares/etam3-points-singuliers/) | — | — | — | Une toiture fuit rarement en plein milieu. Elle fuit là où la membrane s'arrête, tourne ou se perce : ce sont les points singuliers . Le dossier les dessine en plans de détail, au 1/10 ou au 1/5, le zoom final de la gare 4. |
+| [Toiture 4 — Le BIM de l'étancheur : la toiture en maquette](https://inerweb.fr/plan/gares/etam4-bim-de-l-etancheur/) | — | — | — | En gare 9, vous avez appris dix gestes dans BIM Vision, sur la maquette Duplex. Son toit est une toiture plate végétalisée , bordée d'acrotères : un vrai terrain d'étancheur. Cette gare applique les gestes de la gare 9 à cette toiture. |
+| [Toiture 5 — Surfaces et quantités : émergences déduites](https://inerweb.fr/plan/gares/etam5-surfaces-et-quantites/) | — | — | — | Cette gare apprend à déterminer des quantités de matériaux : combien de membrane commander, et combien de relevé façonner. Tout part du plan de toiture. Environ 2 heures, calculatrice en main. À la fin, vous saurez : |
+| [Toiture 6 — Terminus : un dossier complet, seul et en temps limité](https://inerweb.fr/plan/gares/etam6-cap-sur-ep1/) | — | — | — | ⬅ La ligne Lire les plans · Étanchéité des toitures · terminus |
 | [Gare 1 — Bases graphiques : tracer et présenter](https://inerweb.fr/plan/gares/g01-bases-graphiques/) | — | — | — | La première gare du réseau : avant de LIRE des plans, on apprend les gestes de celui qui les dessine. Environ 2 heures . À la fin, vous saurez : |
 | [Gare 2 — Les vues : le dé à 6 faces](https://inerweb.fr/plan/gares/g02-les-vues/) | — | — | — | Matériel : un dé à jouer (1 pour 2), une feuille, un crayon. L'exercice papier se télécharge au dernier écran. |
 | [Gare 3 — Le dossier technique : acteurs, documents, cartouche](https://inerweb.fr/plan/gares/g03-dossier-technique/) | — | — | — | Un plan n'arrive jamais seul : il fait partie d'un dossier , préparé par des gens précis, pour des usages précis. Environ 2 heures . À la fin, vous saurez : |
@@ -486,12 +497,18 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Gare 7 — La cotation : chaînes de cotes](https://inerweb.fr/plan/gares/g07-la-cotation/) | — | — | — | Les dimensions d'un plan sont écrites dans les cotes . Environ 2 heures . À la fin, vous saurez : |
 | [Gare 7 bis — Le métré sur plan : longueurs, surfaces, volumes](https://inerweb.fr/plan/gares/g07b-le-metre-sur-plan/) | — | — | — | Avant de commander ou de chiffrer, chaque métier relève des quantités sur le plan. Le plaquiste compte des mètres carrés de mur. L'étancheur compte des mètres carrés de toiture et des mètres de relevé. Le plombier compte des mètres de tube. |
 | [Gare 8 — Le croquis coté : dessiner à main levée](https://inerweb.fr/plan/gares/g08-le-croquis-cote/) | — | — | — | Jusqu'ici vous LISIEZ. Cette gare, c'est l'inverse : vous PRODUISEZ. Le croquis coté est le brouillon intelligent du chantier : rapide, à main levée, mais assez précis pour qu'un autre travaille avec. Environ 2 heures . |
-| [Gare 9 — La maquette BIM : initiation BIM Vision](https://inerweb.fr/plan/gares/g09-la-maquette-bim/) | — | — | — | Le bâtiment existe aussi en version numérique : la maquette BIM . Cette gare se vit sur poste informatique (~2 h). À la fin, vous saurez : |
+| [Gare 9 — La maquette BIM : initiation BIM Vision](https://inerweb.fr/plan/gares/g09-la-maquette-bim/) | — | — | — | Le bâtiment existe aussi en version numérique : la maquette BIM . Cette gare se fait sur ordinateur , avec BIM Vision ouvert (environ 2 h, test compris ; la fiche de TP prend 1 h 30). |
 | [Gare 10 — Le sujet guidé : un vrai sujet, pas à pas](https://inerweb.fr/plan/gares/g10-le-sujet-guide/) | — | — | — | Vous avez les neuf premières gares dans les jambes : documents, plans, conventions, échelles, cotes, croquis, maquette. Cette gare assemble tout sur du VRAI : un vrai sujet de CAP , lu ensemble, pas à pas. Environ 2 heures . |
 | [Gare 11 — Suivre une installation dans la maquette 3D](https://inerweb.fr/plan/gares/g11-suivre-une-installation/) | — | — | — | ⬅ La ligne Lire les plans · tronc commun · après la gare 10 · pour le froid et la clim en cours de relecture |
 | [Gare 12 — Croquer et relever une installation frigorifique](https://inerweb.fr/plan/gares/g12-croquer-et-relever/) | — | — | — | ⬅ La ligne Lire les plans · tronc commun · pour le froid et la clim en cours de relecture |
 | [Gare 13 — Le schéma isométrique d'un réseau](https://inerweb.fr/plan/gares/g13-schema-isometrique/) | — | — | — | ⬅ La ligne Lire les plans · tronc commun · pour le froid et la clim en cours de relecture |
-| [Bureau d'études, gare 1 — Tracer le plan d'implantation d'une installation CVC](https://inerweb.fr/plan/gares/tecvc1-plan-implantation-cvc/) | — | — | — | ⬅ La ligne Lire les plans · ligne bureau d'études CVC en cours de relecture |
+| [Plâtrerie 1 — Le plan de distribution : cloisons et doublages](https://inerweb.fr/plan/gares/mpi1-plan-de-distribution/) | — | — | — | Les gares 1 à 10 du tronc vous ont appris à lire un dossier. Sur cette ligne, vous lisez les mêmes plans avec les yeux du plaquiste. |
+| [Plâtrerie 2 — Calepinage et implantation : répartir et tracer](https://inerweb.fr/plan/gares/mpi2-calepinage-implantation/) | — | — | — | Calepiner, c'est répartir des éléments de taille fixe (plaques, dalles de plafond) sur une surface avant de poser : sur le papier d'abord, au sol ensuite. |
+| [Plâtrerie 3 — Les détails du second œuvre : jonctions et points singuliers](https://inerweb.fr/plan/gares/mpi3-details-second-oeuvre/) | — | — | — | Une cloison rate le plus souvent aux jonctions , là où votre ouvrage rencontre autre chose : le sol, le plafond, une porte. Le dossier les dessine dans les plans de détail . |
+| [Plâtrerie 4 — Le BIM du plaquiste : quantitatif sur maquette](https://inerweb.fr/plan/gares/mpi4-bim-du-plaquiste/) | — | — | — | À la gare 9, vous avez appris à naviguer dans la maquette Duplex avec BIM Vision. Ici, vous la faites travailler pour le plaquiste. Cette gare se vit sur poste , environ 2 heures, test compris. À la fin, vous saurez : |
+| [Plâtrerie 5 — Du plan au devis : surfaces et quantités](https://inerweb.fr/plan/gares/mpi5-du-plan-au-devis/) | — | — | — | Le plaquiste tire sa commande du plan : des plaques, des rails, des montants, de l'isolant. Dans l'exercice, vous chiffrez la cloison C1 du vestiaire, dessinée à la gare Plâtrerie 1. |
+| [Plâtrerie 6 — Terminus : un dossier complet, seul et en temps limité](https://inerweb.fr/plan/gares/mpi6-cap-sur-ep1/) | — | — | — | ⬅ La ligne Lire les plans · Plâtrerie et isolation · terminus |
+| [CVC-R 1 — Tracer le plan d'implantation d'une installation CVC](https://inerweb.fr/plan/gares/tecvc1-plan-implantation-cvc/) | — | — | — | ⬅ La ligne Lire les plans · ligne CVC-R en cours de relecture |
 
 ## JouéRézo — 45 stations
 

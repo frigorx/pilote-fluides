@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>CVC-R 4 — Le schéma frigorifique</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.kicker{color:#c9451a;font-weight:bold;font-size:.9em;margin:0 0 4px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.q p.consigne{margin:0 0 10px}
+.aides{margin:12px 0}
+.aides button,button.revoir{font:inherit;padding:8px 16px;border-radius:9px;border:2px solid var(--blue);background:var(--paper);color:var(--navy);cursor:pointer;min-height:44px}
+.aides button[disabled]{opacity:.6;cursor:default}
+.aides ol{margin:8px 0 0;padding-left:22px}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0;text-align:center}
+figure.svgbox svg{background:#fff;border-radius:8px}
+table.legende{border-collapse:collapse;margin:8px 0}
+table.legende td{padding:2px 10px 2px 0;vertical-align:middle;text-align:left}
+.descriptif{background:#fffdf8;border:1px solid rgba(27,58,99,.25);border-radius:10px;padding:8px 14px;margin:12px 0}
+.descriptif p{margin:6px 0}
+.credit{font-size:.8em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <a href="../../../index.html" class="logo-accueil" aria-label="Retour à l’accueil inerweb.fr" title="Accueil inerweb.fr" style="display:flex"><svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="inerWeb BE, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg></a>
+  <div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · ligne CVC-R <span class="statut">en cours de relecture</span></p>
+    <h1>CVC-R 4 — Le schéma frigorifique</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <p>La pompe à chaleur PAC1 de la maison chauffe l'eau des radiateurs (gare CVC-R 2). À l'intérieur, c'est une <strong>machine frigorifique</strong> : un fluide tourne en boucle, prend de la chaleur à l'air et la donne à l'eau.</p>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="640" height="391.1" style="max-width:100%;height:auto" viewBox="0 0 180 110" role="img" aria-label="Schéma frigorifique de la pompe à chaleur PAC1 : compresseur CP1 en haut, condenseur à plaques CD1 à droite relié à l'eau de chauffage, détendeur DT1 en bas, évaporateur à air EV1 à gauche."><rect x="2" y="2" width="144" height="106" fill="none" stroke="#637285" stroke-width="0.4" stroke-dasharray="2 1.5"/>
+<text x="5" y="104" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#637285">PAC1</text>
+<polyline points="91.2,24 122.4,24 122.4,46.6" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(116 24) rotate(0)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(122.4 38) rotate(90)"/>
+<polyline points="122.4,66.2 122.4,92 64,92" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(122.4 78) rotate(90)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(102 92) rotate(180)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(72 92) rotate(180)"/>
+<polyline points="56,92 28,92 28,69.5" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(40 92) rotate(180)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(28 80) rotate(-90)"/>
+<polyline points="28,41.5 28,24 78.8,24" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(28 33) rotate(-90)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(38 24) rotate(0)"/>
+<g transform="translate(85 24) rotate(0) scale(0.3906) translate(0 0)"><rect x="-16" y="-15" width="32" height="30" fill="#fff"/><ellipse cx="0.00" cy="0.00" rx="15.00" ry="15.00" stroke="black" stroke-width="0.90" fill="white"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="black" stroke-width="0.90" fill="none"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="black" stroke-width="0.90" fill="none"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="black" stroke-width="0.90" fill="none"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M 0.00,-4.50 A 4.50,4.50 0 0 0 -0.00,4.50" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M -0.00,4.50 A 3.50,3.50 0 0 0 0.00,-2.50" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M 0.00,-2.50 A 2.50,2.50 0 0 0 -0.00,2.50" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M -0.00,2.50 A 1.50,1.50 0 0 0 0.00,-0.50" stroke="black" stroke-width="0.90" fill="none"/></g>
+<text x="85" y="36.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">CP1</text>
+<g transform="translate(128 56) rotate(0) scale(0.6601) translate(1 -4.99)"><rect x="-16" y="-10.16" width="30" height="30.3" fill="#fff"/><line x1="6" y1="-5" x2="6" y2="14" stroke="black" stroke-width="0.27" fill="none"/>
+<line x1="10" y1="-5.83" x2="10" y2="-10.16" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="black" stroke-width="0.27" fill="none"/>
+<rect x="-16" y="-5" width="30" height="20" rx="0" ry="0" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="-10" y1="20.14" x2="-10" y2="15.87" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="black" stroke-width="0.27" fill="none"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="black" stroke-width="0.53" fill="none"/></g>
+<text x="116.5" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">CD1</text>
+<g transform="translate(28 56) rotate(0) scale(0.5833) translate(0 -4)"><rect x="-19" y="-20" width="38" height="48" fill="#fff"/><rect x="-18" y="-20" width="36" height="48" rx="0" ry="0" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-14" y1="16" x2="-14" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="7" y1="16" x2="7" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="14" y1="16" x2="14" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-7" y1="16" x2="-7" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="0" y1="16" x2="0" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-19" y1="20" x2="19" y2="20" stroke="black" stroke-width="0.60" fill="none"/>
+<ellipse cx="0.00" cy="-2.00" rx="15.00" ry="15.00" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="7" y1="-15" x2="13" y2="5" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 0.00,-1.00 A 1.00,1.00 0 0 0 -1.00,-2.00" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-7" y1="-15" x2="-13" y2="5" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 0.00,-1.00 A 6.00,6.00 0 0 0 6.00,5.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M -1.00,-2.00 A 6.00,6.00 0 0 0 -7.00,4.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M -6.00,5.00 A 6.00,6.00 0 0 0 0.00,-1.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M -7.00,4.00 A 1.00,1.00 0 0 0 -6.00,5.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 7.00,4.00 A 6.00,6.00 0 0 0 1.00,-2.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 1.00,-2.00 A 1.00,1.00 0 0 0 0.00,-1.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 6.00,5.00 A 1.00,1.00 0 0 0 7.00,4.00" stroke="black" stroke-width="0.60" fill="none"/>
+<ellipse cx="0.00" cy="-7.00" rx="2.50" ry="4.50" stroke="black" stroke-width="0.60" fill="none"/></g>
+<text x="41" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">EV1</text>
+<g transform="translate(108 92) rotate(0) scale(0.3761) translate(4.875 0)"><rect x="-19.5" y="-5" width="29.25" height="10" fill="#fff"/><line x1="-5" y1="-4.23" x2="-5" y2="1.23" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="6" y1="0.49" x2="9.75" y2="0.49" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="2" y1="-0.45" x2="2" y2="4.45" stroke="black" stroke-width="0.93" fill="none"/>
+<rect x="-15.75" y="-5" width="21.75" height="10" rx="0" ry="0" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="-19.5" y1="0.49" x2="-15.75" y2="0.49" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="-12" y1="-0.41" x2="-12" y2="4.41" stroke="black" stroke-width="0.93" fill="none"/></g>
+<text x="108" y="87" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">FD1</text>
+<g transform="translate(90 92) rotate(0) scale(0.3395) translate(-9.975 -0.10499999999999954)"><rect x="-7.7" y="-5.79" width="35.35" height="11.79" fill="#fff"/><line x1="21.73" y1="-0.05" x2="27.65" y2="-0.05" stroke="black" stroke-width="1.03" fill="none"/>
+<rect x="-0.7" y="-5.79" width="22.75" height="11.79" rx="0" ry="0" stroke="black" stroke-width="1.03" fill="none"/>
+<ellipse cx="10.68" cy="0.10" rx="6.12" ry="5.89" stroke="black" stroke-width="1.03" fill="none"/>
+<line x1="-7.7" y1="-0.05" x2="-0.7" y2="-0.05" stroke="black" stroke-width="1.03" fill="none"/></g>
+<text x="88" y="87" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">VL1</text>
+<g transform="translate(60 89.4) rotate(0) scale(0.3942) translate(0 6.414999999999999)"><rect x="-11" y="-17.83" width="22" height="22.83" fill="#fff"/><ellipse cx="0.00" cy="-12.00" rx="5.83" ry="5.83" stroke="black" stroke-width="0.89" fill="white"/>
+
+<polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" stroke="black" stroke-width="0.89" fill="white"/>
+<line x1="0" y1="0" x2="0" y2="-6" stroke="black" stroke-width="0.89" fill="none"/>
+<line x1="10" y1="0" x2="11" y2="0" stroke="black" stroke-width="0.89" fill="none"/>
+<line x1="-10" y1="0" x2="-11" y2="0" stroke="black" stroke-width="0.89" fill="none"/></g>
+<text x="60" y="101" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">DT1</text>
+<circle cx="76" cy="92" r="0.9" fill="#10233c"/>
+<polyline points="76,92 76,94" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(76 98.6) rotate(90) scale(0.3500) translate(-1.3449999999999998 5)"><rect x="-11.31" y="-15" width="25.310000000000002" height="20" fill="#fff"/><line x1="-11.31" y1="0" x2="-6.35" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="7.3" y1="0" x2="11.93" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<polygon points="-6,-5 -6,5 7,-5 7,5" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="0.48" y1="0" x2="0.48" y2="-13" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="-3.3" y1="-13.32" x2="4.33" y2="-13.32" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="1" y1="-1" x2="8" y2="-9" stroke="black" stroke-width="0.50" fill="none"/>
+<polygon points="12,-15 7,-10 9,-8 14,-13" stroke="black" stroke-width="1.00" fill="none"/></g>
+<text x="81.5" y="102" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">PP1</text>
+<circle cx="106" cy="24" r="0.9" fill="#10233c"/>
+<polyline points="106,24 106,21" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(107 17.4) rotate(0) scale(0.3991) translate(-1.0500000000000007 9.120000000000001)"><rect x="-10" y="-17.89" width="22.1" height="17.54" fill="#fff"/><rect x="-10" y="-17.89" width="22.1" height="9.44" rx="0" ry="0" stroke="black" stroke-width="0.88" fill="none"/>
+
+<line x1="0.2" y1="-8.44" x2="0.2" y2="-0.35" stroke="black" stroke-width="0.88" fill="none"/></g>
+<text x="107" y="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">PH1</text>
+<circle cx="46" cy="24" r="0.9" fill="#10233c"/>
+<polyline points="46,24 46,21" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(47 17.4) rotate(0) scale(0.3991) translate(-1.0500000000000007 9.120000000000001)"><rect x="-10" y="-17.89" width="22.1" height="17.54" fill="#fff"/><rect x="-10" y="-17.89" width="22.1" height="9.44" rx="0" ry="0" stroke="black" stroke-width="0.88" fill="none"/>
+
+<line x1="0.2" y1="-8.44" x2="0.2" y2="-0.35" stroke="black" stroke-width="0.88" fill="none"/></g>
+<text x="47" y="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">PB1</text>
+<circle cx="64" cy="24" r="0.9" fill="#10233c"/>
+<polyline points="64,24 64,22" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(64 17.4) rotate(-90) scale(0.3500) translate(-1.3449999999999998 5)"><rect x="-11.31" y="-15" width="25.310000000000002" height="20" fill="#fff"/><line x1="-11.31" y1="0" x2="-6.35" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="7.3" y1="0" x2="11.93" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<polygon points="-6,-5 -6,5 7,-5 7,5" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="0.48" y1="0" x2="0.48" y2="-13" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="-3.3" y1="-13.32" x2="4.33" y2="-13.32" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="1" y1="-1" x2="8" y2="-9" stroke="black" stroke-width="0.50" fill="none"/>
+<polygon points="12,-15 7,-10 9,-8 14,-13" stroke="black" stroke-width="1.00" fill="none"/></g>
+<text x="69" y="19" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">PP2</text>
+<line x1="4" y1="50" x2="13" y2="50" stroke="#637285" stroke-width="0.6"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#637285" transform="translate(13.5 50) rotate(0)"/>
+<text x="4" y="46" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285">air</text>
+<polyline points="134.8,46.6 134.8,40 178,40" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(160 40) rotate(0)"/>
+<text x="151" y="36" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">départ</text>
+<polyline points="178,72 134.8,72 134.8,66.2" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(160 72) rotate(180)"/>
+<text x="151" y="80" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">retour</text></svg><figcaption>Le schéma frigorifique de PAC1, tel que le bureau d'études le dessine.</figcaption></figure>
+  <p>Environ <strong>1 h 30</strong>. À la fin, vous saurez :</p>
+  <ul>
+    <li>nommer les composants d'un schéma frigorifique avec sa légende ;</li>
+    <li>suivre le fluide dans le sens des flèches ;</li>
+    <li>dire quels composants sont côté haute pression et côté basse pression ;</li>
+    <li>trouver où le fluide donne sa chaleur à l'eau ;</li>
+    <li>relever une erreur de branchement sur un schéma.</li>
+  </ul>
+  <p class="cle">En gare 12, vous relevez une installation réelle, sur place. Ici, vous lisez le schéma du bureau d'études, avant que la machine existe.</p>
+</section>
+
+<section>
+  <h2>Les quatre composants principaux</h2>
+  <p>Le fluide frigorigène passe toujours par quatre composants, dans cet ordre :</p>
+  <ul>
+    <li>le <strong>compresseur</strong> CP1 aspire le fluide en gaz et le comprime ;</li>
+    <li>le <strong>condenseur</strong> CD1 : le gaz chaud y donne sa chaleur et devient liquide ; ici, il chauffe l'eau des radiateurs ;</li>
+    <li>le <strong>détendeur</strong> DT1 fait chuter la pression du liquide ;</li>
+    <li>l'<strong>évaporateur</strong> EV1 : le fluide y prend la chaleur de l'air et redevient gaz.</li>
+  </ul>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="640" height="391.1" style="max-width:100%;height:auto" viewBox="0 0 180 110" role="img" aria-label="Le même schéma, avec les quatre composants principaux et les accessoires : filtre FD1, voyant VL1, pressostats PH1 et PB1, prises de pression PP1 et PP2."><rect x="2" y="2" width="144" height="106" fill="none" stroke="#637285" stroke-width="0.4" stroke-dasharray="2 1.5"/>
+<text x="5" y="104" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#637285">PAC1</text>
+<polyline points="91.2,24 122.4,24 122.4,46.6" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(116 24) rotate(0)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(122.4 38) rotate(90)"/>
+<polyline points="122.4,66.2 122.4,92 64,92" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(122.4 78) rotate(90)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(102 92) rotate(180)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(72 92) rotate(180)"/>
+<polyline points="56,92 28,92 28,69.5" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(40 92) rotate(180)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(28 80) rotate(-90)"/>
+<polyline points="28,41.5 28,24 78.8,24" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(28 33) rotate(-90)"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(38 24) rotate(0)"/>
+<g transform="translate(85 24) rotate(0) scale(0.3906) translate(0 0)"><rect x="-16" y="-15" width="32" height="30" fill="#fff"/><ellipse cx="0.00" cy="0.00" rx="15.00" ry="15.00" stroke="black" stroke-width="0.90" fill="white"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="black" stroke-width="0.90" fill="none"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="black" stroke-width="0.90" fill="none"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="black" stroke-width="0.90" fill="none"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M 0.00,-4.50 A 4.50,4.50 0 0 0 -0.00,4.50" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M -0.00,4.50 A 3.50,3.50 0 0 0 0.00,-2.50" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M 0.00,-2.50 A 2.50,2.50 0 0 0 -0.00,2.50" stroke="black" stroke-width="0.90" fill="none"/>
+<path d="M -0.00,2.50 A 1.50,1.50 0 0 0 0.00,-0.50" stroke="black" stroke-width="0.90" fill="none"/></g>
+<text x="85" y="36.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">CP1</text>
+<g transform="translate(128 56) rotate(0) scale(0.6601) translate(1 -4.99)"><rect x="-16" y="-10.16" width="30" height="30.3" fill="#fff"/><line x1="6" y1="-5" x2="6" y2="14" stroke="black" stroke-width="0.27" fill="none"/>
+<line x1="10" y1="-5.83" x2="10" y2="-10.16" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="black" stroke-width="0.27" fill="none"/>
+<rect x="-16" y="-5" width="30" height="20" rx="0" ry="0" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="-10" y1="20.14" x2="-10" y2="15.87" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="black" stroke-width="0.27" fill="none"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="black" stroke-width="0.53" fill="none"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="black" stroke-width="0.53" fill="none"/></g>
+<text x="116.5" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="end">CD1</text>
+<g transform="translate(28 56) rotate(0) scale(0.5833) translate(0 -4)"><rect x="-19" y="-20" width="38" height="48" fill="#fff"/><rect x="-18" y="-20" width="36" height="48" rx="0" ry="0" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-14" y1="16" x2="-14" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="7" y1="16" x2="7" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="14" y1="16" x2="14" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-7" y1="16" x2="-7" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="0" y1="16" x2="0" y2="24" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-19" y1="20" x2="19" y2="20" stroke="black" stroke-width="0.60" fill="none"/>
+<ellipse cx="0.00" cy="-2.00" rx="15.00" ry="15.00" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="7" y1="-15" x2="13" y2="5" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 0.00,-1.00 A 1.00,1.00 0 0 0 -1.00,-2.00" stroke="black" stroke-width="0.60" fill="none"/>
+<line x1="-7" y1="-15" x2="-13" y2="5" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 0.00,-1.00 A 6.00,6.00 0 0 0 6.00,5.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M -1.00,-2.00 A 6.00,6.00 0 0 0 -7.00,4.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M -6.00,5.00 A 6.00,6.00 0 0 0 0.00,-1.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M -7.00,4.00 A 1.00,1.00 0 0 0 -6.00,5.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 7.00,4.00 A 6.00,6.00 0 0 0 1.00,-2.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 1.00,-2.00 A 1.00,1.00 0 0 0 0.00,-1.00" stroke="black" stroke-width="0.60" fill="none"/>
+<path d="M 6.00,5.00 A 1.00,1.00 0 0 0 7.00,4.00" stroke="black" stroke-width="0.60" fill="none"/>
+<ellipse cx="0.00" cy="-7.00" rx="2.50" ry="4.50" stroke="black" stroke-width="0.60" fill="none"/></g>
+<text x="41" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">EV1</text>
+<g transform="translate(108 92) rotate(0) scale(0.3761) translate(4.875 0)"><rect x="-19.5" y="-5" width="29.25" height="10" fill="#fff"/><line x1="-5" y1="-4.23" x2="-5" y2="1.23" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="6" y1="0.49" x2="9.75" y2="0.49" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="2" y1="-0.45" x2="2" y2="4.45" stroke="black" stroke-width="0.93" fill="none"/>
+<rect x="-15.75" y="-5" width="21.75" height="10" rx="0" ry="0" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="-19.5" y1="0.49" x2="-15.75" y2="0.49" stroke="black" stroke-width="0.93" fill="none"/>
+<line x1="-12" y1="-0.41" x2="-12" y2="4.41" stroke="black" stroke-width="0.93" fill="none"/></g>
+<text x="108" y="87" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">FD1</text>
+<g transform="translate(90 92) rotate(0) scale(0.3395) translate(-9.975 -0.10499999999999954)"><rect x="-7.7" y="-5.79" width="35.35" height="11.79" fill="#fff"/><line x1="21.73" y1="-0.05" x2="27.65" y2="-0.05" stroke="black" stroke-width="1.03" fill="none"/>
+<rect x="-0.7" y="-5.79" width="22.75" height="11.79" rx="0" ry="0" stroke="black" stroke-width="1.03" fill="none"/>
+<ellipse cx="10.68" cy="0.10" rx="6.12" ry="5.89" stroke="black" stroke-width="1.03" fill="none"/>
+<line x1="-7.7" y1="-0.05" x2="-0.7" y2="-0.05" stroke="black" stroke-width="1.03" fill="none"/></g>
+<text x="88" y="87" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">VL1</text>
+<g transform="translate(60 89.4) rotate(0) scale(0.3942) translate(0 6.414999999999999)"><rect x="-11" y="-17.83" width="22" height="22.83" fill="#fff"/><ellipse cx="0.00" cy="-12.00" rx="5.83" ry="5.83" stroke="black" stroke-width="0.89" fill="white"/>
+
+<polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" stroke="black" stroke-width="0.89" fill="white"/>
+<line x1="0" y1="0" x2="0" y2="-6" stroke="black" stroke-width="0.89" fill="none"/>
+<line x1="10" y1="0" x2="11" y2="0" stroke="black" stroke-width="0.89" fill="none"/>
+<line x1="-10" y1="0" x2="-11" y2="0" stroke="black" stroke-width="0.89" fill="none"/></g>
+<text x="60" y="101" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">DT1</text>
+<circle cx="76" cy="92" r="0.9" fill="#10233c"/>
+<polyline points="76,92 76,94" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(76 98.6) rotate(90) scale(0.3500) translate(-1.3449999999999998 5)"><rect x="-11.31" y="-15" width="25.310000000000002" height="20" fill="#fff"/><line x1="-11.31" y1="0" x2="-6.35" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="7.3" y1="0" x2="11.93" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<polygon points="-6,-5 -6,5 7,-5 7,5" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="0.48" y1="0" x2="0.48" y2="-13" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="-3.3" y1="-13.32" x2="4.33" y2="-13.32" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="1" y1="-1" x2="8" y2="-9" stroke="black" stroke-width="0.50" fill="none"/>
+<polygon points="12,-15 7,-10 9,-8 14,-13" stroke="black" stroke-width="1.00" fill="none"/></g>
+<text x="81.5" y="102" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">PP1</text>
+<circle cx="106" cy="24" r="0.9" fill="#10233c"/>
+<polyline points="106,24 106,21" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(107 17.4) rotate(0) scale(0.3991) translate(-1.0500000000000007 9.120000000000001)"><rect x="-10" y="-17.89" width="22.1" height="17.54" fill="#fff"/><rect x="-10" y="-17.89" width="22.1" height="9.44" rx="0" ry="0" stroke="black" stroke-width="0.88" fill="none"/>
+
+<line x1="0.2" y1="-8.44" x2="0.2" y2="-0.35" stroke="black" stroke-width="0.88" fill="none"/></g>
+<text x="107" y="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">PH1</text>
+<circle cx="46" cy="24" r="0.9" fill="#10233c"/>
+<polyline points="46,24 46,21" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(47 17.4) rotate(0) scale(0.3991) translate(-1.0500000000000007 9.120000000000001)"><rect x="-10" y="-17.89" width="22.1" height="17.54" fill="#fff"/><rect x="-10" y="-17.89" width="22.1" height="9.44" rx="0" ry="0" stroke="black" stroke-width="0.88" fill="none"/>
+
+<line x1="0.2" y1="-8.44" x2="0.2" y2="-0.35" stroke="black" stroke-width="0.88" fill="none"/></g>
+<text x="47" y="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c" text-anchor="middle">PB1</text>
+<circle cx="64" cy="24" r="0.9" fill="#10233c"/>
+<polyline points="64,24 64,22" stroke="#10233c" stroke-width="0.9" fill="none"/>
+<g transform="translate(64 17.4) rotate(-90) scale(0.3500) translate(-1.3449999999999998 5)"><rect x="-11.31" y="-15" width="25.310000000000002" height="20" fill="#fff"/><line x1="-11.31" y1="0" x2="-6.35" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="7.3" y1="0" x2="11.93" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<polygon points="-6,-5 -6,5 7,-5 7,5" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="0.48" y1="0" x2="0.48" y2="-13" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="-3.3" y1="-13.32" x2="4.33" y2="-13.32" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="1" y1="-1" x2="8" y2="-9" stroke="black" stroke-width="0.50" fill="none"/>
+<polygon points="12,-15 7,-10 9,-8 14,-13" stroke="black" stroke-width="1.00" fill="none"/></g>
+<text x="69" y="19" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3" font-weight="bold" fill="#10233c">PP2</text>
+<line x1="4" y1="50" x2="13" y2="50" stroke="#637285" stroke-width="0.6"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#637285" transform="translate(13.5 50) rotate(0)"/>
+<text x="4" y="46" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#637285">air</text>
+<polyline points="134.8,46.6 134.8,40 178,40" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(160 40) rotate(0)"/>
+<text x="151" y="36" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">départ</text>
+<polyline points="178,72 134.8,72 134.8,66.2" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/>
+<polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(160 72) rotate(180)"/>
+<text x="151" y="80" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="5.3"  fill="#10233c">retour</text></svg></figure>
+  <p>Les autres symboles sont des accessoires : un filtre, un voyant, deux pressostats, deux prises de pression.</p>
+</section>
+
+<section id="ecran-legende">
+  <h2>La légende du schéma</h2>
+  <p>Comme toujours, la légende d'abord (gare 5). Sur ce schéma, le fluide est en trait plein et l'eau de chauffage en trait tireté.</p>
+  <table class="legende"><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 21,5" stroke="#10233c" stroke-width="0.9" fill="none"/><polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#10233c" transform="translate(11 5) rotate(0)"/></svg></td><td class="leg-nom">Fluide frigorigène</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><polyline points="1,5 21,5" stroke="#3d7fca" stroke-width="0.9" stroke-dasharray="3 1.6" fill="none"/><polygon points="1.7,0 -1.5,-1.5 -1.5,1.5" fill="#3d7fca" transform="translate(11 5) rotate(0)"/></svg></td><td class="leg-nom">Eau de chauffage</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.2667) translate(0 0)"><rect x="-16" y="-15" width="32" height="30" fill="#fff"/><ellipse cx="0.00" cy="0.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1.31" fill="white"/>
+<line x1="-15" y1="0" x2="-16" y2="0" stroke="black" stroke-width="1.31" fill="none"/>
+<line x1="15" y1="0" x2="16" y2="0" stroke="black" stroke-width="1.31" fill="none"/>
+<line x1="-7" y1="-13" x2="13" y2="-7" stroke="black" stroke-width="1.31" fill="none"/>
+<line x1="-7" y1="13" x2="13" y2="7" stroke="black" stroke-width="1.31" fill="none"/>
+<path d="M 0.00,-4.50 A 4.50,4.50 0 0 0 -0.00,4.50" stroke="black" stroke-width="1.31" fill="none"/>
+<path d="M -0.00,4.50 A 3.50,3.50 0 0 0 0.00,-2.50" stroke="black" stroke-width="1.31" fill="none"/>
+<path d="M 0.00,-2.50 A 2.50,2.50 0 0 0 -0.00,2.50" stroke="black" stroke-width="1.31" fill="none"/>
+<path d="M -0.00,2.50 A 1.50,1.50 0 0 0 0.00,-0.50" stroke="black" stroke-width="1.31" fill="none"/></g></svg></td><td class="leg-nom">Compresseur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.2970) translate(1 -4.99)"><rect x="-16" y="-10.16" width="30" height="30.3" fill="#fff"/><line x1="6" y1="-5" x2="6" y2="14" stroke="black" stroke-width="0.59" fill="none"/>
+<line x1="10" y1="-5.83" x2="10" y2="-10.16" stroke="black" stroke-width="1.18" fill="none"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="black" stroke-width="0.59" fill="none"/>
+<rect x="-16" y="-5" width="30" height="20" rx="0" ry="0" stroke="black" stroke-width="1.18" fill="none"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="black" stroke-width="1.18" fill="none"/>
+<line x1="-10" y1="20.14" x2="-10" y2="15.87" stroke="black" stroke-width="1.18" fill="none"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="black" stroke-width="0.59" fill="none"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="black" stroke-width="1.18" fill="none"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="black" stroke-width="1.18" fill="none"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="black" stroke-width="1.18" fill="none"/></g></svg></td><td class="leg-nom">Condenseur à plaques (fluide et eau)</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.1875) translate(0 -4)"><rect x="-19" y="-20" width="38" height="48" fill="#fff"/><rect x="-18" y="-20" width="36" height="48" rx="0" ry="0" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="-14" y1="16" x2="-14" y2="24" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="7" y1="16" x2="7" y2="24" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="14" y1="16" x2="14" y2="24" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="-7" y1="16" x2="-7" y2="24" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="0" y1="16" x2="0" y2="24" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="-19" y1="20" x2="19" y2="20" stroke="black" stroke-width="1.87" fill="none"/>
+<ellipse cx="0.00" cy="-2.00" rx="15.00" ry="15.00" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="7" y1="-15" x2="13" y2="5" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M 0.00,-1.00 A 1.00,1.00 0 0 0 -1.00,-2.00" stroke="black" stroke-width="1.87" fill="none"/>
+<line x1="-7" y1="-15" x2="-13" y2="5" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M 0.00,-1.00 A 6.00,6.00 0 0 0 6.00,5.00" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M -1.00,-2.00 A 6.00,6.00 0 0 0 -7.00,4.00" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M -6.00,5.00 A 6.00,6.00 0 0 0 0.00,-1.00" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M -7.00,4.00 A 1.00,1.00 0 0 0 -6.00,5.00" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M 7.00,4.00 A 6.00,6.00 0 0 0 1.00,-2.00" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M 1.00,-2.00 A 1.00,1.00 0 0 0 0.00,-1.00" stroke="black" stroke-width="1.87" fill="none"/>
+<path d="M 6.00,5.00 A 1.00,1.00 0 0 0 7.00,4.00" stroke="black" stroke-width="1.87" fill="none"/>
+<ellipse cx="0.00" cy="-7.00" rx="2.50" ry="4.50" stroke="black" stroke-width="1.87" fill="none"/></g></svg></td><td class="leg-nom">Évaporateur à air, avec ventilateur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3504) translate(0 6.414999999999999)"><rect x="-11" y="-17.83" width="22" height="22.83" fill="#fff"/><ellipse cx="0.00" cy="-12.00" rx="5.83" ry="5.83" stroke="black" stroke-width="1.00" fill="white"/>
+
+<polygon points="2,1 0,3 -2,1 -10,5 -10,-5 10,5 10,-5 -2,1 0,0" stroke="black" stroke-width="1.00" fill="white"/>
+<line x1="0" y1="0" x2="0" y2="-6" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="10" y1="0" x2="11" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="-10" y1="0" x2="-11" y2="0" stroke="black" stroke-width="1.00" fill="none"/></g></svg></td><td class="leg-nom">Détendeur électronique</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.4786) translate(4.875 0)"><rect x="-19.5" y="-5" width="29.25" height="10" fill="#fff"/><line x1="-5" y1="-4.23" x2="-5" y2="1.23" stroke="black" stroke-width="0.73" fill="none"/>
+<line x1="6" y1="0.49" x2="9.75" y2="0.49" stroke="black" stroke-width="0.73" fill="none"/>
+<line x1="2" y1="-0.45" x2="2" y2="4.45" stroke="black" stroke-width="0.73" fill="none"/>
+<rect x="-15.75" y="-5" width="21.75" height="10" rx="0" ry="0" stroke="black" stroke-width="0.73" fill="none"/>
+<line x1="-19.5" y1="0.49" x2="-15.75" y2="0.49" stroke="black" stroke-width="0.73" fill="none"/>
+<line x1="-12" y1="-0.41" x2="-12" y2="4.41" stroke="black" stroke-width="0.73" fill="none"/></g></svg></td><td class="leg-nom">Filtre déshydrateur</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3960) translate(-9.975 -0.10499999999999954)"><rect x="-7.7" y="-5.79" width="35.35" height="11.79" fill="#fff"/><line x1="21.73" y1="-0.05" x2="27.65" y2="-0.05" stroke="black" stroke-width="0.88" fill="none"/>
+<rect x="-0.7" y="-5.79" width="22.75" height="11.79" rx="0" ry="0" stroke="black" stroke-width="0.88" fill="none"/>
+<ellipse cx="10.68" cy="0.10" rx="6.12" ry="5.89" stroke="black" stroke-width="0.88" fill="none"/>
+<line x1="-7.7" y1="-0.05" x2="-0.7" y2="-0.05" stroke="black" stroke-width="0.88" fill="none"/></g></svg></td><td class="leg-nom">Voyant liquide</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3991) translate(-1.0500000000000007 9.120000000000001)"><rect x="-10" y="-17.89" width="22.1" height="17.54" fill="#fff"/><rect x="-10" y="-17.89" width="22.1" height="9.44" rx="0" ry="0" stroke="black" stroke-width="0.88" fill="none"/>
+
+<line x1="0.2" y1="-8.44" x2="0.2" y2="-0.35" stroke="black" stroke-width="0.88" fill="none"/></g></svg></td><td class="leg-nom">Pressostat</td></tr><tr><td class="leg-svg"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="30" viewBox="0 0 22 10" aria-hidden="true"><g transform="translate(11 5) rotate(0) scale(0.3500) translate(-1.3449999999999998 5)"><rect x="-11.31" y="-15" width="25.310000000000002" height="20" fill="#fff"/><line x1="-11.31" y1="0" x2="-6.35" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="7.3" y1="0" x2="11.93" y2="0" stroke="black" stroke-width="1.00" fill="none"/>
+<polygon points="-6,-5 -6,5 7,-5 7,5" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="0.48" y1="0" x2="0.48" y2="-13" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="-3.3" y1="-13.32" x2="4.33" y2="-13.32" stroke="black" stroke-width="1.00" fill="none"/>
+<line x1="1" y1="-1" x2="8" y2="-9" stroke="black" stroke-width="0.50" fill="none"/>
+<polygon points="12,-15 7,-10 9,-8 14,-13" stroke="black" stroke-width="1.00" fill="none"/></g></svg></td><td class="leg-nom">Prise de pression</td></tr></table>
+  <div class="calc"><h3>Exemple résolu</h3><p>Le repère CD1 est posé sur une boîte barrée d'une croix, raccordée au fluide d'un côté et à l'eau de l'autre. Dans la légende, c'est le condenseur à plaques.</p></div>
+  <p class="cle">Le symbole d'un pressostat ne dit pas s'il surveille la haute ou la basse pression. C'est son repère et sa place sur le circuit qui le disent.</p>
+</section>
+
+<section>
+  <p class="kicker">Exercice 1 · repérer</p>
+  <h2>L'échangeur de gauche</h2>
+  <div class="calc"><h3>L'exemple, à imiter</h3><p>CD1 : la boîte barrée d'une croix, raccordée au fluide et à l'eau, est le condenseur à plaques.</p></div>
+  <div class="q exo" data-bon="2">
+  <p class="enonce">Quel composant porte le repère EV1, à gauche du schéma ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>EV1 est la grande boîte de gauche, devant la flèche « air ».</li><li hidden>Cherchez dans la légende la boîte qui contient un ventilateur. <button type="button" class="revoir" data-va="ecran-legende">Revoir la légende</button></li><li hidden>Le fluide y prend la chaleur de l'air : relisez l'écran des quatre composants.</li></ol></div>
+  <button class="rep" type="button">le condenseur à plaques</button>
+  <button class="rep" type="button">le compresseur</button>
+  <button class="rep" type="button">l'évaporateur à air</button>
+  <button class="rep" type="button">le détendeur</button>
+  <p class="explic">La boîte avec un ventilateur, traversée par l'air, est l'évaporateur à air. Le condenseur est à droite, raccordé à l'eau. Le compresseur est le rond en haut, le détendeur la vanne en bas.</p>
+  </div>
+</section>
+
+<section id="ecran-sens">
+  <h2>Suivre le fluide</h2>
+  <p>Les flèches posées sur le trait plein donnent le sens du fluide. Partez du compresseur et suivez-les : le fluide fait le tour et revient au compresseur.</p>
+  <p>Un point noir est un piquage : un pressostat ou une prise de pression branché sur le côté du tube. Le fluide passe devant sans le traverser.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>De CP1 à DT1, le fluide traverse : CP1, CD1, FD1, VL1, puis DT1. PH1 et PP1 sont piqués sur ce chemin : le fluide ne les traverse pas.</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 2 · suivre le fluide</p>
+  <h2>Du détendeur au compresseur</h2>
+  <p>L'exemple est sur l'écran précédent. <button type="button" class="revoir" data-va="ecran-sens">Revoir l'exemple</button></p>
+  <div class="q exo" data-bon="1">
+  <p class="enonce">Après le détendeur DT1, quels composants le fluide traverse-t-il jusqu'au compresseur CP1 ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Partez de DT1, en bas, et suivez la flèche vers la gauche.</li><li hidden>Le trait monte vers la grande boîte de gauche, puis repart vers CP1 par le haut.</li><li hidden>Comme dans l'exemple, ne comptez pas les appareils piqués sur le tube.</li></ol></div>
+  <button class="rep" type="button">DT1, VL1, FD1, CP1</button>
+  <button class="rep" type="button">DT1, EV1, CP1</button>
+  <button class="rep" type="button">DT1, CD1, CP1</button>
+  <button class="rep" type="button">DT1, EV1, PB1, PP2, CP1</button>
+  <p class="explic">Après DT1, le fluide traverse l'évaporateur EV1, puis revient à CP1. PB1 et PP2 sont piqués : il passe devant. VL1 et FD1 sont avant le détendeur, CD1 est de l'autre côté.</p>
+  </div>
+</section>
+
+<section id="ecran-pression">
+  <h2>Le côté haute pression et le côté basse pression</h2>
+  <p>Le compresseur et le détendeur coupent le circuit en deux :</p>
+  <ul>
+    <li>le <strong>côté haute pression</strong> va de la sortie du compresseur à l'entrée du détendeur : CD1, FD1, VL1 ;</li>
+    <li>le <strong>côté basse pression</strong> va de la sortie du détendeur à l'entrée du compresseur : EV1.</li>
+  </ul>
+  <p>Un pressostat surveille une pression et arrête le compresseur si elle sort de ses limites. Le pressostat haute pression se pique donc côté haute pression, le pressostat basse pression côté basse pression. Une prise de pression sert à brancher le manomètre du technicien.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>PH1 est piqué entre CP1 et CD1 : entre la sortie du compresseur et le détendeur. Il est côté haute pression, à sa place.</p></div>
+</section>
+
+<section>
+  <p class="kicker">Exercice 3 · haute ou basse pression</p>
+  <h2>Le côté de PP2</h2>
+  <div class="calc"><h3>L'exemple, à imiter</h3><p>PH1 est entre la sortie de CP1 et DT1 : côté haute pression.</p></div>
+  <div class="q exo" data-bon="0">
+  <p class="enonce">La prise de pression PP2 est-elle côté haute pression ou côté basse pression ?</p>
+  <div class="aides"><button type="button">Afficher l'aide 1 sur 3</button><ol><li hidden>Trouvez PP2 sur le schéma, en haut, à gauche de CP1.</li><li hidden>Suivez le fluide à rebours depuis PP2 : d'où vient-il ? <button type="button" class="revoir" data-va="ecran-pression">Revoir la règle</button></li><li hidden>PP2 est entre l'évaporateur EV1 et l'entrée du compresseur.</li></ol></div>
+  <button class="rep" type="button">côté basse pression</button>
+  <button class="rep" type="button">côté haute pression</button>
+  <button class="rep" type="button">entre les deux</button>
+  <button class="rep" type="button">sur l'eau de chauffage</button>
+  <p class="explic">PP2 est piqué entre la sortie du détendeur et l'entrée du compresseur, après EV1 : côté basse pression.</p>
+  </div>
+</section>
+
+<section id="ecran-eau">
+  <h2>Deux circuits qui se touchent sans se mélanger</h2>
+  <p>Le fluide frigorigène reste dans PAC1. L'eau de chauffage, en trait tireté, entre dans le condenseur CD1 par le retour et en sort par le départ, vers les radiateurs de la gare CVC-R 2.</p>
+  <p>Dans CD1, le fluide et l'eau passent de chaque côté de plaques métalliques : la chaleur traverse, les deux circuits ne se mélangent pas. De l'autre côté de la machine, l'air traverse l'évaporateur EV1 et lui donne sa chaleur.</p>
+  <div class="calc"><h3>Exemple résolu</h3><p>Où le fluide donne-t-il sa chaleur à l'eau ? Dans CD1 : c'est le seul composant raccordé à la fois au trait plein du fluide et au trait tireté de l'eau.</p></div>
+  <p class="cle">Le fluide de la machine, sa charge et ses pressions se lisent sur la plaque signalétique et la notice du fabricant (gare 12). Ce schéma ne les donne pas.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à tout, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus de la gare CVC-R 4</h2>
+  <p>Vous savez nommer les composants d'un schéma frigorifique, suivre le fluide, séparer la haute et la basse pression, et trouver où la chaleur passe à l'eau.</p>
+  <p style="text-align:center;margin:22px 0"><a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a></p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait compléter la nomenclature, suivre le fluide, repasser la haute et la basse pression, trouver l'échange avec l'eau et relever un pressostat mal placé.</p>
+  <p>Gare suivante : <strong>le synoptique de régulation</strong>, gare CVC-R 5.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="credit">Symboles : collection QElectroTech (CC BY 3.0), adaptés par inerWeb. Maison d'étude : réseau Bureau d'études d'inerWeb.</p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {"e": "Dans quel ordre le fluide traverse-t-il les quatre composants principaux ?", "r": ["compresseur, détendeur, condenseur, évaporateur", "compresseur, condenseur, détendeur, évaporateur", "évaporateur, condenseur, compresseur, détendeur", "condenseur, compresseur, évaporateur, détendeur"], "bon": 1, "x": "Compresseur, condenseur, détendeur, évaporateur, puis retour au compresseur."},
+ {"e": "Le côté haute pression va :", "r": ["de la sortie du détendeur à l'entrée du compresseur", "de la sortie du compresseur à l'entrée du détendeur", "de l'évaporateur au condenseur, en passant par le détendeur", "de l'eau de chauffage au fluide"], "bon": 1, "x": "Le compresseur monte la pression, le détendeur la fait chuter : entre les deux, c'est la haute pression."},
+ {"e": "Sur ce schéma, l'eau de chauffage est dessinée en :", "r": ["trait plein", "trait tireté", "pointillé", "trait mixte"], "bon": 1, "x": "La légende : fluide en trait plein, eau de chauffage en trait tireté."},
+ {"e": "Un point noir sur le tube, avec un pressostat au bout d'un petit trait, veut dire :", "r": ["le fluide traverse le pressostat", "le pressostat est piqué sur le tube : le fluide passe devant", "le tube s'arrête là", "c'est une prise d'air"], "bon": 1, "x": "Un piquage se branche sur le côté du tube. Le fluide ne le traverse pas."},
+ {"e": "Où le fluide donne-t-il sa chaleur à l'eau des radiateurs ?", "r": ["dans l'évaporateur EV1", "dans le condenseur CD1", "dans le compresseur CP1", "dans le détendeur DT1"], "bon": 1, "x": "CD1 est le seul composant raccordé au fluide et à l'eau."},
+ {"e": "Un pressostat haute pression piqué entre l'évaporateur et le compresseur est :", "r": ["à sa place", "mal placé : il est côté basse pression", "mal placé : il est sur l'eau", "obligatoire à cet endroit"], "bon": 1, "x": "Entre l'évaporateur et le compresseur, on est côté basse pression. Le pressostat haute pression doit être entre le compresseur et le détendeur."}
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script>
+/* Exercices de la gare : trois aides qui s'affichent une à une, une réponse. */
+document.querySelectorAll(".exo").forEach(exo => {
+  const bouton = exo.querySelector(".aides > button"), aides = [...exo.querySelectorAll(".aides li")];
+  let vues = 0;
+  bouton.addEventListener("click", () => {
+    if (vues < aides.length) aides[vues++].hidden = false;
+    bouton.textContent = vues < aides.length ? "Afficher l'aide " + (vues + 1) + " sur " + aides.length : "Les " + aides.length + " aides sont affichées";
+    bouton.disabled = vues >= aides.length;
+  });
+  const bon = Number(exo.dataset.bon), reps = [...exo.querySelectorAll(".rep")];
+  reps.forEach((b, i) => b.addEventListener("click", () => {
+    if (exo.classList.contains("fini")) return;
+    exo.classList.add("fini");
+    b.classList.add(i === bon ? "ok" : "ko");
+    reps[bon].classList.add("ok");
+  }));
+});
+document.querySelectorAll("[data-va]").forEach(b => b.addEventListener("click", () => montre(ecrans.indexOf(document.getElementById(b.dataset.va)))));
+</script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>

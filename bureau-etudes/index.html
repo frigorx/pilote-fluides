@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<meta name="description" content="inerWeb BE, le bureau d'études d'inerWeb : lire les plans en 15 gares, puis un projet de chauffage, ventilation et climatisation calculé de bout en bout, en 34 stations de 2 heures.">
+<meta name="description" content="inerWeb BE, le bureau d'études d'inerWeb : lire les plans en 16 gares et trois lignes de métier, puis un projet de chauffage, ventilation et climatisation calculé de bout en bout, en 34 stations de 2 heures.">
 <title>inerWeb BE : le bureau d'études | inerWeb</title>
 <link rel="stylesheet" href="accueil.css?v=20261031">
   <script src="../moteur/animations.js?v=7bddbcaafd"></script>
@@ -30,7 +30,7 @@
 
   <section class="identite">
     <h1>Bureau d'études</h1>
-    <p>On commence par lire les plans : <strong>15 gares</strong>. On calcule ensuite un vrai projet de chauffage, ventilation, climatisation, de bout en bout : <strong>34 stations de 2 heures</strong>, du dossier projet à la note de calcul.</p>
+    <p>On commence par lire les plans : <strong>16 gares</strong>, puis une ligne pour votre métier (plâtrerie, étanchéité, CVC-R). On calcule ensuite un vrai projet de chauffage, ventilation, climatisation, de bout en bout : <strong>34 stations de 2 heures</strong>, du dossier projet à la note de calcul.</p>
   </section>
 
   <section class="porte" aria-label="Le projet et le plan du réseau">
@@ -73,7 +73,7 @@
   <div class="lignes" id="lignes"></div>
 </div>
 
-<script src="programme.js?v=20261031c-2"></script>
+<script src="programme.js?v=20261101"></script>
 <script src="carte.js?v=20261031"></script>
 <script>
 (function () {
@@ -100,9 +100,9 @@
     `<section class="ligne ligne-plans" style="--c:${PL.couleur}"><h3>Ligne P, ${PL.nom}</h3><table><thead><tr><th>Gare</th><th>Titre</th><th>État</th><th>Documents, A4 noir et blanc</th></tr></thead><tbody>`
     + PL.GARES.map(s => `<tr><th scope="row">${s.code}</th><td><a href="${s.href}">${s.titre}</a> <small>${s.rendu}</small></td><td><em class="ouverte">${etat(s)}</em></td><td class="docs">${docs(s)}</td></tr>`).join("")
     + `</tbody></table><p class="livrets">Livrets à imprimer, toutes les feuilles d'une ligne avec leurs QR : <a href="livrets/ligne-P.pdf">ligne P, Lire les plans (PDF)</a>, <a href="livrets/ligne-T.pdf">ligne T, Thermique (PDF)</a>. Les corrigés sont réservés aux enseignants : <a href="documents-professeur.html">corrigés sous code</a>.</p></section>`
-    + `<h3 class="metiers-titre">Pour votre métier du bâtiment <span>en relecture, pas encore ouvert</span></h3><div class="lignes">`
+    + `<h3 class="metiers-titre">Pour votre métier <span>en relecture</span></h3><div class="lignes">`
     + PL.METIERS.map(m => `<section class="ligne" style="--c:${PL.couleur}"><h3>${m.nom}</h3><p class="detail">${m.detail}</p><ol>`
-      + m.gares.map(s => `<li><b>${s.code.replace(/^D+/, "")}</b><span>${s.titre}</span><em>en relecture</em></li>`).join("") + `</ol></section>`).join("")
+      + m.gares.map(s => `<li><b>${s.code}</b><span><a href="${s.href}">${s.titre}</a> ${docs(s)}</span><em class="ouverte">${etat(s)}</em></li>`).join("") + `</ol></section>`).join("")
     + `</div>`;
 
   const premiere = P.STATIONS.find(C.ouverte);

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Toiture 2 — La coupe du complexe : les couches en pile</title>
+<link rel="stylesheet" href="../../moteur/gare.css">
+<style>
+.illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
+.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+.calc h3{margin:0 0 4px;font-size:1em;color:#8a5200}
+.calc p{margin:4px 0}
+.seul{display:inline-block;background:#fff4e0;color:#8a5200;border:1px solid #e0b36a;border-radius:6px;padding:0 8px;font-size:.7em;vertical-align:middle}
+.corresp{text-align:center;font-size:.85em;margin:18px 0 0}
+.corresp a{color:var(--muted)}
+figure.svgbox{margin:14px 0}
+figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
+@media (max-width:760px){.corresp{font-size:14px}}
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" width="230" height="61" viewBox="0 0 380 100" role="img" aria-label="Logo inerWeb, module Plan, par F. Henninot">
+    <text fill="#1b3a63" font-size="36px" x="10" y="50">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="32px" font-weight="bold" x="55" y="48">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="32px" x="115" y="48">Web</text>
+    <line stroke="#e8914a" stroke-width="3" x1="55" x2="185" y1="52" y2="52"/>
+    <rect fill="#e8914a" x="190" y="8" rx="6" ry="6" width="56" height="30"/>
+    <text fill="#fff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16px" font-weight="bold" x="218" y="29" text-anchor="middle">BE</text>
+    <text fill="#ccc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10px" x="55" y="75">par F. Henninot</text>
+  </svg>
+<div>
+    <p class="fil"><a href="../../index.html">⬅ La ligne Lire les plans</a> · Étanchéité des toitures</p>
+    <h1>Toiture 2 — La coupe du complexe : les couches en pile</h1>
+  </div>
+</header>
+
+<section class="on">
+  <h2>Bienvenue en gare</h2>
+  <img class="illus" src="illustrations/1-complexe-en-ecorche.webp" width="1200" height="800" alt="Le bord d'une toiture-terrasse tranché comme un gâteau. De bas en haut : la dalle de béton, la forme de pente plus épaisse vers le fond, un film sombre, les panneaux d'isolant jaunes, la membrane orange, puis le gravillon. À gauche, la membrane remonte sur l'acrotère, sous une bande de métal.">
+  <p>Le plan de toiture de Toiture 1 montre le toit vu de dessus. La <strong>coupe</strong> le montre
+  tranché, comme les coupes verticales de la gare 4. On y voit la pile des couches posées sur la dalle :
+  le complexe d'étanchéité.</p>
+  <p>Environ 2 heures, test compris. À la fin, vous saurez :</p>
+  <ul>
+    <li>lire une coupe de toiture de haut en bas et nommer chaque couche ;</li>
+    <li>dire le rôle de chaque couche ;</li>
+    <li>calculer un niveau à partir des épaisseurs ;</li>
+    <li>vérifier la hauteur d'un relevé sur la coupe.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>La pile, de haut en bas</h2>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 12 168 110" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Coupe B-B au 1/10 sur l'acrotère gauche du vestiaire. De bas en haut sur la dalle : forme de pente, pare-vapeur, isolant, membrane d'étanchéité, gravillon. La membrane remonte sur l'acrotère jusqu'à plus 3,25 ; une bande de solin couvre sa tête. Arase de l'acrotère à plus 3,30, dessus de la dalle à plus 2,70, dessous à plus 2,50.">
+<path d="M30 98.0 V117 l3 -1.5 l4 3 l4 -3 l4 3 l5 -1.5 V98.0 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<path d="M30 78.0 H110 l-1.5 4 l3 4 l-3 4 l3 4 l-1.5 4 H30 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<rect x="30" y="18.0" width="20" height="60.0" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<rect x="50" y="58.0" width="60" height="20" fill="#f3efe6" stroke="#10233c" stroke-width="0.35"/>
+<rect x="50" y="48.0" width="60" height="10" fill="#fdf3c4" stroke="#10233c" stroke-width="0.35"/>
+<rect x="51.2" y="43.0" width="58.8" height="4.6" fill="#d9dde3" stroke="#10233c" stroke-width="0.35"/>
+<line x1="50" y1="58.0" x2="110" y2="58.0" stroke="#10233c" stroke-width="0.6" stroke-dasharray="2 1"/>
+<polyline points="110,48.0 50.6,48.0 50.6,23.0" fill="none" stroke="#c9451a" stroke-width="1"/>
+<polyline points="50,20.0 51.8,20.0 51.8,24.5 54,26.0" fill="none" stroke="#10233c" stroke-width="0.6"/>
+<line x1="22" y1="18.0" x2="30" y2="18.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="21" y="19.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 3,30</text>
+<line x1="22" y1="78.0" x2="30" y2="78.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="21" y="79.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 2,70</text>
+<line x1="22" y1="98.0" x2="30" y2="98.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="21" y="99.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 2,50</text>
+<line x1="51" y1="23.0" x2="57" y2="23.0" stroke="#10233c" stroke-width="0.3"/>
+<text x="58" y="24.7" text-anchor="start" font-size="5" font-weight="bold" fill="#10233c" >+ 3,25</text>
+<line x1="104" y1="45.5" x2="119" y2="34.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="45.5" r="0.6" fill="#637285"/>
+<text x="120.5" y="36" text-anchor="start" font-size="5" fill="#10233c" >gravillon</text>
+<line x1="104" y1="48.0" x2="119" y2="41.9" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="48.0" r="0.6" fill="#637285"/>
+<text x="120.5" y="43.5" text-anchor="start" font-size="5" fill="#10233c" >membrane</text>
+<line x1="104" y1="53.0" x2="119" y2="49.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="53.0" r="0.6" fill="#637285"/>
+<text x="120.5" y="51" text-anchor="start" font-size="5" fill="#10233c" >isolant</text>
+<line x1="104" y1="58.0" x2="119" y2="56.9" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="58.0" r="0.6" fill="#637285"/>
+<text x="120.5" y="58.5" text-anchor="start" font-size="5" fill="#10233c" >pare-vapeur</text>
+<line x1="104" y1="68.0" x2="119" y2="66.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="68.0" r="0.6" fill="#637285"/>
+<text x="120.5" y="68" text-anchor="start" font-size="5" fill="#10233c" >forme de pente</text>
+<line x1="104" y1="88.0" x2="119" y2="86.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="88.0" r="0.6" fill="#637285"/>
+<text x="120.5" y="88" text-anchor="start" font-size="5" fill="#10233c" >dalle béton</text>
+<text x="56" y="106.0" text-anchor="start" font-size="5" font-weight="bold" fill="#10233c" >COUPE B-B</text><text x="56" y="112.5" text-anchor="start" font-size="5" fill="#10233c" >éch. 1/10 · niveaux en m</text>
+</svg>
+    <figcaption>Coupe B-B du toit du vestiaire, au 1/10, sur l'acrotère gauche. Dessin de principe :
+    chaque matériau est un aplat de couleur. Sur un dossier, il porte les hachures de la légende (gare 5).</figcaption>
+  </figure>
+  <p class="cle"><strong>Protection, étanchéité, isolant, pare-vapeur, forme de pente, porteur.</strong>
+  Récitez la pile dans les deux sens. Ici, la protection est le gravillon, l'étanchéité est la membrane
+  et le porteur est la dalle en béton.</p>
+</section>
+
+<section>
+  <h2>Le rôle de chaque couche</h2>
+  <table class="doc">
+    <tr><th>Couche</th><th>Son travail</th></tr>
+    <tr><td><strong>Protection</strong> (gravillon, dalles)</td><td>protéger la membrane du soleil et des chocs</td></tr>
+    <tr><td>Revêtement d'étanchéité (membrane)</td><td>arrêter l'eau : c'est la raison d'être de l'ouvrage</td></tr>
+    <tr><td>Isolant</td><td>arrêter le froid et le chaud</td></tr>
+    <tr><td>Pare-vapeur</td><td>arrêter la vapeur d'eau qui monte du bâtiment, sinon elle se condense dans l'isolant</td></tr>
+    <tr><td>Forme de pente</td><td>donner la pente qui mène l'eau aux EP (Toiture 1)</td></tr>
+    <tr><td>Élément porteur</td><td>porter toutes les couches : dalle en béton, bacs en acier ou bois</td></tr>
+  </table>
+  <p class="cle">Chaque couche a un rôle : protéger, arrêter l'eau, isoler, arrêter la vapeur, mener l'eau,
+  porter. Retenez le rôle, et l'ordre devient logique.</p>
+</section>
+
+<section>
+  <h2>Lire les conventions de la coupe</h2>
+  <p>Chaque matériau coupé a son motif de hachures. La légende du dossier le donne : lisez-la
+  d'abord, comme en gare 5.</p>
+  <ul>
+    <li>sur les coupes de toiture, la membrane est souvent un trait épais ;</li>
+    <li>le pare-vapeur est souvent un trait fin interrompu ;</li>
+    <li>l'isolant et le béton ont chacun leur motif, donné par la légende.</li>
+  </ul>
+  <p class="cle">Le porteur peut aussi être en bacs d'acier ou en bois. La coupe vous le montre avant
+  que vous montiez sur le toit, et le complexe change avec lui.</p>
+</section>
+
+<section>
+  <h2>Des épaisseurs aux niveaux</h2>
+  <p>La coupe donne des niveaux, le descriptif donne l'épaisseur de chaque couche. Un niveau plus une
+  épaisseur donne le niveau suivant. Les épaisseurs se passent en mètres : 150 mm = 0,15 m (gare 7 bis).</p>
+  <div class="calc">
+    <h3>Exemple résolu, sur une autre toiture</h3>
+    <p>Dessus de la dalle : + 6,20. Forme de pente : 150 mm au point haut. Isolant : 120 mm.
+    Gravillon : 40 mm. Pare-vapeur et membrane : épaisseurs négligées.</p>
+    <p>Dessus de la forme de pente : 6,20 + 0,15 = 6,35.</p>
+    <p>Dessus de l'isolant : 6,35 + 0,12 = 6,47.</p>
+    <p>Dessus de la protection : 6,47 + 0,04 = 6,51.</p>
+  </div>
+</section>
+
+<section>
+  <h2>La hauteur du relevé</h2>
+  <p>Au bord du toit, la membrane remonte sur l'acrotère : c'est le <strong>relevé</strong>.
+  Il doit dépasser la protection. La hauteur minimale est fixée par le DTU qui s'applique,
+  le NF DTU 43.1 pour un toit en béton. Dans les exercices de cette ligne, elle est une donnée
+  de l'exercice : 150 mm au-dessus de la protection.</p>
+  <div class="calc">
+    <h3>Exemple résolu, sur la même autre toiture</h3>
+    <p>Dessus de la protection : + 6,51. Le relevé monte jusqu'à + 6,70.</p>
+    <p>6,70 − 6,51 = 0,19 m, soit 190 mm. 190 mm est plus que 150 mm : le relevé est conforme.</p>
+  </div>
+  <p class="cle">Le détail complet du relevé, avec la protection de sa tête, est en Toiture 3.</p>
+</section>
+
+<section id="ecran-test">
+  <h2>Le test de la gare</h2>
+  <p>Répondez à toutes les questions, votre score s'affiche en bas.</p>
+  <div id="zone-quiz"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<section>
+  <h2>Terminus Toiture 2</h2>
+  <p>Vous connaissez la pile : six couches, six rôles, et le calcul des niveaux qui va avec.</p>
+  <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
+  </p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
+  L'exercice fait légender la coupe B-B du vestiaire, calculer ses niveaux et vérifier deux relevés.</p>
+  <p>Gare suivante : <strong>les points singuliers</strong>, Toiture 3.</p>
+  <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
+  <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
+</section>
+</div>
+
+<script id="quiz" type="application/json">
+[
+ {
+  "e": "L'ordre de la pile, de haut en bas :",
+  "r": [
+   "protection, étanchéité, isolant, pare-vapeur, forme de pente, porteur",
+   "étanchéité, protection, isolant, porteur, forme de pente, pare-vapeur",
+   "porteur, pente, pare-vapeur, isolant, étanchéité, protection",
+   "isolant, étanchéité, protection, pare-vapeur, pente, porteur"
+  ],
+  "bon": 0,
+  "x": "De haut en bas : ce que vous voyez d'abord protège, ce qui est dessous porte."
+ },
+ {
+  "e": "Le rôle du pare-vapeur :",
+  "r": [
+   "arrêter la pluie qui traverse le gravillon",
+   "arrêter la vapeur d'eau qui monte du bâtiment",
+   "porter l'isolant et la protection",
+   "faire la pente"
+  ],
+  "bon": 1,
+  "x": "Sans lui, la vapeur intérieure condenserait dans l'isolant et le ruinerait."
+ },
+ {
+  "e": "La forme de pente sert à :",
+  "r": [
+   "isoler la toiture du bruit des équipements",
+   "mener l'eau vers les naissances EP",
+   "décorer",
+   "alléger la toiture"
+  ],
+  "bon": 1,
+  "x": "C'est elle qui fabrique les pentes lues sur le plan de toiture (Toiture 1)."
+ },
+ {
+  "e": "Le gravillon au-dessus de la membrane :",
+  "r": [
+   "étanche la toiture en doublant la membrane",
+   "la protège des UV et des chocs",
+   "draine l'eau vers le haut",
+   "pèse pour la pente"
+  ],
+  "bon": 1,
+  "x": "La protection défend la membrane ; l'étanchéité est assurée par la membrane elle-même."
+ },
+ {
+  "e": "Sur un dossier, le motif de hachures de chaque matériau se trouve :",
+  "r": [
+   "dans la légende du dossier",
+   "dans le cartouche",
+   "sur le plan de situation",
+   "nulle part : on le devine"
+  ],
+  "bon": 0,
+  "x": "La légende d'abord (gare 5) : elle donne le motif de chaque matériau coupé."
+ },
+ {
+  "e": "La membrane se dessine :",
+  "r": [
+   "en pointillé léger, à peine visible sur la coupe",
+   "en trait épais",
+   "en vagues souples, comme l'isolant",
+   "en double trait fin"
+  ],
+  "bon": 1,
+  "x": "Trait épais : le revêtement d'étanchéité. La légende du dossier le confirme."
+ },
+ {
+  "e": "Le relevé d'étanchéité doit monter :",
+  "r": [
+   "au ras de la protection",
+   "au-dessus de la protection, de la hauteur que fixe le dossier",
+   "jusqu'au sommet de l'acrotère, toujours",
+   "de 5 cm, partout"
+  ],
+  "bon": 1,
+  "x": "Le minimum vient du DTU (NF DTU 43.1 pour un toit en béton). Dans les exercices de cette ligne : 150 mm au-dessus de la protection, donnée de l'exercice."
+ },
+ {
+  "e": "Le porteur d'une toiture peut être :",
+  "r": [
+   "béton, bacs acier ou bois",
+   "uniquement du béton",
+   "uniquement du bois",
+   "de l'isolant renforcé"
+  ],
+  "bon": 0,
+  "x": "Trois familles de porteurs : le complexe s'adapte à chacun."
+ },
+ {
+  "e": "Où lisez-vous l'épaisseur de l'isolant prévu ?",
+  "r": [
+   "sur le plan de situation",
+   "sur la coupe et dans le descriptif",
+   "sur la façade",
+   "nulle part"
+  ],
+  "bon": 1,
+  "x": "La coupe et le descriptif donnent les épaisseurs. Le descriptif nomme aussi le produit."
+ },
+ {
+  "e": "Une coupe montre une membrane posée sous l'isolant. Vous :",
+  "r": [
+   "posez comme dessiné : le dessinateur sait ce qu'il fait",
+   "vérifiez au descriptif",
+   "échangez les couches vous-même",
+   "refusez le chantier"
+  ],
+  "bon": 1,
+  "x": "L'isolant sur la membrane existe (toiture inversée), mais cela se vérifie au descriptif et ne se suppose jamais."
+ },
+ {
+  "e": "Dessus de la dalle + 2,70, forme de pente de 200 mm. Le dessus de la forme de pente est à :",
+  "r": [
+   "+ 2,90",
+   "+ 2,72",
+   "+ 4,70",
+   "+ 2,50"
+  ],
+  "bon": 0,
+  "x": "200 mm = 0,20 m. 2,70 + 0,20 = 2,90."
+ }
+]
+</script>
+<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
+</body>
+</html>
