@@ -46,3 +46,7 @@ fournit les illustrations des huit portes.
 - Fusion du commit BE (H6, T4, T5) de main : conflits index.html et sw.js réglés en gardant la page à huit portes, accueil.mjs et version.mjs relancés (424 stations, 23 en préparation).
 - EN LIGNE : `git push origin accueil-huit-portes:main` → main 506904b70.
 - Reste : composant établissement sur le tableau de bord HAL (autre dépôt, chat neuf) ; le jour J, remplir `moteur/etablissement.js` (nom, adresse, logos depuis usine-contenu/gabarits/logos/, courriels, `actif:true`).
+
+## Lot 5 — 01/11/2026, 17 h 20 (main 3043d40e9)
+
+Premier écran redessiné par Franck : recherche, test d’entrée et parcours par diplôme sur une rangée pleine largeur (`.hero-actions`), logo 390 px. Volet ouvert : les deux boutons passent ensemble sous la recherche. Contrôle téléphone OK. Poussé après fusion du commit BE be2df3aea.
