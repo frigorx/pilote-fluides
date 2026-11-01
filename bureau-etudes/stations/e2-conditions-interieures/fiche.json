@@ -1,0 +1,92 @@
+{
+  "numero": 3,
+  "titre": "Établir le tableau des locaux d’un logement",
+  "ligne": "Données d’entrée",
+  "code": "BE-E2",
+  "quand": "Au début de l’étude, après la lecture du dossier et avant les calculs de déperditions, de débits et d’apports. Vous avez le CCTP et les textes cités. Vous obtenez le tableau des locaux : type, températures, humidité, occupants, air et source de chaque valeur, avec le débit total extrait à atteindre.",
+  "methode": [
+    "Lister les locaux et donner à chacun un type : pièce principale (séjour ou sommeil), pièce de service (cuisine, salle d’eau, WC, cellier), circulation, non chauffé.",
+    "Écrire les températures : consigne d’hiver (CCTP), allure réduite, tolérance, température d’été des pièces principales, humidité visée. Écrire la source de chaque valeur : un texte, le CCTP ou un choix du bureau d’études.",
+    "Écrire les occupants de chaque pièce, les horaires de confort et de réduit.",
+    "Compter les pièces principales. La cuisine, la salle de bains, le WC et le cellier n’en font pas partie.",
+    "Lire l’article 3 : la ligne porte le nombre de pièces principales (la dernière vaut pour cinq et plus), la colonne dépend de la pièce de service. Une salle de bains qui contient un WC est une seule pièce. Deux WC séparés ou plus : colonne « WC multiples ».",
+    "Additionner les débits des pièces de service : c’est le débit total extrait à atteindre, en m³/h.",
+    "Si le logement a des dispositifs individuels de réglage (VMC hygroréglable), lire l’article 4 : débit total minimal et débit minimal en cuisine. Sans dispositif de réglage, ne pas l’appliquer.",
+    "Classer chaque donnée : un texte l’impose, le CCTP l’impose, ou le bureau d’études la choisit. Dans ce dernier cas, l’écrire comme hypothèse, avec sa source."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Pièces principales et pièces de service",
+      "valeur": "Les pièces principales sont destinées au séjour ou au sommeil ; les pièces de service sont les cuisines, salles d’eau, cabinets d’aisance, buanderies, débarras, séchoirs, celliers",
+      "source": "Code de la construction et de l’habitation, art. R. 111-1-1 (ancien R. 111-1)"
+    },
+    {
+      "grandeur": "Débits à atteindre, cuisine",
+      "valeur": "75, 90, 105, 120, 135 m³/h pour 1, 2, 3, 4 puis 5 pièces principales et plus",
+      "source": "Arrêté du 24 mars 1982 relatif à l’aération des logements, modifié par l’arrêté du 28 octobre 1983, art. 3"
+    },
+    {
+      "grandeur": "Débits à atteindre, salle de bains ou de douches",
+      "valeur": "15, 15, 30, 30, 30 m³/h (même ordre). Autre salle d’eau : 15 m³/h",
+      "source": "Arrêté du 24 mars 1982 relatif à l’aération des logements, modifié par l’arrêté du 28 octobre 1983, art. 3"
+    },
+    {
+      "grandeur": "Débits à atteindre, WC",
+      "valeur": "WC unique : 15, 15, 15, 30, 30 m³/h. WC multiples : 15 m³/h pour chacun",
+      "source": "Arrêté du 24 mars 1982 relatif à l’aération des logements, modifié par l’arrêté du 28 octobre 1983, art. 3"
+    },
+    {
+      "grandeur": "Débits réduits, débit total minimal",
+      "valeur": "35, 60, 75, 90, 105, 120, 135 m³/h pour 1 à 6, puis 7 pièces principales et plus. Cuisine : 20, 30, 45, 45, 45, 45, 45 m³/h",
+      "source": "Arrêté du 24 mars 1982 modifié, art. 4"
+    },
+    {
+      "grandeur": "Limite de chauffage d’un logement",
+      "valeur": "19 °C en moyenne. Inoccupation : 16 °C au plus de 24 h à moins de 48 h, 8 °C au plus à partir de 48 h",
+      "source": "Code de l’énergie, art. R. 241-26 et Code de l’énergie, art. R. 241-27"
+    },
+    {
+      "grandeur": "Refroidissement",
+      "valeur": "Il ne fonctionne qu’au-dessus de 26 °C",
+      "source": "Code de l’énergie, art. R. 241-30"
+    },
+    {
+      "grandeur": "Régulation par pièce",
+      "valeur": "Quatre allures au moins : confort, réduit, hors gel, arrêt",
+      "source": "Code de l’énergie, art. R. 241-31-1"
+    },
+    {
+      "grandeur": "Humidité relative visée",
+      "valeur": "40 à 60 %, repère de confort",
+      "source": "valeur d’exercice : aucun texte ne l’impose dans un logement"
+    },
+    {
+      "grandeur": "Air neuf par occupant, bureau",
+      "valeur": "25 m³/h au Code du travail, 18 m³/h au règlement sanitaire départemental",
+      "source": "Code du travail, art. R. 4222-6 ; règlement sanitaire départemental, art. 64.1 (texte type ; le RSD du département s’applique)"
+    }
+  ],
+  "exemple": {
+    "enonce": "Appartement d’exemple : un séjour, deux chambres, une cuisine fermée, une salle de bains avec WC, une entrée. 2 occupants. Le propriétaire demande 19 °C (valeur d’exercice), avec une tolérance de ± 1 K ; réduit de 16 °C la nuit ; confort de 7 h à 23 h. VMC simple flux hygroréglable.",
+    "lignes": [
+      "Types : séjour, chambre A et chambre B sont des pièces principales (3) ; cuisine et salle de bains avec WC sont des pièces de service ; l’entrée est une circulation.",
+      "Températures : θ hiver = 19 °C, θ réduit = 16 °C, θ été = 26 °C dans les pièces principales, humidité 40 à 60 %.",
+      "Occupants : séjour 2 (soirée et repas), chambre a 1 (nuit), chambre b 1 (nuit), les autres pièces 0.",
+      "Article 3, ligne 3 : cuisine 105 m³/h, salle de bains avec WC 30 m³/h (une seule pièce).",
+      "Total à atteindre : 105 + 30 = 135 m³/h.",
+      "Article 4, colonne « 3 pièces principales » (hygroréglable) : ligne « Débit total minimal » 75 m³/h, ligne « Débit minimal en cuisine » 45 m³/h au moins."
+    ],
+    "resultat": "Total à atteindre 135 m³/h ; avec les débits réduits, 75 m³/h au minimum, dont 45 m³/h en cuisine (valeurs d’exercice pour les consignes, l’humidité, les horaires et les occupants)."
+  },
+  "pieges": [
+    "Une salle de bains avec WC lue sur deux lignes : ici 150 m³/h au lieu de 135 m³/h.",
+    "Deux WC séparés lus dans la colonne « WC unique » : chaque WC se lit dans la colonne « WC multiples ».",
+    "L’article 4 appliqué à une VMC autoréglable : sans dispositif de réglage individuel, les débits de l’article 3 restent à atteindre."
+  ],
+  "sources": [
+    "Code de la construction et de l’habitation, art. R. 111-1-1 (ancien R. 111-1) ; Arrêté du 24 mars 1982 relatif à l’aération des logements, modifié par l’arrêté du 28 octobre 1983, art. 3 et art. 4 (legifrance.gouv.fr/loda/id/JORFTEXT000000862344, lu le 31/10/2026) ; Code de l’énergie, art. R. 241-26, R. 241-27, R. 241-30 et R. 241-31-1. Les textes sont cités ; les tableaux des articles 3 et 4 sont recopiés.",
+    "Stations en correspondance : BE-T4 (renouvellement d’air), BE-A2 (débits du projet), AéroRézo « Pourquoi ventiler ? » et « L’humidité relative ».",
+    "Aucune calculette : les débits se lisent dans les tableaux."
+  ],
+  "calculette": null
+}

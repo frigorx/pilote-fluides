@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 562,
+  "total": 563,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2633,6 +2633,29 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/e1-climat-site/",
       "chemin": "bureau-etudes/stations/e1-climat-site/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "e2-conditions-interieures",
+      "titre": "BE-E2, Les conditions intérieures",
+      "ligne": "Données d’entrée",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP4",
+        "CP7",
+        "CP5",
+        "CP8",
+        "CP10",
+        "C1-2",
+        "C5-2",
+        "B2-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/e2-conditions-interieures/",
+      "chemin": "bureau-etudes/stations/e2-conditions-interieures/"
     },
     {
       "reseau": "Bureau d'études",
@@ -7209,7 +7232,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-pub-metier\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7221,7 +7244,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-pub-metier\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7233,7 +7256,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-pub-metier\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7245,7 +7268,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-pub-metier\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7257,7 +7280,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-pub-metier\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7269,7 +7292,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-pub-metier\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-pub-e2\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

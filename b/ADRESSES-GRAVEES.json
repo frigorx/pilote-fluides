@@ -252,6 +252,19 @@
         "pcr6-5",
         "pcr6-6"
       ]
+    },
+    {
+      "edition": "e2-2026-11-01",
+      "statut": "epreuve",
+      "commentaire": "Feuilles N1 et N2 de la station E2 « Conditions intérieures », QR posés le 31/10/2026, publiées le 01/11/2026, rien d’imprimé encore.",
+      "slugs": [
+        "e2-1",
+        "e2-2",
+        "e2-3",
+        "e2-4",
+        "e2-5",
+        "e2-6"
+      ]
     }
   ]
 }

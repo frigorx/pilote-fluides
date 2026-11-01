@@ -1,0 +1,63 @@
+{
+  "cle": "e2-conditions-interieures",
+  "code": "BE-E2",
+  "titre": "Les conditions intérieures",
+  "ligne": "Données d’entrée",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 3,
+    "chapitre": 1
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP4",
+        "libelle": "Réaliser l’étude d’une installation de ventilation mécanique contrôlée"
+      },
+      {
+        "code": "CP7",
+        "libelle": "Réaliser l’étude d’une installation de ventilation d’un bâtiment tertiaire"
+      },
+      {
+        "code": "CP5",
+        "libelle": "Réaliser les calculs de déperditions thermiques"
+      },
+      {
+        "code": "CP8",
+        "libelle": "Réaliser les calculs d’apports thermiques"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l’étude d’une installation d’une centrale de traitement d’air"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C1-2",
+          "libelle": "Exprimer les contraintes"
+        },
+        {
+          "code": "C5-2",
+          "libelle": "Extraire les éléments réglementaires concernant le projet"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B2-1",
+          "libelle": "Ventilation (à confirmer : le référentiel écrit « B2-1 ventilation » dans le bloc « Ventilation et climatisation »)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}
