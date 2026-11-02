@@ -1,5 +1,19 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 01/11/2026 — ACCUEIL À HUIT PORTES (`index.html`, ancien accueil → `reseaux.html`)
+>
+> En ligne le 01/11 (main `506904b70`, puis `3d02c4930` à 17 h 20). `index.html` refait : gros logo cliquable vers
+> `reseaux.html`, recherche + test d'entrée + parcours par diplôme sur une rangée (`.hero-actions`, dessin de Franck),
+> huit portes (vignettes `icones/portes/*.webp`), bandeau et bloc de volet « établissement partenaire » en maquette
+> (`moteur/etablissement.js` : réglage en tête, `actif:false`, charte du campus, aucun nom ni logo réel avant le jour J),
+> chiffres écrits par `build/accueil.mjs` entre les sentinelles CHIFFRES-PORTES (`prevues` dans `moteur/reseaux.js`
+> nourrit « en préparation »). Le volet s'ouvre à chaque arrivée, à toutes les largeurs ; la bande « Actualités et espaces »
+> est une carte statique en bas de page, jamais fixe. Les ancres gravées `index.html#outils` etc. sont renvoyées vers
+> `reseaux.html` par un script en tête. Atelier `D:\git\_wt-accueil` (branche `accueil-huit-portes`), livrer par
+> `git push origin accueil-huit-portes:main` après fusion d'`origin/main` (conflit `sw.js` = prendre le leur puis
+> `node build/version.mjs`). Plan : `docs/accueil-huit-portes-2026-11/PLAN.md`. Reste : brancher
+> `INERWEB_ETABLISSEMENT_RENDRE` sur le tableau de bord HAL (chat neuf) ; le jour J, remplir le réglage et passer `actif:true`.
+
 > ## 23/10/2026 — INERWEB AU TÉLÉPHONE (audit + chantiers 0 à 4 et 6)
 >
 > Audit de 986 pages au doigt (360×640) : 104 bloquantes le matin. En ligne : HydroMétro qui défile (`ce9d1d0c`) ; bouton
