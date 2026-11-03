@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 124.00" width="180mm" height="124.00mm" role="img">
+<title>Le taux de renouvellement du logement d’exemple en base : un logement de 196,8 m³ traversé par 75 m³/h d’air neuf, et la part de son volume remplacée en une heure, 0,38</title>
+<rect width="180" height="124.00" fill="#fff"/>
+<g><text x="90" y="68" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 68)">inerWeb, by inerweb.fr</text><text x="40" y="37" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 37)">inerWeb, by inerweb.fr</text><text x="140" y="102" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 102)">inerWeb, by inerweb.fr</text></g>
+<rect x="50.00" y="20.00" width="80.00" height="40.00" fill="#e3eefa" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="90.00" y="34.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Logement</text>
+<text x="90.00" y="44.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">V = 196,8 m³</text>
+<line x1="8.00" y1="40.00" x2="48.00" y2="40.00" stroke="#ff6b35" stroke-width="0.7"/>
+<polygon points="48.00,40.00 45.61,41.01 45.61,38.99" fill="#ff6b35"/>
+<text x="28.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Air neuf</text>
+<text x="28.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">75 m³/h</text>
+<line x1="132.00" y1="40.00" x2="172.00" y2="40.00" stroke="#ff6b35" stroke-width="0.7"/>
+<polygon points="172.00,40.00 169.61,41.01 169.61,38.99" fill="#ff6b35"/>
+<text x="152.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Air extrait</text>
+<text x="152.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">75 m³/h</text>
+<text x="90.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">Chaque heure, en base</text>
+<text x="20.00" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Le volume du logement, 196,8 m³</text>
+<rect x="20.00" y="84.00" width="140.00" height="12.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="20.00" y="84.00" width="53.20" height="12.00" fill="#ffe1d4" stroke="#ff6b35" stroke-width="0.4"/>
+<text x="46.60" y="92.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">0,38 vol/h</text>
+<text x="90.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">n = qv ÷ V = 75 ÷ 196,8 = 0,38 vol/h</text>
+</svg>

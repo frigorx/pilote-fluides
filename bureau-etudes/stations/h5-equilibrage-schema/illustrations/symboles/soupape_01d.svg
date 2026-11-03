@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14.0 -25.0 38.0 48.0" width="38" height="48">
+<!-- Soupape de Sécurité "droite" — converti de soupape_01d.elmt par outils\elmt-vers-svg.py -->
+<rect x="-14.0" y="-25.0" width="38.0" height="48.0" fill="#ffffff"/>
+<polygon points="0,0 10,-6 10,6" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="0,0 -6,10 6,10" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="0,0 0,-4 -3,-6 3,-8 -3,-9 3,-11 -3,-12 3,-14 0,-15 0,-17" stroke="black" stroke-width="1" fill="none"/>
+</svg>

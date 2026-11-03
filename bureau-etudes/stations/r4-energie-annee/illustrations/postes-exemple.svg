@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 108.8" width="180mm" height="108.8mm" role="img">
+<title>L’énergie de l’année par poste</title>
+<rect width="180" height="108.8" fill="#fff"/>
+<g><text x="90" y="60" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 60)">inerWeb, by inerweb.fr</text><text x="40" y="33" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 33)">inerWeb, by inerweb.fr</text><text x="140" y="89" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 89)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Électricité de l’année (kWh), solution pompe à chaleur</text>
+<line x1="50.00" y1="14.00" x2="50.00" y2="70.00" stroke="#000" stroke-width="0.5"/>
+<text x="4.00" y="22.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Chauffage</text>
+<rect x="50.00" y="16.00" width="98.00" height="9.00" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.3"/>
+<text x="150.50" y="22.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">1962 kWh</text>
+<text x="4.00" y="36.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Eau chaude</text>
+<rect x="50.00" y="30.00" width="14.98" height="9.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="67.48" y="36.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">300 kWh</text>
+<text x="4.00" y="50.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Ventilation</text>
+<rect x="50.00" y="44.00" width="5.19" height="9.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="57.69" y="50.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">104 kWh</text>
+<text x="4.00" y="64.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Été (option)</text>
+<rect x="50.00" y="58.00" width="19.73" height="9.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="72.23" y="64.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">395 kWh</text>
+<text x="6.00" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Total : 2761 kWh d’électricité sur l’année.</text>
+<text x="6.00" y="87.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Le chauffage pèse le plus : c’est lui qu’on soigne.</text>
+<line x1="4.00" y1="98.30" x2="176.00" y2="98.30" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bâtiment d’exemple</text>
+</svg>

@@ -1,0 +1,71 @@
+{
+  "numero": 31,
+  "titre": "Écrire la séquence de régulation d’une centrale de traitement d’air",
+  "ligne": "Régulation et énergie",
+  "code": "BE-R2",
+  "quand": "Après la CTA (station A5), qui donne ses sections, ses débits et ses températures de soufflage. Vous avez le CCTP du lot régulation : ce qu’il faut mesurer, la consigne de CO₂, la plage de la sonde, les horaires. Vous obtenez le schéma de régulation, la séquence écrite en hiver et en été, la loi du registre de la salle de réunion et la puissance de la batterie chaude selon la température extérieure.",
+  "methode": [
+    "Placer les sondes : air neuf, soufflage, reprise, CO₂ dans la salle, antigel juste après la batterie chaude.",
+    "Relier chaque sonde au régulateur en pointillé (mesure), le régulateur à chaque organe commandé en trait mixte (commande).",
+    "La sonde de soufflage règle le by-pass et les batteries ; la reprise corrige la consigne ; le CO₂ règle le débit de la salle.",
+    "Hiver : d’abord le récupérateur (by-pass fermé), puis la batterie chaude jusqu’à la consigne de soufflage.",
+    "Après récupérateur : θ = θe + η × (θ reprise − θe) ; batterie : P = 0,34 × qv × (θ soufflage − θ après récupérateur).",
+    "Été : by-pass ouvert si l’air extérieur est plus frais que la reprise ; sinon récupérateur, puis batterie froide.",
+    "Hors horaires : CTA arrêtée, registres fermés ; antigel surveillé jour et nuit.",
+    "Sonde 0-10 V : tension = teneur ÷ étendue × 10 V ; teneur = tension ÷ 10 V × étendue.",
+    "Registre de la salle : veille sous le seuil bas, plein débit au-dessus du seuil haut, droite entre les deux."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Sonde de CO₂",
+      "valeur": "0 à 2 000 ppm en 0-10 V ; consigne 1 000 ppm",
+      "source": "CCTP tertiaire, page 4 (valeurs d’exercice)"
+    },
+    {
+      "grandeur": "Soufflage",
+      "valeur": "19 °C l’hiver, 17 °C l’été ; été au-dessus de 15 °C dehors",
+      "source": "CCTP page 3 ; seuil : donnée de l’exercice"
+    },
+    {
+      "grandeur": "Récupérateur de base",
+      "valeur": "échangeur à plaques, efficacité 0,54",
+      "source": "CCTP page 3 (séance S06)"
+    },
+    {
+      "grandeur": "Registre de la salle",
+      "valeur": "72 m³/h sous 800 ppm, 240 m³/h à 1 000 ppm, droite entre les deux",
+      "source": "Débits : station A2 et CCTP page 2 ; seuils : donnée de l’exercice"
+    },
+    {
+      "grandeur": "Antigel",
+      "valeur": "5 °C, en permanence",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "0,34",
+      "valeur": "ρ × cp ÷ 3 600, en Wh/(m³.K)",
+      "source": "Station T4"
+    }
+  ],
+  "exemple": {
+    "enonce": "Noyau du projet (bureau et salle de réunion) : 290 m³/h d’air neuf, −7 °C dehors, reprise à 19 °C, soufflage à 19 °C, plaques η = 0,54.",
+    "lignes": [
+      "Après le récupérateur : −7 + 0,54 × (19 − (−7)) = 7,04 °C.",
+      "Batterie chaude : 0,34 × 290 × (19 − 7,04) = 1 179,26 W.",
+      "Sans récupérateur, elle fournirait 2 563,6 W.",
+      "Sonde de CO₂ : 600 ppm → 3,0 V ; registre à 900 ppm : 156 m³/h."
+    ],
+    "resultat": "Récupérateur d’abord (7,04 °C), batterie chaude ensuite : 1 179,26 W"
+  },
+  "pieges": [
+    "Ouvrir la batterie chaude avant le récupérateur : la séquence prend d’abord la chaleur gratuite.",
+    "Faire régler la température par la sonde de CO₂ : elle règle le débit de la salle, rien d’autre.",
+    "Oublier l’antigel ou l’arrêt hors horaires : ils font partie de la séquence."
+  ],
+  "sources": [
+    "CCTP tertiaire du réseau : lot 3 (CTA), lot 5 (régulation), occupation (horaires).",
+    "By-pass du récupérateur, sonde d’air neuf, seuils du registre, seuil de saison, séquenceur et antigel : données de l’exercice (cctp-ajout-r2).",
+    "Stations en correspondance : BE-A5 (la CTA), BE-R1 (sondes et régulateur), AéroRézo « Humidifier, déshumidifier, réguler », « Récupération d’énergie »."
+  ],
+  "calculette": null
+}

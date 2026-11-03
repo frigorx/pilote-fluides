@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132" width="180mm" height="132mm" role="img">
+<title>Le besoin journalier de l’appartement d’exemple : trois personnes, 40 L chacune, 120 L par jour à 40 °C</title>
+<rect width="180" height="132" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="35" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 40)">inerWeb, by inerweb.fr</text><text x="150" y="106" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 106)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Appartement d’exemple, à 40 °C</text>
+<circle cx="30.00" cy="34.00" r="3.50" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="25.00" y="39.00" width="10.00" height="14.00" fill="#e3eefa"/>
+<line x1="25.00" y1="39.00" x2="35.00" y2="39.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="35.00" y1="39.00" x2="35.00" y2="53.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="35.00" y1="53.00" x2="25.00" y2="53.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="25.00" y1="53.00" x2="25.00" y2="39.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="30.00" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40 L</text>
+<circle cx="60.00" cy="34.00" r="3.50" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="55.00" y="39.00" width="10.00" height="14.00" fill="#e3eefa"/>
+<line x1="55.00" y1="39.00" x2="65.00" y2="39.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="65.00" y1="39.00" x2="65.00" y2="53.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="65.00" y1="53.00" x2="55.00" y2="53.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="55.00" y1="53.00" x2="55.00" y2="39.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="60.00" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40 L</text>
+<circle cx="90.00" cy="34.00" r="3.50" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="85.00" y="39.00" width="10.00" height="14.00" fill="#e3eefa"/>
+<line x1="85.00" y1="39.00" x2="95.00" y2="39.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="95.00" y1="39.00" x2="95.00" y2="53.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="95.00" y1="53.00" x2="85.00" y2="53.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="85.00" y1="53.00" x2="85.00" y2="39.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="90.00" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40 L</text>
+<line x1="25.00" y1="74.00" x2="95.00" y2="74.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="25.00" y1="74.00" x2="25.00" y2="71.50" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="95.00" y1="74.00" x2="95.00" y2="71.50" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="60.00" y1="74.00" x2="60.00" y2="77.00" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="60.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3 personnes × 40 L par personne et par jour</text>
+<text x="112.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">=</text>
+<rect x="122.00" y="34.00" width="52.00" height="28.00" fill="#fff"/>
+<line x1="122.00" y1="34.00" x2="174.00" y2="34.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="174.00" y1="34.00" x2="174.00" y2="62.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="174.00" y1="62.00" x2="122.00" y2="62.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="122.00" y1="62.00" x2="122.00" y2="34.00" stroke="#ff6b35" stroke-width="0.9"/>
+<text x="148.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">V40</text>
+<text x="148.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">120 L</text>
+<text x="148.00" y="57.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">par jour</text>
+<text x="90.00" y="98.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">V40 = n × l = 3 × 40 = 120 L par jour</text>
+<text x="90.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40 L à 40 °C et 40 L à 60 °C</text>
+<text x="90.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">ne demandent pas la même énergie.</text>
+<line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

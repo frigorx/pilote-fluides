@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 134" width="180mm" height="134mm" role="img">
+<title>La pointe du soir : la puissance en instantané, celle de la pompe à chaleur, la douche puis la remontée du ballon</title>
+<rect width="180" height="134" fill="#fff"/>
+<g><text x="90" y="74" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 74)">inerWeb, by inerweb.fr</text><text x="35" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 40)">inerWeb, by inerweb.fr</text><text x="150" y="107" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 107)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Une douche de 40 L à 40 °C en 10 minutes</text>
+<text x="10.00" y="23.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Chauffe-eau instantané : 7 818 W</text>
+<rect x="10.00" y="25.00" width="150.00" height="9.00" fill="#ffe1d4"/>
+<line x1="10.00" y1="25.00" x2="160.00" y2="25.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="160.00" y1="25.00" x2="160.00" y2="34.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="160.00" y1="34.00" x2="10.00" y2="34.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="34.00" x2="10.00" y2="25.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="10.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pompe à chaleur du ballon : 1 500 W</text>
+<rect x="10.00" y="47.00" width="28.78" height="9.00" fill="#e3eefa"/>
+<line x1="10.00" y1="47.00" x2="38.78" y2="47.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="38.78" y1="47.00" x2="38.78" y2="56.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="38.78" y1="56.00" x2="10.00" y2="56.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="56.00" x2="10.00" y2="47.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="10.00" y="67.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">E = 1 303 Wh ; 1 303 ÷ (10 ÷ 60) = 7 818 W</text>
+<text x="10.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">La douche, 10 min</text>
+<text x="62.19" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Remontée du ballon, 52 min</text>
+<rect x="10.00" y="86.00" width="24.19" height="9.00" fill="#ffe1d4"/>
+<line x1="10.00" y1="86.00" x2="34.19" y2="86.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="34.19" y1="86.00" x2="34.19" y2="95.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="34.19" y1="95.00" x2="10.00" y2="95.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="95.00" x2="10.00" y2="86.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="34.19" y="86.00" width="125.81" height="9.00" fill="#e3eefa"/>
+<line x1="34.19" y1="86.00" x2="160.00" y2="86.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="160.00" y1="86.00" x2="160.00" y2="95.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="160.00" y1="95.00" x2="34.19" y2="95.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="34.19" y1="95.00" x2="34.19" y2="86.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="10.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Remontée : 1 303 ÷ 1 500 = 0,87 h, soit 52 min</text>
+<text x="10.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Le ballon a stocké la chaleur avant la pointe.</text>
+<line x1="4.00" y1="123.50" x2="176.00" y2="123.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="130.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="130.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

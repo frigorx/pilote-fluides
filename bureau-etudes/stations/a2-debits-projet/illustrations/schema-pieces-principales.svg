@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 108.00" width="180mm" height="108.00mm" role="img">
+<title>Les pièces du logement d’exemple rangées en trois colonnes : pièces principales (séjour, chambre 1, chambre 2), pièces de service (cuisine, salle de bains, WC) et circulation (dégagement)</title>
+<rect width="180" height="108.00" fill="#fff"/>
+<g><text x="90" y="59" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 59)">inerWeb, by inerweb.fr</text><text x="40" y="32" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 32)">inerWeb, by inerweb.fr</text><text x="140" y="89" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 89)">inerWeb, by inerweb.fr</text></g>
+<rect x="4.00" y="5.00" width="54.00" height="64.00" fill="#f6f8fb" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="31.00" y="12.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Pièces principales</text>
+<text x="31.00" y="19.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">on les compte</text>
+<rect x="8.00" y="24.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="31.00" y="31.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Séjour</text>
+<rect x="8.00" y="38.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="31.00" y="45.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 1</text>
+<rect x="8.00" y="52.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="31.00" y="59.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 2</text>
+<rect x="63.00" y="5.00" width="54.00" height="64.00" fill="#f6f8fb" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="90.00" y="12.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Pièces de service</text>
+<text x="90.00" y="19.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">une bouche chacune</text>
+<rect x="67.00" y="24.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="90.00" y="31.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Cuisine</text>
+<rect x="67.00" y="38.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="90.00" y="45.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">WC</text>
+<rect x="67.00" y="52.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="90.00" y="59.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Salle de bains</text>
+<rect x="122.00" y="5.00" width="54.00" height="64.00" fill="#f6f8fb" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="149.00" y="12.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Circulation</text>
+<text x="149.00" y="19.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">l’air y passe</text>
+<rect x="126.00" y="24.00" width="46.00" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="149.00" y="31.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Dégagement</text>
+<line x1="31.00" y1="69.00" x2="31.00" y2="81.00" stroke="#ff6b35" stroke-width="0.7"/>
+<polygon points="31.00,81.00 29.99,78.61 32.01,78.61" fill="#ff6b35"/>
+<text x="90.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">On compte 3 pièces principales : on lit la ligne 3 du tableau.</text>
+<text x="90.00" y="99.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Même ouverte sur le séjour, la cuisine est une pièce de service.</text>
+</svg>

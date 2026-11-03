@@ -1,0 +1,61 @@
+{
+  "numero": 12,
+  "titre": "Choisir la machine et corriger sa puissance aux conditions du site",
+  "ligne": "Thermique",
+  "code": "BE-T9",
+  "quand": "Après les deux bilans : le bilan d’hiver (station T5) et la synthèse du bilan d’été (station T8). Vous choisissez la famille, puis la machine, avec sa puissance corrigée à la température de base, son point de bivalence et son appoint. L’énergie consommée sur l’année suit (station R4).",
+  "methode": [
+    "Famille : émetteurs à eau, froid demandé ou non, place disponible. Pompe à chaleur air/eau, groupe d’eau glacée ou détente directe.",
+    "Catalogue : la ligne à la température d’eau du projet ; la puissance de tête est celle de +7 °C dehors.",
+    "Puissance à θb : la ligne du catalogue, ou la règle de trois entre les deux lignes qui encadrent θb, au watt.",
+    "Droite des besoins : déperditions de base à θb, sans la relance ; 0 W à la température de non-chauffage θnc.",
+    "Point de bivalence : croisement de la courbe de la machine et de la droite, lu à la règle au demi-degré.",
+    "Appoint = besoin de base − puissance de la machine à θb ; appoint installé au kW au-dessus.",
+    "Été : puissance frigorifique de la même machine ÷ besoin de la station T8 × 100.",
+    "Note : famille et critères, besoins et sources, machine et correction, bivalence, appoint, été, raison du choix."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Catalogue des machines",
+      "valeur": "puissance, COP, froid, EER",
+      "source": "Données de l’exercice (aucun document de fabricant)"
+    },
+    {
+      "grandeur": "Température de non-chauffage",
+      "valeur": "15 °C (exemple)",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Dégivrage, appoint électrique, familles",
+      "valeur": "notions",
+      "source": "Stations CartoClim « La PAC air/eau », « Groupe d’eau glacée et ventilo-convecteurs », « Le DRV »"
+    },
+    {
+      "grandeur": "Arrondi de l’appoint, règle de choix",
+      "valeur": "au kW au-dessus",
+      "source": "Données de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : 2996 W à −7 °C, nuls à 15 °C ; PAC 3,5, eau à 50 °C.",
+    "lignes": [
+      "Machine à −7 °C : 2630 W (ligne du catalogue).",
+      "Point de bivalence lu : vers −4,8 °C, 2703 W.",
+      "Appoint : 2996 − 2630 = 366 W, 1 kW installé.",
+      "Été : 3200 ÷ 4443 × 100 = 72 % du froid demandé, sans objet sans climatisation."
+    ],
+    "resultat": "PAC 3,5 retenue, appoint 1 kW, point de bivalence vers −4,8 °C"
+  },
+  "pieges": [
+    "La puissance de tête de catalogue, à +7 °C, prise pour la puissance au froid de la base.",
+    "La ligne du catalogue la plus proche prise sans corriger entre deux lignes.",
+    "La machine choisie sur le bilan d’été quand le CCTP ne demande pas de froid."
+  ],
+  "sources": [
+    "Familles, dégivrage et appoint électrique : stations CartoClim « La PAC air/eau : haute, moyenne et basse température », « Groupe d’eau glacée et ventilo-convecteurs », « Le DRV ».",
+    "Catalogues des machines, température de non-chauffage, règle de choix, arrondi de l’appoint : données de l’exercice.",
+    "Stations en correspondance : BE-T5, BE-T8, BE-H1, BE-R4, BE-F1.",
+    "Aucune calculette : le calcul et le tracé se font sur la feuille réponse."
+  ],
+  "calculette": null
+}

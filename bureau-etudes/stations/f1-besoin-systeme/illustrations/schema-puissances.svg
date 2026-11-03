@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 104" width="180mm" height="104mm" role="img">
+<title>Puissance de chaque local et de la machine</title>
+<rect width="180" height="104" fill="#fff"/>
+<line x1="58.00" y1="8.00" x2="58.00" y2="76.00" stroke="#000" stroke-width="0.5"/>
+<text x="55.00" y="20.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Salle de réunion</text>
+<rect x="58.00" y="14.00" width="62.59" height="9.00" fill="#1b3a63" stroke="none"/>
+<rect x="58.00" y="14.00" width="62.59" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="123.09" y="20.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3476 W à 16 h</text>
+<text x="55.00" y="36.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bureau</text>
+<rect x="58.00" y="30.00" width="19.84" height="9.00" fill="#1b3a63" stroke="none"/>
+<rect x="58.00" y="30.00" width="19.84" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="80.34" y="36.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1102 W à 12 h</text>
+<text x="55.00" y="52.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Sanitaires</text>
+<rect x="58.00" y="46.00" width="5.42" height="9.00" fill="#b9c2cc" stroke="none"/>
+<rect x="58.00" y="46.00" width="5.42" height="9.00" fill="#b9c2cc" stroke="#b9c2cc" stroke-width="0.2"/>
+<text x="65.92" y="52.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">301 W à 8 h</text>
+<text x="55.00" y="68.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">Machine</text>
+<rect x="58.00" y="62.00" width="80.00" height="9.00" fill="#ff6b35" stroke="none"/>
+<rect x="58.00" y="62.00" width="80.00" height="9.00" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<text x="140.50" y="68.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4443 W à 16 h</text>
+<rect x="12.00" y="83.50" width="5.00" height="5.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="20.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">local avec une unité</text>
+<rect x="104.00" y="83.50" width="5.00" height="5.00" fill="#b9c2cc" stroke="#b9c2cc" stroke-width="0.4"/>
+<text x="112.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">sans unité</text>
+<line x1="4.00" y1="93.50" x2="176.00" y2="93.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+<g><text x="90" y="57" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 57)">inerWeb, by inerweb.fr</text><text x="40" y="31" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 31)">inerWeb, by inerweb.fr</text><text x="140" y="85" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 85)">inerWeb, by inerweb.fr</text></g>
+</svg>

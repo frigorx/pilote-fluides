@@ -1,0 +1,59 @@
+{
+  "cle": "h4-pompe-vase-soupape",
+  "code": "BE-H4",
+  "titre": "Pompe, vase, soupape",
+  "ligne": "Hydraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 19,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 22,
+    "chapitre": 5
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire"
+      },
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (pompe, vase et soupape d'un réseau d'eau, même méthode)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (réseaux hydrauliques des batteries, même méthode)"
+      },
+      {
+        "code": "CP3",
+        "libelle": "Réaliser l'étude des réseaux de distribution et d'évacuation sanitaires (à confirmer : seul le raccordement de remplissage touche le réseau d'eau de ville)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-1",
+          "libelle": "Choisir les éléments d'un système ou d'une installation (à confirmer : annexe II.d non lue)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A3",
+          "libelle": "Dynamique des fluides : tronçons et réseaux (point de fonctionnement d'une pompe sur un réseau) (inventaire des référentiels, p. 64 du référentiel)"
+        },
+        {
+          "code": "B4-1",
+          "libelle": "Réseaux hydrauliques (dont circulateurs/pompes) (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 68 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

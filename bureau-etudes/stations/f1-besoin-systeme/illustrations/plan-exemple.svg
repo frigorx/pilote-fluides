@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 196" width="180mm" height="196mm" role="img">
+<title>Bâtiment d’exemple : unité extérieure et liaisons</title>
+<rect width="180" height="196" fill="#fff"/>
+<line x1="18.00" y1="145.00" x2="18.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="33.00" y1="145.00" x2="33.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="48.00" y1="145.00" x2="48.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="63.00" y1="145.00" x2="63.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="78.00" y1="145.00" x2="78.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="93.00" y1="145.00" x2="93.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="108.00" y1="145.00" x2="108.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="123.00" y1="145.00" x2="123.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="138.00" y1="145.00" x2="138.00" y2="34.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="145.00" x2="138.00" y2="145.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="130.00" x2="138.00" y2="130.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="115.00" x2="138.00" y2="115.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="100.00" x2="138.00" y2="100.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="85.00" x2="138.00" y2="85.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="70.00" x2="138.00" y2="70.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="55.00" x2="138.00" y2="55.00" stroke="#c9d3df" stroke-width="0.25"/>
+<line x1="18.00" y1="40.00" x2="138.00" y2="40.00" stroke="#c9d3df" stroke-width="0.25"/>
+<text x="18.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">0</text>
+<text x="33.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">1</text>
+<text x="48.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">2</text>
+<text x="63.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">3</text>
+<text x="78.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">4</text>
+<text x="93.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">5</text>
+<text x="108.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">6</text>
+<text x="123.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">7</text>
+<text x="138.00" y="152.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#555">8</text>
+<text x="14.00" y="146.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">0</text>
+<text x="14.00" y="131.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">1</text>
+<text x="14.00" y="116.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">2</text>
+<text x="14.00" y="101.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">3</text>
+<text x="14.00" y="86.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">4</text>
+<text x="14.00" y="71.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">5</text>
+<text x="14.00" y="56.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">6</text>
+<text x="14.00" y="41.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#555">7</text>
+<rect x="18.00" y="83.50" width="90.00" height="61.50" fill="none" stroke="#1b3a63" stroke-width="0.7"/>
+<rect x="108.00" y="83.50" width="30.00" height="46.50" fill="none" stroke="#1b3a63" stroke-width="0.7"/>
+<rect x="51.00" y="34.00" width="87.00" height="49.50" fill="none" stroke="#1b3a63" stroke-width="0.7"/>
+<rect x="18.00" y="34.00" width="33.00" height="49.50" fill="#f4f4f4" stroke="#1b3a63" stroke-width="0.7"/>
+<text x="66.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63" paint-order="stroke" stroke="#fff" stroke-width="1.4" stroke-linejoin="round">Salle de réunion</text>
+<text x="123.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63" paint-order="stroke" stroke="#fff" stroke-width="1.4" stroke-linejoin="round">Sanitaires</text>
+<text x="93.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63" paint-order="stroke" stroke="#fff" stroke-width="1.4" stroke-linejoin="round">Bureau</text>
+<text x="33.00" y="62.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63" paint-order="stroke" stroke="#fff" stroke-width="1.4" stroke-linejoin="round">Local</text>
+<text x="33.00" y="71.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63" paint-order="stroke" stroke="#fff" stroke-width="1.4" stroke-linejoin="round">technique</text>
+<svg x="40.50" y="21.31" width="15.00" height="10.49" viewBox="-17.37 -23.30 56.91 39.81" overflow="visible"><g stroke="#1b3a63" fill="#1b3a63"><ellipse cx="2.40" cy="-2.79" rx="7.07" ry="6.09" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="2.39" cy="-2.79" rx="9.63" ry="8.54" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="25.41" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="33.77" y="-1.1" width="1.39" height="1.22" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<ellipse cx="3.03" cy="-2.79" rx="15.41" ry="13.41" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-16.37" y="-22.3" width="50.13" height="35.36" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="34.94" y="-2.32" width="2.79" height="3.66" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="21.23" y1="-19.91" x2="21.23" y2="13.12" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="24" y="-16.2" width="7" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-12.19" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="33.77" y="9.41" width="1.39" height="1.22" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="35.75" y="8.19" width="2.79" height="3.66" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-16.37" y1="-19.86" x2="33.77" y2="-19.86" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="3.18" y1="-16.2" x2="3.18" y2="9.41" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-12.38" y1="-2.79" x2="18.45" y2="-2.79" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.79" rx="12.85" ry="10.97" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.78" rx="3.85" ry="3.66" stroke="#1b3a63" stroke-width="0.4" fill="none"/></g></svg>
+<line x1="48.00" y1="31.80" x2="48.00" y2="34.00" stroke="#ff6b35" stroke-width="1"/>
+<text x="57.50" y="27.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Unité extérieure</text>
+<polyline points="48.00,34.00 48.00,83.50 78.00,83.50" fill="none" stroke="#ff6b35" stroke-width="1.1" stroke-linejoin="round"/>
+<polyline points="48.00,55.00 138.00,55.00" fill="none" stroke="#ff6b35" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="3 1.6"/>
+<rect x="72.00" y="84.10" width="12.00" height="2.60" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<rect x="134.80" y="49.00" width="2.60" height="12.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<line x1="166.00" y1="24.00" x2="166.00" y2="10.00" stroke="#1b3a63" stroke-width="0.7"/>
+<line x1="166.00" y1="10.00" x2="167.15" y2="12.11" stroke="#1b3a63" stroke-width="0.7"/>
+<line x1="166.00" y1="10.00" x2="164.85" y2="12.11" stroke="#1b3a63" stroke-width="0.7"/>
+<text x="172.50" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">N</text>
+<text x="6.00" y="164.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Trait plein : liaison de la salle, départ commun.</text>
+<text x="6.00" y="171.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Tirets : suite de la liaison du bureau. Rectangle</text>
+<text x="6.00" y="179.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">plein : unité intérieure. Quadrillage : 1 m.</text>
+<line x1="4.00" y1="185.50" x2="176.00" y2="185.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="192.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="192.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Plan d’implantation</text>
+<g><text x="90" y="108" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 108)">inerWeb, by inerweb.fr</text><text x="40" y="59" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 59)">inerWeb, by inerweb.fr</text><text x="140" y="161" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 161)">inerWeb, by inerweb.fr</text></g>
+</svg>

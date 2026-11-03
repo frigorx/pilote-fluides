@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="../../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feuille réponse BE-A4 niveau 1</title>
+<style>
+@page { size: A4; margin: 15mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #000; }
+body { font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; line-height: 1.2; }
+h1, h2, h3 { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; margin: 0; }
+h1 { font-size: 18pt; }
+h2 { font-size: 16pt; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; }
+.page { position: relative; width: 180mm; height: 266mm; overflow: hidden; display: flex; flex-direction: column; gap: 4mm; margin: 0 auto; }
+.page:not(:last-child) { break-after: page; page-break-after: always; }
+.page > * { position: relative; z-index: 1; }
+.page > .fil { position: absolute; z-index: 0; opacity: .07; pointer-events: none; display: block; }
+.fil.c { width: 130mm; height: 23.1mm; left: 25mm; top: 120mm; transform: rotate(-10deg); }
+.fil.h { width: 125mm; height: 22.2mm; right: -22mm; top: 40mm; transform: rotate(-10deg); }
+.fil.b { width: 125mm; height: 22.2mm; left: -14mm; bottom: 12mm; transform: rotate(-10deg); }
+.entete { display: flex; justify-content: space-between; align-items: center; gap: 6mm; }
+.entete svg.logo { width: 90mm; height: 13.2mm; flex: none; }
+.entete .qui { text-align: right; }
+.entete .qui p { margin: 0; font-weight: bold; }
+.identite { display: flex; gap: 4mm; }
+.identite div { flex: 1; border-bottom: 0.3mm solid #000; height: 11mm; padding-top: 0.5mm; }
+.identite div:nth-child(3) { flex: .8; }
+.commande { border: 0.3mm solid #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 2mm 3mm; }
+.commande h2 { border: 0; padding: 0; margin-bottom: 1mm; }
+.commande p { margin: 0 0 0.8mm 0; }
+.commande b { color: #1b3a63; }
+.zone { display: flex; flex-direction: column; min-height: 0; }
+.zone > h2 { margin-bottom: 2mm; }
+.grow { flex: 1 1 0; min-height: 0; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.grow table { height: 100%; }
+th, td { border: 0.3mm solid #000; padding: 1mm 1.5mm; vertical-align: top; overflow-wrap: anywhere; font-size: 14pt; }
+th { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; text-align: left; border-bottom: 0.8mm solid #1b3a63; vertical-align: middle; }
+.lignes { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; }
+.lignes .l { flex: 1 1 0; border-bottom: 0.3mm dotted #000; padding-top: 0.5mm; }
+.ratio { border: 0.3mm dashed #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 2mm 3mm; display: flex; flex-direction: column; min-height: 0; }
+.ratio h2 { border: 0; padding: 0; margin-bottom: 1mm; }
+.ratio p { margin: 0 0 1mm 0; }
+.resultat { border: 0.5mm double #1b3a63; padding: 2mm 3mm; display: flex; flex-direction: column; min-height: 0; }
+.resultat h2 { border: 0; padding: 0; margin-bottom: 1mm; }
+.resultat td { height: 13mm; vertical-align: middle; }
+.v-entete { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 1mm; }
+.v-entete span { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; }
+@media screen { body { background: #e9edf2; padding: 8mm 0; } .page { background: #fff; margin-bottom: 8mm; outline: 1px solid #b8c2cf; } }
+@media print { html, body { background: #fff !important; color: #000 !important; } }
+
+.page { height: auto; min-height: 0; overflow: visible; gap: 1.2mm; }
+.page > .filbox { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.filbox .fil { position: absolute; opacity: .07; display: block; }
+th, td { padding: 0.4mm 1.2mm; }
+td { height: 8.2mm; }
+th { height: 8mm; }
+h3 { font-size: 14pt; margin: 0 0 0.8mm; }
+tr.ex td { color: #666; font-style: italic; }
+tr.tot td { font-weight: bold; }
+.zone > h2, .ratio h2 { margin-bottom: 1mm; }
+.commande { padding: 1.2mm 3mm; }
+.commande p { margin: 0 0 0.3mm 0; }
+.resultat td { height: 8mm; }
+.deux { display: flex; gap: 4mm; }
+.deux > .zone { flex: 1 1 0; }
+.lignes { display: block; flex: none; }
+.lignes .l { height: auto; min-height: 8mm; }
+.petit { margin: 0 0 1mm; }
+.e { font-weight: bold; color: #1b3a63; }
+.entete h1 { font-size: 16pt; }
+#recto td { height: 10.5mm; }table.bilan td { height: 8.6mm; }
+table.note td { height: 13mm; }
+.page-prof td { height: auto; }
+</style>
+<style id="qr-feuille">
+/* Zone cliquable unique (règle de Franck du 03/11/2026) : le QR et l'adresse écrite sont dans le même <a href>.
+   Le SVG porte sa zone de silence (4 modules blancs) : 33 modules (37 pour une clé de 5 signes) à 0.36 mm le module, soit 11.9 mm.
+   Le trait de titre ne court plus sous le QR : il s'arrête avant le bloc (le titre est dans .qr-t), si bien que la
+   zone de silence peut déborder de 1.5 mm dans l'espace vide au-dessus du titre et de 1 mm dans sa marge basse
+   sans que rien ne la touche, et le titre ne grandit que d'environ 1 mm. */
+.qr-ex { display: flex; align-items: center; gap: 1.5mm; background: #fff; font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; font-weight: normal; line-height: 1.1; color: #1b3a63; text-decoration: underline; }
+.qr-ex .qr-svg { flex: none; display: block; }   /* taille en mm posée par qrSvg (0.36 mm le module) */
+.qr-ex .qr-adr { display: flex; flex-direction: column; white-space: nowrap; }
+.qr-h2 { display: flex; justify-content: space-between; align-items: flex-end; gap: 3mm; }
+.qr-h2 .qr-t { flex: 1; min-width: 0; }
+.zone > .qr-h2:not(.qr-gare) { border-bottom: 0; padding-bottom: 0; }
+.zone > .qr-h2:not(.qr-gare) .qr-t { border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; }
+.qr-h2:not(.qr-gare) .qr-ex { flex: none; margin: -1.5mm 0 -1mm; }
+.qr-h2.qr-gare .qr-ex { margin: 0 0 -2.5mm; }   /* gares : un exercice peut ouvrir une page, rien au-dessus du titre (rogné) */
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="filigrane" viewBox="0 0 900 160">
+      <text fill="#1b3a63" font-size="80" x="14" y="92">&#10052;&#65039;</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="78" font-weight="bold" x="120" y="88">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="78" x="262" y="88">Web</text>
+      <line stroke="#e8914a" stroke-width="5" x1="120" x2="440" y1="102" y2="102"/>
+      <rect fill="#e8914a" x="450" y="12" rx="9" ry="9" width="430" height="60"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="bold" x="665" y="54" text-anchor="middle">Bureau d'études</text>
+      <text fill="#1b3a63" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="42" x="120" y="148">by inerweb.fr</text>
+    </symbol>
+  </defs>
+</svg>
+<style>.schema-feuille { display: flex; justify-content: center; } .schema-feuille svg { width: 180mm; height: auto; } .l { min-height: 8.6mm; } table.calc td { height: 9.4mm; } table.pos td { height: 9.6mm; } #recto table.grand td { height: 13.5mm; } table.note td { height: 13.5mm; } .rappel { color: #666; font-style: italic; }</style><section class="page" id="recto"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div><div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>BE-A4, Ventilateur, caisson</h1><p>Niveau 1, guidé</p></div></div><div class="identite"><div>Nom :</div><div>Prénom :</div><div>Date :</div></div>
+<div class="commande"><h2>Commande du bureau d’études</h2><p><span class="e">À :</span> technicien d’études, niveau guidé. <span class="e">Objet :</span> vérifier le caisson B pour le logement d’exemple de la méthode.</p><p><span class="e">Points demandés au caisson :</span> pointe 150 m³/h sous 87,42 Pa ; base 75 m³/h sous 81,86 Pa (station A3).</p><p><span class="e">Données de l’exercice :</span> courbes du caisson B au verso ; rendement global du caisson B, η = 0,35.</p></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 1. La courbe du réseau</span><a class="qr-ex" href="https://inerweb.fr/b/?a4-1"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?a4-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM12 4h2v1h-2zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM16 5h3v1h-3zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM17 6h1v1h-1zM19 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h2v1h-2zM15 7h3v1h-3zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM14 8h1v1h-1zM16 8h5v1h-5zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM14 9h2v1h-2zM18 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h1v1h-1zM14 11h2v1h-2zM19 11h2v1h-2zM4 12h1v1h-1zM6 12h2v1h-2zM9 12h3v1h-3zM16 12h1v1h-1zM18 12h3v1h-3zM22 12h1v1h-1zM25 12h1v1h-1zM27 12h2v1h-2zM4 13h5v1h-5zM14 13h2v1h-2zM23 13h1v1h-1zM27 13h1v1h-1zM4 14h2v1h-2zM7 14h2v1h-2zM10 14h1v1h-1zM15 14h4v1h-4zM22 14h3v1h-3zM7 15h1v1h-1zM11 15h2v1h-2zM15 15h1v1h-1zM17 15h1v1h-1zM19 15h2v1h-2zM22 15h5v1h-5zM5 16h1v1h-1zM7 16h1v1h-1zM10 16h3v1h-3zM14 16h1v1h-1zM16 16h2v1h-2zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM6 17h1v1h-1zM8 17h2v1h-2zM12 17h2v1h-2zM15 17h1v1h-1zM17 17h8v1h-8zM28 17h1v1h-1zM5 18h6v1h-6zM12 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM4 19h1v1h-1zM11 19h2v1h-2zM14 19h1v1h-1zM16 19h1v1h-1zM18 19h7v1h-7zM28 19h1v1h-1zM6 20h2v1h-2zM9 20h2v1h-2zM12 20h1v1h-1zM15 20h4v1h-4zM20 20h9v1h-9zM12 21h4v1h-4zM18 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM28 21h1v1h-1zM4 22h7v1h-7zM12 22h3v1h-3zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h5v1h-5zM19 23h2v1h-2zM24 23h1v1h-1zM27 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM13 24h3v1h-3zM18 24h1v1h-1zM20 24h6v1h-6zM28 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h1v1h-1zM15 25h2v1h-2zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h4v1h-4zM18 26h2v1h-2zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h2v1h-2zM4 27h1v1h-1zM10 27h1v1h-1zM13 27h1v1h-1zM16 27h4v1h-4zM24 27h1v1h-1zM26 27h1v1h-1zM4 28h7v1h-7zM12 28h2v1h-2zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>a4-1</span></span></a></h2><p class="petit">Δp = 87,42 × (q ÷ 150)², au centième de pascal. Ligne grisée : l’exemple. Tracez les points au verso et reliez-les, en passant par zéro et par le point de pointe.</p>
+<table class="calc grand"><colgroup><col style="width:22%"><col style="width:52%"><col style="width:26%"></colgroup><thead><tr><th>q (m³/h)</th><th>Calcul posé</th><th>Δp (Pa)</th></tr></thead><tbody><tr class="ex"><td>100</td><td>87,42 × (100 ÷ 150)²</td><td>38,85</td></tr><tr><td>50</td><td></td><td></td></tr><tr><td>120</td><td></td><td></td></tr><tr><td>200</td><td></td><td></td></tr></tbody></table></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 2. La position du caisson B</span><a class="qr-ex" href="https://inerweb.fr/b/?a4-2"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?a4-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM13 4h1v1h-1zM16 4h2v1h-2zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h2v1h-2zM17 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM14 7h2v1h-2zM17 7h2v1h-2zM20 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM13 8h1v1h-1zM15 8h3v1h-3zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1zM16 9h3v1h-3zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h2v1h-2zM15 11h1v1h-1zM18 11h3v1h-3zM4 12h1v1h-1zM10 12h1v1h-1zM12 12h2v1h-2zM17 12h2v1h-2zM21 12h2v1h-2zM25 12h3v1h-3zM5 13h3v1h-3zM9 13h1v1h-1zM11 13h2v1h-2zM15 13h2v1h-2zM18 13h3v1h-3zM23 13h5v1h-5zM4 14h2v1h-2zM8 14h3v1h-3zM12 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM4 15h2v1h-2zM7 15h2v1h-2zM11 15h1v1h-1zM13 15h2v1h-2zM16 15h1v1h-1zM19 15h1v1h-1zM24 15h2v1h-2zM28 15h1v1h-1zM5 16h1v1h-1zM10 16h2v1h-2zM13 16h2v1h-2zM16 16h1v1h-1zM18 16h3v1h-3zM22 16h2v1h-2zM28 16h1v1h-1zM4 17h1v1h-1zM9 17h1v1h-1zM12 17h2v1h-2zM16 17h2v1h-2zM19 17h2v1h-2zM23 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM8 18h3v1h-3zM12 18h3v1h-3zM16 18h10v1h-10zM27 18h2v1h-2zM4 19h1v1h-1zM6 19h4v1h-4zM14 19h3v1h-3zM21 19h3v1h-3zM25 19h2v1h-2zM28 19h1v1h-1zM4 20h1v1h-1zM8 20h1v1h-1zM10 20h3v1h-3zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h1v1h-1zM15 21h4v1h-4zM20 21h1v1h-1zM24 21h1v1h-1zM4 22h7v1h-7zM13 22h1v1h-1zM15 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM28 22h1v1h-1zM4 23h1v1h-1zM10 23h1v1h-1zM18 23h3v1h-3zM24 23h1v1h-1zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM14 24h11v1h-11zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM13 25h1v1h-1zM15 25h2v1h-2zM18 25h2v1h-2zM21 25h2v1h-2zM27 25h2v1h-2zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM13 26h2v1h-2zM16 26h1v1h-1zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM18 27h3v1h-3zM22 27h3v1h-3zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h1v1h-1zM14 28h2v1h-2zM18 28h1v1h-1zM20 28h2v1h-2zM25 28h1v1h-1zM28 28h1v1h-1z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>a4-2</span></span></a></h2><p class="petit">Pressions lues sur les courbes du verso, au pascal près.</p>
+<table class="pos grand"><colgroup><col style="width:18%"><col style="width:22%"><col style="width:19%"><col style="width:22%"><col style="width:19%"></colgroup><thead><tr><th>Position</th><th>À 150 m³/h (Pa)</th><th>≥ 87,42 ?</th><th>À 75 m³/h (Pa)</th><th>≥ 81,86 ?</th></tr></thead><tbody><tr><td>B1</td><td></td><td></td><td></td><td></td></tr><tr><td>B2</td><td></td><td></td><td></td><td></td></tr><tr><td>B3</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<div class="lignes"><div class="l">Position retenue :</div></div></div></section>
+<section class="page" id="verso"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div><div class="v-entete"><span>BE-A4, Ventilateur, caisson, niveau 1</span><span>Nom :</span></div>
+<div class="zone"><div class="schema-feuille"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 126.00" width="180mm" height="126.00mm" role="img">
+<title>Caisson B : courbes débit-pression</title>
+<rect width="180" height="126.00" fill="#fff"/>
+<g><text x="90" y="69" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 69)">inerWeb, by inerweb.fr</text><text x="40" y="38" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 38)">inerWeb, by inerweb.fr</text><text x="140" y="103" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 103)">inerWeb, by inerweb.fr</text></g>
+<text x="1.50" y="5.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Caisson B, donnée de l’exercice : tracez-y la parabole du réseau</text>
+<text x="1.50" y="14.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Δp (Pa)</text>
+<line x1="24.34" y1="19.00" x2="24.34" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="28.69" y1="19.00" x2="28.69" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="33.03" y1="19.00" x2="33.03" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="37.37" y1="19.00" x2="37.37" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="41.71" y1="19.00" x2="41.71" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="46.06" y1="19.00" x2="46.06" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="50.40" y1="19.00" x2="50.40" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="54.74" y1="19.00" x2="54.74" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="59.09" y1="19.00" x2="59.09" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="63.43" y1="19.00" x2="63.43" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="67.77" y1="19.00" x2="67.77" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="72.11" y1="19.00" x2="72.11" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="76.46" y1="19.00" x2="76.46" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="80.80" y1="19.00" x2="80.80" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="85.14" y1="19.00" x2="85.14" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="89.49" y1="19.00" x2="89.49" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="93.83" y1="19.00" x2="93.83" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="98.17" y1="19.00" x2="98.17" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="102.51" y1="19.00" x2="102.51" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="106.86" y1="19.00" x2="106.86" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="111.20" y1="19.00" x2="111.20" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="115.54" y1="19.00" x2="115.54" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="119.89" y1="19.00" x2="119.89" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="124.23" y1="19.00" x2="124.23" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="128.57" y1="19.00" x2="128.57" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="132.91" y1="19.00" x2="132.91" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="137.26" y1="19.00" x2="137.26" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="141.60" y1="19.00" x2="141.60" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="145.94" y1="19.00" x2="145.94" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="150.29" y1="19.00" x2="150.29" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="154.63" y1="19.00" x2="154.63" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="158.97" y1="19.00" x2="158.97" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="163.31" y1="19.00" x2="163.31" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="167.66" y1="19.00" x2="167.66" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="106.50" x2="172.00" y2="106.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="104.00" x2="172.00" y2="104.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="101.50" x2="172.00" y2="101.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="99.00" x2="172.00" y2="99.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="96.50" x2="172.00" y2="96.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="94.00" x2="172.00" y2="94.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="91.50" x2="172.00" y2="91.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="89.00" x2="172.00" y2="89.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="86.50" x2="172.00" y2="86.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="84.00" x2="172.00" y2="84.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="81.50" x2="172.00" y2="81.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="79.00" x2="172.00" y2="79.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="76.50" x2="172.00" y2="76.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="74.00" x2="172.00" y2="74.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="71.50" x2="172.00" y2="71.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="69.00" x2="172.00" y2="69.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="66.50" x2="172.00" y2="66.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="64.00" x2="172.00" y2="64.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="61.50" x2="172.00" y2="61.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="59.00" x2="172.00" y2="59.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="56.50" x2="172.00" y2="56.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="54.00" x2="172.00" y2="54.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="51.50" x2="172.00" y2="51.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="49.00" x2="172.00" y2="49.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="46.50" x2="172.00" y2="46.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="44.00" x2="172.00" y2="44.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="41.50" x2="172.00" y2="41.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="39.00" x2="172.00" y2="39.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="36.50" x2="172.00" y2="36.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="34.00" x2="172.00" y2="34.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="31.50" x2="172.00" y2="31.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="29.00" x2="172.00" y2="29.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="26.50" x2="172.00" y2="26.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="24.00" x2="172.00" y2="24.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="21.50" x2="172.00" y2="21.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<rect x="20.00" y="19.00" width="152.00" height="90.00" fill="none" stroke="#000" stroke-width="0.5"/>
+<text x="20.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="41.71" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">50</text>
+<text x="63.43" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">100</text>
+<text x="85.14" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">150</text>
+<text x="106.86" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">200</text>
+<text x="128.57" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">250</text>
+<text x="150.29" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">300</text>
+<text x="172.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">350</text>
+<text x="18.50" y="100.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">20</text>
+<text x="18.50" y="90.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">40</text>
+<text x="18.50" y="80.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">60</text>
+<text x="18.50" y="70.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">80</text>
+<text x="18.50" y="60.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">100</text>
+<text x="18.50" y="50.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">120</text>
+<text x="18.50" y="40.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">140</text>
+<text x="18.50" y="30.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">160</text>
+<text x="18.50" y="20.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">180</text>
+<text x="96.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">q, débit (m³/h)</text>
+<polyline points="20.00,38.50 21.07,38.50 22.15,38.52 23.22,38.54 24.30,38.58 25.37,38.62 26.45,38.68 27.52,38.74 28.59,38.81 29.67,38.90 30.74,38.99 31.82,39.09 32.89,39.20 33.97,39.33 35.04,39.46 36.12,39.60 37.19,39.75 38.26,39.91 39.34,40.09 40.41,40.27 41.49,40.46 42.56,40.66 43.64,40.87 44.71,41.09 45.78,41.32 46.86,41.56 47.93,41.81 49.01,42.07 50.08,42.34 51.16,42.62 52.23,42.91 53.30,43.20 54.38,43.51 55.45,43.83 56.53,44.16 57.60,44.50 58.68,44.84 59.75,45.20 60.83,45.57 61.90,45.95 62.97,46.33 64.05,46.73 65.12,47.14 66.20,47.55 67.27,47.98 68.35,48.41 69.42,48.86 70.49,49.31 71.57,49.78 72.64,50.25 73.72,50.74 74.79,51.23 75.87,51.74 76.94,52.25 78.01,52.78 79.09,53.31 80.16,53.85 81.24,54.41 82.31,54.97 83.39,55.54 84.46,56.13 85.54,56.72 86.61,57.32 87.68,57.93 88.76,58.55 89.83,59.18 90.91,59.83 91.98,60.48 93.06,61.14 94.13,61.81 95.20,62.49 96.28,63.18 97.35,63.88 98.43,64.59 99.50,65.31 100.58,66.04 101.65,66.78 102.72,67.53 103.80,68.29 104.87,69.05 105.95,69.83 107.02,70.62 108.10,71.42 109.17,72.23 110.24,73.04 111.32,73.87 112.39,74.71 113.47,75.56 114.54,76.41 115.62,77.28 116.69,78.16 117.77,79.04 118.84,79.94 119.91,80.84 120.99,81.76 122.06,82.68 123.14,83.62 124.21,84.56 125.29,85.52 126.36,86.48 127.43,87.46 128.51,88.44 129.58,89.44 130.66,90.44 131.73,91.45 132.81,92.48 133.88,93.51 134.95,94.55 136.03,95.60 137.10,96.67 138.18,97.74 139.25,98.82 140.33,99.91 141.40,101.01 142.48,102.13 143.55,103.25 144.62,104.38 145.70,105.52 146.77,106.67 147.85,107.83 148.92,109.00" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="21.50" y="39.75" width="8.03" height="5.94" fill="#fff"/>
+<text x="22.10" y="44.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">B1</text>
+<polyline points="20.00,31.00 21.13,31.01 22.26,31.02 23.39,31.05 24.52,31.09 25.65,31.14 26.78,31.19 27.91,31.27 29.04,31.35 30.17,31.44 31.30,31.54 32.43,31.66 33.56,31.78 34.69,31.92 35.82,32.06 36.95,32.22 38.08,32.39 39.21,32.57 40.34,32.75 41.47,32.96 42.60,33.17 43.73,33.39 44.86,33.62 45.99,33.87 47.12,34.12 48.25,34.39 49.38,34.66 50.51,34.95 51.64,35.25 52.77,35.56 53.90,35.88 55.03,36.21 56.16,36.55 57.29,36.90 58.42,37.26 59.55,37.64 60.68,38.02 61.81,38.42 62.94,38.82 64.07,39.24 65.20,39.67 66.33,40.11 67.46,40.56 68.59,41.02 69.72,41.49 70.85,41.97 71.98,42.46 73.11,42.97 74.24,43.48 75.37,44.01 76.50,44.54 77.63,45.09 78.76,45.65 79.89,46.22 81.02,46.80 82.15,47.39 83.28,47.99 84.41,48.60 85.54,49.22 86.67,49.86 87.80,50.50 88.93,51.16 90.06,51.82 91.19,52.50 92.32,53.19 93.45,53.89 94.58,54.60 95.71,55.32 96.84,56.05 97.97,56.79 99.10,57.54 100.23,58.31 101.36,59.08 102.49,59.87 103.62,60.66 104.75,61.47 105.88,62.29 107.01,63.12 108.14,63.96 109.27,64.81 110.40,65.67 111.53,66.54 112.66,67.42 113.79,68.32 114.92,69.22 116.05,70.14 117.18,71.06 118.31,72.00 119.44,72.95 120.57,73.91 121.70,74.88 122.83,75.86 123.96,76.85 125.09,77.85 126.22,78.86 127.35,79.89 128.48,80.92 129.61,81.97 130.74,83.02 131.87,84.09 133.00,85.17 134.13,86.26 135.26,87.36 136.39,88.47 137.52,89.59 138.65,90.72 139.79,91.86 140.92,93.02 142.05,94.18 143.18,95.36 144.31,96.54 145.44,97.74 146.57,98.95 147.70,100.17 148.83,101.40 149.96,102.64 151.09,103.89 152.22,105.15 153.35,106.42 154.48,107.71 155.61,109.00" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="21.50" y="32.25" width="8.03" height="5.94" fill="#fff"/>
+<text x="22.10" y="36.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">B2</text>
+<polyline points="20.00,23.50 21.18,23.51 22.37,23.52 23.55,23.55 24.73,23.59 25.92,23.65 27.10,23.71 28.28,23.79 29.47,23.88 30.65,23.98 31.83,24.09 33.01,24.22 34.20,24.36 35.38,24.50 36.56,24.66 37.75,24.84 38.93,25.02 40.11,25.22 41.30,25.42 42.48,25.64 43.66,25.88 44.85,26.12 46.03,26.37 47.21,26.64 48.40,26.92 49.58,27.21 50.76,27.51 51.94,27.83 53.13,28.16 54.31,28.49 55.49,28.84 56.68,29.21 57.86,29.58 59.04,29.97 60.23,30.36 61.41,30.77 62.59,31.19 63.78,31.63 64.96,32.07 66.14,32.53 67.33,33.00 68.51,33.48 69.69,33.97 70.87,34.48 72.06,35.00 73.24,35.52 74.42,36.06 75.61,36.62 76.79,37.18 77.97,37.76 79.16,38.34 80.34,38.94 81.52,39.56 82.71,40.18 83.89,40.81 85.07,41.46 86.26,42.12 87.44,42.79 88.62,43.47 89.80,44.17 90.99,44.88 92.17,45.59 93.35,46.32 94.54,47.07 95.72,47.82 96.90,48.59 98.09,49.36 99.27,50.15 100.45,50.95 101.64,51.77 102.82,52.59 104.00,53.43 105.19,54.28 106.37,55.14 107.55,56.01 108.73,56.90 109.92,57.79 111.10,58.70 112.28,59.62 113.47,60.56 114.65,61.50 115.83,62.46 117.02,63.42 118.20,64.40 119.38,65.40 120.57,66.40 121.75,67.41 122.93,68.44 124.12,69.48 125.30,70.53 126.48,71.59 127.66,72.67 128.85,73.76 130.03,74.85 131.21,75.96 132.40,77.09 133.58,78.22 134.76,79.37 135.95,80.52 137.13,81.69 138.31,82.87 139.50,84.07 140.68,85.27 141.86,86.49 143.05,87.72 144.23,88.96 145.41,90.21 146.59,91.48 147.78,92.75 148.96,94.04 150.14,95.34 151.33,96.66 152.51,97.98 153.69,99.32 154.88,100.66 156.06,102.02 157.24,103.39 158.43,104.78 159.61,106.17 160.79,107.58 161.98,109.00" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="21.50" y="24.75" width="8.03" height="5.94" fill="#fff"/>
+<text x="22.10" y="29.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">B3</text>
+</svg>
+</div></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 3. Le point de fonctionnement</span><a class="qr-ex" href="https://inerweb.fr/b/?a4-3"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?a4-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM12 4h3v1h-3zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h2v1h-2zM16 5h3v1h-3zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM14 6h2v1h-2zM17 6h1v1h-1zM19 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM14 8h1v1h-1zM17 8h4v1h-4zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h3v1h-3zM19 11h2v1h-2zM4 12h1v1h-1zM6 12h2v1h-2zM9 12h3v1h-3zM15 12h1v1h-1zM18 12h3v1h-3zM22 12h1v1h-1zM25 12h1v1h-1zM27 12h2v1h-2zM4 13h3v1h-3zM9 13h1v1h-1zM14 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM5 14h1v1h-1zM9 14h3v1h-3zM13 14h1v1h-1zM15 14h1v1h-1zM17 14h2v1h-2zM22 14h3v1h-3zM5 15h2v1h-2zM9 15h1v1h-1zM11 15h1v1h-1zM13 15h2v1h-2zM17 15h1v1h-1zM19 15h2v1h-2zM22 15h5v1h-5zM4 16h4v1h-4zM10 16h4v1h-4zM16 16h2v1h-2zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM5 17h1v1h-1zM7 17h1v1h-1zM12 17h1v1h-1zM14 17h2v1h-2zM17 17h8v1h-8zM28 17h1v1h-1zM5 18h1v1h-1zM7 18h2v1h-2zM10 18h5v1h-5zM16 18h1v1h-1zM18 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM4 19h1v1h-1zM8 19h2v1h-2zM11 19h1v1h-1zM14 19h3v1h-3zM18 19h7v1h-7zM28 19h1v1h-1zM6 20h2v1h-2zM10 20h2v1h-2zM13 20h6v1h-6zM20 20h9v1h-9zM12 21h2v1h-2zM15 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM28 21h1v1h-1zM4 22h7v1h-7zM12 22h3v1h-3zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM15 23h2v1h-2zM19 23h2v1h-2zM24 23h1v1h-1zM27 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM13 24h1v1h-1zM15 24h1v1h-1zM18 24h1v1h-1zM20 24h6v1h-6zM28 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h5v1h-5zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h2v1h-2zM15 26h1v1h-1zM18 26h2v1h-2zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h2v1h-2zM4 27h1v1h-1zM10 27h1v1h-1zM14 27h1v1h-1zM16 27h4v1h-4zM24 27h1v1h-1zM26 27h1v1h-1zM4 28h7v1h-7zM12 28h2v1h-2zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>a4-3</span></span></a></h2><p class="petit">Au croisement de la parabole et de la courbe retenue : débit au m³/h, pression au pascal.</p>
+<div class="lignes"><div class="l">Débit lu :</div><div class="l">Pression lue :</div><div class="l">Réserve en pointe : courbe à 150 m³/h − 87,42 =</div></div></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 4. La puissance absorbée</span><a class="qr-ex" href="https://inerweb.fr/b/?a4-4"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?a4-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM13 4h2v1h-2zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM14 5h4v1h-4zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM16 8h2v1h-2zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h2v1h-2zM17 9h3v1h-3zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h5v1h-5zM18 11h1v1h-1zM20 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM13 12h1v1h-1zM15 12h4v1h-4zM22 12h5v1h-5zM8 13h1v1h-1zM13 13h3v1h-3zM23 13h1v1h-1zM27 13h1v1h-1zM4 14h1v1h-1zM8 14h4v1h-4zM14 14h1v1h-1zM16 14h2v1h-2zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM4 15h1v1h-1zM11 15h2v1h-2zM14 15h1v1h-1zM24 15h1v1h-1zM28 15h1v1h-1zM5 16h2v1h-2zM10 16h2v1h-2zM13 16h1v1h-1zM15 16h3v1h-3zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM4 17h4v1h-4zM9 17h1v1h-1zM14 17h1v1h-1zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM7 18h1v1h-1zM10 18h1v1h-1zM12 18h1v1h-1zM14 18h1v1h-1zM16 18h10v1h-10zM27 18h2v1h-2zM4 19h1v1h-1zM8 19h1v1h-1zM13 19h2v1h-2zM18 19h7v1h-7zM28 19h1v1h-1zM4 20h1v1h-1zM7 20h2v1h-2zM10 20h3v1h-3zM14 20h1v1h-1zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h2v1h-2zM15 21h6v1h-6zM24 21h2v1h-2zM4 22h7v1h-7zM14 22h1v1h-1zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h2v1h-2zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h2v1h-2zM15 24h10v1h-10zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h1v1h-1zM15 25h2v1h-2zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h1v1h-1zM16 26h1v1h-1zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM13 27h2v1h-2zM18 27h1v1h-1zM20 27h1v1h-1zM22 27h4v1h-4zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h3v1h-3zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>a4-4</span></span></a></h2><p class="petit">P = q ÷ 3 600 × Δp ÷ η, q et Δp lus au point de fonctionnement, au centième de watt.</p>
+<div class="lignes"><div class="l">P =</div><div class="l"></div></div></div>
+<div class="resultat"><h2>Résultats à reporter dans la station</h2><table class=""><colgroup><col style="width:66%"><col style="width:20%"><col style="width:14%"></colgroup><thead><tr><th>Résultat</th><th>Ma valeur</th><th>Unité</th></tr></thead><tbody><tr><td>Pression de la courbe retenue au débit de pointe</td><td></td><td>Pa</td></tr><tr><td>Pression au point de fonctionnement</td><td></td><td>Pa</td></tr><tr><td>Puissance absorbée en pointe</td><td></td><td>W</td></tr></tbody></table></div></section>
+<script src="../_commun/remplissable.js" defer></script>
+</body>
+</html>

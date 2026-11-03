@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 100" width="180mm" height="100mm" role="img">
+<title>Le régime d’eau glacée 7/12</title>
+<rect width="180" height="100" fill="#fff"/>
+<g><text x="90" y="55" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 55)">inerWeb, by inerweb.fr</text><text x="40" y="30" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 30)">inerWeb, by inerweb.fr</text><text x="140" y="82" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 82)">inerWeb, by inerweb.fr</text></g>
+<rect x="6.00" y="18.00" width="44.00" height="46.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="28.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Groupe</text>
+<text x="28.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">d’eau glacée</text>
+<rect x="124.00" y="18.00" width="50.00" height="46.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="149.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Batterie</text>
+<text x="149.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">froide</text>
+<line x1="50.00" y1="24.00" x2="124.00" y2="24.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="124.00" y1="24.00" x2="121.40" y2="22.70" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="124.00" y1="24.00" x2="121.40" y2="25.30" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="124.00" y1="58.00" x2="50.00" y2="58.00" stroke="#ff6b35" stroke-width="0.6"/>
+<line x1="50.00" y1="58.00" x2="52.60" y2="56.70" stroke="#ff6b35" stroke-width="0.6"/>
+<line x1="50.00" y1="58.00" x2="52.60" y2="59.30" stroke="#ff6b35" stroke-width="0.6"/>
+<text x="56.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#3d7fca">Départ 7 °C</text>
+<text x="56.00" y="66.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">Retour 12 °C</text>
+<text x="87.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">L’eau prend</text>
+<text x="87.00" y="45.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">la chaleur de l’air</text>
+<text x="6.00" y="78.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">ΔT = retour − départ = 12 − 7 = 5 K</text>
+<text x="6.00" y="85.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Batterie de 3500 W : 3500 ÷ 5,8 = 603 L/h</text>
+<line x1="4.00" y1="89.50" x2="176.00" y2="89.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

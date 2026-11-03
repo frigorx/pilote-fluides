@@ -1,0 +1,63 @@
+{
+  "numero": 30,
+  "titre": "Régler la loi d’eau et représenter la régulation du chauffage",
+  "ligne": "Régulation et énergie",
+  "code": "BE-R1",
+  "quand": "Après le schéma de principe (station H5), avant l’énergie sur l’année (station R4). Vous avez le régime de l’eau, la température de base, les consignes et le schéma de la chaufferie. Vous obtenez la loi d’eau du générateur, sa courbe de nuit, son arrêt d’été et le schéma de régulation.",
+  "methode": [
+    "Point froid : (température de base ; départ du régime). Point doux : (18 °C ; consigne d’ambiance).",
+    "Pente = (départ du régime − consigne) ÷ (18 − température de base), au centième.",
+    "Départ demandé = consigne + pente × (18 − θe), au dixième ; θe = moyenne du jour = (Tmin + Tmax) ÷ 2.",
+    "Réduit de nuit : toute la droite descend de l’écart de consigne (réduit − confort), même pente.",
+    "Arrêt d’été : chauffage coupé dès que la moyenne du jour atteint 18 °C.",
+    "Schéma de régulation : sonde extérieure SE au nord, à l’ombre ; sonde de départ SD après la pompe ; thermostat d’ambiance SA dans la pièce de référence ; régulateur RG ; mesure en pointillé vers RG, commande en trait mixte vers l’appareil.",
+    "Vanne trois voies : seulement si un circuit veut une eau moins chaude que la production ; son régulateur suit la loi d’eau de ce circuit."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Pente de la loi d’eau",
+      "valeur": "Δθ départ ÷ Δθ extérieur",
+      "source": "Fiche mémento « Calcul de la pente de chauffage », fonds du professeur"
+    },
+    {
+      "grandeur": "Non-chauffage",
+      "valeur": "18 °C dehors ; l’eau part alors à la température d’ambiance",
+      "source": "Même fiche mémento"
+    },
+    {
+      "grandeur": "Arrêt d’été",
+      "valeur": "moyenne du jour ≥ 18 °C",
+      "source": "Donnée de l’exercice (seuil de la fiche, appliqué à la moyenne du jour)"
+    },
+    {
+      "grandeur": "Réduit",
+      "valeur": "droite descendue de l’écart de consigne",
+      "source": "Simplification de l’exercice ; allures : Code de l’énergie, R. 241-31-1"
+    },
+    {
+      "grandeur": "Traits du schéma",
+      "valeur": "mesure en pointillé, commande en trait mixte",
+      "source": "Gare « Le synoptique de régulation », ligne Lire les plans"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : base −7 °C, régime 50/40, ambiance 19 °C, réduit 15 °C.",
+    "lignes": [
+      "Pente = (50 − 19) ÷ (18 − (−7)) = 31 ÷ 25 = 1,24.",
+      "Par 0 °C : 19 + 1,24 × 18 = 41,3 °C ; par 10 °C : 19 + 1,24 × 8 = 28,9 °C.",
+      "La nuit : décalage 15 − 19 = −4 K ; par 0 °C, 37,3 °C. Arrêt dès 18 °C de moyenne."
+    ],
+    "resultat": "pente 1,24 ; 41,3 °C par 0 °C ; SE1, SD1, SA1, RG1"
+  },
+  "pieges": [
+    "Prendre la température de retour, ou 20 °C au lieu de 18 °C : la droite ne passe plus par les bons points.",
+    "Prendre la température la plus basse du jour au lieu de la moyenne : l’eau part trop chaude.",
+    "Poser la sonde extérieure au soleil : elle croit qu’il fait doux, l’eau part trop froide."
+  ],
+  "sources": [
+    "Régime : stations BE-H1 et BE-H5 ; température de base et relevés : BE-E1 ; consignes : BE-E2 ; coefficient H : BE-T5 ; schéma : BE-H5.",
+    "Pente et non-chauffage : fiche mémento du fonds ; sondes, régulateur et traits : gare CVC-R 5 « Le synoptique de régulation ».",
+    "Stations en correspondance : BE-H5 (schéma de principe), BE-R4 (énergie sur l’année), HydroMétro « Vanne trois voies »."
+  ],
+  "calculette": null
+}

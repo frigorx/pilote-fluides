@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 122" width="180mm" height="122mm" role="img">
+<title>Le plan de niveau du dossier d’exemple et la coupe : pièces chauffées, local non chauffé, hauteur sous plafond, comble</title>
+<rect width="180" height="122" fill="#fff"/>
+<g><text x="90" y="67" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 67)">inerWeb, by inerweb.fr</text><text x="35" y="37" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 37)">inerWeb, by inerweb.fr</text><text x="150" y="98" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 98)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Plan de niveau</text>
+<text x="6.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">dossier d’exemple</text>
+<rect x="6.00" y="26.00" width="50.00" height="48.00" fill="#e3eefa"/>
+<line x1="6.00" y1="26.00" x2="56.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="26.00" x2="56.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="74.00" x2="6.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="74.00" x2="6.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="56.00" y="26.00" width="34.00" height="24.00" fill="#e3eefa"/>
+<line x1="56.00" y1="26.00" x2="90.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="26.00" x2="90.00" y2="50.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="50.00" x2="56.00" y2="50.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="50.00" x2="56.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="56.00" y="50.00" width="34.00" height="24.00" fill="#dcdcdc"/>
+<line x1="56.00" y1="50.00" x2="90.00" y2="50.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="50.00" x2="90.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="74.00" x2="56.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="74.00" x2="56.00" y2="50.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="31.00" y="47.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Atelier</text>
+<text x="31.00" y="54.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">85,00 m²</text>
+<text x="73.00" y="36.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Bureau</text>
+<text x="73.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">15,00 m²</text>
+<text x="73.00" y="56.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Rangement</text>
+<text x="73.00" y="62.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12,00 m²</text>
+<text x="73.00" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">non chauffé</text>
+<text x="6.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pièces chauffées :</text>
+<text x="6.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">85,00 + 15,00 = 100,00 m²</text>
+<text x="100.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Coupe</text>
+<text x="100.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">le bâtiment tranché</text>
+<line x1="136.00" y1="58.00" x2="156.00" y2="42.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="156.00" y1="42.00" x2="176.00" y2="58.00" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="138.00" y="58.00" width="3.50" height="16.00" fill="#dcdcdc"/>
+<line x1="138.00" y1="58.00" x2="141.50" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="141.50" y1="58.00" x2="141.50" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="141.50" y1="74.00" x2="138.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="138.00" y1="74.00" x2="138.00" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="170.50" y="58.00" width="3.50" height="16.00" fill="#dcdcdc"/>
+<line x1="170.50" y1="58.00" x2="174.00" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="58.00" x2="174.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="74.00" x2="170.50" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.50" y1="74.00" x2="170.50" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="138.00" y="74.00" width="36.00" height="3.00" fill="#dcdcdc"/>
+<line x1="138.00" y1="74.00" x2="174.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="74.00" x2="174.00" y2="77.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="77.00" x2="138.00" y2="77.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="138.00" y1="77.00" x2="138.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="141.50" y1="58.00" x2="170.50" y2="58.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.5 1.2"/>
+<line x1="130.00" y1="74.00" x2="130.00" y2="58.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="130.00" y1="58.00" x2="131.25" y2="60.28" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="130.00" y1="58.00" x2="128.75" y2="60.28" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="130.00" y1="74.00" x2="128.75" y2="71.72" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="130.00" y1="74.00" x2="131.25" y2="71.72" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="126.00" y="64.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">hauteur</text>
+<text x="126.00" y="71.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">sous plafond</text>
+<text x="100.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Comble : non chauffé,</text>
+<text x="100.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">hors surface habitable.</text>
+<text x="90.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Seules les pièces chauffées comptent.</text>
+<line x1="4.00" y1="111.50" x2="176.00" y2="111.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="118.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="118.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

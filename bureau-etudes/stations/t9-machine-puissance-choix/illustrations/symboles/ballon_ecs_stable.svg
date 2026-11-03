@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-29.0 -66.0 68.0 108.0" width="68" height="108">
+<!-- Ballon ECS stable — converti de ballon_ecs_stable.elmt par outils\elmt-vers-svg.py -->
+<rect x="-29.0" y="-66.0" width="68.0" height="108.0" fill="#ffffff"/>
+<path d="M 4.50,17.00 A 4.50,4.50 0 0 1 4.50,17.00" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5.88" y1="-54.79" x2="-5.88" y2="-51.56" stroke="red" stroke-width="1" fill="none"/>
+<path d="M 19.00,-44.00 A 19.00,3.25 0 0 0 -19.00,-44.00" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-1" y="-52" width="2" height="5" rx="0" ry="0" stroke="black" stroke-width="1" fill="red"/>
+<rect x="19" y="24" width="5" height="2" rx="0" ry="0" stroke="black" stroke-width="1" fill="blue"/>
+<ellipse cx="0.00" cy="18.00" rx="0.84" ry="0.76" stroke="black" stroke-width="1" fill="red"/>
+<line x1="22" y1="21" x2="25" y2="21" stroke="blue" stroke-width="1" fill="none"/>
+<line x1="-19" y1="-43" x2="-19" y2="29" stroke="black" stroke-width="1" fill="none"/>
+<line x1="19" y1="-43" x2="-19" y2="-43" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="19" y1="-43" x2="19" y2="29" stroke="black" stroke-width="1" fill="none"/>
+<line x1="19" y1="29" x2="-19" y2="29" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-20" y="30" width="40" height="2" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+</svg>

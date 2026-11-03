@@ -1,0 +1,47 @@
+{
+  "cle": "r1-reguler-chauffage",
+  "code": "BE-R1",
+  "titre": "Réguler le chauffage",
+  "ligne": "Régulation et énergie",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 30,
+    "chapitre": 7
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire (critère : « La représentation de la régulation des systèmes permet d'adapter la puissance d'émission aux conditions climatiques »)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C2-2",
+          "libelle": "Identifier les chaînes d'énergie et d'information"
+        },
+        {
+          "code": "C2-3",
+          "libelle": "Décrire le fonctionnement du système"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B11",
+          "libelle": "Régulation (à confirmer : code repris du cadrage C.3, libellé non relevé dans l'inventaire des référentiels)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

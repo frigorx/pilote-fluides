@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**575 stations** réparties en 19 réseaux.
+**588 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -233,22 +233,33 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Se former](https://inerweb.fr/legislation/stations/travail-se-former/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : se former toute sa vie dans le métier — compte personnel de formation, validation des acquis de l'expérience, entretien de parcours professionnel, titres professionnels et formations obligatoires. |
 | [Temps & paie](https://inerweb.fr/legislation/stations/travail-temps-et-paie/) | — | BTS | — | Station BTS du réseau Législation, écran par écran et commentée à voix haute : durée légale et durées maximales, heures supplémentaires et majoration, repos, trajet et grand déplacement dans le bâtiment, lecture de la fiche de paie, congés payés. |
 
-## Bureau d'études — 19 stations
+## Bureau d'études — 32 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
 | [BE-A1, L’air humide](https://inerweb.fr/bureau-etudes/stations/a1-air-humide/) | Aéraulique | BTS | CP10 A4 A1-2 | — |
 | [BE-A2, Les débits du projet](https://inerweb.fr/bureau-etudes/stations/a2-debits-projet/) | Aéraulique | BTS | CP4 CP7 C3-3 B2-1 | — |
 | [BE-A3, Le réseau de gaines](https://inerweb.fr/bureau-etudes/stations/a3-reseau-gaines/) | Aéraulique | BTS | CP4 CP7 CP10 A3 B4-2 | — |
+| [BE-A4, Ventilateur, caisson](https://inerweb.fr/bureau-etudes/stations/a4-ventilateur-caisson/) | Aéraulique | BTS | CP4 CP7 CP10 A3 B4-2 A7 S5.2 C3-1 | — |
+| [BE-A5, CTA 1 : composer](https://inerweb.fr/bureau-etudes/stations/a5-cta-composer/) | Aéraulique | BTS | CP10 A4 B2-2 C2-1 C2-3 C3-3 | — |
+| [BE-A6, CTA 2 : sélectionner](https://inerweb.fr/bureau-etudes/stations/a6-cta-selectionner/) | Aéraulique | BTS | CP10 CP7 C3-2 B2-2 S10.6 | — |
 | [BE-D0, Le dossier projet](https://inerweb.fr/bureau-etudes/stations/d0-dossier-projet/) | Lire les plans | BTS | CP1 CP2 CP5 CP8 C4-3 C12-1 C12-2 C1-2 A2-1 | — |
 | [BE-E1, Le climat du site](https://inerweb.fr/bureau-etudes/stations/e1-climat-site/) | Données d’entrée | BTS | CP5 CP8 C5-2 A2-4 S5.1 | — |
 | [BE-E2, Les conditions intérieures](https://inerweb.fr/bureau-etudes/stations/e2-conditions-interieures/) | Données d’entrée | BTS | CP4 CP7 CP5 CP8 CP10 C1-2 C5-2 B2-1 | — |
+| [BE-F1, Besoin et système](https://inerweb.fr/bureau-etudes/stations/f1-besoin-systeme/) | Frigorifique | BTS | CP9 CP10 C2-1 C2-3 C3-2 B2-2 B5 | — |
+| [BE-F2, Le cycle sur le diagramme](https://inerweb.fr/bureau-etudes/stations/f2-cycle-diagramme/) | Frigorifique | BTS | CP9 A5 B5 | — |
 | [BE-H1, Puissance et débit](https://inerweb.fr/bureau-etudes/stations/h1-puissance-debit-regime/) | Hydraulique | BTS | CP6 CP9 C3-3 A3 B4-1 | — |
 | [BE-H2, Les émetteurs](https://inerweb.fr/bureau-etudes/stations/h2-emetteurs/) | Hydraulique | BTS | CP6 CP9 C3-1 B1-2 | — |
 | [BE-H3, Le réseau d’eau](https://inerweb.fr/bureau-etudes/stations/h3-reseau-eau/) | Hydraulique | BTS | CP6 CP9 CP10 C3-3 A3 B4-1 | — |
+| [BE-H4, Pompe, vase, soupape](https://inerweb.fr/bureau-etudes/stations/h4-pompe-vase-soupape/) | Hydraulique | BTS | CP6 CP9 CP10 CP3 C3-1 A3 B4-1 | — |
+| [BE-H5, Équilibrage, schéma](https://inerweb.fr/bureau-etudes/stations/h5-equilibrage-schema/) | Hydraulique | BTS | CP6 CP10 CP9 CP3 C4-1 C2-1 B4-1 | — |
 | [BE-H6, L’eau chaude sanitaire](https://inerweb.fr/bureau-etudes/stations/h6-eau-chaude-sanitaire/) | Hydraulique | BTS | CP3 CP6 C3-3 B3-2 | — |
 | [BE-P2b, Traits cachés et vues](https://inerweb.fr/bureau-etudes/stations/p2b-traits-caches-et-vues/) | Lire les plans | BTS | CP1 CP2 C4-3 | — |
 | [BE-P5b, Coupes et sections](https://inerweb.fr/bureau-etudes/stations/p5b-coupes-et-sections/) | Lire les plans | BTS | CP1 CP2 C4-3 | — |
+| [BE-R1, Réguler le chauffage](https://inerweb.fr/bureau-etudes/stations/r1-reguler-chauffage/) | Régulation et énergie | BTS | CP6 C2-2 C2-3 B11 | — |
+| [BE-R2, Réguler la CTA](https://inerweb.fr/bureau-etudes/stations/r2-reguler-cta/) | Régulation et énergie | BTS | CP10 CP7 CP4 C2-3 B11 B2-1 | — |
+| [BE-R3, La supervision](https://inerweb.fr/bureau-etudes/stations/r3-supervision/) | Régulation et énergie | BTS | CP10 C2-2 B8-1 | — |
+| [BE-R4, L’énergie sur l’année](https://inerweb.fr/bureau-etudes/stations/r4-energie-annee/) | Régulation et énergie | BTS | CP6 CP5 CP8 CP10 C9-1 A2-4 S5.1 S9 | — |
 | [BE-T1, Surfaces et volumes du projet](https://inerweb.fr/bureau-etudes/stations/t1-surfaces-volumes/) | Thermique | BTS | CP5 CP8 C4-3 C12-2 C3-3 A2-3 | — |
 | [BE-T2, Les parois : de la coupe au coefficient U](https://inerweb.fr/bureau-etudes/stations/t2-parois-coefficient-u/) | Thermique | BTS | CP5 CP8 A2-3 S5.1 | — |
 | [BE-T3, Déperditions d’un local par les parois](https://inerweb.fr/bureau-etudes/stations/t3-deperditions-local/) | Thermique | BTS | CP5 C3-3 A2-3 | — |
@@ -256,6 +267,8 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [BE-T5, Le bilan d’hiver](https://inerweb.fr/bureau-etudes/stations/t5-bilan-hiver/) | Thermique | BTS | CP5 C3-3 C12-3 A2-3 | — |
 | [BE-T6, Été 1 : le soleil](https://inerweb.fr/bureau-etudes/stations/t6-ete-vitrages-soleil/) | Thermique | BTS | CP8 A2-3 | — |
 | [BE-T7, Été 2 : apports internes](https://inerweb.fr/bureau-etudes/stations/t7-ete-apports-internes/) | Thermique | BTS | CP8 A2-3 | — |
+| [BE-T8, Été 3 : la synthèse](https://inerweb.fr/bureau-etudes/stations/t8-ete-air-neuf-synthese/) | Thermique | BTS | CP8 C3-3 A2-3 | — |
+| [BE-T9, La machine](https://inerweb.fr/bureau-etudes/stations/t9-machine-puissance-choix/) | Thermique | BTS | CP6 CP9 CP10 C3-1 C3-2 | — |
 
 ## HydroMétro — 27 stations
 

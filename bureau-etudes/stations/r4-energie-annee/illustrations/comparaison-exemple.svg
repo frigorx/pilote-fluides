@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 128" width="180mm" height="128mm" role="img">
+<title>Pompe à chaleur contre chaudière gaz</title>
+<rect width="180" height="128" fill="#fff"/>
+<g><text x="90" y="70" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 70)">inerWeb, by inerweb.fr</text><text x="40" y="38" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 38)">inerWeb, by inerweb.fr</text><text x="140" y="105" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 105)">inerWeb, by inerweb.fr</text></g>
+<line x1="18" y1="82.00" x2="82" y2="82.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="18" y1="67.00" x2="82" y2="67.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="18" y1="52.00" x2="82" y2="52.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="18" y1="37.00" x2="82" y2="37.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="18" y1="22.00" x2="82" y2="22.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="18.00" y1="82.00" x2="82.00" y2="82.00" stroke="#000" stroke-width="0.5"/>
+<line x1="18.00" y1="22.00" x2="18.00" y2="82.00" stroke="#000" stroke-width="0.5"/>
+<text x="4.00" y="10.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Coût (€ par an)</text>
+<rect x="26.00" y="40.60" width="16.00" height="41.40" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="56.00" y="31.06" width="16.00" height="50.94" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.3"/>
+<text x="34.00" y="38.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">690 €</text>
+<text x="64.00" y="28.56" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">849 €</text>
+<text x="34.00" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">PAC</text>
+<text x="64.00" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Gaz</text>
+<line x1="108" y1="82.00" x2="172" y2="82.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108" y1="72.00" x2="172" y2="72.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108" y1="62.00" x2="172" y2="62.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108" y1="52.00" x2="172" y2="52.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108" y1="42.00" x2="172" y2="42.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108" y1="32.00" x2="172" y2="32.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108" y1="22.00" x2="172" y2="22.00" stroke="#c8ccd2" stroke-width="0.25"/>
+<line x1="108.00" y1="82.00" x2="172.00" y2="82.00" stroke="#000" stroke-width="0.5"/>
+<line x1="108.00" y1="22.00" x2="108.00" y2="82.00" stroke="#000" stroke-width="0.5"/>
+<text x="94.00" y="10.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Émissions (kg de CO2 par an)</text>
+<rect x="116.00" y="73.16" width="16.00" height="8.84" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="146.00" y="29.68" width="16.00" height="52.32" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.3"/>
+<text x="124.00" y="70.66" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">221 kg</text>
+<text x="154.00" y="27.18" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1308 kg</text>
+<text x="124.00" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">PAC</text>
+<text x="154.00" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Gaz</text>
+<text x="6.00" y="98.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">PAC : pompe à chaleur. Gaz : chaudière gaz.</text>
+<text x="6.00" y="105.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Économie de la PAC : 849 − 690 = 159 € par an.</text>
+<line x1="4.00" y1="117.50" x2="176.00" y2="117.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="124.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="124.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bâtiment d’exemple</text>
+</svg>

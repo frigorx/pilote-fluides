@@ -1,0 +1,63 @@
+{
+  "cle": "r4-energie-annee",
+  "code": "BE-R4",
+  "titre": "L’énergie sur l’année",
+  "ligne": "Régulation et énergie",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 19,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 33,
+    "chapitre": 7
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire (cadrage C.3 : « évaluer des consommations d'énergie »)"
+      },
+      {
+        "code": "CP5",
+        "libelle": "Réaliser les calculs de déperditions thermiques (le coefficient H et les degrés-jours, repris de T5 et E1)"
+      },
+      {
+        "code": "CP8",
+        "libelle": "Réaliser les calculs d'apports thermiques (réglementation environnementale en vigueur : indicateurs RE2020 en lecture)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (niveau 3 : récupération de chaleur d'une CTA, roue contre plaques)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C9-1",
+          "libelle": "Déterminer une enveloppe financière pour la totalité ou une partie du projet (temps de retour ; à vérifier : référentiel 03-BTS-FED.md ligne 215)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A2-4",
+          "libelle": "DJU, besoin d'énergie utile (chauffage et climatisation)"
+        },
+        {
+          "code": "S5.1",
+          "libelle": "Réglementation thermique"
+        },
+        {
+          "code": "S9",
+          "libelle": "Gestion économique et technique d'une opération (le cadrage cite S9-3, libellé introuvable dans 03-BTS-FED.md : seul S9 est porté)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

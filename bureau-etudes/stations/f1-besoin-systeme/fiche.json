@@ -1,0 +1,60 @@
+{
+  "numero": 25,
+  "titre": "Choisir entre détente directe et eau glacée, critères à l’appui",
+  "ligne": "Frigorifique",
+  "code": "BE-F1",
+  "quand": "Après le bilan d’été (station T8) : vous avez la puissance de chaque local et celle de la machine. Vous choisissez le système qui la fournit, détente directe ou eau glacée, avant de tracer son cycle (station F2) et de choisir l’appareil.",
+  "methode": [
+    "Relevez la puissance de chaque local à sa pointe et celle de la machine, avec simultanéité (station T8).",
+    "Donnez une unité intérieure à chaque local où l’on reste ; comptez les unités.",
+    "Part d’un local = sa puissance ÷ puissance de la machine × 100, au pour cent.",
+    "Sur le plan, mesurez chaque liaison depuis l’unité extérieure : écarts en x et en y entre les angles, plus la montée et la descente.",
+    "Dénivelé = hauteur des raccords de l’unité intérieure − hauteur des raccords de l’unité extérieure.",
+    "Comparez avec les limites de l’appareil : chaque liaison, longueur totale, dénivelé, nombre d’unités, puissance.",
+    "Remplissez la grille : unités, puissance, liaisons, fluide dans les pièces, maintenance, bruit et place dehors, verdict.",
+    "Écrivez le choix en trois phrases : la solution, les chiffres qui décident, ce qui reste à vérifier."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Classe du R32",
+      "valeur": "A2L, faiblement inflammable",
+      "source": "Station Législation « NF EN 378 » (ISO 817)"
+    },
+    {
+      "grandeur": "Régime d’eau glacée",
+      "valeur": "autour de 6 °C au départ, 12 °C au retour",
+      "source": "CartoClim 3.8, groupe d’eau glacée"
+    },
+    {
+      "grandeur": "Monosplit de l’exercice",
+      "valeur": "1 unité ; liaison 3 à 20 m ; dénivelé 10 m au plus ; 5,0 kW au plus",
+      "source": "Donnée de l’exercice (sur un vrai projet : la notice)"
+    },
+    {
+      "grandeur": "Multisplit de l’exercice",
+      "valeur": "2 à 4 unités ; chaque liaison 3 à 25 m ; total 60 m au plus ; dénivelé 15 m au plus ; 8,0 kW au plus",
+      "source": "Donnée de l’exercice (sur un vrai projet : la notice)"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : salle de réunion 3476 W à 16 h, machine 4443 W ; unité extérieure contre la façade nord du local technique.",
+    "lignes": [
+      "Part de la salle : 3476 ÷ 4443 × 100 = 78 %.",
+      "Liaison de la salle : plan 3,3 + 2,0 = 5,3 m ; montée 2,35 m ; descente 0,65 m ; L = 8,3 m.",
+      "Dénivelé : 2,20 − 0,50 = 1,70 m.",
+      "Monosplit de l’exercice : 8,3 m entre 3 et 20 m, 1,70 m sous 10 m, 3,5 kW sous 5,0 kW."
+    ],
+    "resultat": "salle seule : monosplit, dans ses limites ; charge de fluide à vérifier pour le volume de la salle"
+  },
+  "pieges": [
+    "La liaison mesurée à vol d’oiseau, ou sans la montée et la descente.",
+    "La seule longueur totale vérifiée : chaque liaison a aussi sa limite.",
+    "Le radiateur compté pour rafraîchir : il n’a ni ventilateur ni bac à condensats."
+  ],
+  "sources": [
+    "Familles, liaisons, notice : CartoClim 3.2, 3.4, 3.5, 3.8 et 4.2.",
+    "Classe des fluides, système direct ou indirect, charge et volume : station Législation « NF EN 378 ».",
+    "Limites des appareils, place des unités et tracé : données de l’exercice. Stations en correspondance : BE-T8, BE-T9, BE-F2."
+  ],
+  "calculette": null
+}

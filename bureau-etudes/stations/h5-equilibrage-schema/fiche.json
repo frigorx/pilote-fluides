@@ -1,0 +1,64 @@
+{
+  "numero": 23,
+  "titre": "Équilibrer les circuits et tracer le schéma de principe",
+  "ligne": "Hydraulique",
+  "code": "BE-H5",
+  "quand": "Après la pompe, le vase et la soupape (station H4), avant la régulation (station R1). Vous avez le débit de chaque radiateur, la perte de charge de chaque circuit, la puissance de la pompe à chaleur et le volume d’eau. Vous obtenez le réglage de chaque té, le ballon tampon s’il en faut un et le schéma de principe de la chaufferie.",
+  "methode": [
+    "Circuit le plus défavorisé : celui qui a la plus grande perte de charge (station H3). Son té reste grand ouvert.",
+    "Perte de charge à dissiper sur chaque autre circuit (Pa) = perte du plus défavorisé − perte du circuit.",
+    "Kv de réglage = q ÷ √Δp, q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), au millième.",
+    "Position du té : celle dont le Kv est le plus proche dans la table du té.",
+    "Volume d’eau minimal de la pompe à chaleur = 20 L × puissance (kW). Volume qui manque = minimal − volume de l’installation.",
+    "Ballon tampon : s’il manque de l’eau, le premier ballon de la série qui dépasse le manque, en série sur le retour.",
+    "Bouteille de découplage : quand deux pompes en série doivent tourner à des débits différents. Vanne trois voies : quand un circuit veut une eau moins chaude que la production.",
+    "Schéma de principe : départ et retour, chaque organe à sa place, son symbole et son nom."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Kv d’une vanne",
+      "valeur": "q (m³/h) = Kv × √Δp (bar)",
+      "source": "Station HydroMétro « Régler une vanne d’équilibrage »"
+    },
+    {
+      "grandeur": "Té de réglage de l’exercice",
+      "valeur": "1 : 0,05 ; 2 : 0,07 ; 3 : 0,11 ; 4 : 0,17 ; 5 : 0,26 ; 6 : 0,40 ; 7 : 0,54 ; 8 : 0,75 ; grand ouvert : 1,20",
+      "source": "Donnée de l’exercice (aucun fabricant)"
+    },
+    {
+      "grandeur": "Volume d’eau minimal",
+      "valeur": "20 L par kW de pompe à chaleur",
+      "source": "Donnée de l’exercice ; but (limiter les démarrages du compresseur) : fiche « Ballon tampon » du fonds"
+    },
+    {
+      "grandeur": "Ballons de la série",
+      "valeur": "25 L, 30 L, 40 L, 50 L, 60 L, 80 L, 100 L, 150 L, 200 L",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Raccordement du ballon",
+      "valeur": "deux piquages en série : volume sans découplage ; quatre piquages entre deux circuits : découplage possible",
+      "source": "Station HydroMétro « Volume tampon »"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : quatre circuits (station H3), le bureau le plus défavorisé à 7969 Pa ; pompe à chaleur 3,5 kW ; 33,90 L d’eau (station H4).",
+    "lignes": [
+      "Réunion 1 : 7969 − 5578 = 2391 Pa = 0,02391 bar ; Kv = 0,0785 ÷ √0,02391 = 0,0785 ÷ 0,1546 = 0,508 ; position 7.",
+      "Réunion 2 : 1191 Pa, Kv 0,720, position 8 ; Sanitaires : 5560 Pa, Kv 0,098, position 3 ; Bureau : grand ouvert.",
+      "Volume minimal : 3,5 × 20 = 70,00 L ; il manque 70,00 − 33,90 = 36,10 L : ballon de 40 L, en série sur le retour."
+    ],
+    "resultat": "tés en position 7, 8, 3 et grand ouvert ; ballon tampon de 40 L"
+  },
+  "pieges": [
+    "Prendre l’écart au plus défavorisé du niveau au lieu de toute l’installation : le té est mal réglé.",
+    "Mettre le débit en L/h ou la perte de charge en pascals dans Kv = q ÷ √Δp : les unités sont le m³/h et le bar.",
+    "Choisir un ballon qui contient à lui seul le volume minimal : l’eau des tubes et des radiateurs compte déjà."
+  ],
+  "sources": [
+    "Débits : stations BE-H1 et BE-H4 ; pertes de charge des circuits : BE-H3 ; puissance de la pompe à chaleur : BE-T5 et BE-H1 ; volume d’eau : BE-H4.",
+    "Kv : station HydroMétro « Régler une vanne d’équilibrage » ; ballon tampon : fiche « Ballon tampon » du fonds et station HydroMétro « Volume tampon ».",
+    "Stations en correspondance : BE-H4 (pompe, vase), BE-R1 (régulation), HydroMétro « Équilibrage », « Découplage », « V3V »."
+  ],
+  "calculette": null
+}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 116" width="180mm" height="116mm" role="img">
+<title>Pour 100 kWh de chaleur dans l’eau</title>
+<rect width="180" height="116" fill="#fff"/>
+<g><text x="90" y="64" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 64)">inerWeb, by inerweb.fr</text><text x="40" y="35" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 35)">inerWeb, by inerweb.fr</text><text x="140" y="95" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 95)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Pompe à chaleur, SCOP 2,6</text>
+<svg x="6.00" y="17.00" width="34.00" height="25.00" viewBox="-25.0 -30.0 78.0 58.0" overflow="visible"><g><ellipse cx="2.40" cy="-2.79" rx="7.07" ry="6.09" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="2.39" cy="-2.79" rx="9.63" ry="8.54" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="25.41" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="33.77" y="-1.1" width="1.39" height="1.22" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<ellipse cx="3.03" cy="-2.79" rx="15.41" ry="13.41" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-16.37" y="-22.3" width="50.13" height="35.36" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="34.94" y="-2.32" width="2.79" height="3.66" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="21.23" y1="-19.91" x2="21.23" y2="13.12" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="24" y="-16.2" width="7" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-12.19" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="33.77" y="9.41" width="1.39" height="1.22" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="35.75" y="8.19" width="2.79" height="3.66" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-16.37" y1="-19.86" x2="33.77" y2="-19.86" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="3.18" y1="-16.2" x2="3.18" y2="9.41" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-12.38" y1="-2.79" x2="18.45" y2="-2.79" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.79" rx="12.85" ry="10.97" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.78" rx="3.85" ry="3.66" stroke="#1b3a63" stroke-width="0.4" fill="none"/></g></svg>
+<text x="68.90" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Électricité 38</text>
+<text x="123.90" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Air du dehors 62</text>
+<rect x="48.00" y="25.00" width="41.80" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="89.80" y="25.00" width="68.20" height="9.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="48.00" y="41.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">= 100 kWh de chaleur dans l’eau</text>
+<text x="4.00" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Chaudière gaz, rendement 0,90</text>
+<svg x="10.00" y="66.00" width="24.00" height="29.00" viewBox="-24.0 -45.0 48.0 58.0" overflow="visible"><g><rect x="-12" y="-30" width="24" height="27" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-6.81" y1="-30.09" x2="-3" y2="-37" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="4" y1="-37" x2="7" y2="-30" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-3" y="-14" width="6" height="3" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="-7.10" rx="1.65" ry="1.65" stroke="#1b3a63" stroke-width="1" fill="none"/></g></svg>
+<text x="103.00" y="72.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chaleur 100</text>
+<text x="160.05" y="72.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Pertes 11</text>
+<rect x="48.00" y="75.00" width="110.00" height="9.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="158.00" y="75.00" width="12.10" height="9.00" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.3"/>
+<text x="48.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Gaz brûlé : 100 ÷ 0,90 = 111 kWh PCI</text>
+<line x1="4.00" y1="105.50" x2="176.00" y2="105.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Valeurs de l’exemple</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 118.00" width="180mm" height="118.00mm" role="img">
+<title>La vie d’une alarme et l’historique</title>
+<rect width="180" height="118.00" fill="#fff"/>
+
+<g><text x="90" y="65" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 65)">inerWeb, by inerweb.fr</text><text x="40" y="35" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 35)">inerWeb, by inerweb.fr</text><text x="140" y="97" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 97)">inerWeb, by inerweb.fr</text></g>
+<line x1="8.00" y1="30.00" x2="172.00" y2="30.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="166.00" y1="30.00" x2="174.00" y2="30.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="174.00" y1="30.00" x2="171.72" y2="31.25" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="174.00" y1="30.00" x2="171.72" y2="28.75" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="30.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Apparition</text>
+<circle cx="30.00" cy="30.00" r="2.6" fill="#d93025"/>
+<text x="30.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7 h 31</text>
+<text x="30.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">rouge clignotant</text>
+<text x="90.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Acquittement</text>
+<circle cx="90.00" cy="30.00" r="2.6" fill="#d93025"/>
+<text x="90.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7 h 44</text>
+<text x="90.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">rouge fixe</text>
+<text x="150.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Disparition</text>
+<circle cx="150.00" cy="30.00" r="2.6" fill="#b9c1ca"/>
+<text x="150.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">14 h 20</text>
+<text x="150.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">éteint</text>
+<text x="4.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Historique des alarmes de la CTA</text>
+<rect x="4.00" y="66.00" width="172.00" height="37.00" fill="none" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="8.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Date</text>
+<text x="58.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Alarme</text>
+<text x="120.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Événement</text>
+<line x1="4.00" y1="76.00" x2="176.00" y2="76.00" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="8.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">lundi 7 h 31</text>
+<text x="58.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">filtre encrassé</text>
+<text x="120.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">apparition</text>
+<text x="8.00" y="91.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">lundi 7 h 44</text>
+<text x="58.00" y="91.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">filtre encrassé</text>
+<text x="120.00" y="91.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">acquittement</text>
+<text x="8.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">lundi 14 h 20</text>
+<text x="58.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">filtre encrassé</text>
+<text x="120.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">disparition</text>
+<line x1="4.00" y1="107.50" x2="176.00" y2="107.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Supervision</text>
+</svg>

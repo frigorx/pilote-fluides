@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 113.00" width="180mm" height="113.00mm" role="img">
+<title>La semaine d’occupation du bâtiment de bureaux</title>
+<rect width="180" height="113.00" fill="#fff"/>
+<g><text x="90" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 62)">inerWeb, by inerweb.fr</text><text x="40" y="34" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 34)">inerWeb, by inerweb.fr</text><text x="140" y="93" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 93)">inerWeb, by inerweb.fr</text></g>
+<text x="2.00" y="7.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Une semaine de 168 h : la centrale marche 57,5 h</text>
+<text x="2.00" y="19.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Lundi</text>
+<rect x="36.00" y="14.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<rect x="78.50" y="14.00" width="65.17" height="7.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="2.00" y="28.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mardi</text>
+<rect x="36.00" y="23.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<rect x="78.50" y="23.00" width="65.17" height="7.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="2.00" y="37.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mercredi</text>
+<rect x="36.00" y="32.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<rect x="78.50" y="32.00" width="65.17" height="7.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="2.00" y="46.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Jeudi</text>
+<rect x="36.00" y="41.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<rect x="78.50" y="41.00" width="65.17" height="7.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="2.00" y="55.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Vendredi</text>
+<rect x="36.00" y="50.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<rect x="78.50" y="50.00" width="65.17" height="7.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="2.00" y="64.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Samedi</text>
+<rect x="36.00" y="59.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<text x="2.00" y="73.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Dimanche</text>
+<rect x="36.00" y="68.00" width="136.00" height="7.00" fill="#fff" stroke="#8a96a6" stroke-width="0.25"/>
+<line x1="36.00" y1="76.00" x2="36.00" y2="78.50" stroke="#000" stroke-width="0.3" stroke-linecap="square"/>
+<line x1="70.00" y1="76.00" x2="70.00" y2="78.50" stroke="#000" stroke-width="0.3" stroke-linecap="square"/>
+<line x1="104.00" y1="76.00" x2="104.00" y2="78.50" stroke="#000" stroke-width="0.3" stroke-linecap="square"/>
+<line x1="138.00" y1="76.00" x2="138.00" y2="78.50" stroke="#000" stroke-width="0.3" stroke-linecap="square"/>
+<line x1="172.00" y1="76.00" x2="172.00" y2="78.50" stroke="#000" stroke-width="0.3" stroke-linecap="square"/>
+<line x1="36.00" y1="76.00" x2="172.00" y2="76.00" stroke="#000" stroke-width="0.3" stroke-linecap="square"/>
+<text x="36.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0 h</text>
+<text x="104.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12 h</text>
+<text x="172.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">24 h</text>
+<line x1="78.50" y1="76.00" x2="78.50" y2="86.00" stroke="#d9771f" stroke-width="0.4" stroke-linecap="square"/>
+<line x1="143.67" y1="76.00" x2="143.67" y2="86.00" stroke="#d9771f" stroke-width="0.4" stroke-linecap="square"/>
+<text x="80.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#d9771f">7 h 30</text>
+<text x="145.17" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#d9771f">19 h</text>
+<rect x="3.00" y="97.00" width="9.00" height="4.60" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="15.00" y="101.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">La centrale marche : 5 jours × 11,5 h = 57,5 h</text>
+<rect x="3.00" y="104.00" width="9.00" height="4.60" fill="#dfe5ec" stroke="#8a96a6" stroke-width="0.2"/>
+<text x="15.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Part d’occupation : 57,5 ÷ 168 = 0,342</text>
+</svg>

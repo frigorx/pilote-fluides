@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 76.00" width="180mm" height="76.00mm" role="img">
+<title>Le té de réglage de l’exercice</title>
+<rect width="180" height="76.00" fill="#fff"/>
+
+<g><text x="90" y="42" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 42)">inerWeb, by inerweb.fr</text><text x="40" y="23" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 23)">inerWeb, by inerweb.fr</text><text x="140" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 62)">inerWeb, by inerweb.fr</text></g>
+<g transform="translate(20.00 12.00) rotate(0) scale(0.55)"><ellipse cx="-0.01" cy="-0.01" rx="2.23" ry="2.23" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="0.00" cy="0.00" rx="1.00" ry="1.00" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-2,-1 -8,-5 -8,5 -2,1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="2,-1 8,-5 8,5 2,1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="0" x2="-9" y2="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="0" x2="8" y2="0" stroke="black" stroke-width="1" fill="none"/></g>
+<line x1="6.00" y1="12.00" x2="14.50" y2="12.00" stroke="#3d7fca" stroke-width="0.7"/>
+<line x1="25.50" y1="12.00" x2="32.00" y2="12.00" stroke="#3d7fca" stroke-width="0.7"/>
+<text x="36.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Té de l’exercice, sur la ligne du radiateur</text>
+<rect x="6.00" y="24.00" width="27.00" height="11.00" fill="#e8eef6" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="7.50" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Position</text>
+<rect x="6.00" y="35.00" width="27.00" height="11.00" fill="#e8eef6" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="7.50" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Kv</text>
+<rect x="33.00" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="33.00" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="40.83" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">1</text>
+<text x="40.83" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,05</text>
+<rect x="48.67" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="48.67" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="56.50" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">2</text>
+<text x="56.50" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,07</text>
+<rect x="64.33" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="64.33" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="72.17" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">3</text>
+<text x="72.17" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,11</text>
+<rect x="80.00" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="80.00" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="87.83" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">4</text>
+<text x="87.83" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,17</text>
+<rect x="95.67" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="95.67" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="103.50" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">5</text>
+<text x="103.50" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,26</text>
+<rect x="111.33" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="111.33" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="119.17" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">6</text>
+<text x="119.17" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,40</text>
+<rect x="127.00" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="127.00" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="134.83" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">7</text>
+<text x="134.83" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,54</text>
+<rect x="142.67" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="142.67" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="150.50" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">8</text>
+<text x="150.50" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,75</text>
+<rect x="158.33" y="24.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="158.33" y="35.00" width="15.67" height="11.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="166.17" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">G.O.</text>
+<text x="166.17" y="42.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,20</text>
+<text x="6.00" y="54.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">G.O. : grand ouvert. Table de l’exercice, aucun fabricant.</text>
+<line x1="4.00" y1="65.50" x2="176.00" y2="65.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="72.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="72.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Té de l’exercice</text>
+</svg>

@@ -1,0 +1,44 @@
+{
+  "cle": "r3-supervision",
+  "code": "BE-R3",
+  "titre": "La supervision",
+  "ligne": "Régulation et énergie",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 32,
+    "chapitre": 7
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (à confirmer : la supervision et la GTB sont hors du titre ; lien par la représentation des dispositifs de régulation selon le scénario d'occupation)"
+      }
+    ],
+    "apport_propre": "Apport propre du réseau pour le TECVC : la supervision et la gestion technique du bâtiment ne sont pas nommées dans le titre (CADRAGE.md, C.3 et C.9).",
+    "bts_fed": {
+      "option": "C",
+      "competences": [
+        {
+          "code": "C2-2",
+          "libelle": "Identifier les chaînes d'énergie et d'information"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B8-1",
+          "libelle": "Supervision (à confirmer : libellé relevé dans le cadrage, tableau C.3, non lu dans le référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

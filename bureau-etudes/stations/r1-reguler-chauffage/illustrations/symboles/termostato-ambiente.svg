@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-17.0 -25.0 38.0 38.0" width="38" height="38">
+<!-- termostato-ambiente — converti de termostato-ambiente.elmt par outils\elmt-vers-svg.py -->
+<rect x="-17.0" y="-25.0" width="38.0" height="38.0" fill="#ffffff"/>
+<line x1="9" y1="-14.27" x2="12" y2="-14.27" stroke="black" stroke-width="1" fill="none"/>
+<line x1="9" y1="-8.35" x2="12" y2="-8.35" stroke="black" stroke-width="1" fill="none"/>
+<line x1="9" y1="-11.31" x2="12" y2="-11.31" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-6" y="-17.22" width="12" height="8.87" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<text x="-3" y="-11" font-family="Arial,sans-serif" font-size="5" fill="#000000">T</text>
+<line x1="0" y1="-8.35" x2="0" y2="0.52" stroke="black" stroke-width="1" fill="none"/>
+<line x1="9" y1="-17.22" x2="12" y2="-17.22" stroke="black" stroke-width="1" fill="none"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-21.0 -18.0 48.0 68.0" width="48" height="68">
+<!-- Sonde temperature — converti de sensor-temperatura.elmt par outils\elmt-vers-svg.py -->
+<rect x="-21.0" y="-18.0" width="48.0" height="68.0" fill="#ffffff"/>
+<line x1="-4.65" y1="18.18" x2="0.3" y2="16.8" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-5.2" y1="15.41" x2="-0.25" y2="14" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-5.2" y="12.65" width="5.5" height="6.91" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-6.95" y="6.29" width="9" height="6.37" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="3.05,6.29 -11.25,6.29 -11.25,-2 6.35,-7.54 6.35,6.29" stroke="black" stroke-width="1" fill="none"/>
+<path d="M -3.55,-10.30 A 7.15,7.25 0 0 0 -10.70,-3.05" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 4.14,-7.12 A 9.35,4.83 0 0 0 -4.65,-10.30" stroke="black" stroke-width="1" fill="none"/>
+<rect x="6.35" y="-2" width="5.1" height="4.84" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-3.55" y="19.56" width="1.65" height="21.44" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+</svg>

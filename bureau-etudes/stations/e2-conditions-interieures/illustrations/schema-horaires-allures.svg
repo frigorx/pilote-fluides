@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 118" width="180mm" height="118mm" role="img">
+<title>La température de consigne sur 24 h : confort de 7 h à 23 h, réduit le reste de la journée</title>
+<rect width="180" height="118" fill="#fff"/>
+<g><text x="90" y="65" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 65)">inerWeb, by inerweb.fr</text><text x="35" y="35" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 35)">inerWeb, by inerweb.fr</text><text x="150" y="94" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 94)">inerWeb, by inerweb.fr</text></g>
+<rect x="68.58" y="28.67" width="97.33" height="18.67" fill="#e3eefa"/>
+<line x1="26.00" y1="20.00" x2="26.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="26.00" y1="72.00" x2="172.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="24.50" y1="66.00" x2="26.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="23.00" y="67.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">16 °C</text>
+<line x1="24.50" y1="38.00" x2="26.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="23.00" y="39.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">19 °C</text>
+<line x1="26.00" y1="72.00" x2="26.00" y2="74.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="26.00" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0 h</text>
+<line x1="68.58" y1="72.00" x2="68.58" y2="74.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="68.58" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7 h</text>
+<line x1="99.00" y1="72.00" x2="99.00" y2="74.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="99.00" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12 h</text>
+<line x1="165.92" y1="72.00" x2="165.92" y2="74.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="165.92" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">23 h</text>
+<text x="172.00" y="87.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Heures de la journée</text>
+<line x1="26.00" y1="66.00" x2="68.58" y2="66.00" stroke="#1b3a63" stroke-width="1.2"/>
+<line x1="68.58" y1="66.00" x2="68.58" y2="38.00" stroke="#1b3a63" stroke-width="1.2"/>
+<line x1="68.58" y1="38.00" x2="165.92" y2="38.00" stroke="#ff6b35" stroke-width="1.8"/>
+<line x1="165.92" y1="38.00" x2="165.92" y2="66.00" stroke="#1b3a63" stroke-width="1.2"/>
+<line x1="165.92" y1="66.00" x2="172.00" y2="66.00" stroke="#1b3a63" stroke-width="1.2"/>
+<text x="117.25" y="26.17" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Confort, 19 °C</text>
+<text x="117.25" y="55.33" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Bande : tolérance ± 1 K</text>
+<text x="47.29" y="61.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Réduit</text>
+<text x="6.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Consigne de calcul : 19 °C, écrite au CCTP.</text>
+<text x="6.00" y="103.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Réduit : choix du bureau d’études, 16 °C.</text>
+<line x1="4.00" y1="107.50" x2="176.00" y2="107.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

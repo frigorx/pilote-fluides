@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 158" width="180mm" height="158mm" role="img">
+<title>Un même bâtiment vu par quatre pièces du dossier : plan de masse, plan de niveau, coupe et façade</title>
+<rect width="180" height="158" fill="#fff"/>
+<g><text x="90" y="87" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 87)">inerWeb, by inerweb.fr</text><text x="35" y="47" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 47)">inerWeb, by inerweb.fr</text><text x="150" y="126" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 126)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Plan de masse</text>
+<text x="6.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">le terrain vu de dessus</text>
+<rect x="8.00" y="26.00" width="76.00" height="38.00" fill="#fff"/>
+<line x1="8.00" y1="26.00" x2="84.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="84.00" y1="26.00" x2="84.00" y2="64.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="84.00" y1="64.00" x2="8.00" y2="64.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="8.00" y1="64.00" x2="8.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="28.00" y="34.00" width="30.00" height="16.00" fill="#e3eefa"/>
+<line x1="28.00" y1="34.00" x2="58.00" y2="34.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="58.00" y1="34.00" x2="58.00" y2="50.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="58.00" y1="50.00" x2="28.00" y2="50.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="28.00" y1="50.00" x2="28.00" y2="34.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="72.00" y1="56.00" x2="72.00" y2="44.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="72.00" y1="44.00" x2="73.25" y2="46.28" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="72.00" y1="44.00" x2="70.75" y2="46.28" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="72.00" y="38.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">N</text>
+<line x1="8.00" y1="69.00" x2="84.00" y2="69.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="46.00" y="75.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">rue</text>
+<text x="94.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Plan de niveau</text>
+<text x="94.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">un niveau vu de dessus</text>
+<rect x="96.00" y="26.00" width="76.00" height="38.00" fill="#e3eefa"/>
+<line x1="96.00" y1="26.00" x2="172.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="172.00" y1="26.00" x2="172.00" y2="64.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="172.00" y1="64.00" x2="96.00" y2="64.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="64.00" x2="96.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="124.00" y1="26.00" x2="124.00" y2="64.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="124.00" y1="46.00" x2="172.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="6.00" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Coupe</text>
+<text x="6.00" y="93.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">le bâtiment tranché</text>
+<line x1="8.00" y1="112.00" x2="46.00" y2="100.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="46.00" y1="100.00" x2="84.00" y2="112.00" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="10.00" y="112.00" width="3.50" height="16.00" fill="#dcdcdc"/>
+<line x1="10.00" y1="112.00" x2="13.50" y2="112.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="13.50" y1="112.00" x2="13.50" y2="128.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="13.50" y1="128.00" x2="10.00" y2="128.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="128.00" x2="10.00" y2="112.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="78.50" y="112.00" width="3.50" height="16.00" fill="#dcdcdc"/>
+<line x1="78.50" y1="112.00" x2="82.00" y2="112.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="82.00" y1="112.00" x2="82.00" y2="128.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="82.00" y1="128.00" x2="78.50" y2="128.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="78.50" y1="128.00" x2="78.50" y2="112.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="10.00" y="128.00" width="72.00" height="3.00" fill="#dcdcdc"/>
+<line x1="10.00" y1="128.00" x2="82.00" y2="128.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="82.00" y1="128.00" x2="82.00" y2="131.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="82.00" y1="131.00" x2="10.00" y2="131.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="131.00" x2="10.00" y2="128.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="13.50" y1="112.00" x2="78.50" y2="112.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.5 1.2"/>
+<text x="94.00" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Façade</text>
+<text x="94.00" y="93.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">l’aspect extérieur</text>
+<line x1="96.00" y1="112.00" x2="134.00" y2="100.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="134.00" y1="100.00" x2="172.00" y2="112.00" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="98.00" y="112.00" width="72.00" height="19.00" fill="#e3eefa"/>
+<line x1="98.00" y1="112.00" x2="170.00" y2="112.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.00" y1="112.00" x2="170.00" y2="131.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.00" y1="131.00" x2="98.00" y2="131.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="98.00" y1="131.00" x2="98.00" y2="112.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="104.00" y="117.00" width="14.00" height="9.00" fill="#fff"/>
+<line x1="104.00" y1="117.00" x2="118.00" y2="117.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.00" y1="117.00" x2="118.00" y2="126.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.00" y1="126.00" x2="104.00" y2="126.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="104.00" y1="126.00" x2="104.00" y2="117.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="130.00" y="117.00" width="8.00" height="14.00" fill="#fff"/>
+<line x1="130.00" y1="117.00" x2="138.00" y2="117.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="138.00" y1="117.00" x2="138.00" y2="131.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="138.00" y1="131.00" x2="130.00" y2="131.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="130.00" y1="131.00" x2="130.00" y2="117.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="150.00" y="117.00" width="14.00" height="9.00" fill="#fff"/>
+<line x1="150.00" y1="117.00" x2="164.00" y2="117.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="164.00" y1="117.00" x2="164.00" y2="126.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="164.00" y1="126.00" x2="150.00" y2="126.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="150.00" y1="126.00" x2="150.00" y2="117.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="92.00" y1="131.00" x2="176.00" y2="131.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="90.00" y="141.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Le même bâtiment, vu par quatre pièces du dossier.</text>
+<line x1="4.00" y1="147.50" x2="176.00" y2="147.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="154.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="154.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

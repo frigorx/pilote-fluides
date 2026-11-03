@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 116" width="180mm" height="116mm" role="img">
+<title>Les trois origines d’une donnée du tableau des locaux : un texte officiel, le CCTP, le bureau d’études</title>
+<rect width="180" height="116" fill="#fff"/>
+<g><text x="90" y="64" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 64)">inerWeb, by inerweb.fr</text><text x="35" y="35" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 35)">inerWeb, by inerweb.fr</text><text x="150" y="93" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 93)">inerWeb, by inerweb.fr</text></g>
+<rect x="120.00" y="10.00" width="54.00" height="89.00" fill="#fff"/>
+<line x1="120.00" y1="10.00" x2="174.00" y2="10.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="10.00" x2="174.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="99.00" x2="120.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="120.00" y1="99.00" x2="120.00" y2="10.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="147.00" y="44.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Tableau</text>
+<text x="147.00" y="51.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">des locaux</text>
+<text x="147.00" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">chaque valeur</text>
+<text x="147.00" y="69.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">porte sa source</text>
+<rect x="6.00" y="10.00" width="90.00" height="25.00" fill="#e3eefa"/>
+<line x1="6.00" y1="10.00" x2="96.00" y2="10.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="10.00" x2="96.00" y2="35.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="35.00" x2="6.00" y2="35.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="35.00" x2="6.00" y2="10.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="10.00" y="17.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Un texte officiel</text>
+<text x="10.00" y="24.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">loi, décret, arrêté :</text>
+<text x="10.00" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">la valeur s’impose.</text>
+<line x1="96.00" y1="22.50" x2="120.00" y2="22.50" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="120.00" y1="22.50" x2="117.72" y2="23.75" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="120.00" y1="22.50" x2="117.72" y2="21.25" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="6.00" y="42.00" width="90.00" height="25.00" fill="#f1f1f1"/>
+<line x1="6.00" y1="42.00" x2="96.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="42.00" x2="96.00" y2="67.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="67.00" x2="6.00" y2="67.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="67.00" x2="6.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="10.00" y="49.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Le CCTP</text>
+<text x="10.00" y="56.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">le maître d’ouvrage a</text>
+<text x="10.00" y="63.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">décidé : on le reprend.</text>
+<line x1="96.00" y1="54.50" x2="120.00" y2="54.50" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="120.00" y1="54.50" x2="117.72" y2="55.75" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="120.00" y1="54.50" x2="117.72" y2="53.25" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="6.00" y="74.00" width="90.00" height="25.00" fill="#ffe1d4"/>
+<line x1="6.00" y1="74.00" x2="96.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="74.00" x2="96.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="96.00" y1="99.00" x2="6.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="99.00" x2="6.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="10.00" y="81.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Le bureau d’études</text>
+<text x="10.00" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">ni texte ni CCTP :</text>
+<text x="10.00" y="95.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">il choisit et justifie.</text>
+<line x1="96.00" y1="86.50" x2="120.00" y2="86.50" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="120.00" y1="86.50" x2="117.72" y2="87.75" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="120.00" y1="86.50" x2="117.72" y2="85.25" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="4.00" y1="105.50" x2="176.00" y2="105.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

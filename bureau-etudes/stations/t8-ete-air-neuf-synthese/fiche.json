@@ -1,0 +1,62 @@
+{
+  "numero": 11,
+  "titre": "Ajouter l’air neuf et faire la synthèse du bilan d’été",
+  "ligne": "Thermique",
+  "code": "BE-T8",
+  "quand": "À la fin du bilan d’été, après le soleil des vitrages (station T6) et les apports internes et les parois (station T7). Vous avez les débits d’air neuf et les deux airs sur le diagramme. Vous obtenez la puissance frigorifique de chaque local et celle de la machine, sensible et latent séparés. Le choix de la machine suit (station T9).",
+  "methode": [
+    "Air neuf sensible : Φs = 0,34 × qv × (θe − θi), qv en m³/h, au watt.",
+    "Air neuf latent : qm = 1,2 × qv ÷ 3 600 (kg/s, au dix-millième) ; Φl = qm × Δx × 2 501, Δx en g/kg.",
+    "Contrôle par le diagramme : Φ = qm × (h dehors − h dedans) × 1 000, proche de Φs + Φl.",
+    "Seuls les locaux qui reçoivent l’air du dehors ont un apport d’air neuf.",
+    "Pour chaque local et chaque heure : soleil + parois + internes + air neuf, puis le latent. Puissance du local : le plus grand total.",
+    "Machine : la somme des locaux heure par heure, le plus grand total, les occupants comptés une fois. C’est le maximum de la somme.",
+    "Cs = puissance de la machine ÷ somme des maximums des locaux, au centième.",
+    "Le résultat se donne en sensible, latent, total et part sensible, puis en kW au dixième, arrondi vers le haut."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Coefficient de l’air",
+      "valeur": "0,34 Wh/(m³.K)",
+      "source": "Règles Th-Bât, Généralités, § 5.1, p. 18 (station T4)"
+    },
+    {
+      "grandeur": "Masse volumique et capacité thermique de l’air",
+      "valeur": "1,2 kg/m³ ; 1,006 kJ/(kg.K)",
+      "source": "Station A1 (formule de h)"
+    },
+    {
+      "grandeur": "Chaleur de vaporisation de l’eau",
+      "valeur": "2 501 J/g",
+      "source": "Station A1 (formule de h)"
+    },
+    {
+      "grandeur": "Apports constants sur la journée ; occupants comptés une fois",
+      "valeur": "règle du bureau d’études",
+      "source": "Données de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Salle de réunion d’exemple : 70 m³/h d’air neuf ; dehors 32 °C, x 11,9 g/kg ; dedans 26 °C, x 10,5 g/kg.",
+    "lignes": [
+      "Sensible : 0,34 × 70 × 6 = 143 W.",
+      "Latent : 0,0233 × 1,4 × 2 501 = 82 W ; contrôle 0,0233 × 10 × 1 000 = 233 W.",
+      "À 16 h : soleil 1487 + parois 307 + internes 1057 + air neuf 143 = 2994 W ; latent 482 W.",
+      "Bâtiment : somme des maximums 4879 W ; machine 4443 W ; Cs = 0,91."
+    ],
+    "resultat": "salle de réunion 3476 W ; machine 4,5 kW, part sensible 88 %"
+  },
+  "pieges": [
+    "Le latent oublié ou ajouté au sensible sans le dire : il se garde à part jusqu’au total.",
+    "La somme des maximums prise pour la machine : les locaux n’ont pas leur pointe à la même heure.",
+    "L’air neuf compté dans les locaux traversés par de l’air déjà à θi."
+  ],
+  "sources": [
+    "Coefficient 0,34 Wh/(m³.K) : règles Th-Bât, Généralités, § 5.1, p. 18 (station T4).",
+    "Formules de l’air humide et constantes 1,006 et 2 501 : station A1 (ASHRAE Handbook Fundamentals, chapitre 1 ; Tetens et Murray).",
+    "Conditions d’air de l’exemple, apports constants sur la journée, règle de simultanéité : données de l’exercice.",
+    "Stations en correspondance : BE-T6, BE-T7, BE-A1, BE-T9, AéroRézo « Air neuf et sélection ».",
+    "Aucune calculette : le calcul se fait sur la feuille réponse."
+  ],
+  "calculette": null
+}

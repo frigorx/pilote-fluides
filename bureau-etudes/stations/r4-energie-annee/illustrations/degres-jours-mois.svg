@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 134.8" width="180mm" height="134.8mm" role="img">
+<title>Les degrés-jours de l’année, mois par mois</title>
+<rect width="180" height="134.8" fill="#fff"/>
+<g><text x="90" y="74" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 74)">inerWeb, by inerweb.fr</text><text x="40" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 40)">inerWeb, by inerweb.fr</text><text x="140" y="111" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 111)">inerWeb, by inerweb.fr</text></g>
+<line x1="26" y1="82.00" x2="174" y2="82.00" stroke="#c8ccd2" stroke-width="0.35"/>
+<line x1="26" y1="74.67" x2="174" y2="74.67" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="26" y1="67.33" x2="174" y2="67.33" stroke="#c8ccd2" stroke-width="0.35"/>
+<line x1="26" y1="60.00" x2="174" y2="60.00" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="26" y1="52.67" x2="174" y2="52.67" stroke="#c8ccd2" stroke-width="0.35"/>
+<line x1="26" y1="45.33" x2="174" y2="45.33" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="26" y1="38.00" x2="174" y2="38.00" stroke="#c8ccd2" stroke-width="0.35"/>
+<line x1="26" y1="30.67" x2="174" y2="30.67" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="26" y1="23.33" x2="174" y2="23.33" stroke="#c8ccd2" stroke-width="0.35"/>
+<line x1="26" y1="16.00" x2="174" y2="16.00" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="26.00" y1="82.00" x2="174.00" y2="82.00" stroke="#000" stroke-width="0.5"/>
+<line x1="26.00" y1="16.00" x2="26.00" y2="82.00" stroke="#000" stroke-width="0.5"/>
+<text x="24.50" y="69.03" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">100</text>
+<text x="24.50" y="54.37" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">200</text>
+<text x="24.50" y="39.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">300</text>
+<text x="24.50" y="25.03" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">400</text>
+<text x="20.00" y="11.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">DJU du mois</text>
+<rect x="28.17" y="23.33" width="8" height="58.67" fill="#eef3f9"/>
+<rect x="40.50" y="32.13" width="8" height="49.87" fill="#eef3f9"/>
+<rect x="52.83" y="39.47" width="8" height="42.53" fill="#eef3f9"/>
+<rect x="65.17" y="52.67" width="8" height="29.33" fill="#eef3f9"/>
+<rect x="77.50" y="68.80" width="8" height="13.20" fill="#eef3f9"/>
+<rect x="89.83" y="79.07" width="8" height="2.93" fill="#eef3f9"/>
+<rect x="102.17" y="82.00" width="8" height="0.00" fill="#eef3f9"/>
+<rect x="114.50" y="82.00" width="8" height="0.00" fill="#eef3f9"/>
+<rect x="126.83" y="77.60" width="8" height="4.40" fill="#eef3f9"/>
+<rect x="139.17" y="60.00" width="8" height="22.00" fill="#eef3f9"/>
+<rect x="151.50" y="39.47" width="8" height="42.53" fill="#eef3f9"/>
+<rect x="163.83" y="24.80" width="8" height="57.20" fill="#eef3f9"/>
+<polyline points="32.17,23.33 44.50,32.13 56.83,39.47 69.17,52.67 81.50,68.80 93.83,79.07 106.17,82.00 118.50,82.00 130.83,77.60 143.17,60.00 155.50,39.47 167.83,24.80" fill="none" stroke="#1b3a63" stroke-width="0.9" stroke-linejoin="round"/>
+<circle cx="32.17" cy="23.33" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="44.50" cy="32.13" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="56.83" cy="39.47" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="69.17" cy="52.67" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="81.50" cy="68.80" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="93.83" cy="79.07" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="106.17" cy="82.00" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="118.50" cy="82.00" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="130.83" cy="77.60" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="143.17" cy="60.00" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="155.50" cy="39.47" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<circle cx="167.83" cy="24.80" r="1.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="4.00" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Mois</text>
+<text x="4.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">DJU</text>
+<text x="32.17" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">J</text>
+<text x="32.17" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">400</text>
+<text x="44.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">F</text>
+<text x="44.50" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">340</text>
+<text x="56.83" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">M</text>
+<text x="56.83" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">290</text>
+<text x="69.17" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A</text>
+<text x="69.17" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">200</text>
+<text x="81.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">M</text>
+<text x="81.50" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">90</text>
+<text x="93.83" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">J</text>
+<text x="93.83" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">20</text>
+<text x="106.17" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">J</text>
+<text x="106.17" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="118.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A</text>
+<text x="118.50" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="130.83" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">S</text>
+<text x="130.83" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">30</text>
+<text x="143.17" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">O</text>
+<text x="143.17" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">150</text>
+<text x="155.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">N</text>
+<text x="155.50" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">290</text>
+<text x="167.83" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">D</text>
+<text x="167.83" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">390</text>
+<text x="6.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Total de l’année : 2200 DJU, la somme des douze mois.</text>
+<text x="6.00" y="113.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Juillet et août : 0 DJU, aucun chauffage.</text>
+<line x1="4.00" y1="124.30" x2="176.00" y2="124.30" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="130.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="130.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Données de l’exercice</text>
+</svg>

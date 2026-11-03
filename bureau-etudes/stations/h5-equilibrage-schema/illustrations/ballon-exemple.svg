@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 98.00" width="180mm" height="98.00mm" role="img">
+<title>Le volume d’eau du bâtiment d’exemple</title>
+<rect width="180" height="98.00" fill="#fff"/>
+
+<g><text x="90" y="54" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 54)">inerWeb, by inerweb.fr</text><text x="40" y="29" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 29)">inerWeb, by inerweb.fr</text><text x="140" y="80" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 80)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Pompe à chaleur de 3,5 kW : 70,00 L au moins</text>
+<text x="49.00" y="24.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Minimum</text>
+<rect x="52.00" y="18.00" width="60.00" height="8.00" fill="#e3edf7" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="115.00" y="24.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">3,5 × 20 = 70,00 L</text>
+<text x="49.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Installation</text>
+<rect x="52.00" y="31.00" width="29.06" height="8.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="84.06" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">33,90 L (H4)</text>
+<text x="49.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Il manque</text>
+<rect x="52.00" y="44.00" width="30.94" height="8.00" fill="#ffe1d3" stroke="#ff6b35" stroke-width="0.4" stroke-dasharray="1.2 0.8"/>
+<text x="85.94" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">36,10 L</text>
+<text x="6.00" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Ballon de la série au-dessus du manque : 40 L.</text>
+<line x1="4.00" y1="87.50" x2="176.00" y2="87.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="94.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="94.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bâtiment d’exemple</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 112" width="180mm" height="112mm" role="img">
+<title>La répartition des occupants : au séjour le soir, dans leur chambre la nuit</title>
+<rect width="180" height="112" fill="#fff"/>
+<g><text x="90" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 62)">inerWeb, by inerweb.fr</text><text x="35" y="34" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 34)">inerWeb, by inerweb.fr</text><text x="150" y="90" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 90)">inerWeb, by inerweb.fr</text></g>
+<text x="47.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Soirée et repas</text>
+<rect x="6.00" y="18.00" width="82.00" height="24.00" fill="#e3eefa"/>
+<line x1="6.00" y1="18.00" x2="88.00" y2="18.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="88.00" y1="18.00" x2="88.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="88.00" y1="42.00" x2="6.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="42.00" x2="6.00" y2="18.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="6.00" y="42.00" width="41.00" height="24.00" fill="#fff"/>
+<line x1="6.00" y1="42.00" x2="47.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="47.00" y1="42.00" x2="47.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="47.00" y1="66.00" x2="6.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="66.00" x2="6.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="47.00" y="42.00" width="41.00" height="24.00" fill="#fff"/>
+<line x1="47.00" y1="42.00" x2="88.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="88.00" y1="42.00" x2="88.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="88.00" y1="66.00" x2="47.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="47.00" y1="66.00" x2="47.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="47.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Séjour</text>
+<text x="26.50" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre A</text>
+<text x="67.50" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre B</text>
+<circle cx="42.00" cy="35.00" r="2.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<circle cx="52.00" cy="35.00" r="2.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="133.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">La nuit</text>
+<rect x="92.00" y="18.00" width="82.00" height="24.00" fill="#fff"/>
+<line x1="92.00" y1="18.00" x2="174.00" y2="18.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="18.00" x2="174.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="42.00" x2="92.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="92.00" y1="42.00" x2="92.00" y2="18.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="92.00" y="42.00" width="41.00" height="24.00" fill="#e3eefa"/>
+<line x1="92.00" y1="42.00" x2="133.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="42.00" x2="133.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="66.00" x2="92.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="92.00" y1="66.00" x2="92.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="133.00" y="42.00" width="41.00" height="24.00" fill="#e3eefa"/>
+<line x1="133.00" y1="42.00" x2="174.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="42.00" x2="174.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="66.00" x2="133.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="66.00" x2="133.00" y2="42.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="133.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Séjour</text>
+<text x="112.50" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre A</text>
+<text x="153.50" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre B</text>
+<circle cx="112.50" cy="59.00" r="2.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<circle cx="153.50" cy="59.00" r="2.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="47.00" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">2 occupants</text>
+<text x="47.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">au séjour</text>
+<text x="133.00" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">1 occupant</text>
+<text x="133.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">dans chaque chambre</text>
+<text x="90.00" y="95.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chaque occupant compte une fois : 2 occupants en tout.</text>
+<line x1="4.00" y1="101.50" x2="176.00" y2="101.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

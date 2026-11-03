@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 94.00" width="180mm" height="94.00mm" role="img">
+<title>Le clapet coupe-feu au droit du mur</title>
+<rect width="180" height="94.00" fill="#fff"/>
+<g><text x="90" y="52" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 52)">inerWeb, by inerweb.fr</text><text x="40" y="28" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 28)">inerWeb, by inerweb.fr</text><text x="140" y="77" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 77)">inerWeb, by inerweb.fr</text></g>
+<rect x="40.00" y="10.00" width="9.00" height="44.00" fill="#b8c2cf" stroke="#6b7787" stroke-width="0.25"/>
+<rect x="6.00" y="25.00" width="78.00" height="10.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<rect x="38.00" y="23.50" width="13.00" height="13.00" fill="#dfe5ec" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="40.00" y1="36.00" x2="49.00" y2="24.00" stroke="#1b3a63" stroke-width="0.9" stroke-linecap="square"/>
+<line x1="10.00" y1="30.00" x2="32.00" y2="30.00" stroke="#1b3a63" stroke-width="0.8" stroke-linecap="square"/>
+<polygon points="32.00,30.00 29.42,31.09 29.42,28.91" fill="#1b3a63"/>
+<line x1="56.00" y1="30.00" x2="80.00" y2="30.00" stroke="#1b3a63" stroke-width="0.8" stroke-linecap="square"/>
+<polygon points="80.00,30.00 77.42,31.09 77.42,28.91" fill="#1b3a63"/>
+<text x="44.50" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Mur coupe-feu</text>
+<text x="44.50" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">un clapet au droit du mur</text>
+<rect x="150.00" y="10.00" width="9.00" height="44.00" fill="#b8c2cf" stroke="#6b7787" stroke-width="0.25"/>
+<rect x="100.00" y="25.00" width="50.00" height="10.00" fill="#fff" stroke="#000" stroke-width="0.5"/>
+<line x1="159.50" y1="26.00" x2="162.50" y2="27.40" stroke="#000" stroke-width="0.4" stroke-linecap="square"/>
+<line x1="159.50" y1="28.60" x2="162.50" y2="30.00" stroke="#000" stroke-width="0.4" stroke-linecap="square"/>
+<line x1="159.50" y1="31.20" x2="162.50" y2="32.60" stroke="#000" stroke-width="0.4" stroke-linecap="square"/>
+<line x1="159.50" y1="33.80" x2="162.50" y2="35.20" stroke="#000" stroke-width="0.4" stroke-linecap="square"/>
+<line x1="104.00" y1="30.00" x2="144.00" y2="30.00" stroke="#1b3a63" stroke-width="0.8" stroke-linecap="square"/>
+<polygon points="144.00,30.00 141.42,31.09 141.42,28.91" fill="#1b3a63"/>
+<text x="154.50" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Façade</text>
+<text x="154.50" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">aucun clapet</text>
+<rect x="3.00" y="78.00" width="9.00" height="4.60" fill="#dfe5ec" stroke="#8a96a6" stroke-width="0.2"/>
+<text x="15.00" y="82.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Clapet coupe-feu : il se ferme seul en cas de feu</text>
+<line x1="3.00" y1="87.30" x2="12.00" y2="87.30" stroke="#1b3a63" stroke-width="0.9" stroke-linecap="square"/>
+<text x="15.00" y="89.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Sens de l’air dans la gaine</text>
+</svg>

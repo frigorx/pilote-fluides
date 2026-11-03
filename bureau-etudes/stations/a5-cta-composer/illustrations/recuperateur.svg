@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 84.10" width="180mm" height="84.10mm" role="img">
+<title>Le récupérateur l’hiver, noyau du bâtiment</title>
+<rect width="180" height="84.10" fill="#fff"/>
+<g><text x="90" y="46" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 46)">inerWeb, by inerweb.fr</text><text x="40" y="25" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 25)">inerWeb, by inerweb.fr</text><text x="140" y="69" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 69)">inerWeb, by inerweb.fr</text></g>
+<text x="1.50" y="5.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Noyau du bâtiment, l’hiver : l’échangeur à plaques</text>
+<g transform="translate(69.20 21.90) rotate(90 20.80 22.10)"><svg x="0" y="0" width="41.60" height="44.20" viewBox="-17 -12 32 34" overflow="hidden"><line x1="6" y1="-5" x2="6" y2="14" stroke="#000" stroke-width="0.5"/>
+<line x1="10" y1="-5.82667" x2="10" y2="-10.16" stroke="#000" stroke-width="1"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="#000" stroke-width="0.5"/>
+<rect x="-16" y="-5" width="30" height="20" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="#000" stroke-width="1"/>
+<line x1="-10" y1="20.1359" x2="-10" y2="15.8746" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="#000" stroke-width="0.5"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="#000" stroke-width="1"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="#000" stroke-width="1"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="#000" stroke-width="1"/>
+<circle cx="-10" cy="-10" r="1.5" fill="#000"/>
+<circle cx="10" cy="-10" r="1.5" fill="#000"/>
+<circle cx="-10" cy="20" r="1.5" fill="#000"/>
+<circle cx="10" cy="20" r="1.5" fill="#000"/></svg></g>
+<line x1="3.00" y1="58.30" x2="70.10" y2="58.30" stroke="#d9771f" stroke-width="0.7" stroke-linecap="square"/>
+<polygon points="70.10,58.30 67.71,59.31 67.71,57.29" fill="#d9771f"/>
+<line x1="109.90" y1="58.30" x2="177.00" y2="58.30" stroke="#d9771f" stroke-width="0.7" stroke-linecap="square"/>
+<polygon points="177.00,58.30 174.61,59.31 174.61,57.29" fill="#d9771f"/>
+<line x1="177.00" y1="32.30" x2="109.90" y2="32.30" stroke="#d9771f" stroke-width="0.7" stroke-linecap="square"/>
+<polygon points="109.90,32.30 112.29,31.29 112.29,33.31" fill="#d9771f"/>
+<line x1="70.10" y1="32.30" x2="3.00" y2="32.30" stroke="#d9771f" stroke-width="0.7" stroke-linecap="square"/>
+<polygon points="3.00,32.30 5.39,31.29 5.39,33.31" fill="#d9771f"/>
+<text x="3.00" y="55.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#d9771f">Air neuf, −7 °C</text>
+<text x="177.00" y="55.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#d9771f">Sortie, 7,04 °C</text>
+<text x="177.00" y="29.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#d9771f">Air repris, 19 °C</text>
+<text x="3.00" y="29.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#d9771f">Rejet</text>
+<text x="177.00" y="64.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">vers la batterie</text>
+<text x="3.00" y="38.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">dehors</text>
+<text x="90.00" y="72.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Échangeur à plaques, η = 0,54</text>
+<text x="90.00" y="80.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">θ2 = −7 + 0,54 × (19 − (−7)) = 7,04 °C</text>
+</svg>

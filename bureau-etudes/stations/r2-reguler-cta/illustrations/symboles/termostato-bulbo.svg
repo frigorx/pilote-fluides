@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-18.0 -26.0 48.0 38.0" width="48" height="38">
+<!-- termostato-bulbo — converti de termostato-bulbo.elmt par outils\elmt-vers-svg.py -->
+<rect x="-18.0" y="-26.0" width="48.0" height="38.0" fill="#ffffff"/>
+<rect x="-5.08" y="-19.09" width="10.06" height="9.31" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<text x="-3" y="-13" font-family="Arial,sans-serif" font-size="5" fill="#000000">T</text>
+<line x1="-0.05" y1="-9.77" x2="-0.05" y2="-0.46" stroke="black" stroke-width="1" fill="none"/>
+<line x1="15.9" y1="-2" x2="19.13" y2="-2" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="10.94" cy="-13.67" rx="2.00" ry="2.33" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="5.1" y1="-16" x2="11.45" y2="-16" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="12.91" y1="-14" x2="12.91" y2="-2.47" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="12.91" y1="-2" x2="15.55" y2="-2" stroke="black" stroke-width="0.4" fill="none"/>
+</svg>

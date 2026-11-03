@@ -1,0 +1,43 @@
+{
+  "cle": "t8-ete-air-neuf-synthese",
+  "code": "BE-T8",
+  "titre": "Été 3 : la synthèse",
+  "ligne": "Thermique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 16,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 11,
+    "chapitre": 3
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP8",
+        "libelle": "Réaliser les calculs d'apports thermiques"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques (à vérifier : annexe II.d non lue, référentiel 03-BTS-FED.md ligne 209)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "A2-3",
+          "libelle": "Bilan thermique (déperditions, apports de chaleur et d'humidité) (à confirmer : le référentiel porte aussi le libellé « Bilan thermique en régime permanent d'une enceinte fermée ou ouverte »)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

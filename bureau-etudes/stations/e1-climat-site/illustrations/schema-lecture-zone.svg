@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 96" width="180mm" height="96mm" role="img">
+<title>Lire la zone climatique d’un site : le département, la ligne de l’annexe I, la zone, et sa place parmi les huit zones</title>
+<rect width="180" height="96" fill="#fff"/>
+<g><text x="90" y="53" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 53)">inerWeb, by inerweb.fr</text><text x="35" y="29" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 29)">inerWeb, by inerweb.fr</text><text x="150" y="77" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 77)">inerWeb, by inerweb.fr</text></g>
+<rect x="6.00" y="8.00" width="44.00" height="20.00" fill="#f1f1f1"/>
+<line x1="6.00" y1="8.00" x2="50.00" y2="8.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="50.00" y1="8.00" x2="50.00" y2="28.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="50.00" y1="28.00" x2="6.00" y2="28.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="28.00" x2="6.00" y2="8.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="28.00" y="16.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Votre site</text>
+<text x="28.00" y="23.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">département 64</text>
+<text x="28.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Repérez le</text>
+<text x="28.00" y="44.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">numéro</text>
+<rect x="68.00" y="8.00" width="44.00" height="20.00" fill="#f1f1f1"/>
+<line x1="68.00" y1="8.00" x2="112.00" y2="8.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="112.00" y1="8.00" x2="112.00" y2="28.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="112.00" y1="28.00" x2="68.00" y2="28.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="68.00" y1="28.00" x2="68.00" y2="8.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="90.00" y="16.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Annexe I</text>
+<text x="90.00" y="23.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">64 : H2c</text>
+<text x="90.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Cherchez-le</text>
+<text x="90.00" y="44.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">dans la liste</text>
+<rect x="130.00" y="8.00" width="44.00" height="20.00" fill="#ffe1d4"/>
+<line x1="130.00" y1="8.00" x2="174.00" y2="8.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="8.00" x2="174.00" y2="28.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="28.00" x2="130.00" y2="28.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="130.00" y1="28.00" x2="130.00" y2="8.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="152.00" y="16.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Zone</text>
+<text x="152.00" y="23.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H2c</text>
+<text x="152.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Lisez la zone</text>
+<text x="152.00" y="44.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">à droite</text>
+<line x1="50.00" y1="18.00" x2="68.00" y2="18.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="68.00" y1="18.00" x2="65.72" y2="19.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="68.00" y1="18.00" x2="65.72" y2="16.75" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="112.00" y1="18.00" x2="130.00" y2="18.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="130.00" y1="18.00" x2="127.72" y2="19.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="130.00" y1="18.00" x2="127.72" y2="16.75" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="6.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Les huit zones, par groupe</text>
+<text x="36.00" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H1</text>
+<rect x="7.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="7.00" y1="73.00" x2="25.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="25.00" y1="73.00" x2="25.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="25.00" y1="82.00" x2="7.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="7.00" y1="82.00" x2="7.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="16.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H1a</text>
+<rect x="27.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="27.00" y1="73.00" x2="45.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="45.00" y1="73.00" x2="45.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="45.00" y1="82.00" x2="27.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="27.00" y1="82.00" x2="27.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="36.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H1b</text>
+<rect x="47.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="47.00" y1="73.00" x2="65.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="65.00" y1="73.00" x2="65.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="65.00" y1="82.00" x2="47.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="47.00" y1="82.00" x2="47.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="56.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H1c</text>
+<text x="112.00" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H2</text>
+<rect x="73.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="73.00" y1="73.00" x2="91.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="91.00" y1="73.00" x2="91.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="91.00" y1="82.00" x2="73.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="73.00" y1="82.00" x2="73.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="82.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H2a</text>
+<rect x="93.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="93.00" y1="73.00" x2="111.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="111.00" y1="73.00" x2="111.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="111.00" y1="82.00" x2="93.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="93.00" y1="82.00" x2="93.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="102.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H2b</text>
+<rect x="113.00" y="73.00" width="18.00" height="9.00" fill="#ffe1d4"/>
+<line x1="113.00" y1="73.00" x2="131.00" y2="73.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="131.00" y1="73.00" x2="131.00" y2="82.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="131.00" y1="82.00" x2="113.00" y2="82.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="113.00" y1="82.00" x2="113.00" y2="73.00" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="122.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H2c</text>
+<rect x="133.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="133.00" y1="73.00" x2="151.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="151.00" y1="73.00" x2="151.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="151.00" y1="82.00" x2="133.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="82.00" x2="133.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="142.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H2d</text>
+<text x="168.00" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H3</text>
+<rect x="159.00" y="73.00" width="18.00" height="9.00" fill="#fff"/>
+<line x1="159.00" y1="73.00" x2="177.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="177.00" y1="73.00" x2="177.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="177.00" y1="82.00" x2="159.00" y2="82.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="159.00" y1="82.00" x2="159.00" y2="73.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="168.00" y="79.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H3</text>
+<line x1="4.00" y1="85.50" x2="176.00" y2="85.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="92.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="92.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

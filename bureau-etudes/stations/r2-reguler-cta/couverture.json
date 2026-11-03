@@ -1,0 +1,55 @@
+{
+  "cle": "r2-reguler-cta",
+  "code": "BE-R2",
+  "titre": "Réguler la CTA",
+  "ligne": "Régulation et énergie",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 31,
+    "chapitre": 7
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (critère : « La représentation des dispositifs de régulation des débits aérauliques de la centrale de traitement d'air permet d'optimiser les consommations d'énergie selon le scénario d'occupation »)"
+      },
+      {
+        "code": "CP7",
+        "libelle": "Réaliser l'étude d'une installation de ventilation d'un bâtiment tertiaire (savoir : « Connaissance du fonctionnement d'une régulation de débits d'air » ; débit de la salle de réunion sur la teneur en CO₂)"
+      },
+      {
+        "code": "CP4",
+        "libelle": "Réaliser l'étude d'une installation de ventilation mécanique contrôlée (volet maison du cadrage : régulation embarquée du caisson ; non traité dans cette station tertiaire, à confirmer)"
+      }
+    ],
+    "bts_fed": {
+      "option": "B et C",
+      "competences": [
+        {
+          "code": "C2-3",
+          "libelle": "Décrire le fonctionnement du système"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B11",
+          "libelle": "Régulation (à confirmer : code repris du cadrage C.3, ligne R2)"
+        },
+        {
+          "code": "B2-1",
+          "libelle": "À confirmer : code repris du cadrage C.3, ligne R2"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

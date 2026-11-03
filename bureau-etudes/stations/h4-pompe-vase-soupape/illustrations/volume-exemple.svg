@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 98.00" width="180mm" height="98.00mm" role="img">
+<title>Où est l’eau du bâtiment d’exemple</title>
+<rect width="180" height="98.00" fill="#fff"/>
+
+<g><text x="90" y="54" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 54)">inerWeb, by inerweb.fr</text><text x="40" y="29" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 29)">inerWeb, by inerweb.fr</text><text x="140" y="80" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 80)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Bâtiment d’exemple : 33,90 L d’eau</text>
+<text x="67.00" y="24.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Tubes</text>
+<rect x="70.00" y="18.00" width="24.00" height="8.00" fill="#e3edf7" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="97.00" y="24.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">6,90 L</text>
+<text x="67.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Radiateurs</text>
+<rect x="70.00" y="31.00" width="80.00" height="8.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="153.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">23,00 L</text>
+<text x="67.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Pompe à chaleur</text>
+<rect x="70.00" y="44.00" width="13.91" height="8.00" fill="#e3edf7" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="86.91" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">4,00 L</text>
+<text x="6.00" y="69.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Les radiateurs portent l’essentiel de l’eau.</text>
+<line x1="4.00" y1="87.50" x2="176.00" y2="87.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="94.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="94.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

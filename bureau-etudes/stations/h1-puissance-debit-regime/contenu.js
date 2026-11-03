@@ -368,6 +368,7 @@ BE.station({
       prompt: "Lisez l’exemple résolu et le piège, puis continuez.",
       render: () => exempleRegime()
         + BE.alerte("<strong>Piège.</strong> La station T5 utilise un autre ΔT, celui de l’air : θi − θe, l’écart entre l’intérieur et l’extérieur. Pour le débit d’eau, seul compte l’écart entre le départ et le retour de l’eau.")
+        + BE.schema("illustrations/schema-regime-eau.svg", `Schéma de principe d’une boucle d’eau. À gauche, le générateur. À droite, un radiateur, l’émetteur. Une flèche rouge part du générateur vers le radiateur : c’est le départ, à ${EX.reg.dep} °C. Une flèche bleue revient du radiateur vers le générateur : c’est le retour, à ${EX.reg.ret} °C. Sous le dessin : ΔT = départ − retour = ${EX.reg.dep} − ${EX.reg.ret} = ${EX.reg.dT} K, l’eau se refroidit de ${EX.reg.dT} K en traversant l’émetteur.`, "Le départ est l’eau qui quitte le générateur, le retour celle qui revient : leur écart est ΔT.")
     }),
 
     BE.ecran({
@@ -419,6 +420,7 @@ BE.station({
       prompt: "Comparez les lignes du tableau, puis lisez le piège.",
       render: () => tableau(["Régime", "ΔT (K)", "Diviseur 1,16 × ΔT", `Débit pour ${EX.rad.P} W (L/h)`], EX.dtTable.map(x => [x.reg, x.dT, x.div, x.q]), "Le même radiateur à quatre régimes (valeurs d’exercice)")
         + BE.alerte("<strong>Piège.</strong> Comparer deux régimes par leur température de départ : 45/40 et 45/35 partent tous deux à 45 °C, et le second demande un débit deux fois plus petit.")
+        + BE.schema("illustrations/schema-regimes-debit.svg", `Schéma de principe en quatre barres horizontales, pour un émetteur de ${EX.rad.P} W. ${EX.dtTable.map(x => `Régime ${x.reg}, ΔT ${x.dT} K : ${x.q} L/h`).join(". ")}. Plus ΔT est grand, plus la barre est courte : un ΔT deux fois plus grand donne un débit deux fois plus petit.`, "À puissance égale, plus l’écart de température est grand, plus le débit est petit.")
     }),
 
     BE.ecran({
@@ -448,6 +450,7 @@ BE.station({
       ], "Puissance des émetteurs du bâtiment d’exemple")
         + BE.renvoi(`Puissance de T5 avant l’arrondi : ${EX.Pav} W ; somme des émetteurs : ${EX.Ptot} W. L’écart vient des arrondis de chaque ligne.`)
         + BE.alerte("<strong>Piège.</strong> Sans la relance, chaque émetteur est trop petit pour remonter sa pièce le matin, et le circuit ne transporte plus la puissance de la pompe à chaleur.")
+        + BE.schema("illustrations/schema-puissance-emetteur.svg", `Schéma de principe en trois barres horizontales, une par local du bâtiment d’exemple. Chaque barre a une grande part bleu pâle, le Φ du local, et une petite part orange, la relance de ${EX.relPc} %. ${EX.locaux.map(l => `${l.nom} : ${l.phi} + ${l.rel} = ${l.P} W`).join(". ")}. La somme des émetteurs est de ${EX.Ptot} W.`, "La puissance de l’émetteur est le Φ du local plus sa part de relance.")
     }),
 
     BE.ecran({
@@ -492,6 +495,7 @@ BE.station({
       text: `En climatisation par eau glacée, l’eau part froide et revient réchauffée : elle prend la chaleur de l’air dans une batterie froide ou un ventilo-convecteur. Le régime s’écrit de la même façon, départ puis retour, par exemple ${EX.glacee.dep}/${EX.glacee.ret}, valeur d’exercice. ΔT se compte alors retour moins départ. La formule ne change pas. La maison du projet n’a pas de climatisation (CCTP, page 4) : la station F5 traite le circuit d’eau glacée.`,
       prompt: "Lisez l’exemple résolu, puis continuez.",
       render: () => BE.exemple({ text: `Batterie froide de ${EX.glacee.P} W, régime ${EX.glacee.dep}/${EX.glacee.ret}`, answer: `ΔT = ${EX.glacee.ret} − ${EX.glacee.dep} = ${EX.glacee.dT} K ; qv = ${EX.glacee.P} ÷ ${EX.glacee.div} = ${EX.glacee.q} L/h`, why: "La température de retour est la plus haute : on la met en premier pour que ΔT reste positif." })
+        + BE.schema("illustrations/schema-eau-glacee.svg", `Schéma de principe d’une boucle d’eau glacée. À gauche, le groupe d’eau glacée. À droite, une batterie froide. Une flèche bleue va du groupe vers la batterie : le départ, à ${EX.glacee.dep} °C. Une flèche orange revient de la batterie vers le groupe : le retour, à ${EX.glacee.ret} °C. L’eau prend la chaleur de l’air. Sous le dessin : ΔT = retour − départ = ${EX.glacee.ret} − ${EX.glacee.dep} = ${EX.glacee.dT} K ; batterie de ${EX.glacee.P} W : ${EX.glacee.P} ÷ ${EX.glacee.div} = ${EX.glacee.q} L/h.`, "En eau glacée, l’eau part froide et revient réchauffée par l’air.")
     }),
 
     BE.ecran({

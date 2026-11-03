@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -24.0 48.0 58.0" width="48" height="58">
+<!-- intercamb-placas — converti de intercamb-placas.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-24.0" width="48.0" height="58.0" fill="#ffffff"/>
+<line x1="6" y1="-5" x2="6" y2="14" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="10" y1="-5.83" x2="10" y2="-10.16" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-16" y="-5" width="30" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="20.14" x2="-10" y2="15.87" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="black" stroke-width="1" fill="none"/>
+</svg>

@@ -1,0 +1,63 @@
+{
+  "numero": 32,
+  "titre": "Lire un synoptique de supervision : points, consignes, alarmes",
+  "ligne": "Régulation et énergie",
+  "code": "BE-R3",
+  "quand": "Après la régulation de la CTA (station R2), avant l’énergie sur l’année (station R4). Vous avez le CCTP du bâtiment de bureaux, lot 6. Vous obtenez la liste des points classés, la lecture d’un synoptique et les anomalies qu’il montre.",
+  "methode": [
+    "La chaîne : la sonde mesure (acquérir), l’automate compare à la consigne et commande (traiter), le poste de supervision affiche, horodate et alarme (communiquer).",
+    "Cinq sortes de points : mesure, état, commande, alarme, consigne.",
+    "Mesure : entrée analogique. État et alarme : entrées tout ou rien. Commande à deux positions : sortie tout ou rien ; commande de 0 à 100 % : sortie analogique. Consigne : logiciel.",
+    "Compter : chaque élément de la liste du lot 6 du CCTP, séparé par une virgule, est un point ; un équipement « par local » se compte une fois par local.",
+    "Une anomalie se lit dans un écart : commande et état différents, mesure loin de sa consigne, mode qui ne suit pas les horaires, alarme active.",
+    "Une alarme s’acquitte à l’écran ; elle disparaît quand la cause est traitée ; l’historique garde les trois dates.",
+    "La supervision lit et alarme : l’automate de chaque équipement régule et protège sans elle."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Liste des points",
+      "valeur": "lot 6, par équipement",
+      "source": "CCTP tertiaire, page 4 (valeurs d’exercice)"
+    },
+    {
+      "grandeur": "Consignes",
+      "valeur": "soufflage 19 °C l’hiver, 17 °C l’été ; CO₂ 1 000 ppm ; départs 7 °C et 45 °C",
+      "source": "CCTP tertiaire, pages 3 et 4"
+    },
+    {
+      "grandeur": "Horaires",
+      "valeur": "lundi au vendredi, 7 h 30 à 19 h",
+      "source": "CCTP tertiaire, page 2 (occupation), repris par le lot 6"
+    },
+    {
+      "grandeur": "Commandes analogiques",
+      "valeur": "vitesse des ventilateurs, vannes des deux batteries, registre de la salle",
+      "source": "CCTP, pages 2 et 3 ; vannes modulantes : donnée de l’exercice"
+    },
+    {
+      "grandeur": "Écart à signaler",
+      "valeur": "plus de 2 K entre une température et sa consigne",
+      "source": "Donnée de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "La CTA du bâtiment d’exemple : 16 points au lot 6 du CCTP.",
+    "lignes": [
+      "4 mesures, 2 états, 5 commandes, 3 alarmes, 2 consignes.",
+      "Entrées : 5 tout ou rien (états et alarmes), 4 analogiques (mesures). Sorties : 1 tout ou rien (marche et arrêt), 4 analogiques (vitesse, deux vannes, registre). 2 logiciel (consignes).",
+      "Synoptique, Lundi 10 h 15, hiver : soufflage 18,8 °C pour 19,0 °C, aucune alarme, ventilateurs commandés et en marche : rien à signaler."
+    ],
+    "resultat": "16 points : 5 E TOR, 4 E ANA, 1 S TOR, 4 S ANA, 2 logiciel"
+  },
+  "pieges": [
+    "Prendre une consigne pour une mesure : la teneur en CO₂ apparaît deux fois, mesurée par la sonde et réglée à 1 000 ppm.",
+    "Prendre un état pour une commande : la commande demande la marche, l’état dit si l’appareil tourne ; le défaut se lit dans l’écart.",
+    "Acquitter une alarme ne la répare pas : elle reste active tant que la cause est là."
+  ],
+  "sources": [
+    "Liste des points, consignes, horaires : CCTP tertiaire du réseau, pages 2 à 4 ; valeurs des synoptiques : données de l’exercice.",
+    "Chaîne d’information (acquérir, traiter, communiquer) : cours inerWeb « La chaîne d’énergie et d’information ».",
+    "Stations en correspondance : BE-R2 (régulation de la CTA), BE-R4 (énergie sur l’année), Plan CVC-R 5 (synoptique de régulation)."
+  ],
+  "calculette": null
+}

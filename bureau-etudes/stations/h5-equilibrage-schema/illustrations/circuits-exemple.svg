@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110.00" width="180mm" height="110.00mm" role="img">
+<title>Les circuits du bâtiment d’exemple et ce qu’il faut dissiper</title>
+<rect width="180" height="110.00" fill="#fff"/>
+
+<g><text x="90" y="61" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 61)">inerWeb, by inerweb.fr</text><text x="40" y="33" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 33)">inerWeb, by inerweb.fr</text><text x="140" y="90" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 90)">inerWeb, by inerweb.fr</text></g>
+<text x="44.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Perte de charge du circuit (Pa)</text>
+<text x="41.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bureau</text>
+<rect x="44.00" y="16.00" width="84.00" height="8.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="46.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">7969</text>
+<text x="131.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">grand ouvert</text>
+<text x="41.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Réunion 1</text>
+<rect x="44.00" y="29.00" width="58.80" height="8.00" fill="#e3edf7" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="102.80" y="29.00" width="25.20" height="8.00" fill="#ffe1d3" stroke="#ff6b35" stroke-width="0.4" stroke-dasharray="1.2 0.8"/>
+<text x="46.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5578</text>
+<text x="131.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">2391</text>
+<text x="41.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Réunion 2</text>
+<rect x="44.00" y="42.00" width="71.45" height="8.00" fill="#e3edf7" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="115.45" y="42.00" width="12.55" height="8.00" fill="#ffe1d3" stroke="#ff6b35" stroke-width="0.4" stroke-dasharray="1.2 0.8"/>
+<text x="46.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">6778</text>
+<text x="131.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">1191</text>
+<text x="41.00" y="61.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Sanitaires</text>
+<rect x="44.00" y="55.00" width="25.39" height="8.00" fill="#e3edf7" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="69.39" y="55.00" width="58.61" height="8.00" fill="#ffe1d3" stroke="#ff6b35" stroke-width="0.4" stroke-dasharray="1.2 0.8"/>
+<text x="46.00" y="61.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">2409</text>
+<text x="131.00" y="61.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">5560</text>
+<rect x="44.00" y="71.00" width="8.00" height="5.00" fill="#ffe1d3" stroke="#ff6b35" stroke-width="0.4" stroke-dasharray="1.2 0.8"/>
+<text x="55.00" y="75.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">à dissiper par le té de réglage du circuit</text>
+<text x="6.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pertes de charge de la station H3, en pascals.</text>
+<text x="6.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Le bureau est le plus défavorisé.</text>
+<line x1="4.00" y1="99.50" x2="176.00" y2="99.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bâtiment d’exemple</text>
+</svg>

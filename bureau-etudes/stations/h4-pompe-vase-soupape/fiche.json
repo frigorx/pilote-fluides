@@ -1,0 +1,70 @@
+{
+  "numero": 22,
+  "titre": "Choisir la pompe, le vase d’expansion et la soupape",
+  "ligne": "Hydraulique",
+  "code": "BE-H4",
+  "quand": "Après le réseau d’eau (station H3), avant l’équilibrage (station H5). Vous avez le débit du circuit et sa hauteur manométrique, les tubes et les radiateurs. Vous obtenez la vitesse de la pompe et son point de fonctionnement, sa puissance, le volume d’eau, le vase, les pressions de gonflage et de remplissage, la soupape.",
+  "methode": [
+    "Courbe du réseau : K = H ÷ Q² au point demandé (Q en m³/h, H en m), puis H = K × Q² pour quelques débits, tracée sur le graphique de la pompe.",
+    "Point de fonctionnement : croisement de la courbe du réseau et de la courbe d’une vitesse. On retient la plus petite vitesse qui donne au moins le débit demandé.",
+    "Puissance absorbée : lue sur la courbe de puissance de la vitesse retenue, au débit du point. Puissance transmise à l’eau (W) = 990 × 9,81 × (Q ÷ 3 600) × H ; rendement = transmise ÷ absorbée.",
+    "Volume d’eau (L) = Σ S (mm²) × longueur aller-retour (m) ÷ 1 000 + radiateurs (L par mètre) + générateur.",
+    "Volume de dilatation Ve = e × volume d’eau, e lu à la température de départ (table depuis 10 °C).",
+    "Hauteur statique Hs = du raccord du vase au haut du radiateur le plus haut. Gonflage Pg = Hs ÷ 10 (bar), par pas de 0,5 bar.",
+    "Volume minimal du vase Vn = Ve × (3 + 1) ÷ (3 − Pg), pressions absolues ; puis le premier vase de la série au-dessus.",
+    "Remplissage au manomètre = Hs ÷ 10 + 0,5 bar. Soupape de 3 bar si remplissage + 2 bar ≤ 3 bar ; en sortie de générateur, sans vanne d’isolement."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Pompe de l’exercice",
+      "valeur": "trois vitesses, courbes de hauteur et de puissance absorbée (graphique de la station)",
+      "source": "Donnée de l’exercice (aucun fabricant)"
+    },
+    {
+      "grandeur": "Dilatation de l’eau depuis 10 °C",
+      "valeur": "40 °C : 0,75 % ; 45 °C : 0,96 % ; 50 °C : 1,18 % ; 55 °C : 1,42 % ; 60 °C : 1,68 % ; 70 °C : 2,24 % ; 80 °C : 2,87 %",
+      "source": "Donnée de l’exercice ; recoupée par les règles Th-Bât 2017, Matériaux, § 2.9.8, p. 29"
+    },
+    {
+      "grandeur": "Contenances",
+      "valeur": "radiateurs 5,0 L par mètre ; pompe à chaleur 4,0 L (exemple), 5,0 L (maison)",
+      "source": "Données de l’exercice"
+    },
+    {
+      "grandeur": "Vases de la série",
+      "valeur": "8 L, 12 L, 18 L, 25 L, 35 L, 50 L, 80 L",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Soupape, gonflage, remplissage",
+      "valeur": "soupape 3 bar ; surpression du chauffage 2 bar (petit vase) ; gonflage Hs ÷ 10 par pas de 0,5 bar ; remplissage Hs ÷ 10 + 0,5 bar",
+      "source": "Fiche n° 28 « Pression et vase d’expansion », § 1-4, 2-4 et 3 (fonds du professeur)"
+    },
+    {
+      "grandeur": "Masse volumique de l’eau",
+      "valeur": "990 kg/m³ à 40 °C ; 1 000 à 10 °C ; 970 à 80 °C",
+      "source": "Règles Th-Bât 2017, fascicule Matériaux, § 2.9.8, p. 29"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : point demandé 0,30 m³/h et 1,64 m (station H3) ; 33,90 L d’eau ; départ à 50 °C ; plain-pied, haut des radiateurs 0,45 m au-dessus du vase.",
+    "lignes": [
+      "K = 1,64 ÷ 0,30² = 18,22 ; la courbe du réseau coupe V1 à 0,33 m³/h et 1,94 m ; 12 W absorbés ; 1,7 W transmis à l’eau, rendement 14 %.",
+      "Volume : tubes 6,90 L + radiateurs 23,00 L + pompe à chaleur 4,00 L = 33,90 L.",
+      "Ve = 33,90 × 1,18 ÷ 100 = 0,40 L ; Pg = 0,45 ÷ 10 = 0,045 bar, soit 0,5 bar ; Vn = 0,40 × 4 ÷ (3 − 0,5) = 0,64 L.",
+      "Remplissage 0,55 bar ; 0,55 + 2 = 2,55 bar ≤ 3 bar : soupape de 3 bar."
+    ],
+    "resultat": "pompe V1 ; vase de 8 L gonflé à 0,5 bar ; remplissage 0,55 bar ; soupape 3 bar"
+  },
+  "pieges": [
+    "Recopier le débit demandé comme point de fonctionnement : le point est au croisement des deux courbes.",
+    "Mettre les pressions du manomètre dans la formule du vase : la loi des gaz demande les pressions absolues, + 1 bar.",
+    "Oublier une partie de l’eau : le générateur, les radiateurs, ou le retour des tubes."
+  ],
+  "sources": [
+    "Point demandé, tubes : station BE-H3 ; radiateurs : station BE-H2 ; altitude de l’étage : plans de la maison.",
+    "Point de fonctionnement et puissance : cours « 7 Pompes » et « Calcul de la hauteur manométrique totale » du fonds ; vase, soupape, remplissage : fiche n° 28 « Pression et vase d’expansion ».",
+    "Stations en correspondance : BE-H3 (réseau), BE-H5 (équilibrage), HydroMétro « Circulateur », « Vase d’expansion », « Sécurité »."
+  ],
+  "calculette": null
+}

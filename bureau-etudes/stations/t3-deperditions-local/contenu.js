@@ -477,7 +477,8 @@ BE.station({
       id: "d-ou-viennent-les-donnees", dossier: "prise", kicker: "Prise en main, 2", title: "D’où viennent les données", level: "comprendre",
       text: "Un tableau de déperditions rassemble des données de plusieurs origines. Les surfaces viennent de votre relevé de la station T1. Les coefficients U viennent de vos calculs de la station T2, ou du CCTP quand il les donne directement : Uw, Ud et Ue. Les températures de calcul (θi à l’intérieur, θe à l’extérieur) et les locaux non chauffés viennent de la page 3 du CCTP. Vous reprenez donc vos propres résultats : une erreur de T1 ou de T2 se retrouve dans les déperditions. Vérifiez-les d’abord à la fourchette de chaque station.",
       prompt: "Lisez le tableau des origines, puis continuez.",
-      render: () => tableau(["Donnée", "D’où elle vient", "Où la lire"], [
+      render: () => BE.schema("illustrations/schema-d-ou-viennent.svg", "Schéma de principe : quatre cases à gauche, une flèche orange de chacune vers une grande case à droite, le tableau de déperditions d’une pièce. Votre relevé de T1 donne les surfaces A et Aiu. Votre calcul de T2 donne les U des parois. Le CCTP donne Uw, Ud, Ue, θi, θe et Aue. Les règles Th-Bât donnent b et Uv,ue.", "Les quatre origines des données du tableau d’une pièce.")
+        + tableau(["Donnée", "D’où elle vient", "Où la lire"], [
         ["Surface nette d’un mur, surface d’une baie, surface habitable", "Votre relevé", "Station T1, votre feuille"],
         ["Aiu d’un local non chauffé", "Votre relevé", "Station T1 : surface brute des murs sur le local non chauffé, ou surface du plafond sous comble"],
         ["U d’une paroi opaque", "Votre calcul", "Station T2, votre feuille"],
@@ -493,7 +494,8 @@ BE.station({
       id: "ecart-de-temperature", dossier: "methode", kicker: "La méthode, 1", title: "L’écart de température ΔT", level: "comprendre",
       text: "Une paroi laisse passer la chaleur parce que ses deux faces n’ont pas la même température. L’écart de température ΔT est la température intérieure θi moins la température extérieure θe, en kelvins : un écart de 1 K vaut un écart de 1 °C. θe est la température extérieure de base, la température froide retenue pour le lieu avec laquelle on calcule. Elle peut être négative : on retranche alors un nombre négatif. Pour la maison, les deux températures se lisent au CCTP, page 3 ; ce sont des valeurs d’exercice. L’exemple qui suit est celui du bureau d’exemple, avec 19 °C et −7 °C.",
       prompt: "Lisez l’exemple résolu et le piège, puis continuez.",
-      render: () => BE.exemple({ text: `Bureau d’exemple : θi = ${EX.T.ti} °C et θe = ${EX.T.te} °C, valeurs d’exercice`, answer: `ΔT = ${EX.T.ti} − (${EX.T.te}) = ${EX.T.dT} K`, why: "Retrancher −7 revient à ajouter 7. Le résultat s’écrit en kelvins." })
+      render: () => BE.schema("illustrations/schema-ecart-temperature.svg", "Schéma de principe : une échelle verticale de températures. En haut, à 19 °C, la température intérieure θi. En bas, à −7 °C, la température extérieure θe. Une flèche orange à double sens relie les deux niveaux et porte l’écart ΔT = 19 − (−7) = 26 K. Une note rappelle que retrancher −7 revient à ajouter 7, et qu’un écart de 1 K vaut un écart de 1 °C.", "ΔT est la distance entre θi et θe sur l’échelle des températures.")
+        + BE.exemple({ text: `Bureau d’exemple : θi = ${EX.T.ti} °C et θe = ${EX.T.te} °C, valeurs d’exercice`, answer: `ΔT = ${EX.T.ti} − (${EX.T.te}) = ${EX.T.dT} K`, why: "Retrancher −7 revient à ajouter 7. Le résultat s’écrit en kelvins." })
         + BE.alerte(`<strong>Piège.</strong> Écrire ${EX.T.ti} − 7 donne ${EX.T.faux} K au lieu de ${EX.T.dT} K : toute la déperdition en est réduite d’autant.`)
     }),
 
@@ -501,7 +503,8 @@ BE.station({
       id: "deperdition-paroi-exterieure", dossier: "methode", kicker: "La méthode, 2", title: "La déperdition d’une paroi sur l’extérieur", level: "comprendre",
       text: "La déperdition Φ d’une paroi sur l’extérieur se calcule par Φ = U × A × ΔT. U se note en W/(m².K), A en m², ΔT en K, donc Φ en W. Pour un mur, A est la surface nette : la surface brute moins les baies, relevée à la station T1. Une baie est une ouverture dans un mur : fenêtre, porte-fenêtre ou porte. Chaque baie se calcule à part, avec la surface de son ouverture et son propre coefficient : Uw pour une fenêtre, Ud pour une porte, lus au CCTP.",
       prompt: "Lisez les deux exemples résolus, puis continuez.",
-      render: () => tableau(["Formule", "Unités"], [["Φ = U × A × ΔT", "W = W/(m².K) × m² × K"]])
+      render: () => BE.schema("illustrations/schema-paroi-phi.svg", "Schéma de principe : un mur vu en coupe, avec le dedans à 19 °C à gauche et le dehors à −7 °C à droite. Trois flèches orange le traversent de gauche à droite : c’est le flux de chaleur Φ. En dessous, quatre cases se suivent : U = 0,31 W/(m².K), multiplié par A = 8,58 m², multiplié par ΔT = 26 K, égale Φ = 69 W. C’est le mur MB du bureau d’exemple.", "Φ = U × A × ΔT : la chaleur traverse le mur du chaud vers le froid.")
+        + tableau(["Formule", "Unités"], [["Φ = U × A × ΔT", "W = W/(m².K) × m² × K"]])
         + exemplesParoi()
         + BE.renvoi("La somme des U × A de toutes les parois est la base de la formule 3 des règles Th-Bât (fascicule Généralités, § 4.3, p. 16). Elle prend pour les fenêtres et les portes les dimensions de l’ouverture.")
     }),
@@ -621,7 +624,8 @@ BE.station({
       id: "tableau-d-une-piece", dossier: "methode", kicker: "La méthode, 6", title: "Le tableau des déperditions d’une pièce", level: "comprendre",
       text: "Pour une pièce, vous faites un tableau d’une ligne par paroi qui donne sur l’extérieur, sur le sol, sur un local non chauffé ou sous un comble, et d’une ligne par baie. Chaque ligne donne U × A × b en W/K, au centième. La somme des lignes est H, le coefficient de déperdition de la pièce par ses parois, en W/K. La puissance perdue est Φ = H × ΔT, en W. Le plancher intermédiaire et les cloisons entre pièces chauffées ne comptent pas : leurs deux faces ont la même température.",
       prompt: "Lisez le tableau de ce qui compte, puis l’exemple de ligne.",
-      render: () => tableau(["Paroi de la pièce", "Elle compte ?", "Coefficient", "b"], [
+      render: () => BE.schema("illustrations/schema-ce-qui-compte.svg", "Schéma de principe : une maison en coupe, avec un comble sous le toit, deux niveaux de pièces chauffées et un garage non chauffé accolé à droite. Les parois qui comptent sont tracées en orange et numérotées : 1, le mur sur l’extérieur ; 2, le plancher bas sur le sol ; 3, le plafond sous le comble ; 4, le mur sur le garage non chauffé. Les parois qui ne comptent pas sont en tirets : 5, le plancher entre deux pièces chauffées ; 6, la cloison entre deux pièces chauffées.", "Une paroi compte quand elle sépare la pièce de l’extérieur, du sol, d’un local non chauffé ou d’un comble.")
+        + tableau(["Paroi de la pièce", "Elle compte ?", "Coefficient", "b"], [
         ["Mur sur l’extérieur", "oui", "U du mur", "1"],
         ["Fenêtre ou porte sur l’extérieur", "oui", "Uw ou Ud", "1"],
         ["Mur ou porte sur un local non chauffé", "oui", "U du mur ou Ud", "lu dans le tableau"],

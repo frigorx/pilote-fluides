@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 128.00" width="180mm" height="128.00mm" role="img">
+<title>Les symboles du synoptique</title>
+<rect width="180" height="128.00" fill="#fff"/>
+
+<g><text x="90" y="70" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 70)">inerWeb, by inerweb.fr</text><text x="40" y="38" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 38)">inerWeb, by inerweb.fr</text><text x="140" y="105" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 105)">inerWeb, by inerweb.fr</text></g>
+<g transform="translate(16.00 20.00) rotate(0) scale(0.55)"><line x1="-4.05" y1="-6.05" x2="3.95" y2="-14.05" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-10" y="-20" width="20" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-0.05" cy="-10.05" rx="1.00" ry="1.00" stroke="black" stroke-width="1" fill="black"/></g>
+<text x="34.00" y="15.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Registre</text>
+<g transform="translate(16.00 27.00) rotate(0) scale(0.28)"><polyline points="-10,-20 10,-10 -10,0 10,10 -10,20" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-10" y="-20" width="20" height="40" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/></g>
+<text x="34.00" y="28.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Filtre</text>
+<g transform="translate(9.00 34.50)"><svg x="0" y="0" width="14.00" height="11.00" viewBox="-16 -5 30 20" preserveAspectRatio="none" overflow="hidden"><line x1="6" y1="-5" x2="6" y2="14" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="10" y1="-5.83" x2="10" y2="-10.16" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-16" y="-5" width="30" height="20" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="20.14" x2="-10" y2="15.87" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="black" stroke-width="1" fill="none"/></svg></g>
+<text x="34.00" y="41.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Récupérateur à plaques</text>
+<g transform="translate(16.00 53.00) rotate(0) scale(0.28)"><line x1="-10" y1="-20" x2="10" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-10" y="-20" width="20" height="40" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/></g>
+<text x="34.00" y="54.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Batterie (BC chaude, BF froide)</text>
+<g transform="translate(13.20 66.00) rotate(0) scale(0.28)"><polygon points="10,-10 1,5 18,5" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-10" y="-20" width="40" height="40" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="10.00" cy="0.00" rx="10.00" ry="10.00" stroke="black" stroke-width="1" fill="none"/></g>
+<text x="34.00" y="67.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Ventilateur</text>
+<g transform="translate(16.00 79.00) rotate(0) scale(0.32)"><line x1="-20" y1="0" x2="20" y2="0" stroke="#000" stroke-width="1"/>
+<rect x="-10" y="-5" width="20" height="10" fill="white" stroke="#000" stroke-width="1"/>
+<polyline points="-10,10 -5,10 5,-10 10,-10" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="-20" cy="0" r="1.5" fill="#000"/>
+<circle cx="20" cy="0" r="1.5" fill="#000"/></g>
+<text x="34.00" y="80.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Sonde de température</text>
+<g transform="translate(20.00 94.00) rotate(0) scale(0.14)"><rect x="-46" y="-22" width="4" height="4" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-2.28" x2="47.05" y2="-2.28" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-49" y="-24" width="3" height="8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-11.06" x2="47.05" y2="-11.06" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-49" y1="-21" x2="-47" y2="-21" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-6.67" x2="47.05" y2="-6.67" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="2.1" x2="47.05" y2="2.1" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-49" y1="-19" x2="-47" y2="-19" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-39" y="5.39" width="3" height="3.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-17.63" x2="47.05" y2="-17.63" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-15.44" x2="47.05" y2="-15.44" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-19.83" x2="47.05" y2="-19.83" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-24.21" x2="47.05" y2="-24.21" stroke="black" stroke-width="0.4" fill="none"/>
+<rect x="-42.05" y="-34.08" width="89.09" height="39.48" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-0.09" x2="47.05" y2="-0.09" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-8.86" x2="47.05" y2="-8.86" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-34.08" x2="-1" y2="4.3" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-28.6" x2="47.05" y2="-28.6" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-13.25" x2="47.05" y2="-13.25" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-4.48" x2="47.05" y2="-4.48" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-26.41" x2="47.05" y2="-26.41" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-22" x2="47.05" y2="-22" stroke="black" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-30.79" x2="47.05" y2="-30.79" stroke="black" stroke-width="0.4" fill="none"/>
+<polyline points="7,-34.08 11,-37.37 37,-37.37 41,-34.08 40,-34.08" stroke="black" stroke-width="1" fill="none"/>
+<rect x="40" y="5.39" width="3" height="3.29" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-38" y="-28.6" width="11" height="6.58" rx="0" ry="0" stroke="black" stroke-width="0.4" fill="red"/>
+<rect x="-46" y="-2" width="4" height="4" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-49" y="-4" width="3" height="8" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-49" y1="-1" x2="-47" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-49" y1="1" x2="-47" y2="1" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-39,-15 -32,-15 -36,-16 -36,-14 -33,-15" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-31,0 -38,0 -33,-1 -33,1 -38,0" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-36,-24 -32,-27 -32,-23 -28,-27" stroke="blue" stroke-width="1" fill="none"/>
+<line x1="-30" y1="-25" x2="-28" y2="-27" stroke="blue" stroke-width="1" fill="none"/></g>
+<text x="34.00" y="93.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Groupe d’eau glacée</text>
+<g transform="translate(16.00 105.00) rotate(0) scale(0.2)"><ellipse cx="0.0" cy="0.0" rx="20.0" ry="20.0" fill="none" stroke="#000" stroke-width="1"/>
+<polygon points="0.24,-19.93 -2.25,-15 2.25,-15 4.16,-19.58 4.16,-19.46" fill="black" stroke="#000" stroke-width="1"/>
+<line x1="0" y1="20" x2="0" y2="24.5" stroke="#000" stroke-width="1"/>
+<line x1="0" y1="-20.4" x2="0" y2="-24.5" stroke="#000" stroke-width="1"/>
+<line x1="-20.5" y1="0" x2="-24.5" y2="0" stroke="#000" stroke-width="1"/>
+<circle cx="0" cy="-24" r="1.5" fill="#000"/>
+<circle cx="0" cy="24" r="1.5" fill="#000"/>
+<circle cx="-24" cy="0" r="1.5" fill="#000"/></g>
+<text x="34.00" y="106.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pompe</text>
+<line x1="4.00" y1="117.50" x2="176.00" y2="117.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="124.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="124.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Symboles du synoptique</text>
+</svg>

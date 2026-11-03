@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 575,
+  "total": 588,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2649,6 +2649,70 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "a4-ventilateur-caisson",
+      "titre": "BE-A4, Ventilateur, caisson",
+      "ligne": "Aéraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP4",
+        "CP7",
+        "CP10",
+        "A3",
+        "B4-2",
+        "A7",
+        "S5.2",
+        "C3-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/a4-ventilateur-caisson/",
+      "chemin": "bureau-etudes/stations/a4-ventilateur-caisson/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "a5-cta-composer",
+      "titre": "BE-A5, CTA 1 : composer",
+      "ligne": "Aéraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP10",
+        "A4",
+        "B2-2",
+        "C2-1",
+        "C2-3",
+        "C3-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/a5-cta-composer/",
+      "chemin": "bureau-etudes/stations/a5-cta-composer/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "a6-cta-selectionner",
+      "titre": "BE-A6, CTA 2 : sélectionner",
+      "ligne": "Aéraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP10",
+        "CP7",
+        "C3-2",
+        "B2-2",
+        "S10.6"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/a6-cta-selectionner/",
+      "chemin": "bureau-etudes/stations/a6-cta-selectionner/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "d0-dossier-projet",
       "titre": "BE-D0, Le dossier projet",
       "ligne": "Lire les plans",
@@ -2716,6 +2780,46 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "f1-besoin-systeme",
+      "titre": "BE-F1, Besoin et système",
+      "ligne": "Frigorifique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP9",
+        "CP10",
+        "C2-1",
+        "C2-3",
+        "C3-2",
+        "B2-2",
+        "B5"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/f1-besoin-systeme/",
+      "chemin": "bureau-etudes/stations/f1-besoin-systeme/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "f2-cycle-diagramme",
+      "titre": "BE-F2, Le cycle sur le diagramme",
+      "ligne": "Frigorifique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP9",
+        "A5",
+        "B5"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/f2-cycle-diagramme/",
+      "chemin": "bureau-etudes/stations/f2-cycle-diagramme/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "h1-puissance-debit-regime",
       "titre": "BE-H1, Puissance et débit",
       "ligne": "Hydraulique",
@@ -2776,6 +2880,50 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "h4-pompe-vase-soupape",
+      "titre": "BE-H4, Pompe, vase, soupape",
+      "ligne": "Hydraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP9",
+        "CP10",
+        "CP3",
+        "C3-1",
+        "A3",
+        "B4-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/h4-pompe-vase-soupape/",
+      "chemin": "bureau-etudes/stations/h4-pompe-vase-soupape/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "h5-equilibrage-schema",
+      "titre": "BE-H5, Équilibrage, schéma",
+      "ligne": "Hydraulique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP10",
+        "CP9",
+        "CP3",
+        "C4-1",
+        "C2-1",
+        "B4-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/h5-equilibrage-schema/",
+      "chemin": "bureau-etudes/stations/h5-equilibrage-schema/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "h6-eau-chaude-sanitaire",
       "titre": "BE-H6, L’eau chaude sanitaire",
       "ligne": "Hydraulique",
@@ -2828,6 +2976,87 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/p5b-coupes-et-sections/",
       "chemin": "bureau-etudes/stations/p5b-coupes-et-sections/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "r1-reguler-chauffage",
+      "titre": "BE-R1, Réguler le chauffage",
+      "ligne": "Régulation et énergie",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "C2-2",
+        "C2-3",
+        "B11"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/r1-reguler-chauffage/",
+      "chemin": "bureau-etudes/stations/r1-reguler-chauffage/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "r2-reguler-cta",
+      "titre": "BE-R2, Réguler la CTA",
+      "ligne": "Régulation et énergie",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP10",
+        "CP7",
+        "CP4",
+        "C2-3",
+        "B11",
+        "B2-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/r2-reguler-cta/",
+      "chemin": "bureau-etudes/stations/r2-reguler-cta/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "r3-supervision",
+      "titre": "BE-R3, La supervision",
+      "ligne": "Régulation et énergie",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP10",
+        "C2-2",
+        "B8-1"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/r3-supervision/",
+      "chemin": "bureau-etudes/stations/r3-supervision/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "r4-energie-annee",
+      "titre": "BE-R4, L’énergie sur l’année",
+      "ligne": "Régulation et énergie",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP5",
+        "CP8",
+        "CP10",
+        "C9-1",
+        "A2-4",
+        "S5.1",
+        "S9"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/r4-energie-annee/",
+      "chemin": "bureau-etudes/stations/r4-energie-annee/"
     },
     {
       "reseau": "Bureau d'études",
@@ -2957,6 +3186,44 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/t7-ete-apports-internes/",
       "chemin": "bureau-etudes/stations/t7-ete-apports-internes/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t8-ete-air-neuf-synthese",
+      "titre": "BE-T8, Été 3 : la synthèse",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP8",
+        "C3-3",
+        "A2-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t8-ete-air-neuf-synthese/",
+      "chemin": "bureau-etudes/stations/t8-ete-air-neuf-synthese/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "t9-machine-puissance-choix",
+      "titre": "BE-T9, La machine",
+      "ligne": "Thermique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP6",
+        "CP9",
+        "CP10",
+        "C3-1",
+        "C3-2"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/t9-machine-puissance-choix/",
+      "chemin": "bureau-etudes/stations/t9-machine-puissance-choix/"
     },
     {
       "reseau": "HydroMétro",
@@ -7451,7 +7718,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7463,7 +7730,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7475,7 +7742,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7487,7 +7754,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7499,7 +7766,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7511,7 +7778,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be-pub3\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

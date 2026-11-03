@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="180mm" height="120mm" role="img">
+<title>Le plan de l’appartement d’exemple : pièces principales, pièces de service et circulation</title>
+<rect width="180" height="120" fill="#fff"/>
+<g><text x="90" y="66" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 66)">inerWeb, by inerweb.fr</text><text x="35" y="36" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 36)">inerWeb, by inerweb.fr</text><text x="150" y="96" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 96)">inerWeb, by inerweb.fr</text></g>
+<rect x="6.00" y="8.00" width="72.00" height="38.00" fill="#e3eefa"/>
+<line x1="6.00" y1="8.00" x2="78.00" y2="8.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="78.00" y1="8.00" x2="78.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="78.00" y1="46.00" x2="6.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="6.00" y1="46.00" x2="6.00" y2="8.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="42.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Séjour</text>
+<text x="42.00" y="33.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">principale</text>
+<rect x="78.00" y="8.00" width="48.00" height="38.00" fill="#e3eefa"/>
+<line x1="78.00" y1="8.00" x2="126.00" y2="8.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="126.00" y1="8.00" x2="126.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="126.00" y1="46.00" x2="78.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="78.00" y1="46.00" x2="78.00" y2="8.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="102.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre A</text>
+<text x="102.00" y="33.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">principale</text>
+<rect x="126.00" y="8.00" width="48.00" height="38.00" fill="#e3eefa"/>
+<line x1="126.00" y1="8.00" x2="174.00" y2="8.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="174.00" y1="8.00" x2="174.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="174.00" y1="46.00" x2="126.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="126.00" y1="46.00" x2="126.00" y2="8.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="150.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Chambre B</text>
+<text x="150.00" y="33.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">principale</text>
+<rect x="6.00" y="46.00" width="56.00" height="36.00" fill="#ffe1d4"/>
+<line x1="6.00" y1="46.00" x2="62.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="62.00" y1="46.00" x2="62.00" y2="82.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="62.00" y1="82.00" x2="6.00" y2="82.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="6.00" y1="82.00" x2="6.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="34.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Cuisine</text>
+<text x="34.00" y="70.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">de service</text>
+<rect x="62.00" y="46.00" width="56.00" height="36.00" fill="#f1f1f1"/>
+<line x1="62.00" y1="46.00" x2="118.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="118.00" y1="46.00" x2="118.00" y2="82.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="118.00" y1="82.00" x2="62.00" y2="82.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="62.00" y1="82.00" x2="62.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="90.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Entrée</text>
+<text x="90.00" y="70.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">circulation</text>
+<rect x="118.00" y="46.00" width="56.00" height="36.00" fill="#ffe1d4"/>
+<line x1="118.00" y1="46.00" x2="174.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="174.00" y1="46.00" x2="174.00" y2="82.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="174.00" y1="82.00" x2="118.00" y2="82.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="118.00" y1="82.00" x2="118.00" y2="46.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="146.00" y="59.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Salle de bains</text>
+<text x="146.00" y="66.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">avec WC</text>
+<text x="146.00" y="74.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">de service</text>
+<rect x="6.00" y="88.80" width="5.00" height="5.00" fill="#e3eefa"/>
+<line x1="6.00" y1="88.80" x2="11.00" y2="88.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="11.00" y1="88.80" x2="11.00" y2="93.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="11.00" y1="93.80" x2="6.00" y2="93.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="93.80" x2="6.00" y2="88.80" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="14.00" y="93.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pièce principale</text>
+<rect x="6.00" y="95.80" width="5.00" height="5.00" fill="#ffe1d4"/>
+<line x1="6.00" y1="95.80" x2="11.00" y2="95.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="11.00" y1="95.80" x2="11.00" y2="100.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="11.00" y1="100.80" x2="6.00" y2="100.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="100.80" x2="6.00" y2="95.80" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="14.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pièce de service</text>
+<rect x="6.00" y="102.80" width="5.00" height="5.00" fill="#f1f1f1"/>
+<line x1="6.00" y1="102.80" x2="11.00" y2="102.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="11.00" y1="102.80" x2="11.00" y2="107.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="11.00" y1="107.80" x2="6.00" y2="107.80" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="107.80" x2="6.00" y2="102.80" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="14.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Circulation</text>
+<text x="174.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Pièces principales : 3</text>
+<text x="174.00" y="103.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">séjour, chambre A, chambre B</text>
+<line x1="4.00" y1="109.50" x2="176.00" y2="109.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="116.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="116.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

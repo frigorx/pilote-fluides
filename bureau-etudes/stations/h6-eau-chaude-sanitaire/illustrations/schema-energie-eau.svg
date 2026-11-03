@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132" width="180mm" height="132mm" role="img">
+<title>L’énergie pour chauffer l’eau : l’écart de 12 à 40 °C, puis V × 1,163 × ΔT</title>
+<rect width="180" height="132" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="35" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 40)">inerWeb, by inerweb.fr</text><text x="150" y="106" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 106)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Appartement d’exemple</text>
+<line x1="40.00" y1="16.00" x2="40.00" y2="84.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="37.00" y1="22.00" x2="43.00" y2="22.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="37.00" y1="76.00" x2="43.00" y2="76.00" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="34.00" y="23.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">40 °C</text>
+<text x="34.00" y="77.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">12 °C</text>
+<line x1="50.00" y1="22.00" x2="50.00" y2="76.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="50.00" y1="22.00" x2="53.00" y2="22.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="50.00" y1="76.00" x2="53.00" y2="76.00" stroke="#ff6b35" stroke-width="1.4"/>
+<text x="56.00" y="21.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Eau utilisée</text>
+<text x="56.00" y="77.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Eau froide du réseau</text>
+<text x="56.00" y="47.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">ΔT = 28 K</text>
+<text x="56.00" y="54.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">40 − 12</text>
+<rect x="118.00" y="22.00" width="58.00" height="11.00" fill="#f1f1f1"/>
+<line x1="118.00" y1="22.00" x2="176.00" y2="22.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="176.00" y1="22.00" x2="176.00" y2="33.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="176.00" y1="33.00" x2="118.00" y2="33.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.00" y1="33.00" x2="118.00" y2="22.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="147.00" y="29.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">V40 = 120 L</text>
+<rect x="118.00" y="37.00" width="58.00" height="11.00" fill="#f1f1f1"/>
+<line x1="118.00" y1="37.00" x2="176.00" y2="37.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="176.00" y1="37.00" x2="176.00" y2="48.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="176.00" y1="48.00" x2="118.00" y2="48.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.00" y1="48.00" x2="118.00" y2="37.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="147.00" y="44.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">× 1,163 Wh/(L.K)</text>
+<rect x="118.00" y="52.00" width="58.00" height="11.00" fill="#f1f1f1"/>
+<line x1="118.00" y1="52.00" x2="176.00" y2="52.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="176.00" y1="52.00" x2="176.00" y2="63.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="176.00" y1="63.00" x2="118.00" y2="63.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.00" y1="63.00" x2="118.00" y2="52.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="147.00" y="59.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">× ΔT = 28 K</text>
+<rect x="118.00" y="67.00" width="58.00" height="18.00" fill="#fff"/>
+<line x1="118.00" y1="67.00" x2="176.00" y2="67.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="176.00" y1="67.00" x2="176.00" y2="85.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="176.00" y1="85.00" x2="118.00" y2="85.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="118.00" y1="85.00" x2="118.00" y2="67.00" stroke="#ff6b35" stroke-width="0.9"/>
+<text x="147.00" y="75.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">E = 3 908 Wh</text>
+<text x="147.00" y="82.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">soit 3,9 kWh</text>
+<text x="90.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Piège : oublier l’eau froide, c’est compter 40 K</text>
+<text x="90.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">au lieu de 28 K, soit 43 % d’énergie en trop.</text>
+<line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

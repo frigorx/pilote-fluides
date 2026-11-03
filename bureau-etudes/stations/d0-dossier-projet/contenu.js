@@ -343,8 +343,9 @@ BE.station({
     BE.ecran({
       id: "dossier-pieces", dossier: "methode", kicker: "La méthode, 1", title: T.pieces, level: "comprendre",
       text: "Avant tout calcul, un bureau d’études ouvre le dossier du projet. L’architecte écrit les plans : le plan de masse (le terrain vu de dessus), les plans de niveau, les coupes (le bâtiment tranché verticalement) et les façades. Le CCTP décrit les travaux lot par lot : gros œuvre, menuiseries, chauffage, ventilation, électricité. Le tableau des menuiseries donne la taille de chaque fenêtre et de chaque porte. Le maître d’ouvrage, celui qui commande le bâtiment, fixe le programme : l’usage, l’occupation, les équipements voulus. Quand une maquette numérique existe, appelée BIM (de l’anglais Building Information Modeling), elle rassemble tout cela en trois dimensions.",
-      prompt: "Lisez le tableau des pièces du dossier, puis continuez.",
-      render: () => tableau(["Pièce du dossier", "Ce qu’elle contient", "Qui l’écrit"], [
+      prompt: "Regardez le schéma, lisez le tableau des pièces du dossier, puis continuez.",
+      render: () => BE.schema("illustrations/schema-vues-dossier.svg", "Schéma de principe. Un même bâtiment vu de quatre façons, dans quatre cadres. En haut à gauche, le plan de masse : un grand rectangle pour le terrain, un rectangle bleu plus petit pour le bâtiment, une flèche marquée N pour le nord, et un trait en dessous marqué rue. En haut à droite, le plan de niveau : un rectangle bleu cloisonné en trois pièces, vu de dessus. En bas à gauche, la coupe : le bâtiment tranché, avec son toit, deux murs gris, un plancher gris et, en pointillé, le plafond. En bas à droite, la façade : le mur bleu, le toit, deux fenêtres et une porte au milieu.", "Un même bâtiment, vu de dessus avec le plan de masse et le plan de niveau, de côté avec la coupe et la façade.")
+        + tableau(["Pièce du dossier", "Ce qu’elle contient", "Qui l’écrit"], [
         ["Plan de masse", "le terrain vu de dessus, le lieu, l’altitude, le nord", "l’architecte"],
         ["Plan de niveau", "les pièces, leurs surfaces, les murs et les baies", "l’architecte"],
         ["Coupe", "les niveaux, la hauteur sous plafond, le comble", "l’architecte"],
@@ -394,8 +395,9 @@ BE.station({
     BE.ecran({
       id: "plan-niveau-coupe", dossier: "methode", kicker: "La méthode, 3", title: T.plan, level: "comprendre",
       text: "Le plan de niveau montre un niveau du bâtiment vu de dessus : les murs, les pièces, les baies, et pour chaque pièce son nom et sa surface. La coupe tranche le bâtiment verticalement : elle montre les niveaux, la hauteur sous plafond (du sol fini au plafond) et les locaux voisins, comme un comble au-dessus du dernier étage. Un local non chauffé, par exemple un garage ou un comble, ne compte pas dans la surface habitable. Convention de cet exercice : la surface habitable est la somme des surfaces des pièces chauffées, lues sur les plans. Un palier percé d’une trémie d’escalier (l’ouverture du plancher où passe l’escalier) se lit « hors trémie » : on prend la surface écrite.",
-      prompt: "Lisez l’extrait de plan de niveau, puis l’exemple résolu.",
+      prompt: "Lisez l’extrait de plan de niveau, regardez le schéma, puis lisez l’exemple résolu.",
       render: () => EX.extraits.niveau
+        + BE.schema("illustrations/schema-niveau-coupe.svg", `Schéma de principe, dossier d’exemple. À gauche, un plan de niveau en trois rectangles : l’atelier, ${EX.pieces.atelier} m², en bleu ; le bureau, ${EX.pieces.bureau} m², en bleu ; le rangement, ${EX.pieces.rangement} m², en gris et marqué non chauffé. Dessous : pièces chauffées, ${EX.pieces.atelier} + ${EX.pieces.bureau} = ${EX.pieces.chauffee} m². À droite, une coupe du bâtiment : deux murs gris, un plancher gris, un plafond en pointillé et un toit au-dessus. Une double flèche orange entre le plancher et le plafond marque la hauteur sous plafond. Le comble, sous le toit, est non chauffé et hors surface habitable. En bas : seules les pièces chauffées comptent.`, "Le plan de niveau donne les surfaces, la coupe donne la hauteur sous plafond et le comble : seules les pièces chauffées comptent.")
         + BE.exemple({ text: `Dossier d’exemple : atelier ${EX.pieces.atelier} m², bureau ${EX.pieces.bureau} m², local de rangement non chauffé ${EX.pieces.rangement} m²`, answer: `${EX.pieces.atelier} + ${EX.pieces.bureau} = ${EX.pieces.chauffee} m²`, why: "Seules les pièces chauffées comptent : le local de rangement est écarté. L’atelier, qui n’est pas un logement, utilise la même somme sous le nom de surface chauffée." })
         + BE.alerte(`<strong>Piège.</strong> Ajouter le local non chauffé donne ${EX.pieces.tout} m² au lieu de ${EX.pieces.chauffee} m², soit ${EX.pieces.exces} % de trop.`)
         + BE.renvoi("Les volumes se calculent avec la hauteur sous plafond, à la station T1.")
@@ -404,8 +406,9 @@ BE.station({
     BE.ecran({
       id: "cctp", dossier: "methode", kicker: "La méthode, 4", title: T.cctp, level: "comprendre",
       text: "Le CCTP décrit ce que les entreprises construisent et installent, lot par lot : gros œuvre, menuiseries, chauffage, ventilation mécanique contrôlée (VMC), électricité. Pour la carte d’identité, vous y cherchez le chauffage, la ventilation, la climatisation et l’occupation de calcul. Un lot ne parle que de son métier : si la ventilation n’apparaît dans aucun lot, le dossier ne la donne pas. Les références citées (une loi, une norme, un DTU, c’est-à-dire un document technique unifié) sont de natures différentes.",
-      prompt: "Lisez l’extrait de CCTP, le tableau des mots du métier, puis les deux exemples résolus.",
+      prompt: "Lisez l’extrait de CCTP, regardez le schéma, lisez le tableau des mots du métier, puis les deux exemples résolus.",
       render: () => EX.extraits.cctp
+        + BE.schema("illustrations/schema-chauffage-vmc.svg", "Schéma de principe. Une maison en coupe, avec une pompe à chaleur air/eau posée dehors, à gauche, marquée générateur. Une flèche en pointillé amène l’air extérieur à la pompe. Une flèche orange, marquée eau chaude, traverse le mur jusqu’à un radiateur dans la maison, marqué émetteur. En haut de la maison, une flèche en pointillé fait entrer l’air par une entrée d’air. Une flèche orange monte et sort par le toit : extraction, depuis la cuisine, la salle d’eau et les WC.", "Le chauffage : un générateur et des émetteurs reliés par l’eau chaude. La ventilation : l’air entre par les entrées d’air et sort par les pièces de service.")
         + tableau(["Mot du CCTP", "Ce que cela veut dire"], [
           ["Générateur", "L’appareil qui produit la chaleur ou l’eau chaude."],
           ["Émetteurs", "Les appareils qui donnent la chaleur aux pièces, comme les radiateurs ou un plancher chauffant."],
@@ -438,8 +441,9 @@ BE.station({
     BE.ecran({
       id: "hypothese", dossier: "methode", kicker: "La méthode, 5", title: T.hypothese, level: "comprendre",
       text: "Un dossier ne dit pas tout. Quand il manque une donnée dont vous avez besoin, vous ne l’inventez pas en silence : vous écrivez une hypothèse en trois parties. La première dit ce que vous supposez, la deuxième la raison tirée du dossier, la troisième la personne qui confirmera. La forme est : « Je suppose que… parce que… ; à confirmer auprès de… ». Au niveau 2, une donnée absente donne aussi une question au maître d’ouvrage. Elle nomme la donnée, dit à quoi elle sert et se répond en une phrase.",
-      prompt: "Lisez les deux exemples résolus et le piège, puis continuez.",
-      render: () => exempleHypothese()
+      prompt: "Regardez le schéma, lisez les deux exemples résolus et le piège, puis continuez.",
+      render: () => BE.schema("illustrations/schema-hypothese.svg", `Schéma de principe. Titre : une donnée manque, la ventilation du bureau. Trois cases reliées par des flèches, de gauche à droite. Première case : Je suppose, ${EX.hyp.suppose}. Deuxième case : parce que, ${EX.hyp.parce}. Troisième case, en orange pâle : à confirmer auprès de, ${EX.hyp.confirmer}. En bas : Je suppose… parce que… ; à confirmer auprès de…`, "Une hypothèse a trois parties : ce que je suppose, la raison tirée du dossier, la personne qui confirmera.")
+        + exempleHypothese()
         + BE.exemple({ text: "Même dossier, la question au maître d’ouvrage", answer: EX.questionMO, why: "La question nomme la donnée absente et dit à quoi elle sert." })
         + BE.alerte("<strong>Piège.</strong> Écrire « la ventilation est mécanique » sans dire que c’est une supposition donne au lecteur une fausse certitude. Il calcule ensuite sur une donnée qu’il croit sûre.")
     }),
@@ -464,8 +468,9 @@ BE.station({
     BE.ecran({
       id: "regle-du-sixieme", dossier: "methode", kicker: "La méthode, 6", title: T.sixieme, level: "comprendre",
       text: "Pour un logement neuf soumis à la réglementation thermique 2012 (RT 2012), l’arrêté du 26 octobre 2010 demande, à l’article 20, que la surface totale des baies, mesurée en tableau, atteigne au moins le sixième de la surface habitable. Une baie est une ouverture dans un mur. Ici, elle désigne les fenêtres et les portes-fenêtres, et les portes pleines sont exclues du total. Mesurée en tableau signifie que l’on prend la largeur et la hauteur de l’ouverture, comme le tableau des menuiseries les donne. Le niveau 2 contrôle cette règle sur la maison du projet.",
-      prompt: "Lisez le tableau et l’exemple résolu, puis continuez.",
+      prompt: "Lisez le tableau, regardez le schéma, lisez l’exemple résolu, puis continuez.",
       render: () => tableau(["Repère", "Type", "Largeur (m)", "Hauteur (m)", "Surface (m²)", "Compte dans le total ?"], EX.six.lignes, "Baies du logement d’exemple, lues au tableau des menuiseries")
+        + BE.schema("illustrations/schema-regle-sixieme.svg", `Schéma de principe, logement d’exemple. Une barre représente la surface habitable, ${EX.six.hab} m², coupée en six cases égales ; la première, en bleu, porte ${EX.six.sixieme} m². Dessous : un sixième, ${EX.six.hab} ÷ 6 = ${EX.six.sixieme} m². Plus bas, un rectangle représente les baies vitrées, ${EX.six.total} m² : il est un peu plus court que la première case, et un trait orange en pointillé marque la longueur du sixième. À côté : ${EX.six.total} < ${EX.six.sixieme}, il manque ${EX.six.manque} m². En bas, la règle : le total des baies doit atteindre au moins le sixième de la surface habitable.`, "Le total des baies se compare au sixième de la surface habitable.")
         + BE.exemple({ text: `Logement d’exemple : surface habitable ${EX.six.hab} m², baies vitrées ${EX.six.total} m²`, answer: `${EX.six.hab} ÷ 6 = ${EX.six.sixieme} m² ; ${EX.six.total} < ${EX.six.sixieme} : non conforme, il manque ${EX.six.manque} m² de baie`, why: "Le total des baies se compare au sixième de la surface habitable. Chaque surface de baie s’écrit au centième de m²." })
         + BE.alerte(`<strong>Piège.</strong> Compter la porte d’entrée pleine (${EX.six.porte} m²) porte le total du logement d’exemple à ${EX.six.totalPorte} m² et fait conclure à tort que la règle est respectée.`)
         + BE.renvoi(`Source : ${EX.sources.six}. ${EX.sources.legifrance}.`)

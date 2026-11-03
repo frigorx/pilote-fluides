@@ -1,0 +1,65 @@
+{
+  "numero": 26,
+  "titre": "Tracer le cycle sur le diagramme et lire les puissances, l’EER et le COP",
+  "ligne": "Frigorifique",
+  "code": "BE-F2",
+  "quand": "Après le choix du système et de son fluide (station F1) : vous connaissez la puissance frigorifique (station T8). Vous tracez le cycle aux conditions du projet pour connaître le débit de fluide, la puissance du compresseur et celle du condenseur, avant de choisir la machine au réel (station F3).",
+  "methode": [
+    "Lisez p0 et pk là où les isothermes d’évaporation et de condensation traversent la cloche.",
+    "Point 1 : à p0, sur l’isotherme θ0 + surchauffe (sur la vapeur saturée sans surchauffe).",
+    "Point 3 : à pk, sur l’isotherme θk − sous-refroidissement (sur le liquide saturé sans sous-refroidissement).",
+    "Point 4 : à la verticale du point 3, sur p0 ; h4 = h3.",
+    "Point 2s : du point 1, parallèle aux isentropes jusqu’à pk. h2 = h1 + (h2s − h1) ÷ ηis.",
+    "q0 = h1 − h4 ; qm (g/s) = Φ0 (W) ÷ q0 (kJ/kg).",
+    "Pc = qm × (h2 − h1) ; Φk = qm × (h2 − h3) ; bilan Φk = Φ0 + Pc.",
+    "EER = (h1 − h4) ÷ (h2 − h1) ; COP = (h2 − h3) ÷ (h2 − h1), cités avec leurs températures."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Propriétés du R32",
+      "valeur": "diagramme tracé à partir de CoolProp, h = 200 kJ/kg pour le liquide saturé à 0 °C",
+      "source": "CoolProp, bibliothèque libre de propriétés des fluides"
+    },
+    {
+      "grandeur": "Surchauffe",
+      "valeur": "repère usuel 5 à 10 K ; exercice 5 K",
+      "source": "HabFluide, chapitre 7 (p. 124 à 139)"
+    },
+    {
+      "grandeur": "Sous-refroidissement",
+      "valeur": "repère usuel 4 à 8 K ; exercice 5 K",
+      "source": "HabFluide, chapitre 7 (p. 124 à 139)"
+    },
+    {
+      "grandeur": "Rendement isentropique",
+      "valeur": "0,70",
+      "source": "Donnée de l’exercice (sur une vraie machine : la notice)"
+    },
+    {
+      "grandeur": "EER et COP",
+      "valeur": "EER pour le froid, COP pour la chaleur ; Φk = Φ0 + Pc",
+      "source": "HabFluide, chapitre 17"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : Φ0 = 4443 W ; R32 ; évaporation 0 °C, condensation 40 °C ; surchauffe 5 K, sous-refroidissement 5 K ; ηis = 0,70.",
+    "lignes": [
+      "p0 = 8,1 bar ; pk = 24,8 bar.",
+      "h1 = 521 kJ/kg ; h2s = 568 kJ/kg ; h2 = 521 + (568 − 521) ÷ 0,70 = 588 kJ/kg ; h3 = h4 = 265 kJ/kg.",
+      "q0 = 256 kJ/kg ; qm = 4443 ÷ 256 = 17,4 g/s.",
+      "Pc = 17,4 × 67 = 1163 W ; Φk = 17,4 × 323 = 5606 W = 4443 + 1163 W."
+    ],
+    "resultat": "EER 3,82 et COP 4,82, à 0 °C et 40 °C"
+  },
+  "pieges": [
+    "Le point 4 posé sur le liquide saturé, au lieu de la verticale du point 3.",
+    "Le rendement isentropique multiplié au lieu de divisé : le travail réel est plus grand.",
+    "Un EER ou un COP cité sans ses températures, ou l’un pris pour l’autre."
+  ],
+  "sources": [
+    "Propriétés du R32 : CoolProp, bibliothèque libre de propriétés des fluides.",
+    "Surchauffe, sous-refroidissement : HabFluide, chapitre 7. EER, COP, bilan : HabFluide, chapitre 17.",
+    "Conditions du cycle et rendement : données de l’exercice. Stations en correspondance : BE-T8, BE-F1, BE-F3."
+  ],
+  "calculette": null
+}

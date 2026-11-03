@@ -1,0 +1,43 @@
+{
+  "cle": "f2-cycle-diagramme",
+  "code": "BE-F2",
+  "titre": "Le cycle sur le diagramme",
+  "ligne": "Frigorifique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 15,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 26,
+    "chapitre": 6
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (à confirmer : seul appui, « connaissance des phénomènes thermodynamiques et hydrauliques » ; le cycle, l'enthalpie et le fluide frigorigène ne sont pas nommés dans le titre)"
+      }
+    ],
+    "apport_propre": "Apport propre du réseau pour le TECVC : le cycle frigorifique et le diagramme enthalpique ne sont pas nommés dans le titre (CADRAGE.md, C.3, ligne F2).",
+    "bts_fed": {
+      "option": "B",
+      "competences": [],
+      "savoirs": [
+        {
+          "code": "A5",
+          "libelle": "Thermodynamique appliquée (schéma frigorifique, fluides frigorigènes, cycles, diagramme enthalpique, bilan frigorifique), référentiel p. 64"
+        },
+        {
+          "code": "B5",
+          "libelle": "Technologie du froid : compresseurs, évaporateurs, détendeurs, rejet de chaleur (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 69 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

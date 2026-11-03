@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 142" width="180mm" height="142mm" role="img">
+<title>Le flux de chaleur à travers un mur et la chaîne U × A × ΔT = Φ</title>
+<rect width="180" height="142" fill="#fff"/>
+<g><text x="90" y="78" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 78)">inerWeb, by inerweb.fr</text><text x="35" y="43" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 43)">inerWeb, by inerweb.fr</text><text x="150" y="114" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 114)">inerWeb, by inerweb.fr</text></g>
+<rect x="82.00" y="22.00" width="16.00" height="58.00" fill="#d4d4d4"/>
+<line x1="82.00" y1="22.00" x2="98.00" y2="22.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="98.00" y1="22.00" x2="98.00" y2="80.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="98.00" y1="80.00" x2="82.00" y2="80.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="82.00" y1="80.00" x2="82.00" y2="22.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dedans, θi = 19 °C</text>
+<text x="174.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Dehors, θe = −7 °C</text>
+<line x1="30.00" y1="34.00" x2="138.00" y2="34.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="138.00" y1="34.00" x2="135.72" y2="35.25" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="138.00" y1="34.00" x2="135.72" y2="32.75" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="30.00" y1="50.00" x2="138.00" y2="50.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="138.00" y1="50.00" x2="135.72" y2="51.25" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="138.00" y1="50.00" x2="135.72" y2="48.75" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="30.00" y1="66.00" x2="138.00" y2="66.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="138.00" y1="66.00" x2="135.72" y2="67.25" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="138.00" y1="66.00" x2="135.72" y2="64.75" stroke="#ff6b35" stroke-width="1.4"/>
+<text x="146.00" y="52.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Φ</text>
+<text x="90.00" y="89.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Mur MB, sans baie</text>
+<rect x="6.00" y="99.00" width="34.00" height="26.00" fill="#f1f1f1"/>
+<line x1="6.00" y1="99.00" x2="40.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="40.00" y1="99.00" x2="40.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="40.00" y1="125.00" x2="6.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="125.00" x2="6.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="23.00" y="107.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">U</text>
+<text x="23.00" y="114.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,31</text>
+<text x="23.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">W/(m².K)</text>
+<rect x="50.00" y="99.00" width="34.00" height="26.00" fill="#f1f1f1"/>
+<line x1="50.00" y1="99.00" x2="84.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="84.00" y1="99.00" x2="84.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="84.00" y1="125.00" x2="50.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="50.00" y1="125.00" x2="50.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="67.00" y="107.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">A</text>
+<text x="67.00" y="114.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">8,58</text>
+<text x="67.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">m²</text>
+<rect x="94.00" y="99.00" width="34.00" height="26.00" fill="#f1f1f1"/>
+<line x1="94.00" y1="99.00" x2="128.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="128.00" y1="99.00" x2="128.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="128.00" y1="125.00" x2="94.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="125.00" x2="94.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="107.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">ΔT</text>
+<text x="111.00" y="114.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">26</text>
+<text x="111.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">K</text>
+<rect x="138.00" y="99.00" width="34.00" height="26.00" fill="#f1f1f1"/>
+<line x1="138.00" y1="99.00" x2="172.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="172.00" y1="99.00" x2="172.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="172.00" y1="125.00" x2="138.00" y2="125.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="138.00" y1="125.00" x2="138.00" y2="99.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="155.00" y="107.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Φ</text>
+<text x="155.00" y="114.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">69</text>
+<text x="155.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">W</text>
+<text x="45.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">×</text>
+<text x="89.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">×</text>
+<text x="133.00" y="112.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">=</text>
+<line x1="4.00" y1="131.50" x2="176.00" y2="131.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="138.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="138.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

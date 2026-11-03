@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132" width="180mm" height="132mm" role="img">
+<title>Maison en coupe : les parois qui comptent et celles qui ne comptent pas dans le tableau d’une pièce</title>
+<rect width="180" height="132" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="35" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 40)">inerWeb, by inerweb.fr</text><text x="150" y="106" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 106)">inerWeb, by inerweb.fr</text></g>
+<line x1="11.00" y1="44.00" x2="44.00" y2="22.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="44.00" y1="22.00" x2="77.00" y2="44.00" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="44.00" y="39.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Comble</text>
+<line x1="14.00" y1="44.00" x2="74.00" y2="44.00" stroke="#ff6b35" stroke-width="1.6"/>
+<line x1="14.00" y1="44.00" x2="14.00" y2="96.00" stroke="#ff6b35" stroke-width="1.6"/>
+<line x1="14.00" y1="96.00" x2="74.00" y2="96.00" stroke="#ff6b35" stroke-width="1.6"/>
+<line x1="74.00" y1="44.00" x2="74.00" y2="96.00" stroke="#ff6b35" stroke-width="1.6"/>
+<line x1="14.00" y1="70.00" x2="74.00" y2="70.00" stroke="#1b3a63" stroke-width="1.2" stroke-dasharray="2.4 1.6"/>
+<line x1="44.00" y1="44.00" x2="44.00" y2="70.00" stroke="#1b3a63" stroke-width="1.2" stroke-dasharray="2.4 1.6"/>
+<line x1="74.00" y1="70.00" x2="102.00" y2="70.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="102.00" y1="70.00" x2="102.00" y2="96.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="74.00" y1="96.00" x2="102.00" y2="96.00" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="90.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Garage</text>
+<circle cx="8.00" cy="70.00" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="8.00" y="71.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">1</text>
+<circle cx="44.00" cy="103.00" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="44.00" y="104.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">2</text>
+<circle cx="28.00" cy="52.00" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="28.00" y="53.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">3</text>
+<circle cx="80.00" cy="77.00" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="80.00" y="78.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">4</text>
+<circle cx="59.00" cy="77.00" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="59.00" y="78.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">5</text>
+<circle cx="51.00" cy="58.00" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="51.00" y="59.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">6</text>
+<line x1="108.00" y1="24.30" x2="114.00" y2="24.30" stroke="#ff6b35" stroke-width="1.6"/>
+<text x="118.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Compte</text>
+<circle cx="111.00" cy="33.30" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">1</text>
+<text x="118.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mur sur l’extérieur</text>
+<circle cx="111.00" cy="41.30" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">2</text>
+<text x="118.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plancher bas sur le sol</text>
+<circle cx="111.00" cy="49.30" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">3</text>
+<text x="118.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plafond sous le comble</text>
+<circle cx="111.00" cy="57.30" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="59.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">4</text>
+<text x="118.00" y="59.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mur sur un garage</text>
+<text x="118.00" y="66.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">non chauffé</text>
+<line x1="108.00" y1="79.30" x2="114.00" y2="79.30" stroke="#1b3a63" stroke-width="1.2" stroke-dasharray="2.4 1.6"/>
+<text x="118.00" y="81.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Ne compte pas</text>
+<circle cx="111.00" cy="88.30" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="90.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">5</text>
+<text x="118.00" y="90.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plancher entre deux</text>
+<text x="118.00" y="97.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">pièces chauffées</text>
+<circle cx="111.00" cy="104.30" r="3.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="111.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">6</text>
+<text x="118.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Cloison entre deux</text>
+<text x="118.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">pièces chauffées</text>
+<line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

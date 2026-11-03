@@ -1,0 +1,56 @@
+{
+  "numero": 16,
+  "titre": "Choisir le caisson sur sa courbe, lire son point de fonctionnement et sa puissance absorbée",
+  "ligne": "Aéraulique",
+  "code": "BE-A4",
+  "quand": "Après le réseau de gaines (station A3), qui donne le débit et la pression demandés au caisson en pointe et en base. Vous avez les courbes débit-pression des caissons et leur rendement. Vous obtenez le caisson, sa position, ses points de fonctionnement, ses réserves de pression et la puissance qu’il absorbe.",
+  "methode": [
+    "Courbe du réseau : Δp = Δp pointe × (q ÷ q pointe)², une parabole qui passe par zéro et par le point demandé en pointe.",
+    "Calculer quelques points (50, 100, 200 m³/h…), les tracer sur les courbes du caisson, les relier.",
+    "Pour chaque position, lire sur la courbe la pression au débit de pointe et au débit de base.",
+    "Retenir la plus petite position qui passe au-dessus des deux points demandés.",
+    "Point de fonctionnement en pointe : croisement de la parabole et de la courbe retenue, lu à la règle.",
+    "En base : le point remonte sur la courbe retenue jusqu’au débit de base ; lire la pression.",
+    "Réserve de pression : pression de la courbe au débit demandé − pression demandée.",
+    "Puissance absorbée : P = q ÷ 3 600 × Δp ÷ η (q en m³/h, Δp en Pa, P en W), en pointe et en base.",
+    "Bruit : plots antivibratiles, manchettes souples, piège à son, plus petite position qui convient."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Courbes des caissons A et B",
+      "valeur": "Une courbe débit-pression par position du sélecteur (1, 2, 3), lue sur la page des courbes",
+      "source": "Donnée de l’exercice, tracée par la station (aucun appareil du commerce)"
+    },
+    {
+      "grandeur": "Rendement global",
+      "valeur": "A : 0,25 ; B : 0,35",
+      "source": "Donnée de l’exercice, pris le même en pointe et en base"
+    },
+    {
+      "grandeur": "Loi du réseau",
+      "valeur": "Δp proportionnelle au carré du débit",
+      "source": "Mécanique des fluides"
+    }
+  ],
+  "exemple": {
+    "enonce": "Logement d’exemple (stations A2 et A3) : 150 m³/h sous 87,42 Pa en pointe, 75 m³/h sous 81,86 Pa en base ; caisson A, η = 0,25.",
+    "lignes": [
+      "A1 : 79 Pa à 150 m³/h, sous le point : refusée. A2 : 94 et 126 Pa : retenue.",
+      "Croisement de la parabole et de A2 : 154 m³/h sous 92 Pa.",
+      "Réserves : 6,58 Pa en pointe, 44,14 Pa en base.",
+      "P = 154 ÷ 3 600 × 92 ÷ 0,25 = 15,74 W en pointe ; 10,50 W en base."
+    ],
+    "resultat": "Caisson A, position 2 ; 15,74 W en pointe, 10,50 W en base"
+  },
+  "pieges": [
+    "Vérifier la pointe seulement, ou la base seulement : la position doit tenir les deux points.",
+    "Prendre le point demandé pour le point de fonctionnement : le point de fonctionnement est sur la courbe du caisson.",
+    "Oublier le rendement, ou garder le débit en m³/h dans P = q ÷ 3 600 × Δp ÷ η."
+  ],
+  "sources": [
+    "Mécanique des fluides : perte de charge proportionnelle au carré du débit ; puissance donnée à l’air = débit × pression.",
+    "Courbes des caissons, rendements et heures de fonctionnement : données de l’exercice. Le catalogue du fabricant donne ces courbes ; vous les lirez de la même façon.",
+    "Stations en correspondance : BE-A3 (réseau de gaines), AéroRézo « Ventilateur et équilibrage », « Pressions dans un réseau », « Étudier un réseau VMC »."
+  ],
+  "calculette": null
+}

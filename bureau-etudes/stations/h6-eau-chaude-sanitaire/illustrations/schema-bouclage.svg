@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 156" width="180mm" height="156mm" role="img">
+<title>Le bouclage : ballon, aller, retour, pompe, tubes finaux, puis le volume du tube le plus long</title>
+<rect width="180" height="156" fill="#fff"/>
+<g><text x="90" y="86" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 86)">inerWeb, by inerweb.fr</text><text x="35" y="47" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 47)">inerWeb, by inerweb.fr</text><text x="150" y="125" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 125)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="10.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Réseau avec bouclage</text>
+<rect x="10.00" y="36.00" width="22.00" height="44.00" fill="#e3eefa"/>
+<line x1="10.00" y1="36.00" x2="32.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="32.00" y1="36.00" x2="32.00" y2="80.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="32.00" y1="80.00" x2="10.00" y2="80.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="80.00" x2="10.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="21.00" y="60.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Ballon</text>
+<circle cx="40.00" cy="44.00" r="2.50" fill="#fff" stroke="#ff6b35" stroke-width="0.8"/>
+<text x="36.00" y="52.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mitigeur</text>
+<line x1="32.00" y1="44.00" x2="37.50" y2="44.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="42.50" y1="44.00" x2="168.00" y2="44.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="168.00" y1="44.00" x2="168.00" y2="72.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="168.00" y1="72.00" x2="64.00" y2="72.00" stroke="#ff6b35" stroke-width="1" stroke-dasharray="2.4 1.4"/>
+<circle cx="60.00" cy="72.00" r="4.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="72.00" x2="32.00" y2="72.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="32.00" y1="72.00" x2="34.28" y2="70.75" stroke="#ff6b35" stroke-width="1"/>
+<line x1="32.00" y1="72.00" x2="34.28" y2="73.25" stroke="#ff6b35" stroke-width="1"/>
+<line x1="90.00" y1="44.00" x2="90.00" y2="36.00" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="87.00" y="30.00" width="6.00" height="6.00" fill="#fff"/>
+<line x1="87.00" y1="30.00" x2="93.00" y2="30.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="93.00" y1="30.00" x2="93.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="93.00" y1="36.00" x2="87.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="87.00" y1="36.00" x2="87.00" y2="30.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="120.00" y1="44.00" x2="120.00" y2="36.00" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="117.00" y="30.00" width="6.00" height="6.00" fill="#fff"/>
+<line x1="117.00" y1="30.00" x2="123.00" y2="30.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="123.00" y1="30.00" x2="123.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="123.00" y1="36.00" x2="117.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="117.00" y1="36.00" x2="117.00" y2="30.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="148.00" y1="44.00" x2="148.00" y2="36.00" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="145.00" y="30.00" width="6.00" height="6.00" fill="#fff"/>
+<line x1="145.00" y1="30.00" x2="151.00" y2="30.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="151.00" y1="30.00" x2="151.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="151.00" y1="36.00" x2="145.00" y2="36.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="145.00" y1="36.00" x2="145.00" y2="30.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="119.00" y="24.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Tubes finaux, 3 L au plus</text>
+<text x="108.00" y="57.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Aller, 50 °C au moins</text>
+<text x="108.00" y="66.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Retour jusqu’au ballon</text>
+<text x="60.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Pompe</text>
+<line x1="125.00" y1="79.00" x2="125.00" y2="74.00" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="125.00" y="85.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Calorifuge : isolant des tubes</text>
+<line x1="10.00" y1="94.00" x2="170.00" y2="94.00" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="103.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Le tube le plus long de l’exemple</text>
+<rect x="6.00" y="108.00" width="48.00" height="19.00" fill="#f1f1f1"/>
+<line x1="6.00" y1="108.00" x2="54.00" y2="108.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="54.00" y1="108.00" x2="54.00" y2="127.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="54.00" y1="127.00" x2="6.00" y2="127.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="127.00" x2="6.00" y2="108.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="30.00" y="115.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">d intérieur</text>
+<text x="30.00" y="122.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">12 mm</text>
+<text x="60.00" y="119.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">et</text>
+<rect x="66.00" y="108.00" width="48.00" height="19.00" fill="#f1f1f1"/>
+<line x1="66.00" y1="108.00" x2="114.00" y2="108.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="114.00" y1="108.00" x2="114.00" y2="127.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="114.00" y1="127.00" x2="66.00" y2="127.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="66.00" y1="127.00" x2="66.00" y2="108.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="90.00" y="115.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">L du tube</text>
+<text x="90.00" y="122.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">20 m</text>
+<line x1="114.00" y1="117.50" x2="128.00" y2="117.50" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="128.00" y1="117.50" x2="125.72" y2="118.75" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="128.00" y1="117.50" x2="125.72" y2="116.25" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="128.00" y="108.00" width="46.00" height="19.00" fill="#fff"/>
+<line x1="128.00" y1="108.00" x2="174.00" y2="108.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="174.00" y1="108.00" x2="174.00" y2="127.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="174.00" y1="127.00" x2="128.00" y2="127.00" stroke="#ff6b35" stroke-width="0.9"/>
+<line x1="128.00" y1="127.00" x2="128.00" y2="108.00" stroke="#ff6b35" stroke-width="0.9"/>
+<text x="151.00" y="115.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">V = 2,26 L</text>
+<text x="151.00" y="122.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">sous 3 L</text>
+<text x="90.00" y="135.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">2,26 L est sous 3 L : pas de bouclage.</text>
+<text x="90.00" y="142.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">V = π ÷ 4 × d² × L × 1 000, d et L en m.</text>
+<line x1="4.00" y1="145.50" x2="176.00" y2="145.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="152.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="152.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

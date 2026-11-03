@@ -1,0 +1,59 @@
+{
+  "cle": "h5-equilibrage-schema",
+  "code": "BE-H5",
+  "titre": "Équilibrage, schéma",
+  "ligne": "Hydraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 23,
+    "chapitre": 5
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (équilibrage des réseaux hydrauliques des batteries, même méthode)"
+      },
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (équilibrage et schéma d'un réseau d'eau, même méthode)"
+      },
+      {
+        "code": "CP3",
+        "libelle": "Réaliser l'étude des réseaux de distribution et d'évacuation sanitaires (à confirmer : seul le robinet de remplissage touche le réseau d'eau de ville ; le cadrage cite le bouclage)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        {
+          "code": "C4-1",
+          "libelle": "Élaborer des schémas et/ou un synoptique (à confirmer : unité d'évaluation à vérifier, annexe II.d non lue)"
+        },
+        {
+          "code": "C2-1",
+          "libelle": "Identifier les composants et l'architecture structurelle et fonctionnelle du système"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B4-1",
+          "libelle": "Réseaux hydrauliques (dont circulateurs/pompes) (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 68 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 96" width="180mm" height="96mm" role="img">
+<title>Le régime d’eau 50/40 : départ, retour et écart ΔT</title>
+<rect width="180" height="96" fill="#fff"/>
+<g><text x="90" y="53" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 53)">inerWeb, by inerweb.fr</text><text x="40" y="29" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 29)">inerWeb, by inerweb.fr</text><text x="140" y="79" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 79)">inerWeb, by inerweb.fr</text></g>
+<rect x="6.00" y="18.00" width="44.00" height="46.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="28.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Générateur</text>
+<g transform="translate(120.00 26.00)"><svg x="0" y="0" width="28.00" height="21.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="18" y="17" width="84" height="56" rx="9"/>
+    <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
+    <path d="M5 30h13M102 60h13M29 73v10M91 73v10"/>
+  </g>
+  <circle cx="5" cy="30" r="3" fill="#c9451a"/>
+  <circle cx="115" cy="60" r="3" fill="#3d7fca"/></svg></g>
+<line x1="50.00" y1="24.00" x2="121.17" y2="24.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="121.17" y1="24.00" x2="121.17" y2="33.00" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="121.17" y1="33.00" x2="119.87" y2="30.40" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="121.17" y1="33.00" x2="122.47" y2="30.40" stroke="#c9451a" stroke-width="0.6"/>
+<line x1="146.83" y1="40.00" x2="146.83" y2="58.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="146.83" y1="58.00" x2="50.00" y2="58.00" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="50.00" y1="58.00" x2="52.60" y2="56.70" stroke="#3d7fca" stroke-width="0.6"/>
+<line x1="50.00" y1="58.00" x2="52.60" y2="59.30" stroke="#3d7fca" stroke-width="0.6"/>
+<text x="58.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#c9451a">Départ 50 °C</text>
+<text x="58.00" y="66.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#3d7fca">Retour 40 °C</text>
+<text x="143.00" y="54.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Émetteur</text>
+<text x="6.00" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">ΔT = départ − retour = 50 − 40 = 10 K</text>
+<text x="6.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">L’eau se refroidit de 10 K en traversant l’émetteur.</text>
+<line x1="4.00" y1="85.50" x2="176.00" y2="85.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="92.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="92.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

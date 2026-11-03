@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="180mm" height="120mm" role="img">
+<title>Même charge de fluide, deux volumes</title>
+<rect width="180" height="120" fill="#fff"/>
+<rect x="10.00" y="22.00" width="54.00" height="46.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.7"/>
+<svg x="29.00" y="25.00" width="16.00" height="4.08" viewBox="-25.10 -4.62 63.60 16.21" overflow="visible"><g stroke="#1b3a63" fill="#1b3a63"><line x1="-20.81" y1="-1.2" x2="34.21" y2="-1.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-20.81" y1="-0.2" x2="34.21" y2="-0.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="-24.1" y="-3.62" width="61.6" height="14.21" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-20.9" y="8.46" width="50.4" height="2.13" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="32.7" y="7.75" width="2.4" height="1.42" rx="0" ry="0" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-20.81" y1="-2.2" x2="34.21" y2="-2.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="6.30" cy="3.83" rx="3.20" ry="1.06" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-24.1" y1="6.33" x2="37.5" y2="6.33" stroke="#1b3a63" stroke-width="0.4" fill="none"/></g></svg>
+<text x="37.00" y="18.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Petite pièce</text>
+<circle cx="20.80" cy="38.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="31.60" cy="38.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="42.40" cy="38.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="53.20" cy="38.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="20.80" cy="46.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="31.60" cy="46.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="42.40" cy="46.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="53.20" cy="46.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="20.80" cy="55.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="31.60" cy="55.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="42.40" cy="55.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="53.20" cy="55.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<text x="37.00" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">même charge,</text>
+<text x="37.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">plus concentré</text>
+<rect x="84.00" y="16.00" width="88.00" height="52.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.7"/>
+<svg x="120.00" y="19.00" width="16.00" height="4.08" viewBox="-25.10 -4.62 63.60 16.21" overflow="visible"><g stroke="#1b3a63" fill="#1b3a63"><line x1="-20.81" y1="-1.2" x2="34.21" y2="-1.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-20.81" y1="-0.2" x2="34.21" y2="-0.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="-24.1" y="-3.62" width="61.6" height="14.21" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-20.9" y="8.46" width="50.4" height="2.13" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="32.7" y="7.75" width="2.4" height="1.42" rx="0" ry="0" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-20.81" y1="-2.2" x2="34.21" y2="-2.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="6.30" cy="3.83" rx="3.20" ry="1.06" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-24.1" y1="6.33" x2="37.5" y2="6.33" stroke="#1b3a63" stroke-width="0.4" fill="none"/></g></svg>
+<text x="128.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Grande pièce</text>
+<circle cx="101.60" cy="32.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="119.20" cy="32.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="136.80" cy="32.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="154.40" cy="32.00" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="101.60" cy="42.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="119.20" cy="42.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="136.80" cy="42.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="154.40" cy="42.67" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="101.60" cy="53.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="119.20" cy="53.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="136.80" cy="53.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<circle cx="154.40" cy="53.33" r="1.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<text x="128.00" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">même charge,</text>
+<text x="128.00" y="83.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">plus dilué</text>
+<text x="90.00" y="99.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">concentration = masse ÷ volume</text>
+<line x1="4.00" y1="109.50" x2="176.00" y2="109.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="116.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="116.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+<g><text x="90" y="66" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 66)">inerWeb, by inerweb.fr</text><text x="40" y="36" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 36)">inerWeb, by inerweb.fr</text><text x="140" y="98" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 98)">inerWeb, by inerweb.fr</text></g>
+</svg>

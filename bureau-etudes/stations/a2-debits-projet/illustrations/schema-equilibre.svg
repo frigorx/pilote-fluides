@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132.00" width="180mm" height="132.00mm" role="img">
+<title>L’équilibre du logement d’exemple en débit de base : deux colonnes de même hauteur, les trois entrées d’air du séjour et des deux chambres à gauche, les trois bouches d’extraction de la cuisine, de la salle de bains et du WC à droite, 75 m³/h de chaque côté</title>
+<rect width="180" height="132.00" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="40" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 40)">inerWeb, by inerweb.fr</text><text x="140" y="108" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 108)">inerWeb, by inerweb.fr</text></g>
+<text x="37.00" y="17.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Entrées d’air</text>
+<rect x="8.00" y="24.00" width="58.00" height="40.60" fill="#e3eefa" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="37.00" y="46.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Séjour, 40,6</text>
+<rect x="8.00" y="64.60" width="58.00" height="18.10" fill="#e3eefa" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="37.00" y="75.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 1, 18,1</text>
+<rect x="8.00" y="82.70" width="58.00" height="16.30" fill="#e3eefa" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="37.00" y="92.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chambre 2, 16,3</text>
+<text x="37.00" y="107.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">75 m³/h</text>
+<text x="143.00" y="17.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Extractions</text>
+<rect x="114.00" y="24.00" width="58.00" height="45.00" fill="#eeeeee" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="143.00" y="48.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Cuisine, 45</text>
+<rect x="114.00" y="69.00" width="58.00" height="15.00" fill="#eeeeee" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="143.00" y="78.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">WC, 15</text>
+<rect x="114.00" y="84.00" width="58.00" height="15.00" fill="#eeeeee" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="143.00" y="93.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Salle de bains, 15</text>
+<text x="143.00" y="107.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">75 m³/h</text>
+<text x="90.00" y="49.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">L’air traverse</text>
+<text x="90.00" y="56.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">le logement</text>
+<line x1="69.00" y1="62.00" x2="111.00" y2="62.00" stroke="#ff6b35" stroke-width="0.7"/>
+<polygon points="111.00,62.00 108.61,63.01 108.61,60.99" fill="#ff6b35"/>
+<text x="90.00" y="74.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">entre = sort</text>
+<text x="90.00" y="118.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Chaque entrée d’air reçoit sa part, au prorata du volume.</text>
+<text x="90.00" y="126.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Ce qui entre égale ce qui sort.</text>
+</svg>

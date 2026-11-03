@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0.00 180 57.00" width="180mm" height="57.00mm" role="img">
+<title>Noyau en hiver : la température de l’air dans la CTA</title>
+<rect y="0.00" width="180" height="57.00" fill="#fff"/>
+<g><text x="90" y="31" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 31)">inerWeb, by inerweb.fr</text><text x="40" y="17" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 17)">inerWeb, by inerweb.fr</text><text x="140" y="47" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 47)">inerWeb, by inerweb.fr</text></g>
+<text x="1.50" y="5.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Noyau, −7 °C dehors : l’air dans la CTA</text>
+<line x1="14.00" y1="30.00" x2="166.00" y2="30.00" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
+<line x1="14.00" y1="28.50" x2="14.00" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="14.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">−10 °C</text>
+<line x1="39.33" y1="28.50" x2="39.33" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="39.33" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">−5 °C</text>
+<line x1="64.67" y1="28.50" x2="64.67" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="64.67" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0 °C</text>
+<line x1="90.00" y1="28.50" x2="90.00" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="90.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">5 °C</text>
+<line x1="115.33" y1="28.50" x2="115.33" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="115.33" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10 °C</text>
+<line x1="140.67" y1="28.50" x2="140.67" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="140.67" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">15 °C</text>
+<line x1="166.00" y1="28.50" x2="166.00" y2="31.50" stroke="#000" stroke-width="0.4" stroke-linecap="butt"/>
+<text x="166.00" y="37.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">20 °C</text>
+<line x1="29.20" y1="19.00" x2="100.34" y2="19.00" stroke="#d9771f" stroke-width="1.6" stroke-linecap="butt"/>
+<polygon points="100.34,19.00 97.94,20.01 97.94,17.99" fill="#d9771f"/>
+<text x="29.20" y="14.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Récupérateur : de −7 à 7,04 °C</text>
+<line x1="100.34" y1="46.00" x2="160.93" y2="46.00" stroke="#1b3a63" stroke-width="1.6" stroke-linecap="butt"/>
+<polygon points="160.93,46.00 158.54,47.01 158.54,44.99" fill="#1b3a63"/>
+<text x="160.93" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Batterie chaude : de 7,04 à 19 °C</text>
+<line x1="29.20" y1="21.00" x2="29.20" y2="44.00" stroke="#8a96a6" stroke-width="0.35" stroke-linecap="butt" stroke-dasharray="1.2 0.9"/>
+<line x1="100.34" y1="21.00" x2="100.34" y2="44.00" stroke="#8a96a6" stroke-width="0.35" stroke-linecap="butt" stroke-dasharray="1.2 0.9"/>
+<line x1="160.93" y1="21.00" x2="160.93" y2="44.00" stroke="#8a96a6" stroke-width="0.35" stroke-linecap="butt" stroke-dasharray="1.2 0.9"/>
+<text x="28.20" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Air neuf</text>
+</svg>

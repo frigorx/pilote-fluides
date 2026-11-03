@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -22.0 48.0 38.0" width="48" height="38">
+<!-- sonde qualité de l'air — converti de sonda-calidad-aire.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-22.0" width="48.0" height="38.0" fill="#ffffff"/>
+<line x1="-7.8" y1="-3.25" x2="-7.8" y2="6.14" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-6.4" y1="-3.25" x2="-6.4" y2="6.14" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="10.54,6.17 4.87,6.17 4.87,4.82" stroke="blue" stroke-width="1" fill="blue"/>
+<ellipse cx="7.88" cy="1.68" rx="2.88" ry="2.57" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-11.37" y="-8.28" width="24.5" height="16.32" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<line x1="5.49" y1="0.39" x2="7.89" y2="1.68" stroke="black" stroke-width="1" fill="none"/>
+<polyline points="-12,-7.43 -12,8.58 13.14,8.58" stroke="black" stroke-width="1" fill="none"/>
+<rect x="-3" y="-7" width="12" height="3.2" rx="0" ry="0" stroke="black" stroke-width="1" fill="none"/>
+<ellipse cx="-0.33" cy="1.68" rx="2.88" ry="2.57" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-2.72" y1="0.39" x2="-0.33" y2="1.68" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="2.07,6.17 -3.6,6.17 -3.6,4.82" stroke="red" stroke-width="1" fill="red"/>
+<line x1="-9.2" y1="-3.25" x2="-9.2" y2="6.14" stroke="black" stroke-width="1" fill="none"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 116.00" width="180mm" height="116.00mm" role="img">
+<title>Les horaires de la semaine</title>
+<rect width="180" height="116.00" fill="#fff"/>
+<line x1="40.00" y1="16.00" x2="40.00" y2="80.00" stroke="#c9d3de" stroke-width="0.3"/>
+<line x1="73.00" y1="16.00" x2="73.00" y2="80.00" stroke="#c9d3de" stroke-width="0.3"/>
+<line x1="106.00" y1="16.00" x2="106.00" y2="80.00" stroke="#c9d3de" stroke-width="0.3"/>
+<line x1="139.00" y1="16.00" x2="139.00" y2="80.00" stroke="#c9d3de" stroke-width="0.3"/>
+<line x1="172.00" y1="16.00" x2="172.00" y2="80.00" stroke="#c9d3de" stroke-width="0.3"/>
+<g><text x="90" y="64" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 64)">inerWeb, by inerweb.fr</text><text x="40" y="35" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 35)">inerWeb, by inerweb.fr</text><text x="140" y="95" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 95)">inerWeb, by inerweb.fr</text></g>
+<text x="40.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0 h</text>
+<text x="73.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">6 h</text>
+<text x="106.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12 h</text>
+<text x="139.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">18 h</text>
+<text x="172.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">24 h</text>
+<text x="36.00" y="23.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Lundi</text>
+<rect x="40.00" y="18.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<rect x="81.25" y="18.00" width="63.25" height="6.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="36.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Mardi</text>
+<rect x="40.00" y="27.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<rect x="81.25" y="27.00" width="63.25" height="6.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="36.00" y="41.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Mercredi</text>
+<rect x="40.00" y="36.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<rect x="81.25" y="36.00" width="63.25" height="6.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="36.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Jeudi</text>
+<rect x="40.00" y="45.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<rect x="81.25" y="45.00" width="63.25" height="6.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="36.00" y="59.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Vendredi</text>
+<rect x="40.00" y="54.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<rect x="81.25" y="54.00" width="63.25" height="6.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="36.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Samedi</text>
+<rect x="40.00" y="63.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<text x="36.00" y="77.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Dimanche</text>
+<rect x="40.00" y="72.00" width="132.00" height="6.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<text x="81.25" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7 h 30</text>
+<text x="144.50" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">19 h</text>
+<rect x="6.00" y="94.00" width="8.00" height="5.00" fill="#bfdcf5" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="17.00" y="99.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">occupé : CTA en marche, ventilo-convecteurs en confort</text>
+<rect x="6.00" y="102.00" width="8.00" height="5.00" fill="#f4f6f8" stroke="#c9d3de" stroke-width="0.3"/>
+<text x="17.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">inoccupé : CTA arrêtée, ventilo-convecteurs en réduit</text>
+</svg>

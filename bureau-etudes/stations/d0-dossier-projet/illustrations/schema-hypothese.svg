@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 104" width="180mm" height="104mm" role="img">
+<title>Les trois parties d’une hypothèse : je suppose, parce que, à confirmer auprès de</title>
+<rect width="180" height="104" fill="#fff"/>
+<g><text x="90" y="57" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 57)">inerWeb, by inerweb.fr</text><text x="35" y="31" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 31)">inerWeb, by inerweb.fr</text><text x="150" y="83" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 83)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Une donnée manque : la ventilation du bureau.</text>
+<rect x="6.00" y="24.00" width="50.00" height="48.00" fill="#fff"/>
+<line x1="6.00" y1="24.00" x2="56.00" y2="24.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="24.00" x2="56.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="56.00" y1="72.00" x2="6.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="72.00" x2="6.00" y2="24.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="31.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Je suppose</text>
+<text x="31.00" y="41.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">une extraction</text>
+<text x="31.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">mécanique dans</text>
+<text x="31.00" y="54.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">le bureau</text>
+<rect x="64.00" y="24.00" width="50.00" height="48.00" fill="#fff"/>
+<line x1="64.00" y1="24.00" x2="114.00" y2="24.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="114.00" y1="24.00" x2="114.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="114.00" y1="72.00" x2="64.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="64.00" y1="72.00" x2="64.00" y2="24.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="89.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">parce que</text>
+<text x="89.00" y="41.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">le lot plomberie</text>
+<text x="89.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">pose une bouche</text>
+<text x="89.00" y="54.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">d’extraction</text>
+<rect x="122.00" y="24.00" width="50.00" height="48.00" fill="#ffe1d4"/>
+<line x1="122.00" y1="24.00" x2="172.00" y2="24.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="172.00" y1="24.00" x2="172.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="172.00" y1="72.00" x2="122.00" y2="72.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="122.00" y1="72.00" x2="122.00" y2="24.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="147.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">à confirmer</text>
+<text x="147.00" y="39.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">auprès de</text>
+<text x="147.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">le maître</text>
+<text x="147.00" y="54.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">d’ouvrage</text>
+<line x1="56.00" y1="48.00" x2="64.00" y2="48.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="64.00" y1="48.00" x2="61.72" y2="49.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="64.00" y1="48.00" x2="61.72" y2="46.75" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="114.00" y1="48.00" x2="122.00" y2="48.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="122.00" y1="48.00" x2="119.72" y2="49.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="122.00" y1="48.00" x2="119.72" y2="46.75" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="90.00" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Je suppose… parce que… ; à confirmer auprès de…</text>
+<line x1="4.00" y1="93.50" x2="176.00" y2="93.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

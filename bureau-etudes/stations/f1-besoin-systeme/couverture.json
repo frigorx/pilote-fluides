@@ -1,0 +1,59 @@
+{
+  "cle": "f1-besoin-systeme",
+  "code": "BE-F1",
+  "titre": "Besoin et système",
+  "ligne": "Frigorifique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 16,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 25,
+    "chapitre": 6
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (sélectionner les équipements d'un système de climatisation à détente directe ou indirecte)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (production d'eau glacée et équipements associés)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A et B",
+      "competences": [
+        {
+          "code": "C2-1",
+          "libelle": "Identifier les composants et l'architecture structurelle et fonctionnelle du système"
+        },
+        {
+          "code": "C2-3",
+          "libelle": "Décrire le fonctionnement du système"
+        },
+        {
+          "code": "C3-2",
+          "libelle": "Comparer et proposer une ou des solution(s) technique(s) (à vérifier : annexe II.d non lue, référentiel 03-BTS-FED.md ligne 209)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B2-2",
+          "libelle": "Climatisation (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 67 du référentiel)"
+        },
+        {
+          "code": "B5",
+          "libelle": "Technologie du froid (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 69 du référentiel)"
+        }
+      ],
+      "taches": []
+    }
+  }
+}

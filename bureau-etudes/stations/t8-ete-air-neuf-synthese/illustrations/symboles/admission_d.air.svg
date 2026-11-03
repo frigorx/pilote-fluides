@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -16.0 48.0 48.0" width="48" height="48">
+<!-- Admission d'air — converti de admission_d.air.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-16.0" width="48.0" height="48.0" fill="#ffffff"/>
+<line x1="16" y1="10" x2="8" y2="2" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-16" y1="10" x2="-8" y2="2" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="5,-1 7,3 9,1" stroke="black" stroke-width="0.4" fill="black"/>
+<polygon points="-5,-1 -9,1 -7,3" stroke="black" stroke-width="0.4" fill="black"/>
+<polyline points="-10,-2 0,-10 10,-2" stroke="black" stroke-width="1" fill="none"/>
+<line x1="0" y1="15" x2="0" y2="20" stroke="black" stroke-width="1" fill="none"/>
+<line x1="3" y1="0" x2="3" y2="12" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-3" y1="0" x2="-3" y2="12" stroke="black" stroke-width="1" fill="none"/>
+</svg>

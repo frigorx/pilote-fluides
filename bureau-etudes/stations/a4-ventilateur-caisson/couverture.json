@@ -1,0 +1,47 @@
+{
+  "cle": "a4-ventilateur-caisson",
+  "code": "BE-A4",
+  "titre": "Ventilateur, caisson",
+  "ligne": "Aéraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 16,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 16,
+    "chapitre": 4
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP4",
+        "libelle": "Réaliser l'étude d'une installation de ventilation mécanique contrôlée (choix du caisson sur sa courbe ; acoustique dans les critères)"
+      },
+      {
+        "code": "CP7",
+        "libelle": "Réaliser l'étude d'une installation de ventilation d'un bâtiment tertiaire (ventilateur ; volet tertiaire, niveau 3 en partie dédiée)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (ventilateur de CTA ; à confirmer pour un caisson de VMC)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A et B",
+      "competences": [],
+      "savoirs": [
+        { "code": "A3", "libelle": "Aéraulique (à confirmer : code relevé dans CADRAGE.md, C.3, ligne A4)" },
+        { "code": "B4-2", "libelle": "Réseaux aérauliques (à confirmer : code relevé dans CADRAGE.md, C.3, ligne A4)" },
+        { "code": "A7", "libelle": "Acoustique (à confirmer : code relevé dans CADRAGE.md, C.3, ligne A4)" },
+        { "code": "S5.2", "libelle": "À confirmer : code relevé dans CADRAGE.md, C.3, ligne A4" },
+        { "code": "C3-1", "libelle": "À confirmer : code relevé dans CADRAGE.md, C.3, ligne A4" }
+      ],
+      "taches": []
+    }
+  }
+}

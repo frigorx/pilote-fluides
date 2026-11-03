@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 133.00" width="180mm" height="133.00mm" role="img">
+<title>Caisson B : courbes débit-pression, donnée de l’exercice</title>
+<rect width="180" height="133.00" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="40" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 40)">inerWeb, by inerweb.fr</text><text x="140" y="109" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 109)">inerWeb, by inerweb.fr</text></g>
+<text x="1.50" y="5.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Caisson B, donnée de l’exercice : une courbe par position</text>
+<text x="1.50" y="14.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Δp (Pa)</text>
+<line x1="24.34" y1="19.00" x2="24.34" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="28.69" y1="19.00" x2="28.69" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="33.03" y1="19.00" x2="33.03" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="37.37" y1="19.00" x2="37.37" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="41.71" y1="19.00" x2="41.71" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="46.06" y1="19.00" x2="46.06" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="50.40" y1="19.00" x2="50.40" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="54.74" y1="19.00" x2="54.74" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="59.09" y1="19.00" x2="59.09" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="63.43" y1="19.00" x2="63.43" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="67.77" y1="19.00" x2="67.77" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="72.11" y1="19.00" x2="72.11" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="76.46" y1="19.00" x2="76.46" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="80.80" y1="19.00" x2="80.80" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="85.14" y1="19.00" x2="85.14" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="89.49" y1="19.00" x2="89.49" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="93.83" y1="19.00" x2="93.83" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="98.17" y1="19.00" x2="98.17" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="102.51" y1="19.00" x2="102.51" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="106.86" y1="19.00" x2="106.86" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="111.20" y1="19.00" x2="111.20" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="115.54" y1="19.00" x2="115.54" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="119.89" y1="19.00" x2="119.89" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="124.23" y1="19.00" x2="124.23" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="128.57" y1="19.00" x2="128.57" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="132.91" y1="19.00" x2="132.91" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="137.26" y1="19.00" x2="137.26" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="141.60" y1="19.00" x2="141.60" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="145.94" y1="19.00" x2="145.94" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="150.29" y1="19.00" x2="150.29" y2="109.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="154.63" y1="19.00" x2="154.63" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="158.97" y1="19.00" x2="158.97" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="163.31" y1="19.00" x2="163.31" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="167.66" y1="19.00" x2="167.66" y2="109.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="106.50" x2="172.00" y2="106.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="104.00" x2="172.00" y2="104.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="101.50" x2="172.00" y2="101.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="99.00" x2="172.00" y2="99.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="96.50" x2="172.00" y2="96.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="94.00" x2="172.00" y2="94.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="91.50" x2="172.00" y2="91.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="89.00" x2="172.00" y2="89.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="86.50" x2="172.00" y2="86.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="84.00" x2="172.00" y2="84.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="81.50" x2="172.00" y2="81.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="79.00" x2="172.00" y2="79.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="76.50" x2="172.00" y2="76.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="74.00" x2="172.00" y2="74.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="71.50" x2="172.00" y2="71.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="69.00" x2="172.00" y2="69.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="66.50" x2="172.00" y2="66.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="64.00" x2="172.00" y2="64.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="61.50" x2="172.00" y2="61.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="59.00" x2="172.00" y2="59.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="56.50" x2="172.00" y2="56.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="54.00" x2="172.00" y2="54.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="51.50" x2="172.00" y2="51.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="49.00" x2="172.00" y2="49.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="46.50" x2="172.00" y2="46.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="44.00" x2="172.00" y2="44.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="41.50" x2="172.00" y2="41.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="39.00" x2="172.00" y2="39.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="36.50" x2="172.00" y2="36.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="34.00" x2="172.00" y2="34.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="31.50" x2="172.00" y2="31.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="29.00" x2="172.00" y2="29.00" stroke="#6b7787" stroke-width="0.28" stroke-linecap="square"/>
+<line x1="20.00" y1="26.50" x2="172.00" y2="26.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="24.00" x2="172.00" y2="24.00" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<line x1="20.00" y1="21.50" x2="172.00" y2="21.50" stroke="#c3cad4" stroke-width="0.12" stroke-linecap="square"/>
+<rect x="20.00" y="19.00" width="152.00" height="90.00" fill="none" stroke="#000" stroke-width="0.5"/>
+<text x="20.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="41.71" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">50</text>
+<text x="63.43" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">100</text>
+<text x="85.14" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">150</text>
+<text x="106.86" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">200</text>
+<text x="128.57" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">250</text>
+<text x="150.29" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">300</text>
+<text x="172.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">350</text>
+<text x="18.50" y="100.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">20</text>
+<text x="18.50" y="90.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">40</text>
+<text x="18.50" y="80.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">60</text>
+<text x="18.50" y="70.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">80</text>
+<text x="18.50" y="60.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">100</text>
+<text x="18.50" y="50.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">120</text>
+<text x="18.50" y="40.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">140</text>
+<text x="18.50" y="30.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">160</text>
+<text x="18.50" y="20.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">180</text>
+<text x="96.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">q, débit (m³/h)</text>
+<polyline points="20.00,38.50 21.07,38.50 22.15,38.52 23.22,38.54 24.30,38.58 25.37,38.62 26.45,38.68 27.52,38.74 28.59,38.81 29.67,38.90 30.74,38.99 31.82,39.09 32.89,39.20 33.97,39.33 35.04,39.46 36.12,39.60 37.19,39.75 38.26,39.91 39.34,40.09 40.41,40.27 41.49,40.46 42.56,40.66 43.64,40.87 44.71,41.09 45.78,41.32 46.86,41.56 47.93,41.81 49.01,42.07 50.08,42.34 51.16,42.62 52.23,42.91 53.30,43.20 54.38,43.51 55.45,43.83 56.53,44.16 57.60,44.50 58.68,44.84 59.75,45.20 60.83,45.57 61.90,45.95 62.97,46.33 64.05,46.73 65.12,47.14 66.20,47.55 67.27,47.98 68.35,48.41 69.42,48.86 70.49,49.31 71.57,49.78 72.64,50.25 73.72,50.74 74.79,51.23 75.87,51.74 76.94,52.25 78.01,52.78 79.09,53.31 80.16,53.85 81.24,54.41 82.31,54.97 83.39,55.54 84.46,56.13 85.54,56.72 86.61,57.32 87.68,57.93 88.76,58.55 89.83,59.18 90.91,59.83 91.98,60.48 93.06,61.14 94.13,61.81 95.20,62.49 96.28,63.18 97.35,63.88 98.43,64.59 99.50,65.31 100.58,66.04 101.65,66.78 102.72,67.53 103.80,68.29 104.87,69.05 105.95,69.83 107.02,70.62 108.10,71.42 109.17,72.23 110.24,73.04 111.32,73.87 112.39,74.71 113.47,75.56 114.54,76.41 115.62,77.28 116.69,78.16 117.77,79.04 118.84,79.94 119.91,80.84 120.99,81.76 122.06,82.68 123.14,83.62 124.21,84.56 125.29,85.52 126.36,86.48 127.43,87.46 128.51,88.44 129.58,89.44 130.66,90.44 131.73,91.45 132.81,92.48 133.88,93.51 134.95,94.55 136.03,95.60 137.10,96.67 138.18,97.74 139.25,98.82 140.33,99.91 141.40,101.01 142.48,102.13 143.55,103.25 144.62,104.38 145.70,105.52 146.77,106.67 147.85,107.83 148.92,109.00" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="21.50" y="39.75" width="8.03" height="5.94" fill="#fff"/>
+<text x="22.10" y="44.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">B1</text>
+<polyline points="20.00,31.00 21.13,31.01 22.26,31.02 23.39,31.05 24.52,31.09 25.65,31.14 26.78,31.19 27.91,31.27 29.04,31.35 30.17,31.44 31.30,31.54 32.43,31.66 33.56,31.78 34.69,31.92 35.82,32.06 36.95,32.22 38.08,32.39 39.21,32.57 40.34,32.75 41.47,32.96 42.60,33.17 43.73,33.39 44.86,33.62 45.99,33.87 47.12,34.12 48.25,34.39 49.38,34.66 50.51,34.95 51.64,35.25 52.77,35.56 53.90,35.88 55.03,36.21 56.16,36.55 57.29,36.90 58.42,37.26 59.55,37.64 60.68,38.02 61.81,38.42 62.94,38.82 64.07,39.24 65.20,39.67 66.33,40.11 67.46,40.56 68.59,41.02 69.72,41.49 70.85,41.97 71.98,42.46 73.11,42.97 74.24,43.48 75.37,44.01 76.50,44.54 77.63,45.09 78.76,45.65 79.89,46.22 81.02,46.80 82.15,47.39 83.28,47.99 84.41,48.60 85.54,49.22 86.67,49.86 87.80,50.50 88.93,51.16 90.06,51.82 91.19,52.50 92.32,53.19 93.45,53.89 94.58,54.60 95.71,55.32 96.84,56.05 97.97,56.79 99.10,57.54 100.23,58.31 101.36,59.08 102.49,59.87 103.62,60.66 104.75,61.47 105.88,62.29 107.01,63.12 108.14,63.96 109.27,64.81 110.40,65.67 111.53,66.54 112.66,67.42 113.79,68.32 114.92,69.22 116.05,70.14 117.18,71.06 118.31,72.00 119.44,72.95 120.57,73.91 121.70,74.88 122.83,75.86 123.96,76.85 125.09,77.85 126.22,78.86 127.35,79.89 128.48,80.92 129.61,81.97 130.74,83.02 131.87,84.09 133.00,85.17 134.13,86.26 135.26,87.36 136.39,88.47 137.52,89.59 138.65,90.72 139.79,91.86 140.92,93.02 142.05,94.18 143.18,95.36 144.31,96.54 145.44,97.74 146.57,98.95 147.70,100.17 148.83,101.40 149.96,102.64 151.09,103.89 152.22,105.15 153.35,106.42 154.48,107.71 155.61,109.00" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="21.50" y="32.25" width="8.03" height="5.94" fill="#fff"/>
+<text x="22.10" y="36.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">B2</text>
+<polyline points="20.00,23.50 21.18,23.51 22.37,23.52 23.55,23.55 24.73,23.59 25.92,23.65 27.10,23.71 28.28,23.79 29.47,23.88 30.65,23.98 31.83,24.09 33.01,24.22 34.20,24.36 35.38,24.50 36.56,24.66 37.75,24.84 38.93,25.02 40.11,25.22 41.30,25.42 42.48,25.64 43.66,25.88 44.85,26.12 46.03,26.37 47.21,26.64 48.40,26.92 49.58,27.21 50.76,27.51 51.94,27.83 53.13,28.16 54.31,28.49 55.49,28.84 56.68,29.21 57.86,29.58 59.04,29.97 60.23,30.36 61.41,30.77 62.59,31.19 63.78,31.63 64.96,32.07 66.14,32.53 67.33,33.00 68.51,33.48 69.69,33.97 70.87,34.48 72.06,35.00 73.24,35.52 74.42,36.06 75.61,36.62 76.79,37.18 77.97,37.76 79.16,38.34 80.34,38.94 81.52,39.56 82.71,40.18 83.89,40.81 85.07,41.46 86.26,42.12 87.44,42.79 88.62,43.47 89.80,44.17 90.99,44.88 92.17,45.59 93.35,46.32 94.54,47.07 95.72,47.82 96.90,48.59 98.09,49.36 99.27,50.15 100.45,50.95 101.64,51.77 102.82,52.59 104.00,53.43 105.19,54.28 106.37,55.14 107.55,56.01 108.73,56.90 109.92,57.79 111.10,58.70 112.28,59.62 113.47,60.56 114.65,61.50 115.83,62.46 117.02,63.42 118.20,64.40 119.38,65.40 120.57,66.40 121.75,67.41 122.93,68.44 124.12,69.48 125.30,70.53 126.48,71.59 127.66,72.67 128.85,73.76 130.03,74.85 131.21,75.96 132.40,77.09 133.58,78.22 134.76,79.37 135.95,80.52 137.13,81.69 138.31,82.87 139.50,84.07 140.68,85.27 141.86,86.49 143.05,87.72 144.23,88.96 145.41,90.21 146.59,91.48 147.78,92.75 148.96,94.04 150.14,95.34 151.33,96.66 152.51,97.98 153.69,99.32 154.88,100.66 156.06,102.02 157.24,103.39 158.43,104.78 159.61,106.17 160.79,107.58 161.98,109.00" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<rect x="21.50" y="24.75" width="8.03" height="5.94" fill="#fff"/>
+<text x="22.10" y="29.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">B3</text>
+<line x1="3.00" y1="127.30" x2="11.00" y2="127.30" stroke="#1b3a63" stroke-width="0.9" stroke-linecap="square"/>
+<text x="14.00" y="129.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">B1, B2, B3 : positions 1, 2, 3 du caisson B</text>
+</svg>

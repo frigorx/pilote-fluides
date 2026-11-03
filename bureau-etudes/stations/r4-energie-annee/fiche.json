@@ -1,0 +1,61 @@
+{
+  "numero": 33,
+  "titre": "Calculer la consommation annuelle, son coût et ses émissions",
+  "ligne": "Régulation et énergie",
+  "code": "BE-R4",
+  "quand": "Après le choix de la machine (station T9), de l’eau chaude (station H6) et de la ventilation (station A4). Vous chiffrez l’énergie de l’année, poste par poste, son coût et ses émissions, et vous la comparez à une chaudière gaz. La note de calcul du projet suit (station R5).",
+  "methode": [
+    "DJU de l’année : la somme des DJU des mois, base 18 °C (station E1).",
+    "Besoin de chauffage : Q = H × DJU × 24 ÷ 1000 × c, en kWh ; c compte les apports gratuits et l’intermittence.",
+    "SCOP : chaleur de l’année ÷ électricité de l’année ; jamais le COP de tête à +7 °C.",
+    "Pompe à chaleur : appoint = Q × part ; machine = (Q − appoint) ÷ SCOP ; électricité = appoint + machine.",
+    "Chaudière : gaz = Q ÷ rendement, en kWh PCI ; eau chaude au gaz : (énergie d’un jour + pertes) × 365 ÷ rendement d’eau chaude.",
+    "Eau chaude : un jour × 365 ; ventilation : station A4 ; été : P × heures ÷ 1000 ÷ SEER.",
+    "Coût : kWh × prix, par énergie ; émissions : kWh × facteur, par énergie ; puis les sommes.",
+    "Temps de retour = surcoût ÷ économie de l’année, sur le coût total des deux solutions."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "SCOP, part d’appoint, rendements, SEER, heures d’été",
+      "valeur": "par projet",
+      "source": "Données de l’exercice (aucun document de fabricant)"
+    },
+    {
+      "grandeur": "Prix de l’électricité ; du gaz",
+      "valeur": "0,25 ; 0,12 € par kWh",
+      "source": "Données de l’exercice (aucun tarif réel)"
+    },
+    {
+      "grandeur": "Facteurs d’émission : électricité ; gaz",
+      "valeur": "0,08 ; 0,23 kg de CO2 par kWh",
+      "source": "Données de l’exercice (méthode réglementaire : stations Législation « Le DPE », « La RE2020 »)"
+    },
+    {
+      "grandeur": "SCOP et SEER, énergie utile ÷ performance",
+      "valeur": "notions",
+      "source": "Habilitation Fluide « Bilan thermique et performance énergétique »"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : H = 115,23 W/K, 2200 DJU, c = 0,8 ; PAC 3,5, SCOP 2,6, appoint 3 % ; chaudière, rendement 0,90.",
+    "lignes": [
+      "Besoin : 115,23 × 2200 × 24 ÷ 1000 × 0,8 = 4867 kWh.",
+      "Pompe à chaleur : 146 + 4721 ÷ 2,6 = 1962 kWh ; chaudière : 4867 ÷ 0,90 = 5408 kWh PCI.",
+      "Tous postes : 690 € et 221 kg (pompe à chaleur) ; 849 € et 1308 kg (gaz).",
+      "Retour : 3000 ÷ 159 = 18,9 ans."
+    ],
+    "resultat": "Pompe à chaleur : 159 € d’économie par an, 6 fois moins de CO2, retour en 18,9 ans"
+  },
+  "pieges": [
+    "L’électricité de l’année calculée avec le COP de tête à +7 °C au lieu du SCOP.",
+    "L’appoint oublié, ou divisé lui aussi par le SCOP.",
+    "Le temps de retour calculé sur le chauffage seul, ou avec le coût d’une seule solution."
+  ],
+  "sources": [
+    "DJU : station BE-E1 ; coefficient H : station BE-T5 ; machine : station BE-T9 ; eau chaude : BE-H6 ; ventilation : BE-A4 ; été : BE-T8 et BE-F1.",
+    "SCOP, SEER et calcul de l’électricité : Habilitation Fluide « Bilan thermique et performance énergétique ».",
+    "Indicateurs en lecture : stations Législation « La RE2020 », « Le DPE », « Les CEE », « Le TEWI ».",
+    "SCOP, rendements, heures, prix, facteurs d’émission, surcoût : données de l’exercice."
+  ],
+  "calculette": null
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 130" width="180mm" height="130mm" role="img">
+<title>La règle du sixième : la surface des baies comparée au sixième de la surface habitable</title>
+<rect width="180" height="130" fill="#fff"/>
+<g><text x="90" y="72" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 72)">inerWeb, by inerweb.fr</text><text x="35" y="39" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 39)">inerWeb, by inerweb.fr</text><text x="150" y="104" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 104)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Surface habitable : 60,00 m², divisée en 6</text>
+<rect x="10.00" y="20.00" width="26.67" height="18.00" fill="#e3eefa"/>
+<line x1="10.00" y1="20.00" x2="36.67" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="36.67" y1="20.00" x2="36.67" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="36.67" y1="38.00" x2="10.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="38.00" x2="10.00" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="36.67" y="20.00" width="26.67" height="18.00" fill="#fff"/>
+<line x1="36.67" y1="20.00" x2="63.33" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="63.33" y1="20.00" x2="63.33" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="63.33" y1="38.00" x2="36.67" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="36.67" y1="38.00" x2="36.67" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="63.33" y="20.00" width="26.67" height="18.00" fill="#fff"/>
+<line x1="63.33" y1="20.00" x2="90.00" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="20.00" x2="90.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="38.00" x2="63.33" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="63.33" y1="38.00" x2="63.33" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="90.00" y="20.00" width="26.67" height="18.00" fill="#fff"/>
+<line x1="90.00" y1="20.00" x2="116.67" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="116.67" y1="20.00" x2="116.67" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="116.67" y1="38.00" x2="90.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="90.00" y1="38.00" x2="90.00" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="116.67" y="20.00" width="26.67" height="18.00" fill="#fff"/>
+<line x1="116.67" y1="20.00" x2="143.33" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="143.33" y1="20.00" x2="143.33" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="143.33" y1="38.00" x2="116.67" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="116.67" y1="38.00" x2="116.67" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="143.33" y="20.00" width="26.67" height="18.00" fill="#fff"/>
+<line x1="143.33" y1="20.00" x2="170.00" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.00" y1="20.00" x2="170.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.00" y1="38.00" x2="143.33" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="143.33" y1="38.00" x2="143.33" y2="20.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="23.33" y="31.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">10,00 m²</text>
+<text x="10.00" y="48.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">un sixième : 60,00 ÷ 6 = 10,00 m²</text>
+<text x="10.00" y="60.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Baies vitrées : 9,50 m²</text>
+<rect x="10.00" y="66.00" width="25.33" height="18.00" fill="#fff"/>
+<line x1="10.00" y1="66.00" x2="35.33" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="35.33" y1="66.00" x2="35.33" y2="84.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="35.33" y1="84.00" x2="10.00" y2="84.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="84.00" x2="10.00" y2="66.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="36.67" y1="64.00" x2="36.67" y2="86.00" stroke="#ff6b35" stroke-width="1" stroke-dasharray="1.6 1.2"/>
+<text x="40.67" y="76.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">9,50 &lt; 10,00 : il manque 0,50 m²</text>
+<text x="90.00" y="100.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Règle : le total des baies doit atteindre</text>
+<text x="90.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">au moins le sixième de la surface habitable.</text>
+<line x1="4.00" y1="119.50" x2="176.00" y2="119.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="126.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="126.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

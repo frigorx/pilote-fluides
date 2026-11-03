@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132" width="180mm" height="132mm" role="img">
+<title>Échelle des températures : θi = 19 °C dedans, θe = −7 °C dehors, ΔT = 26 K</title>
+<rect width="180" height="132" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="35" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 40)">inerWeb, by inerweb.fr</text><text x="150" y="106" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 106)">inerWeb, by inerweb.fr</text></g>
+<line x1="70.00" y1="20.00" x2="70.00" y2="112.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="66.00" y1="40.00" x2="70.00" y2="40.00" stroke="#1b3a63" stroke-width="0.4"/>
+<line x1="66.00" y1="55.00" x2="70.00" y2="55.00" stroke="#1b3a63" stroke-width="0.4"/>
+<line x1="66.00" y1="70.00" x2="70.00" y2="70.00" stroke="#1b3a63" stroke-width="0.4"/>
+<line x1="66.00" y1="85.00" x2="70.00" y2="85.00" stroke="#1b3a63" stroke-width="0.4"/>
+<line x1="66.00" y1="100.00" x2="70.00" y2="100.00" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="63.50" y="86.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">0 °C</text>
+<line x1="63.00" y1="28.00" x2="70.00" y2="28.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="63.00" y1="106.00" x2="70.00" y2="106.00" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="61.00" y="29.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Dedans, θi = 19 °C</text>
+<text x="61.00" y="107.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Dehors, θe = −7 °C</text>
+<line x1="70.00" y1="28.00" x2="104.00" y2="28.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.6 1.2"/>
+<line x1="70.00" y1="106.00" x2="104.00" y2="106.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.6 1.2"/>
+<line x1="100.00" y1="67.00" x2="100.00" y2="28.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="100.00" y1="28.00" x2="101.25" y2="30.28" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="100.00" y1="28.00" x2="98.75" y2="30.28" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="100.00" y1="67.00" x2="100.00" y2="106.00" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="100.00" y1="106.00" x2="98.75" y2="103.72" stroke="#ff6b35" stroke-width="1.4"/>
+<line x1="100.00" y1="106.00" x2="101.25" y2="103.72" stroke="#ff6b35" stroke-width="1.4"/>
+<text x="108.00" y="56.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">ΔT = θi − θe</text>
+<text x="108.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">= 19 − (−7)</text>
+<text x="108.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">= 26 K</text>
+<text x="108.00" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Retrancher −7</text>
+<text x="108.00" y="93.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">revient à ajouter 7.</text>
+<text x="108.00" y="105.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1 K = 1 °C d’écart.</text>
+<line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

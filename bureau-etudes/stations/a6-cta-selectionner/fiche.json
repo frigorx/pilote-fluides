@@ -1,0 +1,67 @@
+{
+  "numero": 18,
+  "titre": "Comparer deux centrales de traitement d’air et justifier la sélection",
+  "ligne": "Aéraulique",
+  "code": "BE-A6",
+  "quand": "Après la composition de la centrale (station A5), qui donne la température après le récupérateur et la batterie chaude. Vous avez le CCTP (débits, récupérateur de base et variante, horaires), le plan du local technique et un catalogue. Vous obtenez l’énergie récupérée sur l’année par chaque centrale, sa taille, sa place, les clapets coupe-feu et un choix justifié.",
+  "methode": [
+    "Température après le récupérateur : θ = θe + η × (θ reprise − θe) ; batterie chaude : P = 0,34 × qv × (θ soufflage − θ), en W.",
+    "Part d’occupation = heures d’occupation par semaine ÷ 168.",
+    "Énergie sans récupérateur = 0,34 × qv × DJU × 24 × part d’occupation ÷ 1 000, en kWh par an.",
+    "Énergie récupérée = énergie sans récupérateur × η, pour chaque centrale ; écart entre les deux.",
+    "Critères que l’efficacité ne dit pas : les deux airs séparés ou non (odeurs), humidité, entretien.",
+    "Catalogue : la plus petite taille dont le débit maximal atteint le débit demandé.",
+    "Place : longueur + 2 × dégagement ≤ longueur du local ; largeur du local − (largeur + maintenance) ≥ passage.",
+    "Un clapet coupe-feu à chaque traversée d’un mur coupe-feu ; aucun sur la façade.",
+    "Justifier en trois phrases, puis rédiger la première page de la note de calcul."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "0,34 Wh/(m³.K)",
+      "valeur": "masse volumique × chaleur massique de l’air ÷ 3 600",
+      "source": "Station T4"
+    },
+    {
+      "grandeur": "Efficacités du bâtiment de bureaux",
+      "valeur": "plaques 0,54, roue 0,78",
+      "source": "CCTP du bâtiment (séance S06)"
+    },
+    {
+      "grandeur": "Degrés-jours unifiés",
+      "valeur": "2 400 par an, base 18 °C",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Place de maintenance, dégagement, passage",
+      "valeur": "0,90 m, 0,50 m, 0,90 m",
+      "source": "Donnée de l’exercice (sur un vrai projet : notice du fabricant)"
+    },
+    {
+      "grandeur": "Catalogue des centrales",
+      "valeur": "tailles 300, 500 et 800 m³/h, plaques et roue",
+      "source": "Donnée de l’exercice, sans marque"
+    }
+  ],
+  "exemple": {
+    "enonce": "Salle de réunion seule, 240 m³/h ; plaques η = 0,60, roue η = 0,75 ; 2 400 DJU ; 57,5 h sur 168 h ; −7 °C dehors, reprise et soufflage à 19 °C.",
+    "lignes": [
+      "Sans récupérateur : 0,34 × 240 × 2 400 × 24 × 57,5 ÷ 168 ÷ 1 000 = 1 609 kWh.",
+      "Plaques : 1 609 × 0,60 = 965 kWh ; roue : 1 609 × 0,75 = 1 207 kWh ; écart 242 kWh.",
+      "À −7 °C : 8,6 °C et 849 W (plaques) ; 12,5 °C et 530 W (roue).",
+      "Catalogue : P-300 et R-300 ; passages 1,47 m et 1,42 m : les deux tiennent.",
+      "Air repris de la salle seule : aucune odeur à craindre, la roue est retenue."
+    ],
+    "resultat": "Roue R-300, 1 207 kWh récupérés par an"
+  },
+  "pieges": [
+    "Compter toute la semaine : la centrale ne marche que pendant l’occupation.",
+    "Choisir sur la seule efficacité : la roue peut renvoyer l’air extrait et ses odeurs dans l’air neuf.",
+    "Oublier la place de maintenance devant les portes de visite."
+  ],
+  "sources": [
+    "Station T4 (0,34) ; station E1 (degrés-jours) ; station A5 (température après le récupérateur).",
+    "Législation, « Clapets coupe-feu » : clapet de même degré que la paroi, au droit de la paroi, mécanisme accessible.",
+    "Catalogue, dimensions et place de maintenance : données de l’exercice. Le catalogue du fabricant donne ces valeurs ; vous les lirez de la même façon."
+  ],
+  "calculette": null
+}

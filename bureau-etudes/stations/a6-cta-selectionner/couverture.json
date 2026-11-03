@@ -1,0 +1,42 @@
+{
+  "cle": "a6-cta-selectionner",
+  "code": "BE-A6",
+  "titre": "CTA 2 : sélectionner",
+  "ligne": "Aéraulique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 18,
+    "chapitre": 4
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (échangeurs, récupérateurs ; sélection de la centrale)"
+      },
+      {
+        "code": "CP7",
+        "libelle": "Réaliser l'étude d'une installation de ventilation d'un bâtiment tertiaire (clapets coupe-feu aux traversées ; à confirmer)"
+      }
+    ],
+    "bts_fed": {
+      "option": "A et B",
+      "competences": [
+        { "code": "C3-2", "libelle": "À confirmer : code relevé dans CADRAGE.md, C.3, ligne A6" }
+      ],
+      "savoirs": [
+        { "code": "B2-2", "libelle": "À confirmer : code relevé dans CADRAGE.md, C.3, ligne A6" },
+        { "code": "S10.6", "libelle": "À confirmer : code relevé dans CADRAGE.md, C.3, ligne A6" }
+      ],
+      "taches": []
+    }
+  }
+}

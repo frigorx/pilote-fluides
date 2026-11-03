@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.0 -34.0 48.0 58.0" width="48" height="58">
+<!-- Vanne 3 Voies motorisée — converti de vanne3voies_01.elmt par outils\elmt-vers-svg.py -->
+<rect x="-24.0" y="-34.0" width="48.0" height="58.0" fill="#ffffff"/>
+<polyline points="-10,-17 -10,-10 -5,-9 5,-9 10,-10 10,-17" stroke="black" stroke-width="1" fill="none"/>
+<line x1="1" y1="-9" x2="1" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-9" x2="-1" y2="-1" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="0,0 -6,10 6,10" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="0,0 10,-6 10,6" stroke="black" stroke-width="1" fill="none"/>
+<polygon points="0,0 -10,-6 -10,6" stroke="black" stroke-width="1" fill="none"/>
+<path d="M 10.00,-18.00 A 10.00,2.00 0 0 0 -10.00,-18.00" stroke="black" stroke-width="1" fill="none"/>
+</svg>

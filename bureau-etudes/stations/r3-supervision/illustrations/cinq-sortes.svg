@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 88.00" width="180mm" height="88.00mm" role="img">
+<title>Les cinq sortes de points sur un synoptique</title>
+<rect width="180" height="88.00" fill="#fff"/>
+
+<g><text x="90" y="48" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 48)">inerWeb, by inerweb.fr</text><text x="40" y="26" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 26)">inerWeb, by inerweb.fr</text><text x="140" y="72" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 72)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="8.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Sorte</text>
+<text x="50.00" y="8.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Sur le synoptique</text>
+<text x="112.00" y="8.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">D’où elle vient</text>
+<line x1="4.00" y1="11.00" x2="176.00" y2="11.00" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="4.00" y="20.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Mesure</text>
+<rect x="50.00" y="14.85" width="21.66" height="7.54" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="60.83" y="20.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">18,8 °C</text>
+<text x="112.00" y="20.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">une sonde</text>
+<text x="4.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">État</text>
+<circle cx="52.00" cy="30.50" r="1.9" fill="#2e9e4f"/>
+<text x="57.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">marche</text>
+<text x="112.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">un contact de l’appareil</text>
+<text x="4.00" y="44.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Commande</text>
+<rect x="50.00" y="38.85" width="12.43" height="7.54" fill="#fff" stroke="#1b3a63" stroke-width="0.45" stroke-dasharray="1.2 0.8"/>
+<text x="56.21" y="44.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">35 %</text>
+<text x="112.00" y="44.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">l’automate, vers l’appareil</text>
+<text x="4.00" y="56.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Alarme</text>
+<circle cx="52.00" cy="54.50" r="1.9" fill="#d93025"/>
+<text x="57.00" y="56.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">filtre</text>
+<text x="112.00" y="56.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">un contact de défaut</text>
+<text x="4.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Consigne</text>
+<text x="50.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">consigne 19,0 °C</text>
+<text x="112.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">l’exploitant, au clavier</text>
+<line x1="4.00" y1="77.50" x2="176.00" y2="77.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Synoptique de supervision</text>
+</svg>

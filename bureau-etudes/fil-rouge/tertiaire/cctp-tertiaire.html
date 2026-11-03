@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="../../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>CCTP des bureaux d’étude, lots CVC et GTB - Bureau d’études inerWeb</title>
+<style>
+@page { size: A4; margin: 12mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #000; }
+body { font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; line-height: 1.12; }
+h1, h2, h3 { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; margin: 0; }
+h1 { font-size: 18pt; }
+h2 { font-size: 16pt; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; margin: 2.5mm 0 1.5mm; }
+.page { position: relative; width: 186mm; height: 272mm; overflow: hidden; margin: 0 auto; }
+.page:not(:last-child) { break-after: page; page-break-after: always; }
+.page > .filbox { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.filbox .fil { position: absolute; opacity: .07; display: block; }
+.fil.c { width: 130mm; height: 23.1mm; left: 25mm; top: 120mm; transform: rotate(-10deg); }
+.fil.h { width: 125mm; height: 22.2mm; right: -22mm; top: 40mm; transform: rotate(-10deg); }
+.fil.b { width: 125mm; height: 22.2mm; left: -14mm; bottom: 12mm; transform: rotate(-10deg); }
+.page > *:not(.filbox) { position: relative; z-index: 1; }
+.entete { display: flex; justify-content: space-between; align-items: center; gap: 6mm; margin-bottom: 1.5mm; }
+.entete svg.logo { width: 90mm; height: 13.2mm; flex: none; }
+.entete .qui { text-align: right; }
+.entete .qui p { margin: 0; font-weight: bold; }
+p { margin: 0 0 1.2mm; }
+.note { margin: 1mm 0 0; }
+table.t { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.t th, .t td { border: 0.3mm solid #000; padding: 0.3mm 1.3mm; vertical-align: top; overflow-wrap: anywhere; font-size: 14pt; }
+.t th { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; text-align: left; border-bottom: 0.8mm solid #1b3a63; vertical-align: middle; }
+.t tr { break-inside: avoid; page-break-inside: avoid; }
+.fin { height: 0; }
+@media screen { body { background: #e9edf2; padding: 8mm 0; } .page { background: #fff; margin-bottom: 8mm; padding: 0; outline: 1px solid #b8c2cf; } }
+@media print { html, body { background: #fff !important; color: #000 !important; } }
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="filigrane" viewBox="0 0 900 160">
+      <text fill="#1b3a63" font-size="80" x="14" y="92">&#10052;&#65039;</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="78" font-weight="bold" x="120" y="88">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="78" x="262" y="88">Web</text>
+      <line stroke="#e8914a" stroke-width="5" x1="120" x2="440" y1="102" y2="102"/>
+      <rect fill="#e8914a" x="450" y="12" rx="9" ry="9" width="430" height="60"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="bold" x="665" y="54" text-anchor="middle">Bureau d'études</text>
+      <text fill="#1b3a63" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="42" x="120" y="148">by inerweb.fr</text>
+    </symbol>
+  </defs>
+</svg>
+<section class="page" id="page-1" data-page="1"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div>
+<div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>CCTP, extrait</h1><p>Enveloppe et conditions de calcul, page 1 sur 4</p></div></div>
+<p><b>Bureaux d’étude BE.</b> Bâtiment de bureaux de plain-pied, région parisienne, zone H1a. Cet extrait de CCTP est fictif : inerWeb l’a écrit pour le réseau Bureau d’études. Les plans donnent les locaux, les surfaces et les baies.</p><section class="lot"><h2>Lot 1, Enveloppe</h2>
+<table class="t"><colgroup><col style="width:38%"><col style="width:24%"><col style="width:38%"></colgroup>
+<thead><tr><th>Paroi</th><th>Coefficient en W/(m².K)</th><th>Source</th></tr></thead><tbody>
+<tr><td>Mur extérieur</td><td>U = 0,31</td><td>Calculé selon les règles Th-Bât 2017 ; valeur d’exercice</td></tr>
+<tr><td>Mur sur le local technique</td><td>U = 0,54</td><td>Calculé selon les règles Th-Bât 2017 ; valeur d’exercice</td></tr>
+<tr><td>Plafond sous comble perdu</td><td>U = 0,21</td><td>Calculé selon les règles Th-Bât 2017 ; valeur d’exercice</td></tr>
+<tr><td>Plancher bas sur terre-plein</td><td>Ue = 0,36</td><td>valeur d’exercice</td></tr>
+<tr><td>Fenêtres, sans protection solaire</td><td>Uw = 1,6</td><td>valeur d’exercice</td></tr>
+<tr><td>Portes pleines</td><td>Ud = 1,8</td><td>valeur d’exercice</td></tr>
+</tbody></table>
+<p class="note">La composition des parois et le calcul de leur U ne sont pas repris ici : ce sont des données du projet.</p></section>
+<section class="lot"><h2>Conditions de calcul</h2>
+<table class="t"><colgroup><col style="width:46%"><col style="width:22%"><col style="width:32%"></colgroup>
+<thead><tr><th>Grandeur</th><th>Valeur</th><th>Source</th></tr></thead><tbody>
+<tr><td>Température extérieure de base, hiver</td><td>−7 °C</td><td>valeur d’exercice</td></tr>
+<tr><td>Humidité relative extérieure, hiver</td><td>90 %</td><td>valeur d’exercice</td></tr>
+<tr><td>Température intérieure, hiver</td><td>19 °C</td><td>valeur d’exercice</td></tr>
+<tr><td>Air extérieur, été</td><td>32 °C, 40 %</td><td>valeur d’exercice</td></tr>
+<tr><td>Air intérieur, été</td><td>26 °C, 50 %</td><td>valeur d’exercice</td></tr>
+<tr><td>Comble à l’heure de pointe, été</td><td>38 °C</td><td>valeur d’exercice</td></tr>
+<tr><td>Teinte des murs extérieurs</td><td>moyen</td><td>valeur d’exercice</td></tr>
+<tr><td>Ponts thermiques, forfait</td><td>20 % des parois</td><td>valeur d’exercice</td></tr>
+<tr><td>Surpuissance de relance</td><td>15 %</td><td>valeur d’exercice</td></tr>
+</tbody></table></section>
+<section class="lot"><h2>Locaux non chauffés</h2>
+<table class="t"><colgroup><col style="width:30%"><col style="width:20%"><col style="width:50%"></colgroup>
+<thead><tr><th>Local</th><th>Coefficient b</th><th>Source</th></tr></thead><tbody>
+<tr><td>Local technique</td><td>b = 0,9</td><td>Th-Bât Généralités, § 5.2.1, tableau II ; valeur d’exercice. Contient : centrale de traitement d’air, armoire de régulation, collecteurs</td></tr>
+<tr><td>Comble perdu</td><td>b = 0,95</td><td>Th-Bât Généralités, § 5.2.1, tableau II ; valeur d’exercice</td></tr>
+</tbody></table></section>
+<div class="fin" data-fin="1"></div>
+</section>
+<section class="page" id="page-2" data-page="2"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div>
+<div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>CCTP, extrait</h1><p>Occupation et ventilation, page 2 sur 4</p></div></div>
+<section class="lot"><h2>Occupation</h2>
+<table class="t"><colgroup><col style="width:30%"><col style="width:15%"><col style="width:30%"><col style="width:25%"></colgroup>
+<thead><tr><th>Local</th><th>Occupants</th><th>Catégorie du Code du travail</th><th>Appareils</th></tr></thead><tbody>
+<tr><td>Bureau</td><td>2</td><td>Bureaux et locaux sans travail physique</td><td>deux ordinateurs de 150 W</td></tr>
+<tr><td>Salle de réunion</td><td>8</td><td>Locaux de restauration, de vente, de réunion</td><td>un vidéoprojecteur de 300 W</td></tr>
+<tr><td>Sanitaires</td><td>0</td><td>sans objet</td><td>aucun appareil</td></tr>
+<tr><td>Plateau de bureaux</td><td>5</td><td>Bureaux et locaux sans travail physique</td><td>cinq ordinateurs de 150 W</td></tr>
+<tr><td>Accueil et circulation</td><td>1</td><td>Bureaux et locaux sans travail physique</td><td>un ordinateur de 150 W</td></tr>
+</tbody></table>
+<p class="note">Activité assise légère dans tous les locaux. Éclairage à LED de bureau. Le bâtiment reçoit 12 personnes au plus en même temps : les huit places de la salle de réunion se prennent sur le plateau et le bureau. Ouverture du lundi au vendredi, de 7 h 30 à 19 h. Valeurs d’exercice.</p></section>
+<section class="lot"><h2>Lot 2, Ventilation</h2>
+<table class="t"><colgroup><col style="width:30%"><col style="width:70%"></colgroup>
+<thead><tr><th>Donnée</th><th>Ce que dit le CCTP</th></tr></thead><tbody>
+<tr><td>Système</td><td>Double flux par une centrale de traitement d’air (CTA) placée dans le local technique.</td></tr>
+<tr><td>Air neuf</td><td>Débit minimal par occupant du Code du travail, selon la catégorie de chaque local ; soufflage dans BUR, REU, PLA et ACC. Code du travail, art. R. 4222-6.</td></tr>
+<tr><td>Extraction des sanitaires</td><td>60 m³/h. Valeur d’exercice (deux cabinets d’aisances), à vérifier dans le règlement sanitaire du département.</td></tr>
+<tr><td>Reprise</td><td>Le reste de l’air est repris par des grilles dans l’accueil et circulation (ACC), après transfert sous les portes.</td></tr>
+<tr><td>Salle de réunion</td><td>Débit d’air neuf variable selon la teneur en CO₂ (registre motorisé), entre un débit de veille et le débit réglementaire. Débit de veille : 30 % du débit réglementaire (valeur d’exercice).</td></tr>
+</tbody></table></section>
+<div class="fin" data-fin="2"></div>
+</section>
+<section class="page" id="page-3" data-page="3"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div>
+<div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>CCTP, extrait</h1><p>CTA, émission et production, page 3 sur 4</p></div></div>
+<section class="lot"><h2>Lot 3, Centrale de traitement d’air</h2>
+<table class="t"><colgroup><col style="width:30%"><col style="width:70%"></colgroup>
+<thead><tr><th>Donnée</th><th>Ce que dit le CCTP</th></tr></thead><tbody>
+<tr><td>Sections, dans l’ordre de l’air</td><td>prise d’air neuf avec registre, filtre d’air neuf, récupérateur, batterie chaude à eau, batterie froide à eau glacée, ventilateur de soufflage, reprise avec filtre, ventilateur de reprise, rejet avec registre.</td></tr>
+<tr><td>Mélange</td><td>Pas de recyclage : la CTA traite de l’air neuf seul.</td></tr>
+<tr><td>Humidification</td><td>Aucune au CCTP.</td></tr>
+<tr><td>Récupérateur</td><td>Solution de base : échangeur à plaques, efficacité 0,54. Variante : roue, efficacité 0,78. Valeurs d’exercice. Le bureau d’études compare la base et la variante.</td></tr>
+<tr><td>Température de soufflage</td><td>19 °C l’hiver, 17 °C l’été. Valeurs d’exercice.</td></tr>
+<tr><td>Batteries</td><td>Chaude : eau chaude 45/40 de la pompe à chaleur. Froide : eau glacée 7/12 du groupe.</td></tr>
+<tr><td>Ventilateurs</td><td>à vitesse variable.</td></tr>
+</tbody></table></section>
+<section class="lot"><h2>Lot 4, Émission et production</h2>
+<table class="t"><colgroup><col style="width:30%"><col style="width:70%"></colgroup>
+<thead><tr><th>Donnée</th><th>Ce que dit le CCTP</th></tr></thead><tbody>
+<tr><td>Émission</td><td>Ventilo-convecteurs à quatre tubes dans BUR, REU, PLA et ACC. Les sanitaires sont tenus par l’air transféré. Valeur d’exercice.</td></tr>
+<tr><td>Production de chaleur</td><td>pompe à chaleur air/eau, régime 45/40. Chaudière exclue. Valeur d’exercice.</td></tr>
+<tr><td>Production d’eau glacée</td><td>groupe de production d’eau glacée air/eau, posé au sol à l’extérieur, façade nord, régime 7/12.</td></tr>
+<tr><td>Fluide caloporteur</td><td>eau glycolée, monopropylène glycol à 30 %.</td></tr>
+<tr><td>Groupe d’eau glacée</td><td>1 étage de puissance ; 6 démarrages par heure au plus. Valeurs d’exercice : sur un vrai projet, elles se lisent dans la notice du fabricant.</td></tr>
+<tr><td>Ballon tampon</td><td>À dimensionner par le bureau d’études.</td></tr>
+</tbody></table></section>
+<div class="fin" data-fin="3"></div>
+</section>
+<section class="page" id="page-4" data-page="4"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div>
+<div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>CCTP, extrait</h1><p>Régulation et supervision, page 4 sur 4</p></div></div>
+<section class="lot"><h2>Lot 5, Régulation</h2>
+<table class="t"><colgroup><col style="width:30%"><col style="width:70%"></colgroup>
+<thead><tr><th>Donnée</th><th>Ce que dit le CCTP</th></tr></thead><tbody>
+<tr><td>Ce que mesure la régulation de la CTA</td><td>température de soufflage, température de reprise, teneur en CO₂ de la salle de réunion, encrassement des filtres, marche et défaut des ventilateurs, antigel de la batterie chaude.</td></tr>
+<tr><td>Salle de réunion</td><td>Consigne de CO₂ : 1 000 ppm. Sonde de 0 à 2 000 ppm, signal 0-10 V. Valeurs d’exercice.</td></tr>
+<tr><td>Séquence</td><td>Chaud, récupération, froid : à décrire par le bureau d’études.</td></tr>
+</tbody></table></section>
+<section class="lot"><h2>Lot 6, Gestion technique du bâtiment</h2>
+<p>Supervision en lecture : le lot GTB affiche, horodate et alarme ; le bureau d’études ne la conçoit pas. Horaires : ceux de l’occupation.</p>
+<table class="t"><colgroup><col style="width:28%"><col style="width:72%"></colgroup>
+<thead><tr><th>Équipement</th><th>Ce que la supervision affiche ou commande</th></tr></thead><tbody>
+<tr><td>Centrale de traitement d’air</td><td><b>Mesures</b> : température d’air neuf, température de soufflage, température de reprise, teneur en CO₂ de la salle de réunion. <b>États</b> : marche du ventilateur de soufflage, marche du ventilateur de reprise. <b>Commandes</b> : marche et arrêt, vitesse des ventilateurs, vanne de la batterie chaude, vanne de la batterie froide, registre de la salle de réunion. <b>Alarmes</b> : défaut d’un ventilateur, filtre encrassé, antigel. <b>Consignes</b> : température de soufflage, teneur en CO₂.</td></tr>
+<tr><td>Groupe de production d’eau glacée</td><td><b>Mesures</b> : température de départ, température de retour. <b>États</b> : marche. <b>Commandes</b> : marche et arrêt. <b>Alarmes</b> : défaut général. <b>Consignes</b> : température de départ.</td></tr>
+<tr><td>Pompe à chaleur</td><td><b>Mesures</b> : température de départ, température de retour. <b>États</b> : marche. <b>Commandes</b> : marche et arrêt. <b>Alarmes</b> : défaut général. <b>Consignes</b> : température de départ.</td></tr>
+<tr><td>Pompe du circuit d’eau glacée</td><td><b>États</b> : marche. <b>Commandes</b> : marche et arrêt. <b>Alarmes</b> : défaut.</td></tr>
+<tr><td>Ventilo-convecteurs (un par local) : Bureau, Salle de réunion, Plateau de bureaux, Accueil et circulation</td><td><b>Mesures</b> : température du local. <b>États</b> : marche. <b>Commandes</b> : mode confort ou réduit. <b>Consignes</b> : température du local.</td></tr>
+</tbody></table>
+<p class="note">Valeurs d’exercice : la liste des points est un choix du maître d’ouvrage.</p></section>
+<section class="lot"><h2>Sources</h2>
+<p class="note">Code du travail, art. R. 4222-6 (débit minimal d’air neuf par occupant), sur legifrance.gouv.fr. Règles Th-Bât 2017, fascicules « Généralités » et « Parois opaques », sur rt-re-batiment.developpement-durable.gouv.fr. Les autres valeurs sont des valeurs d’exercice : sur un vrai projet, elles se lisent dans le programme du maître d’ouvrage ou la notice du fabricant.</p></section>
+<div class="fin" data-fin="4"></div>
+</section>
+</body>
+</html>

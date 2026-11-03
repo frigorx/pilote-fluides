@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 130" width="180mm" height="130mm" role="img">
+<title>Une liaison en coupe : montée, parcours, descente</title>
+<rect width="180" height="130" fill="#fff"/>
+<line x1="4.00" y1="95.00" x2="176.00" y2="95.00" stroke="#1b3a63" stroke-width="0.7"/>
+<line x1="38.00" y1="95.00" x2="38.00" y2="30.00" stroke="#1b3a63" stroke-width="0.9"/>
+<line x1="38.00" y1="30.00" x2="176.00" y2="30.00" stroke="#1b3a63" stroke-width="0.6"/>
+<svg x="7.00" y="79.11" width="22.00" height="15.39" viewBox="-17.37 -23.30 56.91 39.81" overflow="visible"><g stroke="#1b3a63" fill="#1b3a63"><ellipse cx="2.40" cy="-2.79" rx="7.07" ry="6.09" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="2.39" cy="-2.79" rx="9.63" ry="8.54" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="25.41" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="33.77" y="-1.1" width="1.39" height="1.22" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<ellipse cx="3.03" cy="-2.79" rx="15.41" ry="13.41" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-16.37" y="-22.3" width="50.13" height="35.36" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="34.94" y="-2.32" width="2.79" height="3.66" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="21.23" y1="-19.91" x2="21.23" y2="13.12" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="24" y="-16.2" width="7" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-12.19" y="13.07" width="5.57" height="2.44" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="33.77" y="9.41" width="1.39" height="1.22" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="35.75" y="8.19" width="2.79" height="3.66" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-16.37" y1="-19.86" x2="33.77" y2="-19.86" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="3.18" y1="-16.2" x2="3.18" y2="9.41" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-12.38" y1="-2.79" x2="18.45" y2="-2.79" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.79" rx="12.85" ry="10.97" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="3.04" cy="-2.78" rx="3.85" ry="3.66" stroke="#1b3a63" stroke-width="0.4" fill="none"/></g></svg>
+<svg x="152.00" y="37.45" width="20.00" height="5.10" viewBox="-25.10 -4.62 63.60 16.21" overflow="visible"><g stroke="#1b3a63" fill="#1b3a63"><line x1="-20.81" y1="-1.2" x2="34.21" y2="-1.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-20.81" y1="-0.2" x2="34.21" y2="-0.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="-24.1" y="-3.62" width="61.6" height="14.21" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-20.9" y="8.46" width="50.4" height="2.13" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="32.7" y="7.75" width="2.4" height="1.42" rx="0" ry="0" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-20.81" y1="-2.2" x2="34.21" y2="-2.2" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<ellipse cx="6.30" cy="3.83" rx="3.20" ry="1.06" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-24.1" y1="6.33" x2="37.5" y2="6.33" stroke="#1b3a63" stroke-width="0.4" fill="none"/></g></svg>
+<polyline points="29.00,82.50 44.00,82.50 44.00,23.75 158.00,23.75 158.00,37.45" fill="none" stroke="#ff6b35" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="48.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">montée 2,35 m</text>
+<text x="100.00" y="20.25" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">parcours au plan</text>
+<text x="148.00" y="45.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">descente 0,65 m</text>
+<line x1="29.00" y1="82.50" x2="102.00" y2="82.50" stroke="#555" stroke-width="0.3" stroke-dasharray="1.5 1.2"/>
+<line x1="102.00" y1="40.00" x2="151.00" y2="40.00" stroke="#555" stroke-width="0.3" stroke-dasharray="1.5 1.2"/>
+<line x1="100.00" y1="82.20" x2="100.00" y2="40.30" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="100.00" y1="40.30" x2="101.15" y2="42.41" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="100.00" y1="40.30" x2="98.85" y2="42.41" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="100.00" y1="40.30" x2="100.00" y2="82.20" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="100.00" y1="82.20" x2="98.85" y2="80.09" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="100.00" y1="82.20" x2="101.15" y2="80.09" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="104.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">H = 1,70 m</text>
+<text x="18.00" y="103.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Unité</text>
+<text x="18.00" y="110.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">extérieure</text>
+<text x="162.00" y="52.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Unité</text>
+<text x="162.00" y="59.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">intérieure</text>
+<text x="6.00" y="116.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">L = montée + parcours au plan + descente</text>
+<line x1="4.00" y1="119.50" x2="176.00" y2="119.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="126.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="126.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Coupe de principe</text>
+<g><text x="90" y="72" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 72)">inerWeb, by inerweb.fr</text><text x="40" y="39" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 39)">inerWeb, by inerweb.fr</text><text x="140" y="107" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 107)">inerWeb, by inerweb.fr</text></g>
+</svg>

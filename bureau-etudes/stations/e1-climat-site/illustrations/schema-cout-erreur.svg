@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 108" width="180mm" height="108mm" role="img">
+<title>Deux écarts de température pour la même pièce : θe = −5 °C et θe = −8 °C, et la hausse de la déperdition</title>
+<rect width="180" height="108" fill="#fff"/>
+<g><text x="90" y="59" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 59)">inerWeb, by inerweb.fr</text><text x="35" y="32" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 32)">inerWeb, by inerweb.fr</text><text x="150" y="86" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 86)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Même pièce, θi = 19 °C (valeur d’exercice)</text>
+<text x="6.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">θe = −5 °C, la bonne valeur</text>
+<rect x="6.00" y="29.00" width="105.60" height="12.00" fill="#e3eefa"/>
+<line x1="6.00" y1="29.00" x2="111.60" y2="29.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="111.60" y1="29.00" x2="111.60" y2="41.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="111.60" y1="41.00" x2="6.00" y2="41.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="41.00" x2="6.00" y2="29.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="9.00" y="37.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">ΔT = 24 K</text>
+<text x="6.00" y="55.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">θe = −8 °C, trop froide</text>
+<rect x="6.00" y="58.00" width="105.60" height="12.00" fill="#e3eefa"/>
+<line x1="6.00" y1="58.00" x2="111.60" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="111.60" y1="58.00" x2="111.60" y2="70.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="111.60" y1="70.00" x2="6.00" y2="70.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="70.00" x2="6.00" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="111.60" y="58.00" width="13.20" height="12.00" fill="#ffe1d4"/>
+<line x1="111.60" y1="58.00" x2="124.80" y2="58.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="124.80" y1="58.00" x2="124.80" y2="70.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="124.80" y1="70.00" x2="111.60" y2="70.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="111.60" y1="70.00" x2="111.60" y2="58.00" stroke="#ff6b35" stroke-width="1"/>
+<text x="9.00" y="66.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">ΔT = 27 K</text>
+<line x1="111.60" y1="41.00" x2="111.60" y2="58.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 1"/>
+<text x="127.80" y="66.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">+ 3 K</text>
+<text x="6.00" y="82.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φ = H × ΔT : avec le même H,</text>
+<text x="6.00" y="89.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">la puissance grandit de 12,5 %.</text>
+<line x1="4.00" y1="97.50" x2="176.00" y2="97.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

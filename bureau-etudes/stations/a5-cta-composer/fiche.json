@@ -1,0 +1,60 @@
+{
+  "numero": 17,
+  "titre": "Composer la CTA : sections, évolutions de l’air neuf sur le diagramme, récupérateur et batteries",
+  "ligne": "Aéraulique",
+  "code": "BE-A5",
+  "quand": "Après les débits d’air neuf des locaux et le bilan d’été. Vous avez le CCTP de la CTA (sections, récupérateur, soufflage) et les conditions de calcul. Vous obtenez le schéma de principe, la température après le récupérateur et la puissance des batteries chaude et froide.",
+  "methode": [
+    "Ranger les sections dans l’ordre de l’air : prise d’air neuf et registre, filtre, récupérateur, batterie chaude, batterie froide, ventilateur ; reprise, filtre, ventilateur, rejet.",
+    "Sans recyclage, débit soufflé = somme des débits d’air neuf des locaux (Code du travail : 25 m³/h par occupant en bureau, 30 en salle de réunion).",
+    "Après le récupérateur : θ2 = θe + η × (θ reprise − θe), l’hiver comme l’été.",
+    "Sur le diagramme : E, puis 2, puis S sur une horizontale tant que l’air ne passe pas sous sa rosée ; lire h en chaque point.",
+    "Batterie : P = 0,34 × qv × Δθ (W) ; recouper par qm × Δh, qm = 1,2 × qv ÷ 3 600 (kg/s), Δh en kJ/kg (kW).",
+    "Sans récupérateur : Δθ depuis l’air extérieur ; la différence est la puissance récupérée.",
+    "L’été, comparer la température de soufflage à la rosée de l’air neuf : au-dessus, la batterie ne sèche pas l’air.",
+    "L’hiver, lire l’humidité relative de l’air soufflé : sans humidification, l’air est très sec."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Efficacité des récupérateurs",
+      "valeur": "Plaques 0,54 ; roue 0,78, comptée en sensible seul",
+      "source": "CCTP tertiaire page 3 (valeurs d’exercice) ; roue en sensible seul : donnée de l’exercice"
+    },
+    {
+      "grandeur": "Soufflage",
+      "valeur": "19 °C l’hiver, 17 °C l’été",
+      "source": "CCTP tertiaire page 3 (valeurs d’exercice)"
+    },
+    {
+      "grandeur": "Débit d’air neuf par occupant",
+      "valeur": "25 m³/h en bureau, 30 m³/h en salle de réunion",
+      "source": "Code du travail, art. R. 4222-6 (station E2)"
+    },
+    {
+      "grandeur": "Masse volumique de l’air",
+      "valeur": "1,2 kg/m³",
+      "source": "Donnée de l’exercice (station A1)"
+    }
+  ],
+  "exemple": {
+    "enonce": "Noyau du bâtiment (bureau et salle de réunion) : 290 m³/h d’air neuf, échangeur à plaques η = 0,54 ; hiver −7 °C et 90 % dehors, reprise 19 °C, soufflage 19 °C.",
+    "lignes": [
+      "θ2 = −7 + 0,54 × (19 − (−7)) = 7,04 °C.",
+      "Batterie chaude : 0,34 × 290 × (19 − 7,04) = 1 179 W ; sans récupérateur 2 564 W.",
+      "Diagramme : h ≈ 12 puis 24 kJ/kg ; 0,0967 × 12 ≈ 1,16 kW.",
+      "Été : θ2 = 28,76 °C ; batterie froide 1 160 W ; soufflé à 17 °C, au-dessus de la rosée (16,7 °C)."
+    ],
+    "resultat": "Batterie chaude 1 179 W, batterie froide 1 160 W"
+  },
+  "pieges": [
+    "Calculer la batterie depuis l’air extérieur : elle part de la sortie du récupérateur.",
+    "Prendre la charge des locaux pour le débit : sans recyclage, la CTA souffle l’air neuf seul.",
+    "Croire qu’une batterie froide sèche toujours l’air : seulement sous la rosée de l’air."
+  ],
+  "sources": [
+    "Air humide : formules et diagramme de la station A1 ; 0,34 Wh/(m³.K) : station T4 (règles Th-Bât).",
+    "Débits d’air neuf : Code du travail, art. R. 4222-6. Sections, récupérateurs et soufflage : CCTP du bâtiment tertiaire, page 3 (valeurs d’exercice).",
+    "Stations en correspondance : BE-A1 (air humide), AéroRézo « Architecture d’une CTA », « Batteries chaude et froide », « Récupération d’énergie »."
+  ],
+  "calculette": null
+}
