@@ -29,6 +29,32 @@
     page.appendChild(el('p', 'erreur', 'Cette aide n’existe pas. Vérifiez l’adresse sur votre feuille.'));
   }
 
+  /* ------------------------------------------------------------ les réglages de lecture */
+
+  const CRANS = [20, 22, 24, 26];
+  const racine = document.documentElement;
+  const lecture = { cran: 0, aere: false };
+  try {
+    const l = JSON.parse(localStorage.getItem('inerweb.aide.lecture'));
+    if (l && l.cran >= 0 && l.cran < CRANS.length) lecture.cran = l.cran | 0;
+    if (l && l.aere === true) lecture.aere = true;
+  } catch (e) {}
+  const bPetit = document.getElementById('plus-petit');
+  const bGrand = document.getElementById('plus-grand');
+  const bAere = document.getElementById('aere');
+  function appliquerLecture() {
+    racine.style.setProperty('--taille', CRANS[lecture.cran] + 'px');
+    racine.classList.toggle('aere', lecture.aere);
+    bPetit.disabled = lecture.cran === 0;
+    bGrand.disabled = lecture.cran === CRANS.length - 1;
+    bAere.setAttribute('aria-pressed', String(lecture.aere));
+    try { localStorage.setItem('inerweb.aide.lecture', JSON.stringify(lecture)); } catch (e) {}
+  }
+  bPetit.addEventListener('click', () => { if (lecture.cran > 0) { lecture.cran--; appliquerLecture(); } });
+  bGrand.addEventListener('click', () => { if (lecture.cran < CRANS.length - 1) { lecture.cran++; appliquerLecture(); } });
+  bAere.addEventListener('click', () => { lecture.aere = !lecture.aere; appliquerLecture(); });
+  appliquerLecture();
+
   /* ------------------------------------------------------------ le compteur */
 
   const jour = new Date().toLocaleDateString('sv'); // AAAA-MM-JJ à l'heure du téléphone
@@ -65,20 +91,66 @@
     hote.appendChild(i);
   }
 
-  function monterPalier(rang, contenu) {
+  /* ---- la voix : un bouton « Écouter » par pavé, seulement si le carnet porte voix: true.
+     Fichier : voix/<carnet>/<exercice>-<palier>-<k>.mp3. Une seule voix à la fois, jamais de lancement seul ;
+     si le fichier manque, le bouton se cache sans rien dire. */
+  let voixEnCours = null; // { audio, bouton }
+  function arreterVoix() {
+    if (!voixEnCours) return;
+    try { voixEnCours.audio.pause(); } catch (e) {}
+    voixEnCours.bouton.setAttribute('aria-pressed', 'false');
+    voixEnCours.bouton.textContent = 'Écouter';
+    voixEnCours = null;
+  }
+  function boutonVoix(url) {
+    const b = el('button', 'ecouter', 'Écouter');
+    b.type = 'button';
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => {
+      if (voixEnCours && voixEnCours.bouton === b) return arreterVoix();
+      arreterVoix();
+      const audio = new Audio(url);
+      voixEnCours = { audio: audio, bouton: b };
+      b.setAttribute('aria-pressed', 'true');
+      b.textContent = 'Arrêter';
+      audio.addEventListener('ended', () => { if (voixEnCours && voixEnCours.audio === audio) arreterVoix(); });
+      audio.addEventListener('error', () => { if (voixEnCours && voixEnCours.audio === audio) voixEnCours = null; b.hidden = true; });
+      const p = audio.play();
+      if (p && p.catch) p.catch(e => { if (e && e.name === 'NotSupportedError') { b.hidden = true; if (voixEnCours && voixEnCours.audio === audio) voixEnCours = null; } });
+    });
+    return b;
+  }
+
+  /* Un pavé : une ligne de texte par paragraphe. Accepte { texte } (une ligne) ou { lignes: [...] }. */
+  function lignesDe(c) {
+    return c.lignes ? c.lignes : (c.texte ? [c.texte] : []);
+  }
+  function pave(c, numero, voix) {
+    const d = el('div', numero ? 'pave etape' : 'pave');
+    if (numero) d.appendChild(el('span', 'pastille', String(numero)));
+    const corps = el('div', 'corps');
+    lignesDe(c).forEach(l => corps.appendChild(paragraphe(l)));
+    image(corps, c.image);
+    if (voix) corps.appendChild(boutonVoix(voix));
+    d.appendChild(corps);
+    return d;
+  }
+
+  /* ctx = { carnet, n } ; ctx.carnet.voix pilote les boutons Écouter */
+  function monterPalier(rang, contenu, ctx) {
     const s = el('section', 'palier');
     const h = el('h2');
     h.appendChild(el('span', 'num', String(rang + 1)));
     h.appendChild(document.createTextNode(PALIERS[rang]));
     s.appendChild(h);
-    if (contenu.texte) s.appendChild(paragraphe(contenu.texte));
-    image(s, contenu.image);
-    (contenu.etapes || []).forEach(et => {
-      const d = el('div', 'etape');
-      d.appendChild(paragraphe(et.texte));
-      image(d, et.image);
-      s.appendChild(d);
-    });
+    let k = 0;
+    function voixDe() {
+      k++;
+      return ctx && ctx.carnet.voix === true
+        ? 'voix/' + ctx.carnet.id + '/' + ctx.n + '-' + (rang + 1) + '-' + k + '.mp3' : null;
+    }
+    if (lignesDe(contenu).length || contenu.image) s.appendChild(pave(contenu, 0, voixDe()));
+    (contenu.etapes || []).forEach((et, i) => s.appendChild(pave(et, i + 1, voixDe())));
     return s;
   }
 
@@ -92,8 +164,9 @@
     let ouverts = Math.min(Math.max(deja, 1), 3);
     noter(carnet.id, n, 1);
 
+    const ctx = { carnet: carnet, n: n };
     const paliers = el('div');
-    for (let i = 0; i < ouverts; i++) paliers.appendChild(monterPalier(i, ex.paliers[i]));
+    for (let i = 0; i < ouverts; i++) paliers.appendChild(monterPalier(i, ex.paliers[i], ctx));
 
     const boutons = el('div', 'boutons');
     const compris = el(ex.station ? 'a' : 'p', ex.station ? 'compris' : 'prof');
@@ -110,7 +183,7 @@
     }
     encore.addEventListener('click', () => {
       if (ouverts < 3) {
-        const s = monterPalier(ouverts, ex.paliers[ouverts]);
+        const s = monterPalier(ouverts, ex.paliers[ouverts], ctx);
         paliers.appendChild(s);
         ouverts++;
         noter(carnet.id, n, ouverts);
