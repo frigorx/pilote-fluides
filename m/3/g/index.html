@@ -152,6 +152,20 @@ body.accueil footer{margin-top:18px}
   /* textes propres à ce cours : 14 px au moins */
   .app span { font-size: 14px !important; line-height: 1.35 !important; }
 }
+/* situation: début — un dessin de mise en situation au repos, à la place du cadre vide, et à l'accueil (lot 2 des images, 03/11/2026) */
+.situation{display:none;margin:0;min-height:0}
+body.repos .situation{display:flex;flex:1 1 auto;flex-direction:column;align-items:center;justify-content:center;padding:6px 8px 0;container-type:size}
+body.repos .scene.on{display:none}
+.situation img{display:block;width:min(100cqw,calc((100cqh - 40px) * 1.5));max-width:100%;height:auto;border:1.5px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(27,58,99,.10)}
+.situation figcaption{margin:4px 0 0;font-size:15px;line-height:1.25;font-weight:600;color:var(--muted);text-align:center}
+body.accueil .situation{display:block;flex:0 0 auto;margin:12px 14px 0;padding:0;container-type:normal}
+body.accueil .situation img{width:auto;max-width:100%;max-height:46vh;margin:0 auto}
+@media (min-width:860px) and (min-aspect-ratio:5/4){
+ body.repos:not(.accueil) .situation{padding:1.2vh 1.2vw 1.2vh 1.6vw}
+ body.accueil .situation{grid-column:1/3;margin:2vh 1.6vw 0}
+ .situation figcaption{font-size:clamp(15px,2.2vh,20px)}
+}
+/* situation: fin */
 </style>
 <script defer src="../../../moteur/retour-accueil.js?v=93c85e5976"></script>
 </head>
@@ -160,6 +174,7 @@ body.accueil footer{margin-top:18px}
 <header><a class="lien-som" id="lienSom" href="?">&#9776; Sommaire</a><span class="ttl">Le&ccedil;on 3 &middot; <b id="titre">Pression et température : lire la saturation</b></span></header>
 <p class="accroche">Choisissez un geste. Chaque capsule est courte : les phrases sont toujours affich&eacute;es, la voix est facultative. &Agrave; la fin, un bouton &laquo;&nbsp;Aide&nbsp;&raquo; vous guide, sans note.</p>
 <nav class="som" aria-label="Les gestes de la le&ccedil;on"><a href="?g=1" data-g="1" data-adresse="m/3/g/1/"><i>1</i><span class="court">Absolue</span><span class="long">Relative ou absolue</span></a><a href="?g=2" data-g="2" data-adresse="m/3/g/2/"><i>2</i><span class="court">Saturation</span><span class="long">Une pression, une température</span></a><a href="?g=3" data-g="3" data-adresse="m/3/g/3/"><i>3</i><span class="court">Couronne</span><span class="long">Lire la couronne en trois temps</span></a><a href="?g=4" data-g="4" data-adresse="m/3/g/4/"><i>4</i><span class="court">Interpoler</span><span class="long">Lire la table et interpoler</span></a><a href="?g=5" data-g="5" data-adresse="m/3/g/5/"><i>5</i><span class="court">t0 et tk</span><span class="long">Du relevé à t0 et tk</span></a><a href="?g=6" data-g="6" data-adresse="m/3/g/6/"><i>6</i><span class="court">Mélanges</span><span class="long">Les mélanges : bulle et rosée</span></a></nav>
+<figure class="situation"><img src="situation.webp" alt="Au poste d&#x27;atelier, la machine tourne ; le manifold est branché, flexible bleu sur l&#x27;aspiration, flexible rouge sur le départ liquide ; l&#x27;élève, lunettes et gants, lit le manomètre bleu ; le professeur tient la table de saturation ouverte sur l&#x27;établi." width="1536" height="1024"><figcaption>Une pression lue au manomètre, une température trouvée dans la table : l&#x27;élève lit, le professeur tient la table.</figcaption></figure>
 <div id="capsule">
 <main class="scene" data-g="1" data-adresse="m/3/g/1/" style="--asp:1.2000"><svg class="vl" id="g1-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 350" role="img" font-family="Calibri,'Segoe UI',Arial,sans-serif" aria-label="Un manomètre à l’air libre affiche 0 alors que l’air pèse environ 1 bar ; l’aiguille monte à 3,0 bar lus, ce qui fait 4,0 bar absolus ; 1 bar vaut 100 kilopascals ou 0,1 mégapascal"><title>Relative ou absolue</title><defs><clipPath id="g1-cadre"><rect x="0" y="56" width="420" height="294"/></clipPath></defs><rect width="420" height="350" fill="#fff"/><g id="g1-cad" opacity="0"><svg x="2.00" y="76.00" width="226.00" height="226.00" viewBox="0 0 320 320" preserveAspectRatio="xMidYMid meet">
 <circle cx="160" cy="160" r="153" fill="#1f6fa8"/>
@@ -1650,6 +1665,7 @@ function ajuster(){
  for(k=0.95;deborde()&&k>0.74;k-=0.05)for(j=0;j<els.length;j++)els[j].style.fontSize=(base[j]*k).toFixed(1)+"px";
 }
 function ui(){
+ document.body.classList.toggle("repos",i<0&&!playing&&!finished); /* situation : le dessin se montre au repos, le cadre une fois lancé */
  var ouvert=!!A&&(aideOpen||finished),h;
  bL.textContent=playing&&!sound?"⏸ Pause":(!playing&&i>=0&&!finished&&!sound?"▶ Reprendre":"▶ Lancer");
  bE.textContent=playing&&sound?"⏸ Pause":(!playing&&i>=0&&!finished&&sound?"🔊 Reprendre":"🔊 Écouter");
