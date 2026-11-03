@@ -13,6 +13,7 @@ window.GARE = {
   id: "recuperation",
   titre: "Récupérer le fluide",
   sousTitre: "Les interventions de base · gare 0 · liquide puis vapeur",
+    situation: { src: "assets/situation.webp", alt: "Au poste, la station de récupération transfère le fluide de la machine vers une bouteille de récupération posée debout sur une balance ; l'élève, lunettes et gants, surveille la balance ; un cadenas et une étiquette rouge condamnent la machine.", legende: "La station pousse le fluide vers la bouteille de récupération, posée sur la balance. L'élève suit la masse qui monte." },
   machine: [
     { id: "fluide", label: "Fluide (plaque de la machine)", court: "Fluide", exemple: "ex. R-449A", texte: true },
     { id: "charge", label: "Charge (plaque)", court: "Charge", unite: "kg", nombre: true },

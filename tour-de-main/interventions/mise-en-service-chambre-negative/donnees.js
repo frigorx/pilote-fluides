@@ -39,6 +39,7 @@
     id: "mise-en-service-chambre-negative",
     titre: "Mettre en service une chambre froide négative",
     sousTitre: "Les interventions de base · gare 12 · réglages, mise en route, relevés, premier dégivrage · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "Devant la chambre froide négative, le groupe tourne ; l'élève, lunettes, gants et veste chaude, lit les deux aiguilles du manifold à distance ; le professeur mesure l'intensité avec la pince ampèremétrique.", legende: "Le professeur met en route et pose la pince. L'élève, à distance du groupe, lit la BP qui descend et la HP qui monte." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Chambre froide négative", aide: "installation chargée, essais faits, mise en service avec le professeur" } },
     machine: [

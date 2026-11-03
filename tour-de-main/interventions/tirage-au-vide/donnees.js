@@ -33,6 +33,7 @@
     id: "tirage-au-vide",
     titre: "Tirer au vide et tester la remontée",
     sousTitre: "Les interventions de base · gare 5 · pompe, vacuomètre, test de remontée",
+    situation: { src: "assets/situation.webp", alt: "La pompe à vide est reliée au manifold par un flexible noir court ; l'élève, lunettes et gants, lit le vacuomètre électronique vissé près du circuit, un chronomètre à la main.", legende: "Pompe en route, l'élève lit le vide sur le vacuomètre vissé près du circuit." },
     parcours: ["azote"],
     parcoursNoms: { azote: { nom: "Circuit vide de fluide", aide: "après l'épreuve d'azote, avant la charge" } },
     machine: [

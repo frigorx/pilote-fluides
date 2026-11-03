@@ -19,6 +19,7 @@
     id: "remplacer-composant-electrique",
     titre: "Remplacer un composant électrique sous consignation",
     sousTitre: "Les interventions de base · gare 11 · contacteur (pressostat en variante) · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "Le sectionneur de l'armoire est ouvert ; l'élève, lunettes et gants isolants, pose son cadenas à côté de celui du professeur, avec l'étiquette rouge ; le professeur tient le vérificateur d'absence de tension.", legende: "Sectionneur ouvert, l'élève pose son cadenas à côté de celui du professeur. Le professeur vérifie ensuite l'absence de tension." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Armoire électrique", aide: "composant à remplacer, hors tension, sous la direction du professeur" } },
     machine: [

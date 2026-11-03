@@ -79,6 +79,7 @@
     parcoursNoms: { charge: { nom: "Machine en marche", aide: "une machine qui manque de fluide, en formation" } },
     titre: "Faire un complément de charge",
     sousTitre: "Les interventions de base · gare 7 · machine en marche, fluide pesé",
+    situation: { src: "assets/situation.webp", alt: "La machine tourne ; l'élève, lunettes et gants, entrouvre la vanne bleue du manifold ; la bouteille de fluide est sur la balance ; le professeur est à côté.", legende: "Machine en marche, l'élève entrouvre à peine la vanne BP du manifold, l'œil sur la balance et sur le voyant liquide." },
     machine: [
       { id: "fluide", label: "Fluide (plaque de la machine)", court: "Fluide", exemple: "ex. R-449A", texte: true },
       { id: "charge", label: "Charge (plaque)", court: "Charge", unite: "kg", nombre: true },

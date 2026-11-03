@@ -59,6 +59,7 @@
     parcoursNoms: { charge: { nom: "Au poste", aide: "sous azote (conseillé au lycée) ou sous fluide : même geste" } },
     titre: "Poser les manomètres",
     sousTitre: "Les interventions de base · gare 2 · BP et HP lues",
+    situation: { src: "assets/situation.webp", alt: "L'élève, lunettes et gants, visse à la main le flexible bleu du manifold 4 voies sur la vanne de service BP ; le flexible rouge pend, pas encore branché ; le flexible noir va à la pompe à vide ; le professeur regarde à côté.", legende: "Vannes du manifold fermées, l'élève visse à la main le flexible bleu sur la vanne BP. Le professeur reste à côté." },
     machine: [
       { id: "fluide", label: "Fluide (plaque de la machine)", court: "Fluide", exemple: "ex. R-449A", texte: true }
     ],

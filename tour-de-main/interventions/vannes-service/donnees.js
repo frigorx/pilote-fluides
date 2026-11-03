@@ -18,6 +18,7 @@ window.GARE = {
   parcoursNoms: { charge: { nom: "Au poste", aide: "sous azote (conseillé au lycée) ou sous fluide : même geste" } },
   titre: "Manœuvrer une vanne de service",
   sousTitre: "Les interventions de base · gare 1 · siège arrière et quart de tour",
+    situation: { src: "assets/situation.webp", alt: "L'élève, lunettes et gants, tourne la clé à cliquet sur le carré d'une vanne de service ; le flexible bleu est vissé sur la prise de la vanne ; le capuchon et le bouchon sont posés à côté.", legende: "Capuchon et bouchon posés, flexible vissé : l'élève donne un quart de tour à la clé et regarde l'aiguille monter." },
   machine: [
     { id: "vanne", label: "Vanne manœuvrée (aspiration, refoulement ou départ liquide)", court: "Vanne", exemple: "ex. aspiration", texte: true },
     { id: "pression", label: "Pression de référence : manomètre de la machine, lue au départ (sous azote : celui du support)", court: "Pression de référence", unite: "bar", nombre: true }

@@ -61,6 +61,7 @@
     id: "charge-fluide-neuf",
     titre: "Charger en fluide neuf, à la balance",
     sousTitre: "Les interventions de base · gare 6 · phase liquide, balance, relevés",
+    situation: { src: "assets/situation.webp", alt: "La bouteille de fluide neuf est posée debout sur une balance, reliée au manifold par le flexible jaune ; le professeur vérifie les raccords ; l'élève, lunettes et gants, regarde l'afficheur de la balance.", legende: "La bouteille de fluide neuf est sur la balance. L'élève lit la masse qui baisse pendant que le liquide entre dans la machine." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Circuit sous vide", aide: "après le test de remontée, avec du fluide neuf" } },
     machine: [

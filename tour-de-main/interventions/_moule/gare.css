@@ -130,9 +130,15 @@ figure.dessin svg{display:block;width:100%;height:auto;max-height:46vh}
 .codes{font-size:15px;background:var(--doux);border-radius:9px;padding:8px 12px;margin:10px 0}
 .codes b{color:var(--bleu)}
 .tableau-defile{overflow-x:auto}
+/* ---------- la situation (dessin de mise en situation) ---------- */
+.situation{display:flex;gap:14px;align-items:center;margin:0 0 12px;background:var(--creme);border:2px solid var(--filet);border-radius:12px;padding:8px}
+.situation[hidden]{display:none}
+.situation img{width:min(420px,45%);height:auto;border-radius:8px;display:block}
+.situation figcaption{font-size:18px;color:var(--encre)}
+@media (max-width:700px){.situation{flex-direction:column;align-items:stretch}.situation img{width:100%}}
 /* ---------- impression : la trace, 14 pt partout ---------- */
 @media print{
-  .haut,.onglets,.bas,.lien-petit,.pastilles,.liste,.machine{display:none!important}
+  .haut,.onglets,.bas,.lien-petit,.pastilles,.liste,.machine,.situation{display:none!important}
   body{font-size:14pt}.trace *{font-size:14pt!important}.trace .verbe{font-size:18pt!important}
   .filigrane{opacity:.07}.carte{border:0;padding:0}
 }

@@ -15,6 +15,7 @@
     id: "autocontrole-mise-en-service",
     titre: "Autocontrôle avant mise en service : supportage, serrages, isolation, repérage",
     sousTitre: "Avant d'intervenir · gare 5.5 · partie fluidique · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "La machine est arrêtée et condamnée ; l'élève, lunettes sur les yeux, suit du doigt l'isolant de la ligne d'aspiration, une lampe à la main ; la fiche d'autocontrôle est posée sur le bâti.", legende: "Lampe en main, l'élève suit l'isolant de bout en bout et cherche une coupure, avant de cocher sa fiche." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Mon installation", aide: "l'installation à l'arrêt, hors tension, avant la mise en service" } },
     machine: [

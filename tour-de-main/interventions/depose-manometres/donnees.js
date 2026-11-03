@@ -17,6 +17,7 @@ window.GARE = {
   parcoursNoms: { charge: { nom: "Au poste", aide: "sous azote (conseillé au lycée) ou sous fluide : même geste" } },
   titre: "Déposer les manomètres",
   sousTitre: "Les interventions de base · gare 3 · sans rien laisser sous pression",
+    situation: { src: "assets/situation.webp", alt: "La machine tourne ; l'élève, lunettes et gants, desserre lentement le raccord du flexible bleu sur la vanne de service, sous le regard du professeur.", legende: "Vannes de service au siège arrière, l'élève desserre lentement le raccord, tourné vers le sol, loin des visages." },
   machine: [
     { id: "bpmax", label: "Manomètre BP : valeur maximale du cadran", court: "Cadran BP, maxi", unite: "bar", nombre: true }
   ],

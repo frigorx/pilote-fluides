@@ -15,6 +15,7 @@
     id: "identifier-reseaux-site",
     titre: "Identifier les réseaux d'un site : électricité, eau, gaz, évacuations, fluide",
     sousTitre: "Avant d'intervenir · gare 5.3 · un réseau par étape, je regarde, je ne manœuvre rien · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "Dans le local technique d'un bâtiment, l'élève soulève le couvercle du compteur d'eau et regarde les deux vannes sans les toucher, une feuille de croquis à la main ; derrière, le tableau électrique est fermé.", legende: "L'élève repère le compteur d'eau et ses deux vannes, et les note sur son croquis. On regarde, on ne manœuvre rien." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Sur le site", aide: "les tableaux, les compteurs, les vannes et la machine, sans rien manœuvrer" } },
     machine: [

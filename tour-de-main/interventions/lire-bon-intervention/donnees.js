@@ -12,6 +12,7 @@
     id: "lire-bon-intervention",
     titre: "Lire le bon d'intervention et le dossier technique",
     sousTitre: "Avant d'intervenir · gare 5.1 · le bon, la plaque, le dossier · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "Au bureau de l'entreprise, avant de partir, l'élève lit le bon d'intervention et souligne une ligne, le dossier technique ouvert à côté ; la caisse à outils attend près de la porte.", legende: "Avant de partir, l'élève lit le bon d'intervention et compare avec le dossier technique. Les questions se posent avant le départ." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Le bon et le dossier", aide: "le bon d'intervention, le dossier technique et la plaque de la machine" } },
     machine: [

@@ -13,6 +13,7 @@
     id: "receptionner-livraison",
     titre: "Réceptionner et contrôler une livraison",
     sousTitre: "Avant d'intervenir · gare 5.4 · le bon, les colis, le matériel, la plaque · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "À la porte de l'atelier, le livreur attend près de sa camionnette ; deux bouteilles sont sanglées debout sur un diable ; l'élève, gants et chaussures de sécurité, compte les barres de cuivre, le bon de livraison à la main.", legende: "Le livreur est encore là : l'élève compare chaque ligne du bon avec ce qui est déchargé, et compte avant de signer." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Une vraie livraison", aide: "le livreur, le bon de livraison, la commande et le matériel" } },
     machine: [

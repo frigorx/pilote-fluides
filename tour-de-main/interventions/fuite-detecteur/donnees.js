@@ -29,6 +29,7 @@
     id: "fuite-detecteur",
     titre: "Chercher une fuite au détecteur électronique",
     sousTitre: "Les interventions de base · gare 9 · circuit chargé, détecteur, étalon · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "La machine est arrêtée et condamnée par un cadenas ; l'élève, lunettes et gants, fait glisser la sonde du détecteur électronique le long d'un raccord ; la fenêtre est ouverte.", legende: "Machine arrêtée, local aéré : l'élève fait glisser la sonde au contact du raccord, lentement, du bas vers le haut." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Circuit chargé en fluide", aide: "machine arrêtée, avec son fluide" } },
     machine: [

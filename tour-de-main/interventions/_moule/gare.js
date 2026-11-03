@@ -130,6 +130,8 @@
   </header>
   <main><div class="filigrane" aria-hidden="true"></div><div id="vue"></div></main>`);
   const vue = document.getElementById("vue");
+  /* la situation : un dessin de mise en situation au-dessus des étapes, si la gare en a un (lot images, 03/11/2026) */
+  if (G.situation) vue.insertAdjacentHTML("beforebegin", `<figure class="situation"><img src="${G.situation.src}" alt="${G.situation.alt}" width="1536" height="1024"><figcaption>${G.situation.legende}</figcaption></figure>`);
 
   /* ---------- la voix (chantier prof vocal, 17/10/2026) ----------
      Chaque étape a son texte pour l'oreille (`narration`, ou `azote.narration`) : la voix explique le geste, elle ne
@@ -304,6 +306,7 @@
     const carte = v + ":" + S.machine.parcours + ":" + (v === "entr" ? S.entr.ici : v === "poste" ? S.ici : "");
     if (carte !== derniereCarte) { derniereCarte = carte; taire(); }
     document.querySelectorAll(".onglets button").forEach(b => b.setAttribute("aria-pressed", b.dataset.vue === v));
+    document.querySelector(".situation")?.toggleAttribute("hidden", v === "trace");
     ({ entr: vueEntr, poste: vuePoste, trace: vueTrace }[v] || vuePoste)();
     majAvance();
   }

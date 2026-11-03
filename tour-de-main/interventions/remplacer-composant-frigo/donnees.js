@@ -68,6 +68,7 @@
     id: "remplacer-composant-frigo",
     titre: "Remplacer un composant du circuit frigorifique",
     sousTitre: "Les interventions de base · gare 10 · filtre déshydrateur (voyant en variante) · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "L'élève, lunettes et gants de cuir, brase le filtre déshydrateur neuf ; un chiffon mouillé entoure le filtre, un écran protège derrière, l'extincteur est au sol ; la bouteille d'azote à ogive noire balaye le tube ; la machine est condamnée.", legende: "Chiffon mouillé sur le filtre, azote dans le tube, écran derrière et extincteur à portée : l'élève brase avec l'accord du professeur." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Circuit chargé en fluide", aide: "machine arrêtée : on récupère, on remplace, on referme, on recharge" } },
     machine: [

@@ -19,6 +19,7 @@
     id: "preparer-site",
     titre: "Préparer le site d'intervention : accès, protections, alimentation, zone de travail",
     sousTitre: "Avant d'intervenir · gare 5.2 · accès, papiers, protections, alimentation, zone · en cours de relecture",
+    situation: { src: "assets/situation.webp", alt: "Dans la réserve d'un magasin, le technicien pose une chaîne de balisage autour de la zone de travail, sous l'évaporateur ; une bâche protège le sol, l'escabeau est fermé contre le mur.", legende: "Avant de toucher l'évaporateur, le technicien balise la zone, protège le sol et prévient le personnel du magasin." },
     parcours: ["charge"],
     parcoursNoms: { charge: { nom: "Sur le site", aide: "le local, la machine, les papiers et les protections" } },
     machine: [

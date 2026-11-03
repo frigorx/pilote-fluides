@@ -17,6 +17,7 @@
     id: "etancheite-azote",
     titre: "Contrôler l'étanchéité sous azote",
     sousTitre: "Les interventions de base · gare 4 · épreuve de pression",
+    situation: { src: "assets/situation.webp", alt: "Une bouteille d'azote à ogive noire, attachée par une chaîne, alimente le manifold par le flexible jaune ; l'élève, lunettes et gants, passe au pinceau la solution moussante sur une brasure.", legende: "Le circuit est sous azote, bouteille fermée. L'élève passe la solution moussante sur chaque brasure et cherche une bulle." },
     parcours: ["azote"],
     parcoursNoms: { azote: { nom: "Circuit sous azote", aide: "installation neuve ou ouverte, vide de fluide" } },
     machine: [
