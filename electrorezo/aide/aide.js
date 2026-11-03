@@ -10,6 +10,9 @@
 
   const PALIERS = ['Ce que l’on vous demande', 'Pourquoi et comment', 'Un exemple résolu'];
   const PROF = 4;
+  /* index.html porte la clé de chaque carnet (data-v-<carnet>) : le service worker garde les scripts en cache
+     d'abord, une correction du carnet change donc son adresse. */
+  const ICI = document.currentScript;
   const page = document.getElementById('page');
   /* le premier morceau seulement : certaines applications de scan ajoutent leurs propres paramètres */
   const adresse = /^([a-z]+)(\d{0,2})$/.exec(location.search.slice(1).split('&')[0].toLowerCase());
@@ -160,7 +163,8 @@
   if (!adresse) erreur();
   else {
     const s = document.createElement('script');
-    s.src = 'carnets/' + adresse[1] + '.js';
+    const cle = ICI && ICI.getAttribute('data-v-' + adresse[1]);
+    s.src = 'carnets/' + adresse[1] + '.js' + (cle ? '?v=' + cle : '');
     s.onerror = erreur;
     document.head.appendChild(s);
   }
