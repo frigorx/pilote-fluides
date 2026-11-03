@@ -484,8 +484,8 @@ BE.station({
     BE.ecran({
       id: "occupants", dossier: "methode", kicker: "La méthode, 2", title: "Les occupants", level: "comprendre",
       text: "Une personne rend de la chaleur sensible et de la vapeur d’eau. Les deux dépendent de ce qu’elle fait : assise au repos, elle rend peu ; debout au travail, elle rend plus, surtout en vapeur d’eau. Le tableau donne l’apport d’une personne à 26 °C, selon son activité. Pour un local, multipliez le nombre d’occupants par l’apport sensible, puis par l’apport latent. Vous obtenez deux résultats, en watts.",
-      prompt: "Lisez le tableau et l’exemple résolu, puis continuez.",
-      render: () => tableauActivites() + exempleOcc()
+      prompt: "Regardez le schéma, lisez le tableau et l’exemple résolu, puis continuez.",
+      render: () => BE.schema("illustrations/schema-occupants.svg", `Schéma de principe : ce que rend une personne selon son activité. Trois scènes, chacune au-dessus de deux barres, une rouge pour la chaleur sensible et une bleue pour la chaleur latente. À gauche, une personne assise au repos dans un fauteuil : ${EX.act[0].S} W de sensible et ${EX.act[0].L} W de latent. Au centre, une personne assise à un bureau devant un ordinateur, en activité légère : ${EX.act[1].S} W de sensible et ${EX.act[1].L} W de latent. À droite, une personne debout à un établi, en travail léger : ${EX.act[2].S} W de sensible et ${EX.act[2].L} W de latent. Le sensible grandit peu, le latent grandit beaucoup.`, "Plus la personne agit, plus elle rend de chaleur, surtout en vapeur d’eau.") + tableauActivites() + exempleOcc()
     }),
 
     BE.ecran({
@@ -508,8 +508,8 @@ BE.station({
     BE.ecran({
       id: "eclairage-appareils", dossier: "methode", kicker: "La méthode, 3", title: "L’éclairage et les appareils", level: "comprendre",
       text: `Toute l’électricité consommée dans un local finit en chaleur dans ce local. L’éclairage se compte avec la puissance au m² : surface × puissance au m², arrondi au watt. Pour l’exercice, l’éclairage à LED vaut ${EX.eclW} W/m² dans les bureaux et 5 W/m² dans un logement. Les appareils se comptent avec la puissance qu’ils consomment en marche : ordinateur, écran, vidéoprojecteur, réfrigérateur, téléviseur. Lampes et appareils ne donnent que du sensible. Le sensible interne d’un local est la somme des occupants, de l’éclairage et des appareils.`,
-      prompt: "Lisez l’exemple résolu, puis continuez.",
-      render: () => tableau(["Source", "Calcul", "Partie"], [["Occupants", "nombre × apport d’une personne", "sensible et latent"], ["Éclairage", "surface × W/m²", "sensible"], ["Appareils", "puissance en marche", "sensible"]], "Les apports internes d’un local") + exempleEcl()
+      prompt: "Regardez le schéma, lisez l’exemple résolu, puis continuez.",
+      render: () => BE.schema("illustrations/schema-electricite-chaleur.svg", `Schéma de principe : l’électricité consommée devient de la chaleur sensible dans le local. Trois lignes, chacune avec un objet, une case « Électricité consommée », une flèche, puis une case « Chaleur sensible » qui porte le même nombre. Première ligne, l’éclairage à LED du bureau d’exemple, ${BUR.surf} m² × ${EX.eclW} W/m² : ${BUR.ecl} W consommés, ${BUR.ecl} W de chaleur. Deuxième ligne, ${BUR.equipTxt} : ${BUR.equip} W consommés, ${BUR.equip} W de chaleur. Troisième ligne, ${REU.equipTxt} : ${REU.equip} W consommés, ${REU.equip} W de chaleur. Sous les trois lignes : même nombre à l’entrée et à la sortie, et aucun latent.`, "Tout ce que consomment les lampes et les appareils devient de la chaleur sensible dans le local.") + tableau(["Source", "Calcul", "Partie"], [["Occupants", "nombre × apport d’une personne", "sensible et latent"], ["Éclairage", "surface × W/m²", "sensible"], ["Appareils", "puissance en marche", "sensible"]], "Les apports internes d’un local") + exempleEcl()
     }),
 
     BE.ecran({
@@ -532,8 +532,9 @@ BE.station({
     BE.ecran({
       id: "parois-ete", dossier: "methode", kicker: "La méthode, 4", title: "Les parois en été", level: "comprendre",
       text: `En été, la chaleur traverse les parois de dehors vers dedans. Chaque paroi se compte comme en hiver, U × A au centième, mais multiplié par un écart de température qui va du dehors vers le dedans. L’écart dépend de ce qui se trouve derrière la paroi. Une fenêtre ou une porte qui donne dehors, même une porte pleine, prend l’écart de l’air θe − θi : ici ${EX.te} − ${EX.ti} = ${EX.dT} K. Le soleil qui traverse les vitres est compté à la station T6 : il ne se recompte pas ici. Une paroi qui donne sur un local non chauffé, mur, porte ou fenêtre, prend b × (θe − θi), avec le b de la station T3 : ${EX.bLT} × ${EX.dT} = ${EX.ecLT} K pour le mur MC et la porte Pn du local technique. Pour un plafond sous un comble, l’écart vaut la température du comble moins θi : le comble chauffé par la toiture monte ici à ${EX.comble} °C, soit ${EX.ecC} K. Le plancher sur terre-plein ne se compte pas : en été, le sol reste plus frais que la pièce. Les écarts s’écrivent au dixième de K, en arrondissant un 5 vers le haut (2,45 donne 2,5), et Φ au watt. Les murs extérieurs prennent l’écart équivalent de leur façade, qui ajoute le soleil : écran suivant.`,
-      prompt: "Suivez une ligne du tableau, puis continuez.",
-      render: () => tableauParois(BUR, `Bureau d’exemple : les parois à ${EX.h} h solaires`)
+      prompt: "Regardez le schéma, suivez une ligne du tableau, puis continuez.",
+      render: () => BE.schema("illustrations/schema-ecarts-parois.svg", `Schéma de principe : coupe du bureau d’exemple, avec l’écart de température de chaque paroi. Au centre, le bureau à ${EX.ti} °C. À gauche, dehors à ${EX.te} °C : la fenêtre ou la porte prend ${EX.te} − ${EX.ti} = ${EX.dT} K, et le mur extérieur prend un écart équivalent, vu à l’écran suivant. Au-dessus, le comble à ${EX.comble} °C : le plafond prend ${EX.comble} − ${EX.ti} = ${EX.ecC} K. À droite, le local technique non chauffé : le mur et la porte prennent ${EX.bLT} × ${EX.dT} = ${EX.ecLT} K. Des flèches rouges montrent la chaleur qui entre par la fenêtre, par le plafond et par le mur du local technique. Sous le bureau, le plancher sur terre-plein ne compte pas.`, "Chaque paroi prend l’écart de température de ce qui se trouve derrière elle.")
+        + tableauParois(BUR, `Bureau d’exemple : les parois à ${EX.h} h solaires`)
         + BE.renvoi(`Les murs MA et MB prennent l’écart équivalent de leur façade, ${EX.mur.N} K au nord et ${EX.mur.E} K à l’est : écran suivant.`)
     }),
 

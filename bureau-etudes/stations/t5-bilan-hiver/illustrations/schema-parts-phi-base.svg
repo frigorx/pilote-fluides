@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 112" width="180mm" height="112mm" role="img">
+<title>Les parts de H parois, H ponts et H air dans Φ base, bâtiment d’exemple</title>
+<rect width="180" height="112" fill="#fff"/>
+<g><text x="90" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 62)">inerWeb, by inerweb.fr</text><text x="35" y="34" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 34)">inerWeb, by inerweb.fr</text><text x="150" y="90" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 90)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Bâtiment d’exemple, ΔT = 26 K</text>
+<rect x="10.00" y="38.00" width="90.06" height="20.00" fill="#e3eefa"/>
+<line x1="10.00" y1="38.00" x2="100.06" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="100.06" y1="38.00" x2="100.06" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="100.06" y1="58.00" x2="10.00" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="58.00" x2="10.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="100.06" y="38.00" width="18.01" height="20.00" fill="#fff"/>
+<line x1="100.06" y1="38.00" x2="118.07" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.07" y1="38.00" x2="118.07" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.07" y1="58.00" x2="100.06" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="100.06" y1="58.00" x2="100.06" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="118.07" y="38.00" width="51.93" height="20.00" fill="#ffe1d4"/>
+<line x1="118.07" y1="38.00" x2="170.00" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.00" y1="38.00" x2="170.00" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="170.00" y1="58.00" x2="118.07" y2="58.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="118.07" y1="58.00" x2="118.07" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="55.03" y="46.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H parois</text>
+<text x="55.03" y="53.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">56 %</text>
+<text x="144.03" y="46.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H air</text>
+<text x="144.03" y="53.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">32 %</text>
+<text x="109.06" y="28.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">H ponts, 11 %</text>
+<line x1="109.06" y1="30.50" x2="109.06" y2="38.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="68.00" x2="118.07" y2="68.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="10.00" y1="68.00" x2="10.00" y2="65.50" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="118.07" y1="68.00" x2="118.07" y2="65.50" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="64.03" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2024 W sans H air</text>
+<line x1="118.07" y1="68.00" x2="170.00" y2="68.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="118.07" y1="68.00" x2="118.07" y2="65.50" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="170.00" y1="68.00" x2="170.00" y2="65.50" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="144.03" y="76.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Φ air = 972 W</text>
+<line x1="10.00" y1="86.00" x2="170.00" y2="86.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="10.00" y1="86.00" x2="10.00" y2="83.50" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="170.00" y1="86.00" x2="170.00" y2="83.50" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="90.00" y="94.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Φ base = 2996 W</text>
+<line x1="4.00" y1="101.50" x2="176.00" y2="101.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

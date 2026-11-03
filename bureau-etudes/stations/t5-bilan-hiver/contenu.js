@@ -309,8 +309,9 @@ BE.station({
     BE.ecran({
       id: "quatre-postes", dossier: "methode", kicker: "La méthode, 1", title: "Les quatre postes du bilan", level: "comprendre",
       text: "Le bilan d’hiver additionne trois coefficients de déperdition, en W/K : H parois, la transmission par les parois et les baies ; H ponts, la transmission par les ponts thermiques ; H air, le renouvellement d’air. Leur somme H, multipliée par l’écart de température ΔT, donne Φ base, la puissance perdue par le bâtiment par le froid de base. Le quatrième poste, la relance, s’ajoute à Φ base pour remonter en température après l’allure réduite de la nuit. On obtient la puissance à installer. Les H s’écrivent au centième de W/K, les puissances en watts entiers (0,5 W et plus s’arrondit au watt du dessus), le ratio au dixième, la puissance à installer au dixième de kW au-dessus.",
-      prompt: "Lisez les formules et leurs unités, puis continuez.",
-      render: () => tableau(["Étape", "Formule", "Unité"], [
+      prompt: "Suivez les flèches du schéma, lisez les formules et leurs unités, puis continuez.",
+      render: () => BE.schema("illustrations/schema-quatre-postes.svg", "Schéma de principe. Une maison en coupe, avec un radiateur dans la pièce. Dehors, la température est θe ; dedans, θi. Trois flèches orange sortent de la maison. Deux flèches traversent le mur et la fenêtre vers la droite : H parois, parois et baies. Une flèche part du coin entre le mur et le plancher, marqué d’un cercle en pointillé : H ponts, ponts thermiques. Une flèche sort par le toit : H air, renouvellement d’air ; en face, une flèche en pointillé fait entrer l’air neuf à θe. Sous la maison : ΔT = θi − θe, l’écart de température. En bas, trois cases reliées par des flèches : H = H parois + H ponts + H air ; la flèche × ΔT mène à Φ base, en W ; la flèche + relance mène à la puissance à installer.", "Trois flux sortent de la maison. Leur somme H, multipliée par ΔT, donne Φ base ; la relance s’y ajoute.")
+        + tableau(["Étape", "Formule", "Unité"], [
         ["1", "H = H parois + H ponts + H air", "W/K"],
         ["2", "ΔT = θi − θe", "K"],
         ["3", "Φ base = H × ΔT", "W"],
@@ -323,8 +324,9 @@ BE.station({
     BE.ecran({
       id: "deux-sommes", dossier: "methode", kicker: "La méthode, 2", title: "Additionner les parois : par local ou par familles", level: "comprendre",
       text: `H parois se calcule de deux façons. Par local : on reprend le tableau de chaque pièce chauffée (station T3) et on additionne les H des pièces. Par familles de parois : on additionne les surfaces de toutes les parois de même nature (tous les murs extérieurs, toutes les fenêtres…) et on fait une ligne U × A × b par famille. b vaut 1 pour une paroi sur l’extérieur ou sur le sol, porte d’entrée et plancher bas compris ; une paroi sur un local non chauffé prend le b de ce local (station T3). La somme par local donne le détail pièce par pièce, utile pour choisir chaque émetteur. La somme par familles va plus vite et sert de contrôle. Les deux donnent le même total, aux arrondis près. Le bâtiment d’exemple compte trois locaux chauffés, avec θi = ${EX.T.ti} °C et θe = ${EX.T.te} °C, valeurs d’exercice.`,
-      prompt: "Comparez les deux tableaux du bâtiment d’exemple, puis continuez.",
-      render: () => tableau(["Local chauffé", "Surface habitable (m²)", "H parois (W/K)"], [
+      prompt: "Suivez les deux chemins du schéma, comparez les deux tableaux du bâtiment d’exemple, puis continuez.",
+      render: () => BE.schema("illustrations/schema-deux-sommes.svg", `Schéma de principe, bâtiment d’exemple, en W/K. À gauche, « Par local » : trois cases, ${EX.locaux.map(l => `${l.nom} ${l.H}`).join(", ")}, puis la somme par locaux, ${EX.Hpieces}. À droite, « Par familles de parois » : six cases, ${EX.fam.map(f => `${f.nom.toLowerCase()} ${f.UAb}`).join(", ")}, puis la somme par familles, ${EX.Hfam}. Une accolade orange sous les deux sommes : même total, aux arrondis près, écart de ${EX.ecartSommes} W/K.`, "Deux chemins, un seul H parois : la somme par familles contrôle la somme par locaux.")
+        + tableau(["Local chauffé", "Surface habitable (m²)", "H parois (W/K)"], [
         ...EX.locaux.map(l => [l.nom, l.hab, l.H]),
         ["Somme par locaux", EX.hab, EX.Hpieces]
       ], "Par local : le H de chaque pièce vient de son tableau (station T3)")
@@ -338,8 +340,9 @@ BE.station({
     BE.ecran({
       id: "ponts-thermiques", dossier: "methode", kicker: "La méthode, 3", title: "Les ponts thermiques", level: "comprendre",
       text: `Un pont thermique est un endroit de l’enveloppe où la chaleur passe davantage qu’à travers la paroi courante : la liaison d’un plancher avec un mur, le tour d’une fenêtre, un angle. Les règles Th-Bât les ajoutent à la transmission par une somme de ψ × l : Σ veut dire « somme de ». ψ, en W/(m.K), est le coefficient du pont thermique de la liaison, l est sa longueur en mètres ; χ, en W/K, est le coefficient d’un pont thermique ponctuel. Ce calcul détaillé demande la valeur de ψ de chaque liaison, donnée par un autre fascicule des règles. Quand le projet ne la fournit pas encore, le bureau d’études compte les ponts thermiques en forfait, un pourcentage de H parois fixé par la commande. Le bâtiment d’exemple prend ${EX.pontsPc} %, valeur d’exercice.`,
-      prompt: "Lisez l’exemple résolu et les sources, puis continuez.",
-      render: () => tableau(["Ce que disent les règles Th-Bât", "Source"], [
+      prompt: "Regardez sur le schéma où la chaleur contourne l’isolant, lisez l’exemple résolu et les sources, puis continuez.",
+      render: () => BE.schema("illustrations/schema-pont-thermique.svg", "Schéma de principe : coupe d’un mur en béton isolé par l’intérieur, à l’endroit où un plancher en béton le rejoint. Le local chauffé, à θi, est à gauche ; dehors, à θe, à droite. Dans le mur, l’isolant est du côté du local et le béton du côté du dehors. Le plancher en béton traverse l’isolant et touche le mur en béton. Une flèche orange fine traverse le mur au-dessus du plancher : paroi courante, l’isolant freine. Trois flèches orange épaisses traversent le plancher puis le béton du mur : pont thermique, le flux passe par le béton et contourne l’isolant. En bas : chaque liaison compte ψ × l, ψ en W/(m.K), l sa longueur en m.", "Au plancher, la chaleur passe par le béton et contourne l’isolant : c’est un pont thermique.")
+        + tableau(["Ce que disent les règles Th-Bât", "Source"], [
         ["La transmission du bâtiment compte les parois (Σ U × A × b), les liaisons (Σ ψ × l × b) et les points singuliers (Σ χ × b)", "Généralités, § 4.3, formule 3, p. 16 et 17"],
         ["Une liaison dont ψ est inférieur à 0,03 W/(m.K) peut être négligée", "Généralités, § 3.4, p. 13"],
         ["Une liaison dont une paroi donne sur l’extérieur ou le sol est comptée sur l’extérieur", "Généralités, § 3.4, p. 13"]
@@ -368,8 +371,9 @@ BE.station({
     BE.ecran({
       id: "air", dossier: "methode", kicker: "La méthode, 4", title: "Le renouvellement d’air dans le bilan", level: "comprendre",
       text: `L’air neuf qui entre dans le bâtiment arrive à la température extérieure et doit être chauffé jusqu’à θi. La station T4 calcule son coefficient : H air = 0,34 × qv, avec qv le débit d’air neuf en m³/h et 0,34 en Wh/(m³.K). Le résultat est en W/K, comme H parois. La station T4 partage aussi qv entre les pièces principales, où l’air neuf entre : le séjour, cuisine ouverte comprise, et les chambres. Les pièces de service et les circulations reçoivent 0. Dans le bilan, vous reprenez de votre feuille de la station T4 la part d’air de chaque pièce et H air du bâtiment, leur somme : il se compte une seule fois. Le bâtiment d’exemple a qv = ${EX.qv} m³/h, valeur d’exercice.`,
-      prompt: "Lisez l’exemple résolu, puis continuez.",
-      render: () => tableau(["Formule", "Unités"], [["H air = 0,34 × qv", "W/K = Wh/(m³.K) × m³/h"], ["Φ air = H air × ΔT", "W = W/K × K"]])
+      prompt: "Suivez le chemin de l’air sur le schéma, lisez l’exemple résolu, puis continuez.",
+      render: () => BE.schema("illustrations/schema-chemin-air.svg", "Schéma de principe. À gauche, l’extérieur : une flèche « air neuf à θe » entre dans le rectangle des pièces principales, séjour et chambres, avec leurs entrées d’air. Une flèche descend vers le rectangle des pièces de service, cuisine, salle d’eau et WC, avec la mention « air de transfert, déjà à θi ». Une flèche sort des pièces de service vers la droite : « air rejeté par la VMC ».", "Le chemin de l’air, repris de la station T4 : l’air neuf n’entre que dans les pièces principales.")
+        + tableau(["Formule", "Unités"], [["H air = 0,34 × qv", "W/K = Wh/(m³.K) × m³/h"], ["Φ air = H air × ΔT", "W = W/K × K"]])
         + exempleAir()
         + tableau(["Local", "Part de qv (m³/h)", "Φ air du local (W)"], EX.locaux.map(l => [l.nom, l.qv, l.air]), "Part d’air des locaux du bâtiment d’exemple (station T4)")
         + BE.renvoi(`La somme des parts, ${EX.locaux.map(l => l.air).join(" + ")} W, redonne Φ air du bâtiment à l’arrondi près. Le coefficient 0,34 vient des règles Th-Bât, fascicule Généralités, § 5.1, p. 18.`)
@@ -396,7 +400,7 @@ BE.station({
     BE.ecran({
       id: "phi-base", dossier: "methode", kicker: "La méthode, 5", title: "Exemple résolu : Φ base du bâtiment d’exemple", level: "comprendre",
       text: `Voici le bilan du bâtiment d’exemple jusqu’à Φ base. H parois est la somme par locaux de l’écran « Additionner les parois ». H ponts vient du forfait de ${EX.pontsPc} %, H air de qv = ${EX.qv} m³/h. Φ base est la puissance que le bâtiment perd par le froid de base, θe = ${EX.T.te} °C, quand l’intérieur est à ${EX.T.ti} °C. La dernière colonne donne la part de chaque poste : elle montre où la chaleur s’en va.`,
-      prompt: "Suivez le tableau ligne par ligne, puis lisez le piège.",
+      prompt: "Suivez le tableau ligne par ligne, regardez la barre du schéma, puis lisez le piège.",
       render: () => tableau(["Poste", "Calcul", "Valeur", "Part de Φ base"], [
         ["H parois (W/K)", "somme par locaux", EX.Hp, EX.part.parois],
         ["H ponts (W/K)", `${EX.pontsDec} × ${EX.Hp}`, EX.Hpt, EX.part.ponts],
@@ -405,14 +409,16 @@ BE.station({
         ["ΔT (K)", `${EX.T.ti} − (${EX.T.te})`, EX.T.dT, ""],
         ["Φ base (W)", `${EX.H} × ${EX.T.dT}`, EX.base, "100 %"]
       ], "Bilan du bâtiment d’exemple jusqu’à Φ base")
+        + BE.schema("illustrations/schema-parts-phi-base.svg", `Schéma de principe, bâtiment d’exemple, ΔT = ${EX.T.dT} K. Une barre horizontale représente Φ base, ${EX.base} W. Elle est coupée en trois parts : H parois, ${EX.part.parois} ; H ponts, ${EX.part.ponts}, la part étroite du milieu ; H air, ${EX.part.air}. Sous la barre, une accolade pour H parois et H ponts : ${EX.sansAir} W sans H air ; une accolade pour H air : Φ air = ${EX.phiAir} W ; une accolade sous toute la barre : Φ base = ${EX.base} W.`, "La chaleur se partage en trois parts. Les parts sont arrondies : leur somme fait 99 %.")
         + BE.alerte(`<strong>Piège.</strong> Sans H air, Φ base tombe de ${EX.base} W à ${EX.sansAir} W : le renouvellement d’air pèse autant qu’une famille entière de parois.`)
     }),
 
     BE.ecran({
       id: "relance", dossier: "methode", kicker: "La méthode, 6", title: "La relance après l’allure réduite", level: "comprendre",
       text: "La nuit, la consigne descend à l’allure réduite : la maison du projet passe de 20 °C à 17 °C (station E2). Le matin, l’installation doit remonter à 20 °C en un temps raisonnable : il lui faut une puissance de plus que Φ base, la surpuissance de relance. Le bureau d’études la compte en forfait, un pourcentage de Φ base fixé par la commande. On ajoute la relance à Φ base, puis on arrondit la puissance à installer au dixième de kW au-dessus.",
-      prompt: "Lisez l’exemple résolu, puis continuez.",
-      render: () => exempleRelance()
+      prompt: "Suivez les deux courbes du schéma, lisez l’exemple résolu, puis continuez.",
+      render: () => BE.schema("illustrations/schema-relance.svg", "Schéma de principe sur 24 heures, sans échelle : deux graphiques l’un sous l’autre, découpés en quatre périodes, confort, allure réduite, relance, confort. En haut, la température dans la maison : 20 °C en confort ; elle descend lentement jusqu’à 17 °C pendant l’allure réduite, reste à 17 °C, puis remonte vite à 20 °C pendant la relance. En bas, la puissance de chauffage : égale à Φ base en confort, elle tombe très bas quand l’allure réduite commence, remonte à un niveau moyen pour tenir 17 °C, puis dépasse Φ base pendant la relance, dans une case orange : Φ base + relance, c’est la puissance à installer. Elle revient à Φ base quand 20 °C est retrouvé.", "La nuit, le chauffage baisse ; le matin, il dépasse Φ base le temps de la relance.")
+        + exempleRelance()
         + BE.alerte(`<strong>Piège.</strong> Arrondir en dessous donne une installation trop juste par le froid de base : ${EX.P} W s’arrondit à ${EX.PkW} kW, pas à ${EX.PkWbas} kW.`)
     }),
 

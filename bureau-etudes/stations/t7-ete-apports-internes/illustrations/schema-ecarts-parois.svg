@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 150" width="180mm" height="150mm" role="img">
+<title>L’écart de chaque paroi en été</title>
+<rect width="180" height="150" fill="#fff"/>
+<g><text x="90" y="83" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 83)">inerWeb, by inerweb.fr</text><text x="40" y="45" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 45)">inerWeb, by inerweb.fr</text><text x="140" y="123" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 123)">inerWeb, by inerweb.fr</text></g>
+<line x1="52.00" y1="50.00" x2="90.00" y2="14.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="90.00" y1="14.00" x2="128.00" y2="50.00" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="90.00" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">Comble à 38 °C</text>
+<text x="176.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">Chaque paroi prend l’écart</text>
+<text x="176.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">de ce qui est derrière elle</text>
+<rect x="60.00" y="50.00" width="6.00" height="16.00" rx="0" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="60.00" y="82.00" width="6.00" height="22.00" rx="0" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="62.20" y="66.00" width="1.60" height="16.00" rx="0" fill="#cfe3f5" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="114.00" y="50.00" width="6.00" height="24.00" rx="0" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="114.00" y="74.00" width="6.00" height="30.00" rx="0" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="120.00" y="50.00" width="56.00" height="54.00" rx="0" fill="#eeeeee" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="66.00" y1="50.00" x2="114.00" y2="50.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="44.00" y1="104.00" x2="136.00" y2="104.00" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="44.00" y="104.00" width="132.00" height="8.00" rx="0" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="4.00" y="44.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Dehors, 32 °C</text>
+<text x="4.00" y="60.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Fenêtre ou porte :</text>
+<text x="4.00" y="67.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">32 − 26 = 6 K</text>
+<line x1="8.00" y1="75.00" x2="80.00" y2="75.00" stroke="#c9451a" stroke-width="0.8"/>
+<line x1="80.00" y1="75.00" x2="77.72" y2="76.25" stroke="#c9451a" stroke-width="0.8"/>
+<line x1="80.00" y1="75.00" x2="77.72" y2="73.75" stroke="#c9451a" stroke-width="0.8"/>
+<text x="4.00" y="92.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mur extérieur :</text>
+<text x="4.00" y="99.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">écart équivalent</text>
+<line x1="71.00" y1="43.00" x2="71.00" y2="59.00" stroke="#c9451a" stroke-width="0.8"/>
+<line x1="71.00" y1="59.00" x2="69.75" y2="56.72" stroke="#c9451a" stroke-width="0.8"/>
+<line x1="71.00" y1="59.00" x2="72.25" y2="56.72" stroke="#c9451a" stroke-width="0.8"/>
+<text x="77.00" y="57.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plafond :</text>
+<text x="77.00" y="64.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">38 − 26 = 12 K</text>
+<text x="148.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Local technique</text>
+<text x="148.00" y="65.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">non chauffé</text>
+<line x1="140.00" y1="85.00" x2="100.00" y2="85.00" stroke="#c9451a" stroke-width="0.8"/>
+<line x1="100.00" y1="85.00" x2="102.28" y2="83.75" stroke="#c9451a" stroke-width="0.8"/>
+<line x1="100.00" y1="85.00" x2="102.28" y2="86.25" stroke="#c9451a" stroke-width="0.8"/>
+<text x="148.00" y="95.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Mur et porte :</text>
+<text x="148.00" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,90 × 6 = 5,4 K</text>
+<text x="90.00" y="94.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Bureau</text>
+<text x="90.00" y="101.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">à 26 °C</text>
+<text x="90.00" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Plancher sur terre-plein :</text>
+<text x="90.00" y="129.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">ne compte pas</text>
+<line x1="4.00" y1="139.50" x2="176.00" y2="139.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="146.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="146.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

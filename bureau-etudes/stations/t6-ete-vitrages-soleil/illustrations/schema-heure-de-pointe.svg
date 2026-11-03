@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 138" width="180mm" height="138mm" role="img">
+<title>L’heure de pointe</title>
+<rect width="180" height="138" fill="#fff"/>
+<g><text x="90" y="76" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 76)">inerWeb, by inerweb.fr</text><text x="40" y="41" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 41)">inerWeb, by inerweb.fr</text><text x="140" y="113" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 113)">inerWeb, by inerweb.fr</text></g>
+<line x1="32.00" y1="104.00" x2="176.00" y2="104.00" stroke="#000" stroke-width="0.5"/>
+<line x1="32.00" y1="104.00" x2="32.00" y2="39.20" stroke="#000" stroke-width="0.5"/>
+<line x1="30.00" y1="104.00" x2="32.00" y2="104.00" stroke="#000" stroke-width="0.5"/>
+<text x="27.50" y="105.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">0</text>
+<line x1="30.00" y1="86.00" x2="32.00" y2="86.00" stroke="#000" stroke-width="0.5"/>
+<text x="27.50" y="87.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">500</text>
+<line x1="30.00" y1="68.00" x2="32.00" y2="68.00" stroke="#000" stroke-width="0.5"/>
+<text x="27.50" y="69.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">1000</text>
+<line x1="30.00" y1="50.00" x2="32.00" y2="50.00" stroke="#000" stroke-width="0.5"/>
+<text x="27.50" y="51.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">1500</text>
+<text x="27.50" y="38.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">W</text>
+<rect x="38.00" y="90.64" width="20.00" height="13.36" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="38.00" y="83.55" width="20.00" height="7.09" fill="#6f95c4" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="38.00" y="80.71" width="20.00" height="2.84" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="48.00" y="78.11" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">647 W</text>
+<text x="48.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">8 h</text>
+<rect x="66.00" y="79.38" width="20.00" height="24.62" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="66.00" y="74.12" width="20.00" height="5.26" fill="#6f95c4" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="66.00" y="70.48" width="20.00" height="3.64" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="76.00" y="67.88" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">931 W</text>
+<text x="76.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10 h</text>
+<rect x="94.00" y="75.24" width="20.00" height="28.76" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="94.00" y="73.76" width="20.00" height="1.48" fill="#6f95c4" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="94.00" y="69.87" width="20.00" height="3.89" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="104.00" y="67.27" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">948 W</text>
+<text x="104.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12 h</text>
+<rect x="122.00" y="53.46" width="20.00" height="50.54" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="122.00" y="52.09" width="20.00" height="1.37" fill="#6f95c4" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="122.00" y="48.45" width="20.00" height="3.64" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="132.00" y="45.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1543 W</text>
+<text x="132.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">14 h</text>
+<rect x="150.00" y="50.47" width="20.00" height="53.53" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="150.00" y="49.39" width="20.00" height="1.08" fill="#6f95c4" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="150.00" y="46.54" width="20.00" height="2.84" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="160.00" y="43.94" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1596 W</text>
+<text x="160.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">16 h</text>
+<rect x="149.20" y="45.74" width="21.60" height="58.26" fill="none" stroke="#ff6b35" stroke-width="1.4"/>
+<text x="160.00" y="36.14" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#ff6b35">Pointe</text>
+<line x1="32.00" y1="39.49" x2="176.00" y2="39.49" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="3 2"/>
+<text x="36.00" y="28.99" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Somme des maximums des locaux : 1792 W</text>
+<text x="36.00" y="36.49" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">(cette puissance n’arrive jamais)</text>
+<rect x="36.00" y="118.40" width="4.00" height="4.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="42.50" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Salle de réunion</text>
+<rect x="86.00" y="118.40" width="4.00" height="4.00" fill="#6f95c4" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="92.50" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Sanitaires</text>
+<rect x="130.00" y="118.40" width="4.00" height="4.00" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="136.50" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Bureau</text>
+<line x1="4.00" y1="127.50" x2="176.00" y2="127.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

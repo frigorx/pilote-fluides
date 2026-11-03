@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 156" width="180mm" height="156mm" role="img">
+<title>Les deux sommes de H parois du bâtiment d’exemple : par local et par familles de parois</title>
+<rect width="180" height="156" fill="#fff"/>
+<g><text x="90" y="86" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 86)">inerWeb, by inerweb.fr</text><text x="35" y="47" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 47)">inerWeb, by inerweb.fr</text><text x="150" y="125" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 125)">inerWeb, by inerweb.fr</text></g>
+<text x="46.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Par local</text>
+<text x="46.00" y="20.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H de chaque pièce, en W/K</text>
+<rect x="6.00" y="26.00" width="80.00" height="9.00" fill="#fff"/>
+<line x1="6.00" y1="26.00" x2="86.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="26.00" x2="86.00" y2="35.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="35.00" x2="6.00" y2="35.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="35.00" x2="6.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="8.00" y="32.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Bureau</text>
+<text x="84.00" y="32.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">26,44</text>
+<rect x="6.00" y="36.50" width="80.00" height="9.00" fill="#fff"/>
+<line x1="6.00" y1="36.50" x2="86.00" y2="36.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="36.50" x2="86.00" y2="45.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="45.50" x2="6.00" y2="45.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="45.50" x2="6.00" y2="36.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="8.00" y="42.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Salle de réunion</text>
+<text x="84.00" y="42.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">30,95</text>
+<rect x="6.00" y="47.00" width="80.00" height="9.00" fill="#fff"/>
+<line x1="6.00" y1="47.00" x2="86.00" y2="47.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="47.00" x2="86.00" y2="56.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="56.00" x2="6.00" y2="56.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="56.00" x2="6.00" y2="47.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="8.00" y="53.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Sanitaires</text>
+<text x="84.00" y="53.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">7,47</text>
+<rect x="6.00" y="110.00" width="80.00" height="9.00" fill="#eeeeee"/>
+<line x1="6.00" y1="110.00" x2="86.00" y2="110.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="110.00" x2="86.00" y2="119.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="86.00" y1="119.00" x2="6.00" y2="119.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="6.00" y1="119.00" x2="6.00" y2="110.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="8.00" y="116.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Somme par locaux</text>
+<text x="84.00" y="116.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">64,86</text>
+<text x="134.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Par familles de parois</text>
+<text x="134.00" y="20.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">U × A × b, en W/K</text>
+<rect x="94.00" y="26.00" width="80.00" height="9.00" fill="#fff"/>
+<line x1="94.00" y1="26.00" x2="174.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="26.00" x2="174.00" y2="35.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="35.00" x2="94.00" y2="35.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="35.00" x2="94.00" y2="26.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="32.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Murs extérieurs</text>
+<text x="172.00" y="32.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">16,82</text>
+<rect x="94.00" y="36.50" width="80.00" height="9.00" fill="#fff"/>
+<line x1="94.00" y1="36.50" x2="174.00" y2="36.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="36.50" x2="174.00" y2="45.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="45.50" x2="94.00" y2="45.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="45.50" x2="94.00" y2="36.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="42.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Fenêtres</text>
+<text x="172.00" y="42.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">13,78</text>
+<rect x="94.00" y="47.00" width="80.00" height="9.00" fill="#fff"/>
+<line x1="94.00" y1="47.00" x2="174.00" y2="47.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="47.00" x2="174.00" y2="56.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="56.00" x2="94.00" y2="56.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="56.00" x2="94.00" y2="47.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="53.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Mur local technique</text>
+<text x="172.00" y="53.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">3,25</text>
+<rect x="94.00" y="57.50" width="80.00" height="9.00" fill="#fff"/>
+<line x1="94.00" y1="57.50" x2="174.00" y2="57.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="57.50" x2="174.00" y2="66.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="66.50" x2="94.00" y2="66.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="66.50" x2="94.00" y2="57.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="63.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Porte local technique</text>
+<text x="172.00" y="63.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">3,06</text>
+<rect x="94.00" y="68.00" width="80.00" height="9.00" fill="#fff"/>
+<line x1="94.00" y1="68.00" x2="174.00" y2="68.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="68.00" x2="174.00" y2="77.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="77.00" x2="94.00" y2="77.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="77.00" x2="94.00" y2="68.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="74.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plancher bas</text>
+<text x="172.00" y="74.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">17,98</text>
+<rect x="94.00" y="78.50" width="80.00" height="9.00" fill="#fff"/>
+<line x1="94.00" y1="78.50" x2="174.00" y2="78.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="78.50" x2="174.00" y2="87.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="87.50" x2="94.00" y2="87.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="87.50" x2="94.00" y2="78.50" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="84.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plafond sous comble</text>
+<text x="172.00" y="84.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">9,96</text>
+<rect x="94.00" y="110.00" width="80.00" height="9.00" fill="#eeeeee"/>
+<line x1="94.00" y1="110.00" x2="174.00" y2="110.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="110.00" x2="174.00" y2="119.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="174.00" y1="119.00" x2="94.00" y2="119.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="94.00" y1="119.00" x2="94.00" y2="110.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="96.00" y="116.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Somme par familles</text>
+<text x="172.00" y="116.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">64,85</text>
+<text x="8.00" y="66.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Utile pour choisir</text>
+<text x="8.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">chaque émetteur.</text>
+<text x="96.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plus rapide :</text>
+<text x="96.00" y="103.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">sert de contrôle.</text>
+<line x1="46.00" y1="122.00" x2="46.00" y2="126.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="46.00" y1="126.00" x2="134.00" y2="126.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="134.00" y1="126.00" x2="134.00" y2="122.00" stroke="#ff6b35" stroke-width="1"/>
+<text x="90.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Même total, aux arrondis près : écart de 0,01 W/K.</text>
+<text x="90.00" y="141.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Un écart de plusieurs W/K signale une erreur.</text>
+<line x1="4.00" y1="145.50" x2="176.00" y2="145.50" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="6.00" y="152.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="152.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

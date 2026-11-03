@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" width="180mm" height="140mm" role="img">
+<title>L’apport solaire d’une baie</title>
+<rect width="180" height="140" fill="#fff"/>
+<g><text x="90" y="77" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 77)">inerWeb, by inerweb.fr</text><text x="40" y="42" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 42)">inerWeb, by inerweb.fr</text><text x="140" y="115" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 115)">inerWeb, by inerweb.fr</text></g>
+<rect x="10.00" y="22.00" width="40.00" height="31.25" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<rect x="10.00" y="22.00" width="18.00" height="31.25" fill="#ffd5c0" stroke="none" stroke-width="0"/>
+<line x1="10.00" y1="22.00" x2="50.00" y2="22.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="10.00" y1="53.25" x2="50.00" y2="53.25" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="10.00" y1="16.00" x2="50.00" y2="16.00" stroke="#000" stroke-width="0.4"/>
+<line x1="10.00" y1="14.00" x2="10.00" y2="18.00" stroke="#000" stroke-width="0.4"/>
+<line x1="50.00" y1="14.00" x2="50.00" y2="18.00" stroke="#000" stroke-width="0.4"/>
+<text x="30.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">L = 1,60 m</text>
+<line x1="56.00" y1="22.00" x2="56.00" y2="53.25" stroke="#000" stroke-width="0.4"/>
+<line x1="54.00" y1="22.00" x2="58.00" y2="22.00" stroke="#000" stroke-width="0.4"/>
+<line x1="54.00" y1="53.25" x2="58.00" y2="53.25" stroke="#000" stroke-width="0.4"/>
+<text x="60.00" y="39.33" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">H = 1,25 m</text>
+<text x="30.00" y="62.25" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A = L × H = 2,00 m²</text>
+<text x="96.00" y="28.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Zone orange :</text>
+<text x="96.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">la surface qui laisse</text>
+<text x="96.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">entrer le soleil</text>
+<text x="96.00" y="49.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">A × Sw × Fm = 0,90 m²</text>
+<rect x="6.00" y="76.00" width="28.00" height="20.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="20.00" y="84.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">A</text>
+<text x="20.00" y="92.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,00 m²</text>
+<text x="20.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">surface de</text>
+<text x="20.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">la baie</text>
+<rect x="41.00" y="76.00" width="28.00" height="20.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="55.00" y="84.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Sw</text>
+<text x="55.00" y="92.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,45</text>
+<text x="55.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">facteur</text>
+<text x="55.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">solaire</text>
+<rect x="76.00" y="76.00" width="28.00" height="20.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="90.00" y="84.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Fm</text>
+<text x="90.00" y="92.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1</text>
+<text x="90.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">coefficient</text>
+<text x="90.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">de masque</text>
+<rect x="111.00" y="76.00" width="28.00" height="20.00" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="125.00" y="84.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">I</text>
+<text x="125.00" y="92.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">730 W/m²</text>
+<text x="125.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">rayonnement</text>
+<text x="125.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">reçu</text>
+<rect x="146.00" y="76.00" width="28.00" height="20.00" fill="#fff" stroke="#ff6b35" stroke-width="1"/>
+<text x="160.00" y="84.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Φ</text>
+<text x="160.00" y="92.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">657 W</text>
+<text x="160.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">apport</text>
+<text x="160.00" y="111.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">solaire</text>
+<text x="37.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">×</text>
+<text x="72.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">×</text>
+<text x="107.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">×</text>
+<text x="142.50" y="88.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">=</text>
+<text x="6.00" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Fenêtre Fc à 16 h : 0,90 m² × 730 W/m² = 657 W</text>
+<line x1="4.00" y1="129.50" x2="176.00" y2="129.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="136.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="136.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

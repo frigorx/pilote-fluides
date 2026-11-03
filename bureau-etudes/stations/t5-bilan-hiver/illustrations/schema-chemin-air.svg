@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 146" width="180mm" height="146mm" role="img">
+<title>Chemin de l’air dans une maison en ventilation simple flux</title>
+<rect width="180" height="146" fill="#fff"/>
+<g><text x="90" y="80.30000000000001" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 80.30000000000001)">inerWeb, by inerweb.fr</text><text x="35" y="43.8" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 35 43.8)">inerWeb, by inerweb.fr</text><text x="150" y="116.80000000000001" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 150 116.80000000000001)">inerWeb, by inerweb.fr</text></g>
+<rect x="52.00" y="24.00" width="86.00" height="30.00" fill="#ffffff"/>
+<rect x="52.00" y="78.00" width="86.00" height="30.00" fill="#eeeeee"/>
+<line x1="52.00" y1="24.00" x2="138.00" y2="24.00" stroke="#000" stroke-width="0.4"/>
+<line x1="138.00" y1="24.00" x2="138.00" y2="54.00" stroke="#000" stroke-width="0.4"/>
+<line x1="138.00" y1="54.00" x2="52.00" y2="54.00" stroke="#000" stroke-width="0.4"/>
+<line x1="52.00" y1="54.00" x2="52.00" y2="24.00" stroke="#000" stroke-width="0.4"/>
+<line x1="52.00" y1="78.00" x2="138.00" y2="78.00" stroke="#000" stroke-width="0.4"/>
+<line x1="138.00" y1="78.00" x2="138.00" y2="108.00" stroke="#000" stroke-width="0.4"/>
+<line x1="138.00" y1="108.00" x2="52.00" y2="108.00" stroke="#000" stroke-width="0.4"/>
+<line x1="52.00" y1="108.00" x2="52.00" y2="78.00" stroke="#000" stroke-width="0.4"/>
+<text x="95.00" y="34.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Pièces principales</text>
+<text x="95.00" y="42.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">séjour et chambres</text>
+<text x="95.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">entrées d’air</text>
+<text x="95.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Pièces de service</text>
+<text x="95.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">cuisine, salle d’eau, WC</text>
+<text x="95.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">bouches d’extraction</text>
+<text x="6.00" y="16.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Extérieur</text>
+<text x="6.00" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">air neuf à θe</text>
+<line x1="8.00" y1="39.00" x2="52.00" y2="39.00" stroke="#000" stroke-width="0.6"/>
+<line x1="52.00" y1="39.00" x2="49.66" y2="40.13" stroke="#000" stroke-width="0.6"/>
+<line x1="52.00" y1="39.00" x2="49.66" y2="37.87" stroke="#000" stroke-width="0.6"/>
+<line x1="95.00" y1="54.00" x2="95.00" y2="78.00" stroke="#000" stroke-width="0.6"/>
+<line x1="95.00" y1="78.00" x2="93.87" y2="75.66" stroke="#000" stroke-width="0.6"/>
+<line x1="95.00" y1="78.00" x2="96.13" y2="75.66" stroke="#000" stroke-width="0.6"/>
+<text x="99.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">air de transfert, déjà à θi</text>
+<line x1="138.00" y1="93.00" x2="174.00" y2="93.00" stroke="#000" stroke-width="0.6"/>
+<line x1="174.00" y1="93.00" x2="171.66" y2="94.13" stroke="#000" stroke-width="0.6"/>
+<line x1="174.00" y1="93.00" x2="171.66" y2="91.87" stroke="#000" stroke-width="0.6"/>
+<text x="141.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">air rejeté</text>
+<text x="141.00" y="101.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">par la VMC</text>
+<text x="6.00" y="118.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">L’air neuf se réchauffe de θe à θi dans les pièces</text>
+<text x="6.00" y="124.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">principales : c’est là que compte sa déperdition.</text>
+<line x1="4.00" y1="135.50" x2="176.00" y2="135.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="142.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="142.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

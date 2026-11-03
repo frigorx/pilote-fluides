@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132" width="180mm" height="132mm" role="img">
+<title>Infiltrations en simple flux : les fuites remplacent une partie des entrées d’air</title>
+<rect width="180" height="132" fill="#fff"/>
+<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="40" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 40)">inerWeb, by inerweb.fr</text><text x="140" y="108" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 108)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dehors</text>
+<text x="70.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dedans</text>
+<rect x="56.00" y="16.00" width="8.00" height="8.00" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="56.00" y="32.00" width="8.00" height="14.00" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="56.00" y="78.00" width="8.00" height="22.00" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="56.00" y="24.00" width="8.00" height="8.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="58.70" y1="25.00" x2="58.70" y2="31.00" stroke="#000" stroke-width="0.4"/>
+<line x1="61.30" y1="25.00" x2="61.30" y2="31.00" stroke="#000" stroke-width="0.4"/>
+<rect x="56.00" y="48.00" width="8.00" height="28.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="60.00" y1="50.00" x2="60.00" y2="74.00" stroke="#000" stroke-width="0.4"/>
+<text x="6.00" y="64.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Fenêtre</text>
+<line x1="8.00" y1="28.00" x2="96.00" y2="28.00" stroke="#3d7fca" stroke-width="1.6"/>
+<line x1="96.00" y1="28.00" x2="93.72" y2="29.25" stroke="#3d7fca" stroke-width="1.6"/>
+<line x1="96.00" y1="28.00" x2="93.72" y2="26.75" stroke="#3d7fca" stroke-width="1.6"/>
+<text x="70.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Entrée d’air : 55 m³/h</text>
+<line x1="8.00" y1="47.00" x2="96.00" y2="47.00" stroke="#3d7fca" stroke-width="0.7"/>
+<line x1="96.00" y1="47.00" x2="93.72" y2="48.25" stroke="#3d7fca" stroke-width="0.7"/>
+<line x1="96.00" y1="47.00" x2="93.72" y2="45.75" stroke="#3d7fca" stroke-width="0.7"/>
+<line x1="8.00" y1="77.00" x2="96.00" y2="77.00" stroke="#3d7fca" stroke-width="0.7"/>
+<line x1="96.00" y1="77.00" x2="93.72" y2="78.25" stroke="#3d7fca" stroke-width="0.7"/>
+<line x1="96.00" y1="77.00" x2="93.72" y2="75.75" stroke="#3d7fca" stroke-width="0.7"/>
+<text x="70.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Fuites aux joints,</text>
+<text x="70.00" y="65.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">20 m³/h en tout</text>
+<rect x="166.00" y="16.00" width="8.00" height="40.00" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="166.00" y="68.00" width="8.00" height="32.00" fill="#d9d9d9" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="166.00" y="56.00" width="8.00" height="12.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="169.00" y1="57.50" x2="169.00" y2="66.50" stroke="#000" stroke-width="0.4"/>
+<line x1="126.00" y1="62.00" x2="176.00" y2="62.00" stroke="#1b3a63" stroke-width="1.6"/>
+<line x1="176.00" y1="62.00" x2="173.72" y2="63.25" stroke="#1b3a63" stroke-width="1.6"/>
+<line x1="176.00" y1="62.00" x2="173.72" y2="60.75" stroke="#1b3a63" stroke-width="1.6"/>
+<text x="162.00" y="55.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">75 m³/h extraits</text>
+<text x="162.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">par la bouche</text>
+<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Entrées d’air 55 + fuites 20 = 75 m³/h extraits</text>
+<text x="6.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Les fuites remplacent une partie des entrées d’air.</text>
+<line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

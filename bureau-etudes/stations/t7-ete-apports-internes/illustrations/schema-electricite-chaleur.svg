@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 142" width="180mm" height="142mm" role="img">
+<title>L’électricité consommée devient de la chaleur</title>
+<rect width="180" height="142" fill="#fff"/>
+<g><text x="90" y="78" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 78)">inerWeb, by inerweb.fr</text><text x="40" y="43" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 43)">inerWeb, by inerweb.fr</text><text x="140" y="116" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 116)">inerWeb, by inerweb.fr</text></g>
+<text x="106.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Électricité</text>
+<text x="106.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">consommée</text>
+<text x="158.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#c9451a">Chaleur</text>
+<text x="158.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#c9451a">sensible</text>
+<g transform="translate(8.00 37.00)"><svg x="0" y="0" width="14.00" height="14.00" viewBox="-10.0 -10.0 20 20" overflow="visible"><line x1="-8" y1="8" x2="8" y2="-8" stroke="#000" stroke-width="1"/>
+<line x1="-8" y1="-8" x2="8" y2="8" stroke="#000" stroke-width="1"/>
+<ellipse cx="0.0" cy="0.0" rx="1.5" ry="1.5" fill="black" stroke="#000" stroke-width="1"/>
+<circle cx="0" cy="0" r="1.5" fill="#000"/></svg></g>
+<text x="34.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Éclairage à LED</text>
+<text x="34.00" y="50.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">19,14 m² × 8 W/m²</text>
+<rect x="90.00" y="38.50" width="32.00" height="11.00" rx="0" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="106.00" y="45.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">153 W</text>
+<line x1="125.00" y1="44.00" x2="139.00" y2="44.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="139.00" y1="44.00" x2="136.72" y2="45.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="139.00" y1="44.00" x2="136.72" y2="42.75" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="142.00" y="38.50" width="32.00" height="11.00" rx="0" fill="#f6d5c8" stroke="#c9451a" stroke-width="0.6"/>
+<text x="158.00" y="45.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">153 W</text>
+<rect x="5.00" y="64.00" width="10.00" height="7.50" rx="0" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="10.00" y1="71.50" x2="10.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="7.00" y1="74.00" x2="13.00" y2="74.00" stroke="#1b3a63" stroke-width="0.6"/>
+<rect x="5.50" y="76.00" width="9.00" height="2.60" rx="0" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<rect x="17.00" y="64.00" width="10.00" height="7.50" rx="0" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="22.00" y1="71.50" x2="22.00" y2="74.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="19.00" y1="74.00" x2="25.00" y2="74.00" stroke="#1b3a63" stroke-width="0.6"/>
+<rect x="17.50" y="76.00" width="9.00" height="2.60" rx="0" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="34.00" y="71.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Deux ordinateurs</text>
+<text x="34.00" y="78.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">2 × 150 W</text>
+<rect x="90.00" y="66.50" width="32.00" height="11.00" rx="0" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="106.00" y="73.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">300 W</text>
+<line x1="125.00" y1="72.00" x2="139.00" y2="72.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="139.00" y1="72.00" x2="136.72" y2="73.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="139.00" y1="72.00" x2="136.72" y2="70.75" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="142.00" y="66.50" width="32.00" height="11.00" rx="0" fill="#f6d5c8" stroke="#c9451a" stroke-width="0.6"/>
+<text x="158.00" y="73.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">300 W</text>
+<line x1="15.00" y1="92.00" x2="15.00" y2="96.00" stroke="#1b3a63" stroke-width="0.6"/>
+<rect x="5.00" y="96.00" width="20.00" height="9.00" rx="1.5" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.6"/>
+<circle cx="10.00" cy="100.50" r="2.60" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="15.50" y1="99.50" x2="22.00" y2="99.50" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="15.50" y1="102.00" x2="22.00" y2="102.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="34.00" y="99.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Vidéoprojecteur</text>
+<text x="34.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">en marche</text>
+<rect x="90.00" y="94.50" width="32.00" height="11.00" rx="0" fill="#fff" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="106.00" y="101.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">300 W</text>
+<line x1="125.00" y1="100.00" x2="139.00" y2="100.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="139.00" y1="100.00" x2="136.72" y2="101.25" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="139.00" y1="100.00" x2="136.72" y2="98.75" stroke="#1b3a63" stroke-width="0.8"/>
+<rect x="142.00" y="94.50" width="32.00" height="11.00" rx="0" fill="#f6d5c8" stroke="#c9451a" stroke-width="0.6"/>
+<text x="158.00" y="101.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">300 W</text>
+<text x="6.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Même nombre à l’entrée et à la sortie, et aucun latent.</text>
+<line x1="4.00" y1="131.50" x2="176.00" y2="131.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="138.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="138.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 144" width="180mm" height="144mm" role="img">
+<title>Échangeur d’une VMC double flux : l’air neuf froid et l’air extrait chaud se croisent sans se mélanger</title>
+<rect width="180" height="144" fill="#fff"/>
+<g><text x="90" y="79" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 79)">inerWeb, by inerweb.fr</text><text x="40" y="43" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 43)">inerWeb, by inerweb.fr</text><text x="140" y="118" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 118)">inerWeb, by inerweb.fr</text></g>
+<g transform="translate(60.00 22.00)"><svg x="0" y="0" width="60.00" height="60.00" viewBox="-21.0 -15.0 40 40" overflow="visible"><line x1="6" y1="-5" x2="6" y2="14" stroke="#000" stroke-width="0.5"/>
+<line x1="10" y1="-5.82667" x2="10" y2="-10.16" stroke="#000" stroke-width="1"/>
+<line x1="0.5" y1="-5" x2="0.5" y2="14" stroke="#000" stroke-width="0.5"/>
+<rect x="-16" y="-5" width="30" height="20" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="10" y1="20" x2="10" y2="15" stroke="#000" stroke-width="1"/>
+<line x1="-10" y1="20.1359" x2="-10" y2="15.8746" stroke="#000" stroke-width="1"/>
+<line x1="-7" y1="-5" x2="-7" y2="14" stroke="#000" stroke-width="0.5"/>
+<line x1="-12" y1="-5" x2="10" y2="15" stroke="#000" stroke-width="1"/>
+<line x1="10" y1="-5" x2="-12" y2="15" stroke="#000" stroke-width="1"/>
+<line x1="-10" y1="-5" x2="-10" y2="-10" stroke="#000" stroke-width="1"/>
+<circle cx="-10" cy="-10" r="1.5" fill="#000"/>
+<circle cx="10" cy="-10" r="1.5" fill="#000"/>
+<circle cx="-10" cy="20" r="1.5" fill="#000"/>
+<circle cx="10" cy="20" r="1.5" fill="#000"/></svg></g>
+<text x="6.00" y="11.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dehors</text>
+<text x="174.00" y="11.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Dedans</text>
+<text x="6.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Air neuf, à θe (froid)</text>
+<text x="174.00" y="19.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Air extrait, à θi (chaud)</text>
+<line x1="6.00" y1="29.50" x2="73.65" y2="29.50" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="73.65" y1="29.50" x2="71.37" y2="30.75" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="73.65" y1="29.50" x2="71.37" y2="28.25" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="174.00" y1="29.50" x2="109.35" y2="29.50" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="109.35" y1="29.50" x2="111.63" y2="28.25" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="109.35" y1="29.50" x2="111.63" y2="30.75" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="73.65" y1="74.50" x2="6.00" y2="74.50" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="6.00" y1="74.50" x2="8.28" y2="73.25" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="6.00" y1="74.50" x2="8.28" y2="75.75" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="109.35" y1="74.50" x2="174.00" y2="74.50" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="174.00" y1="74.50" x2="171.72" y2="75.75" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="174.00" y1="74.50" x2="171.72" y2="73.25" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="90.00" y="90.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Échangeur</text>
+<text x="6.00" y="90.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Air rejeté dehors,</text>
+<text x="6.00" y="97.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">refroidi</text>
+<text x="174.00" y="90.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Air neuf réchauffé,</text>
+<text x="174.00" y="97.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">vers les pièces</text>
+<text x="6.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Les deux flux se croisent sans se mélanger.</text>
+<text x="6.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">η = 0,70 : il ne reste à chauffer que 1 − η = 0,30 de l’écart.</text>
+<text x="6.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φv = 0,34 × 75 × (1 − 0,70) × 26 = 199 W</text>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">au lieu de 663 W sans échangeur.</text>
+<line x1="4.00" y1="133.50" x2="176.00" y2="133.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="140.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="140.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

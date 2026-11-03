@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 126" width="180mm" height="126mm" role="img">
+<title>Double flux : l’air soufflé passe par l’échangeur, les fuites arrivent à θe sans passer par lui</title>
+<rect width="180" height="126" fill="#fff"/>
+<g><text x="90" y="69" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 69)">inerWeb, by inerweb.fr</text><text x="40" y="38" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 38)">inerWeb, by inerweb.fr</text><text x="140" y="103" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 103)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dehors</text>
+<text x="6.00" y="31.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Air soufflé, 75 m³/h</text>
+<line x1="6.00" y1="38.00" x2="69.00" y2="38.00" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="69.00" y1="38.00" x2="66.72" y2="39.25" stroke="#3d7fca" stroke-width="1.2"/>
+<line x1="69.00" y1="38.00" x2="66.72" y2="36.75" stroke="#3d7fca" stroke-width="1.2"/>
+<rect x="70.00" y="24.00" width="44.00" height="28.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="92.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Échangeur</text>
+<text x="92.00" y="43.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">η = 0,70</text>
+<line x1="114.00" y1="38.00" x2="127.00" y2="38.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="127.00" y1="38.00" x2="124.72" y2="39.25" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="127.00" y1="38.00" x2="124.72" y2="36.75" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="6.00" y="66.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Infiltrations (fuites), 10 m³/h</text>
+<line x1="6.00" y1="73.00" x2="127.00" y2="73.00" stroke="#3d7fca" stroke-width="0.9"/>
+<line x1="127.00" y1="73.00" x2="124.72" y2="74.25" stroke="#3d7fca" stroke-width="0.9"/>
+<line x1="127.00" y1="73.00" x2="124.72" y2="71.75" stroke="#3d7fca" stroke-width="0.9"/>
+<text x="6.00" y="82.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Elles ne passent pas par l’échangeur.</text>
+<rect x="128.00" y="26.00" width="46.00" height="56.00" fill="#fff" stroke="#ff6b35" stroke-width="0.9"/>
+<text x="151.00" y="40.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Débit à</text>
+<text x="151.00" y="47.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">chauffer</text>
+<text x="151.00" y="64.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">32,5 m³/h</text>
+<text x="6.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Débit à chauffer = 75 × (1 − 0,70) + 10 = 32,5 m³/h</text>
+<text x="6.00" y="103.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φv = 0,34 × 32,5 × 26 = 287 W</text>
+<text x="6.00" y="110.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plus η est grand, plus les infiltrations pèsent.</text>
+<line x1="4.00" y1="115.50" x2="176.00" y2="115.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

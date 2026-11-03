@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" width="180mm" height="140mm" role="img">
+<title>Le soleil sur une façade</title>
+<rect width="180" height="140" fill="#fff"/>
+<g><text x="90" y="77" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 77)">inerWeb, by inerweb.fr</text><text x="40" y="42" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 42)">inerWeb, by inerweb.fr</text><text x="140" y="115" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 115)">inerWeb, by inerweb.fr</text></g>
+<polyline points="154.00,59.00 153.91,61.09 153.65,63.18 153.21,65.26 152.60,67.32 151.82,69.35 150.87,71.36 149.75,73.33 148.47,75.27 147.02,77.16 145.43,79.00 143.67,80.79 141.78,82.51 139.74,84.17 137.56,85.77 135.25,87.28 132.82,88.73 130.28,90.09 127.62,91.36 124.86,92.55 122.00,93.64 119.06,94.64 116.03,95.54 112.94,96.34 109.78,97.04 106.56,97.64 103.31,98.13 100.01,98.51 96.69,98.78 93.35,98.95 90.00,99.00 86.65,98.95 83.31,98.78 79.99,98.51 76.69,98.13 73.44,97.64 70.22,97.04 67.06,96.34 63.97,95.54 60.94,94.64 58.00,93.64 55.14,92.55 52.38,91.36 49.72,90.09 47.18,88.73 44.75,87.28 42.44,85.77 40.26,84.17 38.22,82.51 36.33,80.79 34.57,79.00 32.98,77.16 31.53,75.27 30.25,73.33 29.13,71.36 28.18,69.35 27.40,67.32 26.79,65.26 26.35,63.18 26.09,61.09 26.00,59.00" fill="none" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="2 1.6"/>
+<line x1="10.00" y1="26.00" x2="10.00" y2="13.00" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="10.00" y1="13.00" x2="11.25" y2="15.28" stroke="#1b3a63" stroke-width="0.8"/>
+<line x1="10.00" y1="13.00" x2="8.75" y2="15.28" stroke="#1b3a63" stroke-width="0.8"/>
+<text x="10.00" y="10.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">N</text>
+<rect x="66.00" y="44.00" width="48.00" height="30.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.6"/>
+<text x="90.00" y="57.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Bâtiment</text>
+<text x="90.00" y="64.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">vu de dessus</text>
+<line x1="114.00" y1="44.00" x2="114.00" y2="74.00" stroke="#ff6b35" stroke-width="2"/>
+<line x1="66.00" y1="74.00" x2="114.00" y2="74.00" stroke="#ff6b35" stroke-width="2"/>
+<line x1="66.00" y1="44.00" x2="66.00" y2="74.00" stroke="#ff6b35" stroke-width="2"/>
+<circle cx="154.00" cy="59.00" r="5.00" fill="#fff4ec" stroke="#ff6b35" stroke-width="0.8"/>
+<line x1="160.50" y1="59.00" x2="163.50" y2="59.00" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="158.60" y1="63.60" x2="160.72" y2="65.72" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="154.00" y1="65.50" x2="154.00" y2="68.50" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="149.40" y1="63.60" x2="147.28" y2="65.72" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="147.50" y1="59.00" x2="144.50" y2="59.00" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="149.40" y1="54.40" x2="147.28" y2="52.28" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="154.00" y1="52.50" x2="154.00" y2="49.50" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="158.60" y1="54.40" x2="160.72" y2="52.28" stroke="#ff6b35" stroke-width="0.7"/>
+<circle cx="90.00" cy="99.00" r="5.00" fill="#fff4ec" stroke="#ff6b35" stroke-width="0.8"/>
+<line x1="96.50" y1="99.00" x2="99.50" y2="99.00" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="94.60" y1="103.60" x2="96.72" y2="105.72" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="90.00" y1="105.50" x2="90.00" y2="108.50" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="85.40" y1="103.60" x2="83.28" y2="105.72" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="83.50" y1="99.00" x2="80.50" y2="99.00" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="85.40" y1="94.40" x2="83.28" y2="92.28" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="90.00" y1="92.50" x2="90.00" y2="89.50" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="94.60" y1="94.40" x2="96.72" y2="92.28" stroke="#ff6b35" stroke-width="0.7"/>
+<circle cx="26.00" cy="59.00" r="5.00" fill="#fff4ec" stroke="#ff6b35" stroke-width="0.8"/>
+<line x1="32.50" y1="59.00" x2="35.50" y2="59.00" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="30.60" y1="63.60" x2="32.72" y2="65.72" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="26.00" y1="65.50" x2="26.00" y2="68.50" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="21.40" y1="63.60" x2="19.28" y2="65.72" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="19.50" y1="59.00" x2="16.50" y2="59.00" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="21.40" y1="54.40" x2="19.28" y2="52.28" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="26.00" y1="52.50" x2="26.00" y2="49.50" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="30.60" y1="54.40" x2="32.72" y2="52.28" stroke="#ff6b35" stroke-width="0.7"/>
+<line x1="141.00" y1="53.00" x2="118.00" y2="53.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="118.00" y1="53.00" x2="120.28" y2="51.75" stroke="#ff6b35" stroke-width="1"/>
+<line x1="118.00" y1="53.00" x2="120.28" y2="54.25" stroke="#ff6b35" stroke-width="1"/>
+<line x1="39.00" y1="53.00" x2="62.00" y2="53.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="62.00" y1="53.00" x2="59.72" y2="54.25" stroke="#ff6b35" stroke-width="1"/>
+<line x1="62.00" y1="53.00" x2="59.72" y2="51.75" stroke="#ff6b35" stroke-width="1"/>
+<line x1="141.00" y1="65.00" x2="118.00" y2="65.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="118.00" y1="65.00" x2="120.28" y2="63.75" stroke="#ff6b35" stroke-width="1"/>
+<line x1="118.00" y1="65.00" x2="120.28" y2="66.25" stroke="#ff6b35" stroke-width="1"/>
+<line x1="39.00" y1="65.00" x2="62.00" y2="65.00" stroke="#ff6b35" stroke-width="1"/>
+<line x1="62.00" y1="65.00" x2="59.72" y2="66.25" stroke="#ff6b35" stroke-width="1"/>
+<line x1="62.00" y1="65.00" x2="59.72" y2="63.75" stroke="#ff6b35" stroke-width="1"/>
+<line x1="84.00" y1="87.00" x2="84.00" y2="77.50" stroke="#ff6b35" stroke-width="1"/>
+<line x1="84.00" y1="77.50" x2="85.25" y2="79.78" stroke="#ff6b35" stroke-width="1"/>
+<line x1="84.00" y1="77.50" x2="82.75" y2="79.78" stroke="#ff6b35" stroke-width="1"/>
+<line x1="96.00" y1="87.00" x2="96.00" y2="77.50" stroke="#ff6b35" stroke-width="1"/>
+<line x1="96.00" y1="77.50" x2="97.25" y2="79.78" stroke="#ff6b35" stroke-width="1"/>
+<line x1="96.00" y1="77.50" x2="94.75" y2="79.78" stroke="#ff6b35" stroke-width="1"/>
+<text x="154.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Est, 8 h</text>
+<text x="154.00" y="40.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">730 W/m²</text>
+<text x="26.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Ouest, 16 h</text>
+<text x="26.00" y="40.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">730 W/m²</text>
+<text x="90.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Sud, 12 h</text>
+<text x="90.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">490 W/m²</text>
+<text x="90.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Nord : 150 W/m² au plus</text>
+<text x="90.00" y="33.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">lumière du ciel</text>
+<line x1="4.00" y1="129.50" x2="176.00" y2="129.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="136.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="136.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>
+</svg>

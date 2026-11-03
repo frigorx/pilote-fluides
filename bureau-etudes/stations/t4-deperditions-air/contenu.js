@@ -6,6 +6,7 @@
 const tableau = (entetes, lignes, legende) => `<table class="constat">${legende ? `<caption>${BE.esc(legende)}</caption>` : ""}<thead><tr>${entetes.map(e => `<th scope="col">${BE.esc(e)}</th>`).join("")}</tr></thead><tbody>${lignes.map(l => `<tr>${l.map(c => `<td>${BE.esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 const DOSSIER = "../../fil-rouge/maison/";
 const SCHEMA = "illustrations/schema-chemin-air.svg";
+const SCH_FORMULE = "illustrations/schema-formule-air.svg", SCH_INF = "illustrations/schema-infiltrations.svg", SCH_PARTAGE = "illustrations/schema-partage-debit.svg", SCH_PAROIS = "illustrations/schema-parois-air.svg", SCH_REC = "illustrations/schema-recuperateur.svg", SCH_DFX = "illustrations/schema-double-flux-infiltrations.svg";
 
 /*EXEMPLE-DEBUT*/
 const EX = {
@@ -100,6 +101,14 @@ const avecBloc = (html, q) => { const a = BE.quiz(q); return { quiz: q, render: 
 const exempleFormule = () => BE.exemple({ text: `Débit d’air neuf de ${EX.form.q} m³/h, θi = ${EX.T.ti} °C, θe = ${EX.T.te} °C, donc ΔT = ${EX.T.dT} K`, answer: `Hv = 0,34 × ${EX.form.q} = ${EX.form.H} W/K ; Φv = ${EX.form.H} × ${EX.T.dT} = ${EX.form.phi} W`, why: "Le débit reste en m³/h et le résultat sort en W : le 0,34 contient déjà la conversion des heures." });
 const exemplePartage = () => BE.exemple({ text: `Bureau d’exemple : V = ${EX.V.bureau} m³ ; salle de réunion : V = ${EX.V.salle} m³ ; débit retenu ${EX.qv} m³/h`, answer: `qv du bureau = ${EX.qv} × ${EX.V.bureau} ÷ ${EX.V.somme} = ${EX.part.q} m³/h ; Φv = 0,34 × ${EX.part.q} × ${EX.T.dT} = ${EX.part.phi} W`, why: `La somme ${EX.V.somme} m³ est celle des deux pièces qui reçoivent l’air neuf. Les sanitaires et le coin repas, où l’air est extrait, ne sont pas dans la somme.` });
 const exempleDoubleFlux = () => BE.exemple({ text: `Bâtiment d’exemple en double flux : ${EX.qv} m³/h, efficacité ${EX.dfx.eta}, infiltrations ${EX.dfx.qinf} m³/h`, answer: `${EX.qv} × (1 − ${EX.dfx.eta}) + ${EX.dfx.qinf} = ${EX.dfx.qeq} m³/h ; Φv = 0,34 × ${EX.dfx.qeq} × ${EX.T.dT} = ${EX.dfx.phi} W`, why: "L’échangeur ne réduit que l’air qui passe par lui. Les infiltrations entrent par les fuites, à la température extérieure." });
+
+/* Figures de méthode : schémas de principe tracés par outils/stations/t4-deperditions-air/schema.mjs, valeurs du bloc EXEMPLE. */
+const figureFormule = () => BE.schema(SCH_FORMULE, `Schéma de principe. À gauche, dehors, une flèche bleue « air neuf, qv = ${EX.form.q} m³/h » à θe = ${EX.T.te} °C entre dans une pièce à θi = ${EX.T.ti} °C, où une flèche orange montre que l’air neuf s’y réchauffe. En dessous, quatre cases reliées par deux signes fois et un signe égal : qv, ${EX.form.q} m³/h ; 0,34, Wh/(m³.K) ; ΔT, ${EX.T.dT} K ; Φv, ${EX.form.phi} W. Deux lignes rappellent ΔT = θi − θe = ${EX.T.ti} − (${EX.T.te}) = ${EX.T.dT} K, puis Hv = 0,34 × ${EX.form.q} = ${EX.form.H} W/K et Φv = ${EX.form.H} × ${EX.T.dT} = ${EX.form.phi} W.`, "L’air neuf entre froid et se réchauffe dans la pièce : le débit, le 0,34 et l’écart de température donnent la puissance.");
+const figureInfiltrations = () => BE.schema(SCH_INF, `Schéma de principe, vu de dessus. Un mur sépare dehors, à gauche, et dedans. Dans le mur, une grille d’entrée d’air laisse passer une flèche bleue épaisse : entrée d’air, ${EX.inf.entrees} m³/h. Autour de la fenêtre, deux flèches bleues fines passent par les joints : fuites aux joints, ${EX.inf.fuites} m³/h en tout. De l’autre côté, une flèche foncée sort par une bouche d’extraction : ${EX.qv} m³/h extraits. Sous le dessin : entrées d’air ${EX.inf.entrees} plus fuites ${EX.inf.fuites} égale ${EX.qv} m³/h extraits ; les fuites remplacent une partie des entrées d’air.`, "Tout l’air extrait entre quelque part : par les entrées d’air ou par les fuites, jamais en plus.");
+const figurePartage = () => BE.schema(SCH_PARTAGE, `Plan de principe du bâtiment d’exemple, en deux colonnes. À gauche, les pièces principales : le bureau, ${EX.V.bureau} m³, et la salle de réunion, ${EX.V.salle} m³, chacune avec une flèche bleue d’entrée d’air. À droite, les pièces de service, en gris : les sanitaires et le coin repas, avec une flèche d’extraction qui sort de chacun (${EX.bouches}). Une flèche d’air de transfert va de chaque pièce principale vers la pièce de service voisine. Sous le plan : la somme des volumes des pièces qui reçoivent l’air neuf, ${EX.V.bureau} + ${EX.V.salle} = ${EX.V.somme} m³, et le débit extrait, donc retenu, ${EX.qv} m³/h.`, "L’air neuf entre par les pièces principales, la VMC l’extrait dans les pièces de service : seules les premières comptent dans la somme des volumes.");
+const figureRecuperateur = () => BE.schema(SCH_REC, `Schéma de principe d’un échangeur de VMC double flux, au centre, avec quatre gaines. En haut à gauche, une flèche bleue entre : air neuf, à θe, froid. En haut à droite, une flèche orange entre : air extrait, à θi, chaud. Dans l’échangeur, deux traits se croisent : les deux flux ne se mélangent pas. En bas à droite, une flèche orange sort vers les pièces : air neuf réchauffé. En bas à gauche, une flèche bleue sort vers dehors : air rejeté, refroidi. Sous le dessin : η = ${EX.rec.eta}, il ne reste à chauffer que 1 − η ; Φv = 0,34 × ${EX.qv} × (1 − ${EX.rec.eta}) × ${EX.T.dT} = ${EX.rec.phi} W, au lieu de ${EX.ex1.juste} W sans échangeur.`, "L’air extrait, chaud, réchauffe l’air neuf dans l’échangeur : les deux flux se croisent sans se mélanger.");
+const figureDoubleFlux = () => BE.schema(SCH_DFX, `Schéma de principe. En haut, l’air soufflé de ${EX.qv} m³/h part de dehors, passe dans un échangeur d’efficacité η = ${EX.dfx.eta} et arrive dans une grande case « débit à chauffer ». En dessous, les infiltrations de ${EX.dfx.qinf} m³/h arrivent dans la même case sans passer par l’échangeur. La case indique ${EX.dfx.qeq} m³/h. Sous le schéma : débit à chauffer = ${EX.qv} × (1 − ${EX.dfx.eta}) + ${EX.dfx.qinf} = ${EX.dfx.qeq} m³/h, puis Φv = 0,34 × ${EX.dfx.qeq} × ${EX.T.dT} = ${EX.dfx.phi} W.`, "Les infiltrations contournent l’échangeur : elles s’ajoutent au débit qu’il a déjà réduit.");
+const figureParoisAir = () => BE.schema(SCH_PAROIS, `Une barre horizontale en deux morceaux, sous un repère « Total : ${EX.piece.total} W ». À gauche, le morceau bleu « Parois : ${EX.piece.parois} W », le plus long ; à droite, le morceau orange « Air : ${EX.piece.air} W ». Un repère sous le morceau orange indique : part de l’air, ${EX.piece.part} %. Deux lignes rappellent Φ total = Φ parois + Φv = ${EX.piece.parois} + ${EX.piece.air} = ${EX.piece.total} W, puis la part de l’air = ${EX.piece.air} ÷ ${EX.piece.total} × 100 = ${EX.piece.part} %.`, `Le bureau d’exemple : ${EX.piece.part} % de ses déperditions viennent de l’air neuf.`);
 
 /* Écran « À vous, le projet » : la commande du moteur, suivie du lien vers l'extrait de CCTP du dossier. */
 const ecranProjet = BE.projet({
@@ -231,8 +240,8 @@ BE.station({
     BE.ecran({
       id: "formule-de-l-air", dossier: "methode", kicker: "La méthode, 1", title: "La formule de l’air", level: "comprendre",
       text: `Pour chauffer un débit d’air de θe à θi, il faut une puissance Φv = 0,34 × qv × ΔT. qv est le débit d’air neuf en m³/h, ΔT = θi − θe en K, Φv sort en W. Le nombre 0,34 se lit en Wh/(m³.K) : c’est l’énergie qu’il faut pour chauffer un mètre cube d’air de 1 K. Comme il contient les heures, le débit reste en m³/h et on ne divise pas par 3 600. Écrivez qv au centième de m³/h, Hv au centième de W/K et Φv au watt, puis reprenez ces valeurs écrites dans le calcul suivant. La somme des qv écrits peut s’écarter du débit retenu de quelques centièmes. Le produit 0,34 × qv se note Hv, en W/K : c’est le pendant, pour l’air, du H des parois de la station T3. Les températures du bâtiment d’exemple sont celles de la station T3 : θi = ${EX.T.ti} °C et θe = ${EX.T.te} °C, valeurs d’exercice.`,
-      prompt: "Lisez la formule, sa source et l’exemple résolu, puis continuez.",
-      render: () => tableau(["Formule", "Unités", "Source du 0,34"], [
+      prompt: "Regardez le schéma, lisez la formule, sa source et l’exemple résolu, puis continuez.",
+      render: () => figureFormule() + tableau(["Formule", "Unités", "Source du 0,34"], [
         ["Hv = 0,34 × qv", "W/K = Wh/(m³.K) × m³/h", "Th-Bât Généralités, § 5.1, p. 18"],
         ["Φv = Hv × ΔT = 0,34 × qv × ΔT", "W = W/K × K", ""]
       ])
@@ -271,16 +280,16 @@ BE.station({
     BE.ecran({
       id: "infiltrations", dossier: "methode", kicker: "La méthode, 3", title: "Les infiltrations", level: "comprendre",
       text: "Les infiltrations sont l’air qui entre par les défauts d’étanchéité de l’enveloppe : jonctions de menuiseries, passages de gaines, prises électriques. Avec une VMC simple flux, le ventilateur extrait un débit fixé et met la maison en légère dépression : tout l’air extrait doit entrer quelque part, par les entrées d’air ou par les fuites. L’air des infiltrations remplace donc une partie de celui des entrées d’air ; il ne s’ajoute pas au débit extrait. En simple flux, on chauffe le débit extrait, infiltrations comprises. Ce n’est plus vrai en double flux, vu plus loin.",
-      prompt: "Lisez l’exemple résolu, puis continuez.",
-      render: () => BE.exemple({ text: `Bâtiment d’exemple en simple flux : ${EX.qv} m³/h extraits, dont ${EX.inf.fuites} m³/h entrent par les fuites`, answer: `Entrées d’air : ${EX.qv} − ${EX.inf.fuites} = ${EX.inf.entrees} m³/h ; air neuf à chauffer : ${EX.inf.entrees} + ${EX.inf.fuites} = ${EX.qv} m³/h`, why: "Le débit d’air neuf est celui que la VMC extrait. Les fuites changent le chemin de l’air ; le débit reste celui que la VMC extrait." })
+      prompt: "Regardez le schéma, lisez l’exemple résolu, puis continuez.",
+      render: () => figureInfiltrations() + BE.exemple({ text: `Bâtiment d’exemple en simple flux : ${EX.qv} m³/h extraits, dont ${EX.inf.fuites} m³/h entrent par les fuites`, answer: `Entrées d’air : ${EX.qv} − ${EX.inf.fuites} = ${EX.inf.entrees} m³/h ; air neuf à chauffer : ${EX.inf.entrees} + ${EX.inf.fuites} = ${EX.qv} m³/h`, why: "Le débit d’air neuf est celui que la VMC extrait. Les fuites changent le chemin de l’air ; le débit reste celui que la VMC extrait." })
         + BE.alerte("<strong>Piège.</strong> Ajouter les infiltrations au débit d’une VMC simple flux compte deux fois le même air.")
     }),
 
     BE.ecran({
       id: "partager-le-debit", dossier: "methode", kicker: "La méthode, 4", title: "Partager le débit entre les pièces", level: "comprendre",
       text: "L’air neuf se réchauffe dans les pièces principales, là où il entre. C’est donc là que compte la déperdition par l’air. Le séjour-cuisine compte comme une pièce principale : l’air neuf y entre par le séjour, et la bouche de la cuisine le reprend dans la même pièce. Les pièces de service et les circulations, comme l’entrée ou le palier, reçoivent un air déjà à θi : leur déperdition par l’air vaut 0 W. Pour partager le débit retenu entre les pièces principales, on suit ici une règle de l’exercice : chacune en reçoit une part proportionnelle à son volume. qv de la pièce = qv retenu × volume de la pièce ÷ somme des volumes des pièces principales. La somme des parts redonne le débit retenu.",
-      prompt: "Lisez la formule et l’exemple résolu, puis continuez.",
-      render: () => tableau(["Pièce", "Reçoit", "qv de la pièce"], [
+      prompt: "Regardez le plan, lisez la formule et l’exemple résolu, puis continuez.",
+      render: () => figurePartage() + tableau(["Pièce", "Reçoit", "qv de la pièce"], [
         ["Pièce principale (séjour, chambre, bureau, salle de réunion)", "L’air neuf, à θe", "qv retenu × V pièce ÷ somme des V des pièces principales"],
         ["Pièce de service, circulation", "L’air de transfert, à θi", "0 m³/h d’air neuf, donc Φv = 0 W"]
       ], "Le partage du débit, règle de l’exercice")
@@ -318,23 +327,23 @@ BE.station({
     BE.ecran({
       id: "parois-contre-air", dossier: "methode", kicker: "La méthode, 6", title: "Comparer parois et air", level: "comprendre",
       text: "La part de l’air dans les déperditions d’une pièce se calcule en pour cent, avec les Φ écrits au watt : Φv ÷ Φ total × 100. Dans une construction récente bien isolée, les parois perdent peu et la part de l’air devient grande. C’est ce qui justifie, sur certains projets, une ventilation avec récupération de chaleur. Comparez la part de l’air entre les pièces d’un même bâtiment : une pièce très différente des autres appelle une vérification.",
-      prompt: "Lisez l’exemple résolu, puis continuez.",
-      render: () => BE.exemple({ text: `Bureau d’exemple : Φv = ${EX.piece.air} W ; Φ total = ${EX.piece.total} W`, answer: `${EX.piece.air} ÷ ${EX.piece.total} × 100 = ${EX.piece.part} %`, why: "Le pourcentage s’écrit au dixième. Il dit quelle part de la puissance de chauffage sert à chauffer l’air neuf." })
+      prompt: "Regardez le schéma, lisez l’exemple résolu, puis continuez.",
+      render: () => figureParoisAir() + BE.exemple({ text: `Bureau d’exemple : Φv = ${EX.piece.air} W ; Φ total = ${EX.piece.total} W`, answer: `${EX.piece.air} ÷ ${EX.piece.total} × 100 = ${EX.piece.part} %`, why: "Le pourcentage s’écrit au dixième. Il dit quelle part de la puissance de chauffage sert à chauffer l’air neuf." })
     }),
 
     BE.ecran({
       id: "recuperateur", dossier: "methode", kicker: "La méthode, 7", title: "Le récupérateur", level: "comprendre",
       text: "Une VMC double flux souffle l’air neuf et extrait l’air vicié avec deux ventilateurs. Les deux flux traversent un échangeur sans se mélanger : l’air extrait, chaud, réchauffe l’air neuf avant qu’il entre. L’efficacité η de l’échangeur, un nombre entre 0 et 1 donné par le fabricant, dit quelle part de l’écart de température il récupère. Il ne reste à chauffer que la part 1 − η : Φv = 0,34 × qv × (1 − η) × ΔT.",
-      prompt: "Lisez l’exemple résolu, puis continuez.",
-      render: () => BE.exemple({ text: `Bâtiment d’exemple en double flux : ${EX.qv} m³/h, efficacité η = ${EX.rec.eta} (valeur d’exercice), ΔT = ${EX.T.dT} K`, answer: `Φv = 0,34 × ${EX.qv} × (1 − ${EX.rec.eta}) × ${EX.T.dT} = ${EX.rec.phi} W`, why: `Sans échangeur, ce débit coûtait ${EX.ex1.juste} W. L’échangeur en récupère la part η.` })
+      prompt: "Regardez le schéma, lisez l’exemple résolu, puis continuez.",
+      render: () => figureRecuperateur() + BE.exemple({ text: `Bâtiment d’exemple en double flux : ${EX.qv} m³/h, efficacité η = ${EX.rec.eta} (valeur d’exercice), ΔT = ${EX.T.dT} K`, answer: `Φv = 0,34 × ${EX.qv} × (1 − ${EX.rec.eta}) × ${EX.T.dT} = ${EX.rec.phi} W`, why: `Sans échangeur, ce débit coûtait ${EX.ex1.juste} W. L’échangeur en récupère la part η.` })
         + BE.renvoi('Le fonctionnement de l’échangeur est expliqué dans la station AéroRézo <a href="../../../aerorezo/stations/recuperation/index.html">« La récupération de chaleur »</a>.')
     }),
 
     BE.ecran({
       id: "double-flux-infiltrations", dossier: "methode", kicker: "La méthode, 8", title: "Double flux et infiltrations", level: "comprendre",
       text: "En double flux, le soufflage et l’extraction sont équilibrés : la maison n’est plus en dépression. L’air qui entre par les fuites s’ajoute alors au débit soufflé, et il ne passe pas par l’échangeur : il arrive à θe. Le débit à chauffer devient qv × (1 − η) + qinf, où qinf est le débit d’infiltration. Plus l’efficacité η est grande, plus les infiltrations pèsent dans le débit à chauffer : un bâtiment en double flux doit être étanche.",
-      prompt: "Lisez la formule et l’exemple résolu, puis continuez.",
-      render: () => tableau(["Ventilation", "Débit à chauffer (m³/h)", "Φv (W)"], [
+      prompt: "Regardez le schéma, lisez la formule et l’exemple résolu, puis continuez.",
+      render: () => figureDoubleFlux() + tableau(["Ventilation", "Débit à chauffer (m³/h)", "Φv (W)"], [
         ["Simple flux", "qv, infiltrations comprises", "0,34 × qv × ΔT"],
         ["Double flux", "qv × (1 − η) + qinf", "0,34 × (qv × (1 − η) + qinf) × ΔT"]
       ], "Le débit à chauffer selon la ventilation")

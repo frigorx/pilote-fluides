@@ -419,16 +419,18 @@ BE.station({
     BE.ecran({
       id: "soleil-facade", dossier: "methode", kicker: "La méthode, 1", title: "Le soleil sur une façade", level: "comprendre",
       text: "Le soleil se lève à l’est, passe au sud à midi et se couche à l’ouest. Une façade reçoit donc son plus fort rayonnement à une heure qui dépend de son orientation : l’est le matin, le sud autour de midi, l’ouest l’après-midi. La façade nord ne reçoit presque que la lumière du ciel. Le tableau donne le rayonnement solaire I, en W/m², reçu par une façade verticale un jour clair de juillet à la latitude de Marseille. Les heures sont des heures solaires : à 12 h solaires, le soleil est plein sud. En été, l’heure de la montre est en avance sur l’heure solaire. Ce tableau est une donnée de l’exercice. Il sert à l’exemple et à la maison, qui sont à la même latitude.",
-      prompt: "Lisez le tableau et l’exemple de lecture, puis continuez.",
-      render: () => tableauI()
+      prompt: "Regardez le schéma, lisez le tableau et l’exemple de lecture, puis continuez.",
+      render: () => BE.schema("illustrations/schema-soleil-facade.svg", `Schéma du bâtiment d’exemple vu de dessus, le nord en haut. Le trajet du soleil est un demi-cercle en pointillés autour du bâtiment, de l’est à droite jusqu’à l’ouest à gauche, en passant par le sud en bas. À 8 h, le soleil est à l’est : il éclaire la façade est, qui reçoit ${EX.I["8"].E} W/m². À 12 h, il est au sud : la façade sud reçoit ${EX.I["12"].S} W/m². À 16 h, il est à l’ouest : la façade ouest reçoit ${EX.I["16"].O} W/m². Chaque façade éclairée est tracée en orange, avec deux flèches de rayons. La façade nord reste à l’ombre : elle ne reçoit que la lumière du ciel, ${EX.I["12"].N} W/m² au plus.`, "Le soleil éclaire l’est le matin, le sud à midi, l’ouest l’après-midi.")
+        + tableauI()
         + BE.exemple({ text: `Façade ouest, à ${EX.baie.h} h solaires`, answer: `I = ${EX.baie.I} W/m²`, why: `Ligne Ouest, colonne ${EX.baie.h} h. À la même heure, la façade est ne reçoit que ${EX.I[EX.baie.h].E} W/m².` })
     }),
 
     BE.ecran({
       id: "facteur-solaire", dossier: "methode", kicker: "La méthode, 2", title: "Le facteur solaire d’une baie", level: "comprendre",
       text: "Une baie ne laisse pas entrer tout le rayonnement qu’elle reçoit. Le vitrage en renvoie une partie vers l’extérieur et en absorbe une autre, et le cadre est opaque. Le facteur solaire Sw de la baie est la part du rayonnement reçu qui entre dans le local sous forme de chaleur. C’est un nombre sans unité, entre 0 et 1. Il est donné pour la baie entière, menuiserie comprise : il se multiplie par la surface de la baie en dimensions de tableau, la largeur et la hauteur de l’ouverture dans le mur, écrites au tableau des menuiseries. Une protection solaire baissée change le facteur solaire de la baie. Un brise-soleil orientable est un store extérieur à lames réglables.",
-      prompt: "Lisez les trois valeurs de l’exercice, puis continuez.",
-      render: () => tableau(["Baie à double vitrage, menuiserie PVC", "Sw"], [
+      prompt: "Regardez le schéma, lisez les trois valeurs de l’exercice, puis continuez.",
+      render: () => BE.schema("illustrations/schema-facteur-solaire.svg", `Coupe d’une baie, le dehors à gauche et le dedans à droite. Le soleil, en haut à gauche, envoie un rayonnement I sur le vitrage, flèche orange. Une partie est renvoyée dehors, flèche bleue qui repart vers la gauche. Une autre partie est absorbée par le vitrage, puis rendue en partie dedans, flèche en pointillés. Le reste entre dans le local, flèche orange qui traverse le vitrage. Le cadre, en haut et en bas du vitrage, est opaque. Sw est la part du rayonnement reçu qui entre dans le local : ${EX.sw.sans} sans protection, soit 45 %.`, "Une baie renvoie une partie du rayonnement, en absorbe une autre et laisse entrer le reste : c’est Sw.")
+        + tableau(["Baie à double vitrage, menuiserie PVC", "Sw"], [
         ["Sans protection", EX.sw.sans],
         ["Store intérieur clair baissé", EX.sw.int],
         ["Protection extérieure baissée : volet roulant, store extérieur ou brise-soleil orientable", EX.sw.ext]
@@ -439,8 +441,9 @@ BE.station({
     BE.ecran({
       id: "apport-baie", dossier: "methode", kicker: "La méthode, 3", title: "L’apport solaire d’une baie", level: "comprendre",
       text: "L’apport solaire d’une baie, en watts, est le rayonnement qu’elle reçoit multiplié par son facteur solaire : Φ = A × Sw × Fm × I. A est la surface de la baie, L × H en dimensions de tableau. Fm est le coefficient de masque, expliqué à l’écran suivant : il vaut 1 quand rien ne fait d’ombre à la baie. I est le rayonnement de la façade à l’heure choisie. Calculez d’abord A × Sw × Fm au centième de m² (0,005 et plus au centième du dessus) : c’est la surface qui laisse entrer le soleil. Multipliez-la ensuite par I et arrondissez au watt (0,5 W et plus au watt du dessus).",
-      prompt: "Lisez la formule et l’exemple résolu, puis continuez.",
-      render: () => tableau(["Grandeur", "Unité", "Où la lire"], [
+      prompt: "Regardez le schéma, lisez la formule et l’exemple résolu, puis continuez.",
+      render: () => BE.schema("illustrations/schema-apport-baie.svg", `Schéma de la formule de l’apport solaire d’une baie. En haut à gauche, la fenêtre ${EX.baie.rep} de l’exemple, vue de face : ${EX.baie.L} m de large, ${EX.baie.H} m de haut, soit A = ${EX.baie.A} m². Sa partie gauche est colorée en orange : c’est la surface qui laisse entrer le soleil, A × Sw × Fm = ${EX.baie.AS} m². En dessous, cinq cases reliées par des signes : A = ${EX.baie.A} m², Sw = ${EX.sw.sans}, Fm = 1, I = ${EX.baie.I} W/m², et le résultat Φ = ${EX.baie.phi} W, case entourée d’orange. Dernière ligne : fenêtre ${EX.baie.rep} à ${EX.baie.h} h, ${EX.baie.AS} m² × ${EX.baie.I} W/m² = ${EX.baie.phi} W.`, "L’apport Φ est la surface qui laisse entrer le soleil, A × Sw × Fm, multipliée par le rayonnement I.")
+        + tableau(["Grandeur", "Unité", "Où la lire"], [
         ["A, surface de la baie = L × H", "m²", "Tableau des menuiseries"],
         ["Sw, facteur solaire de la baie", "sans unité", "Commande ou fiche du fabricant"],
         ["Fm, coefficient de masque", "sans unité", "Commande ou logiciel"],
@@ -470,8 +473,9 @@ BE.station({
     BE.ecran({
       id: "protections-masques", dossier: "methode", kicker: "La méthode, 4", title: "Protections solaires et masques", level: "comprendre",
       text: `Deux choses réduisent l’apport d’une baie. La première est une protection solaire baissée, qui change Sw. Placée dehors, comme un volet roulant ou un store extérieur, elle arrête le rayonnement avant la vitre : Sw passe de ${EX.sw.sans} à ${EX.sw.ext}. Placée dedans, elle reçoit un rayonnement déjà entré, s’échauffe et rend sa chaleur à la pièce : Sw ne descend qu’à ${EX.sw.int}. La seconde est un masque, ce qui fait de l’ombre à la baie : un balcon, un auvent, un débord de toit, un bâtiment voisin. Le coefficient de masque Fm est la part du rayonnement qui atteint encore la baie : 1 sans masque, moins de 1 avec. Il se calcule par logiciel à partir de la géométrie ; ici, il est donné. Pour la maison, la commande néglige le débord de toit : Fm = 1.`,
-      prompt: "Lisez l’exemple résolu et le tableau des quatre cas, puis continuez.",
-      render: () => exempleMasque()
+      prompt: "Regardez le schéma, lisez l’exemple résolu et le tableau des quatre cas, puis continuez.",
+      render: () => BE.schema("illustrations/schema-protections-masques.svg", `Trois coupes de la même baie, le dehors à gauche et le dedans à droite, avec des flèches orange pour le rayonnement du soleil. Première coupe, protection dehors : un volet ou un store arrête les flèches avant le vitrage ; Sw = ${EX.sw.ext} et l’apport baisse de ${EX.masque.baisseExt} %. Deuxième coupe, protection dedans : les flèches traversent le vitrage et touchent le store, qui s’échauffe et rend de la chaleur dedans, flèches en pointillés ; Sw = ${EX.sw.int} et l’apport ne baisse que de ${EX.masque.baisseInt} %. Troisième coupe, un balcon au-dessus de la baie : il arrête la flèche du haut, la ligne en tirets marque la limite de son ombre sur le vitrage, les autres flèches atteignent le vitrage ; Fm = ${EX.masque.Fm}, contre 1 sans masque.`, "Une protection dehors arrête le soleil avant le vitrage, une protection dedans le laisse entrer, un balcon en retient une partie.")
+        + exempleMasque()
         + tableau(["Fenêtre " + EX.masque.rep + ", " + EX.masque.h + " h", "Sw", "Fm", "A × Sw × Fm (m²)", "Φ (W)"], EX.masque.cas.map(c => [c.nom, c.Sw, c.Fm, c.AS, c.phi]), "Une même baie, quatre cas")
         + BE.alerte(`<strong>Piège.</strong> Le store intérieur ne retire que ${EX.masque.baisseInt} % de l’apport de cette baie, la protection extérieure ${EX.masque.baisseExt} %.`)
     }),
@@ -496,8 +500,9 @@ BE.station({
     BE.ecran({
       id: "tableau-heures", dossier: "methode", kicker: "La méthode, 5", title: "Le tableau heure par heure", level: "comprendre",
       text: `Pour un local ou un bâtiment, faites une ligne par orientation : la somme des surfaces des baies de cette orientation, puis A × Sw × Fm. Multipliez chaque ligne par le I de chaque heure, puis additionnez les lignes heure par heure. Le tableau montre le bâtiment d’exemple : bureau au nord, salle de réunion au sud et à l’ouest, sanitaires à l’est. Toutes ses baies ont Sw = ${EX.sw.sans}, sans masque. Les portes pleines n’ont pas de ligne : elles ne laissent pas passer le rayonnement.`,
-      prompt: "Suivez une ligne, puis une colonne du tableau, puis continuez.",
-      render: () => tableau(["Orientation", "Baies", "A (m²)", "A × Sw (m²)"], EX.par.map(l => [l.nom, l.baies, l.A, l.AS]), "Bâtiment d’exemple : une ligne par orientation")
+      prompt: "Regardez le schéma, suivez une ligne, puis une colonne du tableau, puis continuez.",
+      render: () => BE.schema("illustrations/schema-tableau-heures.svg", `Graphique en colonnes des apports solaires du bâtiment d’exemple, de ${EX.heures[0]} h à ${EX.heures[4]} h, en watts. Chaque colonne est empilée en quatre couches, une par ligne du tableau : sud, est, ouest, nord. La hauteur de la colonne est la somme des couches : ${EX.tot.map((t, i) => `${t} W à ${EX.heures[i]} h`).join(", ")}. Le sud pèse surtout à midi, l’ouest à 14 h et à 16 h.`, "Chaque ligne du tableau est une couche ; la somme des couches donne la colonne de chaque heure.")
+        + tableau(["Orientation", "Baies", "A (m²)", "A × Sw (m²)"], EX.par.map(l => [l.nom, l.baies, l.A, l.AS]), "Bâtiment d’exemple : une ligne par orientation")
         + exempleTableau()
         + BE.renvoi(`Lecture de la ligne ouest à 16 h : ${EX.par[2].AS} × ${EX.I["16"].O} = ${EX.par[2].phi[4]} W. La somme de la colonne 16 h est ${EX.tot[4]} W.`)
     }),
@@ -505,8 +510,9 @@ BE.station({
     BE.ecran({
       id: "heure-de-pointe", dossier: "methode", kicker: "La méthode, 6", title: "L’heure de pointe", level: "comprendre",
       text: `L’heure de pointe est l’heure où la somme du tableau est la plus forte. Pour le bâtiment d’exemple, c’est ${EX.pointe} h : les fenêtres ouest de la salle de réunion pèsent le plus. Chaque local a sa propre heure de pointe. Additionner les maximums des locaux donne une puissance qui n’arrive jamais, parce qu’à une heure donnée chaque façade ne reçoit pas son maximum. Le bilan du bâtiment se fait à une seule heure, sa pointe. Le bilan d’un local se fait à sa propre pointe, pour choisir l’appareil qui le rafraîchit. La station T8 refait la somme de tous les apports d’été heure par heure : l’heure de pointe du bilan complet peut changer.`,
-      prompt: "Comparez la somme des maximums et le maximum du bâtiment, puis continuez.",
-      render: () => tableau(["Local", ...H, "Pointe", "Max (W)"], [...EX.locaux.map(l => [l.nom, ...l.phi, l.pointe + " h", l.max]), ["Bâtiment", ...EX.tot, EX.pointe + " h", EX.max]], "Bâtiment d’exemple : apports solaires par local, en W")
+      prompt: "Regardez le schéma, comparez la somme des maximums et le maximum du bâtiment, puis continuez.",
+      render: () => BE.schema("illustrations/schema-heure-de-pointe.svg", `Graphique en colonnes des apports solaires du bâtiment d’exemple, de ${EX.heures[0]} h à ${EX.heures[4]} h, en watts, empilés par local : salle de réunion, sanitaires, bureau. Les totaux sont ${EX.tot.join(" W, ")} W. La colonne de ${EX.pointe} h est entourée d’orange : c’est l’heure de pointe, ${EX.max} W. Une ligne en tirets, plus haute, marque la somme des maximums des locaux, ${EX.sommeMax} W : cette puissance n’arrive jamais.`, "À " + EX.pointe + " h, le bâtiment atteint sa pointe, " + EX.max + " W ; la somme des maximums des locaux, " + EX.sommeMax + " W, n’est jamais atteinte.")
+        + tableau(["Local", ...H, "Pointe", "Max (W)"], [...EX.locaux.map(l => [l.nom, ...l.phi, l.pointe + " h", l.max]), ["Bâtiment", ...EX.tot, EX.pointe + " h", EX.max]], "Bâtiment d’exemple : apports solaires par local, en W")
         + BE.alerte(`<strong>Piège.</strong> La somme des maximums des locaux vaut ${EX.sommeMax} W, contre ${EX.max} W pour le bâtiment à ${EX.pointe} h. Le bâtiment se compte à son heure de pointe.`)
     }),
 
