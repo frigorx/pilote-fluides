@@ -1,0 +1,1394 @@
+[
+ {
+  "id": "A01",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "De quelle couleur est le fil neutre ?",
+  "image": "",
+  "choix": [
+   "Vert et jaune",
+   "Marron foncé",
+   "Bleu clair",
+   "Noir ou gris"
+  ],
+  "bonne": 2,
+  "explication": "Le neutre est bleu clair, la terre est vert et jaune."
+ },
+ {
+  "id": "A03",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "Combien de fils en triphasé, neutre et terre compris ?",
+  "image": "",
+  "choix": [
+   "3 fils",
+   "4 fils",
+   "6 fils",
+   "5 fils"
+  ],
+  "bonne": 3,
+  "explication": "Trois phases, un neutre et une terre : cela fait cinq fils."
+ },
+ {
+  "id": "A04",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "Quels repères désignent les trois phases sur un schéma ?",
+  "image": "",
+  "choix": [
+   "L1, N, PE",
+   "L1, L2, L3",
+   "N1, N2, N3",
+   "L1, L2, PE"
+  ],
+  "bonne": 1,
+  "explication": "Les phases se notent L1, L2 et L3."
+ },
+ {
+  "id": "A05",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "Entre quels fils lit-on la tension simple, 230 V ?",
+  "image": "",
+  "choix": [
+   "Deux phases quelconques",
+   "Le neutre et la terre",
+   "Une phase et le fil neutre",
+   "Les trois phases ensemble"
+  ],
+  "bonne": 2,
+  "explication": "La tension simple se mesure entre une phase et le neutre."
+ },
+ {
+  "id": "A06",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "Entre L1 et L3, quelle tension lisez-vous ?",
+  "image": "",
+  "choix": [
+   "230 V",
+   "400 V",
+   "133 V",
+   "692 V"
+  ],
+  "bonne": 1,
+  "explication": "Entre deux phases, on lit la tension composée : environ 400 V."
+ },
+ {
+  "id": "A08",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "Réseau normal : L1-N 230 V. Combien sur L3-N ?",
+  "image": "",
+  "choix": [
+   "400 V",
+   "133 V",
+   "398 V",
+   "230 V"
+  ],
+  "bonne": 3,
+  "explication": "Les trois tensions simples sont égales : environ 230 V."
+ },
+ {
+  "id": "A10",
+  "theme": "Réseau triphasé",
+  "competence": "C3.2",
+  "savoir": "S5.6",
+  "enonce": "Avec L1, L2, L3, combien de mesures entre phases ?",
+  "image": "",
+  "choix": [
+   "2 mesures",
+   "4 mesures",
+   "3 mesures",
+   "6 mesures"
+  ],
+  "bonne": 2,
+  "explication": "L1-L2, L1-L3 et L2-L3 : trois paires de phases, donc trois mesures."
+ },
+ {
+  "id": "A11",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Tension simple : 230 V. Quelle tension composée ?",
+  "image": "",
+  "choix": [
+   "398 V",
+   "133 V",
+   "460 V",
+   "230 V"
+  ],
+  "bonne": 0,
+  "explication": "On multiplie : 230 × 1,73 = 398 V."
+ },
+ {
+  "id": "A12",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Entre deux phases, 402 V. Quelle tension simple ?",
+  "image": "",
+  "choix": [
+   "695 V",
+   "201 V",
+   "402 V",
+   "232 V"
+  ],
+  "bonne": 3,
+  "explication": "On divise : 402 ÷ 1,73 = 232 V."
+ },
+ {
+  "id": "A13",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Combien font 400 V divisé par 231 V ?",
+  "image": "",
+  "choix": [
+   "0,58",
+   "1,73",
+   "1,41",
+   "3,00"
+  ],
+  "bonne": 1,
+  "explication": "400 ÷ 231 = 1,73. C'est le rapport entre composée et simple."
+ },
+ {
+  "id": "A14",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Ancien réseau, tension simple 127 V. Quelle tension composée ?",
+  "image": "",
+  "choix": [
+   "73 V",
+   "254 V",
+   "220 V",
+   "400 V"
+  ],
+  "bonne": 2,
+  "explication": "On multiplie : 127 × 1,73 = 220 V."
+ },
+ {
+  "id": "A15",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "L3-N : 229 V, attendu 230 V. Conclusion ?",
+  "image": "",
+  "choix": [
+   "Le relevé est normal",
+   "Le fil L3 est mal serré",
+   "Le neutre est mal serré",
+   "Le réseau est trop faible"
+  ],
+  "bonne": 0,
+  "explication": "Un écart de 1 V est normal : 229, 230 et 231 V conviennent."
+ },
+ {
+  "id": "A17",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Tension simple de 400 V. Quelle tension composée ?",
+  "image": "",
+  "choix": [
+   "231 V",
+   "800 V",
+   "692 V",
+   "400 V"
+  ],
+  "bonne": 2,
+  "explication": "On multiplie : 400 × 1,73 = 692 V."
+ },
+ {
+  "id": "A18",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Pour passer de composée à simple, que faites-vous ?",
+  "image": "",
+  "choix": [
+   "Je multiplie par 1,73",
+   "Je divise par 1,73",
+   "Je divise par 3",
+   "J'ajoute 1,73"
+  ],
+  "bonne": 1,
+  "explication": "De la composée à la simple, on divise par 1,73."
+ },
+ {
+  "id": "A19",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Quel relevé est normal sur 230 / 400 V ?",
+  "image": "",
+  "choix": [
+   "L1-L2 230 V, L1-N 400 V",
+   "L1-L2 332 V, L1-N 150 V",
+   "L1-L2 220 V, L1-N 127 V",
+   "L1-L2 402 V, L1-N 231 V"
+  ],
+  "bonne": 3,
+  "explication": "Sur ce réseau, on attend 400 V entre phases et 230 V avec le neutre."
+ },
+ {
+  "id": "A20",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "L2 mal serré. Quelles trois mesures sortent du lot ?",
+  "image": "",
+  "choix": [
+   "L2-N, L1-L2, L2-L3",
+   "L1-N, L2-N, L3-N",
+   "L1-L2, L1-L3, L2-L3",
+   "L1-N, L1-L2, L1-L3"
+  ],
+  "bonne": 0,
+  "explication": "Le fil L2 est présent dans L2-N, L1-L2 et L2-L3."
+ },
+ {
+  "id": "B01",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En triphasé avec neutre, combien de mesures de tension ?",
+  "image": "",
+  "choix": [
+   "Quatre mesures",
+   "Trois mesures",
+   "Six mesures",
+   "Neuf mesures"
+  ],
+  "bonne": 2,
+  "explication": "Trois entre phases et trois entre phase et neutre : six mesures."
+ },
+ {
+  "id": "B05",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 401, L1-L3 399, L2-L3 400, L1-N 231, L2-N 229, L3-N 230. Conclusion ?",
+  "image": "",
+  "choix": [
+   "Le fil L2 est mal serré",
+   "Le fil L3 est mal serré",
+   "Le neutre est coupé",
+   "Réseau en bon état"
+  ],
+  "bonne": 3,
+  "explication": "Les six mesures restent près de 400 V et de 230 V."
+ },
+ {
+  "id": "B06",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 396, L1-L3 404, L2-L3 399, L1-N 227, L2-N 234, L3-N 231. Que concluez-vous ?",
+  "image": "",
+  "choix": [
+   "Les valeurs sont normales",
+   "Le neutre est coupé",
+   "Le fil L1 est mal serré",
+   "Le fil L2 est mal serré"
+  ],
+  "bonne": 0,
+  "explication": "Aucune mesure ne sort du lot : quelques volts d'écart sont normaux."
+ },
+ {
+  "id": "B07",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Phase mal serrée, combien de mesures sortent du lot ?",
+  "image": "",
+  "choix": [
+   "Une mesure",
+   "Deux mesures",
+   "Trois mesures",
+   "Six mesures"
+  ],
+  "bonne": 2,
+  "explication": "Le fil touche trois mesures : une avec le neutre, deux entre phases."
+ },
+ {
+  "id": "B08",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Trois mesures sortent du lot, point commun. Cause probable ?",
+  "image": "",
+  "choix": [
+   "Un multimètre mal réglé",
+   "Un fil mal serré",
+   "Une tension du réseau trop haute",
+   "Un moteur couplé en triangle"
+  ],
+  "bonne": 1,
+  "explication": "Un fil mal serré ou coupé fait tomber les mesures qui le touchent."
+ },
+ {
+  "id": "B09",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 324, L1-L3 325, L2-L3 400, L1-N 140, L2-N 230, L3-N 231. Fil mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le neutre",
+   "Le fil L3"
+  ],
+  "bonne": 0,
+  "explication": "L1-N, L1-L2 et L1-L3 sortent du lot : le fil commun est L1."
+ },
+ {
+  "id": "B10",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-N 230, L2-N 150, L3-N 232, L1-L2 332, L1-L3 399, L2-L3 333. Quel fil est fautif ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L3",
+   "Le neutre",
+   "Le fil L2"
+  ],
+  "bonne": 3,
+  "explication": "L2-N, L1-L2 et L2-L3 sortent du lot : le fil commun est L2."
+ },
+ {
+  "id": "B11",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L3-N 145, L2-N 229, L1-N 231, L2-L3 327, L1-L3 328, L1-L2 402. Fil mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L2",
+   "Le neutre",
+   "Le fil L3",
+   "Le fil L1"
+  ],
+  "bonne": 2,
+  "explication": "L3-N, L1-L3 et L2-L3 sortent du lot : le fil commun est L3."
+ },
+ {
+  "id": "B12",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L2-L3 337, L1-L2 339, L3-N 230, L1-N 232, L2-N 157, L1-L3 401. Fil fautif ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 1,
+  "explication": "L2-N, L1-L2 et L2-L3 sortent du lot : le fil commun est L2."
+ },
+ {
+  "id": "B13",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-N 155, L2-N 231, L3-N 229, L2-L3 398, L1-L2 336, L1-L3 335. Quel fil est fautif ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le neutre",
+   "Le fil L3"
+  ],
+  "bonne": 0,
+  "explication": "L1-N, L1-L2 et L1-L3 sortent du lot : le fil commun est L1."
+ },
+ {
+  "id": "B14",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L3 322, L3-N 138, L2-L3 324, L1-N 230, L2-N 232, L1-L2 400. Fil mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le neutre",
+   "Le fil L2",
+   "Le fil L3"
+  ],
+  "bonne": 3,
+  "explication": "L3-N, L1-L3 et L2-L3 sortent du lot : le fil commun est L3."
+ },
+ {
+  "id": "B15",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 400, L2-L3 334, L1-L3 333, L2-N 231, L3-N 152, L1-N 230. Lesquelles sortent du lot ?",
+  "image": "",
+  "choix": [
+   "L1-N, L1-L2 et L1-L3",
+   "L1-N, L2-N et L3-N",
+   "L3-N, L1-L3 et L2-L3",
+   "L1-L2, L1-L3 et L2-L3"
+  ],
+  "bonne": 2,
+  "explication": "Seules L3-N, L1-L3 et L2-L3 s'écartent de 230 V et de 400 V."
+ },
+ {
+  "id": "B16",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-N 146, L2-N 229, L3-N 231, L1-L2 327, L1-L3 329, L2-L3 401. Lesquelles sortent du lot ?",
+  "image": "",
+  "choix": [
+   "L1-N, L2-N et L3-N",
+   "L1-N, L1-L2 et L1-L3",
+   "L3-N, L1-L3 et L2-L3",
+   "L2-N, L1-L2 et L2-L3"
+  ],
+  "bonne": 1,
+  "explication": "Seules L1-N, L1-L2 et L1-L3 s'écartent de 230 V et de 400 V."
+ },
+ {
+  "id": "B17",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 326, L1-L3 399, L2-L3 325, L1-N 231, L2-N 142, L3-N 230. Lesquelles sortent du lot ?",
+  "image": "",
+  "choix": [
+   "L2-N, L1-L2 et L2-L3",
+   "L1-L2, L1-L3 et L2-L3",
+   "L1-N, L1-L2 et L1-L3",
+   "L3-N, L1-L3 et L2-L3"
+  ],
+  "bonne": 0,
+  "explication": "Seules L2-N, L1-L2 et L2-L3 s'écartent de 230 V et de 400 V."
+ },
+ {
+  "id": "B18",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "L3-N, L1-L3, L2-L3 sortent du lot. Fil commun ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le neutre",
+   "Le fil L3"
+  ],
+  "bonne": 3,
+  "explication": "L3 revient dans les trois mesures : c'est le fil commun."
+ },
+ {
+  "id": "B19",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L2-N 230, L1-N 148, L3-N 229, L1-L3 329, L2-L3 400, L1-L2 330. Réseau en bon état ?",
+  "image": "",
+  "choix": [
+   "Oui, une mesure est basse",
+   "Non, le fil L1 est mal serré",
+   "Non, le fil L2 est mal serré",
+   "Non, le neutre est coupé"
+  ],
+  "bonne": 1,
+  "explication": "L1-N, L1-L2 et L1-L3 sortent du lot : le fil L1 est en cause."
+ },
+ {
+  "id": "B20",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 332, L1-L3 402, L2-L3 337, L1-N 228, L2-N 153, L3-N 233. Quel fil est fautif ?",
+  "image": "",
+  "choix": [
+   "L3, la plus haute tension",
+   "L1, sur la mesure L1-L2",
+   "L2, le fil commun aux trois",
+   "Le neutre, relié partout"
+  ],
+  "bonne": 2,
+  "explication": "Le fil fautif touche les trois mesures hors du lot, pas la plus haute."
+ },
+ {
+  "id": "C01",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Δ 230 V, Y 400 V. Réseau 400 V. Quel couplage ?",
+  "image": "",
+  "choix": [
+   "Triangle (Δ)",
+   "Impossible sur 400 V",
+   "Étoile (Y)",
+   "Impossible, il grille"
+  ],
+  "bonne": 2,
+  "explication": "Le signe Y est juste avant 400 V : étoile."
+ },
+ {
+  "id": "C02",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Δ 400 V, Y 690 V. Réseau 400 V. Quel couplage ?",
+  "image": "",
+  "choix": [
+   "Triangle, le Δ est devant 400 V",
+   "Étoile, le Y est devant 690 V",
+   "Étoile, 690 V est le plus haut",
+   "Moteur refusé, 690 V est haut"
+  ],
+  "bonne": 0,
+  "explication": "Le signe Δ est juste avant 400 V : triangle."
+ },
+ {
+  "id": "C03",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Réseau 400 V : que cherchez-vous sur la plaque ?",
+  "image": "",
+  "choix": [
+   "230 V, puis le signe avant",
+   "400 V, puis le signe avant",
+   "400 V, puis la puissance",
+   "La vitesse, puis le courant"
+  ],
+  "bonne": 1,
+  "explication": "On cherche 400 V, le signe juste avant donne le couplage."
+ },
+ {
+  "id": "C04",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Que veut dire Y 400 V sur une plaque ?",
+  "image": "",
+  "choix": [
+   "Triangle sur un réseau de 400 V",
+   "Étoile sur un réseau de 230 V",
+   "Moteur de 400 W",
+   "Étoile sur un réseau de 400 V"
+  ],
+  "bonne": 3,
+  "explication": "Y veut dire étoile, 400 V est la tension du réseau."
+ },
+ {
+  "id": "C05",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Moteur en étoile sur 400 V. Tension par bobinage ?",
+  "image": "",
+  "choix": [
+   "400 V",
+   "692 V",
+   "231 V",
+   "133 V"
+  ],
+  "bonne": 2,
+  "explication": "En étoile, 400 ÷ 1,73 = 231 V sur chaque bobinage."
+ },
+ {
+  "id": "C06",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Quel couplage donne 400 V à chaque bobinage ?",
+  "image": "",
+  "choix": [
+   "En triangle",
+   "En étoile, avec le neutre",
+   "En étoile, sans le neutre",
+   "Dans les deux couplages"
+  ],
+  "bonne": 0,
+  "explication": "En triangle, chaque bobinage est entre deux phases : 400 V."
+ },
+ {
+  "id": "C07",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Δ 230 V en triangle sur 400 V. Que se passe-t-il ?",
+  "image": "",
+  "choix": [
+   "Il manque de couple",
+   "Il chauffe trop et grille",
+   "Il tourne normalement",
+   "Il tourne à l'envers"
+  ],
+  "bonne": 1,
+  "explication": "Chaque bobinage reçoit 400 V pour 230 V prévus : il grille."
+ },
+ {
+  "id": "C08",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Y 690 V en étoile sur 400 V. Que se passe-t-il ?",
+  "image": "",
+  "choix": [
+   "Il manque de couple",
+   "Il grille",
+   "Il tourne trop vite",
+   "Il tourne à l'envers"
+  ],
+  "bonne": 0,
+  "explication": "Chaque bobinage reçoit 231 V pour 400 V prévus : moins de couple."
+ },
+ {
+  "id": "C09",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Y 400 V, réseau 400 V, trois barrettes debout. Couplage bon ?",
+  "image": "",
+  "choix": [
+   "Oui, le triangle convient",
+   "Oui, 400 V est sur la plaque",
+   "Non, il faut un autre moteur",
+   "Non, il faut coupler en étoile"
+  ],
+  "bonne": 3,
+  "explication": "Trois barrettes debout font un triangle ; sur 400 V il faut l'étoile."
+ },
+ {
+  "id": "C10",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Pour coupler en étoile, quelles bornes reliez-vous entre elles ?",
+  "image": "",
+  "choix": [
+   "U1, V1 et W1",
+   "W2, U2 et V2",
+   "U1-W2, V1-U2, W1-V2",
+   "U1-U2, V1-V2, W1-W2"
+  ],
+  "bonne": 1,
+  "explication": "L'étoile relie les trois bornes du bas : W2, U2 et V2."
+ },
+ {
+  "id": "C11",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Pour coupler en triangle, combien de barrettes posez-vous ?",
+  "image": "",
+  "choix": [
+   "Une, posée en bas",
+   "Deux, posées en bas",
+   "Trois, posées debout",
+   "Six, une par borne"
+  ],
+  "bonne": 2,
+  "explication": "Le triangle demande trois barrettes debout, une par bobinage."
+ },
+ {
+  "id": "C12",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Δ 400 V, réseau 400 V, W2 U2 V2 reliées. Bon ?",
+  "image": "",
+  "choix": [
+   "Non, il faut le triangle",
+   "Oui, l'étoile convient",
+   "Oui, l'étoile protège le moteur",
+   "Non, le réseau doit passer à 690 V"
+  ],
+  "bonne": 0,
+  "explication": "Δ est devant 400 V : il faut le triangle, pas l'étoile."
+ },
+ {
+  "id": "C13",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Moteur Δ 230 V grillé sur 400 V. Erreur ?",
+  "image": "",
+  "choix": [
+   "Barrettes posées en étoile",
+   "Barrettes posées en triangle",
+   "Neutre sur la borne de terre",
+   "Phases L1 et L2 inversées"
+  ],
+  "bonne": 1,
+  "explication": "En triangle, chaque bobinage reçoit 400 V pour 230 V prévus."
+ },
+ {
+  "id": "C14",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Moteur Δ 400 V, il peine à démarrer sur 400 V. Que contrôlez-vous ?",
+  "image": "",
+  "choix": [
+   "Le raccordement du fil neutre",
+   "La mise à la terre du carter",
+   "Le sens de rotation du moteur",
+   "Le couplage dans la boîte à bornes"
+  ],
+  "bonne": 3,
+  "explication": "En étoile sur 400 V, le moteur manque de couple : voir les barrettes."
+ },
+ {
+  "id": "C15",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Compresseur Δ 400 V, réseau 400 V. Que posez-vous ?",
+  "image": "",
+  "choix": [
+   "Une barrette sur W2, U2, V2",
+   "Pas de barrette",
+   "Trois barrettes debout",
+   "Une barrette sur U1, V1, W1"
+  ],
+  "bonne": 2,
+  "explication": "Δ est devant 400 V : triangle, donc trois barrettes debout."
+ },
+ {
+  "id": "C16",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Δ 230 V, Y 400 V. Réseau 400 V. Que faites-vous ?",
+  "image": "",
+  "choix": [
+   "Je couple en étoile",
+   "Je couple en triangle",
+   "Je relie aussi le neutre",
+   "Je demande un autre moteur"
+  ],
+  "bonne": 0,
+  "explication": "Le signe Y est juste avant 400 V : étoile."
+ },
+ {
+  "id": "C17",
+  "theme": "La plaque et le couplage",
+  "competence": "C2.1",
+  "savoir": "S5.6",
+  "enonce": "Δ 400 V, Y 690 V. Que veut dire 690 V ?",
+  "image": "",
+  "choix": [
+   "Il va aussi sur 690 V, en triangle",
+   "Il va aussi sur 690 V, en étoile",
+   "Il donne 690 V en sortie",
+   "C'est sa puissance en watts"
+  ],
+  "bonne": 1,
+  "explication": "Sur 690 V en étoile, chaque bobinage reçoit environ 400 V."
+ },
+ {
+  "id": "C19",
+  "theme": "La plaque et le couplage",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "Y 400 V, réseau 400 V, W2 U2 V2 reliées. Bon ?",
+  "image": "",
+  "choix": [
+   "Non, il faut le triangle",
+   "Non, il faut deux barrettes",
+   "Non, il faut un réseau 230 V",
+   "Oui, c'est le bon couplage"
+  ],
+  "bonne": 3,
+  "explication": "Y est devant 400 V : l'étoile (W2 U2 V2 reliées) convient."
+ },
+ {
+  "id": "C20",
+  "theme": "La plaque et le couplage",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "230 V vers 400 V : multiplier par combien ?",
+  "image": "",
+  "choix": [
+   "Par 1,41",
+   "Par 1,73",
+   "Par 3",
+   "Par 2"
+  ],
+  "bonne": 1,
+  "explication": "230 × 1,73 = 398 V, soit environ 400 V."
+ },
+ {
+  "id": "D01",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Non habilité, armoire sous tension : quelle règle ?",
+  "image": "",
+  "choix": [
+   "Je mesure vite, en portant des gants",
+   "Je mesure si un camarade surveille",
+   "Je ne mesure rien sur l'armoire",
+   "Je mesure si je reste très prudent"
+  ],
+  "bonne": 2,
+  "explication": "Sans habilitation, la mesure sous tension est interdite : on regarde, on note, on appelle."
+ },
+ {
+  "id": "D02",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Non habilité, armoire sous tension : que faites-vous ?",
+  "image": "",
+  "choix": [
+   "Je regarde, je note, j'appelle",
+   "J'ouvre pour voir, puis je note",
+   "Je regarde, puis je mesure vite",
+   "Je note, puis je débranche un fil"
+  ],
+  "bonne": 0,
+  "explication": "L'élève non habilité observe, note et appelle le professeur ou la personne habilitée."
+ },
+ {
+  "id": "D03",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Qui délivre l'habilitation électrique ?",
+  "image": "",
+  "choix": [
+   "Le fabricant de l'appareil de mesure",
+   "Le magasin qui vend le matériel",
+   "Le collègue le plus expérimenté",
+   "L'employeur, après une formation"
+  ],
+  "bonne": 3,
+  "explication": "L'habilitation est délivrée par l'employeur, après une formation adaptée."
+ },
+ {
+  "id": "D04",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Qu'est-ce qui donne le droit de mesurer sous tension ?",
+  "image": "",
+  "choix": [
+   "Un multimètre de bonne qualité",
+   "Une habilitation électrique",
+   "Des gants isolants en bon état",
+   "Avoir déjà mesuré en atelier"
+  ],
+  "bonne": 1,
+  "explication": "Un multimètre est un outil : seule l'habilitation donne le droit de mesurer."
+ },
+ {
+  "id": "D05",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Pièce nue sous 230 V touchée : quel risque ?",
+  "image": "",
+  "choix": [
+   "Un picotement sans conséquence",
+   "Un choc électrique qui peut tuer",
+   "Un risque qui commence à 400 V",
+   "Un risque faible si le sol est sec"
+  ],
+  "bonne": 1,
+  "explication": "À 230 V, le courant traverse le corps et peut provoquer la mort."
+ },
+ {
+  "id": "D06",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Le danger du 400 V, comparé au 230 V ?",
+  "image": "",
+  "choix": [
+   "Il est plus faible avec deux fils",
+   "Il est nul sans contact avec la terre",
+   "Il ne concerne que les machines",
+   "Il est aussi grave, voire plus grave"
+  ],
+  "bonne": 3,
+  "explication": "400 V entre deux phases peut tuer, même sans toucher la terre."
+ },
+ {
+  "id": "D08",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S5.6",
+  "enonce": "Couleur du fil de terre de la carcasse ?",
+  "image": "",
+  "choix": [
+   "Bleu clair",
+   "Marron ou noir",
+   "Vert et jaune",
+   "Rouge ou gris"
+  ],
+  "bonne": 2,
+  "explication": "Le fil de terre est vert et jaune ; le bleu clair est le neutre."
+ },
+ {
+  "id": "D09",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Non habilité, vous voulez voir dans l'armoire sous tension. Que faire ?",
+  "image": "",
+  "choix": [
+   "J'ouvre pour voir, sans rien toucher",
+   "J'ouvre avec des gants isolants",
+   "J'ouvre un instant, puis je referme",
+   "Je n'ouvre pas, j'appelle le professeur"
+  ],
+  "bonne": 3,
+  "explication": "Sans habilitation, on n'ouvre pas une armoire sous tension : on appelle le professeur."
+ },
+ {
+  "id": "D10",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Câble à gaine abîmée, cuivre visible : que faites-vous ?",
+  "image": "",
+  "choix": [
+   "Je le recouvre avec du ruban",
+   "Je n'y touche pas et je préviens",
+   "Je le déplace avec des gants",
+   "Je le laisse, il tient encore"
+  ],
+  "bonne": 1,
+  "explication": "Un câble abîmé peut être sous tension : on le signale et on s'en écarte."
+ },
+ {
+  "id": "D11",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Non habilité, on vous demande de mesurer. Que répondez-vous ?",
+  "image": "",
+  "choix": [
+   "Je refuse, la personne habilitée mesure",
+   "Je mesure vite, ça ne prend qu'une minute",
+   "Je mesure avec des gants isolants",
+   "Je mesure si lui me surveille de près"
+  ],
+  "bonne": 0,
+  "explication": "Mesurer sous tension demande une habilitation, même si le collègue insiste ou si c'est rapide."
+ },
+ {
+  "id": "D12",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Qui peut faire une mesure sous tension ?",
+  "image": "",
+  "choix": [
+   "Le plus ancien de l'équipe",
+   "Celui qui porte des gants",
+   "Une personne habilitée",
+   "Le meilleur bricoleur"
+  ],
+  "bonne": 2,
+  "explication": "Seule la personne habilitée par son employeur mesure sous tension."
+ },
+ {
+  "id": "D13",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Avant de toucher les bornes de l'armoire, que faire ?",
+  "image": "",
+  "choix": [
+   "Enfiler des gants isolants",
+   "Mettre l'armoire hors tension",
+   "Choisir un tournevis bien isolé",
+   "Noter la couleur des fils"
+  ],
+  "bonne": 1,
+  "explication": "On met d'abord hors tension, avant de toucher une borne ou un câble."
+ },
+ {
+  "id": "D14",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Disjoncteur coupé, non habilité, un camarade dit touche. Que faites-vous ?",
+  "image": "",
+  "choix": [
+   "J'attends la personne habilitée",
+   "Le disjoncteur suffit, je touche",
+   "Je touche en évitant les gros fils",
+   "Je touche d'une seule main"
+  ],
+  "bonne": 0,
+  "explication": "Le disjoncteur ne suffit pas : la personne habilitée confirme le hors tension."
+ },
+ {
+  "id": "D15",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Le neutre à 0 V est-il sans danger ?",
+  "image": "",
+  "choix": [
+   "Il est bleu, donc il est sans danger",
+   "Seule la phase donne un choc",
+   "Il est comme la terre, donc sûr",
+   "Le neutre peut aussi donner un choc"
+  ],
+  "bonne": 3,
+  "explication": "Sur une installation sous tension, le neutre peut aussi donner un choc."
+ },
+ {
+  "id": "D16",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "À quoi sert le fil vert et jaune ?",
+  "image": "",
+  "choix": [
+   "Il ramène le courant comme le neutre",
+   "Il apporte la tension à la commande",
+   "Il protège les personnes en cas de défaut",
+   "Il relie les trois phases entre elles"
+  ],
+  "bonne": 2,
+  "explication": "La terre écoule un courant de défaut et protège les personnes."
+ },
+ {
+  "id": "D17",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Une personne habilitée mesure dans l'armoire. Où vous placez-vous ?",
+  "image": "",
+  "choix": [
+   "Contre l'armoire, pour bien voir",
+   "À côté, je tiens une pointe",
+   "À l'écart, je regarde et je note",
+   "Tout près, pour passer les outils"
+  ],
+  "bonne": 2,
+  "explication": "Seule la personne habilitée intervient ; l'élève reste à l'écart, observe et note."
+ },
+ {
+  "id": "D18",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Que voyez-vous sur le panneau danger électrique ?",
+  "image": "",
+  "choix": [
+   "Un rond bleu avec une flèche blanche",
+   "Un carré vert avec une croix blanche",
+   "Un rond rouge avec une barre",
+   "Un triangle jaune avec un éclair noir"
+  ],
+  "bonne": 3,
+  "explication": "Le danger électrique se signale par un triangle jaune avec un éclair."
+ },
+ {
+  "id": "D19",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Voyant éteint : l'armoire est-elle forcément hors tension ?",
+  "image": "",
+  "choix": [
+   "Un voyant éteint peut être en panne",
+   "Voyant éteint, donc hors tension",
+   "Je me fie au voyant, il est fiable",
+   "Voyant éteint, j'ouvre pour voir"
+  ],
+  "bonne": 0,
+  "explication": "Un voyant peut être en panne : il ne prouve pas le hors tension."
+ },
+ {
+  "id": "D20",
+  "theme": "Sécurité et habilitation",
+  "competence": "C2.4",
+  "savoir": "S6.3",
+  "enonce": "Moteur branché : comment sentir si les bornes chauffent ?",
+  "image": "",
+  "choix": [
+   "Je les effleure du dos de la main",
+   "Je ne les touche pas, j'appelle",
+   "Je les touche vite, juste une fois",
+   "Je les touche avec des gants fins"
+  ],
+  "bonne": 1,
+  "explication": "Un moteur branché reste sous tension : on ne touche pas les bornes, on appelle."
+ },
+ {
+  "id": "G01",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L3-N 230, L1-L2 324, L1-N 141, L2-N 230, L2-L3 399, L1-L3 324. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 0,
+  "explication": "Les trois mesures hors du lot passent toutes par L1."
+ },
+ {
+  "id": "G02",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-N 229, L3-N 232, L1-L2 324, L2-N 142, L1-L3 400, L2-L3 327. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 1,
+  "explication": "Les trois mesures hors du lot passent toutes par L2."
+ },
+ {
+  "id": "G03",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L3-N 142, L2-N 231, L1-L2 399, L2-L3 326, L1-N 232, L1-L3 327. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 2,
+  "explication": "Les trois mesures hors du lot passent toutes par L3."
+ },
+ {
+  "id": "G04",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L2-L3 401, L1-L2 325, L2-N 232, L1-L3 323, L1-N 139, L3-N 230. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 0,
+  "explication": "Les trois mesures hors du lot passent toutes par L1."
+ },
+ {
+  "id": "G05",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L3 402, L2-L3 322, L1-L2 321, L2-N 137, L3-N 231, L1-N 230. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 1,
+  "explication": "Les trois mesures hors du lot passent toutes par L2."
+ },
+ {
+  "id": "G06",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 398, L2-L3 323, L3-N 141, L1-N 232, L1-L3 326, L2-N 229. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 2,
+  "explication": "Les trois mesures hors du lot passent toutes par L3."
+ },
+ {
+  "id": "G07",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L2-L3 399, L1-L3 337, L1-L2 335, L1-N 156, L3-N 231, L2-N 229. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 0,
+  "explication": "Les trois mesures hors du lot passent toutes par L1."
+ },
+ {
+  "id": "G08",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-N 230, L2-L3 328, L1-L2 329, L3-N 229, L2-N 147, L1-L3 400. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 1,
+  "explication": "Les trois mesures hors du lot passent toutes par L2."
+ },
+ {
+  "id": "G09",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C3.7",
+  "savoir": "S5.6",
+  "enonce": "En V : L3-N 143, L2-N 231, L1-L2 401, L2-L3 327, L1-L3 328, L1-N 232. Quel fil est mal serré ?",
+  "image": "",
+  "choix": [
+   "Le fil L1",
+   "Le fil L2",
+   "Le fil L3",
+   "Le neutre"
+  ],
+  "bonne": 2,
+  "explication": "Les trois mesures hors du lot passent toutes par L3."
+ },
+ {
+  "id": "G10",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L1-L2 400, L1-N 232, L2-N 229, L2-L3 402, L3-N 231, L1-L3 400. Que concluez-vous ?",
+  "image": "",
+  "choix": [
+   "Réseau en bon état",
+   "Le fil L1 est mal serré",
+   "Le fil L2 est mal serré",
+   "Le fil L3 est mal serré"
+  ],
+  "bonne": 0,
+  "explication": "Toutes les mesures restent près de 400 V et de 230 V."
+ },
+ {
+  "id": "G11",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L2-L3 400, L1-L2 398, L1-N 231, L2-N 231, L3-N 230, L1-L3 400. Que concluez-vous ?",
+  "image": "",
+  "choix": [
+   "Réseau en bon état",
+   "Le fil L1 est mal serré",
+   "Le fil L2 est mal serré",
+   "Le fil L3 est mal serré"
+  ],
+  "bonne": 0,
+  "explication": "Toutes les mesures restent près de 400 V et de 230 V."
+ },
+ {
+  "id": "G12",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L3-N 232, L1-L2 332, L1-L3 398, L1-N 230, L2-N 150, L2-L3 333. Que concluez-vous ?",
+  "image": "",
+  "choix": [
+   "Réseau en bon état",
+   "Le fil L1 est mal serré",
+   "Le fil L2 est mal serré",
+   "Le fil L3 est mal serré"
+  ],
+  "bonne": 2,
+  "explication": "Trois mesures sortent du lot, toutes passent par L2."
+ },
+ {
+  "id": "G13",
+  "theme": "Six mesures et fil mal serré",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "En V : L3-N 155, L1-L3 337, L1-N 232, L2-L3 336, L2-N 230, L1-L2 398. Que concluez-vous ?",
+  "image": "",
+  "choix": [
+   "Réseau en bon état",
+   "Le fil L1 est mal serré",
+   "Le fil L2 est mal serré",
+   "Le fil L3 est mal serré"
+  ],
+  "bonne": 3,
+  "explication": "Trois mesures sortent du lot, toutes passent par L3."
+ },
+ {
+  "id": "G14",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Entre deux phases, 396 V. Quelle tension simple ?",
+  "image": "",
+  "choix": [
+   "229 V",
+   "685 V",
+   "132 V",
+   "396 V"
+  ],
+  "bonne": 0,
+  "explication": "De la composée à la simple, on divise : 396 ÷ 1,73 = 229 V."
+ },
+ {
+  "id": "G15",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Entre deux phases, 404 V. Quelle tension simple ?",
+  "image": "",
+  "choix": [
+   "234 V",
+   "699 V",
+   "135 V",
+   "404 V"
+  ],
+  "bonne": 0,
+  "explication": "De la composée à la simple, on divise : 404 ÷ 1,73 = 234 V."
+ },
+ {
+  "id": "G16",
+  "theme": "Réseau triphasé",
+  "competence": "C4.5",
+  "savoir": "S5.6",
+  "enonce": "Entre deux phases, 392 V. Quelle tension simple ?",
+  "image": "",
+  "choix": [
+   "227 V",
+   "678 V",
+   "131 V",
+   "392 V"
+  ],
+  "bonne": 0,
+  "explication": "De la composée à la simple, on divise : 392 ÷ 1,73 = 227 V."
+ }
+]

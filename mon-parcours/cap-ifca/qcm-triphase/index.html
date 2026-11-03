@@ -1,0 +1,291 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>QCM triphasé — 2e année CAP IFCA</title>
+<style>
+  /* Lecture DYS (Franck, 03/11/2026) : police Lexend locale, corps 21 px réglable (A− A+), interligne 1,8, fond crème,
+     texte à gauche, une idée par ligne, pas d'italique ni de majuscules en bloc. */
+  @font-face{font-family:'Lexend'; src:url('polices/Lexend-variable.woff2') format('woff2'); font-weight:100 900; font-display:swap}
+  :root{--bleu:#1b3a63; --orange-p:#b5400f; --vert:#0b6b52; --rouge:#a3221b; --encre:#1f2933; --gris:#4a5563;
+    --filet:#d9cfbb; --fond:#fbf6ea; --carte:#fffdf7; --doux:#f3ecdc; --corps:21px}
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--fond); color:var(--encre); font-family:'Lexend',Verdana,Arial,sans-serif; font-size:var(--corps); line-height:1.8; text-align:left; letter-spacing:.01em}
+  .page{max-width:36em; margin:0 auto; padding:0 12px 30px}
+  p,li{max-width:60ch}
+  header{background:var(--bleu); color:#fff; border-radius:0 0 10px 10px; padding:8px 14px; margin:0 -12px 10px; display:flex; align-items:center; gap:8px}
+  header .titres{flex:1}
+  header .lycee{font-size:.7em; opacity:.9; line-height:1.4}
+  header h1{margin:0; font-size:1em; line-height:1.4}
+  .taille{display:flex; gap:6px}
+  .taille button{background:#fff; color:var(--bleu); border:none; border-radius:8px; font-weight:bold; font-size:.85em; padding:4px 10px; min-width:52px; min-height:44px}
+  .carte{background:var(--carte); border-radius:10px; box-shadow:0 2px 10px rgba(60,45,20,.12); padding:14px; margin-bottom:12px}
+  button{font:inherit; cursor:pointer}
+  .suite{display:block; width:100%; background:var(--orange-p); color:#fff; border:none; border-radius:10px; padding:14px; font-weight:bold; margin-top:12px}
+  .suite:disabled{opacity:.5}
+  input[type=text]{font:inherit; width:100%; padding:10px 12px; border:2px solid var(--filet); border-radius:10px; margin:4px 0 10px; background:#fff}
+  label{font-weight:bold; color:var(--bleu)}
+  .lignes{list-style:none; margin:4px 0; padding:0}
+  .lignes li{margin:0 0 6px}
+  /* le tableau de bord du jeu, toujours visible en haut */
+  .bord{position:sticky; top:0; z-index:2; display:grid; grid-template-columns:repeat(4,1fr); gap:6px; background:var(--fond); padding:8px 0}
+  .bord div{background:var(--carte); border-radius:9px; text-align:center; padding:2px; box-shadow:0 1px 6px rgba(60,45,20,.12); line-height:1.3}
+  .bord small{display:block; font-size:.62em; color:var(--gris)}
+  .bord .v{font-weight:bold; font-size:1.05em; color:var(--bleu)}
+  .bord .temps .v{color:var(--orange-p)}
+  .bord .serie.chaud{background:#fdebd8} .bord .serie.chaud .v{color:var(--orange-p)}
+  .etiq{display:inline-block; background:var(--doux); border-radius:9px; padding:0 10px; font-size:.7em; font-weight:bold; color:var(--bleu); margin:0 0 6px}
+  .q{font-size:1.05em; font-weight:bold; margin:0 0 12px; line-height:1.7}
+  .releve{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0 0 10px; font-weight:normal}
+  .releve span{background:var(--doux); border-radius:8px; padding:4px 6px; text-align:center; white-space:nowrap}
+  .img{text-align:center; margin:0 0 8px} .img img{max-width:100%; max-height:240px; border-radius:8px; background:#fff}
+  .rep{display:block; width:100%; text-align:left; background:#fff; border:2px solid var(--filet); border-radius:12px; padding:12px 16px; margin:0 0 14px;
+    line-height:1.6; color:var(--encre); min-height:64px}
+  .rep.juste{border-color:var(--vert); background:#e2f3ea; font-weight:bold}
+  .rep.faux{border-color:var(--rouge); background:#f9e1df}
+  .rep:disabled{cursor:default}
+  .retour{border-left:6px solid var(--vert); background:#eaf5ef; border-radius:0 8px 8px 0; padding:8px 12px; margin:4px 0 0}
+  .retour.faux{border-left-color:var(--rouge); background:#f9e9e7}
+  .gain{float:right; font-weight:bold; margin-left:8px}
+  table{border-collapse:collapse; width:100%; margin:8px 0}
+  td,th{border:1px solid var(--filet); padding:6px 8px; text-align:left; font-size:.85em; line-height:1.5; vertical-align:top}
+  th{background:var(--doux); color:var(--bleu)}
+  .n0{color:var(--gris)} .n1{color:var(--rouge); font-weight:bold} .n2{color:var(--orange-p); font-weight:bold} .n3{color:var(--vert); font-weight:bold} .n4{color:var(--bleu); font-weight:bold}
+  .code{font-size:1.1em; letter-spacing:.1em; text-align:center; background:var(--doux); border:2px dashed var(--bleu); border-radius:9px; padding:6px; margin:8px 0}
+  .petit{font-size:.85em; color:var(--gris)}
+  .capture{border:3px solid var(--orange-p)}
+  .gros{font-size:1.4em; color:var(--bleu); margin:0; font-weight:bold}
+  .sorties{font-size:.7em; color:var(--gris); text-align:right; margin:-4px 0 4px}
+  .sorties.alerte{color:var(--rouge); font-weight:bold}
+  .liste-classe{display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 10px}
+  .liste-classe button{border:2px solid var(--filet); background:#fff; border-radius:10px; padding:6px 12px}
+</style>
+<div class="page">
+  <header>
+    <div class="titres">
+      <div class="lycee">inerWeb, CAP IFCA, mode secours</div>
+      <h1>QCM triphasé : vite et juste</h1>
+    </div>
+    <div class="taille"><button type="button" id="moins" aria-label="Texte plus petit">A−</button><button type="button" id="plus" aria-label="Texte plus grand">A+</button></div>
+  </header>
+
+  <section id="depart" class="carte">
+    <ul class="lignes">
+      <li><b>30 minutes pour répondre.</b></li>
+      <li>Personne ne finit toutes les questions.</li>
+      <li>Bonne réponse : +10 points.</li>
+      <li>Plusieurs bonnes de suite : un bonus.</li>
+      <li>Erreur : −3 points.</li>
+      <li>À la fin : une photo de votre écran.</li>
+      <li>Vous répondez seul.</li>
+      <li>Vous restez sur cette page.</li>
+    </ul>
+    <p class="petit">Pas de note.<br>Vous voyez où vous en êtes.</p>
+    <label for="nom">Nom et prénom</label>
+    <input type="text" id="nom" autocomplete="off" placeholder="ex. : DUPONT Léa">
+    <p id="chargement" class="petit">Chargement des questions…</p>
+    <button class="suite" id="commencer" disabled>Je commence</button>
+  </section>
+
+  <section id="quiz" hidden>
+    <div class="bord">
+      <div class="temps"><small>temps</small><span class="v" id="reste">30:00</span></div>
+      <div><small>points</small><span class="v" id="points">0</span></div>
+      <div class="serie" id="boite-serie"><small>série</small><span class="v" id="serie">0</span></div>
+      <div><small>réponses</small><span class="v" id="repondu">0</span></div>
+    </div>
+    <div class="sorties" id="sorties"></div>
+    <div class="carte" id="question">
+      <span class="etiq" id="theme"></span>
+      <p class="q" id="enonce"></p>
+      <div class="img" id="image" hidden><img id="imgq" alt=""></div>
+      <div id="reponses"></div>
+      <div class="retour" id="retour" hidden></div>
+    </div>
+  </section>
+
+  <section id="fin" hidden>
+    <div class="carte capture" id="capture">
+      <p style="margin:0" class="petit">Je fais une photo de cet écran.</p>
+      <p style="margin:6px 0 0"><b id="eleve"></b><br><span id="quand"></span></p>
+      <p class="gros" id="f-points"></p>
+      <p style="margin:0" id="f-detail"></p>
+      <table id="parcomp"></table>
+      <p class="petit">Où vous en êtes, par compétence.<br>1 non acquis, 2 en cours, 3 acquis, 4 très bien.<br>Il faut 3 réponses pour être placé.</p>
+      <div class="code" id="code"></div>
+      <p class="petit" id="envoi"></p>
+    </div>
+    <div class="carte" id="erreurs" hidden></div>
+  </section>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const DUREE_MIN = Math.max(1, Math.min(60, Number(new URLSearchParams(location.search).get('min')) || 30));
+const TYPE = 'qcm-triphase', CLASSE = '2e année CAP IFCA', CLE = 'qcm-triphase-2026-11-03';
+const MIN_JUSTE = 15, MIN_COMP = 3;
+const COMP = { 'C2.1': 'Organiser des informations', 'C2.4': "Sécuriser l'intervention", 'C3.2': "Identifier sur site les réseaux d'alimentation",
+  'C3.7': 'Contrôler la mise en œuvre des équipements électriques et fluidiques', 'C4.5': 'Mesurer, comparer des grandeurs' };
+const ECHELLE = ['non évalué', 'non acquis', 'en cours', 'acquis', 'très bien maîtrisé'];
+function echelle(ok, n){ if (!n) return 0; const t = ok / n; return t >= 0.85 ? 4 : t >= 0.65 ? 3 : t >= 0.4 ? 2 : 1; }   // même échelle que le positionnement
+function melange(t){ t = t.slice(); for (let i = t.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [t[i], t[j]] = [t[j], t[i]]; } return t; }
+function graine(s){ let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+const TAILLES = [18, 21, 24, 27];
+let taille = 1; try { taille = Math.max(0, Math.min(3, Number(localStorage.getItem('qcm-taille') ?? 1))); } catch (e) {}
+function poserTaille(){ document.documentElement.style.setProperty('--corps', TAILLES[taille] + 'px'); try { localStorage.setItem('qcm-taille', taille); } catch (e) {} }
+poserTaille();
+$('moins').onclick = () => { if (taille > 0) { taille--; poserTaille(); } };
+$('plus').onclick = () => { if (taille < 3) { taille++; poserTaille(); } };
+const SURPC = location.protocol === 'http:' && !/github\.io$/.test(location.hostname);
+
+let BANQUE = null, PAR_ID = {}, etat = null, minuteur = null, attente = null, enSortie = false;
+function sauver(){ try { localStorage.setItem(CLE, JSON.stringify(etat)); } catch (e) {} }
+function charger(){ try { const s = localStorage.getItem(CLE); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
+if (new URLSearchParams(location.search).has('nouveau')) { try { localStorage.removeItem(CLE); } catch (e) {} }
+
+fetch('banque-triphase.json', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(b => {
+  BANQUE = b; b.forEach(q => { PAR_ID[q.id] = q; });
+  $('chargement').textContent = b.length + ' questions prêtes.';
+  etat = charger();
+  if (etat && etat.fini) { terminer(); return; }
+  if (etat && etat.debut) { lancer(); return; }
+  $('commencer').disabled = false;
+}).catch(() => { $('chargement').textContent = 'Les questions ne se chargent pas : rechargez la page.'; });
+
+$('commencer').onclick = () => {
+  const nom = $('nom').value.trim().replace(/\s+/g, ' ');
+  if (nom.length < 3) { $('nom').focus(); $('chargement').textContent = 'Écrivez votre nom et votre prénom.'; return; }
+  etat = { nom, debut: Date.now(), file: melange(BANQUE.map(q => q.id)), tour: 1, k: 0, points: 0, serie: 0, meilleure: 0, rep: [], sorties: 0 };
+  sauver(); lancer();
+};
+
+function lancer(){
+  $('depart').hidden = true; $('quiz').hidden = false; $('fin').hidden = true;
+  garderEcranAllume(); tic(); minuteur = setInterval(tic, 1000); afficher(); afficherSorties();
+}
+function resteS(){ return Math.max(0, Math.round(DUREE_MIN * 60 - (Date.now() - etat.debut) / 1000)); }
+function tic(){
+  const s = resteS();
+  $('reste').textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  if (s <= 0) { terminer(); return; }
+  if (s % 20 === 0) suivi();
+}
+function justes(){ return etat.rep.filter(r => r.ok).length; }
+
+// La file : toute la banque mélangée ; au bout, d'abord les questions ratées, puis toute la banque, dans un nouvel ordre.
+function questionCourante(){
+  if (etat.k >= etat.file.length) {
+    const ratees = [...new Set(etat.rep.filter(r => !r.ok).map(r => r.id))];
+    etat.file = melange(ratees).concat(melange(BANQUE.map(q => q.id).filter(id => !ratees.includes(id))));
+    etat.k = 0; etat.tour++; sauver();
+  }
+  return PAR_ID[etat.file[etat.k]];
+}
+function afficher(){
+  const q = questionCourante();
+  $('theme').textContent = q.theme;
+  // Un relevé « En V : L1-L2 400, … . Question ? » s'affiche en six cases, une mesure par case, jamais coupée en fin de ligne.
+  const rel = /^En V : (.+?)\. (.+)$/.exec(q.enonce);
+  if (rel) $('enonce').innerHTML = '<span class="releve">' + rel[1].split(/[,;] /).map(m => '<span>' + echapper(m) + ' V</span>').join('') + '</span>' + echapper(rel[2]);
+  else $('enonce').textContent = q.enonce;
+  if (q.image) { $('imgq').src = 'images-tri/' + q.image; $('image').hidden = false; } else $('image').hidden = true;
+  const ordre = melange([0, 1, 2, 3].slice(0, q.choix.length));
+  $('reponses').innerHTML = '';
+  ordre.forEach(i => {
+    const b = document.createElement('button'); b.className = 'rep'; b.textContent = q.choix[i];
+    b.onclick = () => repondre(q, i, b); $('reponses').appendChild(b);
+  });
+  $('retour').hidden = true;
+  $('points').textContent = etat.points; $('serie').textContent = etat.serie; $('repondu').textContent = etat.rep.length;
+  $('boite-serie').className = 'serie' + (etat.serie >= 3 ? ' chaud' : '');
+  window.scrollTo(0, 0);
+}
+function repondre(q, i, bouton){
+  if (attente || etat.fini) return;
+  const ok = i === q.bonne;
+  let gain;
+  if (ok) { etat.serie++; gain = 10 + Math.min(10, 2 * (etat.serie - 1)); etat.meilleure = Math.max(etat.meilleure, etat.serie); }
+  else { etat.serie = 0; gain = -Math.min(3, etat.points); }
+  etat.points += gain;
+  etat.rep.push({ id: q.id, c: i, ok });
+  etat.k++; sauver();
+  [...$('reponses').children].forEach(b => { b.disabled = true; if (b.textContent === q.choix[q.bonne]) b.classList.add('juste'); });
+  if (!ok) bouton.classList.add('faux');
+  const r = $('retour'); r.hidden = false; r.className = 'retour' + (ok ? '' : ' faux');
+  r.innerHTML = '<span class="gain">' + (gain > 0 ? '+' + gain : gain < 0 ? '−' + (-gain) : '0') + '</span>' + (ok ? '' : '<b>À retenir.</b> ') + echapper(q.explication || '');
+  $('points').textContent = etat.points; $('serie').textContent = etat.serie; $('repondu').textContent = etat.rep.length;
+  suivi();
+  // Pas de temps mort : on enchaîne seul, un peu plus tard après une erreur pour lire la raison ; un toucher passe tout de suite.
+  const suite = () => { if (!attente) return; clearTimeout(attente); attente = null; document.removeEventListener('pointerdown', toucher, true); if (!etat.fini) afficher(); };
+  const toucher = e => { if (e.target.closest('#question')) { e.preventDefault(); suite(); } };
+  attente = setTimeout(suite, ok ? 1100 : 2600);
+  setTimeout(() => document.addEventListener('pointerdown', toucher, true), 350);
+}
+function echapper(s){ return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+// Servie par le PC du professeur : un signe de vie à chaque réponse et toutes les vingt secondes (les classements en direct s'en nourrissent).
+function suivi(){
+  if (!etat || !SURPC) return;
+  fetch('/suivi', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+    type: TYPE, nom: etat.nom, classe: CLASSE, question: etat.rep.length + 1, total: BANQUE.length, points: etat.points,
+    repondu: etat.rep.length, justes: justes(), serie: etat.serie, sorties: etat.sorties || 0, fini: !!etat.fini,
+    minutes: Math.round((Date.now() - etat.debut) / 60000) }) }).catch(() => {});
+}
+
+let veille = null;
+function garderEcranAllume(){ if (!('wakeLock' in navigator) || !etat || etat.fini) return; navigator.wakeLock.request('screen').then(v => { veille = v; }).catch(() => {}); }
+function afficherSorties(){
+  const z = $('sorties'); if (!z || !etat) return;
+  z.textContent = etat.sorties ? 'Sorties de la page : ' + etat.sorties : '';
+  z.className = 'sorties' + (etat.sorties >= 3 ? ' alerte' : '');
+}
+function sortie(){ if (!etat || etat.fini || !etat.debut || enSortie) return; enSortie = true; etat.sorties = (etat.sorties || 0) + 1; sauver(); afficherSorties(); suivi(); }
+document.addEventListener('visibilitychange', () => { if (document.hidden) sortie(); else { enSortie = false; garderEcranAllume(); if (etat && !etat.fini && etat.debut && resteS() <= 0) terminer(); } });
+window.addEventListener('pagehide', () => { sortie(); });
+
+function terminer(){
+  clearInterval(minuteur); if (attente) { clearTimeout(attente); attente = null; }
+  etat.fini = true; sauver();
+  $('depart').hidden = true; $('quiz').hidden = true; $('fin').hidden = false;
+  const parComp = {}, parSav = {};
+  etat.rep.forEach(r => { const q = PAR_ID[r.id]; if (!q) return;
+    (parComp[q.competence] = parComp[q.competence] || { ok: 0, n: 0 }).n++; if (r.ok) parComp[q.competence].ok++;
+    (parSav[q.savoir] = parSav[q.savoir] || { ok: 0, n: 0 }).n++; if (r.ok) parSav[q.savoir].ok++; });
+  const codes = Object.keys(COMP).filter(c => parComp[c]);
+  const carte = {};
+  codes.forEach(c => { if (parComp[c].n >= MIN_COMP) carte[c] = echelle(parComp[c].ok, parComp[c].n); });
+  const n = etat.rep.length, ok = justes(), part = n ? Math.round(100 * ok / n) : 0;
+  if (!etat.quand) etat.quand = new Date().toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const minutes = Math.min(DUREE_MIN, Math.round((Date.now() - etat.debut) / 60000));
+  $('eleve').textContent = etat.nom; $('quand').textContent = etat.quand;
+  $('f-points').textContent = etat.points + ' points';
+  $('f-detail').innerHTML = n + ' réponses<br>' + ok + ' justes, soit ' + part + ' %<br>Meilleure série : ' + (etat.meilleure || 0) + (etat.sorties ? '<br>Sorties de la page : ' + etat.sorties : '');
+  $('parcomp').innerHTML = '<tr><th>Compétence</th><th>Justes</th><th>Où j\'en suis</th></tr>' + codes.map(c => {
+    const x = parComp[c], e = carte[c] || 0;
+    return '<tr><td><b>' + c + '</b> ' + COMP[c] + '</td><td>' + x.ok + ' / ' + x.n + '</td><td class="n' + e + '">' + (e ? e + '<br>' + ECHELLE[e] : 'trop peu') + '</td></tr>'; }).join('');
+  const h = graine(etat.nom.toLowerCase() + '|' + etat.rep.map(r => r.id + r.c).join('') + '|' + etat.points);
+  const code = (etat.nom.trim().slice(0, 3).toUpperCase() || 'XXX') + '-T' + etat.points + '-' + (h % 9000 + 1000);
+  $('code').textContent = code;
+  const ratees = [...new Set(etat.rep.filter(r => !r.ok).map(r => r.id))].map(id => PAR_ID[id]).filter(Boolean);
+  if (ratees.length) { $('erreurs').hidden = false; $('erreurs').innerHTML = '<b>Mes erreurs, à relire</b>' + ratees.map(q => '<p style="margin:8px 0 0"><b>' + echapper(q.enonce) + '</b><br>' + echapper(q.choix[q.bonne]) + '. <span class="petit">' + echapper(q.explication || '') + '</span></p>').join(''); }
+  etat.resultat = {
+    type: TYPE, nom: etat.nom, classe: CLASSE, diplome: 'CAP IFCA · ' + etat.quand, quand: etat.quand,
+    niveau_nom: 'QCM triphasé · ' + etat.points + ' points', note: '', points: etat.points, justes: ok, total: n, repondu: n, part: part,
+    serie: etat.meilleure || 0, minutes: minutes, sorties: etat.sorties || 0, arret: false, code: code, carte: carte,
+    competences: codes.map(c => c + ' ' + parComp[c].ok + '/' + parComp[c].n + ' ' + (carte[c] ? ECHELLE[carte[c]] : 'trop peu')).join(' · '),
+    savoirs: Object.keys(parSav).sort().map(s => s + ' ' + parSav[s].ok + '/' + parSav[s].n).join(' · '),
+    reponses: etat.rep.map(r => r.id + '=' + (r.ok ? 'j' : 'f')).join(' ')
+  };
+  sauver();
+  if (!etat.envoye) envoyer(etat.resultat); else $('envoi').textContent = 'Résultat déjà transmis au PC du professeur.';
+}
+function envoyer(d){
+  const e = $('envoi');
+  if (!SURPC) { e.textContent = 'Ce résultat reste sur mon téléphone : la capture d\'écran est ma preuve.'; return; }
+  e.textContent = 'Envoi du résultat au PC du professeur…';
+  fetch('/resultat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) })
+    .then(r => { if (r.ok) { etat.envoye = true; sauver(); } e.textContent = r.ok ? 'Résultat envoyé au PC du professeur ✓' : 'Envoi refusé : la capture d\'écran est ma preuve.'; })
+    .catch(() => { e.textContent = 'Pas de liaison avec le PC : la capture d\'écran est ma preuve.'; });
+  suivi();
+}
+</script>
+<script src="../../../moteur/marque.js?v=e29f25c615" data-cartouche=".fr"></script>
