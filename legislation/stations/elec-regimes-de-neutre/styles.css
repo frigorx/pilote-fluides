@@ -256,3 +256,10 @@ th { font-family:var(--titre); color:var(--bleu); border-bottom-width:2px; }
 
 /* Deux encadrés successifs de l'accueil (objectif puis référentiel) : on resserre l'écart. */
 .chapeau + .chapeau { margin-top:-22px; }
+
+/* situation: début — un dessin de mise en situation à l'accueil : le lieu réel de la branche et la personne qui intervient (lot 3 des images, 03/11/2026) */
+.situation { margin:0 0 24px; text-align:center; }
+.situation img { display:block; width:auto; max-width:100%; max-height:46vh; height:auto; margin:0 auto; border:1px solid #e3dccf; border-radius:14px; background:#fffdf8; }
+.situation figcaption { margin:8px 0 0; font-size:17px; line-height:1.45; color:var(--mut); }
+@media print { .situation { display:none; } }
+/* situation: fin */

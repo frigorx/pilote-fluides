@@ -279,6 +279,14 @@
     for (const e of ecrans) html += ecranHtml(e);
     return html;
   }
+  /* Lot 3 des images (03/11/2026) : un dessin de mise en situation en tête du module, un par thème
+     (donnees/situations.js : le lieu réel et la personne qui intervient). Sans le fichier : rien. */
+  function situationModuleHtml(id) {
+    const s = window.SITUATIONS && SITUATIONS.de(id);
+    if (!s) return "";
+    return '<figure class="situation"><img src="illustrations/' + s.img + '" alt="' + seq(s.alt) + '" width="1536" height="1024" loading="lazy" decoding="async">' +
+      "<figcaption>" + seq(s.legende) + "</figcaption></figure>";
+  }
   function vueFiche(id) {
     const mo = MOD[id];
     etat.lus[id] = true; sauver();
@@ -286,6 +294,7 @@
     rendre(
       entete("parcours", "Retour au parcours") +
       '<div class="palier-tete"><span class="badge badge-palier">' + seq(PAL[mo.palier].sigle) + "</span><h1>" + seq(mo.nom) + "</h1></div>" +
+      situationModuleHtml(id) +
       (st ? stationHtml(id)
           : '<p class="q-compteur">La fiche de ce module — à lire d\'un trait, ou à consulter quand une question résiste.</p>' +
             ficheHtml(id) +
