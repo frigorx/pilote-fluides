@@ -605,7 +605,10 @@ const Station = (() => {
     });
 
     filTemps();
-    allerAu(0);
+    /* ?temps=3 ouvre directement le troisième onglet : la page d'aide d'un TD
+       y envoie l'élève sans passer par la 3D des premiers temps. */
+    const demande = parseInt(new URLSearchParams(location.search).get('temps'), 10);
+    allerAu(demande >= 1 && demande <= contenu.temps.length ? demande - 1 : 0);
   }
 
   /* Mention discrète à poser sous une image. Le détail complet va dans le dialogue Crédits. */

@@ -1,0 +1,34 @@
+/* ÉlectroRézo — la page d'aide à trois paliers. Mêmes couleurs que les stations (station.css). */
+:root{
+  --navy:#1b3a63; --ink:#10233c; --muted:#637285;
+  --cream:#f7f1e7; --paper:#fffdf8; --line:rgba(27,58,99,.18);
+  --orange-deep:#c9451a; --logo:#e8914a; --ok:#1e7e54; --ok-bg:#e3f5ec;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);background:var(--cream);
+     font-size:18px;line-height:1.45}
+.haut{display:flex;gap:.8rem;align-items:center;padding:.5rem 1rem;background:var(--paper);border-bottom:1px solid var(--line)}
+.brand{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;font-weight:800;color:var(--navy);white-space:nowrap}
+.brand .web{color:var(--orange-deep)}
+.brand .cartouche{background:var(--logo);color:#fff;border-radius:7px;padding:.05rem .45rem;font-size:.72em;margin-left:.3rem}
+.kicker{font-size:.8em;color:var(--muted)}
+h1{font-size:1.15em;margin:0;color:var(--navy)}
+main{max-width:640px;margin:0 auto;padding:.8rem 1rem 2rem}
+.palier{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:0 0 .8rem}
+.palier h2{font-size:1em;margin:0 0 .4rem;color:var(--navy)}
+.palier h2 .num{display:inline-block;min-width:1.6em;text-align:center;background:var(--navy);color:#fff;
+                border-radius:6px;margin-right:.4rem}
+.palier p{margin:.3rem 0}
+.palier img{display:block;max-width:100%;height:auto;margin:.5rem auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+.etape{border-top:1px dashed var(--line);padding-top:.5rem;margin-top:.5rem}
+.etape:first-of-type{border-top:0;padding-top:0}
+.boutons{display:grid;gap:.6rem;margin-top:.4rem}
+.boutons a,.boutons button{display:block;width:100%;min-height:48px;font:inherit;font-weight:700;text-align:center;
+  border:2px solid var(--navy);border-radius:12px;padding:.6rem .8rem;cursor:pointer;text-decoration:none}
+.boutons .compris{background:var(--navy);color:#fff}
+.boutons .encore{background:var(--paper);color:var(--navy)}
+.prof{background:var(--ok-bg);border:2px solid var(--ok);border-radius:12px;padding:.7rem .9rem;font-weight:700;color:var(--ok)}
+.bilan{width:100%;border-collapse:collapse;background:var(--paper)}
+.bilan td,.bilan th{border:1px solid var(--line);padding:.45rem .6rem;text-align:left}
+.erreur{background:var(--paper);border:2px solid var(--orange-deep);border-radius:12px;padding:.8rem}
