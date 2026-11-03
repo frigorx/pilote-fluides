@@ -56,6 +56,9 @@
   .gros{font-size:1.4em; color:var(--bleu); margin:0; font-weight:bold}
   .sorties{font-size:.7em; color:var(--gris); text-align:right; margin:-4px 0 4px}
   .sorties.alerte{color:var(--rouge); font-weight:bold}
+  .durees{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:4px 0 6px}
+  .durees button{border:2px solid var(--filet); background:#fff; border-radius:10px; padding:10px 4px; font-weight:bold; color:var(--bleu); min-height:56px}
+  .durees button.on{border-color:var(--orange-p); background:#fdebd8; color:var(--orange-p)}
   .liste-classe{display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 10px}
   .liste-classe button{border:2px solid var(--filet); background:#fff; border-radius:10px; padding:6px 12px}
 </style>
@@ -70,7 +73,7 @@
 
   <section id="depart" class="carte">
     <ul class="lignes">
-      <li><b>30 minutes pour répondre.</b></li>
+      <li><b>10, 20 ou 30 minutes : le professeur choisit.</b></li>
       <li>Personne ne finit toutes les questions.</li>
       <li>Bonne réponse : +10 points.</li>
       <li>Plusieurs bonnes de suite : un bonus.</li>
@@ -83,6 +86,8 @@
     <label for="nom">Nom et prénom</label>
     <input type="text" id="nom" autocomplete="off" placeholder="ex. : DUPONT Léa">
     <p id="chargement" class="petit">Chargement des questions…</p>
+    <label>Durée donnée par le professeur</label>
+    <div class="durees" id="durees"><button type="button" data-min="10">10 min</button><button type="button" data-min="20">20 min</button><button type="button" data-min="30">30 min</button></div>
     <button class="suite" id="commencer" disabled>Je commence</button>
   </section>
 
@@ -120,7 +125,9 @@
 
 <script>
 const $ = id => document.getElementById(id);
-const DUREE_MIN = Math.max(1, Math.min(60, Number(new URLSearchParams(location.search).get('min')) || 30));
+// La durée : 10, 20 ou 30 min, choisie à l'accueil sur la consigne du professeur (même durée pour toute la classe) ; ?min= la présélectionne.
+const DUREE_URL = Math.max(0, Math.min(60, Number(new URLSearchParams(location.search).get('min')) || 0));
+let DUREE_MIN = DUREE_URL;
 const TYPE = 'qcm-triphase', CLASSE = '2e année CAP IFCA', CLE = 'qcm-triphase-2026-11-03';
 const MIN_JUSTE = 15, MIN_COMP = 3;
 const COMP = { 'C2.1': 'Organiser des informations', 'C2.4': "Sécuriser l'intervention", 'C3.2': "Identifier sur site les réseaux d'alimentation",
@@ -151,14 +158,20 @@ fetch('banque-triphase.json', { cache: 'no-store' }).then(r => { if (!r.ok) thro
   $('commencer').disabled = false;
 }).catch(() => { $('chargement').textContent = 'Les questions ne se chargent pas : rechargez la page.'; });
 
+[...document.querySelectorAll('#durees button')].forEach(b => {
+  if (Number(b.dataset.min) === DUREE_URL) b.classList.add('on');
+  b.onclick = () => { DUREE_MIN = Number(b.dataset.min); document.querySelectorAll('#durees button').forEach(x => x.classList.toggle('on', x === b)); };
+});
 $('commencer').onclick = () => {
   const nom = $('nom').value.trim().replace(/\s+/g, ' ');
   if (nom.length < 3) { $('nom').focus(); $('chargement').textContent = 'Écrivez votre nom et votre prénom.'; return; }
-  etat = { nom, debut: Date.now(), file: melange(BANQUE.map(q => q.id)), tour: 1, k: 0, points: 0, serie: 0, meilleure: 0, rep: [], sorties: 0 };
+  if (!DUREE_MIN) { $('chargement').textContent = 'Touchez la durée que le professeur a donnée.'; return; }
+  etat = { nom, duree: DUREE_MIN, debut: Date.now(), file: melange(BANQUE.map(q => q.id)), tour: 1, k: 0, points: 0, serie: 0, meilleure: 0, rep: [], sorties: 0 };
   sauver(); lancer();
 };
 
 function lancer(){
+  DUREE_MIN = etat.duree || DUREE_MIN || 30;
   $('depart').hidden = true; $('quiz').hidden = false; $('fin').hidden = true;
   garderEcranAllume(); tic(); minuteur = setInterval(tic, 1000); afficher(); afficherSorties();
 }
@@ -243,6 +256,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) sorti
 window.addEventListener('pagehide', () => { sortie(); });
 
 function terminer(){
+  DUREE_MIN = etat.duree || DUREE_MIN || 30;
   clearInterval(minuteur); if (attente) { clearTimeout(attente); attente = null; }
   etat.fini = true; sauver();
   $('depart').hidden = true; $('quiz').hidden = true; $('fin').hidden = false;
@@ -269,7 +283,7 @@ function terminer(){
   if (ratees.length) { $('erreurs').hidden = false; $('erreurs').innerHTML = '<b>Mes erreurs, à relire</b>' + ratees.map(q => '<p style="margin:8px 0 0"><b>' + echapper(q.enonce) + '</b><br>' + echapper(q.choix[q.bonne]) + '. <span class="petit">' + echapper(q.explication || '') + '</span></p>').join(''); }
   etat.resultat = {
     type: TYPE, nom: etat.nom, classe: CLASSE, diplome: 'CAP IFCA · ' + etat.quand, quand: etat.quand,
-    niveau_nom: 'QCM triphasé · ' + etat.points + ' points', note: '', points: etat.points, justes: ok, total: n, repondu: n, part: part,
+    niveau_nom: 'QCM triphasé · ' + DUREE_MIN + ' min · ' + etat.points + ' points', duree: DUREE_MIN, note: '', points: etat.points, justes: ok, total: n, repondu: n, part: part,
     serie: etat.meilleure || 0, minutes: minutes, sorties: etat.sorties || 0, arret: false, code: code, carte: carte,
     competences: codes.map(c => c + ' ' + parComp[c].ok + '/' + parComp[c].n + ' ' + (carte[c] ? ECHELLE[carte[c]] : 'trop peu')).join(' · '),
     savoirs: Object.keys(parSav).sort().map(s => s + ' ' + parSav[s].ok + '/' + parSav[s].n).join(' · '),
