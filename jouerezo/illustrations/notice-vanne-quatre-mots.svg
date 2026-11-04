@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="t d">
+<title id="t">La vanne et quatre mots de sa notice</title>
+<desc id="d">Une vanne électromagnétique vue de profil, montée sur un tube horizontal. Quatre temps se suivent en boucle. Un : la flèche gravée sur le corps devient orange et un pointillé orange parcourt le tube de gauche à droite, avec le mot arrow, la flèche : le fluide suit la flèche. Deux : la bobine devient orange, avec le mot coil, la bobine. Trois : la bobine se soulève au-dessus du corps et une cote en pointillé montre la place libérée, avec le mot clearance, la place au-dessus pour retirer la bobine. Quatre : une petite vanne retournée, bobine en dessous, apparaît en bas à droite barrée d'une croix orange, avec les mots upside down, à l'envers : interdit. Le dessin reste complet à la fin de chaque tour.</desc>
+<style>
+text{font-family:"Segoe UI",system-ui,Arial,sans-serif;fill:#1b3a63}
+.en{font-size:28px;font-weight:700}
+.fr{font-size:22px}
+.tube{stroke:#1b3a63;stroke-width:10;stroke-linecap:butt;fill:none}
+.corps{fill:#fff;stroke:#1b3a63;stroke-width:4}
+.bob{fill:#dbe7f5;stroke:#1b3a63;stroke-width:4}
+.fil{stroke:#1b3a63;stroke-width:3;fill:none}
+#flux{stroke:#ff6b35;stroke-width:6;stroke-linecap:round;stroke-dasharray:2 18;fill:none;opacity:0;animation:flux .9s linear infinite,v1 14s linear infinite}
+@keyframes flux{to{stroke-dashoffset:-20}}
+@keyframes v1{0%,24%{opacity:1}26%,100%{opacity:0}}
+#fleche{color:#1b3a63;animation:fl 14s linear infinite}
+#fleche line{stroke:currentColor;stroke-width:7;stroke-linecap:round}
+#fleche polygon{fill:currentColor}
+@keyframes fl{0%,24%{color:#ff6b35}26%,100%{color:#1b3a63}}
+#halo-bob{fill:#ff6b35;opacity:0;animation:hb 14s linear infinite}
+@keyframes hb{0%,24%{opacity:0}26%,74%{opacity:.55}77%,100%{opacity:0}}
+#bobine{animation:lift 14s ease-in-out infinite}
+@keyframes lift{0%,50%{transform:translateY(0)}54%,96%{transform:translateY(-60px)}99%,100%{transform:translateY(0)}}
+#cote{opacity:0;animation:cote 14s linear infinite}
+@keyframes cote{0%,53%{opacity:0}56%,96%{opacity:1}99%,100%{opacity:0}}
+.cote{stroke:#ff6b35;stroke-width:4;fill:none}
+.cote-p{fill:#ff6b35}
+.mot{opacity:0}
+#m1{animation:m1 14s linear infinite}
+#m2{animation:m2 14s linear infinite}
+#m3{animation:m3 14s linear infinite}
+#m4{animation:m4 14s linear infinite}
+@keyframes m1{0%{opacity:0}2%,96%{opacity:1}99%,100%{opacity:0}}
+@keyframes m2{0%,25%{opacity:0}27%,96%{opacity:1}99%,100%{opacity:0}}
+@keyframes m3{0%,50%{opacity:0}52%,96%{opacity:1}99%,100%{opacity:0}}
+@keyframes m4{0%,75%{opacity:0}77%,96%{opacity:1}99%,100%{opacity:0}}
+#retournee{opacity:0;animation:m4 14s linear infinite}
+.croix{stroke:#ff6b35;stroke-width:9;stroke-linecap:round}
+@media (prefers-reduced-motion: reduce){
+*{animation:none !important;transition:none !important}
+.mot,#cote,#retournee{opacity:1 !important}
+#flux{display:none}
+#fleche{color:#ff6b35}
+#halo-bob{opacity:.55}
+#bobine{transform:translateY(-60px)}
+}
+</style>
+<rect width="800" height="500" fill="#fffdf8"/>
+<!-- tube horizontal -->
+<line class="tube" x1="20" y1="305" x2="500" y2="305"/>
+<line id="flux" x1="24" y1="305" x2="496" y2="305"/>
+<!-- raccords et corps de vanne -->
+<rect class="corps" x="140" y="290" width="30" height="30"/>
+<rect class="corps" x="330" y="290" width="30" height="30"/>
+<rect class="corps" x="170" y="270" width="160" height="70" rx="14"/>
+<!-- flèche gravée -->
+<g id="fleche"><line x1="200" y1="305" x2="290" y2="305"/><polygon points="285,288 312,305 285,322"/></g>
+<!-- bobine -->
+<g id="bobine">
+<rect class="bob" x="235" y="260" width="30" height="12"/>
+<rect class="bob" x="205" y="160" width="90" height="100" rx="10"/>
+<rect id="halo-bob" x="205" y="160" width="90" height="100" rx="10"/>
+<line class="fil" x1="220" y1="185" x2="280" y2="185"/>
+<line class="fil" x1="220" y1="210" x2="280" y2="210"/>
+<line class="fil" x1="220" y1="235" x2="280" y2="235"/>
+</g>
+<!-- cote de la place libérée -->
+<g id="cote">
+<line class="cote" x1="318" y1="218" x2="318" y2="264" stroke-dasharray="8 6"/>
+<line class="cote" x1="306" y1="212" x2="330" y2="212"/>
+<line class="cote" x1="306" y1="270" x2="330" y2="270"/>
+<polygon class="cote-p" points="318,214 311,228 325,228"/>
+<polygon class="cote-p" points="318,268 311,254 325,254"/>
+</g>
+<!-- mots -->
+<g id="m1" class="mot"><text class="en" x="530" y="80">arrow</text><text class="fr" x="530" y="110">la flèche : le fluide</text><text class="fr" x="530" y="136">suit la flèche</text></g>
+<g id="m2" class="mot"><text class="en" x="530" y="176">coil</text><text class="fr" x="530" y="206">la bobine</text></g>
+<g id="m3" class="mot"><text class="en" x="530" y="252">clearance</text><text class="fr" x="530" y="282">la place au-dessus, pour</text><text class="fr" x="530" y="308">retirer la bobine</text></g>
+<g id="m4" class="mot"><text class="en" x="530" y="348">upside down</text><text class="fr" x="530" y="378">à l'envers : interdit</text></g>
+<!-- petite vanne retournée, barrée -->
+<g id="retournee">
+<line class="tube" x1="540" y1="430" x2="780" y2="430" style="stroke-width:7"/>
+<rect class="corps" x="600" y="418" width="14" height="24" style="stroke-width:3"/>
+<rect class="corps" x="686" y="418" width="14" height="24" style="stroke-width:3"/>
+<rect class="corps" x="614" y="414" width="72" height="32" rx="8" style="stroke-width:3"/>
+<rect class="bob" x="634" y="446" width="32" height="34" rx="5" style="stroke-width:3"/>
+<line class="croix" x1="592" y1="406" x2="708" y2="486"/>
+<line class="croix" x1="708" y1="406" x2="592" y2="486"/>
+</g>
+</svg>
