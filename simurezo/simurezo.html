@@ -784,6 +784,17 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   svg.scene.atelier *, svg.scene.atelier *::before, svg.scene.atelier *::after { animation: none !important; transition: none !important; }
 }
 
+/* station S1 (04/11/2026) : début */
+.e-tete { flex-wrap: wrap; }
+.e-voix { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.situation { display: flex; gap: 14px; align-items: center; margin: 0 0 12px; background: var(--carte); border: 2px solid var(--ligne); border-radius: 12px; padding: 8px; }
+.situation img { width: min(420px, 45%); height: auto; border-radius: 8px; display: block; }
+.situation figcaption { font-size: 18px; color: var(--txt); }
+.explication { max-width: 800px; margin: 0 auto 14px; background: var(--carte); border: 2px solid var(--bleu); border-radius: 12px; padding: 8px; }
+.explication img { width: 100%; height: auto; display: block; }
+.explication figcaption { font-size: 17px; color: var(--txt); margin-top: 6px; }
+@media (max-width: 700px) { .situation { flex-direction: column; align-items: stretch; } .situation img { width: 100%; } }
+/* station S1 : fin */
 </style>
 <script defer src="../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="simurezo/index.html" data-reseau-nom="🛠️ SimuRézo"></script>
 </head>
@@ -809,9 +820,10 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   <h1 class="b-sr" id="titre-page">SimuRézo : simulateur de panne frigorifique</h1>
 
   <!-- ===== 0 · l'accueil : le niveau, l'installation, on commence ===== -->
-  <section class="etape" id="accueil" aria-labelledby="t0">
-    <div class="e-tete"><span class="e-num" aria-hidden="true">0</span><h2 id="t0">Dépanner une chambre froide</h2></div>
+  <section class="etape" id="accueil" aria-labelledby="t0" data-narration="Vous arrivez chez le client. Sa chambre froide vient d'être installée, ou bien elle ne tient plus le froid. Dans les deux cas, le geste est le même. Vous branchez le manifold sur les vannes de service, vous pincez le thermomètre sur le tube d'aspiration, et vous lisez les cadrans. Chaque cadran donne une ligne de la fiche. Choisissez votre niveau et votre installation, puis commencez la partie. À l'étape deux, vos relevés vont au carnet. À l'étape deux b, vous les reportez sur la fiche de mise en service, comme sur un vrai chantier.">
+    <div class="e-tete"><span class="e-num" aria-hidden="true">0</span><h2 id="t0">Dépanner une chambre froide</h2><div class="e-voix"><button type="button" class="btn sec" data-ecouter="accueil" aria-pressed="false">▶ Écouter</button></div></div>
     <p class="b-intro">Huit situations de dépannage : vous relevez les valeurs sur l'installation, le cycle se trace sur le diagramme, puis vous concluez.</p>
+    <figure class="situation"><img src="img/situation-fiche.webp?v=20261104-s1" alt="Dans l'arrière-boutique d'une épicerie, devant la chambre froide et son groupe de condensation, une jeune apprentie a branché le manifold sur les vannes de service et pincé un thermomètre sur le tube d'aspiration ; elle lit le cadran et note la valeur sur sa fiche, son tuteur montre le thermomètre." width="1536" height="1024" loading="lazy"><figcaption>Sur place, le manifold est branché, le thermomètre pincé sur l'aspiration : chaque cadran donne une ligne de la fiche.</figcaption></figure>
     <div class="b-accueil">
       <div class="b-col">
         <h3 id="h-niveau">Votre niveau</h3>
@@ -926,8 +938,9 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   </section>
 
   <!-- ===== 2b · la fiche : on reporte ses relevés, on la contrôle, on l'imprime (DEP_FICHE construit tout le contenu) ===== -->
-  <section class="etape" id="fiche" data-n="2" aria-labelledby="t2b">
-    <div class="e-tete"><span class="e-num" aria-hidden="true">2b</span><h2 id="t2b">Reporter mes relevés sur la fiche</h2></div>
+  <section class="etape" id="fiche" data-n="2" aria-labelledby="t2b" data-narration="Voici la fiche. Elle ne se remplit pas toute seule. Chaque ligne attend une valeur que vous avez relevée au carnet. Regardez l'animation. Le manomètre basse pression donne la pression, et l'échelle du fluide la traduit en température d'évaporation. Le thermomètre pincé sur l'aspiration donne la température d'aspiration. L'écart entre les deux, c'est la surchauffe. Dans l'exemple, moins dix degrés d'évaporation, moins trois degrés à l'aspiration, donc sept kelvins de surchauffe. Même méthode côté haute pression, avec la température de condensation, la ligne liquide, et le sous-refroidissement. Quand la fiche est complète, contrôlez-la, puis concluez.">
+    <div class="e-tete"><span class="e-num" aria-hidden="true">2b</span><h2 id="t2b">Reporter mes relevés sur la fiche</h2><div class="e-voix"><button type="button" class="btn sec" data-ecouter="fiche" aria-pressed="false">▶ Écouter</button></div></div>
+    <figure class="explication"><img src="img/du-cadran-a-la-fiche.svg?v=20261104-s1" alt="Dessin animé en quatre temps. À gauche, un manomètre basse pression à aiguille, et un thermomètre pincé sur le tube d'aspiration d'un petit groupe de condensation. À droite, la fiche de mise en service, à trois lignes. L'aiguille se pose ; une flèche en pointillé va du manomètre à la ligne « Température d'évaporation » et la valeur moins dix degrés s'écrit ; une deuxième flèche va du thermomètre à la ligne « Température d'aspiration » et la valeur moins trois degrés s'écrit ; une troisième flèche part de ces deux lignes vers la ligne « Surchauffe = T aspiration − t évaporation » et la valeur sept kelvins s'écrit en orange. Le dessin reste ensuite complet." width="800" height="500"><figcaption>Chaque cadran donne une ligne de la fiche ; l'écart entre les deux températures, c'est la surchauffe.</figcaption></figure>
     <div id="fiche-corps"></div>
   </section>
 
@@ -3745,6 +3758,54 @@ svg.scene.atelier .sc-flex.branche { opacity: 1; stroke-dashoffset: 0; }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
 
+</script>
+<!-- station S1 (04/11/2026) : la voix de prof. Seuls voix.js et son réglage sont câblés : prof-vocal.js attend des écrans
+     à suivant/précédent (.slide.active) que cette page en défilement n'a pas. Aucun son sans clic sur « Écouter ». -->
+<script src="../moteur/voix-index.js?v=69c3f48245"></script>
+<script src="../moteur/prononciation.js?v=20260806-2"></script>
+<script src="../moteur/reglage-voix.js?v=45451e558b"></script>
+<script src="../moteur/voix.js?v=20261017-voix"></script>
+<script>
+(function () {
+  "use strict";
+  var boutons = Array.prototype.slice.call(document.querySelectorAll("[data-ecouter]"));
+  var synth = window.speechSynthesis;
+  if (!synth || !window.SpeechSynthesisUtterance) { boutons.forEach(function (b) { b.parentNode.hidden = true; }); return; }
+  var parle = null;
+  function voixFr() {
+    var fr = synth.getVoices().filter(function (v) { return v.lang.toLowerCase().indexOf("fr") === 0; });
+    return fr.filter(function (v) { return /natural|neural|online/i.test(v.name); })[0] ||
+      fr.filter(function (v) { return /google/i.test(v.name); })[0] ||
+      fr.filter(function (v) { return v.lang.toLowerCase() === "fr-fr"; })[0] || fr[0] || null;
+  }
+  synth.getVoices();
+  function maj() {
+    boutons.forEach(function (b) {
+      var on = parle === b.getAttribute("data-ecouter");
+      b.textContent = on ? "■ Arrêter" : "▶ Écouter";
+      b.setAttribute("aria-pressed", String(on));
+    });
+  }
+  function taire() { parle = null; synth.cancel(); maj(); }
+  boutons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var cle = b.getAttribute("data-ecouter");
+      if (parle === cle) { taire(); return; }
+      var texte = b.closest("section").getAttribute("data-narration");
+      if (!texte) return;
+      synth.cancel();
+      var u = new SpeechSynthesisUtterance(texte);
+      u.lang = "fr-FR"; var v = voixFr(); if (v) u.voice = v;
+      u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+      u.onstart = function () { parle = cle; maj(); };
+      u.onend = u.onerror = function () { if (parle === cle) { parle = null; maj(); } };
+      parle = cle; maj();
+      synth.speak(u);
+    });
+  });
+  document.addEventListener("pilotevoix:vitesse", taire);
+  if (window.PILOTE_VOIX_REGLAGE) boutons.forEach(function (b) { window.PILOTE_VOIX_REGLAGE.monter(b.parentNode); });
+})();
 </script>
 </body>
 </html>
