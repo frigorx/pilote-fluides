@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 592,
+  "total": 596,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -7386,6 +7386,30 @@
     },
     {
       "reseau": "inerWeb Studio",
+      "id": "voyage/enthalpie",
+      "titre": "Voyage dans tous ses états, lire le diagramme enthalpique",
+      "ligne": null,
+      "resume": "Suivez une molécule de R32 dans un climatiseur : les axes et la cloche du diagramme enthalpique, l'évaporation et la surchauffe, la compression, la condensation, la détente, les écarts d'enthalpie, avec la croix du frigoriste à côté. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/enthalpie.html",
+      "chemin": "voyage/enthalpie.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/enthalpie2",
+      "titre": "Voyage dans tous ses états, toutes les courbes du diagramme enthalpique",
+      "ligne": null,
+      "resume": "Suivez une molécule de R134a dans une chambre froide : le point critique, les isobares, les isenthalpes, les isothermes, les isotitres, les isentropes, les isochores, puis le tracé du cycle à partir des relevés et les calculs jusqu'au débit et aux puissances. Le film en entier ou épisode par épisode.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/enthalpie2.html",
+      "chemin": "voyage/enthalpie2.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
       "id": "voyage/glissement",
       "titre": "Voyage dans tous ses états, le glissement de température raconté par une molécule",
       "ligne": null,
@@ -7467,6 +7491,30 @@
       "missionProf": null,
       "url": "https://inerweb.fr/voyage/module-eau-glacee.html",
       "chemin": "voyage/module-eau-glacee.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-enthalpie",
+      "titre": "Voyage dans tous ses états, le diagramme enthalpique — module de formation",
+      "ligne": null,
+      "resume": "Le diagramme enthalpique raconté par une molécule de R32 : les axes et la cloche, l’évaporateur, le compresseur, le condenseur, le détendeur, les écarts d’enthalpie et le passage du manomètre au diagramme, avec la croix du frigoriste à côté.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-enthalpie.html",
+      "chemin": "voyage/module-enthalpie.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-enthalpie2",
+      "titre": "Voyage dans tous ses états, le diagramme enthalpique, niveau 2 — module de formation",
+      "ligne": null,
+      "resume": "Toutes les lignes du diagramme enthalpique racontées par une molécule de R134a : cloche et point critique, isobares, isenthalpes, isothermes, isotitres, isentropes, isochores, puis le tracé du cycle d’une chambre froide à partir des relevés et les calculs.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-enthalpie2.html",
+      "chemin": "voyage/module-enthalpie2.html"
     },
     {
       "reseau": "inerWeb Studio",
@@ -7593,7 +7641,7 @@
       "id": "studio",
       "titre": "les films d'inerweb.fr",
       "ligne": null,
-      "resume": "Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.",
+      "resume": "Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,

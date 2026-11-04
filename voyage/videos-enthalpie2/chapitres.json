@@ -1,0 +1,128 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon nouveau voyage",
+  "sous": "toutes les lignes du diagramme",
+  "duree": 35,
+  "video": "chapitre-00-mon-nouveau-voyage.mp4",
+  "affiche": "chapitre-00-mon-nouveau-voyage.jpg"
+ },
+ {
+  "id": "cloche",
+  "num": "1",
+  "titre": "La cloche",
+  "sous": "et le point critique",
+  "duree": 35,
+  "video": "chapitre-01-la-cloche.mp4",
+  "affiche": "chapitre-01-la-cloche.jpg"
+ },
+ {
+  "id": "isobares",
+  "num": "2",
+  "titre": "Isobares, isenthalpes",
+  "sous": "pression et énergie constantes",
+  "duree": 28,
+  "video": "chapitre-02-isobares-isenthalpes.mp4",
+  "affiche": "chapitre-02-isobares-isenthalpes.jpg"
+ },
+ {
+  "id": "isothermes",
+  "num": "3",
+  "titre": "Les isothermes",
+  "sous": "la même température",
+  "duree": 43,
+  "video": "chapitre-03-les-isothermes.mp4",
+  "affiche": "chapitre-03-les-isothermes.jpg"
+ },
+ {
+  "id": "isotitres",
+  "num": "4",
+  "titre": "Les isotitres",
+  "sous": "la part de vapeur",
+  "duree": 34,
+  "video": "chapitre-04-les-isotitres.mp4",
+  "affiche": "chapitre-04-les-isotitres.jpg"
+ },
+ {
+  "id": "isentropes",
+  "num": "5",
+  "titre": "Les isentropes",
+  "sous": "la compression idéale",
+  "duree": 27,
+  "video": "chapitre-05-les-isentropes.mp4",
+  "affiche": "chapitre-05-les-isentropes.jpg"
+ },
+ {
+  "id": "isochores",
+  "num": "6",
+  "titre": "Les isochores",
+  "sous": "la place d'un kilo",
+  "duree": 27,
+  "video": "chapitre-06-les-isochores.mp4",
+  "affiche": "chapitre-06-les-isochores.jpg"
+ },
+ {
+  "id": "releves",
+  "num": "7",
+  "titre": "Les relevés",
+  "sous": "du technicien",
+  "duree": 38,
+  "video": "chapitre-07-les-releves.mp4",
+  "affiche": "chapitre-07-les-releves.jpg"
+ },
+ {
+  "id": "absolu",
+  "num": "8",
+  "titre": "Passer en absolu",
+  "sous": "lire les saturations",
+  "duree": 46,
+  "video": "chapitre-08-passer-en-absolu.mp4",
+  "affiche": "chapitre-08-passer-en-absolu.jpg"
+ },
+ {
+  "id": "points",
+  "num": "9",
+  "titre": "Placer les points",
+  "sous": "1, 2, 3 et 4",
+  "duree": 57,
+  "video": "chapitre-09-placer-les-points.mp4",
+  "affiche": "chapitre-09-placer-les-points.jpg"
+ },
+ {
+  "id": "trace",
+  "num": "10",
+  "titre": "Tracer le cycle",
+  "sous": "relier les points dans l'ordre",
+  "duree": 37,
+  "video": "chapitre-10-tracer-le-cycle.mp4",
+  "affiche": "chapitre-10-tracer-le-cycle.jpg"
+ },
+ {
+  "id": "calculs",
+  "num": "11",
+  "titre": "Les calculs",
+  "sous": "écarts, COP, taux de compression",
+  "duree": 60,
+  "video": "chapitre-11-les-calculs.mp4",
+  "affiche": "chapitre-11-les-calculs.jpg"
+ },
+ {
+  "id": "debit",
+  "num": "12",
+  "titre": "Du kilo à l'installation",
+  "sous": "débit et puissances",
+  "duree": 41,
+  "video": "chapitre-12-du-kilo-a-l-installation.mp4",
+  "affiche": "chapitre-12-du-kilo-a-l-installation.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "La méthode en cinq gestes",
+  "sous": "l'essentiel à retenir",
+  "duree": 37,
+  "video": "chapitre-13-la-methode-en-cinq-gestes.mp4",
+  "affiche": "chapitre-13-la-methode-en-cinq-gestes.jpg"
+ }
+]

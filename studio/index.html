@@ -7,7 +7,7 @@
 <link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1b3a63">
 <title>inerWeb Studio — les films d'inerweb.fr</title>
-<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.">
+<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.">
 <link rel="canonical" href="https://inerweb.fr/studio/">
 <meta property="og:title" content="inerWeb Studio — les films d'inerweb.fr">
 <meta property="og:description" content="Une saga, deux séries, deux documentaires : les films du site, chacun relié à son cours.">
@@ -63,6 +63,8 @@
   .affiche .titre { position:absolute; left:0; right:0; bottom:0; padding:34px 10px 12px; text-align:center; color:#fff;
                     font-family:var(--titre); font-weight:bold; font-size:clamp(1rem,2vw,1.3rem); line-height:1.15; text-shadow:0 1px 4px #000, 0 0 12px rgba(0,0,0,.8);
                     background:linear-gradient(to bottom, rgba(5,12,24,0), rgba(5,12,24,.88)); }
+  .affiche.sans-titre .rayon { font-size:11px; letter-spacing:0; } /* rayon plus long que les autres : tient sur une ligne, sans masquer le titre de l'image */
+  .affiche.sans-titre .titre { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; background:none; } /* titre déjà dans l'image : gardé pour le lecteur d'écran */
   .affiche:hover img, .affiche:focus-visible img { filter:brightness(1.08); }
   .affiche:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
   .pitch { margin:8px 2px 0; font-size:15.5px; line-height:1.4; color:var(--txt); }
@@ -122,7 +124,7 @@
     <h1>🎬 inerWeb Studio</h1>
     <p class="sous-titre">les films d'inerweb.fr</p>
   </header>
-  <p class="chapo">À l'affiche : une saga, deux séries, deux documentaires et un premier film de geste. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
+  <p class="chapo">À l'affiche : une saga, une trilogie, deux séries, deux documentaires et un premier film de geste. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
   <!-- Même adresse que window.INERWEB_YOUTUBE (moteur/reseaux.js). -->
   <p class="youtube"><a href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener">▶ Les films sur la chaîne YouTube inerWeb FR</a></p>
 
@@ -131,9 +133,16 @@
       <li>
         <a class="affiche" href="#t-voyage">
           <img src="affiches/saga-voyage.webp?v=d0d639c96a" alt="" width="800" height="1200">
-          <span class="rayon">Saga · 11 films</span>
+          <span class="rayon">Saga · 13 films</span>
           <span class="titre">Les voyages extraordinaires</span></a>
         <p class="pitch"><b>Saga.</b> Un road-movie à hauteur de molécule : le circuit frigorifique, puis d'autres fluides et d'autres machines.</p>
+      </li>
+      <li>
+        <a class="affiche sans-titre" href="#t-diagramme">
+          <img src="affiches/affiche-diagramme-dans-tous-les-sens.webp" alt="" width="800" height="1200" loading="lazy">
+          <span class="rayon">Trilogie · Les voyages extraordinaires</span>
+          <span class="titre">Diagramme dans tous les sens</span></a>
+        <p class="pitch"><b>Trilogie.</b> La molécule entre dans le diagramme enthalpique : le lire, connaître chaque courbe, puis le tracer depuis les relevés.</p>
       </li>
       <li>
         <a class="affiche" href="#t-regules">
@@ -186,7 +195,7 @@
         <a class="affiche" href="../voyage/" aria-label="Commencer la saga par le tome 1"><img src="affiches/saga-voyage.webp?v=d0d639c96a" alt="" width="800" height="1200" loading="lazy"><span class="titre">Les voyages extraordinaires</span></a>
         <div>
           <h2 id="h-voyage">Les voyages extraordinaires</h2>
-          <p class="meta">Saga « Voyage dans tous ses états » · 10 tomes de 9 à 11 min · 1 h 40 en tout · chaque tome se regarde seul · et la nouvelle série « L'ennemi juré » (tome 1, 6 min 37)</p>
+          <p class="meta">Saga « Voyage dans tous ses états » · 10 tomes de 9 à 11 min · 1 h 40 en tout · chaque tome se regarde seul · la série « L'ennemi juré » (tome 1, 6 min 37) · et la trilogie « Diagramme dans tous les sens » (deux films, 6 min 05 et 9 min 05)</p>
           <dl class="critique">
             <p class="accroche">Un road-movie à hauteur de molécule.</p>
             <div><dt>De quoi ça parle.</dt><dd>Une molécule de fluide frigorigène quitte l'évaporateur, se fait comprimer, se condense, se détend, et revient à son point de départ pour recommencer. Le film ne montre rien d'autre que ce qui se passe vraiment dans le tube, et c'est sa force. Tome après tome, elle change de fluide (ammoniac, CO₂) puis de machine (compresseur à vis, centrale, booster, bi-étagé), et son chemin se dessine en même temps sur le diagramme enthalpique.</dd></div>
@@ -252,6 +261,18 @@
           <p class="num">L'ennemi juré · tome 1</p><h3>La frontière</h3>
           <p>Le groupe d'eau glacée : l'eau et le fluide se croisent dans l'évaporateur à plaques sans jamais se toucher ; la sentinelle, le gel, les armes du frigoriste. Après le tome 1 du Voyage. 10 épisodes.</p>
           <p class="portes"><a href="../voyage/eau-glacee.html">▶ Le film</a><a href="../voyage/module-eau-glacee.html">Version interactive</a><a href="../cartoclim/stations/3-8-eau-glacee/">La station</a></p></li>
+      </ol>
+
+      <h3 class="sous" id="t-diagramme">Diagramme dans tous les sens, la trilogie <small>Le diagramme enthalpique en trois films : on le lit, on suit chacune de ses courbes, puis on le trace à partir des manomètres et des températures.</small></h3>
+      <ol class="rangee">
+        <li class="carte"><a class="vue" href="../voyage/enthalpie.html"><img src="affiches/tome-1-diagramme-dans-tous-les-sens-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">6 min 05</span></a>
+          <p class="num">Trilogie · tome 1</p><h3>Lire le diagramme</h3>
+          <p>Une molécule de R32 fait le tour du circuit, et chaque organe trace son côté du cycle : les axes, la cloche, les quatre points, les écarts d'enthalpie, avec la croix du frigoriste à côté. Après le tome 1 du Voyage. 10 épisodes.</p>
+          <p class="portes"><a href="../voyage/enthalpie.html">▶ Le film</a><a href="../voyage/module-enthalpie.html">Version interactive</a><a href="../packs/fluides/res/diagramme-enthalpique/">La station</a></p></li>
+        <li class="carte"><a class="vue" href="../voyage/enthalpie2.html"><img src="affiches/tome-2-diagramme-dans-tous-les-sens-16x9.webp" alt="" width="1200" height="675" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">9 min 05</span></a>
+          <p class="num">Trilogie · tome 2</p><h3>Toutes les courbes</h3>
+          <p>Une chambre froide au R134a : chaque famille de lignes du diagramme, ce qu'elle dit et ce qu'on en calcule, jusqu'au débit de fluide et aux puissances. Après le tome 1 de la trilogie. 14 épisodes.</p>
+          <p class="portes"><a href="../voyage/enthalpie2.html">▶ Le film</a><a href="../voyage/module-enthalpie2.html">Version interactive</a><a href="../packs/fluides/res/diagramme-enthalpique/">La station</a></p></li>
       </ol>
     </section>
 

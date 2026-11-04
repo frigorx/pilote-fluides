@@ -1,0 +1,210 @@
+{
+ "intro-0": {
+  "f": "308634869f35.mp3",
+  "d": 6.576
+ },
+ "intro-1": {
+  "f": "2d6d7d46f5ea.mp3",
+  "d": 8.736
+ },
+ "intro-2": {
+  "f": "0149b09780bb.mp3",
+  "d": 4.92
+ },
+ "intro-3": {
+  "f": "064fc1ef3f12.mp3",
+  "d": 5.712
+ },
+ "intro-4": {
+  "f": "72ab6f6c44a4.mp3",
+  "d": 6.096
+ },
+ "carte-0": {
+  "f": "b259238f89b2.mp3",
+  "d": 7.656
+ },
+ "carte-1": {
+  "f": "a4f6a9cc5e87.mp3",
+  "d": 3.792
+ },
+ "carte-2": {
+  "f": "68c90153ed83.mp3",
+  "d": 6.84
+ },
+ "carte-3": {
+  "f": "9da255ef3e7e.mp3",
+  "d": 3.12
+ },
+ "carte-4": {
+  "f": "a4c9e3a39863.mp3",
+  "d": 5.304
+ },
+ "carte-5": {
+  "f": "426e7a90acf1.mp3",
+  "d": 5.352
+ },
+ "evaporateur-0": {
+  "f": "a696a4f0d76a.mp3",
+  "d": 6.672
+ },
+ "evaporateur-1": {
+  "f": "b19738aed96d.mp3",
+  "d": 4.992
+ },
+ "evaporateur-2": {
+  "f": "8cf744d879df.mp3",
+  "d": 6.84
+ },
+ "evaporateur-3": {
+  "f": "20ac19c5bd59.mp3",
+  "d": 6.96
+ },
+ "evaporateur-4": {
+  "f": "0abc05c752b5.mp3",
+  "d": 7.752
+ },
+ "evaporateur-5": {
+  "f": "7280b3a9c5d5.mp3",
+  "d": 6.504
+ },
+ "compresseur-0": {
+  "f": "de841b2cbc35.mp3",
+  "d": 3.912
+ },
+ "compresseur-1": {
+  "f": "dbf56ac53a33.mp3",
+  "d": 4.8
+ },
+ "compresseur-2": {
+  "f": "1cc4b91d60f1.mp3",
+  "d": 4.128
+ },
+ "compresseur-3": {
+  "f": "4d8a57733676.mp3",
+  "d": 4.512
+ },
+ "compresseur-4": {
+  "f": "5ba3d9898454.mp3",
+  "d": 7.272
+ },
+ "compresseur-5": {
+  "f": "73ae93446585.mp3",
+  "d": 5.328
+ },
+ "condenseur-0": {
+  "f": "eb0ef07abe26.mp3",
+  "d": 5.088
+ },
+ "condenseur-1": {
+  "f": "e2fcec28d944.mp3",
+  "d": 7.848
+ },
+ "condenseur-2": {
+  "f": "ed1c7ca3d693.mp3",
+  "d": 6.432
+ },
+ "condenseur-3": {
+  "f": "dc955d1159ff.mp3",
+  "d": 5.136
+ },
+ "condenseur-4": {
+  "f": "f490b07bab80.mp3",
+  "d": 3.672
+ },
+ "condenseur-5": {
+  "f": "f4e84e138b52.mp3",
+  "d": 5.04
+ },
+ "condenseur-6": {
+  "f": "a8ca2d5083c8.mp3",
+  "d": 6.696
+ },
+ "detendeur-0": {
+  "f": "cbf257f667db.mp3",
+  "d": 4.728
+ },
+ "detendeur-1": {
+  "f": "397b67f3db05.mp3",
+  "d": 4.992
+ },
+ "detendeur-2": {
+  "f": "ca734f0f9c80.mp3",
+  "d": 4.464
+ },
+ "detendeur-3": {
+  "f": "3e304b6f6b89.mp3",
+  "d": 7.608
+ },
+ "detendeur-4": {
+  "f": "941b6118e351.mp3",
+  "d": 6.384
+ },
+ "detendeur-5": {
+  "f": "6bfa12e85505.mp3",
+  "d": 3.144
+ },
+ "energies-0": {
+  "f": "f33e470c2257.mp3",
+  "d": 5.76
+ },
+ "energies-1": {
+  "f": "c814bb12096c.mp3",
+  "d": 6.528
+ },
+ "energies-2": {
+  "f": "df6a13a1bdec.mp3",
+  "d": 4.536
+ },
+ "energies-3": {
+  "f": "4f18c6958f51.mp3",
+  "d": 6.696
+ },
+ "energies-4": {
+  "f": "e0e4938cdcda.mp3",
+  "d": 8.208
+ },
+ "parallele-0": {
+  "f": "b305c8f604dd.mp3",
+  "d": 3.144
+ },
+ "parallele-1": {
+  "f": "e7c75d9c54a8.mp3",
+  "d": 7.656
+ },
+ "parallele-2": {
+  "f": "5f4ff8d481d9.mp3",
+  "d": 5.856
+ },
+ "parallele-3": {
+  "f": "edf6ff0cf555.mp3",
+  "d": 7.512
+ },
+ "parallele-4": {
+  "f": "6416f71c8874.mp3",
+  "d": 6.168
+ },
+ "releves-0": {
+  "f": "4e7e1c29cbcf.mp3",
+  "d": 4.536
+ },
+ "releves-1": {
+  "f": "9db9920fd4db.mp3",
+  "d": 10.2
+ },
+ "releves-2": {
+  "f": "5c245216bf7c.mp3",
+  "d": 5.016
+ },
+ "releves-3": {
+  "f": "b8686556d155.mp3",
+  "d": 6.936
+ },
+ "resume-0": {
+  "f": "f5bc159b1eb0.mp3",
+  "d": 7.848
+ },
+ "resume-1": {
+  "f": "93f59098aaa1.mp3",
+  "d": 4.584
+ }
+}

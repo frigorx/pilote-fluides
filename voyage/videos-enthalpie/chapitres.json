@@ -1,0 +1,92 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "Mon voyage",
+  "sous": "sur la croix et sur le diagramme",
+  "duree": 40,
+  "video": "chapitre-00-mon-voyage.mp4",
+  "affiche": "chapitre-00-mon-voyage.jpg"
+ },
+ {
+  "id": "carte",
+  "num": "1",
+  "titre": "Lire la carte",
+  "sous": "les axes et la cloche",
+  "duree": 37,
+  "video": "chapitre-01-lire-la-carte.mp4",
+  "affiche": "chapitre-01-lire-la-carte.jpg"
+ },
+ {
+  "id": "evaporateur",
+  "num": "2",
+  "titre": "L'évaporateur",
+  "sous": "la branche du bas",
+  "duree": 45,
+  "video": "chapitre-02-l-evaporateur.mp4",
+  "affiche": "chapitre-02-l-evaporateur.jpg"
+ },
+ {
+  "id": "compresseur",
+  "num": "3",
+  "titre": "Le compresseur",
+  "sous": "la branche de droite",
+  "duree": 35,
+  "video": "chapitre-03-le-compresseur.mp4",
+  "affiche": "chapitre-03-le-compresseur.jpg"
+ },
+ {
+  "id": "condenseur",
+  "num": "4",
+  "titre": "Le condenseur",
+  "sous": "la branche du haut",
+  "duree": 45,
+  "video": "chapitre-04-le-condenseur.mp4",
+  "affiche": "chapitre-04-le-condenseur.jpg"
+ },
+ {
+  "id": "detendeur",
+  "num": "5",
+  "titre": "Le détendeur",
+  "sous": "la branche de gauche",
+  "duree": 36,
+  "video": "chapitre-05-le-detendeur.mp4",
+  "affiche": "chapitre-05-le-detendeur.jpg"
+ },
+ {
+  "id": "energies",
+  "num": "6",
+  "titre": "Lire les énergies",
+  "sous": "les écarts d'enthalpie",
+  "duree": 36,
+  "video": "chapitre-06-lire-les-energies.mp4",
+  "affiche": "chapitre-06-lire-les-energies.jpg"
+ },
+ {
+  "id": "parallele",
+  "num": "7",
+  "titre": "La croix et le diagramme",
+  "sous": "les mêmes quatre côtés",
+  "duree": 35,
+  "video": "chapitre-07-la-croix-et-le-diagramme.mp4",
+  "affiche": "chapitre-07-la-croix-et-le-diagramme.jpg"
+ },
+ {
+  "id": "releves",
+  "num": "8",
+  "titre": "Du manomètre au diagramme",
+  "sous": "placer un point",
+  "duree": 31,
+  "video": "chapitre-08-du-manometre-au-diagramme.mp4",
+  "affiche": "chapitre-08-du-manometre-au-diagramme.jpg"
+ },
+ {
+  "id": "resume",
+  "num": "",
+  "titre": "Le tour en quatre côtés",
+  "sous": "l'essentiel à retenir",
+  "duree": 25,
+  "video": "chapitre-09-le-tour-en-quatre-cotes.mp4",
+  "affiche": "chapitre-09-le-tour-en-quatre-cotes.jpg"
+ }
+]
