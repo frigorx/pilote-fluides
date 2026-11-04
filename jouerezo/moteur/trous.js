@@ -40,11 +40,49 @@
 
   const maj1 = t => t.charAt(0).toUpperCase() + t.slice(1); /* une explication commence par une majuscule */
 
+  /* lot J2 (04/11/2026) : dessin de situation, animation explicative, voix (champs facultatifs du thème : situation, animation, narration) */
+  const synth = window.speechSynthesis;
+  const voixDispo = !!(synth && window.SpeechSynthesisUtterance);
+  let parle = false, majBouton = null, ecouteVitesse = false;
+
+  function debut(theme) {
+    const fig = (cl, o, w, h) => '<figure class="' + cl + '"><img src="' + JR.esc(o.src) + '"' + (cl === "situation" ? ' loading="lazy"' : "") + ' width="' + w + '" height="' + h + '" alt="' + JR.esc(o.alt) + '"><figcaption>' + JR.esc(o.legende) + '</figcaption></figure>';
+    return (theme.narration && voixDispo ? '<div class="voix"><button type="button" class="btn sec" data-ecouter="trous" aria-pressed="false">▶ Écouter</button></div>' : "") +
+      (theme.situation ? fig("situation", theme.situation, 1536, 1024) : "") +
+      (theme.animation ? fig("explication", theme.animation, 800, 500) : "");
+  }
+  function voixFr() {
+    const fr = synth.getVoices().filter(v => v.lang.toLowerCase().indexOf("fr") === 0);
+    return fr.filter(v => /natural|neural|online/i.test(v.name))[0] ||
+      fr.filter(v => /google/i.test(v.name))[0] ||
+      fr.filter(v => v.lang.toLowerCase() === "fr-fr")[0] || fr[0] || null;
+  }
+  function taire() { parle = false; if (voixDispo) synth.cancel(); if (majBouton) majBouton(); }
+  function brancherVoix(theme, main) {
+    const b = main.querySelector('[data-ecouter="trous"]');
+    if (!b || !theme.narration) return;
+    synth.getVoices();
+    majBouton = function () { b.textContent = parle ? "■ Arrêter" : "▶ Écouter"; b.setAttribute("aria-pressed", String(parle)); };
+    b.addEventListener("click", function () {
+      if (parle) { taire(); return; }
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(theme.narration);
+      u.lang = "fr-FR"; const v = voixFr(); if (v) u.voice = v;
+      u.rate = window.PILOTE_VOIX_REGLAGE ? window.PILOTE_VOIX_REGLAGE.vitesse() : 0.95;
+      u.onend = u.onerror = function () { parle = false; majBouton(); };
+      parle = true; majBouton();
+      synth.speak(u);
+    });
+    if (!ecouteVitesse) { ecouteVitesse = true; document.addEventListener("pilotevoix:vitesse", taire); }
+    if (window.PILOTE_VOIX_REGLAGE) window.PILOTE_VOIX_REGLAGE.monter(b.parentNode);
+  }
+
   function demarrer(theme, main) {
     const file = JR.tirer(theme.textes, theme.parPartie || PAR_PARTIE);
     let i = 0, bons = 0, total = 0;
 
     function texte() {
+      taire(); /* la voix s'arrête quand on change de texte */
       const t = file[i], a = analyser(t.texte);
       const n = a.trous.length;
       const jetons = JR.melanger(a.trous.map(x => x.rep).concat(t.leurres || [])).map((mot, k) => ({ id: k, mot: mot, place: null }));
@@ -54,6 +92,7 @@
       main.innerHTML =
         '<h1>' + JR.esc(theme.emoji + " " + theme.nom) + '</h1>' +
         '<p class="chapo">' + JR.esc(window.JR_JEUX.trous.regle) + '</p>' +
+        (i === 0 ? debut(theme) : "") +
         '<div class="bord"><span>Texte ' + (i + 1) + ' / ' + file.length + '</span><span>Posés : <span id="t-poses">0</span> / ' + n + '</span></div>' +
         '<div class="jauge"><span style="width:' + Math.round(i / file.length * 100) + '%"></span></div>' +
         '<section class="carte"><h2 class="titre-texte">' + JR.esc(t.titre) + '</h2>' +
@@ -67,6 +106,8 @@
         jetons.map(j => '<button type="button" class="mot-reserve" data-id="' + j.id + '">' + JR.esc(j.mot) + '</button>').join("") + '</div>' +
         '<div class="actions"><button type="button" class="btn" id="t-verif" disabled>Vérifier</button></div>' +
         '<div id="t-retour"></div></section>';
+
+      if (i === 0 && voixDispo) brancherVoix(theme, main);
 
       const btnTrou = [...main.querySelectorAll(".trou")];
       const btnMot = jetons.map(j => main.querySelector('.mot-reserve[data-id="' + j.id + '"]'));

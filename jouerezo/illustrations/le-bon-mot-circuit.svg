@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="t d">
+<title id="t">Les quatre mots du circuit</title>
+<desc id="d">Un circuit frigorifique en boucle. Un point orange suit le fluide : il passe par le compresseur en bas à droite, monte vers le condenseur en haut, descend vers le détendeur à gauche, puis traverse l'évaporateur dans la chambre froide en bas. Chaque organe se colore en orange et reçoit son nom au passage du fluide : compresseur, condenseur, détendeur, évaporateur. Le haut du circuit est marqué haute pression, le bas basse pression.</desc>
+<style>
+text{font-family:"Segoe UI",system-ui,Arial,sans-serif;fill:#1b3a63}
+.nom{font-size:28px;font-weight:700}
+.pr{font-size:20px;font-weight:600}
+.tube{fill:none;stroke:#1b3a63;stroke-width:6;stroke-linejoin:round;stroke-linecap:round}
+.halo{fill:#ff6b35;opacity:.3}
+#point{fill:none;stroke:#ff6b35;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.1 99.9;animation:pt 13s linear infinite}
+@keyframes pt{0%{stroke-dashoffset:0;opacity:1}80%{stroke-dashoffset:-100;opacity:1}80.5%,100%{stroke-dashoffset:-100;opacity:0}}
+@keyframes tourne{to{transform:rotate(360deg)}}
+#pales{transform-box:fill-box;transform-origin:center;animation:tourne 1.4s linear infinite}
+.nom,.halo{opacity:0}
+@keyframes nm-comp{0%{opacity:1}96%{opacity:1}99%,100%{opacity:0}}
+@keyframes ha-comp{0%{opacity:1}12.61%{opacity:1}14.61%{opacity:.3}96%{opacity:.3}99%,100%{opacity:0}}
+#nm-comp{animation:nm-comp 13s linear infinite}#ha-comp{animation:ha-comp 13s linear infinite}
+@keyframes nm-cond{0%,13.19%{opacity:0}14.19%{opacity:1}96%{opacity:1}99%,100%{opacity:0}}
+@keyframes ha-cond{0%,13.19%{opacity:0}14.19%{opacity:1}34.22%{opacity:1}36.22%{opacity:.3}96%{opacity:.3}99%,100%{opacity:0}}
+#nm-cond{animation:nm-cond 13s linear infinite}#ha-cond{animation:ha-cond 13s linear infinite}
+@keyframes nm-detd{0%,41.5%{opacity:0}42.5%{opacity:1}96%{opacity:1}99%,100%{opacity:0}}
+@keyframes ha-detd{0%,41.5%{opacity:0}42.5%{opacity:1}46.44%{opacity:1}48.44%{opacity:.3}96%{opacity:.3}99%,100%{opacity:0}}
+#nm-detd{animation:nm-detd 13s linear infinite}#ha-detd{animation:ha-detd 13s linear infinite}
+@keyframes nm-evap{0%,50.57%{opacity:0}51.57%{opacity:1}96%{opacity:1}99%,100%{opacity:0}}
+@keyframes ha-evap{0%,50.57%{opacity:0}51.57%{opacity:1}74.09%{opacity:1}76.09%{opacity:.3}96%{opacity:.3}99%,100%{opacity:0}}
+#nm-evap{animation:nm-evap 13s linear infinite}#ha-evap{animation:ha-evap 13s linear infinite}
+@media (prefers-reduced-motion: reduce){
+*{animation:none !important;transition:none !important}
+.nom{opacity:1 !important}.halo{opacity:.3 !important}#point{display:none}
+}
+</style>
+<rect width="800" height="500" fill="#fffdf8"/>
+<!-- chambre froide -->
+<rect x="150" y="345" width="340" height="110" rx="8" fill="#e6f0fa" stroke="#1b3a63" stroke-width="3" stroke-dasharray="10 6"/>
+<rect id="ha-evap" class="halo" x="150" y="345" width="340" height="110" rx="8"/>
+<!-- halos -->
+<circle id="ha-comp" class="halo" cx="620" cy="400" r="54"/>
+<rect id="ha-cond" class="halo" x="268" y="104" width="264" height="72" rx="14"/>
+<circle id="ha-detd" class="halo" cx="130" cy="250" r="36"/>
+<!-- tube -->
+<polyline class="tube" points="620,400 620,358 620,140 520,140 505,112 475,168 445,112 415,168 385,112 355,168 325,112 295,168 280,140 130,140 130,400 160,400 160,400 179.4,370 218.1,430 256.9,370 295.6,430 334.4,370 373.1,430 411.9,370 450.6,430 470,400 578,400 620,400"/>
+<!-- ventilateur du condenseur -->
+<g><circle cx="340" cy="62" r="28" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+<g id="pales"><path d="M340 62 Q328 40 340 36 Q352 40 340 62Z M340 62 Q362 50 366 62 Q362 74 340 62Z M340 62 Q352 84 340 88 Q328 84 340 62Z M340 62 Q318 74 314 62 Q318 50 340 62Z" fill="#1b3a63"/></g>
+<circle cx="340" cy="62" r="4" fill="#fff"/></g>
+<!-- détendeur : petite vanne -->
+<g><polygon points="112,232 148,232 130,250" fill="#fff" stroke="#1b3a63" stroke-width="4" stroke-linejoin="round"/><polygon points="112,268 148,268 130,250" fill="#fff" stroke="#1b3a63" stroke-width="4" stroke-linejoin="round"/><line x1="130" y1="250" x2="158" y2="250" stroke="#1b3a63" stroke-width="4"/></g>
+<!-- compresseur : rond avec piston -->
+<g><circle cx="620" cy="400" r="42" fill="#fff" stroke="#1b3a63" stroke-width="5"/>
+<rect x="634" y="378" width="20" height="30" rx="3" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+<rect x="636" y="394" width="16" height="8" fill="#1b3a63"/>
+<line x1="644" y1="402" x2="610" y2="424" stroke="#1b3a63" stroke-width="4"/>
+<circle cx="606" cy="425" r="7" fill="#fff" stroke="#1b3a63" stroke-width="3"/></g>
+<!-- flèches de circulation -->
+<polygon points="-9,-9 9,0 -9,9" transform="translate(620 250) rotate(-90)" fill="#1b3a63"/><polygon points="-9,-9 9,0 -9,9" transform="translate(210 140) rotate(180)" fill="#1b3a63"/><polygon points="-9,-9 9,0 -9,9" transform="translate(130 200) rotate(90)" fill="#1b3a63"/><polygon points="-9,-9 9,0 -9,9" transform="translate(130 330) rotate(90)" fill="#1b3a63"/><polygon points="-9,-9 9,0 -9,9" transform="translate(525 400) rotate(0)" fill="#1b3a63"/>
+<!-- point du fluide -->
+<polyline id="point" pathLength="100" points="620,400 620,358 620,140 520,140 505,112 475,168 445,112 415,168 385,112 355,168 325,112 295,168 280,140 130,140 130,400 160,400 160,400 179.4,370 218.1,430 256.9,370 295.6,430 334.4,370 373.1,430 411.9,370 450.6,430 470,400 578,400 620,400"/>
+<!-- noms -->
+<text id="nm-comp" class="nom" x="620" y="488" text-anchor="middle">compresseur</text>
+<text id="nm-cond" class="nom" x="392" y="86">condenseur</text>
+<text id="nm-detd" class="nom" x="178" y="262">détendeur</text>
+<text id="nm-evap" class="nom" x="150" y="488">évaporateur</text>
+<text class="pr" x="640" y="250">haute pression</text>
+<text class="pr" x="150" y="330">basse pression</text>
+</svg>
