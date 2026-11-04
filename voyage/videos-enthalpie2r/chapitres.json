@@ -1,0 +1,83 @@
+[
+ {
+  "id": "intro",
+  "num": "",
+  "titre": "À vous de tracer",
+  "sous": "mon cycle sur votre feuille",
+  "duree": 30,
+  "video": "chapitre-00-a-vous-de-tracer.mp4",
+  "affiche": "chapitre-00-a-vous-de-tracer.jpg"
+ },
+ {
+  "id": "releves",
+  "num": "1",
+  "titre": "Noter les relevés",
+  "sous": "deux pressions, trois températures",
+  "duree": 39,
+  "video": "chapitre-01-noter-les-releves.mp4",
+  "affiche": "chapitre-01-noter-les-releves.jpg"
+ },
+ {
+  "id": "absolu",
+  "num": "2",
+  "titre": "Passer en absolu",
+  "sous": "lire les saturations",
+  "duree": 51,
+  "video": "chapitre-02-passer-en-absolu.mp4",
+  "affiche": "chapitre-02-passer-en-absolu.jpg"
+ },
+ {
+  "id": "points",
+  "num": "3",
+  "titre": "Placer les points",
+  "sous": "1, 2 et 3",
+  "duree": 49,
+  "video": "chapitre-03-placer-les-points.mp4",
+  "affiche": "chapitre-03-placer-les-points.jpg"
+ },
+ {
+  "id": "point4",
+  "num": "4",
+  "titre": "Placer le point 4",
+  "sous": "sous la cloche",
+  "duree": 32,
+  "video": "chapitre-04-placer-le-point-4.mp4",
+  "affiche": "chapitre-04-placer-le-point-4.jpg"
+ },
+ {
+  "id": "trace",
+  "num": "5",
+  "titre": "Tracer le cycle",
+  "sous": "relier les points dans l'ordre",
+  "duree": 34,
+  "video": "chapitre-05-tracer-le-cycle.mp4",
+  "affiche": "chapitre-05-tracer-le-cycle.jpg"
+ },
+ {
+  "id": "calculs",
+  "num": "6",
+  "titre": "Les calculs",
+  "sous": "écarts, COP, taux de compression",
+  "duree": 57,
+  "video": "chapitre-06-les-calculs.mp4",
+  "affiche": "chapitre-06-les-calculs.jpg"
+ },
+ {
+  "id": "debit",
+  "num": "7",
+  "titre": "Le débit et les puissances",
+  "sous": "du kilo à l'installation",
+  "duree": 44,
+  "video": "chapitre-07-le-debit-et-les-puissances.mp4",
+  "affiche": "chapitre-07-le-debit-et-les-puissances.jpg"
+ },
+ {
+  "id": "fin",
+  "num": "",
+  "titre": "Votre feuille est complète",
+  "sous": "même méthode, autre fluide",
+  "duree": 29,
+  "video": "chapitre-08-votre-feuille-est-complete.mp4",
+  "affiche": "chapitre-08-votre-feuille-est-complete.jpg"
+ }
+]

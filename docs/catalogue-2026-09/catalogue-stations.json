@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 596,
+  "total": 598,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -7410,6 +7410,18 @@
     },
     {
       "reseau": "inerWeb Studio",
+      "id": "voyage/enthalpie2r",
+      "titre": "Voyage dans tous ses états, tracer le diagramme enthalpique depuis les relevés",
+      "ligne": null,
+      "resume": "À vous de tracer le cycle d'un climatiseur au R32 sur un diagramme enthalpique vierge, à partir de cinq relevés : la consigne, une pause pour faire, puis la correction. Le film en entier ou épisode par épisode, et la feuille A4 à imprimer.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/enthalpie2r.html",
+      "chemin": "voyage/enthalpie2r.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
       "id": "voyage/glissement",
       "titre": "Voyage dans tous ses états, le glissement de température raconté par une molécule",
       "ligne": null,
@@ -7515,6 +7527,18 @@
       "missionProf": null,
       "url": "https://inerweb.fr/voyage/module-enthalpie2.html",
       "chemin": "voyage/module-enthalpie2.html"
+    },
+    {
+      "reseau": "inerWeb Studio",
+      "id": "voyage/module-enthalpie2r",
+      "titre": "Voyage dans tous ses états, le diagramme enthalpique, niveau 2 : je réalise — module de formation",
+      "ligne": null,
+      "resume": "Tracer soi-même le cycle d'un climatiseur au R32 sur le diagramme enthalpique, à partir de cinq relevés : consigne, pause, correction, étape par étape.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/voyage/module-enthalpie2r.html",
+      "chemin": "voyage/module-enthalpie2r.html"
     },
     {
       "reseau": "inerWeb Studio",
@@ -7850,7 +7874,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7862,7 +7886,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7874,7 +7898,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7886,7 +7910,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7898,7 +7922,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7910,7 +7934,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

@@ -59,6 +59,7 @@ const INDEXEES = [
   { fichier: "voyage/eau-glacee.html", url: "https://inerweb.fr/voyage/eau-glacee.html" },
   { fichier: "voyage/enthalpie.html", url: "https://inerweb.fr/voyage/enthalpie.html" },
   { fichier: "voyage/enthalpie2.html", url: "https://inerweb.fr/voyage/enthalpie2.html" },
+  { fichier: "voyage/enthalpie2r.html", url: "https://inerweb.fr/voyage/enthalpie2r.html" },
   // Le tour de main (07/10/2026) : le plan des gestes et le jeu de poste des pressostats.
   // Les fiches élève n'y sont pas : elles attendent la relecture de F. Henninot (hors ligne).
   { fichier: "tour-de-main/index.html", url: "https://inerweb.fr/tour-de-main/" },
