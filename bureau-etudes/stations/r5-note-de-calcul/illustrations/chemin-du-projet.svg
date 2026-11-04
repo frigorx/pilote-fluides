@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160.8" width="180mm" height="160.8mm" role="img">
+<title>Le chemin du projet : chaque ligne verse ses résultats dans la note</title>
+<rect width="180" height="160.8" fill="#fff"/>
+<g><text x="90" y="88" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 88)">inerWeb, by inerweb.fr</text><text x="40" y="48" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 48)">inerWeb, by inerweb.fr</text><text x="140" y="132" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 132)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Six lignes de stations, une note de calcul</text>
+<rect x="134.00" y="18.00" width="42.00" height="108.00" fill="#ffe3d6" stroke="#ff6b35" stroke-width="0.6"/>
+<text x="155.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">La note</text>
+<text x="155.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">de calcul</text>
+<text x="155.00" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">synthèse</text>
+<text x="155.00" y="87.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">en tête</text>
+<text x="6.00" y="20.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dossier et climat</text>
+<rect x="6.00" y="23.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="11.25" y="28.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">E1</text>
+<rect x="18.00" y="23.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="23.25" y="28.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">E2</text>
+<line x1="31.00" y1="27.00" x2="133.00" y2="27.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="27.00" x2="130.89" y2="28.15" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="27.00" x2="130.89" y2="25.85" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="39.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Thermique</text>
+<rect x="6.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="11.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T1</text>
+<rect x="18.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="23.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T2</text>
+<rect x="30.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="35.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T3</text>
+<rect x="42.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="47.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T4</text>
+<rect x="54.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="59.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T5</text>
+<rect x="66.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="71.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T6</text>
+<rect x="78.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="83.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T7</text>
+<rect x="90.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="95.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T8</text>
+<rect x="102.00" y="42.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="107.25" y="47.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">T9</text>
+<line x1="115.00" y1="46.00" x2="133.00" y2="46.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="46.00" x2="130.89" y2="47.15" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="46.00" x2="130.89" y2="44.85" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Air</text>
+<rect x="6.00" y="61.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="11.25" y="66.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A1</text>
+<rect x="18.00" y="61.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="23.25" y="66.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A2</text>
+<rect x="30.00" y="61.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="35.25" y="66.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A3</text>
+<rect x="42.00" y="61.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="47.25" y="66.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A4</text>
+<rect x="54.00" y="61.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="59.25" y="66.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A5</text>
+<rect x="66.00" y="61.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="71.25" y="66.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">A6</text>
+<line x1="79.00" y1="65.00" x2="133.00" y2="65.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="65.00" x2="130.89" y2="66.15" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="65.00" x2="130.89" y2="63.85" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="77.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Eau</text>
+<rect x="6.00" y="80.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="11.25" y="85.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H1</text>
+<rect x="18.00" y="80.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="23.25" y="85.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H2</text>
+<rect x="30.00" y="80.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="35.25" y="85.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H3</text>
+<rect x="42.00" y="80.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="47.25" y="85.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H4</text>
+<rect x="54.00" y="80.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="59.25" y="85.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H5</text>
+<rect x="66.00" y="80.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="71.25" y="85.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">H6</text>
+<line x1="79.00" y1="84.00" x2="133.00" y2="84.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="84.00" x2="130.89" y2="85.15" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="84.00" x2="130.89" y2="82.85" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="96.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Froid</text>
+<rect x="6.00" y="99.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="11.25" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">F1</text>
+<rect x="18.00" y="99.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="23.25" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">F2</text>
+<rect x="30.00" y="99.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="35.25" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">F3</text>
+<rect x="42.00" y="99.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="47.25" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">F4</text>
+<rect x="54.00" y="99.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="59.25" y="104.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">F5</text>
+<line x1="67.00" y1="103.00" x2="133.00" y2="103.00" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="103.00" x2="130.89" y2="104.15" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="133.00" y1="103.00" x2="130.89" y2="101.85" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Régulation et énergie</text>
+<rect x="6.00" y="118.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="11.25" y="123.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">R1</text>
+<rect x="18.00" y="118.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="23.25" y="123.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">R2</text>
+<rect x="30.00" y="118.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="35.25" y="123.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">R3</text>
+<rect x="42.00" y="118.00" width="10.50" height="8.00" fill="#eef3f9" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="47.25" y="123.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">R4</text>
+<line x1="55.00" y1="122.00" x2="133.00" y2="122.00" stroke="#ff6b35" stroke-width="0.5"/>
+<line x1="133.00" y1="122.00" x2="130.89" y2="123.15" stroke="#ff6b35" stroke-width="0.5"/>
+<line x1="133.00" y1="122.00" x2="130.89" y2="120.85" stroke="#ff6b35" stroke-width="0.5"/>
+<text x="6.00" y="136.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Chaque valeur garde le nom de sa station et sa source.</text>
+<text x="6.00" y="143.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">La note relit les feuilles : elle ne refait pas les calculs.</text>
+<line x1="4.00" y1="150.30" x2="176.00" y2="150.30" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="156.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="156.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Plan du réseau</text>
+</svg>

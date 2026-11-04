@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 112" width="180mm" height="112mm" role="img">
+<title>Ce que le glycol change, comparé à l’eau</title>
+<rect width="180" height="112" fill="#fff"/>
+<g><text x="90" y="62" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 62)">inerWeb, by inerweb.fr</text><text x="40" y="34" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 34)">inerWeb, by inerweb.fr</text><text x="140" y="92" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 92)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="21.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Débit, même</text>
+<text x="4.00" y="28.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#1b3a63">puissance</text>
+<rect x="64.00" y="16.00" width="43.00" height="5.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="109.00" y="20.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">100 %</text>
+<rect x="64.00" y="23.00" width="45.79" height="5.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="111.79" y="27.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">106,5 %</text>
+<text x="4.00" y="43.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Pertes de charge,</text>
+<text x="4.00" y="50.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#1b3a63">même débit</text>
+<rect x="64.00" y="38.00" width="43.00" height="5.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="109.00" y="42.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">100 %</text>
+<rect x="64.00" y="45.00" width="55.90" height="5.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="121.90" y="49.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">130 %</text>
+<text x="4.00" y="65.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dilatation,</text>
+<text x="4.00" y="72.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#1b3a63">de 10 à 40 °C</text>
+<rect x="64.00" y="60.00" width="43.00" height="5.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="109.00" y="64.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">0,75 %</text>
+<rect x="64.00" y="67.00" width="82.56" height="5.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="148.56" y="71.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1,44 %</text>
+<line x1="64.00" y1="13.00" x2="64.00" y2="76.00" stroke="#000" stroke-width="0.5"/>
+<rect x="6.00" y="80.40" width="10.00" height="4.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="19.00" y="83.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Eau pure</text>
+<rect x="56.00" y="80.40" width="10.00" height="4.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="69.00" y="83.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Eau glycolée, MPG 30 %</text>
+<line x1="4.00" y1="101.50" x2="176.00" y2="101.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">CoolProp et données de l’exercice</text>
+</svg>

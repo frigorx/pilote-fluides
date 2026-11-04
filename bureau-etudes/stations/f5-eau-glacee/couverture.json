@@ -1,0 +1,57 @@
+{
+  "cle": "f5-eau-glacee",
+  "code": "BE-F5",
+  "titre": "L’eau glacée",
+  "ligne": "Frigorifique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 20,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 29,
+    "chapitre": 6
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (savoir-faire « Calculer un volume anti courts-cycles », 01-TP-TECVC.md ligne 662 ; « La sélection de la production d'eau glacée et des équipements périphériques associés garantissent la couverture des puissances mises en jeu », ligne 648)"
+      },
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (déduit, CADRAGE.md C.3 : climatisation à détente indirecte, réseaux de fluide de refroidissement)"
+      }
+    ],
+    "apport_propre": "Apport propre du réseau : l'eau glycolée (débit, pertes de charge et dilatation corrigés), CADRAGE.md, C.9, ligne F5.",
+    "bts_fed": {
+      "option": "B, puis A",
+      "competences": [
+        {
+          "code": "C3-3",
+          "libelle": "Dimensionner tout ou partie du système en privilégiant les outils informatiques"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B4-1",
+          "libelle": "Réseaux hydrauliques (dont circulateurs et pompes) (inventaire des référentiels, C-referentiels.md ligne 192, p. 68 du référentiel)"
+        },
+        {
+          "code": "B5",
+          "libelle": "Technologie du froid : B5-1 à B5-13, dont le stockage de froid (inventaire des référentiels, C-referentiels.md ligne 193, p. 69 du référentiel ; à confirmer : sous-code non relu)"
+        }
+      ],
+      "taches": [
+        {
+          "code": "T4",
+          "libelle": "Concevoir et définir l'installation (CADRAGE.md C.9, ligne F5)"
+        }
+      ]
+    }
+  }
+}

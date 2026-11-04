@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 113.8" width="180mm" height="113.8mm" role="img">
+<title>Les plages de fonctionnement en froid</title>
+<rect width="180" height="113.8" fill="#fff"/>
+<g><text x="90" y="63" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 63)">inerWeb, by inerweb.fr</text><text x="40" y="34" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 34)">inerWeb, by inerweb.fr</text><text x="140" y="93" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 93)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="27.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">UE 26</text>
+<text x="49.85" y="21.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">de −10 à +46 °C</text>
+<rect x="49.85" y="24.00" width="110.28" height="5.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="6.00" y="44.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">UE 28</text>
+<text x="49.85" y="38.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">de −10 à +40 °C</text>
+<rect x="49.85" y="41.00" width="98.46" height="5.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="1.4 0.8"/>
+<text x="6.00" y="61.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">UE 32</text>
+<text x="49.85" y="55.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">de −10 à +46 °C</text>
+<rect x="49.85" y="58.00" width="110.28" height="5.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="49.85" y1="65.00" x2="49.85" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="49.85" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">−10</text>
+<line x1="69.54" y1="65.00" x2="69.54" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="69.54" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<line x1="89.23" y1="65.00" x2="89.23" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="89.23" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10</text>
+<line x1="108.92" y1="65.00" x2="108.92" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="108.92" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">20</text>
+<line x1="128.62" y1="65.00" x2="128.62" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="128.62" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">30</text>
+<line x1="148.31" y1="65.00" x2="148.31" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="148.31" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40</text>
+<line x1="168.00" y1="65.00" x2="168.00" y2="66.40" stroke="#000" stroke-width="0.35"/>
+<text x="168.00" y="71.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">50</text>
+<line x1="40.00" y1="65.00" x2="168.00" y2="65.00" stroke="#000" stroke-width="0.5"/>
+<text x="104.00" y="78.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Température extérieure (°C)</text>
+<line x1="128.62" y1="23.00" x2="128.62" y2="30.00" stroke="#1b3a63" stroke-width="0.6" stroke-dasharray="1 1"/>
+<line x1="154.22" y1="23.00" x2="154.22" y2="30.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="128.62" y1="40.00" x2="128.62" y2="47.00" stroke="#1b3a63" stroke-width="0.6" stroke-dasharray="1 1"/>
+<line x1="154.22" y1="40.00" x2="154.22" y2="47.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="128.62" y1="57.00" x2="128.62" y2="64.00" stroke="#1b3a63" stroke-width="0.6" stroke-dasharray="1 1"/>
+<line x1="154.22" y1="57.00" x2="154.22" y2="64.00" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="14.00" y1="82.00" x2="14.00" y2="87.00" stroke="#1b3a63" stroke-width="0.6" stroke-dasharray="1 1"/>
+<text x="24.00" y="86.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Conditions de calcul : 30 °C dehors</text>
+<line x1="14.00" y1="89.40" x2="14.00" y2="94.40" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="24.00" y="93.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Pointe d’été à tenir : 43 °C</text>
+<line x1="4.00" y1="103.30" x2="176.00" y2="103.30" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="109.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="109.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Catalogue de l’exercice</text>
+</svg>

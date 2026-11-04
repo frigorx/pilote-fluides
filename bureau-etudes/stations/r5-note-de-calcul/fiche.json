@@ -1,0 +1,54 @@
+{
+  "numero": 34,
+  "titre": "Assembler la note de calcul du projet",
+  "ligne": "Régulation et énergie",
+  "code": "BE-R5",
+  "quand": "En fin de projet, quand les six lignes sont faites. Vous rassemblez les résultats de vos feuilles dans le gabarit de la note de calcul, avec leurs sources, vous vérifiez les cohérences entre lignes, et vous écrivez la synthèse d’une page. Un collègue relit votre note avec la grille.",
+  "methode": [
+    "Le gabarit : synthèse d’une page en tête ; puis l’objet, les données avec leur source, les hypothèses et la méthode, les résultats, les choix justifiés.",
+    "Une section par ligne : dossier et climat, thermique, air, eau, froid, régulation et énergie.",
+    "Chaque valeur : sa grandeur, son unité, sa station, sa source. Une donnée de l’exercice s’écrit comme telle. Une valeur sans source reste hors de la note.",
+    "La note recopie la feuille de la station, elle ne recalcule pas ; elle vérifie les sommes.",
+    "Les cohérences : puissance de T5 et machine de T9 ; froid de T8 et machine de F3 ; débit de H1 et pompe de H4 ; loi d’eau de R1 et régime de H1 ; énergie de R4 et machine de T9.",
+    "Un écart se signale à la station qui l’a produit ; on ne retouche pas une ligne pour qu’elle tombe juste.",
+    "La synthèse dit les choix et leurs raisons, chaque choix renvoie à sa section.",
+    "Relecture croisée : source citée, unité, cohérence entre lignes ; on signale, on ne réécrit pas."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Valeurs de la note",
+      "valeur": "celles des feuilles",
+      "source": "Les stations du réseau, chacune avec sa source primaire"
+    },
+    {
+      "grandeur": "Tolérance de la vérification",
+      "valeur": "± 3 %",
+      "source": "Règle de la station : la note recopie, l’écart vient d’une erreur de lecture"
+    },
+    {
+      "grandeur": "Rubriques du gabarit",
+      "valeur": "six, plus la synthèse",
+      "source": "Gabarit des stations A2 et H5, complété par la station R5"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple : H = 115,23 W/K (T5), PAC 3,5 (T9), régime 50/40 (H1), loi d’eau 50 °C à −7 °C (R1).",
+    "lignes": [
+      "Somme : 64,86 + 12,97 + 37,4 = 115,23 W/K : la ligne tombe juste.",
+      "Cohérence T5 et T9 : 2630 + 366 = 2996 W à −7 °C.",
+      "Cohérence R1 et H1 : départ 50 °C à la base, régime 50/40."
+    ],
+    "resultat": "Chaque ligne relue a sa station ; les lignes qui doivent se répondre se répondent."
+  },
+  "pieges": [
+    "Une valeur sans source, ou une donnée de l’exercice écrite comme une valeur de norme.",
+    "Un résultat recalculé au lieu d’être recopié, ou une ligne retouchée pour tomber juste.",
+    "La CTA du bâtiment de bureaux dans la note de la maison, ou le multisplit de la maison dans celle des bureaux."
+  ],
+  "sources": [
+    "Les feuilles des stations E1 à R4 et leurs sources primaires.",
+    "Gabarit de note : stations A2 et H5 ; correspondance : fiche « Écrire une note de calcul » du réseau.",
+    "Données de l’exercice : listées dans chaque station, à faire valider."
+  ],
+  "calculette": null
+}

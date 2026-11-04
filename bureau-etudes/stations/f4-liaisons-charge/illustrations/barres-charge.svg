@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 110" width="180mm" height="110mm" role="img">
+<title>Ce que couvre la charge d’usine, ce qui se pèse</title>
+<rect width="180" height="110" fill="#fff"/>
+<g><text x="90" y="61" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 61)">inerWeb, by inerweb.fr</text><text x="40" y="33" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 33)">inerWeb, by inerweb.fr</text><text x="140" y="90" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 90)">inerWeb, by inerweb.fr</text></g>
+<text x="78.72" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">Longueur incluse : 7 m</text>
+<text x="161.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#ff6b35">Au-delà : 1,3 m</text>
+<rect x="18.00" y="18.00" width="121.45" height="10.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="139.45" y="18.00" width="22.55" height="10.00" fill="#ff6b35" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="18.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="139.45" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7 m</text>
+<text x="162.00" y="35.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">8,3 m</text>
+<text x="87.98" y="52.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">Charge d’usine : 0,900 kg</text>
+<text x="162.00" y="52.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#ff6b35">+ 26 g</text>
+<rect x="18.00" y="56.00" width="139.96" height="10.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<rect x="157.96" y="56.00" width="4.04" height="10.00" fill="#ff6b35" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="90.00" y="80.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Additionnelle : 1,3 m × 20 g/m = 26 g</text>
+<text x="90.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Totale : 0,900 + 0,026 = 0,926 kg</text>
+<line x1="4.00" y1="99.50" x2="176.00" y2="99.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Liaison et charge, UE 36</text>
+</svg>

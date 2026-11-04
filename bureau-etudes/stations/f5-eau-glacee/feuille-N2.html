@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="../../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feuille réponse BE-F5 niveau 2</title>
+<style>
+@page { size: A4; margin: 15mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: #000; }
+body { font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; line-height: 1.2; }
+h1, h2, h3 { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; margin: 0; }
+h1 { font-size: 18pt; }
+h2 { font-size: 16pt; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; }
+.page { position: relative; width: 180mm; height: 266mm; overflow: hidden; display: flex; flex-direction: column; gap: 4mm; margin: 0 auto; }
+.page:not(:last-child) { break-after: page; page-break-after: always; }
+.page > * { position: relative; z-index: 1; }
+.page > .fil { position: absolute; z-index: 0; opacity: .07; pointer-events: none; display: block; }
+.fil.c { width: 130mm; height: 23.1mm; left: 25mm; top: 120mm; transform: rotate(-10deg); }
+.fil.h { width: 125mm; height: 22.2mm; right: -22mm; top: 40mm; transform: rotate(-10deg); }
+.fil.b { width: 125mm; height: 22.2mm; left: -14mm; bottom: 12mm; transform: rotate(-10deg); }
+.entete { display: flex; justify-content: space-between; align-items: center; gap: 6mm; }
+.entete svg.logo { width: 90mm; height: 13.2mm; flex: none; }
+.entete .qui { text-align: right; }
+.entete .qui p { margin: 0; font-weight: bold; }
+.identite { display: flex; gap: 4mm; }
+.identite div { flex: 1; border-bottom: 0.3mm solid #000; height: 11mm; padding-top: 0.5mm; }
+.identite div:nth-child(3) { flex: .8; }
+.commande { border: 0.3mm solid #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 2mm 3mm; }
+.commande h2 { border: 0; padding: 0; margin-bottom: 1mm; }
+.commande p { margin: 0 0 0.8mm 0; }
+.commande b { color: #1b3a63; }
+.zone { display: flex; flex-direction: column; min-height: 0; }
+.zone > h2 { margin-bottom: 2mm; }
+.grow { flex: 1 1 0; min-height: 0; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.grow table { height: 100%; }
+th, td { border: 0.3mm solid #000; padding: 1mm 1.5mm; vertical-align: top; overflow-wrap: anywhere; font-size: 14pt; }
+th { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; text-align: left; border-bottom: 0.8mm solid #1b3a63; vertical-align: middle; }
+.lignes { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; }
+.lignes .l { flex: 1 1 0; border-bottom: 0.3mm dotted #000; padding-top: 0.5mm; }
+.ratio { border: 0.3mm dashed #1b3a63; border-left: 2.5mm solid #1b3a63; padding: 2mm 3mm; display: flex; flex-direction: column; min-height: 0; }
+.ratio h2 { border: 0; padding: 0; margin-bottom: 1mm; }
+.ratio p { margin: 0 0 1mm 0; }
+.resultat { border: 0.5mm double #1b3a63; padding: 2mm 3mm; display: flex; flex-direction: column; min-height: 0; }
+.resultat h2 { border: 0; padding: 0; margin-bottom: 1mm; }
+.resultat td { height: 13mm; vertical-align: middle; }
+.v-entete { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 0.4mm solid #1b3a63; padding-bottom: 1mm; }
+.v-entete span { font-family: "Trebuchet MS", Trebuchet, sans-serif; color: #1b3a63; font-weight: bold; }
+@media screen { body { background: #e9edf2; padding: 8mm 0; } .page { background: #fff; margin-bottom: 8mm; outline: 1px solid #b8c2cf; } }
+@media print { html, body { background: #fff !important; color: #000 !important; } }
+
+.page { height: auto; min-height: 0; overflow: visible; gap: 1.2mm; }
+.page > .filbox { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.filbox .fil { position: absolute; opacity: .07; display: block; }
+th, td { padding: 0.4mm 1.2mm; }
+td { height: 8.2mm; }
+th { height: 8mm; }
+h3 { font-size: 14pt; margin: 0 0 0.8mm; }
+tr.ex td { color: #666; font-style: italic; }
+tr.tot td { font-weight: bold; }
+.zone > h2, .ratio h2 { margin-bottom: 1mm; }
+.commande { padding: 1.2mm 3mm; }
+.commande p { margin: 0 0 0.3mm 0; }
+.resultat td { height: 8mm; }
+.deux { display: flex; gap: 4mm; }
+.deux > .zone { flex: 1 1 0; }
+.lignes { display: block; flex: none; }
+.lignes .l { height: auto; min-height: 8mm; }
+.petit { margin: 0 0 1mm; }
+.e { font-weight: bold; color: #1b3a63; }
+.entete h1 { font-size: 16pt; }
+#recto td { height: 10.5mm; }table.bilan td { height: 8.6mm; }
+table.note td { height: 13mm; }
+.page-prof td { height: auto; }
+</style>
+<style id="qr-feuille">
+/* Zone cliquable unique (règle de Franck du 03/11/2026) : le QR et l'adresse écrite sont dans le même <a href>.
+   Le SVG porte sa zone de silence (4 modules blancs) : 33 modules (37 pour une clé de 5 signes) à 0.36 mm le module, soit 11.9 mm.
+   Le trait de titre ne court plus sous le QR : il s'arrête avant le bloc (le titre est dans .qr-t), si bien que la
+   zone de silence peut déborder de 1.5 mm dans l'espace vide au-dessus du titre et de 1 mm dans sa marge basse
+   sans que rien ne la touche, et le titre ne grandit que d'environ 1 mm. */
+.qr-ex { display: flex; align-items: center; gap: 1.5mm; background: #fff; font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; font-weight: normal; line-height: 1.1; color: #1b3a63; text-decoration: underline; }
+.qr-ex .qr-svg { flex: none; display: block; }   /* taille en mm posée par qrSvg (0.36 mm le module) */
+.qr-ex .qr-adr { display: flex; flex-direction: column; white-space: nowrap; }
+.qr-h2 { display: flex; justify-content: space-between; align-items: flex-end; gap: 3mm; }
+.qr-h2 .qr-t { flex: 1; min-width: 0; }
+.zone > .qr-h2:not(.qr-gare) { border-bottom: 0; padding-bottom: 0; }
+.zone > .qr-h2:not(.qr-gare) .qr-t { border-bottom: 0.4mm solid #1b3a63; padding-bottom: 0.5mm; }
+.qr-h2:not(.qr-gare) .qr-ex { flex: none; margin: -1.5mm 0 -1mm; }
+.qr-h2.qr-gare .qr-ex { margin: 0 0 -2.5mm; }   /* gares : un exercice peut ouvrir une page, rien au-dessus du titre (rogné) */
+</style>
+<script defer src="../../../moteur/retour-accueil.js?v=93c85e5976" data-reseau-href="bureau-etudes/index.html" data-reseau-nom="📐 inerWeb BE"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="filigrane" viewBox="0 0 900 160">
+      <text fill="#1b3a63" font-size="80" x="14" y="92">&#10052;&#65039;</text>
+      <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="78" font-weight="bold" x="120" y="88">iner</text>
+      <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="78" x="262" y="88">Web</text>
+      <line stroke="#e8914a" stroke-width="5" x1="120" x2="440" y1="102" y2="102"/>
+      <rect fill="#e8914a" x="450" y="12" rx="9" ry="9" width="430" height="60"/>
+      <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="bold" x="665" y="54" text-anchor="middle">Bureau d'études</text>
+      <text fill="#1b3a63" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="42" x="120" y="148">by inerweb.fr</text>
+    </symbol>
+  </defs>
+</svg>
+<style>.schema-feuille svg { width: 180mm; height: auto; display: block; } table.calc td { height: 9.4mm; } .donnees td { height: auto; } .donnees { margin-top: 0.6mm; } .l { min-height: 8.4mm; }</style><style>table.note td { height: 9mm; } #recto .l { min-height: 7.6mm; } #verso .l { min-height: 8mm; }</style><section class="page" id="recto"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div><div class="entete"><svg class="logo" viewBox="0 0 680 100" role="img" aria-label="inerWeb Bureau d’études"><text fill="#1b3a63" font-size="58" x="4" y="62">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="62" font-weight="bold" x="70" y="62">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="62" x="196" y="62">Web</text><line stroke="#e8914a" stroke-width="4" x1="70" x2="340" y1="74" y2="74"/><rect fill="#e8914a" x="350" y="8" rx="8" ry="8" width="320" height="54"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="41" font-weight="bold" x="510" y="48" text-anchor="middle">Bureau d’études</text></svg><div class="qui"><h1>BE-F5, L’eau glacée</h1><p>Niveau 2, autonome</p></div></div><div class="identite"><div>Nom :</div><div>Prénom :</div><div>Date :</div></div>
+<div class="commande"><h2>Commande du bureau d’études</h2><p><span class="e">À :</span> technicien d’études, niveau autonome. <span class="e">Objet :</span> le circuit d’eau glacée du bâtiment entier : schéma, débit, ballon, pompe, vase, note. Données de l’exercice, CoolProp et station F3 ; régime 7/12 (Δθ = 5 K) :</p><table class="donnees"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody>
+<tr><td>Besoin du bâtiment 9 900 W ; groupe GE 112, un étage, 11 123 W au réel, glycol (F3)</td><td>Glycol 30 % à 9,5 °C : ρ = 1 028,2 kg/m³, cp = 3,829 kJ/(kg.K) (CoolProp)</td></tr>
+<tr><td>Tubes 55 L ; ventilo-convecteurs de 1,5 L (BUR 1, REU 2, PLA 3, ACC 1) ; batterie de la CTA 4 L ; groupe 5 L</td><td>Marche 5 min, écart admis 2 K ; ballons (L) : 100, 150, 200, 300, 400, 500, 750, 1 000</td></tr>
+</tbody></table></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 1. Le schéma de principe</span><a class="qr-ex" href="https://inerweb.fr/b/?f5-4"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?f5-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM14 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM14 5h2v1h-2zM17 5h1v1h-1zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h2v1h-2zM15 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h2v1h-2zM16 7h2v1h-2zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h6v1h-6zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h4v1h-4zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h5v1h-5zM18 11h1v1h-1zM20 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM14 12h1v1h-1zM16 12h3v1h-3zM22 12h5v1h-5zM5 13h1v1h-1zM9 13h1v1h-1zM11 13h2v1h-2zM14 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM4 14h1v1h-1zM6 14h2v1h-2zM10 14h1v1h-1zM16 14h2v1h-2zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM6 15h1v1h-1zM8 15h1v1h-1zM12 15h2v1h-2zM24 15h1v1h-1zM28 15h1v1h-1zM4 16h2v1h-2zM7 16h2v1h-2zM10 16h8v1h-8zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM4 17h6v1h-6zM12 17h3v1h-3zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM6 18h2v1h-2zM9 18h3v1h-3zM16 18h10v1h-10zM27 18h2v1h-2zM4 19h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM11 19h4v1h-4zM18 19h7v1h-7zM28 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM10 20h2v1h-2zM13 20h1v1h-1zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h2v1h-2zM15 21h6v1h-6zM24 21h2v1h-2zM4 22h7v1h-7zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h2v1h-2zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h1v1h-1zM14 24h11v1h-11zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h2v1h-2zM15 25h2v1h-2zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h1v1h-1zM17 26h2v1h-2zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM14 27h1v1h-1zM20 27h1v1h-1zM22 27h4v1h-4zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h2v1h-2zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>f5-4</span></span></a></h2><p class="petit">Trait plein : départ ; tirets : retour. Nommez les organes (1) à (7).</p>
+<div class="schema-feuille"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 70" width="180mm" height="70mm" role="img">
+<title>Le circuit d’eau glacée du bâtiment, à compléter</title>
+<rect width="180" height="70" fill="#fff"/>
+<g><text x="90" y="39" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 39)">inerWeb, by inerweb.fr</text><text x="40" y="21" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 21)">inerWeb, by inerweb.fr</text><text x="140" y="57" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 57)">inerWeb, by inerweb.fr</text></g>
+<text x="4.00" y="7.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dehors, façade nord</text>
+<text x="62.00" y="7.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Dans le bâtiment</text>
+<line x1="56.00" y1="10.00" x2="56.00" y2="68.00" stroke="#777" stroke-width="1.4" stroke-dasharray="3 1.6"/>
+<svg x="3.00" y="34.00" width="44.00" height="22.00" viewBox="-63.0 -43.0 118.0 58.0" overflow="visible"><g><rect x="-46" y="-22" width="4" height="4" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-2.28" x2="47.05" y2="-2.28" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="-49" y="-24" width="3" height="8" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-11.06" x2="47.05" y2="-11.06" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-49" y1="-21" x2="-47" y2="-21" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-6.67" x2="47.05" y2="-6.67" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="2.1" x2="47.05" y2="2.1" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-49" y1="-19" x2="-47" y2="-19" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-39" y="5.39" width="3" height="3.29" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-17.63" x2="47.05" y2="-17.63" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-15.44" x2="47.05" y2="-15.44" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-19.83" x2="47.05" y2="-19.83" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-24.21" x2="47.05" y2="-24.21" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<rect x="-42.05" y="-34.08" width="89.09" height="39.48" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-0.09" x2="47.05" y2="-0.09" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-8.86" x2="47.05" y2="-8.86" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-34.08" x2="-1" y2="4.3" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-1" y1="-28.6" x2="47.05" y2="-28.6" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-13.25" x2="47.05" y2="-13.25" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-4.48" x2="47.05" y2="-4.48" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-26.41" x2="47.05" y2="-26.41" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-22" x2="47.05" y2="-22" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<line x1="-1" y1="-30.79" x2="47.05" y2="-30.79" stroke="#1b3a63" stroke-width="0.4" fill="none"/>
+<polyline points="7,-34.08 11,-37.37 37,-37.37 41,-34.08 40,-34.08" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="40" y="5.39" width="3" height="3.29" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-38" y="-28.6" width="11" height="6.58" rx="0" ry="0" stroke="#1b3a63" stroke-width="0.4" fill="red"/>
+<rect x="-46" y="-2" width="4" height="4" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<rect x="-49" y="-4" width="3" height="8" rx="0" ry="0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-49" y1="-1" x2="-47" y2="-1" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<line x1="-49" y1="1" x2="-47" y2="1" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<polyline points="-39,-15 -32,-15 -36,-16 -36,-14 -33,-15" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<polyline points="-31,0 -38,0 -33,-1 -33,1 -38,0" stroke="#1b3a63" stroke-width="1" fill="none"/>
+<polyline points="-36,-24 -32,-27 -32,-23 -28,-27" stroke="blue" stroke-width="1" fill="none"/>
+<line x1="-30" y1="-25" x2="-28" y2="-27" stroke="blue" stroke-width="1" fill="none"/></g></svg>
+<text x="20.00" y="63.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">(1)</text>
+<polyline points="25.00,34.00 25.00,26.00 172.00,26.00" fill="none" stroke="#3f74b5" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="72.00" y1="26.00" x2="72.00" y2="21.00" stroke="#3f74b5" stroke-width="0.8"/>
+<svg x="66.00" y="10.00" width="12.00" height="11.00" viewBox="0 0 110 100" overflow="visible"><g><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 67h29l14-18 14 18h29"/>
+    <path d="M55 49V24M43 24h24"/>
+    <path d="M47 20l16-8M47 12l16 8"/>
+    <path d="M55 67v24"/>
+  </g>
+  <circle cx="12" cy="67" r="3" fill="#1b3a63"/>
+  <circle cx="98" cy="67" r="3" fill="#1b3a63"/>
+  <circle cx="55" cy="92" r="3" fill="#c9451a"/></g></svg>
+<text x="80.00" y="18.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">(2)</text>
+<line x1="94.00" y1="26.00" x2="94.00" y2="22.00" stroke="#3f74b5" stroke-width="0.8"/>
+<svg x="89.00" y="9.00" width="10.00" height="13.00" viewBox="0 0 120 150" overflow="visible"><g><g fill="#fffdf8" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 26c0-14 64-14 64 0v86c0 16-64 16-64 0z"/>
+    <path d="M28 72q32-18 64 0" fill="none" stroke-dasharray="8 6"/>
+    <path d="M60 124v18" fill="none"/>
+  </g>
+  <circle cx="60" cy="143" r="4" fill="#1b3a63"/></g></svg>
+<text x="100.50" y="18.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">(3)</text>
+<svg x="110.00" y="19.50" width="11.00" height="13.00" viewBox="-34.0 -34.0 60 70" overflow="visible"><g><ellipse cx="0.0" cy="0.0" rx="20.0" ry="20.0" fill="none" stroke="#1b3a63" stroke-width="1"/>
+<polygon points="0.24,-19.93 -2.25,-15 2.25,-15 4.16,-19.58 4.16,-19.46" fill="#1b3a63" stroke="#1b3a63" stroke-width="1"/>
+<line x1="0" y1="20" x2="0" y2="24.5" stroke="#1b3a63" stroke-width="1"/>
+<line x1="0" y1="-20.4" x2="0" y2="-24.5" stroke="#1b3a63" stroke-width="1"/>
+<line x1="-20.5" y1="0" x2="-24.5" y2="0" stroke="#1b3a63" stroke-width="1"/>
+<circle cx="0" cy="-24" r="1.5" fill="#1b3a63"/>
+<circle cx="0" cy="24" r="1.5" fill="#1b3a63"/>
+<circle cx="-24" cy="0" r="1.5" fill="#1b3a63"/></g></svg>
+<text x="115.50" y="17.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">(4)</text>
+<line x1="122.00" y1="26.00" x2="127.00" y2="26.00" stroke="#3f74b5" stroke-width="0.9"/>
+<line x1="127.00" y1="26.00" x2="125.07" y2="27.05" stroke="#3f74b5" stroke-width="0.9"/>
+<line x1="127.00" y1="26.00" x2="125.07" y2="24.95" stroke="#3f74b5" stroke-width="0.9"/>
+<line x1="133.00" y1="26.00" x2="133.00" y2="36.00" stroke="#3f74b5" stroke-width="0.8"/>
+<line x1="139.00" y1="48.00" x2="139.00" y2="62.00" stroke="#3f74b5" stroke-width="0.8" stroke-dasharray="2.2 1.2"/>
+<svg x="129.00" y="36.00" width="14.00" height="12.00" viewBox="-33.00 -31.00 74.00 54.00" overflow="visible"><g><line x1="11.5" y1="7" x2="11.5" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="4" y1="7" x2="4" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="-3.5" y1="7" x2="-3.5" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="19" y1="7" x2="19" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <rect x="-16" y="-24" width="40" height="40" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="-22" y1="10" x2="30" y2="10" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="-11" y1="7" x2="-11" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <ellipse cx="3.50" cy="-9.00" rx="12.50" ry="12.00" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="-9" y2="-9" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="7" y1="-20" x2="16" y2="-9" stroke="#1b3a63" stroke-width="1"/>
+  <polygon points="3.4,-10.24 5.2,-11.62 5.2,-15.78 3.4,-17.86 1.6,-15.78 1.6,-12.32 3.4,-10.24 6.1,-9.54 9.7,-6.77 9.7,-4.69 7,-5.39 4.3,-7.46" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <polyline points="3.4,-10.24 0.7,-9.54 -2,-6.08 -2,-4 0.7,-4.69 3.4,-7.46 3.4,-9.54" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <circle cx="-22" cy="10" r="1.5" fill="#1b3a63"/>
+  <circle cx="29" cy="10" r="1.5" fill="#1b3a63"/></g></svg>
+<line x1="152.00" y1="26.00" x2="152.00" y2="36.00" stroke="#3f74b5" stroke-width="0.8"/>
+<line x1="158.00" y1="48.00" x2="158.00" y2="62.00" stroke="#3f74b5" stroke-width="0.8" stroke-dasharray="2.2 1.2"/>
+<svg x="148.00" y="36.00" width="14.00" height="12.00" viewBox="-33.00 -31.00 74.00 54.00" overflow="visible"><g><line x1="11.5" y1="7" x2="11.5" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="4" y1="7" x2="4" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="-3.5" y1="7" x2="-3.5" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="19" y1="7" x2="19" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <rect x="-16" y="-24" width="40" height="40" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="-22" y1="10" x2="30" y2="10" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="-11" y1="7" x2="-11" y2="13" stroke="#1b3a63" stroke-width="1"/>
+  <ellipse cx="3.50" cy="-9.00" rx="12.50" ry="12.00" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="0" y1="-20" x2="-9" y2="-9" stroke="#1b3a63" stroke-width="1"/>
+  <line x1="7" y1="-20" x2="16" y2="-9" stroke="#1b3a63" stroke-width="1"/>
+  <polygon points="3.4,-10.24 5.2,-11.62 5.2,-15.78 3.4,-17.86 1.6,-15.78 1.6,-12.32 3.4,-10.24 6.1,-9.54 9.7,-6.77 9.7,-4.69 7,-5.39 4.3,-7.46" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <polyline points="3.4,-10.24 0.7,-9.54 -2,-6.08 -2,-4 0.7,-4.69 3.4,-7.46 3.4,-9.54" fill="none" stroke="#1b3a63" stroke-width="1"/>
+  <circle cx="-22" cy="10" r="1.5" fill="#1b3a63"/>
+  <circle cx="29" cy="10" r="1.5" fill="#1b3a63"/></g></svg>
+<text x="148.00" y="57.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">(5)</text>
+<line x1="172.00" y1="26.00" x2="172.00" y2="32.00" stroke="#3f74b5" stroke-width="0.8"/>
+<line x1="172.00" y1="40.00" x2="172.00" y2="62.00" stroke="#3f74b5" stroke-width="0.8" stroke-dasharray="2.2 1.2"/>
+<rect x="165.00" y="32.00" width="14.00" height="8.00" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="165.00" y1="40.00" x2="179.00" y2="32.00" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="170.00" y="52.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">(7)</text>
+<polyline points="172.00,62.00 80.00,62.00 80.00,54.50" fill="none" stroke="#3f74b5" stroke-width="1.1" stroke-dasharray="2.2 1.2" stroke-linejoin="round"/>
+<svg x="64.00" y="38.00" width="16.00" height="24.00" viewBox="0 0 120 180" overflow="visible"><g><g fill="#fffdf8" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 22c0-14 62-14 62 0v136c0 14-62 14-62 0z"/>
+    <path d="M29 58H9M29 124H9M91 58h20M91 124h20"/>
+    <path d="M42 45h36M42 139h36" stroke="#84b7ec"/>
+  </g>
+  <circle cx="9" cy="58" r="3" fill="#c9451a"/>
+  <circle cx="111" cy="58" r="3" fill="#c9451a"/>
+  <circle cx="9" cy="124" r="3" fill="#3d7fca"/>
+  <circle cx="111" cy="124" r="3" fill="#3d7fca"/></g></svg>
+<polyline points="65.20,45.70 61.00,45.70 61.00,47.00 47.00,47.00" fill="none" stroke="#3f74b5" stroke-width="1.1" stroke-dasharray="2.2 1.2" stroke-linejoin="round"/>
+<text x="86.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">(6)</text>
+</svg>
+</div>
+<div class="lignes"><div class="l">Organes (1) à (7) :</div><div class="l">Ce que fait le ballon (6), raccordé par deux piquages seulement :</div></div></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 2. Le débit d’eau glycolée</span><a class="qr-ex" href="https://inerweb.fr/b/?f5-5"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?f5-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM14 4h2v1h-2zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM14 5h1v1h-1zM17 5h1v1h-1zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM14 7h4v1h-4zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h2v1h-2zM15 8h3v1h-3zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h3v1h-3zM17 9h3v1h-3zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h2v1h-2zM15 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM15 12h1v1h-1zM17 12h2v1h-2zM22 12h5v1h-5zM4 13h3v1h-3zM8 13h2v1h-2zM12 13h5v1h-5zM23 13h1v1h-1zM27 13h1v1h-1zM4 14h1v1h-1zM8 14h4v1h-4zM17 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM5 15h1v1h-1zM7 15h3v1h-3zM11 15h4v1h-4zM24 15h1v1h-1zM28 15h1v1h-1zM9 16h2v1h-2zM12 16h3v1h-3zM16 16h2v1h-2zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM4 17h1v1h-1zM8 17h2v1h-2zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM6 18h3v1h-3zM10 18h2v1h-2zM13 18h2v1h-2zM17 18h9v1h-9zM27 18h2v1h-2zM4 19h1v1h-1zM6 19h1v1h-1zM18 19h7v1h-7zM28 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h4v1h-4zM13 20h2v1h-2zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h1v1h-1zM14 21h7v1h-7zM24 21h2v1h-2zM4 22h7v1h-7zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h2v1h-2zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h1v1h-1zM14 24h11v1h-11zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h1v1h-1zM15 25h2v1h-2zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h3v1h-3zM17 26h2v1h-2zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM14 27h1v1h-1zM20 27h1v1h-1zM22 27h4v1h-4zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h1v1h-1zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>f5-5</span></span></a></h2>
+<div class="lignes"><div class="l"></div><div class="l"></div></div></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 3. Le volume tampon</span><a class="qr-ex" href="https://inerweb.fr/b/?f5-6"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?f5-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM12 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM16 5h3v1h-3zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM17 6h1v1h-1zM19 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM14 7h2v1h-2zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM14 8h1v1h-1zM16 8h5v1h-5zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM14 9h3v1h-3zM18 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h4v1h-4zM19 11h2v1h-2zM4 12h1v1h-1zM6 12h2v1h-2zM9 12h3v1h-3zM13 12h1v1h-1zM15 12h2v1h-2zM18 12h3v1h-3zM22 12h1v1h-1zM25 12h1v1h-1zM27 12h2v1h-2zM5 13h1v1h-1zM7 13h2v1h-2zM11 13h2v1h-2zM14 13h2v1h-2zM23 13h1v1h-1zM27 13h1v1h-1zM4 14h1v1h-1zM7 14h2v1h-2zM10 14h3v1h-3zM15 14h4v1h-4zM22 14h3v1h-3zM4 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM13 15h1v1h-1zM15 15h3v1h-3zM19 15h2v1h-2zM22 15h5v1h-5zM5 16h4v1h-4zM10 16h3v1h-3zM15 16h3v1h-3zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM6 17h2v1h-2zM9 17h1v1h-1zM13 17h1v1h-1zM15 17h1v1h-1zM17 17h8v1h-8zM28 17h1v1h-1zM5 18h1v1h-1zM8 18h1v1h-1zM10 18h2v1h-2zM18 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM4 19h1v1h-1zM6 19h1v1h-1zM9 19h1v1h-1zM11 19h1v1h-1zM13 19h3v1h-3zM18 19h7v1h-7zM28 19h1v1h-1zM7 20h1v1h-1zM10 20h1v1h-1zM13 20h6v1h-6zM20 20h9v1h-9zM12 21h1v1h-1zM15 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM28 21h1v1h-1zM4 22h7v1h-7zM12 22h1v1h-1zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h5v1h-5zM19 23h2v1h-2zM24 23h1v1h-1zM27 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM13 24h3v1h-3zM18 24h1v1h-1zM20 24h6v1h-6zM28 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h1v1h-1zM14 25h3v1h-3zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h6v1h-6zM19 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h2v1h-2zM4 27h1v1h-1zM10 27h1v1h-1zM14 27h1v1h-1zM16 27h2v1h-2zM19 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM4 28h7v1h-7zM12 28h2v1h-2zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>f5-6</span></span></a></h2>
+<div class="lignes"><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div></div></div></section>
+<section class="page" id="verso"><div class="filbox"><svg class="fil c" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil h" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg><svg class="fil b" viewBox="0 0 900 160" aria-hidden="true"><use href="#filigrane"/></svg></div><div class="v-entete"><span>BE-F5, L’eau glacée, niveau 2</span><span>Nom :</span></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 4. La pompe sur sa courbe</span><a class="qr-ex" href="https://inerweb.fr/b/?f5-7"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?f5-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM15 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h2v1h-2zM17 5h1v1h-1zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h2v1h-2zM15 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h2v1h-2zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h2v1h-2zM15 8h1v1h-1zM17 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM15 9h5v1h-5zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM16 12h3v1h-3zM22 12h5v1h-5zM4 13h4v1h-4zM12 13h3v1h-3zM16 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM7 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM16 14h2v1h-2zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM6 15h1v1h-1zM8 15h1v1h-1zM11 15h1v1h-1zM15 15h1v1h-1zM24 15h1v1h-1zM28 15h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM9 16h2v1h-2zM12 16h1v1h-1zM16 16h2v1h-2zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM4 17h4v1h-4zM13 17h2v1h-2zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM7 18h4v1h-4zM17 18h9v1h-9zM27 18h2v1h-2zM4 19h1v1h-1zM6 19h1v1h-1zM8 19h2v1h-2zM12 19h1v1h-1zM15 19h1v1h-1zM18 19h7v1h-7zM28 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h1v1h-1zM15 21h6v1h-6zM24 21h2v1h-2zM4 22h7v1h-7zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM14 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h1v1h-1zM15 24h10v1h-10zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h5v1h-5zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h2v1h-2zM17 26h2v1h-2zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM13 27h1v1h-1zM20 27h1v1h-1zM22 27h4v1h-4zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h1v1h-1zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>f5-7</span></span></a></h2><p class="petit">Réseau à l’eau : 4,5 m à 2,0 m³/h ; au glycol, pertes × 1,3. Pompe : H = H0 − 0,8 × Q². K au millième, 5 final vers le haut ; Q au centième ; H et P au dixième.</p>
+<div class="schema-feuille"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" width="180mm" height="80mm" role="img">
+<title>La pompe de l’exercice</title>
+<rect width="180" height="80" fill="#fff"/>
+
+<line x1="22.00" y1="12" x2="22.00" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="34.17" y1="12" x2="34.17" y2="62" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="46.33" y1="12" x2="46.33" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="58.50" y1="12" x2="58.50" y2="62" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="70.67" y1="12" x2="70.67" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="82.83" y1="12" x2="82.83" y2="62" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="95.00" y1="12" x2="95.00" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="107.17" y1="12" x2="107.17" y2="62" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="119.33" y1="12" x2="119.33" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="131.50" y1="12" x2="131.50" y2="62" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="143.67" y1="12" x2="143.67" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="155.83" y1="12" x2="155.83" y2="62" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="168.00" y1="12" x2="168.00" y2="62" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="62.00" x2="168" y2="62.00" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="59.22" x2="168" y2="59.22" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="56.44" x2="168" y2="56.44" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="53.67" x2="168" y2="53.67" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="50.89" x2="168" y2="50.89" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="48.11" x2="168" y2="48.11" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="45.33" x2="168" y2="45.33" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="42.56" x2="168" y2="42.56" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="39.78" x2="168" y2="39.78" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="37.00" x2="168" y2="37.00" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="34.22" x2="168" y2="34.22" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="31.44" x2="168" y2="31.44" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="28.67" x2="168" y2="28.67" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="25.89" x2="168" y2="25.89" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="23.11" x2="168" y2="23.11" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="20.33" x2="168" y2="20.33" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="17.56" x2="168" y2="17.56" stroke="#c8ccd2" stroke-width="0.3"/>
+<line x1="22" y1="14.78" x2="168" y2="14.78" stroke="#c8ccd2" stroke-width="0.15"/>
+<line x1="22" y1="12.00" x2="168" y2="12.00" stroke="#c8ccd2" stroke-width="0.3"/>
+<rect x="22.00" y="12.00" width="146.00" height="50.00" fill="none" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="22.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="46.33" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,4</text>
+<text x="70.67" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,8</text>
+<text x="95.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,2</text>
+<text x="119.33" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,6</text>
+<text x="143.67" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2</text>
+<text x="168.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,4</text>
+<text x="169.80" y="58.14" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1</text>
+<text x="20.20" y="52.59" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">2</text>
+<text x="169.80" y="47.03" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3</text>
+<text x="20.20" y="41.48" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">4</text>
+<text x="169.80" y="35.92" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5</text>
+<text x="20.20" y="30.37" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">6</text>
+<text x="169.80" y="24.81" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">7</text>
+<text x="20.20" y="19.26" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">8</text>
+<text x="169.80" y="13.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">9</text>
+<text x="24.00" y="8.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">H (m)</text>
+<text x="168.00" y="74.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Q (m³/h)</text>
+<polyline points="22.00,42.56 23.22,42.56 24.43,42.56 25.65,42.57 26.87,42.58 28.08,42.60 29.30,42.62 30.52,42.64 31.73,42.67 32.95,42.70 34.17,42.73 35.38,42.77 36.60,42.81 37.82,42.86 39.03,42.90 40.25,42.96 41.47,43.01 42.68,43.07 43.90,43.13 45.12,43.20 46.33,43.27 47.55,43.34 48.77,43.42 49.98,43.50 51.20,43.58 52.42,43.67 53.63,43.76 54.85,43.85 56.07,43.95 57.28,44.05 58.50,44.16 59.72,44.26 60.93,44.38 62.15,44.49 63.37,44.61 64.58,44.73 65.80,44.86 67.02,44.99 68.23,45.12 69.45,45.26 70.67,45.40 71.88,45.54 73.10,45.69 74.32,45.84 75.53,46.00 76.75,46.16 77.97,46.32 79.18,46.48 80.40,46.65 81.62,46.82 82.83,47.00 84.05,47.18 85.27,47.36 86.48,47.55 87.70,47.74 88.92,47.93 90.13,48.13 91.35,48.33 92.57,48.54 93.78,48.74 95.00,48.96 96.22,49.17 97.43,49.39 98.65,49.61 99.87,49.84 101.08,50.07 102.30,50.30 103.52,50.54 104.73,50.78 105.95,51.02 107.17,51.27 108.38,51.52 109.60,51.77 110.82,52.03 112.03,52.29 113.25,52.56 114.47,52.82 115.68,53.10 116.90,53.37 118.12,53.65 119.33,53.93 120.55,54.22 121.77,54.51 122.98,54.80 124.20,55.10 125.42,55.40 126.63,55.70 127.85,56.01 129.07,56.32 130.28,56.64 131.50,56.96 132.72,57.28 133.93,57.60 135.15,57.93 136.37,58.26 137.58,58.60 138.80,58.94 140.02,59.28 141.23,59.63 142.45,59.98 143.67,60.33 144.88,60.69 146.10,61.05 147.32,61.42 148.53,61.78" fill="none" stroke="#1b3a63" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="30.30" y="50.22" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">vitesse 1</text>
+<polyline points="22.00,28.67 23.22,28.67 24.43,28.67 25.65,28.68 26.87,28.70 28.08,28.71 29.30,28.73 30.52,28.75 31.73,28.78 32.95,28.81 34.17,28.84 35.38,28.88 36.60,28.92 37.82,28.97 39.03,29.02 40.25,29.07 41.47,29.12 42.68,29.18 43.90,29.24 45.12,29.31 46.33,29.38 47.55,29.45 48.77,29.53 49.98,29.61 51.20,29.69 52.42,29.78 53.63,29.87 54.85,29.96 56.07,30.06 57.28,30.16 58.50,30.27 59.72,30.38 60.93,30.49 62.15,30.60 63.37,30.72 64.58,30.84 65.80,30.97 67.02,31.10 68.23,31.23 69.45,31.37 70.67,31.51 71.88,31.66 73.10,31.80 74.32,31.95 75.53,32.11 76.75,32.27 77.97,32.43 79.18,32.59 80.40,32.76 81.62,32.94 82.83,33.11 84.05,33.29 85.27,33.47 86.48,33.66 87.70,33.85 88.92,34.04 90.13,34.24 91.35,34.44 92.57,34.65 93.78,34.86 95.00,35.07 96.22,35.28 97.43,35.50 98.65,35.72 99.87,35.95 101.08,36.18 102.30,36.41 103.52,36.65 104.73,36.89 105.95,37.13 107.17,37.38 108.38,37.63 109.60,37.88 110.82,38.14 112.03,38.40 113.25,38.67 114.47,38.94 115.68,39.21 116.90,39.48 118.12,39.76 119.33,40.04 120.55,40.33 121.77,40.62 122.98,40.91 124.20,41.21 125.42,41.51 126.63,41.82 127.85,42.12 129.07,42.43 130.28,42.75 131.50,43.07 132.72,43.39 133.93,43.71 135.15,44.04 136.37,44.38 137.58,44.71 138.80,45.05 140.02,45.39 141.23,45.74 142.45,46.09 143.67,46.44 144.88,46.80 146.10,47.16 147.32,47.53 148.53,47.90 149.75,48.27 150.97,48.64 152.18,49.02 153.40,49.40 154.62,49.79 155.83,50.18 157.05,50.57 158.27,50.97 159.48,51.37 160.70,51.77 161.92,52.18 163.13,52.59 164.35,53.00 165.57,53.42 166.78,53.84 168.00,54.27" fill="none" stroke="#1b3a63" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="30.30" y="36.33" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">vitesse 2</text>
+<polyline points="22.00,14.78 23.22,14.78 24.43,14.78 25.65,14.79 26.87,14.81 28.08,14.82 29.30,14.84 30.52,14.86 31.73,14.89 32.95,14.92 34.17,14.96 35.38,14.99 36.60,15.03 37.82,15.08 39.03,15.13 40.25,15.18 41.47,15.23 42.68,15.29 43.90,15.35 45.12,15.42 46.33,15.49 47.55,15.56 48.77,15.64 49.98,15.72 51.20,15.80 52.42,15.89 53.63,15.98 54.85,16.07 56.07,16.17 57.28,16.27 58.50,16.38 59.72,16.49 60.93,16.60 62.15,16.71 63.37,16.83 64.58,16.96 65.80,17.08 67.02,17.21 68.23,17.34 69.45,17.48 70.67,17.62 71.88,17.77 73.10,17.91 74.32,18.06 75.53,18.22 76.75,18.38 77.97,18.54 79.18,18.70 80.40,18.87 81.62,19.05 82.83,19.22 84.05,19.40 85.27,19.58 86.48,19.77 87.70,19.96 88.92,20.16 90.13,20.35 91.35,20.55 92.57,20.76 93.78,20.97 95.00,21.18 96.22,21.39 97.43,21.61 98.65,21.83 99.87,22.06 101.08,22.29 102.30,22.52 103.52,22.76 104.73,23.00 105.95,23.24 107.17,23.49 108.38,23.74 109.60,23.99 110.82,24.25 112.03,24.51 113.25,24.78 114.47,25.05 115.68,25.32 116.90,25.59 118.12,25.87 119.33,26.16 120.55,26.44 121.77,26.73 122.98,27.02 124.20,27.32 125.42,27.62 126.63,27.93 127.85,28.23 129.07,28.54 130.28,28.86 131.50,29.18 132.72,29.50 133.93,29.82 135.15,30.15 136.37,30.49 137.58,30.82 138.80,31.16 140.02,31.50 141.23,31.85 142.45,32.20 143.67,32.56 144.88,32.91 146.10,33.27 147.32,33.64 148.53,34.01 149.75,34.38 150.97,34.75 152.18,35.13 153.40,35.51 154.62,35.90 155.83,36.29 157.05,36.68 158.27,37.08 159.48,37.48 160.70,37.88 161.92,38.29 163.13,38.70 164.35,39.11 165.57,39.53 166.78,39.95 168.00,40.38" fill="none" stroke="#1b3a63" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="30.30" y="22.44" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">vitesse 3</text>
+</svg>
+</div>
+<table class="donnees"><colgroup><col style="width:34%"><col style="width:22%"><col style="width:22%"><col style="width:22%"></colgroup><thead><tr><th>Vitesse</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>H0 (m)</td><td>3,5</td><td>6,0</td><td>8,5</td></tr><tr><td>P absorbée (W)</td><td>20 + 15 × Q</td><td>35 + 25 × Q</td><td>55 + 35 × Q</td></tr></tbody></table>
+<div class="lignes"><div class="l"></div><div class="l"></div><div class="l"></div></div></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 5. Le vase</span><a class="qr-ex" href="https://inerweb.fr/b/?f5-8"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?f5-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM14 5h2v1h-2zM17 5h1v1h-1zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h2v1h-2zM16 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h3v1h-3zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h6v1h-6zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h2v1h-2zM15 9h5v1h-5zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h1v1h-1zM14 11h1v1h-1zM16 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM15 12h4v1h-4zM22 12h5v1h-5zM4 13h3v1h-3zM12 13h2v1h-2zM15 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM6 14h2v1h-2zM10 14h2v1h-2zM15 14h3v1h-3zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM4 15h1v1h-1zM6 15h1v1h-1zM9 15h1v1h-1zM11 15h3v1h-3zM15 15h1v1h-1zM24 15h1v1h-1zM28 15h1v1h-1zM5 16h1v1h-1zM7 16h4v1h-4zM12 16h1v1h-1zM14 16h1v1h-1zM16 16h2v1h-2zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM4 17h3v1h-3zM9 17h1v1h-1zM11 17h4v1h-4zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM6 18h3v1h-3zM10 18h1v1h-1zM13 18h2v1h-2zM16 18h10v1h-10zM27 18h2v1h-2zM4 19h1v1h-1zM8 19h2v1h-2zM11 19h2v1h-2zM14 19h1v1h-1zM16 19h1v1h-1zM18 19h7v1h-7zM28 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM13 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h2v1h-2zM15 21h6v1h-6zM24 21h2v1h-2zM4 22h7v1h-7zM14 22h1v1h-1zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h2v1h-2zM15 24h10v1h-10zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h1v1h-1zM15 25h2v1h-2zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h3v1h-3zM17 26h2v1h-2zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM13 27h2v1h-2zM20 27h1v1h-1zM22 27h4v1h-4zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h3v1h-3zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>f5-8</span></span></a></h2><p class="petit">Glycol à 10 et 40 °C : ρ = 1 028,0 et 1 013,4 kg/m³ ; point haut 2,90 m, vase 0,30 m ; soupape 3 bar ; vases (L) : 8, 12, 18, 25, 35, 50, 80. Gonflage au pas de 0,5 bar supérieur.</p>
+<div class="lignes"><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div></div></div>
+<div class="zone"><h2 class="qr-h2"><span class="qr-t">Exercice 6. La note de calcul</span><a class="qr-ex" href="https://inerweb.fr/b/?f5-9"><svg class="qr-svg" role="img" aria-label="QR vers https://inerweb.fr/b/?f5-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" style="width:11.88mm;height:11.88mm"><rect width="33" height="33" fill="#fff"/><path fill="#000" d="M4 4h7v1h-7zM13 4h1v1h-1zM15 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM22 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM14 5h1v1h-1zM17 5h1v1h-1zM19 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h3v1h-3zM28 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM15 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM24 7h3v1h-3zM28 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h2v1h-2zM15 8h3v1h-3zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h3v1h-3zM28 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM15 9h1v1h-1zM17 9h3v1h-3zM22 9h1v1h-1zM28 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h7v1h-7zM12 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM14 12h1v1h-1zM17 12h2v1h-2zM22 12h5v1h-5zM5 13h1v1h-1zM8 13h1v1h-1zM11 13h2v1h-2zM16 13h1v1h-1zM23 13h1v1h-1zM27 13h1v1h-1zM8 14h3v1h-3zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM27 14h2v1h-2zM4 15h2v1h-2zM7 15h1v1h-1zM12 15h4v1h-4zM24 15h1v1h-1zM28 15h1v1h-1zM4 16h1v1h-1zM10 16h3v1h-3zM14 16h4v1h-4zM19 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h3v1h-3zM4 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM4 18h1v1h-1zM6 18h2v1h-2zM9 18h2v1h-2zM17 18h9v1h-9zM27 18h2v1h-2zM4 19h1v1h-1zM9 19h1v1h-1zM13 19h1v1h-1zM16 19h1v1h-1zM18 19h7v1h-7zM28 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM9 20h2v1h-2zM13 20h3v1h-3zM17 20h1v1h-1zM19 20h6v1h-6zM26 20h1v1h-1zM12 21h1v1h-1zM14 21h7v1h-7zM24 21h2v1h-2zM4 22h7v1h-7zM14 22h1v1h-1zM17 22h2v1h-2zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h3v1h-3zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h2v1h-2zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h2v1h-2zM15 24h10v1h-10zM26 24h1v1h-1zM4 25h1v1h-1zM6 25h3v1h-3zM10 25h1v1h-1zM12 25h2v1h-2zM15 25h2v1h-2zM20 25h3v1h-3zM24 25h5v1h-5zM4 26h1v1h-1zM6 26h3v1h-3zM10 26h1v1h-1zM12 26h1v1h-1zM17 26h2v1h-2zM21 26h1v1h-1zM25 26h2v1h-2zM28 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM13 27h2v1h-2zM20 27h1v1h-1zM22 27h4v1h-4zM28 27h1v1h-1zM4 28h7v1h-7zM12 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM23 28h6v1h-6z"/></svg><span class="qr-adr"><span>inerweb.fr/b/?</span><span>f5-9</span></span></a></h2>
+<table class="note"><colgroup><col style="width:24%"><col style="width:76%"></colgroup><thead><tr><th>Rubrique</th><th>Contenu</th></tr></thead><tbody><tr><td>Objet, hypothèses</td><td></td></tr><tr><td>Résultats</td><td>Débit ……… m³/h ; à ajouter ……… L, ballon ……… L ; point lu ……… m³/h ; Vn ……… L, vase ……… L.</td></tr><tr><td>Pour la suite</td><td></td></tr></tbody></table></div></section>
+<script src="../_commun/remplissable.js" defer></script>
+</body>
+</html>

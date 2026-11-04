@@ -378,6 +378,7 @@ BE.station({
   },
   /*FOURCHETTES-FIN*/
 
+  suivante: { code: "BE-R5", titre: "La note de calcul", href: "../r5-note-de-calcul/index.html" },
   correspondances: [
     { reseau: "Bureau d’études", titre: "BE-E1, Le climat du site", href: "../e1-climat-site/index.html", pourquoi: "Les degrés-jours de l’année et leur calcul jour par jour viennent de cette station." },
     { reseau: "Bureau d’études", titre: "BE-T5, Le bilan d’hiver", href: "../t5-bilan-hiver/index.html", pourquoi: "Le coefficient H total du bâtiment vient de cette station." },

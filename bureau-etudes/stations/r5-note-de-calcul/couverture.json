@@ -1,0 +1,42 @@
+{
+  "cle": "r5-note-de-calcul",
+  "code": "BE-R5",
+  "titre": "La note de calcul",
+  "ligne": "Régulation et énergie",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 34,
+    "chapitre": 8
+  },
+  "referentiel": {
+    "tecvc": [
+      { "code": "CP3", "libelle": "« Rédiger une note de calculs » (cadrage C.3)" },
+      { "code": "CP4", "libelle": "« Rédiger une note de calculs » (cadrage C.3)" },
+      { "code": "CP5", "libelle": "« Présenter » les calculs de déperditions (cadrage C.3)" },
+      { "code": "CP6", "libelle": "« Rédiger une note de calculs » (cadrage C.3)" },
+      { "code": "CP7", "libelle": "« Rédiger une note de calculs » (cadrage C.3)" },
+      { "code": "CP8", "libelle": "« Présenter » les calculs d'apports (cadrage C.3)" },
+      { "code": "CP9", "libelle": "« Rédiger une note de calculs » (cadrage C.3)" },
+      { "code": "CP10", "libelle": "« Rédiger une note de calculs » (cadrage C.3)" }
+    ],
+    "tache": "T4 (cadrage C.9 : TECVC exigé, compétence commune, aucun apport propre)",
+    "bts_fed": {
+      "option": "A",
+      "competences": [
+        { "code": "C3-3", "libelle": "« Les notes de calculs sont fournies et justifiées » (cadrage C.3 ; évaluée en E61 selon C.9)" },
+        { "code": "C12-3", "libelle": "Cité par le cadrage C.3 (libellé à relire dans 03-BTS-FED.md)" }
+      ],
+      "savoirs": [],
+      "taches": []
+    }
+  },
+  "correspondances_cadrage": "P6 ; fiche R6 (écrire une note) ; gabarits d'écriture"
+}

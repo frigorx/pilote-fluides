@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 108" width="180mm" height="108mm" role="img">
+<title>Les seuils du contrôle d’étanchéité, en tonnes équivalent CO₂</title>
+<rect width="180" height="108" fill="#fff"/>
+<g><text x="90" y="59" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 59)">inerWeb, by inerweb.fr</text><text x="40" y="32" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 32)">inerWeb, by inerweb.fr</text><text x="140" y="89" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 89)">inerWeb, by inerweb.fr</text></g>
+<text x="90.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Tonnes équivalent CO₂, échelle logarithmique</text>
+<rect x="16.00" y="44.00" width="65.41" height="6.00" fill="#ffffff" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="81.41" y="44.00" width="38.50" height="6.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="119.91" y="44.00" width="38.50" height="6.00" fill="#b9c9de" stroke="#1b3a63" stroke-width="0.3"/>
+<rect x="158.41" y="44.00" width="11.59" height="6.00" fill="#8fa6c4" stroke="#1b3a63" stroke-width="0.3"/>
+<text x="48.71" y="36.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">aucun palier</text>
+<text x="100.66" y="36.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">12 mois</text>
+<text x="139.16" y="36.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#1b3a63">6 mois</text>
+<text x="167.00" y="26.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#1b3a63">3 mois</text>
+<line x1="164.04" y1="28.00" x2="164.04" y2="43.00" stroke="#1b3a63" stroke-width="0.3"/>
+<line x1="16.00" y1="50.00" x2="170.00" y2="50.00" stroke="#000" stroke-width="0.6"/>
+<line x1="16.00" y1="50.00" x2="16.00" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="16.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0,1</text>
+<line x1="54.50" y1="50.00" x2="54.50" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="54.50" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1</text>
+<line x1="81.41" y1="50.00" x2="81.41" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="81.41" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">5</text>
+<line x1="93.00" y1="50.00" x2="93.00" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="93.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10</text>
+<line x1="119.91" y1="50.00" x2="119.91" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="119.91" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">50</text>
+<line x1="131.50" y1="50.00" x2="131.50" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="131.50" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">100</text>
+<line x1="158.41" y1="50.00" x2="158.41" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="158.41" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">500</text>
+<line x1="170.00" y1="50.00" x2="170.00" y2="52.00" stroke="#000" stroke-width="0.4"/>
+<text x="170.00" y="58.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1 000</text>
+<circle cx="46.77" cy="47.00" r="1.80" fill="#ff6b35" stroke="#1b3a63" stroke-width="0.3"/>
+<line x1="46.77" y1="59.50" x2="46.77" y2="62.00" stroke="#ff6b35" stroke-width="0.4"/>
+<text x="42.77" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#1b3a63">Salle de réunion, UE 36 : 0,63 t</text>
+<text x="90.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">R32 : 0,675 t par kilogramme ; 5 t à 7,41 kg.</text>
+<line x1="4.00" y1="97.50" x2="176.00" y2="97.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="104.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Seuils du contrôle d’étanchéité</text>
+</svg>

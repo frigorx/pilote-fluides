@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 148" width="180mm" height="148mm" role="img">
+<title>L’eau du circuit sur une heure, sans ballon et avec ballon</title>
+<rect width="180" height="148" fill="#fff"/>
+<g><text x="90" y="81" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 81)">inerWeb, by inerweb.fr</text><text x="40" y="44" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 44)">inerWeb, by inerweb.fr</text><text x="140" y="121" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 121)">inerWeb, by inerweb.fr</text></g>
+<line x1="26.00" y1="16" x2="26.00" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="50.33" y1="16" x2="50.33" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="74.67" y1="16" x2="74.67" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="99.00" y1="16" x2="99.00" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="123.33" y1="16" x2="123.33" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="147.67" y1="16" x2="147.67" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="172.00" y1="16" x2="172.00" y2="50" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="26.00" y1="50.00" x2="172.00" y2="50.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<line x1="26.00" y1="16.00" x2="172.00" y2="16.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<text x="24.00" y="51.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">0 K</text>
+<text x="24.00" y="17.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">2 K</text>
+<rect x="34.29" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="50.87" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="67.46" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="84.04" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="100.62" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="117.20" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="133.79" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="150.37" y="51.20" width="8.29" height="2.4" fill="#ff6b35"/>
+<rect x="166.95" y="51.20" width="5.05" height="2.4" fill="#ff6b35"/>
+<polyline points="26.00,50.00 34.29,16.00 42.58,50.00 50.87,16.00 59.17,50.00 67.46,16.00 75.75,50.00 84.04,16.00 92.33,50.00 100.62,16.00 108.91,50.00 117.20,16.00 125.50,50.00 133.79,16.00 142.08,50.00 150.37,16.00 158.66,50.00 166.95,16.00 172.00,36.70" fill="none" stroke="#3f74b5" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="26.00" y="13.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Sans ballon, 37,5 L d’eau : 9 démarrages en une heure</text>
+<line x1="26.00" y1="70" x2="26.00" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="50.33" y1="70" x2="50.33" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="74.67" y1="70" x2="74.67" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="99.00" y1="70" x2="99.00" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="123.33" y1="70" x2="123.33" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="147.67" y1="70" x2="147.67" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="172.00" y1="70" x2="172.00" y2="104" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="26.00" y1="104.00" x2="172.00" y2="104.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<line x1="26.00" y1="70.00" x2="172.00" y2="70.00" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<text x="24.00" y="105.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">0 K</text>
+<text x="24.00" y="71.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">2 K</text>
+<rect x="56.40" y="105.20" width="30.40" height="2.4" fill="#ff6b35"/>
+<rect x="117.20" y="105.20" width="30.40" height="2.4" fill="#ff6b35"/>
+<polyline points="26.00,104.00 56.40,70.00 86.80,104.00 117.20,70.00 147.61,104.00 172.00,76.72" fill="none" stroke="#3f74b5" stroke-width="0.9" stroke-linejoin="round"/>
+<text x="26.00" y="67.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Avec le ballon de 100 L : 2 démarrages en une heure</text>
+<text x="26.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
+<text x="50.33" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10</text>
+<text x="74.67" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">20</text>
+<text x="99.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">30</text>
+<text x="123.33" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">40</text>
+<text x="147.67" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">50</text>
+<text x="172.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">60</text>
+<text x="172.00" y="121.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">temps (min)</text>
+<rect x="6.00" y="125.50" width="10.00" height="2.40" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
+<text x="19.00" y="128.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Groupe en marche ; trait bleu : l’écart de l’eau à sa consigne.</text>
+<line x1="4.00" y1="137.50" x2="176.00" y2="137.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="144.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="144.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bâtiment d’exemple</text>
+</svg>

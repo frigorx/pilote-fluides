@@ -180,6 +180,7 @@ BE.station({
   },
   /*FOURCHETTES-FIN*/
 
+  suivante: { code: "BE-F3", titre: "La machine au réel", href: "../f3-machine-conditions-reelles/index.html" },
   correspondances: [
     { reseau: "Bureau d’études", titre: "BE-F1, Besoin et système", href: "../f1-besoin-systeme/index.html", pourquoi: "Le système retenu, son fluide et la puissance à fournir viennent de cette station." },
     { reseau: "Plan thermo-techno", titre: "Diagramme enthalpique interactif", href: "../../../packs/fluides/res/diagramme-enthalpique/", pourquoi: "Vous y suivez les familles de courbes d’un diagramme, une à une." },

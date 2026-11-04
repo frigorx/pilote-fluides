@@ -23,7 +23,7 @@
      possibles (M maison, T tertiaire) : une station « T » n'a pas de niveau maison. */
   const MT = ["M", "T"], T = ["T"];
   /* Stations écrites : leur état ; les autres sont « a-venir ». */
-  const OUVERTES = {T1: "relecture", T2: "relecture", T3: "relecture", D0: "relecture", E1: "relecture", E2: "relecture", T4: "relecture", T5: "relecture", H6: "relecture", T6: "relecture", A1: "relecture", H1: "relecture", H2: "relecture", A2: "relecture", T7: "relecture", H3: "relecture", A3: "relecture", T8: "relecture", A4: "relecture", H4: "relecture", H5: "relecture", T9: "relecture", F1: "relecture", R1: "relecture", F2: "relecture", R4: "relecture", A5: "relecture", A6: "relecture", R3: "relecture", R2: "relecture"};
+  const OUVERTES = {T1: "relecture", T2: "relecture", T3: "relecture", D0: "relecture", E1: "relecture", E2: "relecture", T4: "relecture", T5: "relecture", H6: "relecture", T6: "relecture", A1: "relecture", H1: "relecture", H2: "relecture", A2: "relecture", T7: "relecture", H3: "relecture", A3: "relecture", T8: "relecture", A4: "relecture", H4: "relecture", H5: "relecture", T9: "relecture", F1: "relecture", R1: "relecture", F2: "relecture", R4: "relecture", R5: "relecture", A5: "relecture", A6: "relecture", R3: "relecture", R2: "relecture", F3: "relecture", F4: "relecture", F5: "relecture"};
   const STATIONS = [
     ["D0", "d0-dossier-projet", "Le dossier projet", MT, 1, 0, "Lire le dossier et la maquette, remplir la carte d'identité du bâtiment."],
     ["E1", "e1-climat-site", "Le climat du site", MT, 2, 1, "Trouver la zone, la température de base et les données d'été du site, avec leurs sources."],

@@ -1,0 +1,61 @@
+{
+  "cle": "f3-machine-conditions-reelles",
+  "code": "BE-F3",
+  "titre": "La machine au réel",
+  "ligne": "Frigorifique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 17,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 27,
+    "chapitre": 6
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (déduit, CADRAGE.md C.9 : la sélection de la machine aux conditions réelles n'est pas nommée dans le titre)"
+      },
+      {
+        "code": "CP10",
+        "libelle": "Réaliser l'étude d'une installation d'une centrale de traitement d'air (déduit : volet tertiaire, groupe d'eau glacée qui alimente la batterie froide)"
+      },
+      {
+        "code": "CP6",
+        "libelle": "Réaliser l'étude d'une installation de chauffage et de production d'eau chaude sanitaire (déduit : dégivrage de la pompe à chaleur, en notion)"
+      }
+    ],
+    "apport_propre": "Apport propre du réseau : la correction de la puissance du catalogue aux conditions réelles (CADRAGE.md, C.9, ligne F3).",
+    "bts_fed": {
+      "option": "B",
+      "competences": [
+        {
+          "code": "C3-1",
+          "libelle": "Choisir les éléments d'un système ou d'une installation (à vérifier : annexe II.d non lue, référentiel 03-BTS-FED.md ligne 209)"
+        }
+      ],
+      "savoirs": [
+        {
+          "code": "B1-1",
+          "libelle": "Pompe à chaleur (à confirmer : code relevé au cadrage C.3, libellé non relu dans le référentiel)"
+        },
+        {
+          "code": "B5",
+          "libelle": "Technologie du froid : compresseurs, évaporateurs, détendeurs, rejet de chaleur (à confirmer : libellé abrégé relevé dans l'inventaire des référentiels, p. 69 du référentiel)"
+        }
+      ],
+      "taches": [
+        {
+          "code": "T6",
+          "libelle": "Comparer et sélectionner (à confirmer : CADRAGE.md C.9, ligne F3)"
+        }
+      ]
+    }
+  }
+}

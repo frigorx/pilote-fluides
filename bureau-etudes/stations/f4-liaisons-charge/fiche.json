@@ -1,0 +1,63 @@
+{
+  "numero": 28,
+  "titre": "Calculer les liaisons et la charge, vérifier la charge maximale",
+  "ligne": "Frigorifique",
+  "code": "BE-F4",
+  "quand": "Après le choix de la machine (station F3) et le tracé des liaisons (station F1). Vous lisez les diamètres dans la notice, vous calculez la charge de fluide, vous vérifiez la concentration dans le local le plus petit et vous remplissez la fiche F-Gaz de l’équipement.",
+  "methode": [
+    "Relevez la longueur de chaque liaison, montées et descentes comprises, et le dénivelé ; vérifiez les limites de la notice.",
+    "Lisez les diamètres liquide et gaz dans la notice, selon la puissance de la pièce ; isolant sur les deux tubes.",
+    "Charge additionnelle = (longueur totale − longueur incluse) × g/m de la liaison liquide.",
+    "Charge totale = charge d’usine + charge additionnelle ; elle se pèse à la mise en service.",
+    "Concentration = charge totale ÷ volume du plus petit local où se trouve une unité intérieure ; comparez-la à la limite.",
+    "t éq. CO₂ = charge (kg) × PRP ÷ 1 000 ; le palier donne la périodicité du contrôle d’étanchéité.",
+    "Remplissez la fiche F-Gaz de l’équipement ; une fiche d’intervention par opération sur le circuit."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Charge additionnelle, liaison liquide 6,35 mm",
+      "valeur": "20 g/m (9,52 mm : 50 g/m)",
+      "source": "Notice fictive de l’exercice"
+    },
+    {
+      "grandeur": "Limite de concentration de l’exercice",
+      "valeur": "0,13 kg/m³",
+      "source": "Valeur fictive, pas celle de la norme : sur un vrai projet, NF EN 378 en vigueur et notice"
+    },
+    {
+      "grandeur": "PRP du R32",
+      "valeur": "675, soit 0,675 t éq. CO₂ par kilogramme",
+      "source": "Législation « F-Gaz 3 », écran 3"
+    },
+    {
+      "grandeur": "Seuils du contrôle d’étanchéité",
+      "valeur": "5, 50 et 500 t éq. CO₂ ; 12, 6 et 3 mois",
+      "source": "Législation « F-Gaz 3 », écran 5 ; HabFluide, chapitre 4"
+    },
+    {
+      "grandeur": "Classe du R32",
+      "valeur": "A2L, faiblement inflammable (le R290 est A3)",
+      "source": "Législation « NF EN 378 », écrans 2 et 3"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple, salle de réunion seule : UE 36, liaison 8,3 m, 3476 W ; notice : 0,900 kg pour 7 m, 20 g/m.",
+    "lignes": [
+      "Diamètres : 6,35 mm liquide, 12,7 mm gaz.",
+      "Additionnelle : (8,3 − 7) × 20 = 26 g ; totale 0,926 kg.",
+      "Concentration : 0,926 ÷ 63,96 = 0,014 kg/m³ ; 0,63 t éq. CO₂."
+    ],
+    "resultat": "0,926 kg de R32, 0,63 t éq. CO₂ : sous le premier seuil de 5 t"
+  },
+  "pieges": [
+    "Compter toute la liaison dans la charge additionnelle : la longueur incluse est déjà dans la charge d’usine.",
+    "Vérifier la concentration dans le grand séjour : le local qui compte est le plus petit.",
+    "Comparer les seuils F-Gaz en kilogrammes : ils se comptent en tonnes équivalent CO₂."
+  ],
+  "sources": [
+    "Législation « NF EN 378 » (classe, accès, emplacement, concentration) et « F-Gaz 3 » (PRP, seuils) ; Législation « Traçabilité des fluides » (fiche d’intervention).",
+    "CartoClim 4.2 « Les liaisons frigorifiques » ; HabFluide, chapitres 3 et 4.",
+    "Notice fictive de l’exercice (diamètres, g/m, isolant) et limite de concentration fictive : données de l’exercice. Stations en correspondance : BE-F1, BE-F3, R1, R5."
+  ],
+  "calculette": null
+}

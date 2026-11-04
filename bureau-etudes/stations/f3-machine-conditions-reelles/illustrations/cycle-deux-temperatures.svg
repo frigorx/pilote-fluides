@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 150" width="180mm" height="150mm" role="img">
+<title>Le cycle d’exemple à 32 °C et à 40 °C dehors</title>
+<rect width="180" height="150" fill="#fff"/>
+<g><text x="90" y="83" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 83)">inerWeb, by inerweb.fr</text><text x="40" y="45" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 45)">inerWeb, by inerweb.fr</text><text x="140" y="123" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 123)">inerWeb, by inerweb.fr</text></g>
+<line x1="27.50" y1="12" x2="27.50" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="45.00" y1="12" x2="45.00" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="62.50" y1="12" x2="62.50" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="80.00" y1="12" x2="80.00" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="97.50" y1="12" x2="97.50" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="115.00" y1="12" x2="115.00" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="132.50" y1="12" x2="132.50" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="150.00" y1="12" x2="150.00" y2="96" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="24" y1="89.97" x2="150" y2="89.97" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="24" y1="79.90" x2="150" y2="79.90" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="24" y1="61.59" x2="150" y2="61.59" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="24" y1="48.61" x2="150" y2="48.61" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="24" y1="30.30" x2="150" y2="30.30" stroke="#c8ccd2" stroke-width="0.2"/>
+<line x1="24" y1="17.32" x2="150" y2="17.32" stroke="#c8ccd2" stroke-width="0.2"/>
+<polyline points="24.62,58.65 25.29,57.43 25.96,56.22 26.63,55.02 27.31,53.82 27.99,52.63 28.67,51.45 29.36,50.27 30.05,49.11 30.75,47.95 31.45,46.80 32.15,45.65 32.86,44.51 33.57,43.38 34.28,42.26 35.01,41.14 35.73,40.03 36.46,38.93 37.20,37.83 37.94,36.74 38.69,35.65 39.45,34.58 40.21,33.50 40.98,32.44 41.75,31.38 42.53,30.32 43.32,29.27 44.12,28.23 44.93,27.19 45.74,26.16 46.57,25.13 47.40,24.11 48.25,23.09 49.11,22.08 49.98,21.07 50.86,20.07 51.76,19.07 52.67,18.08 53.60,17.09 54.55,16.10 55.52,15.12 56.51,14.15 57.53,13.18 58.57,12.21" fill="none" stroke="#1b3a63" stroke-width="0.9" stroke-linejoin="round"/>
+<polyline points="120.07,95.11 120.15,93.63 120.22,92.15 120.29,90.69 120.35,89.24 120.42,87.80 120.48,86.37 120.53,84.95 120.59,83.54 120.64,82.15 120.68,80.76 120.73,79.38 120.76,78.02 120.80,76.66 120.83,75.31 120.86,73.98 120.88,72.65 120.90,71.33 120.92,70.02 120.93,68.73 120.93,67.44 120.94,66.16 120.93,64.88 120.93,63.62 120.91,62.37 120.90,61.12 120.88,59.88 120.85,58.65 120.82,57.43 120.78,56.22 120.74,55.02 120.69,53.82 120.63,52.63 120.57,51.45 120.50,50.27 120.43,49.11 120.35,47.95 120.26,46.80 120.17,45.65 120.07,44.51 119.96,43.38 119.84,42.26 119.72,41.14 119.59,40.03 119.45,38.93 119.30,37.83 119.14,36.74 118.97,35.65 118.79,34.58 118.60,33.50 118.40,32.44 118.19,31.38 117.97,30.32 117.73,29.27 117.49,28.23 117.22,27.19 116.95,26.16 116.66,25.13 116.35,24.11 116.03,23.09 115.68,22.08 115.32,21.07 114.94,20.07 114.53,19.07 114.10,18.08 113.65,17.09 113.17,16.10 112.65,15.12 112.10,14.15 111.52,13.18 110.89,12.21" fill="none" stroke="#1b3a63" stroke-width="0.9" stroke-linejoin="round"/>
+<rect x="24.00" y="12.00" width="126.00" height="84.00" fill="none" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="27.50" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">250</text>
+<text x="45.00" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">300</text>
+<text x="62.50" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">350</text>
+<text x="80.00" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">400</text>
+<text x="97.50" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">450</text>
+<text x="115.00" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">500</text>
+<text x="132.50" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">550</text>
+<text x="150.00" y="102.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">600</text>
+<text x="22.20" y="91.67" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">8</text>
+<text x="22.20" y="81.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">10</text>
+<text x="22.20" y="63.29" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">15</text>
+<text x="22.20" y="50.31" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">20</text>
+<text x="22.20" y="32.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">30</text>
+<text x="22.20" y="19.02" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">40</text>
+<text x="20.00" y="8.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">p (bar)</text>
+<text x="150.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">h (kJ/kg)</text>
+<polyline points="122.85,82.15 138.11,34.58 35.63,34.58 35.63,82.15 122.85,82.15" fill="none" stroke="#1b3a63" stroke-width="1" stroke-dasharray="2.4 1.2" stroke-linejoin="round"/>
+<polyline points="122.85,82.15 141.07,26.16 41.55,26.16 41.55,82.15 122.85,82.15" fill="none" stroke="#ff6b35" stroke-width="1" stroke-linejoin="round"/>
+<text x="152.00" y="27.86" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">52 °C</text>
+<text x="152.00" y="36.28" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">44 °C</text>
+<text x="152.00" y="83.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">5 °C</text>
+<text x="124.85" y="87.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">1</text>
+<text x="33.63" y="87.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">4</text>
+<text x="43.55" y="87.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">4′</text>
+<text x="33.63" y="39.78" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">3</text>
+<text x="39.55" y="24.56" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#ff6b35">3′</text>
+<text x="140.11" y="39.58" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">2</text>
+<text x="143.07" y="24.76" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#ff6b35">2′</text>
+<line x1="35.63" y1="112.00" x2="122.85" y2="112.00" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="122.85" y1="112.00" x2="120.92" y2="113.05" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="122.85" y1="112.00" x2="120.92" y2="110.95" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="35.63" y1="112.00" x2="37.56" y2="110.95" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="35.63" y1="112.00" x2="37.56" y2="113.05" stroke="#1b3a63" stroke-width="0.6"/>
+<line x1="41.55" y1="120.00" x2="122.85" y2="120.00" stroke="#ff6b35" stroke-width="0.6"/>
+<line x1="122.85" y1="120.00" x2="120.92" y2="121.05" stroke="#ff6b35" stroke-width="0.6"/>
+<line x1="122.85" y1="120.00" x2="120.92" y2="118.95" stroke="#ff6b35" stroke-width="0.6"/>
+<line x1="41.55" y1="120.00" x2="43.48" y2="118.95" stroke="#ff6b35" stroke-width="0.6"/>
+<line x1="41.55" y1="120.00" x2="43.48" y2="121.05" stroke="#ff6b35" stroke-width="0.6"/>
+<text x="33.63" y="113.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#1b3a63">249 kJ/kg</text>
+<text x="39.55" y="121.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#ff6b35">232 kJ/kg</text>
+<line x1="8.00" y1="126.00" x2="20.00" y2="126.00" stroke="#1b3a63" stroke-width="1" stroke-dasharray="2.4 1.2"/>
+<text x="23.00" y="127.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">32 °C dehors : condensation à 44 °C</text>
+<line x1="8.00" y1="133.00" x2="20.00" y2="133.00" stroke="#ff6b35" stroke-width="1"/>
+<text x="23.00" y="134.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">40 °C dehors : condensation à 52 °C</text>
+<line x1="4.00" y1="139.50" x2="176.00" y2="139.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="146.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="146.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Diagramme du R32, CoolProp</text>
+</svg>

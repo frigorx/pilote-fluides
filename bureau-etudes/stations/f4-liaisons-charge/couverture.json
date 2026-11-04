@@ -1,0 +1,54 @@
+{
+  "cle": "f4-liaisons-charge",
+  "code": "BE-F4",
+  "titre": "Liaisons et charge",
+  "ligne": "Frigorifique",
+  "duree_min": 120,
+  "niveau": "BTS FED, TECVC",
+  "niveaux": [
+    1,
+    2,
+    3
+  ],
+  "ecrans": 18,
+  "etat": "relecture",
+  "livre": {
+    "fiche": 28,
+    "chapitre": 6
+  },
+  "referentiel": {
+    "tecvc": [
+      {
+        "code": "CP9",
+        "libelle": "Réaliser l'étude d'une installation de climatisation (appui faible, CADRAGE.md C.3 et C.9 : « réseaux de fluide de refroidissement » ; liaisons et charge non nommées dans le référentiel)"
+      }
+    ],
+    "apport_propre": "Apport propre du réseau : la charge de fluide, la vérification de la concentration selon NF EN 378 et la fiche F-Gaz (CADRAGE.md, C.9, ligne F4).",
+    "bts_fed": {
+      "option": "B",
+      "competences": [],
+      "savoirs": [
+        {
+          "code": "B5",
+          "libelle": "Technologie du froid (à confirmer : code relevé au cadrage C.3, ligne F4)"
+        },
+        {
+          "code": "S5.5",
+          "libelle": "Savoir relevé au cadrage C.3, ligne F4 (à confirmer : libellé non relu dans le référentiel)"
+        }
+      ],
+      "taches": [
+        {
+          "code": "T3",
+          "libelle": "Impact environnemental, en partie (à confirmer : CADRAGE.md C.9, ligne F4)"
+        }
+      ]
+    },
+    "legislation": [
+      "en-378",
+      "fgaz-3",
+      "impact-tewi",
+      "tracabilite-fluides"
+    ]
+  }
+}

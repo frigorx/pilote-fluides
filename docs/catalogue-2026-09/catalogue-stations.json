@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 588,
+  "total": 592,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -2820,6 +2820,65 @@
     },
     {
       "reseau": "Bureau d'études",
+      "id": "f3-machine-conditions-reelles",
+      "titre": "BE-F3, La machine au réel",
+      "ligne": "Frigorifique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP9",
+        "CP10",
+        "CP6",
+        "C3-1",
+        "B1-1",
+        "B5"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/f3-machine-conditions-reelles/",
+      "chemin": "bureau-etudes/stations/f3-machine-conditions-reelles/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "f4-liaisons-charge",
+      "titre": "BE-F4, Liaisons et charge",
+      "ligne": "Frigorifique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP9",
+        "B5",
+        "S5.5"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/f4-liaisons-charge/",
+      "chemin": "bureau-etudes/stations/f4-liaisons-charge/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "f5-eau-glacee",
+      "titre": "BE-F5, L’eau glacée",
+      "ligne": "Frigorifique",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP10",
+        "CP9",
+        "C3-3",
+        "B4-1",
+        "B5"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/f5-eau-glacee/",
+      "chemin": "bureau-etudes/stations/f5-eau-glacee/"
+    },
+    {
+      "reseau": "Bureau d'études",
       "id": "h1-puissance-debit-regime",
       "titre": "BE-H1, Puissance et débit",
       "ligne": "Hydraulique",
@@ -3057,6 +3116,31 @@
       "missionProf": null,
       "url": "https://inerweb.fr/bureau-etudes/stations/r4-energie-annee/",
       "chemin": "bureau-etudes/stations/r4-energie-annee/"
+    },
+    {
+      "reseau": "Bureau d'études",
+      "id": "r5-note-de-calcul",
+      "titre": "BE-R5, La note de calcul",
+      "ligne": "Régulation et énergie",
+      "resume": null,
+      "niveaux": {
+        "bts": "TP TECVC, BTS FED"
+      },
+      "competences": [
+        "CP3",
+        "CP4",
+        "CP5",
+        "CP6",
+        "CP7",
+        "CP8",
+        "CP9",
+        "CP10",
+        "C3-3",
+        "C12-3"
+      ],
+      "missionProf": null,
+      "url": "https://inerweb.fr/bureau-etudes/stations/r5-note-de-calcul/",
+      "chemin": "bureau-etudes/stations/r5-note-de-calcul/"
     },
     {
       "reseau": "Bureau d'études",
@@ -7718,7 +7802,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7730,7 +7814,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7742,7 +7826,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7754,7 +7838,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7766,7 +7850,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7778,7 +7862,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be-pub4\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-pub5\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

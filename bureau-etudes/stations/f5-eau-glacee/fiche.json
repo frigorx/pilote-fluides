@@ -1,0 +1,63 @@
+{
+  "numero": 29,
+  "titre": "L’eau glacée : débit au glycol, volume tampon, pompe sur sa courbe et vase",
+  "ligne": "Frigorifique",
+  "code": "BE-F5",
+  "quand": "Après le choix du groupe d’eau glacée et de sa puissance au réel (station F3). Vous avez le CCTP (régime, glycol, étages, démarrages), le besoin des locaux et les données du circuit. Vous obtenez le débit, le ballon tampon, le point de la pompe, le vase et le schéma de principe.",
+  "methode": [
+    "Débit : qv = P ÷ (c × Δθ), P en kW, qv en m³/h ; c = ρ × cp ÷ 3 600 ; eau 1,16 (règle) ou 1,165 ; glycol à 30 % 1,094.",
+    "Volume minimal : V = P étage × t ÷ (ρ × cp × Δθa), V en m³, P en W, t en s, cp en J/(kg.K) ; un étage, toute la machine.",
+    "Volume à ajouter = volume minimal − eau des tubes, des émetteurs et du groupe ; ballon de la série juste au-dessus.",
+    "Raccordement : en série à deux piquages, de l’inertie ; à quatre piquages, de l’inertie et un découplage possible.",
+    "Réseau : K = H ÷ Q² à l’eau ; au glycol × 1,3 ; plus petite vitesse dont le point donne au moins le débit ; P = P0 + B × Q.",
+    "Vase : V = réseau + ballon ; Ve = V × e ; gonflage = hauteur ÷ 10, au pas de 0,5 bar supérieur ; Vn = Ve × 4 ÷ (3 − gonflage)."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Eau à 9,5 °C",
+      "valeur": "ρ = 999,8 kg/m³, cp = 4,196 kJ/(kg.K), c = 1,165",
+      "source": "CoolProp"
+    },
+    {
+      "grandeur": "Monopropylène glycol à 30 % en masse",
+      "valeur": "ρ = 1 028,2 kg/m³, cp = 3,829 kJ/(kg.K), c = 1,094, 3,4 fois plus visqueux",
+      "source": "CoolProp ; « en masse » : hypothèse de l’exercice"
+    },
+    {
+      "grandeur": "Dilatation de 10 à 40 °C",
+      "valeur": "eau 0,75 %, glycol 1,44 %",
+      "source": "CoolProp (masses volumiques)"
+    },
+    {
+      "grandeur": "Démarrages, marche, écart admis",
+      "valeur": "6 par heure (cycle 10 min), 5 min, 2 K",
+      "source": "CCTP (démarrages) ; données de l’exercice"
+    },
+    {
+      "grandeur": "Pertes de charge au glycol",
+      "valeur": "× 1,3 au même débit",
+      "source": "Donnée de l’exercice"
+    }
+  ],
+  "exemple": {
+    "enonce": "Noyau du bâtiment (bureau et salle de réunion) : 5 125 W, régime 7/12, à l’eau pure ; groupe d’exemple GE 60 à deux étages, 6 156 W ; réseau de 37,5 L.",
+    "lignes": [
+      "Débit : 5,125 ÷ (1,165 × 5) = 0,880 m³/h.",
+      "Étage 3 078 W ; V = 3 078 × 300 ÷ (999,8 × 4 196 × 2) = 110,1 L ; à ajouter 72,6 L ; ballon 100 L.",
+      "Pompe : K = 3,0 ; demandé 2,32 m ; vitesse 1, 0,96 m³/h et 2,8 m, 34,4 W.",
+      "Vase : 137,5 L × 0,75 % = 1,03 L ; Vn = 1,65 L ; vase de 8 L."
+    ],
+    "resultat": "0,880 m³/h ; ballon 100 L ; vitesse 1 ; vase 8 L"
+  },
+  "pieges": [
+    "Garder 1,16 avec de l’eau glycolée : le débit manque de 6 %.",
+    "Calculer le ballon sur le besoin du bâtiment : c’est la puissance d’un étage qui compte.",
+    "Oublier l’eau déjà là : le ballon ne fournit que ce qui manque."
+  ],
+  "sources": [
+    "CCTP du bâtiment tertiaire, page 3 (valeurs d’exercice) ; groupe et puissance au réel : station F3 ; propriétés : CoolProp, bibliothèque libre.",
+    "Rôle du ballon : fiche « Ballon tampon » et cours « L’eau glycolée » du fonds de F. Henninot ; pompe et vase : station H4.",
+    "Stations en correspondance : HydroMétro « Volume tampon » et « Découplage hydraulique », CartoClim « Groupe d’eau glacée et ventilo-convecteurs »."
+  ],
+  "calculette": null
+}

@@ -1,0 +1,65 @@
+{
+  "numero": 27,
+  "titre": "Sélectionner la machine aux conditions réelles du projet",
+  "ligne": "Frigorifique",
+  "code": "BE-F3",
+  "quand": "Après le cycle (station F2) et le besoin (stations T8 et F1). Le catalogue donne une puissance à des conditions de repère ; vous la corrigez aux conditions du projet, vous vérifiez la plage de fonctionnement, puis vous retenez la machine avant de calculer les liaisons et la charge (station F4) ou le circuit d’eau glacée (station F5).",
+  "methode": [
+    "Relevez dans le catalogue la puissance de repère, ses conditions et la plage de fonctionnement en froid de chaque machine.",
+    "Lisez le coefficient C : ligne de la température du dehors, colonne de celle du dedans (ou de l’eau glacée).",
+    "P réel = P repère × C, au watt ; avec de l’eau glycolée : P réel = P repère × C_air × C_glycol.",
+    "Part couverte = P réel arrondie au watt ÷ besoin × 100, au dixième de %.",
+    "Puissance de repère à demander au moins = besoin ÷ C, arrondie au watt supérieur.",
+    "Vérifiez que la pointe d’été tombe dans la plage ; le jour de pointe, P = P repère × C lu à sa ligne.",
+    "Retenez la plus petite machine qui couvre le besoin au réel et tient la pointe ; citez chaque puissance avec ses conditions."
+  ],
+  "valeurs": [
+    {
+      "grandeur": "Conditions de repère, détente directe",
+      "valeur": "35 °C dehors, 27 °C dedans",
+      "source": "Donnée de l’exercice (catalogue fictif)"
+    },
+    {
+      "grandeur": "Conditions de repère, groupe d’eau glacée",
+      "valeur": "air 35 °C, eau 7/12",
+      "source": "Donnée de l’exercice"
+    },
+    {
+      "grandeur": "Écarts du cycle",
+      "valeur": "évaporation 21 K sous le dedans, condensation 12 K au-dessus du dehors",
+      "source": "Station F2, données de l’exercice"
+    },
+    {
+      "grandeur": "Coefficient glycol",
+      "valeur": "C_glycol = 0,968 (évaporation 1 K plus bas)",
+      "source": "Cycle CoolProp, donnée de l’exercice"
+    },
+    {
+      "grandeur": "Dégivrage",
+      "valeur": "en mode chaud seulement ; palier du catalogue entre −2 et +2 °C",
+      "source": "Station CartoClim « La PAC air/eau », station T9"
+    }
+  ],
+  "exemple": {
+    "enonce": "Bâtiment d’exemple, salle de réunion : besoin 3476 W ; 32 °C dehors, 26 °C dedans ; pointe 40 °C.",
+    "lignes": [
+      "C = 0,994 (ligne 32 °C, colonne 26 °C).",
+      "UE 34 : 3400 × 0,994 = 3380 W, 97,2 %.",
+      "UE 36 : 3600 × 0,994 = 3578 W, 102,9 %.",
+      "UE 40 : 4000 × 0,994 = 3976 W, 114,4 %.",
+      "UE 36 : plage −10 à +43 °C ; à 40 °C, 3600 × 0,926 = 3334 W."
+    ],
+    "resultat": "UE 36 retenue : 3578 W au réel, à 32 °C dehors et 26 °C dedans"
+  },
+  "pieges": [
+    "Choisir sur la puissance de repère : une machine qui couvre sur le papier peut manquer au réel.",
+    "Lire le coefficient à la colonne du repère au lieu de la température du dedans.",
+    "Oublier la pointe d’été dans la plage, ou le glycol dans la puissance du groupe."
+  ],
+  "sources": [
+    "Propriétés du R32 : CoolProp, bibliothèque libre de propriétés des fluides. Catalogues fictifs, sans marque.",
+    "Dégivrage : station CartoClim « La PAC air/eau ». Groupe d’eau glacée : station CartoClim 3-8.",
+    "Conditions de repère, écarts, pointe d’été, coefficient glycol : données de l’exercice. Stations en correspondance : BE-F2, BE-T9, BE-F4, BE-F5."
+  ],
+  "calculette": null
+}

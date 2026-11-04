@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 124.4" width="180mm" height="124.4mm" role="img">
+<title>Le glycol se compte : noyau du bâtiment de bureaux</title>
+<rect width="180" height="124.4" fill="#fff"/>
+<g><text x="90" y="68" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 68)">inerWeb, by inerweb.fr</text><text x="40" y="37" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 37)">inerWeb, by inerweb.fr</text><text x="140" y="102" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 102)">inerWeb, by inerweb.fr</text></g>
+<text x="6.00" y="25.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">GE 50</text>
+<rect x="34.00" y="14.00" width="72.31" height="5.20" fill="#fff" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<text x="131.00" y="18.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5 000 W</text>
+<rect x="34.00" y="20.80" width="74.19" height="5.20" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="131.00" y="25.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5 130 W</text>
+<rect x="34.00" y="27.60" width="71.82" height="5.20" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="131.00" y="32.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4 966 W</text>
+<text x="6.00" y="54.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">GE 60</text>
+<rect x="34.00" y="42.40" width="86.77" height="5.20" fill="#fff" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<text x="131.00" y="47.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">6 000 W</text>
+<rect x="34.00" y="49.20" width="89.03" height="5.20" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="131.00" y="53.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">6 156 W</text>
+<rect x="34.00" y="56.00" width="86.18" height="5.20" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="131.00" y="60.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5 959 W</text>
+<line x1="34.00" y1="11.00" x2="34.00" y2="64.80" stroke="#000" stroke-width="0.5"/>
+<line x1="108.12" y1="10.00" x2="108.12" y2="65.80" stroke="#ff6b35" stroke-width="1.2"/>
+<rect x="8.00" y="73.20" width="12.00" height="4.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
+<text x="24.00" y="76.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Puissance de repère : air 35 °C, eau 7/12</text>
+<rect x="8.00" y="80.60" width="12.00" height="4.00" fill="#dfe7f1" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="24.00" y="84.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Au réel, 32 °C dehors, eau pure</text>
+<rect x="8.00" y="88.00" width="12.00" height="4.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="24.00" y="91.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Au réel, 32 °C dehors, eau glycolée</text>
+<line x1="14.00" y1="95.00" x2="14.00" y2="100.00" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="24.00" y="99.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Besoin du noyau : 5 125 W</text>
+<line x1="4.00" y1="113.90" x2="176.00" y2="113.90" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="120.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="120.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Catalogue de l’exercice</text>
+</svg>
