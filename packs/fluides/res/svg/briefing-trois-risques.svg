@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-tr" aria-describedby="d-tr" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t-tr">Trois risques, trois consignes</title>
+  <desc id="d-tr">L'arrière-boutique d'un magasin, vue de face. À gauche, une chambre froide en panneaux avec son petit groupe de condensation et, sur le tube, un raccord à visser. Au centre, une armoire électrique fermée par un cadenas. À droite, un passage avec deux cônes et une porte de sortie. Dans l'animation, un cercle orange s'allume sur le raccord et la consigne s'écrit dans la bande du bas : le fluide est froid et sous pression, lunettes et gants dès qu'on ouvre un raccord. Puis un cercle s'allume sur le cadenas de l'armoire : on n'ouvre pas l'armoire, la consignation est faite par une personne habilitée. Enfin un cercle entoure le passage : zone balisée, issue dégagée. Le dessin reste ensuite complet.</desc>
+  <style>
+    .ti{font-size:22px;font-weight:bold;fill:#1b3a63}
+    .lb{font-size:16px;fill:#10233c}
+    .lg{font-size:16px;font-weight:bold;fill:#1b3a63}
+    .nb{font-size:16px;font-weight:bold;fill:#ff6b35}
+    .tr{stroke:#1b3a63;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .pn{stroke:#1b3a63;stroke-width:3;fill:#eef3f9}
+    .or{fill:none;stroke:#ff6b35;stroke-width:5;transform-box:fill-box;transform-origin:center}
+    .or1{animation:allume .6s .5s backwards}
+    .or2{animation:allume .6s 3.2s backwards}
+    .or3{animation:allume .6s 6s backwards}
+    .cl{animation:ecrit 1.4s ease-out backwards}
+    @keyframes allume{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+    @keyframes ecrit{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @media (prefers-reduced-motion: reduce){.or,.cl{animation:none!important}}
+  </style>
+  <defs>
+    <clipPath id="c1"><rect class="cl" x="30" y="352" width="740" height="46" style="animation-delay:1.1s;transform-origin:30px 352px"/></clipPath>
+    <clipPath id="c2"><rect class="cl" x="30" y="404" width="740" height="46" style="animation-delay:3.8s;transform-origin:30px 404px"/></clipPath>
+    <clipPath id="c3"><rect class="cl" x="30" y="456" width="740" height="30" style="animation-delay:6.6s;transform-origin:30px 456px"/></clipPath>
+  </defs>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ti" x="30" y="32">Trois risques, trois consignes</text>
+
+  <!-- sol -->
+  <path class="tr" d="M20,290 H780"/>
+
+  <!-- chambre froide -->
+  <rect class="pn" x="30" y="70" width="180" height="220" rx="4"/>
+  <path class="tr" d="M75,70 V290 M120,70 V290 M165,70 V290" stroke-width="2"/>
+  <!-- groupe de condensation -->
+  <rect class="pn" x="235" y="232" width="90" height="58" rx="5" fill="#fff"/>
+  <circle class="tr" cx="280" cy="261" r="18" stroke-width="2"/>
+  <path class="tr" d="M262,261 H298 M280,243 V279" stroke-width="2"/>
+  <!-- tube et raccord -->
+  <path class="tr" d="M250,232 V120 H210" stroke-width="7"/>
+  <rect x="241" y="164" width="18" height="24" rx="3" fill="#fffdf8" stroke="#1b3a63" stroke-width="3"/>
+  <text class="lg" x="120" y="318" text-anchor="middle">Chambre froide</text>
+
+  <!-- armoire électrique -->
+  <rect class="pn" x="380" y="90" width="100" height="200" rx="4" fill="#fff"/>
+  <path class="tr" d="M430,90 V290" stroke-width="2"/>
+  <circle cx="420" cy="150" r="4" fill="#1b3a63"/>
+  <path class="tr" d="M418,196 V186 a12,12 0 0 1 24,0 V196" stroke-width="4"/>
+  <rect x="412" y="196" width="36" height="28" rx="4" fill="#1b3a63"/>
+  <text class="lg" x="430" y="318" text-anchor="middle">Armoire électrique</text>
+
+  <!-- passage -->
+  <path class="tr" d="M560,290 H700" stroke-width="2"/>
+  <path class="tr" d="M572,290 L580,256 L588,290 Z M632,290 L640,256 L648,290 Z" fill="#1b3a63"/>
+  <rect class="pn" x="700" y="130" width="70" height="160" rx="4" fill="#fff"/>
+  <rect x="705" y="98" width="60" height="26" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+  <text class="lg" x="735" y="117" text-anchor="middle">SORTIE</text>
+  <circle cx="754" cy="214" r="4" fill="#1b3a63"/>
+  <text class="lg" x="640" y="318" text-anchor="middle">Passage</text>
+
+  <!-- cercles orange -->
+  <circle class="or or1" cx="250" cy="176" r="30"/>
+  <circle class="or or2" cx="430" cy="210" r="42"/>
+  <circle class="or or3" cx="610" cy="250" r="55"/>
+
+  <!-- bande des consignes -->
+  <rect x="20" y="340" width="760" height="150" rx="8" fill="#eef3f9"/>
+  <g clip-path="url(#c1)">
+    <text class="lb" x="40" y="368"><tspan class="nb">1 · Le fluide :</tspan> froid et sous pression,</text>
+    <text class="lb" x="40" y="390">lunettes et gants dès qu'on ouvre un raccord</text>
+  </g>
+  <g clip-path="url(#c2)">
+    <text class="lb" x="40" y="420"><tspan class="nb">2 · L'électricité :</tspan> on n'ouvre pas l'armoire,</text>
+    <text class="lb" x="40" y="442">la consignation est faite par une personne habilitée</text>
+  </g>
+  <g clip-path="url(#c3)">
+    <text class="lb" x="40" y="476"><tspan class="nb">3 · La zone :</tspan> balisée, issue dégagée</text>
+  </g>
+</svg>

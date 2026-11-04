@@ -18,28 +18,18 @@ CAPSULE.declarer({
     { code: "CC93", libelle: "Informer oralement des consignes de sécurité" },
   ],
 
-  visuelAccueil: {
-    motif: "sequence",
-    titre: "Un briefing de deux minutes, en cinq temps",
-    etapes: [
-      { titre: "Le travail", texte: "ce qu'on fait aujourd'hui" },
-      { titre: "Trois risques", texte: "les plus graves" },
-      { titre: "Qui fait quoi", texte: "un rôle chacun" },
-      { titre: "Si ça tourne mal", texte: "protéger, alerter, secourir" },
-      { titre: "Une question", texte: "pour vérifier" },
-    ],
-    pied: "Toujours dans cet ordre : l'équipe sait où l'on en est.",
-  },
+  // ancien : visuelAccueil: { motif: "sequence", titre: "Un briefing de deux minutes, en cinq temps", etapes: [ { titre: "Le travail", texte: "ce qu'on fait aujourd'hui" }, { titre: "Trois risques", texte: "les plus graves" }, { titre: "Qui fait quoi", texte: "un rôle chacun" }, { titre: "Si ça tourne mal", texte: "protéger, alerter, secourir" }, { titre: "Une question", texte: "pour vérifier" }, ], pied: "Toujours dans cet ordre : l'équipe sait où l'on en est.", },
+  visuelAccueil: { img: "../bibliotheque/situation-briefing-securite.webp", alt: "Au petit matin, dans la cour de livraison d'un supermarché, devant la camionnette ouverte et la porte de la chambre froide, la cheffe d'équipe donne le briefing à ses deux jeunes techniciens : elle compte sur ses doigts et montre la chambre froide ; un extincteur et deux cônes sont posés près de la camionnette." },
 
   ecrans: [
     {
       id: "pourquoi-dire",
       titre: "Pourquoi le dire à voix haute ?",
       note: "Le point de départ",
-      visuel: { img: "../bibliotheque/illu-g12b.webp", alt: "Un technicien en tenue de travail et casque, de dos, devant un groupe extérieur de climatisation ; un extincteur est posé à côté : l'équipe sait ce qu'elle risque et comment réagir." },
-      legende: "Avant le premier geste, deux minutes de parole.",
+      visuel: { img: "../bibliotheque/situation-briefing-securite.webp", alt: "Au petit matin, dans la cour de livraison d'un supermarché, devant la camionnette ouverte et la porte de la chambre froide, la cheffe d'équipe donne le briefing à ses deux jeunes techniciens : elle compte sur ses doigts et montre la chambre froide ; un extincteur et deux cônes sont posés près de la camionnette." },
+      legende: "Avant le premier geste, deux minutes de parole : la cheffe d'équipe compte les cinq temps sur ses doigts.",
       texte: "<p>Une affiche de sécurité ne protège personne si personne ne l'a lue. Le <b>briefing de départ</b> le dit à voix haute, en deux minutes, à toute l'équipe.</p><p>Chacun sait alors quel est le travail du jour, quels sont les dangers, qui fait quoi, et que faire si ça tourne mal.</p><p><b>Briefing :</b> point rapide donné à l'équipe avant de commencer.</p>",
-      dire: "Une affiche de sécurité ne protège personne si personne ne l'a lue. Avant d'intervenir, on le dit à voix haute, à toute l'équipe, en deux minutes. C'est le briefing de départ. Quand il est bien fait, chacun sait quel est le travail du jour, quels sont les dangers, qui fait quoi, et ce qu'on fait si ça tourne mal. Personne ne découvre un danger en le subissant.",
+      dire: "Regardez le dessin. Dans la cour de livraison, avant le premier geste, la cheffe d'équipe parle à ses deux techniciens, et elle compte sur ses doigts. Une affiche de sécurité ne protège personne si personne ne l'a lue. Avant d'intervenir, on le dit à voix haute, à toute l'équipe, en deux minutes. C'est le briefing de départ. Quand il est bien fait, chacun sait quel est le travail du jour, quels sont les dangers, qui fait quoi, et ce qu'on fait si ça tourne mal. Personne ne découvre un danger en le subissant.",
       retenir: ["Le briefing se dit à voix haute, <b>avant</b> le premier geste, à <b>toute</b> l'équipe."],
       reference: "Code CC93 · pourquoi un briefing",
     },
@@ -80,18 +70,10 @@ CAPSULE.declarer({
       id: "trois-risques",
       titre: "Trois risques, pas dix",
       note: "Choisir ce qu'on dit",
-      visuel: {
-        motif: "alerte",
-        titre: "Un risque, une consigne (exemple d'un dépannage de chambre froide)",
-        vignettes: [
-          { picto: "🧊", etiquette: "le fluide", titre: "Froid et sous pression", texte: "lunettes et gants dès qu'on ouvre un raccord" },
-          { picto: "⚡", etiquette: "l'électricité", titre: "On n'ouvre pas l'armoire", texte: "la consignation est faite par une personne habilitée" },
-          { picto: "🚧", etiquette: "la zone", titre: "Un passage, des tiers", texte: "zone balisée, issue dégagée" },
-        ],
-        pied: "Le chantier d'aujourd'hui peut avoir d'autres dangers : on dit les trois plus graves.",
-      },
+      // ancien : visuel: { motif: "alerte", titre: "Un risque, une consigne (exemple d'un dépannage de chambre froide)", vignettes: [ { picto: "🧊", etiquette: "le fluide", titre: "Froid et sous pression", texte: "lunettes et gants dès qu'on ouvre un raccord" }, { picto: "⚡", etiquette: "l'électricité", titre: "On n'ouvre pas l'armoire", texte: "la consignation est faite par une personne habilitée" }, { picto: "🚧", etiquette: "la zone", titre: "Un passage, des tiers", texte: "zone balisée, issue dégagée" }, ], pied: "Le chantier d'aujourd'hui peut avoir d'autres dangers : on dit les trois plus graves.", },
+      visuel: { svg: "briefing-trois-risques.svg", alt: "L'arrière-boutique d'un magasin, vue de face : à gauche une chambre froide avec son petit groupe de condensation et un raccord à visser sur le tube ; au centre une armoire électrique fermée par un cadenas ; à droite un passage avec deux cônes et une porte de sortie. Un cercle orange s'allume d'abord sur le raccord (le fluide : froid et sous pression, lunettes et gants dès qu'on ouvre un raccord), puis sur l'armoire (l'électricité : on n'ouvre pas l'armoire, la consignation est faite par une personne habilitée), puis sur le passage (la zone : balisée, issue dégagée)." },
       texte: "<p>On ne liste pas tous les dangers : on en choisit <b>trois</b>, les plus graves du chantier du jour, et pour chacun <b>une consigne</b>. Dix dangers dits d'un trait, personne n'en retient aucun.</p><p>Exemple pour un dépannage de chambre froide : le fluide, l'électricité, la zone.</p>",
-      dire: "On ne liste pas tous les dangers. On en choisit trois, les plus graves du chantier du jour, et pour chacun, une consigne. Dix dangers dits d'un trait, personne n'en retient aucun. Voici un exemple pour un dépannage de chambre froide. Le fluide : il est froid et sous pression, donc lunettes et gants dès qu'on ouvre un raccord. L'électricité : personne n'ouvre l'armoire, la consignation est faite par une personne habilitée. La zone : elle est balisée, et l'issue reste dégagée.",
+      dire: "On ne liste pas tous les dangers. On en choisit trois, les plus graves du chantier du jour, et pour chacun, une consigne. Dix dangers dits d'un trait, personne n'en retient aucun. Regardez le dessin : les trois endroits s'allument l'un après l'autre. Le raccord, pour le fluide : il est froid et sous pression, donc lunettes et gants dès qu'on ouvre un raccord. L'armoire, pour l'électricité : personne ne l'ouvre, la consignation est faite par une personne habilitée. Le passage, pour la zone : elle est balisée, et l'issue reste dégagée.",
       reference: "Code CC93 · choisir trois risques",
       controle: {
         enonce: "Vous avez repéré dix dangers sur le chantier. Que dites-vous dans le briefing ?",
@@ -110,18 +92,10 @@ CAPSULE.declarer({
       id: "si-ca-tourne-mal",
       titre: "Et si ça tourne mal ?",
       note: "Protéger, alerter, secourir",
-      visuel: {
-        motif: "sequence",
-        titre: "Trois temps, dans cet ordre",
-        etapes: [
-          { titre: "Protéger", texte: "soi-même, la victime, les autres" },
-          { titre: "Alerter", texte: "le 18 ou le 112, le lieu exact" },
-          { titre: "Secourir", texte: "seulement les gestes appris" },
-        ],
-        pied: "Quelqu'un reste auprès de la victime, et on prévient le chef de chantier.",
-      },
+      // ancien : visuel: { motif: "sequence", titre: "Trois temps, dans cet ordre", etapes: [ { titre: "Protéger", texte: "soi-même, la victime, les autres" }, { titre: "Alerter", texte: "le 18 ou le 112, le lieu exact" }, { titre: "Secourir", texte: "seulement les gestes appris" }, ], pied: "Quelqu'un reste auprès de la victime, et on prévient le chef de chantier.", },
+      visuel: { svg: "briefing-si-ca-tourne-mal.svg", alt: "Trois cases de gauche à droite, reliées par des flèches. Case 1, protéger : une main abaisse l'interrupteur général et un cône est posé. Case 2, alerter : un téléphone, et les quatre informations à donner (le lieu exact, ce qui s'est passé, le nombre de blessés, leur état), avec « 18 ou 112 » en orange. Case 3, secourir : une personne agenouillée près de la victime allongée sous une couverture, avec la mention « seulement les gestes appris ». Les cases s'allument dans l'ordre, la flèche avance avant la case suivante." },
       texte: "<p>Le briefing dit aussi quoi faire si ça tourne mal : <b>protéger</b>, puis <b>alerter</b>, puis <b>secourir</b>.</p><p>Pour alerter : le <b>18</b> (pompiers), ou le <b>112</b> depuis un portable. On donne le <b>lieu exact</b>, la <b>nature</b> de l'accident, le <b>nombre de blessés</b> et leur <b>état</b>. On ne fait que les gestes appris en formation.</p>",
-      dire: "Le briefing dit aussi ce qu'on fait si ça tourne mal. Dans cet ordre : protéger, alerter, secourir. D'abord, on se protège soi-même, la victime et les autres. Ensuite, on alerte : le dix-huit pour les pompiers, ou le cent douze depuis un portable. On donne le lieu exact, ce qui s'est passé, le nombre de blessés et leur état. Quelqu'un reste auprès de la victime, et on prévient le chef de chantier. Enfin, on secourt, mais seulement avec les gestes appris en formation. Les autres gestes peuvent aggraver la situation.",
+      dire: "Regardez le dessin : trois gestes, dans l'ordre, de gauche à droite. Le briefing dit aussi ce qu'on fait si ça tourne mal. Dans cet ordre : protéger, alerter, secourir. D'abord, on se protège soi-même, la victime et les autres. Ensuite, on alerte : le dix-huit pour les pompiers, ou le cent douze depuis un portable. On donne le lieu exact, ce qui s'est passé, le nombre de blessés et leur état. Quelqu'un reste auprès de la victime, et on prévient le chef de chantier. Enfin, on secourt, mais seulement avec les gestes appris en formation. Les autres gestes peuvent aggraver la situation.",
       retenir: ["<b>Protéger</b>, puis <b>alerter</b>, puis <b>secourir</b> : toujours dans cet ordre.", "Aux secours : le <b>lieu exact</b>, la <b>nature</b>, le <b>nombre de blessés</b>, leur <b>état</b>."],
       reference: "Code CC93 · la conduite à tenir",
       controle: {

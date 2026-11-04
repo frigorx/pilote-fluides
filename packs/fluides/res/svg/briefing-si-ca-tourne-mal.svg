@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t-pas" aria-describedby="d-pas" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title id="t-pas">Protéger, alerter, secourir</title>
+  <desc id="d-pas">Trois cases de gauche à droite, reliées par des flèches. Case 1, protéger : une main abaisse l'interrupteur général et un cône est posé. Case 2, alerter : un téléphone, et quatre informations à donner, le lieu exact, ce qui s'est passé, le nombre de blessés, leur état, avec le numéro 18 ou 112 en orange. Case 3, secourir : une personne agenouillée près de la victime allongée, recouverte d'une couverture, avec la mention seulement les gestes appris. Dans l'animation, les cases s'allument dans l'ordre et la flèche entre deux cases avance avant la suivante. Le dessin reste ensuite complet.</desc>
+  <style>
+    .ti{font-size:22px;font-weight:bold;fill:#1b3a63}
+    .lb{font-size:16px;fill:#10233c}
+    .lg{font-size:20px;font-weight:bold;fill:#1b3a63}
+    .nu{font-size:28px;font-weight:bold;fill:#ff6b35}
+    .tr{stroke:#1b3a63;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .bx{fill:#fffdf8;stroke:#1b3a63;stroke-width:3}
+    .pn{stroke:#1b3a63;stroke-width:3;fill:#eef3f9}
+    .fl{stroke:#1b3a63;stroke-width:4;fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+    .hd{fill:#1b3a63}
+    .b1{animation:ap .8s .3s backwards}
+    .a1{animation:rev .8s 1.8s backwards}
+    .h1{animation:ap .2s 2.6s backwards}
+    .b2{animation:ap .8s 2.9s backwards}
+    .l1{animation:ap .5s 3.3s backwards}
+    .l2{animation:ap .5s 3.8s backwards}
+    .l3{animation:ap .5s 4.3s backwards}
+    .l4{animation:ap .5s 4.8s backwards}
+    .l5{animation:ap .5s 5.3s backwards}
+    .a2{animation:rev .8s 5.9s backwards}
+    .h2{animation:ap .2s 6.7s backwards}
+    .b3{animation:ap .8s 7s backwards}
+    @keyframes ap{from{opacity:0}to{opacity:1}}
+    @keyframes rev{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+    @media (prefers-reduced-motion: reduce){.b1,.a1,.h1,.b2,.l1,.l2,.l3,.l4,.l5,.a2,.h2,.b3{animation:none!important}}
+  </style>
+  <rect width="800" height="500" fill="#fffdf8"/>
+  <text class="ti" x="30" y="32">Protéger, alerter, secourir</text>
+
+  <!-- case 1 -->
+  <g class="b1">
+    <rect class="bx" x="20" y="60" width="170" height="400" rx="10"/>
+    <text class="lg" x="105" y="100" text-anchor="middle">1 · Protéger</text>
+    <rect class="pn" x="45" y="165" width="60" height="100" rx="5" fill="#fff"/>
+    <rect x="65" y="180" width="20" height="70" rx="4" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <rect x="62" y="215" width="26" height="22" rx="4" fill="#1b3a63"/>
+    <rect x="58" y="118" width="34" height="20" rx="9" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <path class="tr" d="M75,138 L75,155 M68,150 L75,160 L82,150"/>
+    <path class="tr" d="M135,288 H175" stroke-width="3"/>
+    <path class="tr" d="M141,288 L155,238 L169,288 Z" fill="#1b3a63"/>
+    <text class="lb" x="105" y="360" text-anchor="middle">On coupe le courant,</text>
+    <text class="lb" x="105" y="382" text-anchor="middle">on pose un cône</text>
+  </g>
+
+  <path class="fl a1" pathLength="1" d="M196,260 H224"/>
+  <polygon class="hd h1" points="232,260 220,252 220,268"/>
+
+  <!-- case 2 -->
+  <g class="b2">
+    <rect class="bx" x="238" y="60" width="310" height="400" rx="10"/>
+    <text class="lg" x="393" y="100" text-anchor="middle">2 · Alerter</text>
+    <rect class="pn" x="260" y="150" width="56" height="116" rx="10" fill="#fff"/>
+    <rect x="268" y="164" width="40" height="76" rx="3" fill="#eef3f9" stroke="#1b3a63" stroke-width="2"/>
+    <circle cx="288" cy="254" r="5" fill="#1b3a63"/>
+  </g>
+  <g class="l1"><text class="lb" x="338" y="170">le lieu exact</text></g>
+  <g class="l2"><text class="lb" x="338" y="205">ce qui s'est passé</text></g>
+  <g class="l3"><text class="lb" x="338" y="240">le nombre de blessés</text></g>
+  <g class="l4"><text class="lb" x="338" y="275">leur état</text></g>
+  <g class="l5"><text class="nu" x="393" y="360" text-anchor="middle">18 ou 112</text></g>
+
+  <path class="fl a2" pathLength="1" d="M554,260 H582"/>
+  <polygon class="hd h2" points="590,260 578,252 578,268"/>
+
+  <!-- case 3 -->
+  <g class="b3">
+    <rect class="bx" x="596" y="60" width="184" height="400" rx="10"/>
+    <text class="lg" x="688" y="100" text-anchor="middle">3 · Secourir</text>
+    <path class="tr" d="M610,285 H770" stroke-width="2"/>
+    <circle cx="617" cy="205" r="13" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <path class="tr" d="M617,220 L627,260 L650,270 V283 L618,283 M622,235 L662,258"/>
+    <circle cx="762" cy="271" r="12" fill="#fff" stroke="#1b3a63" stroke-width="3"/>
+    <path class="tr" d="M668,277 H750"/>
+    <rect class="pn" x="676" y="254" width="72" height="23" rx="6"/>
+    <text class="lb" x="688" y="360" text-anchor="middle">seulement les gestes</text>
+    <text class="lb" x="688" y="382" text-anchor="middle">appris</text>
+  </g>
+</svg>
