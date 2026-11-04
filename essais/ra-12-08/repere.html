@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Feuille repère, essai de réalité augmentée</title>
+<style>
+:root{--bleu:#1b3a63;--papier:#fffdf8;--orange:#e8914a;--encre:#10233c}
+*{box-sizing:border-box}
+body{margin:0;background:#e9eef5;color:var(--encre);font-family:"Segoe UI",Calibri,Arial,sans-serif;font-size:14pt;line-height:1.35;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;max-width:210mm;margin:0 auto;background:var(--papier);padding:16px;overflow:hidden}
+.page > *{position:relative;z-index:1}
+.haut{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;border-bottom:3px solid var(--orange);padding-bottom:6px}
+.logo{display:block;width:150px;height:31px}
+.haut p{margin:0;font-weight:700;color:var(--bleu)}
+.image{display:block;width:100%;max-width:150mm;height:auto;margin:12px auto 0;border:1px solid #9aa7b5}
+.bas{margin-top:10px;text-align:center}
+.bas p{margin:0 0 4px}
+.adresse{font-size:18pt;font-weight:700;color:var(--bleu);overflow-wrap:anywhere}
+.fil{position:absolute;z-index:0;display:flex;flex-direction:column;opacity:.07;transform:translate(-50%,-50%) rotate(-12deg);width:240px;pointer-events:none}
+.fil svg{width:240px;height:50px;display:block}
+.fil span{font:700 20px "Trebuchet MS",Trebuchet,sans-serif;color:var(--bleu);margin-left:45px}
+@media print{
+  @page{size:A4 portrait;margin:0}
+  body{background:var(--papier)}
+  .page{width:210mm;height:297mm;max-width:none;padding:12mm 15mm;margin:0;overflow:hidden}
+  .image{width:150mm;max-width:150mm;margin-top:8mm}
+  .bas{margin-top:6mm}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 240 50">
+    <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+    <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+    <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="80" height="24"/>
+    <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="195" y="27" text-anchor="middle">Fluide</text>
+  </symbol>
+</svg>
+
+<div class="page">
+  <div class="fil" style="left:78%;top:4%" aria-hidden="true"><svg><use href="#logo"/></svg><span>by inerweb.fr</span></div>
+  <div class="fil" style="left:20%;top:95%" aria-hidden="true"><svg><use href="#logo"/></svg><span>by inerweb.fr</span></div>
+  <div class="fil" style="left:84%;top:96%" aria-hidden="true"><svg><use href="#logo"/></svg><span>by inerweb.fr</span></div>
+
+  <div class="haut">
+    <svg class="logo" role="img" aria-label="inerWeb Fluide"><use href="#logo"/></svg>
+    <p>Feuille repère, essai</p>
+  </div>
+
+  <img class="image" src="repere.jpg" width="672" height="951" alt="Page de présentation inerWeb Fluide, servant de repère à la caméra">
+
+  <div class="bas">
+    <p>Ouvrez cette adresse sur votre téléphone, puis visez l'image :</p>
+    <p class="adresse">https://inerweb.fr/essais/ra-12-08/</p>
+  </div>
+</div>
+</body>
+</html>

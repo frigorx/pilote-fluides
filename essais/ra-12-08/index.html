@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Essai de réalité augmentée</title>
+<style>
+:root{--bleu:#1b3a63;--papier:#fffdf8;--orange:#e8914a;--encre:#10233c;--gris:#3b4a5e}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--papier);color:var(--encre);font-family:"Segoe UI",Calibri,Arial,sans-serif;font-size:16px;line-height:1.35;display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+header{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;padding:8px 16px;background:var(--papier);border-bottom:3px solid var(--orange)}
+.logo{display:block;width:120px;height:25px;flex:none}
+.ref{flex:1 1 220px;min-width:0;font-size:14px;color:var(--bleu);font-weight:600}
+.ref b{display:inline-block;background:var(--bleu);color:var(--papier);border-radius:5px;padding:0 7px;margin-right:6px;font-weight:700}
+.essai{flex:none;font-size:14px;font-weight:700;color:var(--bleu);border:2px solid var(--orange);border-radius:6px;padding:1px 8px}
+#scene{position:relative;isolation:isolate;flex:1 1 0;min-height:0;background:#e9eef5;overflow:hidden}
+#ar{position:absolute;inset:0;overflow:hidden}
+#filigrane{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.fil{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:0;opacity:.1;transform:translate(-50%,-50%) rotate(-12deg);width:200px}
+.fil svg{width:200px;height:42px;display:block}
+.fil span{font:700 17px "Trebuchet MS",Trebuchet,sans-serif;color:var(--bleu);margin-left:38px}
+#panneau{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+#carte{max-width:420px;background:var(--papier);border:2px solid var(--bleu);border-radius:12px;padding:16px 18px;text-align:center;box-shadow:0 6px 24px rgba(16,35,60,.25)}
+#carte p{margin:0 0 12px}
+#message{display:none;text-align:left;background:#fdebd8;border-left:5px solid var(--orange);border-radius:6px;padding:8px 10px;font-size:15px;color:var(--encre)}
+#ouvrir{font:700 18px "Segoe UI",Calibri,Arial,sans-serif;min-height:48px;padding:10px 22px;border:0;border-radius:10px;background:var(--bleu);color:var(--papier);cursor:pointer}
+#ouvrir:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+#etat{position:absolute;left:0;right:0;bottom:10px;z-index:6;text-align:center;pointer-events:none;display:none}
+#etat span{display:inline-block;background:rgba(255,253,248,.92);color:var(--bleu);font-weight:700;font-size:15px;border-radius:8px;padding:4px 12px}
+@media (max-height:420px){
+  header{padding:4px 12px;gap:2px 10px}
+  #carte{padding:10px 14px}
+  #carte p{margin-bottom:8px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 240 50">
+    <text fill="#1b3a63" font-size="28px" x="4" y="34">❄️</text>
+    <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+    <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+    <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"/>
+    <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="80" height="24"/>
+    <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="195" y="27" text-anchor="middle">Fluide</text>
+  </symbol>
+</svg>
+
+<header>
+  <svg class="logo" role="img" aria-label="inerWeb Fluide"><use href="#logo"/></svg>
+  <div class="ref"><b>12.08</b>· Effectuer une épreuve de pression pour contrôler l'étanchéité du système</div>
+  <div class="essai">Essai, objet provisoire</div>
+</header>
+
+<main id="scene">
+  <div id="ar"></div>
+  <div id="filigrane" aria-hidden="true">
+    <div class="fil" style="left:50%;top:50%"><svg><use href="#logo"/></svg><span>by inerweb.fr</span></div>
+    <div class="fil" style="left:24%;top:16%"><svg><use href="#logo"/></svg><span>by inerweb.fr</span></div>
+    <div class="fil" style="left:76%;top:84%"><svg><use href="#logo"/></svg><span>by inerweb.fr</span></div>
+  </div>
+  <div id="etat" role="status"><span></span></div>
+  <div id="panneau">
+    <div id="carte">
+      <p>Imprimez la feuille repère, ou affichez-la sur l'écran de l'ordinateur. Ouvrez ensuite la caméra et visez l'image.</p>
+      <p id="message" role="alert"></p>
+      <button id="ouvrir" type="button">Ouvrir la caméra</button>
+    </div>
+  </div>
+</main>
+
+<script type="importmap">
+{"imports":{"three":"./vendor/three.module.min.js","three/addons/":"./vendor/addons/"}}
+</script>
+<script type="module">
+import * as THREE from "three";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import "./vendor/mindar-image-three.prod.js";
+import { fabriquerObjet } from "./objet.js";
+
+const bouton = document.getElementById("ouvrir"), message = document.getElementById("message");
+const panneau = document.getElementById("panneau"), etat = document.getElementById("etat");
+let derniereErreur = null;
+
+function dire(texte) { message.textContent = texte; message.style.display = "block"; }
+function statut(texte) { etat.style.display = texte ? "block" : "none"; etat.firstChild.textContent = texte; }
+
+if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+  dire("Votre navigateur ne permet pas d'ouvrir la caméra sur cette page. Ouvrez la page dans Safari (iPhone) ou dans Chrome (Android).");
+} else {
+  const brut = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+  navigator.mediaDevices.getUserMedia = c => brut(c).catch(e => { derniereErreur = e; throw e; });
+}
+
+let mindar = null;
+async function demarrer() {
+  bouton.disabled = true;
+  message.style.display = "none";
+  try {
+    mindar = new window.MINDAR.IMAGE.MindARThree({
+      container: document.getElementById("ar"),
+      imageTargetSrc: "./cible.mind",
+      uiLoading: "no", uiScanning: "no", uiError: "no"
+    });
+    const { renderer, scene, camera } = mindar;
+    const reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    const soleil = new THREE.DirectionalLight(0xffffff, 1.1); soleil.position.set(0.5, 1, 1.5); scene.add(soleil);
+    scene.add(new THREE.HemisphereLight(0xffffff, 0xc9d3df, 0.7));
+
+    const ancre = mindar.addAnchor(0);
+    const objet = fabriquerObjet(reduit);
+    ancre.group.add(objet);
+    ancre.onTargetFound = () => statut("");
+    ancre.onTargetLost = () => statut("Visez l'image repère.");
+
+    statut("Ouverture de la caméra…");
+    await mindar.start();
+    panneau.style.display = "none";
+    statut("Visez l'image repère.");
+    const t0 = performance.now();
+    renderer.setAnimationLoop(() => {
+      objet.userData.animer((performance.now() - t0) / 1000);
+      renderer.render(scene, camera);
+    });
+  } catch (e) {
+    statut("");
+    const nom = derniereErreur && derniereErreur.name;
+    if (nom === "NotAllowedError" || nom === "SecurityError") {
+      dire("La caméra est refusée. Autorisez la caméra pour ce site dans les réglages du navigateur, puis appuyez de nouveau sur le bouton.");
+    } else if (nom === "NotFoundError" || nom === "OverconstrainedError") {
+      dire("Aucune caméra n'a été trouvée sur cet appareil. Essayez sur un téléphone, ou ouvrez la page dans Safari (iPhone) ou dans Chrome (Android).");
+    } else {
+      dire("La caméra n'a pas démarré. Autorisez la caméra dans les réglages du navigateur, ou ouvrez la page dans Safari (iPhone) ou dans Chrome (Android), puis recommencez.");
+    }
+    document.getElementById("ar").innerHTML = "";
+    bouton.disabled = false;
+  }
+}
+bouton.addEventListener("click", demarrer);
+</script>
+</body>
+</html>
