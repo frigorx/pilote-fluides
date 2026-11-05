@@ -1,0 +1,63 @@
+/* ÉlectroRézo — la page d'aide à trois paliers. Mêmes couleurs que les stations (station.css).
+   Lisibilité DYS (03/11/2026) : police Lexend en local, texte aligné à gauche, lignes courtes, une ligne = un paragraphe,
+   un pavé par idée, étapes numérotées en grand. Les réglages de l'en-tête (A−, A+, Aéré) changent les variables ci-dessous. */
+@font-face{font-family:"Lexend";src:url("polices/Lexend-variable.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+:root{
+  --navy:#1b3a63; --ink:#1d2733; --muted:#4a5a6c;
+  --cream:#fbf6ec; --paper:#fffefa; --line:rgba(27,58,99,.22);
+  --orange-deep:#c9451a; --logo:#e8914a; --ok:#1e7e54; --ok-bg:#e3f5ec;
+  --taille:20px; --interligne:1.8; --mots:.16em; --lettres:.02em; --entre:.5em; --air:1em;
+}
+:root.aere{--interligne:2.1; --mots:.3em; --lettres:.05em; --entre:.9em; --air:1.3em}
+*{box-sizing:border-box;font-style:normal;text-transform:none}
+html,body{margin:0}
+body{font-family:"Lexend",Verdana,Arial,sans-serif;font-weight:400;color:var(--ink);background:var(--cream);
+     font-size:var(--taille);line-height:var(--interligne);word-spacing:var(--mots);letter-spacing:var(--lettres);
+     text-align:left;hyphens:none;-webkit-hyphens:none;overflow-wrap:break-word}
+strong{font-weight:700}
+/* en-tête : taille fixe, il ne grandit pas avec A+ */
+.haut{display:flex;flex-wrap:wrap;gap:.5rem .9rem;align-items:center;padding:.6rem 1rem;background:var(--paper);
+      border-bottom:1px solid var(--line);font-size:16px;line-height:1.4;word-spacing:.1em;letter-spacing:.01em}
+.brand{font-family:"Trebuchet MS",Verdana,Arial,sans-serif;font-weight:800;color:var(--navy);white-space:nowrap;letter-spacing:0;word-spacing:0}
+.brand .web{color:var(--orange-deep)}
+.brand .cartouche{background:var(--logo);color:#fff;border-radius:7px;padding:.05rem .45rem;font-size:.9em;margin-left:.3rem}
+.titres{flex:1 1 12rem;min-width:0}
+.kicker{font-size:.95em;color:var(--muted)}
+h1{font-size:1.2em;line-height:1.4;margin:0;color:var(--navy)}
+.reglages{display:flex;flex-wrap:wrap;gap:.4rem;flex:0 0 auto}
+.reglages button{min-height:48px;min-width:48px;font:inherit;font-weight:700;color:var(--navy);background:var(--paper);
+  border:2px solid var(--navy);border-radius:10px;padding:.2rem .7rem;cursor:pointer}
+.reglages button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.reglages button:disabled{opacity:.4;cursor:default}
+main{max-width:720px;margin:0 auto;padding:.8rem 1rem 2rem}
+main p{max-width:60ch;margin:0 0 var(--entre)}
+.palier{margin:0 0 var(--air)}
+.palier h2{font-size:1.05em;line-height:1.5;font-weight:700;margin:var(--air) 0 .2em;color:var(--navy);max-width:60ch}
+.palier h2 .num{display:inline-block;min-width:1.7em;text-align:center;background:var(--navy);color:#fff;
+                border-radius:8px;margin-right:.5em}
+/* un pavé = une idée */
+.pave{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:var(--air) 1.1em;margin:var(--air) 0}
+.pave .corps>p:last-of-type{margin-bottom:0}
+.pave img{display:block;max-width:100%;height:auto;margin:.7em 0 0;border:1px solid var(--line);border-radius:8px;background:#fff}
+.pave .corps>p+img{margin-top:.9em}
+/* étape : grosse pastille ronde à gauche (au-dessus sur téléphone étroit) */
+.pave.etape{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.6em 1em;align-items:start}
+.pastille{display:inline-flex;align-items:center;justify-content:center;width:2.2em;height:2.2em;border-radius:50%;
+          background:var(--orange-deep);color:#fff;font-weight:700;font-size:1.1em;line-height:1;letter-spacing:0;word-spacing:0}
+@media (max-width:520px){.pave.etape{grid-template-columns:minmax(0,1fr)}}
+/* bouton Écouter (seulement si le carnet porte voix: true) */
+.ecouter{display:inline-block;min-height:48px;margin-top:.8em;font:inherit;font-size:1em;font-weight:400;color:var(--navy);background:transparent;
+         border:1px solid var(--line);border-radius:10px;padding:.3em 1em;cursor:pointer}
+.ecouter[aria-pressed="true"]{background:var(--navy);color:#fff}
+.ecouter[hidden]{display:none}
+.boutons{display:grid;gap:.8rem;margin-top:var(--air)}
+.boutons a,.boutons button{display:block;width:100%;min-height:48px;font:inherit;font-weight:700;text-align:center;line-height:1.5;
+  border:2px solid var(--navy);border-radius:12px;padding:.6rem .8rem;cursor:pointer;text-decoration:none}
+.boutons .compris{background:var(--navy);color:#fff}
+.boutons .encore{background:var(--paper);color:var(--navy)}
+.prof{background:var(--ok-bg);border:2px solid var(--ok);border-radius:12px;padding:.7rem .9rem;font-weight:700;color:var(--ok)}
+.pave video{display:block;width:100%;height:auto;margin:.7em 0 0;border:1px solid var(--line);border-radius:8px;background:#000}
+.total{font-size:1.3em;font-weight:700;color:var(--navy)}
+.bilan{width:100%;border-collapse:collapse;background:var(--paper);margin-bottom:var(--air)}
+.bilan td,.bilan th{border:1px solid var(--line);padding:.5rem .6rem;text-align:left;vertical-align:top}
+.erreur{background:var(--paper);border:2px solid var(--orange-deep);border-radius:12px;padding:.8rem}
