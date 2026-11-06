@@ -199,7 +199,7 @@
 
   /* Les livres (20/10) : un rayon de couvertures, chacune ouvre son ouvrage. */
   .livres { grid-column:span 3; display:flex; flex-direction:column; } /* dans la grille des réseaux, à côté de Studio */
-  .rayon { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; padding:16px 24px 6px; }
+  .rayon { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; padding:16px 24px 6px; }
   .livre { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
            text-decoration:none; color:var(--txt); font-size:13.5px; line-height:1.35; }
   .livre img { display:block; width:100%; max-width:150px; height:auto; border-radius:6px;
@@ -1274,6 +1274,10 @@
         <img src="livres/couvertures/mfer-tome-1.webp" alt="" loading="lazy" width="560" height="793">
         <b>Livre Bac Pro MFER</b><span>Tome 1, la 1re, 31 leçons — spécimen et extrait</span>
       </a>
+      <a class="livre" href="livres/#h-plans">
+        <img src="livres/couvertures/plans-tome-1.webp" alt="" loading="lazy" width="560" height="793">
+        <b>Lire les plans</b><span>Tome 1, 14 chapitres, tous les métiers du bâtiment — spécimen et extrait</span>
+      </a>
     </div>
     <p class="livres-suite">Avec HabFluide : <a href="f/positionnement/">le test d’entrée</a> (vingt questions corrigées) et <a href="formation.html">l’application de formation</a> (<span data-ch="fiches">44</span> fiches, <span data-ch="questions">269</span> questions).</p>
     <!-- 21/10/2026 (F. Henninot) : la démonstration du dispositif complet, pour les centres de formation. -->
@@ -1296,8 +1300,14 @@
        ses trois dernières actualités ICI : rien à recopier ailleurs.
        =================================================================== -->
   <details class="nouveautes" id="nouveautes">
-    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 4 novembre 2026</span></summary>
+    <summary>🆕 Nouveautés &amp; corrections <span class="n">— dernière mise à jour : 6 novembre 2026</span></summary>
     <div class="nv-corps">
+      <h3>6 novembre 2026</h3>
+      <ul>
+        <li><span class="nv-etiq nv-neuf">nouveau livre</span><a href="livres/#h-plans">📚 Lire les plans, tome 1</a>
+          <span class="d">— le livre de la ligne « Lire les plans » d’inerWeb BE, pour tous les métiers du bâtiment : 14 chapitres, un dépliant de plans A3 et un livre du professeur à part. Extrait gratuit en ligne : le chapitre 6, Les échelles.</span></li>
+      </ul>
+
       <h3>4 novembre 2026</h3>
       <ul>
         <li><span class="nv-etiq nv-neuf">nouveaux films</span><a href="studio/index.html#t-diagramme">🧳 Diagramme dans tous les sens, la trilogie</a>
