@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Toiture 5 — Surfaces et quantités : émergences déduites</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
 .calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
@@ -45,16 +45,57 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   commander, et combien de relevé façonner. Tout part du plan de toiture. Environ 2 heures,
   calculatrice en main. À la fin, vous saurez :</p>
   <ul>
+    <li>lire sur le plan de toiture les cotes et les émergences utiles au chiffrage ;</li>
     <li>calculer une surface nette, émergences déduites ;</li>
-    <li>majorer pour les recouvrements ;</li>
-    <li>passer des m² aux rouleaux ;</li>
+    <li>majorer pour les recouvrements et passer des m² aux rouleaux ;</li>
     <li>compter le linéaire de relevés.</li>
   </ul>
-  <p class="cle">Cette gare reprend les gestes de la gare 7 bis,
-  <a href="../g07b-le-metre-sur-plan/index.html">« Le métré sur plan »</a> :
-  passer une cote en mètres (écran 3), passer de la surface brute à la surface nette
-  (écran 7), compter le relevé et sa hauteur développée sur une toiture-terrasse
-  (écran 9). Chaque geste y a son exemple résolu.</p>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 9 : chaque geste a sa méthode et un exemple résolu
+  sur la toiture d'un local technique. Faites ensuite l'exercice sur la toiture du vestiaire : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
+</section>
+
+<section>
+  <h2>Lire le plan de toiture</h2>
+  <p>Le plan de toiture est une vue de dessus. Pour chiffrer, on y lit quatre choses :</p>
+  <ul>
+    <li>les <strong>cotes entre les acrotères</strong>. L'acrotère est le muret qui borde la toiture-terrasse ;
+    la membrane couvre la surface comprise entre ses faces intérieures ;</li>
+    <li>l'épaisseur de l'acrotère, donnée par la légende ;</li>
+    <li>les émergences : costières, gaines, édicules, avec leurs dimensions dans la légende ;</li>
+    <li>l'échelle et l'unité des cotes, dans le cartouche.</li>
+  </ul>
+  <p>Les pentes et les niveaux servent à l'écoulement de l'eau ; ils n'entrent pas dans le calcul des quantités.</p>
+  <p>Les cotes du plan sont en millimètres. Passez-les en mètres avant de calculer : divisez par 1000.
+  5000 mm = 5,00 m ; 800 mm = 0,80 m ; 200 mm = 0,20 m.</p>
+  <div class="svgbox">
+    <svg xmlns="http://www.w3.org/2000/svg" width="700" viewBox="0 14 190 116" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Exemple : plan de toiture d'un local technique au 1/50. Terrasse de 5000 sur 3500 mm entre les acrotères. Costière carrée de 800 mm au milieu. Entrée d'eaux pluviales dans l'angle bas droit. Pentes de 2 pour cent vers la droite et vers le bas.">
+      <path d="M40 18 h108 v78 h-108 z M44 22 v70 h100 v-70 z" fill="#dfe7f1" fill-rule="evenodd" stroke="#10233c" stroke-width="0.6"/>
+      <rect x="44" y="22" width="100" height="70" fill="#fff" stroke="#10233c" stroke-width="0.35"/>
+      <rect x="84" y="46" width="16" height="16" fill="#fff" stroke="#10233c" stroke-width="0.6"/><rect x="85.2" y="47.2" width="13.6" height="13.6" fill="none" stroke="#10233c" stroke-width="0.3"/>
+      <text x="102" y="56" font-size="6" fill="#10233c">costière</text>
+      <circle cx="138" cy="86" r="3" fill="none" stroke="#10233c" stroke-width="0.5"/><circle cx="138" cy="86" r="0.6" fill="#10233c"/>
+      <text x="133" y="88" text-anchor="end" font-size="6" font-weight="bold" fill="#10233c">EP</text>
+      <g stroke="#3d7fca" stroke-width="0.6" fill="#3d7fca"><line x1="56" y1="34" x2="110" y2="34"/><polygon points="114,34 109,31.8 109,36.2"/><line x1="50" y1="38" x2="50" y2="80"/><polygon points="50,84 47.8,79 52.2,79"/></g>
+      <text x="82" y="31.5" text-anchor="middle" font-size="6" font-weight="bold" fill="#3d7fca">2 %</text>
+      <text x="53" y="72" font-size="6" font-weight="bold" fill="#3d7fca">2 %</text>
+      <g stroke="#10233c" stroke-width="0.3"><line x1="44" y1="93" x2="44" y2="107"/><line x1="144" y1="93" x2="144" y2="107"/><line x1="42" y1="105" x2="146" y2="105"/><line x1="43" y1="106" x2="45" y2="104"/><line x1="143" y1="106" x2="145" y2="104"/><line x1="43" y1="22" x2="10" y2="22"/><line x1="43" y1="92" x2="10" y2="92"/><line x1="12" y1="20" x2="12" y2="94"/><line x1="11" y1="23" x2="13" y2="21"/><line x1="11" y1="93" x2="13" y2="91"/></g>
+      <text x="94" y="103" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c">5000</text>
+      <text x="10" y="57" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c" transform="rotate(-90 10 57)">3500</text>
+      <rect x="40" y="110" width="130" height="18" fill="#fff" stroke="#10233c" stroke-width="0.4"/>
+      <text x="42.5" y="117.5" font-size="6" fill="#10233c">LOCAL TECHNIQUE · TOITURE-TERRASSE</text>
+      <text x="42.5" y="125" font-size="6" fill="#10233c">éch. 1/50 · cotes en mm</text>
+    </svg>
+  </div>
+  <p>Légende de l'exemple. Costière : 800 × 800 mm, sous un lanterneau. Acrotère : épaisseur 200 mm. EP : entrée d'eaux pluviales.</p>
+  <div class="calc">
+    <h3>Exemple résolu : les données du local technique</h3>
+    <p>Les traits de rappel des cotes 5000 et 3500 partent des faces intérieures des acrotères :
+    la surface à couvrir mesure 5,00 m sur 3,50 m.</p>
+    <p>La légende donne la costière : 0,80 m × 0,80 m.</p>
+    <p>Si le plan donnait la cote extérieure, 5400 par exemple, on retirerait les deux épaisseurs d'acrotère :
+    5,40 − 2 × 0,20 = 5,00 m.</p>
+  </div>
 </section>
 
 <section>
@@ -66,21 +107,24 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
     <tr><td>Triangle</td><td>b × h ÷ 2</td><td>8 × 3 ÷ 2 = 12 m²</td></tr>
     <tr><td>Cercle</td><td>π × r²</td><td>π × 2,5² ≈ 19,6 m²</td></tr>
   </table>
-  <p>Les cotes du plan sont en millimètres. Passez-les en mètres avant de calculer : divisez par 1000.
-  4000 mm = 4,00 m ; 600 mm = 0,60 m (gare 7 bis, écran 3).</p>
+  <div class="calc">
+    <h3>Exemple résolu : la surface brute du local technique</h3>
+    <p>La toiture est un rectangle : 5,00 × 3,50 = <strong>17,50 m²</strong>.</p>
+  </div>
   <p class="cle">Une toiture de forme complexe se découpe en formes simples, rectangles, trapèzes et
   triangles, dont on additionne les surfaces. Le croquis coté de la gare 8 sert de brouillon pour ce découpage.</p>
   <p>Exemple résolu : une toiture en L. Un rectangle de 10 m de long sur 6 m de large
   est prolongé d'une aile de 4 m de long sur 3 m de large, le long du même bord.
   Surface brute : 10 × 6 + 4 × 3 = 60 + 12 = 72 m².</p>
   <div class="svgbox">
-    <svg viewBox="0 0 610 280" width="540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toiture en L : un rectangle de 10 mètres sur 6, prolongé à droite d'une aile de 4 mètres sur 3 alignée sur le bord du bas. Le trait pointillé sépare les deux rectangles.">
+    <svg viewBox="0 0 610 280" width="620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toiture en L : un rectangle de 10 mètres sur 6, prolongé à droite d'une aile de 4 mètres sur 3 alignée sur le bord du bas. Le trait pointillé sépare les deux rectangles.">
       <g transform="translate(40 0)">
       <polygon points="60,30 360,30 360,120 480,120 480,210 60,210" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
       <line x1="360" y1="120" x2="360" y2="210" stroke="#1b3a63" stroke-width="1.5" stroke-dasharray="6 5"/>
-      <g fill="#10233c" font-size="16" font-family="Segoe UI, sans-serif">
-        <text x="210" y="125" text-anchor="middle">10 × 6 = 60 m²</text>
-        <text x="420" y="170" text-anchor="middle">4 × 3 = 12 m²</text>
+      <g fill="#10233c" font-size="22" font-family="Segoe UI, sans-serif">
+        <text x="210" y="128" text-anchor="middle">10 × 6 = 60 m²</text>
+        <text x="420" y="160" text-anchor="middle">4 × 3</text>
+        <text x="420" y="188" text-anchor="middle">= 12 m²</text>
       </g>
       <g stroke="#10233c" stroke-width="1.2">
         <line x1="60" y1="240" x2="360" y2="240"/><line x1="360" y1="240" x2="480" y2="240"/>
@@ -88,7 +132,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
         <line x1="30" y1="30" x2="30" y2="210"/><line x1="24" y1="30" x2="54" y2="30"/><line x1="24" y1="210" x2="54" y2="210"/>
         <line x1="510" y1="120" x2="510" y2="210"/><line x1="486" y1="120" x2="516" y2="120"/><line x1="486" y1="210" x2="516" y2="210"/>
       </g>
-      <g fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">
+      <g fill="#10233c" font-size="21" font-weight="bold" font-family="Segoe UI, sans-serif">
         <text x="210" y="266" text-anchor="middle">10 m</text>
         <text x="420" y="266" text-anchor="middle">4 m</text>
         <text x="22" y="125" text-anchor="end">6 m</text>
@@ -108,10 +152,14 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
     <li>les gaines et les édicules techniques. Un édicule est un petit local qui dépasse de la toiture ;</li>
     <li>les zones non traitées en étanchéité.</li>
   </ul>
-  <p class="cle">Surface nette = surface brute − émergences.
-  Exemple résolu : toiture de 96 m², lanterneau de 4 m², gaine de 1,5 m².
-  Surface nette : 96 − 5,5 = 90,5 m². Chaque émergence ajoute aussi du relevé
-  (écran 6). Le même calcul sur un plan coté est à la gare 7 bis, écran 9.</p>
+  <p class="cle">Surface nette = surface brute − émergences.</p>
+  <div class="calc">
+    <h3>Exemple résolu : la surface nette du local technique</h3>
+    <p>Emprise de la costière : 0,80 × 0,80 = 0,64 m².</p>
+    <p>Surface nette : 17,50 − 0,64 = <strong>16,86 m²</strong>.</p>
+  </div>
+  <p>Avec plusieurs émergences, on les additionne avant de les retirer. Toiture de 96 m², lanterneau de 4 m², gaine de 1,5 m² :
+  96 − (4 + 1,5) = 96 − 5,5 = 90,5 m². Chaque émergence ajoute aussi du relevé (écran 7).</p>
 </section>
 
 <section>
@@ -124,22 +172,27 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
     façonnés : c'est une donnée de l'exercice. Les façonnés sont les pièces de membrane découpées pour
     les angles et les points singuliers.</li>
   </ul>
-  <p class="cle">Ajouter 10 %, c'est multiplier par 1,10. Un calcul de matériaux se majore,
-  il ne se rogne pas.</p>
+  <p class="cle">Ajouter 10 %, c'est multiplier par 1,10.</p>
+  <div class="calc">
+    <h3>Exemple résolu : une couche sur le local technique</h3>
+    <p>16,86 × 1,10 = 18,546, arrondi au centième : <strong>18,55 m²</strong> pour une couche.</p>
+  </div>
+  <p>Une surface s'arrondit au centième le plus proche : on garde deux chiffres après la virgule et on regarde le troisième.
+  De 0 à 4, on garde : 12,804 s'écrit 12,80. De 5 à 9, on monte : 18,546 s'écrit 18,55.
+  On reprend la valeur arrondie au calcul suivant.</p>
 </section>
 
 <section>
   <h2>Convertir en rouleaux</h2>
+  <p>La méthode : surface d'une couche majorée (écran 5), multipliée par le nombre de couches, puis divisée par la surface d'un rouleau.</p>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Terrasse de 100 m² nets, membrane bitumineuse en 2 couches, rouleaux de 8 m² (données de l'exemple).</p>
-    <p>1re couche : 100 × 1,10 = 110 m².</p>
-    <p>2e couche : 110 m² aussi. Total : 220 m² de membrane.</p>
-    <p>Rouleaux : 220 ÷ 8 = 27,5. On commande 28 rouleaux.</p>
+    <h3>Exemple résolu : le local technique</h3>
+    <p>Membrane bitumineuse en 2 couches, rouleaux de 8 m² (données de l'exemple).</p>
+    <p>Les 2 couches : 18,55 × 2 = 37,10 m².</p>
+    <p>Rouleaux : 37,10 ÷ 8 = 4,64. On commande <strong>5 rouleaux</strong>.</p>
   </div>
-  <p class="cle">Le nombre de rouleaux s'arrondit toujours au <strong>rouleau supérieur</strong> :
-  on ne livre pas un demi-rouleau, et un chantier arrêté coûte plus cher qu'un rouleau d'avance.
-  Le plaquiste fait de même avec ses plaques.</p>
+  <p class="cle">Le nombre de rouleaux s'arrondit toujours au <strong>rouleau supérieur</strong>, même à 4,1 :
+  on ne livre pas un demi-rouleau, et un chantier arrêté coûte plus cher qu'un rouleau d'avance.</p>
 </section>
 
 <section>
@@ -147,21 +200,55 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>La partie courante est la surface plane de la toiture, hors relevés. Les relevés se comptent
   en mètres, sur le tour :</p>
   <ul>
-    <li>le tour des acrotères, lu sur les cotes du plan de toiture (Toiture 1) ;</li>
-    <li>plus le tour de chaque émergence (costières, gaines) ;</li>
+    <li>le tour des acrotères, lu sur les cotes du plan de toiture : 2 × (longueur + largeur) pour un rectangle ;</li>
+    <li>plus le tour de chaque émergence (costières, gaines) : 4 × le côté pour un carré ;</li>
     <li>ce linéaire, multiplié par la hauteur développée du relevé, donne la surface des bandes de relevé.
     La hauteur développée est la hauteur du relevé mesurée en suivant la membrane.</li>
   </ul>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Le tour de la toiture en L de l'écran 2, côté par côté sur le croquis :
-    14 (le bas, 10 + 4) + 3 + 4 + 3 (la marche, 6 − 3) + 10 + 6 = 40 m.
-    C'est aussi le tour du rectangle qui enferme le L : 2 × (14 + 6) = 40 m.</p>
-    <p>Une gaine de 0,50 × 0,50 m traverse ce toit : son tour vaut 4 × 0,50 = 2,00 m. Linéaire total : 40 + 2 = 42 m.</p>
-    <p>Hauteur développée 0,30 m : surface des bandes de relevé 42 × 0,30 = 12,60 m².</p>
+    <h3>Exemple résolu : le local technique</h3>
+    <p>Tour des acrotères : 2 × (5,00 + 3,50) = 17,00 m.</p>
+    <p>Tour de la costière : 4 × 0,80 = 3,20 m.</p>
+    <p>Linéaire total : 17,00 + 3,20 = 20,20 m.</p>
+    <p>Hauteur développée 0,40 m : surface des bandes de relevé 20,20 × 0,40 = <strong>8,08 m²</strong>.</p>
   </div>
+  <p>Pour une toiture en L, on suit le tour côté par côté. Sur le L de l'écran 3 :
+  14 (le bas, 10 + 4) + 3 + 4 + 3 (la marche, 6 − 3) + 10 + 6 = 40 m, comme le tour du rectangle qui enferme le L, 2 × (14 + 6) = 40 m.</p>
   <p class="cle">Une émergence retire des m² de partie courante et ajoute des mètres de relevé.
   L'oublier est l'erreur courante du chiffrage.</p>
+</section>
+
+<section>
+  <h2>Contrôler un chiffrage</h2>
+  <p>Un chiffrage complet de toiture-terrasse a deux parties :</p>
+  <ul>
+    <li>la <strong>partie courante</strong>, en m² : surface nette, majorée, multipliée par le nombre de couches, puis en rouleaux ;</li>
+    <li>les <strong>relevés</strong>, en m : tour des acrotères et de chaque émergence, puis en m² de bandes.</li>
+  </ul>
+  <p>Pour contrôler le chiffrage d'un collègue, reprenez les étapes des écrans 2 à 7 une par une et cherchez celle qui manque.</p>
+  <div class="calc">
+    <h3>Exemple résolu : expliquer un oubli en deux phrases</h3>
+    <p>Un collègue annonce pour le local technique : « 16,86 m² par couche, j'ai déduit la costière. »</p>
+    <p>Réponse : « Il a oublié les recouvrements : une couche demande 16,86 × 1,10 = 18,55 m², et non 16,86 m².
+    Sans cette majoration, la membrane manque pour souder les lés entre eux. »</p>
+  </div>
+  <p class="cle">Une explication d'oubli suit ce modèle : la phrase 1 nomme l'étape oubliée avec ses chiffres,
+  la phrase 2 dit ce qui manquera sur le chantier.</p>
+</section>
+
+<section>
+  <h2>La méthode complète, du plan à la commande</h2>
+  <p>Le chiffrage d'une toiture-terrasse suit toujours le même ordre. Gardez cet écran sous les yeux pendant l'exercice.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Lire les cotes entre acrotères et les émergences ; passer en mètres</td><td data-l="Écran">2</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Surface brute</td><td data-l="Écran">3</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Surface nette, émergences déduites</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Une couche + 10 %, puis les couches, puis les rouleaux entiers</td><td data-l="Écran">5 et 6</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Linéaire de relevés, puis surface des bandes</td><td data-l="Écran">7</td></tr>
+    <tr><td data-l="Étape">6</td><td data-l="Geste">Contrôler qu'aucune étape ne manque</td><td data-l="Écran">8</td></tr>
+  </table>
+  <p>Écrivez chaque calcul en entier, avec son unité : 5,00 × 3,50 = 17,50 m². Avec le calcul écrit, vous retrouvez vous-même une erreur.</p>
 </section>
 
 <section id="ecran-test">
@@ -175,6 +262,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <h2>Terminus Toiture 5</h2>
   <p>Vous savez chiffrer une toiture : surface nette, recouvrements, rouleaux entiers et linéaire de relevés.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
@@ -288,7 +376,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

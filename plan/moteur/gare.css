@@ -104,3 +104,9 @@ nav.pied{z-index:50}
 /* Lien « Correspondances de formation » en bas de gare (décision 32, 31/10/2026) */
 .corresp{text-align:center;font-size:15px;margin:18px 0 0}
 .corresp a{color:var(--muted)}
+
+/* Exemple résolu en bloc (leçons étoffées, 07/11/2026) */
+div.calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
+div.calc h3{color:var(--navy);font-size:1em;margin:0 0 4px}
+div.calc p{margin:4px 0}
+div.calc table.doc{margin:8px 0}

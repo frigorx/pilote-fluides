@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Plâtrerie 5 — Du plan au devis : surfaces et quantités</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .illus{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
 .corresp{text-align:center;font-size:.85em;margin:18px 0 0}
@@ -38,83 +38,179 @@
   <p>Le plaquiste tire sa commande du plan : des plaques, des rails, des montants, de l'isolant. Dans l'exercice, vous chiffrez la cloison C1 du vestiaire, dessinée à la gare Plâtrerie 1.</p>
   <p>Environ <strong>2 heures</strong>, calculatrice en main. À la fin, vous saurez :</p>
   <ul>
-    <li>calculer les surfaces de cloisons, doublages et plafonds depuis le plan ;</li>
-    <li>passer de la surface au nombre de plaques, rails et montants ;</li>
-    <li>lire les éléments d'un devis et vérifier des quantités.</li>
+    <li>lire sur le plan les données d'un chiffrage et les passer en mètres ;</li>
+    <li>calculer la surface d'une cloison, face par face ;</li>
+    <li>passer de la surface au nombre de plaques, de rails et de montants ;</li>
+    <li>vérifier la colonne quantité d'un devis.</li>
   </ul>
-  <p class="cle">Cette gare reprend les gestes de la gare 7 bis,
-  <a href="../g07b-le-metre-sur-plan/index.html">« Le métré sur plan »</a> :
-  passer une cote en mètres, additionner une chaîne de cotes, choisir la hauteur,
-  passer de la surface brute à la surface nette. Chaque geste y a son exemple résolu,
-  aux écrans 3 à 7 de la gare 7 bis.</p>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 8 : chaque geste a sa méthode et un exemple résolu
+  sur la cloison C2 d'un bureau. Faites ensuite l'exercice sur la cloison C1 : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
+</section>
+
+<section>
+  <h2>Lire les données sur le plan</h2>
+  <p>Un chiffrage part de quatre données. Chacune se lit à un endroit précis du dossier.</p>
+  <table class="doc empile">
+    <tr><th>Donnée</th><th>Où la lire</th></tr>
+    <tr><td data-l="Donnée">La longueur de la cloison</td><td data-l="Où la lire">sur le plan de niveau, la cote le long de la cloison</td></tr>
+    <tr><td data-l="Donnée">La hauteur sous plafond</td><td data-l="Où la lire">sur la coupe, du sol fini au plafond</td></tr>
+    <tr><td data-l="Donnée">Les portes et leurs dimensions</td><td data-l="Où la lire">sur le plan, la cote de la baie (ex. porte de 830)</td></tr>
+    <tr><td data-l="Donnée">Plaques, entraxe, marge, déduire ou non les portes</td><td data-l="Où la lire">dans le descriptif, ou dans les données de l'exercice</td></tr>
+  </table>
+  <p>Les cotes du plan sont en millimètres. Pour calculer en mètres, divisez par 1000 : la virgule recule de trois rangs.
+  4200 mm = 4,20 m ; 830 mm = 0,83 m ; 2040 mm = 2,04 m.</p>
+  <div class="svgbox">
+    <svg viewBox="2 4 126 102" width="520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemple : plan au 1/50 d'un bureau et de ses sanitaires, séparés par la cloison C2. Cote 4200 le long de la cloison. Face standard côté bureau, face hydrofuge côté sanitaires. Une porte de 830 dans la cloison.">
+      <defs><pattern id="hex5" width="2.5" height="2.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2.5" stroke="#000" stroke-width=".3"/></pattern></defs>
+      <g font-family="Calibri, Carlito, sans-serif" font-size="5">
+      <path d="M16 10h108v92h-108z M20 14v84h100v-84z" fill="url(#hex5)" fill-rule="evenodd" stroke="#000" stroke-width=".5"/>
+      <line x1="78" y1="14" x2="78" y2="98" stroke="#000" stroke-width=".5"/><line x1="79.44" y1="14" x2="79.44" y2="98" stroke="#000" stroke-width=".5"/>
+      <rect x="77.7" y="70" width="2" height="16.6" fill="#fff"/>
+      <line x1="79.44" y1="86.6" x2="96.04" y2="86.6" stroke="#000" stroke-width=".5"/>
+      <path d="M79.44 70 A16.6 16.6 0 0 1 96.04 86.6" fill="none" stroke="#000" stroke-width=".3"/>
+      <text x="76" y="26" text-anchor="end">C2</text>
+      <text x="76" y="38" text-anchor="end">face standard</text>
+      <text x="82" y="34">face</text><text x="82" y="40">hydrofuge</text>
+      <text x="76" y="80" text-anchor="end">porte 830</text>
+      <text x="48" y="58" text-anchor="middle" fill="#555">BUREAU</text>
+      <text x="101" y="58" text-anchor="middle" fill="#555">SANITAIRES</text>
+      <g stroke="#000" stroke-width=".3"><line x1="15" y1="14" x2="5" y2="14"/><line x1="15" y1="98" x2="5" y2="98"/><line x1="8" y1="14" x2="8" y2="98"/><path d="M7 15l2-2 M7 99l2-2"/></g>
+      <text x="6.6" y="56" text-anchor="middle" transform="rotate(-90 6.6 56)">4200</text>
+      </g>
+    </svg>
+  </div>
+  <div class="calc">
+    <h3>Exemple résolu : les données de la cloison C2</h3>
+    <p>Sur le plan au 1/50 ci-dessus, la cote 4200 court le long de C2 : longueur 4,20 m.</p>
+    <p>La coupe donne une hauteur sous plafond de 2500 mm : hauteur 2,50 m.</p>
+    <p>La porte de C2 mesure 830 mm de large ; sa hauteur, 2040 mm, est dans le tableau des menuiseries : 0,83 m × 2,04 m.</p>
+    <p>Le descriptif donne : une plaque par face, face bureau en plaques standard, face sanitaires en plaques hydrofuges,
+    plaques de 2,50 × 1,20, entraxe 0,60 m, marge de chutes 10 %, porte à ne pas déduire.
+    Une plaque hydrofuge résiste à l'humidité ; elle se pose côté douche ou sanitaires.</p>
+  </div>
 </section>
 
 <section>
   <h2>Les surfaces du plaquiste</h2>
-  <ul>
-    <li><strong>Cloison</strong> : longueur (lue au plan de niveau) × hauteur
-    sous plafond (lue à la coupe) ;</li>
-    <li><strong>Doublage</strong> : longueur de mur doublé × hauteur sous plafond ;</li>
-    <li><strong>Plafond</strong> : surface de la pièce (longueur × largeur),
-    que le calepin de Plâtrerie 2 donne déjà.</li>
-  </ul>
-  <p>La longueur, la hauteur et la surface brute d'un mur se calculent comme à la
-  gare 7 bis, écrans 4 à 6. L'écran 6 montre aussi qu'une cloison a deux faces.</p>
+  <p>Surface d'une <strong>cloison</strong> = longueur (lue au plan de niveau) × hauteur sous plafond (lue à la coupe).
+  Un doublage se calcule de la même façon, avec la longueur du mur doublé.</p>
+  <p>Une cloison 72/48 mesure 72 mm d'épaisseur finie, sur une ossature de 48 mm.
+  Elle a deux faces. On calcule la surface d'une face, puis on traite chaque face à part,
+  car les deux faces ne reçoivent pas toujours la même plaque.</p>
   <p class="cle">Les ouvertures (portes, fenêtres, portes-fenêtres) se déduisent
-  toutes, <strong>sauf consigne contraire du descriptif</strong>. La méthode et son
-  exemple résolu sont à la gare 7 bis, écran 7 « Déduire les ouvertures ». Si le
-  descriptif dit « ne pas déduire la porte », la surface de la cloison reste sa
-  surface brute.</p>
+  toutes, <strong>sauf consigne contraire du descriptif</strong>. Si le descriptif dit « ne pas déduire la porte »,
+  la surface de la cloison reste sa surface brute.</p>
+  <div class="calc">
+    <h3>Exemple résolu : la surface de C2</h3>
+    <p>Surface brute d'une face : 4,20 × 2,50 = 10,50 m².</p>
+    <p>Surface de la porte : 0,83 × 2,04 = 1,69 m².</p>
+    <p>Si le descriptif disait de déduire la porte : 10,50 − 1,69 = 8,81 m².</p>
+    <p>Ici, le descriptif dit de ne pas la déduire : la surface d'une face reste 10,50 m².</p>
+  </div>
+  <p>Une surface s'arrondit au centième : 1,6932 m² s'écrit 1,69 m².
+  Les mêmes gestes sur un autre plan sont à la gare 7 bis, écrans 4 à 7.</p>
 </section>
 
 <section>
   <h2>De la surface aux plaques</h2>
   <p>La plaque prise dans cette gare mesure <strong>2,50 m × 1,20 m = 3 m²</strong>. Sur un vrai chantier, le format se lit dans le descriptif.</p>
-  <p>Exemple résolu : une cloison de 21 m², une plaque par face.</p>
-  <ul>
-    <li>Deux faces : 2 × 21 = 42 m² de plaques ;</li>
-    <li>la pose fait des chutes : on ajoute une marge, souvent de 5 à 10 %, fixée
-    par le descriptif ou l'enseignant. Avec 10 % : 42 × 1,10 = 46,2 m² ;</li>
-    <li>46,2 ÷ 3 = 15,4, soit 16 plaques.</li>
-  </ul>
-  <p class="cle">Une surface s'arrondit au centième. Un nombre de plaques
-  s'arrondit toujours à l'<strong>entier supérieur</strong> : on commande des plaques
-  entières. Une plaque de trop se stocke, une plaque manquante arrête le chantier.</p>
+  <p>La méthode, pour chaque face :</p>
+  <ol>
+    <li>prenez la surface de la face (écran 3) ;</li>
+    <li>ajoutez la marge de chutes, fixée par le descriptif (souvent 5 à 10 %) : avec 10 %, multipliez par 1,10 ;</li>
+    <li>divisez par la surface d'une plaque, 3 m² ;</li>
+    <li>arrondissez à l'entier supérieur.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : les plaques de C2</h3>
+    <p>Face bureau, plaques standard : 10,50 × 1,10 = 11,55 m², puis 11,55 ÷ 3 = 3,85, soit <strong>4 plaques standard</strong>.</p>
+    <p>Face sanitaires, plaques hydrofuges : même surface, même calcul, soit 4 plaques hydrofuges.</p>
+    <p>On ne commande pas 8 plaques standard : la face sanitaires demande des plaques hydrofuges, comptées sur leur propre ligne.</p>
+  </div>
+  <p class="cle">Un nombre de plaques s'arrondit toujours à l'<strong>entier supérieur</strong>, même à 3,1 :
+  on commande des plaques entières. Une plaque de trop se stocke, une plaque manquante arrête le chantier.</p>
 </section>
 
 <section>
   <h2>L'ossature se compte aussi</h2>
   <ul>
     <li><strong>Rails</strong> : deux fois la longueur de la cloison, un rail au sol
-    et un au plafond ;</li>
+    et un au plafond. R48 désigne un rail de 48 mm de large, M48 un montant de 48 mm ;</li>
     <li><strong>Montants courants</strong> : longueur de la cloison ÷ entraxe, plus 1
     pour fermer. L'entraxe est la distance d'axe en axe entre deux montants, 0,60 m dans cette gare. Sur un vrai chantier, il se lit dans le descriptif ;</li>
     <li><strong>Renforts de baie</strong> : une porte demande un montant de renfort de
     chaque côté, soit 2 montants en plus (le détail est à la gare Plâtrerie 3) ;</li>
-    <li><strong>Isolant</strong> : la surface de la cloison en m², comptée une seule
-    fois, puis convertie en rouleaux ou panneaux selon la fiche produit ;</li>
+    <li><strong>Isolant</strong> : la surface d'une face de la cloison en m², comptée une seule
+    fois, car l'isolant est entre les deux faces ; elle se convertit ensuite en rouleaux ou panneaux selon la fiche produit ;</li>
     <li><strong>Visserie, bandes, enduit</strong> : au ratio de la fiche fabricant.</li>
   </ul>
-  <p class="cle">Exemple résolu : cloison de 6,00 m sur 2,50 m avec une porte que le
-  descriptif dit de ne pas déduire, entraxe 0,60 m. Rails : 2 × 6,00 = 12,00 m. Montants courants : 6,00 ÷ 0,60 + 1 = 11.
-  Renforts de baie : 2. Isolant : 6,00 × 2,50 = 15,00 m², compté une seule fois.</p>
+  <p>Le « plus 1 » vient des intervalles : sur 1,20 m à 0,60 m d'entraxe, il y a 2 intervalles et 3 montants,
+  un à chaque bout et un au milieu.</p>
+  <div class="calc">
+    <h3>Exemple résolu : l'ossature de C2</h3>
+    <p>Rails : 2 × 4,20 = 8,40 m.</p>
+    <p>Montants courants : 4,20 ÷ 0,60 = 7 intervalles, plus 1 : 8 montants.</p>
+    <p>Renforts de baie : la porte de C2 en demande 2.</p>
+    <p>Isolant : 4,20 × 2,50 = 10,50 m², compté une seule fois.</p>
+  </div>
+  <p class="cle">Si la division ne tombe pas juste, arrondissez le nombre d'intervalles à l'entier supérieur, puis ajoutez 1.
+  Exemple : 4,50 ÷ 0,60 = 7,5, soit 8 intervalles et 9 montants.</p>
 </section>
 
 <section>
   <h2>Lire un devis</h2>
   <p>Chaque ligne d'un devis donne la désignation, l'unité, la quantité, le prix
-  unitaire et le total. Le lecteur de plans <strong>vérifie la colonne quantité</strong> :</p>
+  unitaire et le total. Le lecteur de plans <strong>vérifie la colonne quantité</strong>, ligne par ligne :</p>
+  <ol>
+    <li>lisez la désignation et l'unité (u pour unité, m, m²) ;</li>
+    <li>retrouvez votre propre calcul pour cette ligne ;</li>
+    <li>comparez : même nombre, écrivez « juste » ; nombre différent, écrivez « Faux : » suivi de la bonne quantité et de la raison.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : le devis de C2</h3>
+    <table class="doc">
+      <tr><th>Désignation</th><th>Unité</th><th>Quantité</th><th>Verdict</th></tr>
+      <tr><td>Plaques standard</td><td>u</td><td>4</td><td>juste (écran 4)</td></tr>
+      <tr><td>Plaques hydrofuges</td><td>u</td><td>4</td><td>juste (écran 4)</td></tr>
+      <tr><td>Rails R48</td><td>m</td><td>4,20</td><td>Faux : 8,40. Un rail au sol et un au plafond.</td></tr>
+      <tr><td>Montants M48</td><td>u</td><td>7 + 2 renforts</td><td>Faux : 8 + 2. Le montant de fermeture est oublié.</td></tr>
+      <tr><td>Isolant 45 mm</td><td>m²</td><td>10,50</td><td>juste : une seule fois</td></tr>
+    </table>
+  </div>
+  <p class="cle">Les erreurs qui reviennent dans un devis de cloison : une face oubliée, ou comptée deux fois avec la même plaque
+  alors qu'elle demande une plaque hydrofuge ; l'isolant compté sur les deux faces ; le rail compté une seule fois ;
+  le montant de fermeture ou les renforts de baie oubliés. Contrôlez ces cinq points sur chaque devis.</p>
+</section>
+
+<section>
+  <h2>Le m² de cloison et le m² de plaques</h2>
+  <p>Une cloison se compose d'une ossature (rails et montants), d'un isolant au milieu, et d'un parement sur chaque face.</p>
   <ul>
-    <li>la surface de cloisons du devis correspond-elle au plan ?</li>
-    <li>les plaques sont-elles comptées sur les deux faces ? Avec une plaque par face, un m² de cloison demande 2 m² de plaques, avant la marge de chutes ;</li>
-    <li>l'isolant est-il compté une seule fois ?</li>
-    <li>les zones hydro sont-elles comptées à part (Plâtrerie 1) ?</li>
+    <li>Le <strong>m² de cloison</strong> mesure le mur fini, vu d'un seul côté : longueur × hauteur.</li>
+    <li>Le <strong>m² de plaques</strong> mesure ce qu'on visse : avec une plaque par face, deux fois la surface de la cloison.</li>
+    <li>L'isolant est entre les deux faces : il suit le m² de cloison, une seule fois.</li>
   </ul>
-  <p>Exemple résolu : pour la cloison de 6,00 m de l'écran 4, le devis porte
-  « Rails, m, 12 ». Le calcul donne 2 × 6,00 = 12,00 m : la ligne est juste. S'il
-  portait « Isolant, m², 30 », la ligne serait fausse : l'isolant compte 15,00 m²,
-  une seule fois.</p>
-  <p class="cle">Ce calcul sert à établir un inventaire des matériaux et un bon de commande.</p>
+  <div class="calc">
+    <h3>Exemple résolu : C2</h3>
+    <p>10,50 m² de cloison demandent 2 × 10,50 = 21,00 m² de plaques avant la marge, et 10,50 m² d'isolant.</p>
+  </div>
+  <p class="cle">Pour expliquer une règle en une phrase, dites la règle, puis sa raison avec « car ».
+  Exemple sur l'isolant : « L'isolant se compte une seule fois, car il est placé entre les deux faces de la cloison. »</p>
+</section>
+
+<section>
+  <h2>La méthode complète, du plan à la commande</h2>
+  <p>Le chiffrage d'une cloison suit toujours le même ordre. Gardez cet écran sous les yeux pendant l'exercice.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Lire longueur, hauteur, portes et consignes ; passer en mètres</td><td data-l="Écran">2</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Surface d'une face, porte déduite ou non selon le descriptif</td><td data-l="Écran">3</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Plaques face par face : marge, ÷ 3, entier supérieur</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Rails, montants + 1, renforts, isolant une fois</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Comparer chaque ligne du devis à vos calculs</td><td data-l="Écran">6</td></tr>
+  </table>
+  <p>Écrivez chaque calcul en entier, avec son unité : 4,20 × 2,50 = 10,50 m². Avec le calcul écrit, vous retrouvez vous-même une erreur.</p>
 </section>
 
 <section id="ecran-test">
@@ -129,6 +225,7 @@
   <p>Vous savez passer du plan à la commande : surfaces, plaques, ossature, et
   contrôle de la colonne quantité d'un devis.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait chiffrer la cloison C1 du vestiaire (plaques standard et hydrofuges, ossature, isolant), puis vérifier un petit devis qui contient deux erreurs.</p>
@@ -252,7 +349,7 @@
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

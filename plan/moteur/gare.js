@@ -151,6 +151,8 @@ window.addEventListener("resize", () => agrandissables(ecrans[idx]));
   /* Feuilles à part par corps d'état (Franck, 01/11/2026) : la gare les déclare par un lien feuille-<métier>.pdf. */
   const feuilles = [...document.querySelectorAll('a[href^="feuille-"][href$=".pdf"]')]
     .map(a => `<a href="${a.getAttribute("href")}" download>${a.dataset.court || a.textContent.trim()}</a>`).join(" ");
-  rangee.innerHTML = '<strong>Documents</strong> <a href="exercice.pdf" download>Exercice (PDF)</a> ' + feuilles + ' <span>A4, noir et blanc</span> <a href="../../../bureau-etudes/documents-professeur.html">Corrigé : sous code, pour l’enseignant</a>';
+  /* Leçon papier (Franck, 07/11/2026) : la gare la déclare par un lien lecon.pdf. */
+  const lecon = document.querySelector('a[href="lecon.pdf"]') ? '<a href="lecon.pdf" download>Leçon (PDF)</a> ' : "";
+  rangee.innerHTML = '<strong>Documents</strong> ' + lecon + '<a href="exercice.pdf" download>Exercice (PDF)</a> ' + feuilles + ' <span>A4, noir et blanc</span> <a href="../../../bureau-etudes/documents-professeur.html">Corrigé : sous code, pour l’enseignant</a>';
   entete.insertAdjacentElement("afterend", rangee);
 })();
