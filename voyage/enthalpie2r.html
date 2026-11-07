@@ -84,7 +84,7 @@
   <p><a class="btn" href="feuille-r32-enthalpie2r.pdf" download>⬇ Télécharger la feuille (PDF)</a></p>
 
   <main id="contenu" style="display:grid;gap:16px">
-    <div class="ecran"><video id="lecteur" controls playsinline preload="metadata" poster="videos-enthalpie2r/chapitre-00-a-vous-de-tracer.jpg?v=20261104-trilogie" src="videos-enthalpie2r/film-complet.mp4?v=20261104-trilogie"></video></div>
+    <div class="ecran"><video id="lecteur" controls playsinline preload="metadata" poster="videos-enthalpie2r/chapitre-00-a-vous-de-tracer.jpg?v=20261107-voix" src="videos-enthalpie2r/film-complet.mp4?v=20261107-voix"></video></div>
     <p class="etat" id="etat" aria-live="polite">Le film en entier est prêt : lancez-le, ou passez les épisodes cochés.</p>
     <div class="commandes">
       <button type="button" class="btn" id="tout">▶ Le film en entier</button>
@@ -93,7 +93,7 @@
       <button type="button" class="btn sec" id="suivant" aria-label="Épisode suivant">⏭</button>
       <button type="button" class="btn sec" id="cocher">Tout cocher</button>
       <button type="button" class="btn sec" id="decocher">Tout décocher</button>
-      <a class="btn sec" href="videos-enthalpie2r/film-complet.mp4?v=20261104-trilogie" download="voyage-dans-tous-ses-etats-enthalpie2r.mp4">⬇ Télécharger le film (MP4)</a>
+      <a class="btn sec" href="videos-enthalpie2r/film-complet.mp4?v=20261107-voix" download="voyage-dans-tous-ses-etats-enthalpie2r.mp4">⬇ Télécharger le film (MP4)</a>
     </div>
     <h2>Les épisodes</h2>
     <ol class="episodes" id="episodes" aria-label="Les épisodes"></ol>
@@ -117,7 +117,7 @@
     grille.innerHTML = chap.map(function (c, i) {
       return '<li class="ep" data-i="' + i + '">' +
         '<button type="button" class="vignette" data-i="' + i + '" aria-label="Voir seulement l\'épisode ' + i + ' : ' + esc(c.titre) + '">' +
-        '<img src="videos-enthalpie2r/' + esc(c.affiche) + '?v=20261104-trilogie" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span><span class="duree">' + mmss(c.duree) + '</span></button>' +
+        '<img src="videos-enthalpie2r/' + esc(c.affiche) + '?v=20261107-voix" alt="" loading="lazy" width="640" height="360"><span class="jouer">▶ voir</span><span class="duree">' + mmss(c.duree) + '</span></button>' +
         '<label><input type="checkbox" data-i="' + i + '" checked><span><b>Épisode ' + i + '</b> · ' + esc(c.titre) + '</span></label>' +
         '<p class="quoi">' + esc(c.sous) + ' · <a class="interactif" href="module-enthalpie2r.html?c=' + esc(c.id) + '">version interactive</a></p></li>';
     }).join("");
@@ -129,7 +129,7 @@
   function marquer() { grille.querySelectorAll(".ep").forEach(function (li) { li.classList.toggle("encours", file.length > 0 && Number(li.dataset.i) === file[pos]); }); }
   function jouer() {
     var c = chap[file[pos]];
-    L.src = "videos-enthalpie2r/" + c.video + "?v=20261104-trilogie"; L.poster = "videos-enthalpie2r/" + c.affiche + "?v=20261104-trilogie";
+    L.src = "videos-enthalpie2r/" + c.video + "?v=20261107-voix"; L.poster = "videos-enthalpie2r/" + c.affiche + "?v=20261107-voix";
     L.play().catch(function () {});
     etat.textContent = "Épisode " + file[pos] + " · " + c.titre + " — " + (pos + 1) + " / " + file.length;
     marquer();
@@ -141,7 +141,7 @@
   }
   function entier() { // le film intégral, d'un seul fichier
     file = []; pos = 0;
-    L.src = "videos-enthalpie2r/film-complet.mp4?v=20261104-trilogie"; L.poster = "videos-enthalpie2r/chapitre-00-a-vous-de-tracer.jpg?v=20261104-trilogie";
+    L.src = "videos-enthalpie2r/film-complet.mp4?v=20261107-voix"; L.poster = "videos-enthalpie2r/chapitre-00-a-vous-de-tracer.jpg?v=20261107-voix";
     L.play().catch(function () {});
     etat.textContent = "Le film en entier"; marquer();
     L.scrollIntoView({ behavior: "smooth", block: "center" });

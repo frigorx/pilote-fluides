@@ -22,7 +22,7 @@ AIDE.carnet({
             'Recopiez ces cinq valeurs dans le tableau « Mes relevés ».',
             'Écrivez les pressions telles qu’elles sont lues : en bar relatif.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-1-releves.mp4', poster: '../videos-enthalpie2r/etapes/etape-1-releves.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-1-releves.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-1-releves.jpg?v=20261107-voix' }
         },
         {
           etapes: [
@@ -67,7 +67,7 @@ AIDE.carnet({
             'Lisez la température d’évaporation et celle de condensation.',
             'Calculez la surchauffe et le sous-refroidissement.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-2-absolu.mp4', poster: '../videos-enthalpie2r/etapes/etape-2-absolu.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-2-absolu.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-2-absolu.jpg?v=20261107-voix' }
         },
         {
           etapes: [
@@ -120,7 +120,7 @@ AIDE.carnet({
             'Lisez l’enthalpie h de chaque point, sur l’axe du bas.',
             'L’exemple résolu de la feuille montre le geste.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-3-points.mp4', poster: '../videos-enthalpie2r/etapes/etape-3-points.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-3-points.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-3-points.jpg?v=20261107-voix' }
         },
         {
           etapes: [
@@ -169,7 +169,7 @@ AIDE.carnet({
             'Écrivez pourquoi il est à cet endroit.',
             'Lisez son titre x sur les isotitres.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-4-point4.mp4', poster: '../videos-enthalpie2r/etapes/etape-4-point4.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-4-point4.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-4-point4.jpg?v=20261107-voix' }
         },
         {
           etapes: [
@@ -212,7 +212,7 @@ AIDE.carnet({
             'Au stylo vert, suivez l’isentrope depuis le point 1 jusqu’à la ligne HP.',
             'Lisez la température à l’arrivée et comparez au refoulement mesuré.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-5-trace.mp4', poster: '../videos-enthalpie2r/etapes/etape-5-trace.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-5-trace.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-5-trace.jpg?v=20261107-voix' }
         },
         {
           etapes: [
@@ -259,7 +259,7 @@ AIDE.carnet({
             'Calculez le COP froid, le COP chaud et le taux de compression.',
             'Les formules sont écrites sur la feuille, partie 6.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-6-calculs.mp4', poster: '../videos-enthalpie2r/etapes/etape-6-calculs.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-6-calculs.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-6-calculs.jpg?v=20261107-voix' }
         },
         {
           etapes: [
@@ -305,7 +305,7 @@ AIDE.carnet({
             'Calculez le débit massique qm, en kg/s puis en kg/h.',
             'Calculez la puissance au compresseur et au condenseur.'
           ],
-          video: { src: '../videos-enthalpie2r/etapes/etape-7-debit.mp4', poster: '../videos-enthalpie2r/etapes/etape-7-debit.jpg' }
+          video: { src: '../videos-enthalpie2r/etapes/etape-7-debit.mp4?v=20261107-voix', poster: '../videos-enthalpie2r/etapes/etape-7-debit.jpg?v=20261107-voix' }
         },
         {
           etapes: [

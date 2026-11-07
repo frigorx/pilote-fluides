@@ -57,7 +57,7 @@ window.VOYAGE_RECIT = {
         "Le technicien a branché son manifold et posé sa pince thermométrique.",
         ["Manomètre basse pression : 7,1 bar. Manomètre haute pression : 23,8 bar.", "Manomètre basse pression : sept virgule un bars. Manomètre haute pression : vingt-trois virgule huit bars."],
         ["Aspiration : 7 degrés. Refoulement : 95 degrés. Sortie du condenseur : 34 degrés.", "Aspiration : sept degrés. Refoulement : quatre-vingt-quinze degrés. Sortie du condenseur : trente-quatre degrés."],
-        "Notez ces cinq relevés dans le tableau de votre feuille. Mettez en pause.",
+        ["Notez ces cinq relevés dans le tableau de votre feuille. Mettez en pause.", "Notez ces cinq relevés dans le tableau de votre feuille."],
         "Vérifiez votre tableau : deux pressions relatives, trois températures."
       ],
       question: { q: "Quelle température lit la pince posée sur la tuyauterie de refoulement ?",
@@ -67,7 +67,7 @@ window.VOYAGE_RECIT = {
       carte: [14.5, 15], calques: { isobaresCycle: 1, isothermes: 2 },
       puces: [["BP", "8,1 bar abs"], ["HP", "24,8 bar abs"]],
       phrases: [
-        ["Ajoutez 1 bar à chaque pression. Tracez les deux isobares. Lisez les températures d'évaporation et de condensation. Mettez en pause.", "Ajoutez un bar à chaque pression. Tracez les deux isobares. Lisez les températures d'évaporation et de condensation. Mettez en pause."],
+        ["Ajoutez 1 bar à chaque pression. Tracez les deux isobares. Lisez les températures d'évaporation et de condensation. Mettez en pause.", "Ajoutez un bar à chaque pression. Tracez les deux isobares. Lisez les températures d'évaporation et de condensation."],
         ["Correction : 7,1 plus 1, la basse pression vaut 8,1 bar absolus. 23,8 plus 1, la haute pression vaut 24,8 bar absolus.", "Correction : sept virgule un plus un, la basse pression vaut huit virgule un bars absolus. Vingt-trois virgule huit plus un, la haute pression vaut vingt-quatre virgule huit bars absolus."],
         ["À 8,1 bar, l'isotherme horizontale sous la cloche dit 0 degré : c'est l'évaporation.", "À huit virgule un bars, l'isotherme horizontale sous la cloche dit zéro degré : c'est l'évaporation."],
         ["À 24,8 bar, elle dit 40 degrés : c'est la condensation.", "À vingt-quatre virgule huit bars, elle dit quarante degrés : c'est la condensation."],
@@ -81,7 +81,7 @@ window.VOYAGE_RECIT = {
       carte: [0, 0], puces: [["BP", "8,1 bar abs"], ["HP", "24,8 bar abs"]],
       calques: { isobaresCycle: 0, isothermes: 0, pt1: 1, pt2: 2, pt3: 3 },
       phrases: [
-        ["Placez le point 1, sortie de l'évaporateur, le point 2, refoulement, et le point 3, sortie du condenseur. Lisez leur enthalpie. Mettez en pause.", "Placez le point un, sortie de l'évaporateur, le point deux, refoulement, et le point trois, sortie du condenseur. Lisez leur enthalpie. Mettez en pause."],
+        ["Placez le point 1, sortie de l'évaporateur, le point 2, refoulement, et le point 3, sortie du condenseur. Lisez leur enthalpie. Mettez en pause.", "Placez le point un, sortie de l'évaporateur, le point deux, refoulement, et le point trois, sortie du condenseur. Lisez leur enthalpie."],
         ["Correction. Point 1 : basse pression et 7 degrés, dans la vapeur. Environ 524 kilojoules par kilo.", "Correction. Point un : basse pression et sept degrés, dans la vapeur. Environ cinq cent vingt-quatre kilojoules par kilo."],
         ["Point 2 : haute pression et 95 degrés, loin à droite. Environ 591 kilojoules par kilo.", "Point deux : haute pression et quatre-vingt-quinze degrés, loin à droite. Environ cinq cent quatre-vingt-onze kilojoules par kilo."],
         ["Point 3 : haute pression et 34 degrés, dans le liquide. Environ 263 kilojoules par kilo.", "Point trois : haute pression et trente-quatre degrés, dans le liquide. Environ deux cent soixante-trois kilojoules par kilo."],
@@ -96,7 +96,7 @@ window.VOYAGE_RECIT = {
       carte: [0, 0], puces: [["BP", "8,1 bar abs"], ["HP", "24,8 bar abs"]],
       calques: { isobaresCycle: 0, pt1: 0, pt2: 0, pt3: 0, detente: 2, pt4: 3, isotitres: 3 },
       phrases: [
-        ["Placez le point 4, entrée de l'évaporateur. Lisez son titre. Mettez en pause.", "Placez le point quatre, entrée de l'évaporateur. Lisez son titre. Mettez en pause."],
+        ["Placez le point 4, entrée de l'évaporateur. Lisez son titre. Mettez en pause.", "Placez le point quatre, entrée de l'évaporateur. Lisez son titre."],
         "Correction : aucun relevé ne le place, car il est sous la cloche.",
         ["Descendez tout droit depuis le point 3, sur l'isenthalpe 263, jusqu'à l'isobare basse pression.", "Descendez tout droit depuis le point trois, sur l'isenthalpe deux cent soixante-trois, jusqu'à l'isobare basse pression."],
         ["Le point 4 tombe sur l'isotitre 0,2 : 20 % de vapeur à l'entrée de l'évaporateur.", "Le point quatre tombe sur l'isotitre zéro virgule deux : vingt pour cent de vapeur à l'entrée de l'évaporateur."]
@@ -110,7 +110,7 @@ window.VOYAGE_RECIT = {
       carte: [0, 15], diag: [5, 12], puces: [["BP", "8,1 bar abs"], ["HP", "24,8 bar abs"]],
       calques: { isobaresCycle: 0, pt1: 0, pt2: 0, pt3: 0, pt4: 0, surchauffe: 1, desurchauffe: 1, sousRefroidissement: 1, detente: 1, compressionIdeale: 2 },
       phrases: [
-        ["Reliez 4, 1, 2, 3, puis revenez à 4. Depuis le point 1, suivez aussi l'isentrope jusqu'à la haute pression. Mettez en pause.", "Reliez quatre, un, deux, trois, puis revenez à quatre. Depuis le point un, suivez aussi l'isentrope jusqu'à la haute pression. Mettez en pause."],
+        ["Reliez 4, 1, 2, 3, puis revenez à 4. Depuis le point 1, suivez aussi l'isentrope jusqu'à la haute pression. Mettez en pause.", "Reliez quatre, un, deux, trois, puis revenez à quatre. Depuis le point un, suivez aussi l'isentrope jusqu'à la haute pression."],
         "Correction : le cycle est fermé, avec la surchauffe au bout de l'évaporateur et la désurchauffe au début du condenseur.",
         ["L'isentrope arrive vers 79 degrés. Le vrai compresseur refoule à 95 degrés : il chauffe le gaz plus qu'un compresseur idéal.", "L'isentrope arrive vers soixante-dix-neuf degrés. Le vrai compresseur refoule à quatre-vingt-quinze degrés : il chauffe le gaz plus qu'un compresseur idéal."]
       ],
@@ -123,7 +123,7 @@ window.VOYAGE_RECIT = {
       carte: [0, 0], diag: [12, 12], puces: [["froid", "261 kJ/kg"], ["chaud", "328 kJ/kg"]],
       calques: { isobaresCycle: 0, pt1: 0, pt2: 0, pt3: 0, pt4: 0 },
       phrases: [
-        ["Calculez les trois écarts d'enthalpie, le COP froid, le COP chaud et le taux de compression. Mettez en pause.", "Calculez les trois écarts d'enthalpie, le C O P froid, le C O P chaud et le taux de compression. Mettez en pause."],
+        ["Calculez les trois écarts d'enthalpie, le COP froid, le COP chaud et le taux de compression. Mettez en pause.", "Calculez les trois écarts d'enthalpie, le C O P froid, le C O P chaud et le taux de compression."],
         ["Correction. Évaporateur : 524 moins 263, soit 261 kilojoules par kilo.", "Correction. Évaporateur : cinq cent vingt-quatre moins deux cent soixante-trois, soit deux cent soixante et un kilojoules par kilo."],
         ["Compresseur : 591 moins 524, soit 67 kilojoules par kilo.", "Compresseur : cinq cent quatre-vingt-onze moins cinq cent vingt-quatre, soit soixante-sept kilojoules par kilo."],
         ["Condenseur : 591 moins 263, soit 328 kilojoules par kilo.", "Condenseur : cinq cent quatre-vingt-onze moins deux cent soixante-trois, soit trois cent vingt-huit kilojoules par kilo."],
@@ -139,7 +139,7 @@ window.VOYAGE_RECIT = {
       carte: [0, 0], diag: [12, 12], puces: [["froid", "3,5 kW"], ["chaud", "4,4 kW"]],
       calques: { isobaresCycle: 0, pt1: 0, pt2: 0, pt3: 0, pt4: 0 },
       phrases: [
-        ["Le climatiseur produit 3,5 kilowatts de froid. Calculez le débit massique, puis les puissances au compresseur et au condenseur. Mettez en pause.", "Le climatiseur produit trois virgule cinq kilowatts de froid. Calculez le débit massique, puis les puissances au compresseur et au condenseur. Mettez en pause."],
+        ["Le climatiseur produit 3,5 kilowatts de froid. Calculez le débit massique, puis les puissances au compresseur et au condenseur. Mettez en pause.", "Le climatiseur produit trois virgule cinq kilowatts de froid. Calculez le débit massique, puis les puissances au compresseur et au condenseur."],
         ["Correction : 3,5 divisé par 261, environ 0,013 kilo par seconde, soit 48 kilos par heure.", "Correction : trois virgule cinq divisé par deux cent soixante et un, environ zéro virgule zéro treize kilo par seconde, soit quarante-huit kilos par heure."],
         ["Au compresseur : 0,013 fois 67, environ 0,9 kilowatt.", "Au compresseur : zéro virgule zéro treize fois soixante-sept, environ zéro virgule neuf kilowatt."],
         ["Au condenseur : 0,013 fois 328, environ 4,4 kilowatts : les 3,5 kilowatts de froid plus les 0,9 du compresseur.", "Au condenseur : zéro virgule zéro treize fois trois cent vingt-huit, environ quatre virgule quatre kilowatts : les trois virgule cinq kilowatts de froid plus les zéro virgule neuf du compresseur."]

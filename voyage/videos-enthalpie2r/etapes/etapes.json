@@ -1,0 +1,65 @@
+[
+ {
+  "etape": 1,
+  "id": "releves",
+  "titre": "Noter les relevés",
+  "debut": 29.95,
+  "duree": 31,
+  "video": "etape-1-releves.mp4",
+  "affiche": "etape-1-releves.jpg"
+ },
+ {
+  "etape": 2,
+  "id": "absolu",
+  "titre": "Passer en absolu",
+  "debut": 67.398,
+  "duree": 13,
+  "video": "etape-2-absolu.mp4",
+  "affiche": "etape-2-absolu.jpg"
+ },
+ {
+  "etape": 3,
+  "id": "points",
+  "titre": "Placer les points",
+  "debut": 116.672,
+  "duree": 15,
+  "video": "etape-3-points.mp4",
+  "affiche": "etape-3-points.jpg"
+ },
+ {
+  "etape": 4,
+  "id": "point4",
+  "titre": "Placer le point 4",
+  "debut": 164.512,
+  "duree": 10,
+  "video": "etape-4-point4.mp4",
+  "affiche": "etape-4-point4.jpg"
+ },
+ {
+  "etape": 5,
+  "id": "trace",
+  "titre": "Tracer le cycle",
+  "debut": 195.246,
+  "duree": 14,
+  "video": "etape-5-trace.mp4",
+  "affiche": "etape-5-trace.jpg"
+ },
+ {
+  "etape": 6,
+  "id": "calculs",
+  "titre": "Les calculs",
+  "debut": 228.074,
+  "duree": 11,
+  "video": "etape-6-calculs.mp4",
+  "affiche": "etape-6-calculs.jpg"
+ },
+ {
+  "etape": 7,
+  "id": "debit",
+  "titre": "Le débit et les puissances",
+  "debut": 283.9,
+  "duree": 14,
+  "video": "etape-7-debit.mp4",
+  "affiche": "etape-7-debit.jpg"
+ }
+]
