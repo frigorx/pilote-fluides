@@ -53,7 +53,7 @@
     }
   ],
   "exemple": {
-    "enonce": "Appartement d’exemple (valeurs d’exercice) : 3 personnes, 40 L par personne et par jour à 40 °C ; eau froide 12 °C ; stockage à 60 °C ; ballon de 100 L ; pompe à chaleur de 1 500 W thermiques, COP 2,8 ; pointe d’une douche de 40 L à 40 °C en 10 minutes ; heures creuses de 5 h ; tube le plus long de 20 m, 12 mm de diamètre intérieur.",
+    "enonce": "Appartement d’exemple de la station H6 (valeurs d’exercice) : 3 personnes, 40 L par personne et par jour à 40 °C ; eau froide 12 °C ; stockage à 60 °C ; ballon de 100 L ; pompe à chaleur de 1 500 W thermiques, COP 2,8 ; pointe d’une douche de 40 L à 40 °C en 10 minutes ; heures creuses de 5 h ; tube le plus long de 20 m, 12 mm de diamètre intérieur.",
     "lignes": [
       "V40 = 3 × 40 = 120 L par jour.",
       "E = 120 × 1,163 × (40 − 12) = 3 908 Wh, soit 3,9 kWh.",
@@ -67,7 +67,7 @@
     "resultat": "3,9 kWh par jour, ballon de 100 L suffisant, chauffe en 3 h 43 min, 536 W électriques, pointe de 7 818 W en instantané, tube de 2,26 L, pas de bouclage (valeurs d’exercice)."
   },
   "pieges": [
-    "Eau froide oubliée : 5,6 kWh au lieu de 3,9 kWh pour l’appartement d’exemple.",
+    "Eau froide oubliée : 5,6 kWh au lieu de 3,9 kWh pour l’appartement d’exemple de la station H6.",
     "Minutes prises pour des heures dans la pointe : 130 W au lieu de 7 818 W. Puissance électrique prise pour le temps de chauffe : 10 h 25 min au lieu de 3 h 43 min.",
     "Diamètre extérieur pris pour le diamètre intérieur : 3,08 L au lieu de 2,26 L, et un bouclage conclu à tort."
   ],

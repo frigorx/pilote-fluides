@@ -22,7 +22,7 @@
     },
     {
       "grandeur": "Régime d’eau glacée",
-      "valeur": "autour de 6 °C au départ, 12 °C au retour",
+      "valeur": "autour de 7 °C au départ, 12 °C au retour",
       "source": "CartoClim 3.8, groupe d’eau glacée"
     },
     {
@@ -37,9 +37,9 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple : salle de réunion 3476 W à 16 h, machine 4443 W ; unité extérieure contre la façade nord du local technique.",
+    "enonce": "Bâtiment d’exemple : salle de réunion 3449 W à 16 h, machine 4441 W ; unité extérieure contre la façade nord du local technique.",
     "lignes": [
-      "Part de la salle : 3476 ÷ 4443 × 100 = 78 %.",
+      "Part de la salle : 3449 ÷ 4441 × 100 = 78 %.",
       "Liaison de la salle : plan 3,3 + 2,0 = 5,3 m ; montée 2,35 m ; descente 0,65 m ; L = 8,3 m.",
       "Dénivelé : 2,20 − 0,50 = 1,70 m.",
       "Monosplit de l’exercice : 8,3 m entre 3 et 20 m, 1,70 m sous 10 m, 3,5 kW sous 5,0 kW."

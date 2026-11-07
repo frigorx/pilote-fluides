@@ -19,14 +19,14 @@ const EX = {
   "conditions": 3,
   "ventilation": 4
  },
- "qv": "75",
- "pointe": "120",
- "bouches": "sanitaires 45 m³/h et coin repas 30 m³/h",
- "salle": "5,00 × 4,00 × 2,60 m, valeur d’exercice",
+ "qv": "110",
+ "pointe": "150",
+ "bouches": "toilettes 60 m³/h et lavabos 50 m³/h",
+ "salle": "6,00 × 4,10 × 2,60 m, valeur d’exercice",
  "V": {
   "bureau": "49,76",
-  "salle": "52,00",
-  "somme": "101,76"
+  "salle": "63,96",
+  "somme": "113,72"
  },
  "form": {
   "q": "30",
@@ -35,63 +35,63 @@ const EX = {
  },
  "inf": {
   "fuites": "20",
-  "entrees": "55"
+  "entrees": "90"
  },
  "part": {
-  "q": "36,67",
-  "H": "12,47",
-  "phi": "324"
+  "q": "48,13",
+  "H": "16,36",
+  "phi": "425"
  },
  "piece": {
   "Hparois": "26,44",
   "parois": "687",
-  "air": "324",
-  "Htot": "38,91",
-  "total": "1011",
-  "part": "32,0"
+  "air": "425",
+  "Htot": "42,80",
+  "total": "1112",
+  "part": "38,2"
  },
  "rec": {
   "eta": "0,70",
-  "phi": "199"
+  "phi": "292"
  },
  "dfx": {
   "eta": "0,70",
   "qinf": "10",
-  "qeq": "32,5",
-  "phi": "287"
+  "qeq": "43,0",
+  "phi": "380"
  },
  "ex1": {
   "choices": [
-   "900 W",
-   "663 W",
-   "0,18 W",
-   "306 W"
+   "1005 W",
+   "972 W",
+   "0,27 W",
+   "449 W"
   ],
   "good": 1,
-  "explain": "0,34 × 75 × 26 = 663 W. A multiplie le volume des pièces (101,76 m³) au lieu du débit, C divise par 3 600 alors que le 0,34 contient déjà les heures, D prend ΔT = 19 + (−7) = 12 K au lieu de 26 K.",
-  "juste": "663"
+  "explain": "0,34 × 110 × 26 = 972 W. A multiplie le volume des pièces (113,72 m³) au lieu du débit, C divise par 3 600 alors que le 0,34 contient déjà les heures, D prend ΔT = 19 + (−7) = 12 K au lieu de 26 K.",
+  "juste": "972"
  },
  "ex2": {
   "choices": [
-   "663 W",
-   "324 W",
-   "339 W",
-   "460 W"
+   "972 W",
+   "425 W",
+   "547 W",
+   "565 W"
   ],
   "good": 2,
-  "explain": "Qv de la salle = 75 × 52,00 ÷ 101,76 = 38,33 m³/h, puis 0,34 × 38,33 × 26 = 339 W. A donne tout le débit à la salle, B est la part du bureau, D multiplie le volume de la salle au lieu de sa part de débit."
+  "explain": "Qv de la salle = 110 × 63,96 ÷ 113,72 = 61,87 m³/h, puis 0,34 × 61,87 × 26 = 547 W. A donne tout le débit à la salle, B est la part du bureau, D multiplie le volume de la salle au lieu de sa part de débit."
  },
  "ex3": {
   "choices": [
-   "133 W",
-   "636 W",
-   "154 W",
-   "239 W"
+   "194 W",
+   "902 W",
+   "219 W",
+   "318 W"
   ],
   "good": 3,
-  "explain": "75 × (1 − 0,8) + 12 = 27 m³/h, puis 0,34 × 27 × 26 = 239 W. A oublie les infiltrations, B multiplie le débit par η au lieu de 1 − η, C fait passer les infiltrations par l’échangeur.",
+  "explain": "110 × (1 − 0,8) + 14 = 36 m³/h, puis 0,34 × 36 × 26 = 318 W. A oublie les infiltrations, B multiplie le débit par η au lieu de 1 − η, C fait passer les infiltrations par l’échangeur.",
   "eta": "0,80",
-  "qinf": "12"
+  "qinf": "14"
  }
 };
 /*EXEMPLE-FIN*/
@@ -105,7 +105,7 @@ const exempleDoubleFlux = () => BE.exemple({ text: `Bâtiment d’exemple en dou
 /* Figures de méthode : schémas de principe tracés par outils/stations/t4-deperditions-air/schema.mjs, valeurs du bloc EXEMPLE. */
 const figureFormule = () => BE.schema(SCH_FORMULE, `Schéma de principe. À gauche, dehors, une flèche bleue « air neuf, qv = ${EX.form.q} m³/h » à θe = ${EX.T.te} °C entre dans une pièce à θi = ${EX.T.ti} °C, où une flèche orange montre que l’air neuf s’y réchauffe. En dessous, quatre cases reliées par deux signes fois et un signe égal : qv, ${EX.form.q} m³/h ; 0,34, Wh/(m³.K) ; ΔT, ${EX.T.dT} K ; Φv, ${EX.form.phi} W. Deux lignes rappellent ΔT = θi − θe = ${EX.T.ti} − (${EX.T.te}) = ${EX.T.dT} K, puis Hv = 0,34 × ${EX.form.q} = ${EX.form.H} W/K et Φv = ${EX.form.H} × ${EX.T.dT} = ${EX.form.phi} W.`, "L’air neuf entre froid et se réchauffe dans la pièce : le débit, le 0,34 et l’écart de température donnent la puissance.");
 const figureInfiltrations = () => BE.schema(SCH_INF, `Schéma de principe, vu de dessus. Un mur sépare dehors, à gauche, et dedans. Dans le mur, une grille d’entrée d’air laisse passer une flèche bleue épaisse : entrée d’air, ${EX.inf.entrees} m³/h. Autour de la fenêtre, deux flèches bleues fines passent par les joints : fuites aux joints, ${EX.inf.fuites} m³/h en tout. De l’autre côté, une flèche foncée sort par une bouche d’extraction : ${EX.qv} m³/h extraits. Sous le dessin : entrées d’air ${EX.inf.entrees} plus fuites ${EX.inf.fuites} égale ${EX.qv} m³/h extraits ; les fuites remplacent une partie des entrées d’air.`, "Tout l’air extrait entre quelque part : par les entrées d’air ou par les fuites, jamais en plus.");
-const figurePartage = () => BE.schema(SCH_PARTAGE, `Plan de principe du bâtiment d’exemple, en deux colonnes. À gauche, les pièces principales : le bureau, ${EX.V.bureau} m³, et la salle de réunion, ${EX.V.salle} m³, chacune avec une flèche bleue d’entrée d’air. À droite, les pièces de service, en gris : les sanitaires et le coin repas, avec une flèche d’extraction qui sort de chacun (${EX.bouches}). Une flèche d’air de transfert va de chaque pièce principale vers la pièce de service voisine. Sous le plan : la somme des volumes des pièces qui reçoivent l’air neuf, ${EX.V.bureau} + ${EX.V.salle} = ${EX.V.somme} m³, et le débit extrait, donc retenu, ${EX.qv} m³/h.`, "L’air neuf entre par les pièces principales, la VMC l’extrait dans les pièces de service : seules les premières comptent dans la somme des volumes.");
+const figurePartage = () => BE.schema(SCH_PARTAGE, `Plan de principe du bâtiment d’exemple, en deux colonnes. À gauche, les pièces principales : le bureau, ${EX.V.bureau} m³, et la salle de réunion, ${EX.V.salle} m³, chacune avec une flèche bleue d’entrée d’air. À droite, les pièces de service, en gris : les sanitaires, côté toilettes et côté lavabos, avec une flèche d’extraction qui sort de chacun (${EX.bouches}). Une flèche d’air de transfert va de chaque pièce principale vers la pièce de service voisine. Sous le plan : la somme des volumes des pièces qui reçoivent l’air neuf, ${EX.V.bureau} + ${EX.V.salle} = ${EX.V.somme} m³, et le débit extrait, donc retenu, ${EX.qv} m³/h.`, "L’air neuf entre par les pièces principales, la VMC l’extrait dans les pièces de service : seules les premières comptent dans la somme des volumes.");
 const figureRecuperateur = () => BE.schema(SCH_REC, `Schéma de principe d’un échangeur de VMC double flux, au centre, avec quatre gaines. En haut à gauche, une flèche bleue entre : air neuf, à θe, froid. En haut à droite, une flèche orange entre : air extrait, à θi, chaud. Dans l’échangeur, deux traits se croisent : les deux flux ne se mélangent pas. En bas à droite, une flèche orange sort vers les pièces : air neuf réchauffé. En bas à gauche, une flèche bleue sort vers dehors : air rejeté, refroidi. Sous le dessin : η = ${EX.rec.eta}, il ne reste à chauffer que 1 − η ; Φv = 0,34 × ${EX.qv} × (1 − ${EX.rec.eta}) × ${EX.T.dT} = ${EX.rec.phi} W, au lieu de ${EX.ex1.juste} W sans échangeur.`, "L’air extrait, chaud, réchauffe l’air neuf dans l’échangeur : les deux flux se croisent sans se mélanger.");
 const figureDoubleFlux = () => BE.schema(SCH_DFX, `Schéma de principe. En haut, l’air soufflé de ${EX.qv} m³/h part de dehors, passe dans un échangeur d’efficacité η = ${EX.dfx.eta} et arrive dans une grande case « débit à chauffer ». En dessous, les infiltrations de ${EX.dfx.qinf} m³/h arrivent dans la même case sans passer par l’échangeur. La case indique ${EX.dfx.qeq} m³/h. Sous le schéma : débit à chauffer = ${EX.qv} × (1 − ${EX.dfx.eta}) + ${EX.dfx.qinf} = ${EX.dfx.qeq} m³/h, puis Φv = 0,34 × ${EX.dfx.qeq} × ${EX.T.dT} = ${EX.dfx.phi} W.`, "Les infiltrations contournent l’échangeur : elles s’ajoutent au débit qu’il a déjà réduit.");
 const figureParoisAir = () => BE.schema(SCH_PAROIS, `Une barre horizontale en deux morceaux, sous un repère « Total : ${EX.piece.total} W ». À gauche, le morceau bleu « Parois : ${EX.piece.parois} W », le plus long ; à droite, le morceau orange « Air : ${EX.piece.air} W ». Un repère sous le morceau orange indique : part de l’air, ${EX.piece.part} %. Deux lignes rappellent Φ total = Φ parois + Φv = ${EX.piece.parois} + ${EX.piece.air} = ${EX.piece.total} W, puis la part de l’air = ${EX.piece.air} ÷ ${EX.piece.total} × 100 = ${EX.piece.part} %.`, `Le bureau d’exemple : ${EX.piece.part} % de ses déperditions viennent de l’air neuf.`);
@@ -209,6 +209,7 @@ BE.station({
   ecrans: [
     BE.ecran({
       id: "accueil-objectif", dossier: "prise", kicker: "Prise en main, 1", title: "Ce que vous rendez", level: "comprendre",
+      image: "illustrations/1-technicien-plan-pieces.webp", imageAlt: "Un technicien de bureau d’études, debout devant un grand panneau où est épinglé le plan d’une maison à deux niveaux, colle une petite carte bleu pâle sur chaque pièce chauffée. Une seule pièce, celle que désigne la commande, porte une étiquette orange. Sur le bureau : une calculatrice, un crayon et une feuille avec un tableau vide. Par la fenêtre, un arbre nu sous un ciel d’hiver.",
       text: "Une maison perd de la chaleur par ses parois, vous l’avez calculé à la station T3. Elle en perd aussi par l’air : la ventilation fait entrer de l’air neuf froid, qu’il faut chauffer jusqu’à la température de la pièce. Vous calculez cette déperdition par l’air pièce par pièce. Pour la pièce que désigne la commande, vous l’ajoutez à celle des parois. Les réponses s’écrivent sur la feuille A4 recto verso. L’écran explique chaque geste, la feuille reçoit vos résultats.",
       prompt: "Lisez le tableau à remplir et les trois cartes, puis continuez.",
       render: () => tableau(["Pièce", "qv (m³/h)", "Hv (W/K)", "Φv (W)"], [
@@ -225,6 +226,7 @@ BE.station({
 
     BE.ecran({
       id: "chemin-de-l-air", dossier: "prise", kicker: "Prise en main, 2", title: "Le chemin de l’air", level: "comprendre",
+      image: "illustrations/2-entree-air-et-bouche.webp", imageAlt: "Coupe de deux pièces voisines d’une maison récente, en hiver, sans personne. À gauche, une chambre avec un lit sous une fenêtre à double vitrage ; tout en haut du cadre de la fenêtre, une longue grille fine d’entrée d’air. Dehors, un arbre nu et un peu de neige. Sous la porte, un jour laisse passer l’air. À droite, au plafond de la salle d’eau, une bouche d’extraction ronde, au-dessus d’un lavabo et d’une douche. Une ligne orange ondulée suit le trajet de l’air : de la grille de la fenêtre, à travers la chambre, sous la porte, jusqu’à la bouche.",
       text: "La maison est ventilée par une VMC simple flux, une ventilation mécanique contrôlée qui extrait l’air avec un seul ventilateur. L’air neuf entre par les entrées d’air, des grilles posées dans les pièces principales : séjour et chambres. Il passe sous les portes vers les pièces de service : cuisine, salle d’eau, WC. Là, les bouches d’extraction le reprennent et la VMC le rejette dehors. L’air neuf arrive à la température extérieure et se réchauffe dans la pièce principale où il entre. Quand il passe dans une pièce de service, il est déjà à la température intérieure.",
       prompt: "Suivez les flèches du schéma, puis lisez le tableau des données.",
       render: () => BE.schema(SCHEMA, "Schéma de principe. À gauche, l’extérieur : une flèche « air neuf à θe » entre dans le rectangle des pièces principales, séjour et chambres, avec leurs entrées d’air. Une flèche descend vers le rectangle des pièces de service, cuisine, salle d’eau et WC, avec la mention « air de transfert, déjà à θi ». Une flèche sort des pièces de service vers la droite : « air rejeté par la VMC ».", "Le chemin de l’air dans une maison en VMC simple flux.")
@@ -252,8 +254,8 @@ BE.station({
     BE.ecran({
       id: "exercice-1", dossier: "methode", kicker: "Exercice 1, Φv d’un bâtiment", title: "Exercice : la déperdition par l’air du bâtiment d’exemple", level: "appliquer", requiresAction: true,
       text: {
-        1: `Le bâtiment du bureau d’exemple est ventilé par une extraction de ${EX.qv} m³/h en tout : ${EX.bouches}. Ses deux pièces chauffées font ensemble ${EX.V.somme} m³. θi = ${EX.T.ti} °C, θe = ${EX.T.te} °C. Quelle puissance faut-il pour chauffer cet air neuf ? L’exemple résolu reste sous vos yeux : refaites le même geste.`,
-        2: `Le bâtiment du bureau d’exemple est ventilé par une extraction de ${EX.qv} m³/h en tout : ${EX.bouches}. Ses deux pièces chauffées font ensemble ${EX.V.somme} m³. θi = ${EX.T.ti} °C, θe = ${EX.T.te} °C. Quelle puissance faut-il pour chauffer cet air neuf ?`
+        1: `Le bâtiment du bureau d’exemple est ventilé par une extraction de ${EX.qv} m³/h en tout : ${EX.bouches}. Ses deux pièces principales font ensemble ${EX.V.somme} m³. θi = ${EX.T.ti} °C, θe = ${EX.T.te} °C. Quelle puissance faut-il pour chauffer cet air neuf ? L’exemple résolu reste sous vos yeux : refaites le même geste.`,
+        2: `Le bâtiment du bureau d’exemple est ventilé par une extraction de ${EX.qv} m³/h en tout : ${EX.bouches}. Ses deux pièces principales font ensemble ${EX.V.somme} m³. θi = ${EX.T.ti} °C, θe = ${EX.T.te} °C. Quelle puissance faut-il pour chauffer cet air neuf ?`
       },
       prompt: { 1: "Choisissez la bonne puissance, en vous aidant de l’exemple.", 2: "Choisissez la bonne puissance. Cette question est à faire seul." },
       aides: {
@@ -268,7 +270,8 @@ BE.station({
 
     BE.ecran({
       id: "quel-debit-retenir", dossier: "methode", kicker: "La méthode, 2", title: "Quel débit retenir", level: "comprendre",
-      text: `Dans un logement, l’arrêté du 24 mars 1982 fixe les débits d’air extraits. Son article 3 donne, pour chaque pièce de service, le débit que la bouche doit pouvoir atteindre : ces débits sont des pointes, le temps de cuisiner ou de se doucher. Son article 4 autorise, avec une VMC hygroréglable, dont les bouches règlent leur débit selon l’humidité de la pièce, à descendre jusqu’à un débit total minimal, que la ventilation assure en permanence. Dans ce réseau, pour calculer les déperditions par l’air, on retient le débit que la ventilation assure en permanence : le débit total minimal de l’article 4, quand le CCTP prévoit une VMC hygroréglable. C’est un choix de l’exercice : sur un vrai projet, ce débit se lit dans l’avis technique du système. Pour la maison, les deux valeurs sont à la page ${EX.pages.ventilation} du CCTP.`,
+      image: "illustrations/3-cone-mesure-debit.webp", imageAlt: "Un technicien, debout dans une cuisine vide d’une maison récente, tient à deux mains un cône de mesure en toile orange sur une bouche d’extraction fixée haut sur le mur. Le cône est monté sur un petit boîtier gris à poignée dont l’écran est vide. À ses pieds, une mallette ouverte et un porte-bloc avec une feuille quadrillée de gris. Il est en chemise, sans casque ni gilet.",
+      text: `Dans un logement, l’arrêté du 24 mars 1982 fixe les débits d’air extraits. Son article 3 donne, pour chaque pièce de service, le débit que la bouche doit pouvoir atteindre : ces débits sont des pointes, le temps de cuisiner ou de se doucher. Son article 4 autorise, avec une VMC hygroréglable, dont les bouches règlent leur débit selon l’humidité de la pièce, à descendre jusqu’à un débit total minimal, que la ventilation assure en permanence. Dans ce réseau, pour calculer les déperditions par l’air, on retient le débit que la ventilation assure en permanence : le débit total minimal de l’article 4, quand le CCTP prévoit une VMC hygroréglable. C’est un choix de l’exercice : sur un vrai projet, ce débit se lit dans l’avis technique du système. Pour la maison, les deux valeurs sont à la page ${EX.pages.ventilation} du CCTP. Le débit de cet exemple est une valeur d’exercice, plus faible que le minimum du Code du travail (art. R. 4222-6) : 30 m³/h par occupant en salle de réunion, soit 240 m³/h pour huit personnes. Le bâtiment du projet tertiaire applique ce minimum.`,
       prompt: "Lisez le tableau et l’exemple résolu, puis continuez.",
       render: () => tableau(["Débit", "Ce qu’il représente", "Retenu pour les déperditions"], [
         ["Débits à atteindre (art. 3)", "La pointe de chaque bouche, quelques minutes", "Non"],
@@ -333,6 +336,7 @@ BE.station({
 
     BE.ecran({
       id: "recuperateur", dossier: "methode", kicker: "La méthode, 7", title: "Le récupérateur", level: "comprendre",
+      image: "illustrations/4-caisson-double-flux-comble.webp", imageAlt: "Coupe des combles d’une maison sous un toit de tuiles. Un caisson gris plat de ventilation double flux est posé sur une petite estrade en bois, entre les chevrons et une épaisse couche d’isolant. Quatre gaines rondes isolées partent de ses coins : deux montent vers l’extérieur par le toit, deux descendent à travers le plafond vers une chambre chauffée, où l’on voit deux petites grilles. Une découpe dans la face du caisson montre deux jeux de plaques fines qui se croisent sans se toucher, avec une ligne orange ondulée qui passe d’un flux à l’autre.",
       text: "Une VMC double flux souffle l’air neuf et extrait l’air vicié avec deux ventilateurs. Les deux flux traversent un échangeur sans se mélanger : l’air extrait, chaud, réchauffe l’air neuf avant qu’il entre. L’efficacité η de l’échangeur, un nombre entre 0 et 1 donné par le fabricant, dit quelle part de l’écart de température il récupère. Il ne reste à chauffer que la part 1 − η : Φv = 0,34 × qv × (1 − η) × ΔT.",
       prompt: "Regardez le schéma, lisez l’exemple résolu, puis continuez.",
       render: () => figureRecuperateur() + BE.exemple({ text: `Bâtiment d’exemple en double flux : ${EX.qv} m³/h, efficacité η = ${EX.rec.eta} (valeur d’exercice), ΔT = ${EX.T.dT} K`, answer: `Φv = 0,34 × ${EX.qv} × (1 − ${EX.rec.eta}) × ${EX.T.dT} = ${EX.rec.phi} W`, why: `Sans échangeur, ce débit coûtait ${EX.ex1.juste} W. L’échangeur en récupère la part η.` })

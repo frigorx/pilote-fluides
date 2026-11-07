@@ -11,6 +11,7 @@
     "Pompe à chaleur : appoint = Q × part ; machine = (Q − appoint) ÷ SCOP ; électricité = appoint + machine.",
     "Chaudière : gaz = Q ÷ rendement, en kWh PCI ; eau chaude au gaz : (énergie d’un jour + pertes) × 365 ÷ rendement d’eau chaude.",
     "Eau chaude : un jour × 365 ; ventilation : station A4 ; été : P × heures ÷ 1000 ÷ SEER.",
+    "Poste été : variante de climatisation par multisplit de la station F3 (le programme de base n’en a pas).",
     "Coût : kWh × prix, par énergie ; émissions : kWh × facteur, par énergie ; puis les sommes.",
     "Temps de retour = surcoût ÷ économie de l’année, sur le coût total des deux solutions."
   ],

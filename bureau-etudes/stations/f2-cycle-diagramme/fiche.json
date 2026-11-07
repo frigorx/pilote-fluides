@@ -42,12 +42,12 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple : Φ0 = 4443 W ; R32 ; évaporation 0 °C, condensation 40 °C ; surchauffe 5 K, sous-refroidissement 5 K ; ηis = 0,70.",
+    "enonce": "Bâtiment d’exemple : Φ0 = 4441 W ; R32 ; évaporation 0 °C, condensation 40 °C ; surchauffe 5 K, sous-refroidissement 5 K ; ηis = 0,70.",
     "lignes": [
       "p0 = 8,1 bar ; pk = 24,8 bar.",
       "h1 = 521 kJ/kg ; h2s = 568 kJ/kg ; h2 = 521 + (568 − 521) ÷ 0,70 = 588 kJ/kg ; h3 = h4 = 265 kJ/kg.",
-      "q0 = 256 kJ/kg ; qm = 4443 ÷ 256 = 17,4 g/s.",
-      "Pc = 17,4 × 67 = 1163 W ; Φk = 17,4 × 323 = 5606 W = 4443 + 1163 W."
+      "q0 = 256 kJ/kg ; qm = 4441 ÷ 256 = 17,3 g/s.",
+      "Pc = 17,3 × 67 = 1162 W ; Φk = 17,3 × 323 = 5603 W = 4441 + 1162 W."
     ],
     "resultat": "EER 3,82 et COP 4,82, à 0 °C et 40 °C"
   },

@@ -70,7 +70,7 @@ const EX = {
  },
  "ecran": {
   "local": "Salle de réunion",
-  "P": "3476",
+  "P": "3449",
   "L": "8,3",
   "montee": "2,35",
   "haut": "5,3",
@@ -108,12 +108,12 @@ const EX = {
   "u": [
    {
     "nom": "Salle de réunion",
-    "P": "3476",
+    "P": "3449",
     "L": "8,3"
    },
    {
     "nom": "Bureau",
-    "P": "1102",
+    "P": "1127",
     "L": "10,4"
    }
   ],

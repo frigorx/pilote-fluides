@@ -37,14 +37,14 @@
     }
   ],
   "exemple": {
-    "enonce": "Salle de réunion d’exemple : 70 m³/h d’air neuf ; dehors 32 °C, x 11,9 g/kg ; dedans 26 °C, x 10,5 g/kg.",
+    "enonce": "Salle de réunion d’exemple : 61,87 m³/h d’air neuf ; dehors 32 °C, x 11,9 g/kg ; dedans 26 °C, x 10,5 g/kg. Le débit de cet exemple, partagé au prorata du volume par la station T4 (48,13 m³/h au bureau, 61,87 m³/h à la salle de réunion), est une valeur d’exercice, plus faible que le minimum du Code du travail (art. R. 4222-6) : 30 m³/h par occupant en salle de réunion, soit 240 m³/h pour huit personnes. Le bâtiment du projet tertiaire applique ce minimum.",
     "lignes": [
-      "Sensible : 0,34 × 70 × 6 = 143 W.",
-      "Latent : 0,0233 × 1,4 × 2 501 = 82 W ; contrôle 0,0233 × 10 × 1 000 = 233 W.",
-      "À 16 h : soleil 1487 + parois 307 + internes 1057 + air neuf 143 = 2994 W ; latent 482 W.",
-      "Bâtiment : somme des maximums 4879 W ; machine 4443 W ; Cs = 0,91."
+      "Sensible : 0,34 × 61,87 × 6 = 126 W.",
+      "Latent : 0,0206 × 1,4 × 2 501 = 72 W ; contrôle 0,0206 × 10 × 1 000 = 206 W.",
+      "À 16 h : soleil 1487 + parois 307 + internes 1057 + air neuf 126 = 2977 W ; latent 472 W.",
+      "Bâtiment : somme des maximums 4877 W ; machine 4441 W ; Cs = 0,91."
     ],
-    "resultat": "salle de réunion 3476 W ; machine 4,5 kW, part sensible 88 %"
+    "resultat": "salle de réunion 3449 W ; machine 4,5 kW, part sensible 88 %"
   },
   "pieges": [
     "Le latent oublié ou ajouté au sensible sans le dire : il se garde à part jusqu’au total.",

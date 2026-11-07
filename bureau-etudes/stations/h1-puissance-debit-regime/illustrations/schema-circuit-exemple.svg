@@ -19,7 +19,7 @@
 <line x1="71.33" y1="37.00" x2="71.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
 <circle cx="71.33" cy="45.00" r="0.9" fill="#3d7fca"/>
 <text x="64.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Bureau</text>
-<text x="64.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">117 L/h</text>
+<text x="64.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">124 L/h</text>
 <g transform="translate(96.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="18" y="17" width="84" height="56" rx="9"/>
     <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>
@@ -32,7 +32,7 @@
 <line x1="111.33" y1="37.00" x2="111.33" y2="45.00" stroke="#3d7fca" stroke-width="0.5"/>
 <circle cx="111.33" cy="45.00" r="0.9" fill="#3d7fca"/>
 <text x="104.00" y="21.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Salle de réunion</text>
-<text x="104.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">157 L/h</text>
+<text x="104.00" y="53.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">150 L/h</text>
 <g transform="translate(136.00 29.00)"><svg x="0" y="0" width="16.00" height="12.00" viewBox="0 0 120 90" overflow="visible"><g fill="none" stroke="#1b3a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="18" y="17" width="84" height="56" rx="9"/>
     <path d="M31 26v38M45 26v38M59 26v38M73 26v38M87 26v38"/>

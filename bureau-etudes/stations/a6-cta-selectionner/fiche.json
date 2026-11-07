@@ -43,7 +43,7 @@
     }
   ],
   "exemple": {
-    "enonce": "Salle de réunion seule, 240 m³/h ; plaques η = 0,60, roue η = 0,75 ; 2 400 DJU ; 57,5 h sur 168 h ; −7 °C dehors, reprise et soufflage à 19 °C.",
+    "enonce": "Salle de réunion seule, 240 m³/h ; plaques η = 0,60, roue η = 0,75 (autres appareils, valeurs d’exercice) ; 2 400 DJU ; 57,5 h sur 168 h ; −7 °C dehors, reprise et soufflage à 19 °C.",
     "lignes": [
       "Sans récupérateur : 0,34 × 240 × 2 400 × 24 × 57,5 ÷ 168 ÷ 1 000 = 1 609 kWh.",
       "Plaques : 1 609 × 0,60 = 965 kWh ; roue : 1 609 × 0,75 = 1 207 kWh ; écart 242 kWh.",

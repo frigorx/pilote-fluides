@@ -12,13 +12,13 @@ const DOSSIER = "../../fil-rouge/maison/";
 const EX = {
  "ti": "19",
  "tb": "−7",
- "tnc": "15",
+ "tnc": "18",
  "eau": "50",
  "phi": "2996",
  "H": "115,23",
- "ecartD": "22",
- "pente": "136,2",
- "b0": "2043",
+ "ecartD": "25",
+ "pente": "119,8",
+ "b0": "2157",
  "T": [
   "−15",
   "−10",
@@ -47,13 +47,13 @@ const EX = {
  "exm": {
   "pb": "2630",
   "pRatio": "75",
-  "biv": "−4,8",
-  "bivP": "2703",
+  "biv": "−4,6",
+  "bivP": "2711",
   "app": "366",
   "appKW": "1",
   "couv": "88",
   "gainM": "34",
-  "deg": "2,2"
+  "deg": "2,4"
  },
  "site": {
   "t": "−5",
@@ -66,7 +66,7 @@ const EX = {
   "pas": "5"
  },
  "ete": {
-  "tot": "4443",
+  "tot": "4441",
   "kW": "4,5",
   "couv": "72"
  },
@@ -114,7 +114,7 @@ const EX = {
  },
  "ex3": {
   "tb": "−8",
-  "tnc": "16",
+  "tnc": "18",
   "phi": "6000",
   "nom": "PAC 6",
   "P": [
@@ -140,7 +140,7 @@ const EX = {
  "maison": {
   "tb": "−5",
   "ti": "20",
-  "tnc": "16",
+  "tnc": "18",
   "eau": "45",
   "machines": [
    {
@@ -185,14 +185,14 @@ const catalogue = (machines, legende) => tableau(["θe dehors (°C)", ...EX.T], 
 const tableCriteres = () => tableau(["Critère", "Pompe à chaleur air/eau", "Groupe d’eau glacée", "Détente directe", "Bâtiment d’exemple"], [
   ["Chauffe l’eau des émetteurs", "oui", "non (froid seul)", "non", "demandé : émetteurs à eau, départ " + EX.eau + " °C"],
   ["Rafraîchit l’été", "oui si réversible, avec ventilo-convecteurs ou plancher", "oui, avec ventilo-convecteurs", "oui", "non demandé"],
-  ["Ce qui entre dans les locaux", "de l’eau", "de l’eau", "le fluide frigorigène", "réseau d’eau existant"],
+  ["Ce qui entre dans les locaux", "de l’eau ; le fluide s’arrête au module", "de l’eau", "le fluide frigorigène", "réseau d’eau existant"],
   ["Ce qu’il faut poser", "unité dehors, module en local technique", "groupe dehors, et une autre machine pour l’hiver", "unité dehors, une unité dans chaque local", "un local technique"],
   ["Famille retenue", "oui", "non", "non", "pompe à chaleur air/eau"]
 ], "Bâtiment d’exemple : le tableau des critères, rempli");
 const exempleCatalogue = () => BE.exemple({ text: `${M.nom} de l’exercice, eau à ${EX.eau} °C ; bâtiment d’exemple, température de base ${EX.tb} °C`, answer: `À +7 °C : ${M.p7} W et COP ${M.cop}. À ${EX.tb} °C : ligne ${EX.tb} °C du catalogue, ${E.pb} W, soit ${E.pb} ÷ ${M.p7} × 100 = ${E.pRatio} % de la puissance de tête de catalogue.`, why: "La puissance affichée en tête de catalogue est celle de +7 °C. Au froid de la base, la machine donne moins : c’est cette valeur qui compte pour le bâtiment." });
 const exempleSite = () => BE.exemple({ text: `Même machine, sur un site dont la température de base est ${S.t} °C`, answer: `Lignes ${S.bas} °C (${S.Pbas} W) et ${S.haut} °C (${S.Phaut} W). ${S.t} °C est à ${S.ecart} degrés de ${S.bas} °C, sur un écart de ${S.pas} : P = ${S.Pbas} + (${S.Phaut} − ${S.Pbas}) × ${S.ecart} ÷ ${S.pas} = ${S.P} W`, why: "Le résultat se donne au watt. La ligne la plus froide seule sous-estime la machine ; la ligne la plus chaude la surestime." });
 const exempleDroite = () => BE.exemple({ text: `Bâtiment d’exemple : H = ${EX.H} W/K (station T5), θi = ${EX.ti} °C, θb = ${EX.tb} °C, θnc = ${EX.tnc} °C (donnée de l’exercice)`, answer: `Point de base : ${EX.H} × (${EX.ti} − (${EX.tb})) = ${EX.phi} W à ${EX.tb} °C. Point de non-chauffage : 0 W à ${EX.tnc} °C. Pente : ${EX.phi} ÷ ${EX.ecartD} = ${EX.pente} W/K. Besoin à 0 °C : ${EX.phi} × ${EX.tnc} ÷ ${EX.ecartD} = ${EX.b0} W.`, why: "Deux points suffisent pour tracer une droite. La pente sert de contrôle : chaque degré plus doux retire la même puissance." });
-const exempleBiv = () => BE.exemple({ text: `${M.nom} et besoins du bâtiment d’exemple, sur le même graphique`, answer: `Lecture à la règle : point de bivalence vers ${E.biv} °C et ${E.bivP} W. Contrôle par le calcul, entre les lignes ${EX.T[2]} et ${EX.T[3]} °C : la machine gagne ${E.gainM} W par degré, le besoin perd ${EX.pente} W par degré ; l’écart de ${E.app} W à ${EX.tb} °C se referme en ${E.app} ÷ (${E.gainM} + ${EX.pente}) = ${E.deg} degrés, soit vers ${E.biv} °C.`, why: "La lecture se donne au demi-degré près. Le calcul n’est qu’un contrôle : il vaut seulement entre deux lignes du catalogue." });
+const exempleBiv = () => BE.exemple({ text: `${M.nom} et besoins du bâtiment d’exemple, sur le même graphique`, answer: `Lecture à la règle : point de bivalence vers ${(Math.round(Number(E.biv.replace("−", "-").replace(",", ".")) * 2) / 2).toFixed(1).replace(".", ",").replace("-", "−")} °C et ${Math.round(E.bivP / 100) * 100} W environ. Contrôle par le calcul, à part, entre les lignes ${EX.T[2]} et ${EX.T[3]} °C : la machine gagne ${E.gainM} W par degré, le besoin perd ${EX.pente} W par degré ; l’écart de ${E.app} W à ${EX.tb} °C se referme en ${E.app} ÷ (${E.gainM} + ${EX.pente}) = ${E.deg} degrés, soit ${E.biv} °C et ${E.bivP} W.`, why: "La lecture se donne au demi-degré près. Le calcul n’est qu’un contrôle : il vaut seulement entre deux lignes du catalogue." });
 const exempleApp = () => BE.exemple({ text: `${M.nom}, bâtiment d’exemple, à la température de base ${EX.tb} °C`, answer: `Appoint = ${EX.phi} − ${E.pb} = ${E.app} W ; appoint à installer : ${E.appKW} kW. Part couverte par la machine à ${EX.tb} °C : ${E.pb} ÷ ${EX.phi} × 100 = ${E.couv} %.`, why: "L’appoint se calcule là où l’écart est le plus grand, à la température de base. Il s’arrondit au kW au-dessus (donnée de l’exercice)." });
 
 const ecranProjet = BE.projet({
@@ -282,12 +282,12 @@ BE.station({
   fourchettes: {
     1: [
       { id: "n1-pb", libelle: "Puissance de la PAC 3 à la température de base", unite: "W", min: 2182, max: 2318, indice: "Relisez l’écran « La puissance change avec le dehors » : la ligne du catalogue à la température de base, pas la puissance de tête à +7 °C." },
-      { id: "n1-biv", libelle: "Point de bivalence de la PAC 3, température lue", unite: "°C", min: -3.1, max: -2, indice: "Relisez l’écran « Le point de bivalence » : la droite passe par le besoin de base à θb et par 0 W à θnc ; lisez la température au croisement avec la courbe, au demi-degré." },
+      { id: "n1-biv", libelle: "Point de bivalence de la PAC 3, température lue", unite: "°C", min: -2.6, max: -1.5, indice: "Relisez l’écran « Le point de bivalence » : la droite passe par le besoin de base à θb et par 0 W à θnc ; lisez la température au croisement avec la courbe, au demi-degré." },
       { id: "n1-app", libelle: "Appoint à la température de base", unite: "W", min: 723, max: 769, indice: "Relisez l’écran « L’appoint » : besoin de base, sans la relance, moins la puissance de la machine à la température de base." }
     ],
     2: [
       { id: "n2-pb", libelle: "Puissance corrigée de la machine retenue à la température de base", unite: "W", min: 3018, max: 3142, indice: "Relisez l’écran « Corriger la puissance au site » : la base de la maison tombe entre deux lignes du catalogue ; partez de la ligne froide et comptez les degrés." },
-      { id: "n2-biv", libelle: "Point de bivalence de la machine retenue, température lue", unite: "°C", min: -3.2, max: -2.1, indice: "Relisez l’écran « Le point de bivalence » : la droite passe par le besoin de base à θb et par 0 W à θnc ; lisez la température au croisement avec la courbe, au demi-degré." },
+      { id: "n2-biv", libelle: "Point de bivalence de la machine retenue, température lue", unite: "°C", min: -3, max: -1.9, indice: "Relisez l’écran « Le point de bivalence » : la droite passe par le besoin de base à θb et par 0 W à θnc ; lisez la température au croisement avec la courbe, au demi-degré." },
       { id: "n2-app", libelle: "Appoint de la machine retenue à la température de base", unite: "W", min: 487, max: 519, indice: "Relisez l’écran « L’appoint » : besoin de base, sans la relance, moins la puissance de la machine à la température de base." }
     ]
   },
@@ -307,11 +307,13 @@ BE.station({
   ecrans: [
     BE.ecran({
       id: "accueil-objectif", dossier: "prise", kicker: "Prise en main, 1", title: "Ce que vous rendez", level: "comprendre",
+      image: "illustrations/1-technicien-compare-deux-machines.webp",
+      imageAlt: "Un technicien de bureau d’études, assis à son bureau, compare deux feuilles portant chacune une courbe sur un quadrillage. Une règle transparente est posée en travers d’un graphique ; il tient un crayon orange au-dessus du croisement. À côté, le plan d’une maison à étage avec son garage.",
       text: "Vous recevez la commande d’un bureau d’études : choisir la machine du bâtiment. Vous avez ses deux bilans : la puissance d’hiver de la station T5 et la puissance frigorifique de la station T8. Vous choisissez d’abord la famille de machine. Vous lisez ensuite dans un catalogue la puissance que la machine donne quand il fait froid dehors, et vous la corrigez à la température de base du site. Vous tracez les besoins du bâtiment sur le même graphique : le croisement donne le point de bivalence, et l’écart à la température de base donne l’appoint. Vous vérifiez ce que la même machine donne en été, puis vous justifiez le choix par écrit. Les réponses s’écrivent sur la feuille A4 recto verso.",
       prompt: "Lisez les trois cartes, puis continuez.",
       render: () => BE.cartes([
         { title: "Vous recevez", rows: [["La commande :", "choisir la machine et justifier."], ["Le dossier :", "vos feuilles des stations T5, T8, E1 et H1, un catalogue de l’exercice."]] },
-        { title: "Vous produisez", rows: [["Le graphique :", "la courbe de la machine, la droite des besoins, leur croisement."], ["Les résultats :", "puissance à la température de base, point de bivalence, appoint. Fourchettes à l’écran Vérifier : ± 3 % sur une puissance calculée, ± 0,5 °C sur le point de bivalence lu."]] },
+        { title: "Vous produisez", rows: [["Le graphique :", "la courbe de la machine, la droite des besoins, leur croisement."], ["Les résultats :", "puissance à la température de base, point de bivalence, appoint. Fourchettes à l’écran Vérifier : ± 3 % sur une puissance calculée, ± 2 % sur la puissance corrigée de la maison, ± 0,5 °C sur le point de bivalence lu."]] },
         { title: "Vous emportez", rows: [["Une fiche :", "la méthode d’un côté, un exemple de l’autre."], ["La suite :", "la station R4, l’énergie consommée sur l’année."]] }
       ])
     }),
@@ -332,9 +334,9 @@ BE.station({
 
     BE.ecran({
       id: "trois-familles", dossier: "methode", kicker: "La méthode, 1", title: "Trois familles de machines", level: "comprendre",
-      text: "Trois familles de machines produisent la chaleur ou le froid d’un bâtiment. La pompe à chaleur air/eau prend la chaleur de l’air du dehors et chauffe de l’eau ; cette eau va aux radiateurs ou au plancher chauffant. Réversible, elle refroidit aussi l’eau l’été, pour un plancher rafraîchissant ou des ventilo-convecteurs ; des radiateurs, eux, ne rafraîchissent pas. Le groupe d’eau glacée produit de l’eau froide pour des ventilo-convecteurs ou les batteries d’une centrale de traitement d’air ; froid seul, il laisse le chauffage à une autre machine. Un groupe réversible, qui chauffe aussi, est une pompe à chaleur air/eau. La détente directe, split ou DRV, porte le fluide frigorigène jusqu’à une unité intérieure dans chaque local, qui chauffe ou refroidit l’air ; elle ne produit pas d’eau. Les stations CartoClim « La PAC air/eau », « Groupe d’eau glacée et ventilo-convecteurs » et « Le DRV » montrent chaque famille.",
+      text: "Trois familles de machines produisent la chaleur ou le froid d’un bâtiment. La pompe à chaleur air/eau prend la chaleur de l’air du dehors et chauffe de l’eau ; cette eau va aux radiateurs ou au plancher chauffant. Réversible, elle refroidit aussi l’eau l’été, pour un plancher rafraîchissant ou des ventilo-convecteurs ; des radiateurs, eux, ne rafraîchissent pas. Le groupe d’eau glacée produit de l’eau froide pour des ventilo-convecteurs ou les batteries d’une centrale de traitement d’air ; froid seul, il laisse le chauffage à une autre machine. Un groupe réversible, qui chauffe aussi, est une pompe à chaleur air/eau. La détente directe, split ou DRV (débit de réfrigérant variable), porte le fluide frigorigène jusqu’à une unité intérieure dans chaque local, qui chauffe ou refroidit l’air ; elle ne produit pas d’eau. Les stations CartoClim « La PAC air/eau », « Groupe d’eau glacée et ventilo-convecteurs » et « Le DRV » montrent chaque famille.",
       prompt: "Suivez ce qui passe le mur dans chaque famille, puis continuez.",
-      render: () => BE.schema("illustrations/schema-trois-familles.svg", "Schéma de principe en trois rangées, dehors à gauche d’un mur en tirets, le bâtiment à droite. Rangée 1, pompe à chaleur air/eau : une unité extérieure, deux liaisons de fluide frigorigène jusqu’à un module intérieur, puis un départ d’eau rouge et un retour bleu jusqu’à un radiateur. Rangée 2, groupe d’eau glacée : le groupe dehors, deux tubes d’eau froide jusqu’à un ventilo-convecteur ; le chauffage vient d’ailleurs. Rangée 3, détente directe : une unité extérieure, deux liaisons de fluide jusqu’à une unité murale dans le local, sans eau.", "Ce qui entre dans le bâtiment : de l’eau chaude, de l’eau froide ou le fluide frigorigène.")
+      render: () => BE.schema("illustrations/schema-trois-familles.svg", "Schéma de principe en trois rangées, dehors à gauche d’un mur en tirets, le bâtiment à droite. Rangée 1, pompe à chaleur air/eau : une unité extérieure, deux liaisons de fluide frigorigène jusqu’à un module intérieur, puis un départ d’eau rouge et un retour bleu jusqu’à un radiateur. Rangée 2, groupe d’eau glacée : le groupe dehors, deux tubes d’eau froide jusqu’à un ventilo-convecteur ; le chauffage vient d’ailleurs. Rangée 3, détente directe : une unité extérieure, deux liaisons de fluide jusqu’à une unité murale dans le local, sans eau.", "Ce qui passe le mur : le fluide frigorigène, ou l’eau froide du groupe. Ce qui va aux émetteurs : de l’eau, ou le fluide en détente directe.")
     }),
 
     BE.ecran({
@@ -361,9 +363,11 @@ BE.station({
 
     BE.ecran({
       id: "puissance-catalogue", dossier: "methode", kicker: "La méthode, 3", title: "La puissance change avec le dehors", level: "comprendre",
+      image: "illustrations/2-unite-exterieure-givree.webp",
+      imageAlt: "Un matin d’hiver humide, contre le mur du garage d’une maison récente, l’unité extérieure d’une pompe à chaleur sur ses pieds. Une fine couche de givre couvre l’échangeur à l’arrière ; quelques gouttes d’eau de fonte tombent dans un drain de gravier. Deux tubes isolés et un câble entrent dans le mur.",
       text: `Une pompe à chaleur air/eau prend sa chaleur dans l’air du dehors. Plus il fait froid dehors, moins elle en trouve : sa puissance baisse. Plus l’eau demandée est chaude, plus la puissance et le rendement baissent aussi (station CartoClim « La PAC air/eau »). Le catalogue donne donc une puissance pour chaque température du dehors, à une température d’eau donnée. La puissance de tête de catalogue est celle de +7 °C dehors. Le COP, chaleur donnée ÷ électricité consommée, se donne aux mêmes conditions. Par temps froid et humide, l’échangeur du dehors se couvre de givre : la machine inverse son cycle quelques minutes pour le fondre, et prend cette chaleur sur l’eau (même station). Les puissances du catalogue de l’exercice sont des moyennes, dégivrages compris : la courbe s’aplatit entre −2 et +2 °C. Lisez la ligne du catalogue à la température d’eau du projet : ${EX.eau} °C pour le bâtiment d’exemple, le départ de ses émetteurs (station H1).`,
       prompt: "Suivez la courbe, lisez le catalogue et l’exemple résolu, puis continuez.",
-      render: () => BE.schema("illustrations/courbe-machine.svg", `Graphique : en abscisse la température extérieure, de −15 à +17 °C ; en ordonnée la puissance de chauffage, de 0 à 4500 W. La courbe de la ${M.nom} de l’exercice, eau à ${EX.eau} °C, relie les points du catalogue : ${EX.T.map((t, i) => `${M.P[i]} W à ${t} °C`).join(", ")}. Une bande claire entre −2 et +2 °C marque le palier du dégivrage.`, "La puissance monte avec la température du dehors ; elle s’aplatit là où la machine dégivre.")
+      render: () => BE.schema("illustrations/courbe-machine.svg", `Graphique : en abscisse la température extérieure, de −15 à +20 °C ; en ordonnée la puissance de chauffage, de 0 à 4500 W. La courbe de la ${M.nom} de l’exercice, eau à ${EX.eau} °C, relie les points du catalogue : ${EX.T.map((t, i) => `${M.P[i]} W à ${t} °C`).join(", ")}. Une bande claire entre −2 et +2 °C marque le palier du dégivrage.`, "La puissance monte avec la température du dehors ; elle s’aplatit là où la machine dégivre.")
         + catalogue([M], `Catalogue de l’exercice, eau à ${EX.eau} °C, dégivrages compris ; COP ${M.cop} à +7 °C`) + exempleCatalogue()
     }),
 
@@ -428,14 +432,18 @@ BE.station({
 
     BE.ecran({
       id: "bilan-d-ete", dossier: "methode", kicker: "La méthode, 8", title: "Vérifier l’été avec la même machine", level: "comprendre",
-      text: `La station T8 a donné la puissance frigorifique du bâtiment. Une pompe à chaleur air/eau réversible peut produire de l’eau froide : le catalogue de l’exercice donne sa puissance frigorifique à 35 °C dehors avec une eau à 7 °C, et son EER, froid donné ÷ électricité consommée. Comparez cette puissance à celle de la station T8, en pour cent. Le besoin de la station T8 est calculé à la température d’été du site, plus douce que 35 °C : la comparaison est prudente. Pour le bâtiment d’exemple, la ${M.nom} donne ${M.froid} W de froid pour ${EX.ete.tot} W demandés : ${M.froid} ÷ ${EX.ete.tot} × 100 = ${EX.ete.couv} %. Elle ne tiendrait pas l’été. Le maître d’ouvrage ne demande pas de climatisation, et ses émetteurs à eau chaude ne rafraîchissent pas : la machine se choisit sur l’hiver. Une machine choisie sur l’été serait bien plus grosse que le besoin d’hiver : elle tournerait par cycles courts, mauvais pour le compresseur (station CartoClim « La PAC air/eau »). Si le froid était demandé un jour, il faudrait d’autres émetteurs et une autre machine : c’est le sujet de la station F1.`,
+      image: "illustrations/4-hiver-ete-meme-machine.webp",
+      imageAlt: "La même maison avec son garage, deux fois côte à côte. À gauche, l’hiver : neige sur le toit et au sol, l’unité extérieure de la pompe à chaleur un peu givrée contre le garage. À droite, l’été : arbre vert, volets roulants fermés côté soleil, la même unité à la même place, un soleil orange.",
+      text: `La station T8 a donné la puissance frigorifique du bâtiment. Une pompe à chaleur air/eau réversible peut produire de l’eau froide : le catalogue de l’exercice donne sa puissance frigorifique à 35 °C dehors avec une eau à 7 °C, et son EER, froid donné ÷ électricité consommée. Comparez cette puissance à celle de la station T8, en pour cent. Le besoin de la station T8 est calculé à la température d’été du site, plus douce que 35 °C : la comparaison est prudente. Pour le bâtiment d’exemple, la ${M.nom} donne ${M.froid} W de froid pour ${EX.ete.tot} W demandés : ${M.froid} ÷ ${EX.ete.tot} × 100 = ${EX.ete.couv} %. Elle ne tiendrait pas l’été. Le maître d’ouvrage ne demande pas de climatisation, et ses émetteurs à eau chaude ne rafraîchissent pas : la machine se choisit sur l’hiver. Une machine choisie sur l’été serait bien plus grosse que le besoin d’hiver. Elle tournerait par cycles courts : elle s’arrête et redémarre sans cesse, car elle couvre le besoin trop vite. Ces démarrages répétés usent le compresseur (station CartoClim « La PAC air/eau »). Si le froid était demandé un jour, il faudrait d’autres émetteurs et une autre machine : c’est le sujet de la station F1.`,
       prompt: "Comparez les colonnes d’hiver et d’été, puis continuez.",
-      render: () => BE.schema("illustrations/schema-ete-hiver.svg", `Schéma en colonnes, bâtiment d’exemple. Hiver, à ${EX.tb} °C : besoin ${EX.phi} W, machine ${E.pb} W, soit ${E.couv} %. Été, à 35 °C : besoin ${EX.ete.tot} W (station T8), machine ${M.froid} W de froid, soit ${EX.ete.couv} %.`, "La même machine, comparée aux deux bilans.")
-        + tableau(["Saison", "Besoin (W)", "Machine (W)", "Part couverte"], [[`Hiver, à ${EX.tb} °C`, EX.phi, E.pb, `${E.couv} %`], ["Été, à 35 °C", EX.ete.tot, M.froid, `${EX.ete.couv} %`]], `${M.nom} et bâtiment d’exemple ; EER ${M.eer} à 35 °C`)
+      render: () => BE.schema("illustrations/schema-ete-hiver.svg", `Schéma en colonnes, bâtiment d’exemple. Hiver, à ${EX.tb} °C : besoin ${EX.phi} W, machine ${E.pb} W, soit ${E.couv} %. Été : besoin ${EX.ete.tot} W au site (station T8), machine ${M.froid} W de froid à 35 °C, soit ${EX.ete.couv} %.`, "La même machine, comparée aux deux bilans.")
+        + tableau(["Saison", "Besoin (W)", "Machine (W)", "Part couverte"], [[`Hiver, à ${EX.tb} °C`, EX.phi, E.pb, `${E.couv} %`], ["Été : besoin au site (T8), machine à 35 °C", EX.ete.tot, M.froid, `${EX.ete.couv} %`]], `${M.nom} et bâtiment d’exemple ; EER ${M.eer} à 35 °C`)
     }),
 
     BE.ecran({
       id: "machine-au-garage", dossier: "methode", kicker: "La méthode, 9", title: "Où se pose la machine", level: "comprendre",
+      image: "illustrations/3-installateur-au-garage.webp",
+      imageAlt: "Dans un garage non chauffé, un installateur en chaussures de sécurité, gants et lunettes fixe le module intérieur d’une pompe à chaleur sur le mur qui sépare le garage de la maison, un niveau orange à la main. Deux tubes isolés arrivent du dehors, deux autres partent vers la maison. Un ballon d’eau chaude est dans un coin.",
       text: "Le CCTP de la maison place la pompe à chaleur au garage (page 4). Une pompe à chaleur air/eau prend sa chaleur dans l’air du dehors : son unité extérieure reste dehors. Le bureau d’études retient une machine en deux parties, un bibloc (donnée de l’exercice) : l’unité extérieure sur plots, dehors, contre le mur ouest du garage ; le module hydraulique au garage, contre le mur M03 qui sépare le garage de la maison, avec l’appoint électrique. Les liaisons frigorifiques traversent le mur ouest. Le départ et le retour d’eau traversent le mur M03 vers le collecteur du rez-de-chaussée, sous l’escalier (station H3). L’unité extérieure rejette l’eau du dégivrage : son évacuation se prévoit. Le garage reçoit aussi le chauffe-eau thermodynamique de la station H6. Ce plan sert au niveau 2 : la place au garage est un des critères du choix de la famille.",
       prompt: "Suivez les numéros du plan, puis continuez.",
       render: () => BE.schema("illustrations/garage-machine.svg", "Plan du garage de la maison, sans échelle. À gauche, dehors côté ouest, l’unité extérieure sur plots, numéro 1, avec sous elle l’évacuation de l’eau de dégivrage, numéro 6. Deux liaisons frigorifiques, numéro 2, traversent le mur ouest jusqu’au module hydraulique posé contre le mur M03, numéro 3. Du module, un départ d’eau rouge et un retour bleu, numéro 4, traversent le mur M03 vers le collecteur de la maison. Au sud du garage, le chauffe-eau thermodynamique, numéro 5. La porte de garage PG1 est au nord.", "La machine de la maison : dehors, au garage, puis vers les radiateurs.")

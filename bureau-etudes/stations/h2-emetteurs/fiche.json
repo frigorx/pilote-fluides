@@ -47,12 +47,12 @@
     }
   ],
   "exemple": {
-    "enonce": "Bureau du bâtiment d’exemple : émetteur de 1356 W (station H1), régime 50/40 °C, air 19 °C, catalogue de l’exercice.",
+    "enonce": "Bureau du bâtiment d’exemple : émetteur de 1438 W (station H1), régime 50/40 °C, air 19 °C, catalogue de l’exercice.",
     "lignes": [
       "Moyenne de l’eau : (50 + 40) ÷ 2 = 45 °C ; écart moyen : 45 − 19 = 26 K.",
       "Coefficient : (26 ÷ 50) puissance 1,3 = 0,427.",
-      "Puissance du catalogue nécessaire : 1356 ÷ 0,427 = 3176 W.",
-      "Choix : 1800 mm, 3460 W au catalogue ; au régime : 3460 × 0,427 = 1477 W, au moins 1356 W."
+      "Puissance du catalogue nécessaire : 1438 ÷ 0,427 = 3368 W.",
+      "Choix : 1800 mm, 3460 W au catalogue ; au régime : 3460 × 0,427 = 1477 W, au moins 1438 W."
     ],
     "resultat": "radiateur de 1800 mm, 1477 W au régime 50/40"
   },

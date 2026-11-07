@@ -119,11 +119,11 @@ const EX = {
 
 /* Un exercice avec l’exemple résolu sous les yeux au niveau 1, sans lui au niveau 2. */
 const avecBloc = (html, q) => { const a = BE.quiz(q); return { quiz: q, render: item => html + a.render(item), wire: a.wire }; };
-const exBesoin = () => BE.exemple({ text: `Appartement d’exemple : ${EX.ap.n} personnes, ${EX.ap.lpp} L par personne et par jour à 40 °C (valeurs d’exercice)`, answer: `V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L par jour`, why: "Le résultat s’écrit en litres par jour, avec la température de l’usage." });
-const exEnergie = () => BE.exemple({ text: `Appartement d’exemple : V40 = ${EX.ap.V40} L par jour, eau froide ${EX.ap.tf} °C, eau utilisée à 40 °C`, answer: `E = ${EX.ap.V40} × 1,163 × (40 − ${EX.ap.tf}) = ${EX.ap.E} Wh, soit ${EX.ap.Ekwh} kWh`, why: `L’écart de température, ${EX.ap.dT} K, se calcule d’abord. Le résultat s’écrit en Wh, puis en kWh en divisant par 1 000.` });
-const exVolume = () => BE.exemple({ text: `Appartement d’exemple : V40 = ${EX.ap.V40} L par jour, eau froide ${EX.ap.tf} °C, stockage à ${EX.ap.ts} °C`, answer: `V stock = ${EX.ap.V40} × (40 − ${EX.ap.tf}) ÷ (${EX.ap.ts} − ${EX.ap.tf}) = ${EX.ap.Vs} L`, why: "Le volume équivalent est plus petit que V40, puisque l’eau stockée est plus chaude que l’eau d’usage." });
-const exBallon = () => BE.exemple({ text: `Appartement d’exemple : ballon de ${EX.ap.Vb} L, besoin équivalent de ${EX.ap.Vs} L à ${EX.ap.ts} °C`, answer: `${EX.ap.Vb} L ≥ ${EX.ap.Vs} L : le ballon suffit. Plein, il donne ${EX.ap.Vb} × (${EX.ap.ts} − ${EX.ap.tf}) ÷ (40 − ${EX.ap.tf}) = ${EX.ap.Vb40} L à 40 °C, pour un besoin de ${EX.ap.V40} L`, why: "Le ballon plein couvre le besoin d’une journée, avec une réserve." });
-const exChauffe = () => BE.exemple({ text: `Appartement d’exemple : ballon de ${EX.ap.Vb} L, eau froide ${EX.ap.tf} °C, stockage à ${EX.ap.ts} °C, pompe à chaleur de ${EX.ap.P} W thermiques`, answer: `E = ${EX.ap.Vb} × 1,163 × (${EX.ap.ts} − ${EX.ap.tf}) = ${EX.ap.Ech} Wh ; t = ${EX.ap.Ech} ÷ ${EX.ap.P} = ${EX.ap.th} h, soit ${EX.ap.thm}`, why: `La partie décimale se convertit en minutes : ${EX.ap.thfrac} h × 60 = ${EX.ap.thmin} min.` });
+const exBesoin = () => BE.exemple({ text: `Appartement d’exemple de la station H6 : ${EX.ap.n} personnes, ${EX.ap.lpp} L par personne et par jour à 40 °C (valeurs d’exercice)`, answer: `V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L par jour`, why: "Le résultat s’écrit en litres par jour, avec la température de l’usage." });
+const exEnergie = () => BE.exemple({ text: `Appartement d’exemple de la station H6 : V40 = ${EX.ap.V40} L par jour, eau froide ${EX.ap.tf} °C, eau utilisée à 40 °C`, answer: `E = ${EX.ap.V40} × 1,163 × (40 − ${EX.ap.tf}) = ${EX.ap.E} Wh, soit ${EX.ap.Ekwh} kWh`, why: `L’écart de température, ${EX.ap.dT} K, se calcule d’abord. Le résultat s’écrit en Wh, puis en kWh en divisant par 1 000.` });
+const exVolume = () => BE.exemple({ text: `Appartement d’exemple de la station H6 : V40 = ${EX.ap.V40} L par jour, eau froide ${EX.ap.tf} °C, stockage à ${EX.ap.ts} °C`, answer: `V stock = ${EX.ap.V40} × (40 − ${EX.ap.tf}) ÷ (${EX.ap.ts} − ${EX.ap.tf}) = ${EX.ap.Vs} L`, why: "Le volume équivalent est plus petit que V40, puisque l’eau stockée est plus chaude que l’eau d’usage." });
+const exBallon = () => BE.exemple({ text: `Appartement d’exemple de la station H6 : ballon de ${EX.ap.Vb} L, besoin équivalent de ${EX.ap.Vs} L à ${EX.ap.ts} °C`, answer: `${EX.ap.Vb} L ≥ ${EX.ap.Vs} L : le ballon suffit. Plein, il donne ${EX.ap.Vb} × (${EX.ap.ts} − ${EX.ap.tf}) ÷ (40 − ${EX.ap.tf}) = ${EX.ap.Vb40} L à 40 °C, pour un besoin de ${EX.ap.V40} L`, why: "Le ballon plein couvre le besoin d’une journée, avec une réserve." });
+const exChauffe = () => BE.exemple({ text: `Appartement d’exemple de la station H6 : ballon de ${EX.ap.Vb} L, eau froide ${EX.ap.tf} °C, stockage à ${EX.ap.ts} °C, pompe à chaleur de ${EX.ap.P} W thermiques`, answer: `E = ${EX.ap.Vb} × 1,163 × (${EX.ap.ts} − ${EX.ap.tf}) = ${EX.ap.Ech} Wh ; t = ${EX.ap.Ech} ÷ ${EX.ap.P} = ${EX.ap.th} h, soit ${EX.ap.thm}`, why: `La partie décimale se convertit en minutes : ${EX.ap.thfrac} h × 60 = ${EX.ap.thmin} min.` });
 
 /* Écran « À vous, le projet » : la commande du moteur, suivie du lien vers l’extrait de CCTP du dossier. */
 const ecranProjet = BE.projet({
@@ -132,12 +132,12 @@ const ecranProjet = BE.projet({
     1: [
       `La page ${EX.pages.ecs} de l’extrait de CCTP donne les occupants, les litres par personne et par jour à 40 °C, l’eau froide, la consigne et le volume du ballon, les températures de l’arrêté. La puissance thermique et le COP de la pompe à chaleur sont dans la commande, au-dessus.`,
       "Suivez les blocs de la feuille dans l’ordre : V40 = n × l, puis l’énergie par jour, le volume équivalent, le ballon, l’énergie de la chauffe complète, le temps et la puissance électrique. Dans la colonne « Source ou calcul », écrivez la page ou l’écran de chaque donnée.",
-      `Sur l’appartement d’exemple, V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L par jour. Écrivez la même ligne avec les occupants et les litres du CCTP.`
+      `Sur l’appartement d’exemple de la station H6, V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L par jour. Écrivez la même ligne avec les occupants et les litres du CCTP.`
     ],
     2: [
       `La page ${EX.pages.ecs} de l’extrait de CCTP donne les besoins, la pointe, les températures et le ballon. Les données du maître d’ouvrage sont dans la commande, au-dessus : pompe à chaleur, heures creuses, tube le plus long.`,
       "Reprenez les gestes des écrans dans l’ordre : besoin et énergie, volume équivalent et ballon, chauffe, pointe, heures creuses, tube. Pour la pointe, additionnez les volumes des douches et prenez la durée de l’ensemble. Écrivez vos hypothèses et vos sources dans la note de calcul.",
-      `Sur l’appartement d’exemple, une douche de ${EX.ap.pV} L à 40 °C donne ${EX.ap.Vps} L à ${EX.ap.ts} °C. Écrivez le même calcul pour la pointe du CCTP.`
+      `Sur l’appartement d’exemple de la station H6, une douche de ${EX.ap.pV} L à 40 °C donne ${EX.ap.Vps} L à ${EX.ap.ts} °C. Écrivez le même calcul pour la pointe du CCTP.`
     ],
     3: []
   }
@@ -295,7 +295,7 @@ BE.station({
       },
       prompt: { 1: "Choisissez l’énergie par jour, en vous aidant de l’exemple.", 2: "Choisissez l’énergie par jour. Cette question est à faire seul." },
       aides: {
-        1: ["L’énoncé donne le nombre de personnes, les litres par personne et les deux températures. La formule est à l’écran « L’énergie pour chauffer l’eau ».", "Calculez V40 = n × l, puis l’écart entre 40 °C et l’eau froide, puis E = V × 1,163 × ΔT en Wh. Divisez par 1 000 pour passer en kWh.", `Sur l’appartement d’exemple, V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L et l’écart vaut 40 − ${EX.ap.tf} = ${EX.ap.dT} K. Écrivez les mêmes deux lignes pour ce logement.`],
+        1: ["L’énoncé donne le nombre de personnes, les litres par personne et les deux températures. La formule est à l’écran « L’énergie pour chauffer l’eau ».", "Calculez V40 = n × l, puis l’écart entre 40 °C et l’eau froide, puis E = V × 1,163 × ΔT en Wh. Divisez par 1 000 pour passer en kWh.", `Sur l’appartement d’exemple de la station H6, V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L et l’écart vaut 40 − ${EX.ap.tf} = ${EX.ap.dT} K. Écrivez les mêmes deux lignes pour ce logement.`],
         2: ["L’énoncé donne tout. Les formules sont aux écrans « Le besoin journalier à 40 °C » et « L’énergie pour chauffer l’eau ».", "Cherchez d’abord le volume d’eau chaude par jour, puis l’écart de température entre l’eau froide et 40 °C, puis l’énergie.", `Sur un logement de ${EX.ap.n} personnes à ${EX.ap.lpp} L chacune, V40 = ${EX.ap.n} × ${EX.ap.lpp} = ${EX.ap.V40} L. Écrivez le même produit avec les données de l’énoncé.`]
       },
       ...BE.parNiveau({
@@ -331,8 +331,8 @@ BE.station({
       },
       prompt: { 1: "Choisissez le volume équivalent et le verdict, en vous aidant de l’exemple.", 2: "Choisissez le volume équivalent et le verdict. Cette question est à faire seul." },
       aides: {
-        1: ["L’énoncé donne le besoin, les trois températures et le volume du ballon. La formule est à l’écran « Le volume équivalent au stockage ».", "V stock = V40 × (40 − θ froide) ÷ (θ stock − θ froide). Comparez ensuite le résultat au volume du ballon.", `Sur l’appartement d’exemple, les deux écarts valent 40 − ${EX.ap.tf} = ${EX.ap.dT} K et ${EX.ap.ts} − ${EX.ap.tf} = ${EX.ap.dTs} K, donc ${EX.ap.V40} × ${EX.ap.dT} ÷ ${EX.ap.dTs}. Écrivez les deux écarts de ce logement.`],
-        2: ["L’énoncé donne le besoin, les températures et le ballon. Les formules sont aux écrans « Le volume équivalent au stockage » et « Choisir le ballon ».", "Deux écarts de température interviennent : l’un du côté de l’usage, l’autre du côté du stockage. Cherchez lequel est au haut de la fraction.", `Sur l’appartement d’exemple, on écrit d’abord 40 − ${EX.ap.tf}, puis ${EX.ap.ts} − ${EX.ap.tf}. Écrivez les deux écarts de ce logement.`]
+        1: ["L’énoncé donne le besoin, les trois températures et le volume du ballon. La formule est à l’écran « Le volume équivalent au stockage ».", "V stock = V40 × (40 − θ froide) ÷ (θ stock − θ froide). Comparez ensuite le résultat au volume du ballon.", `Sur l’appartement d’exemple de la station H6, les deux écarts valent 40 − ${EX.ap.tf} = ${EX.ap.dT} K et ${EX.ap.ts} − ${EX.ap.tf} = ${EX.ap.dTs} K, donc ${EX.ap.V40} × ${EX.ap.dT} ÷ ${EX.ap.dTs}. Écrivez les deux écarts de ce logement.`],
+        2: ["L’énoncé donne le besoin, les températures et le ballon. Les formules sont aux écrans « Le volume équivalent au stockage » et « Choisir le ballon ».", "Deux écarts de température interviennent : l’un du côté de l’usage, l’autre du côté du stockage. Cherchez lequel est au haut de la fraction.", `Sur l’appartement d’exemple de la station H6, on écrit d’abord 40 − ${EX.ap.tf}, puis ${EX.ap.ts} − ${EX.ap.tf}. Écrivez les deux écarts de ce logement.`]
       },
       ...BE.parNiveau({
         1: avecBloc(exVolume(), EX.ex2.quiz),
@@ -366,8 +366,8 @@ BE.station({
       },
       prompt: { 1: "Choisissez le temps de chauffe, en vous aidant de l’exemple.", 2: "Choisissez le temps de chauffe. Cette question est à faire seul." },
       aides: {
-        1: ["L’énoncé donne le volume du ballon, les températures, la puissance thermique et le COP. Les formules sont à l’écran « Le chauffe-eau thermodynamique ».", "Calculez l’énergie du ballon plein, puis divisez par la puissance thermique pour avoir des heures. Convertissez la partie décimale en minutes.", `Sur l’appartement d’exemple, E = ${EX.ap.Vb} × 1,163 × (${EX.ap.ts} − ${EX.ap.tf}). Écrivez le même produit avec le volume du ballon de l’énoncé.`],
-        2: ["L’énoncé donne tout. Les formules sont à l’écran « Le chauffe-eau thermodynamique ».", "L’eau passe de θ froide à θ stock. La pompe à chaleur donne sa puissance thermique à l’eau : le COP ne sert qu’au calcul de la puissance électrique.", `Sur l’appartement d’exemple, ${EX.ap.thfrac} h vaut ${EX.ap.thfrac} × 60 = ${EX.ap.thmin} min. Faites la même conversion sur votre durée.`]
+        1: ["L’énoncé donne le volume du ballon, les températures, la puissance thermique et le COP. Les formules sont à l’écran « Le chauffe-eau thermodynamique ».", "Calculez l’énergie du ballon plein, puis divisez par la puissance thermique pour avoir des heures. Convertissez la partie décimale en minutes.", `Sur l’appartement d’exemple de la station H6, E = ${EX.ap.Vb} × 1,163 × (${EX.ap.ts} − ${EX.ap.tf}). Écrivez le même produit avec le volume du ballon de l’énoncé.`],
+        2: ["L’énoncé donne tout. Les formules sont à l’écran « Le chauffe-eau thermodynamique ».", "L’eau passe de θ froide à θ stock. La pompe à chaleur donne sa puissance thermique à l’eau : le COP ne sert qu’au calcul de la puissance électrique.", `Sur l’appartement d’exemple de la station H6, ${EX.ap.thfrac} h vaut ${EX.ap.thfrac} × 60 = ${EX.ap.thmin} min. Faites la même conversion sur votre durée.`]
       },
       ...BE.parNiveau({
         1: avecBloc(exChauffe(), EX.ex3.quiz),
@@ -416,7 +416,7 @@ BE.station({
       prompt: "Regardez le schéma, lisez l’exemple résolu et le piège, puis continuez.",
       render: () => BE.schema("illustrations/schema-bouclage.svg", `Schéma de principe. En haut, un ballon à gauche. Un mitigeur sort du ballon et un tube orange, l’aller, part vers la droite, à 50 °C au moins. Trois petits tubes finaux, de 3 L au plus, montent de l’aller vers trois robinets. Au bout, le tube redescend et revient vers le ballon : c’est le retour, en pointillés, avec une pompe près du ballon. Un calorifuge, isolant, entoure les tubes. En bas, le tube le plus long de l’exemple : diamètre intérieur ${EX.ap.tubeD} mm et longueur ${EX.ap.tubeL} m donnent V = ${EX.ap.Vtube} L, sous 3 L : pas de bouclage. Formule : V = π ÷ 4 × d² × L × 1 000, d et L en m.`, "Le bouclage ramène l’eau du bout du réseau vers le ballon ; un réseau court, sous 3 L, n’en a pas besoin.")
         + tableau(["Formule", "Unités"], [["V = π ÷ 4 × d² × L × 1 000", "L = m² × m × 1 000"]])
-        + BE.exemple({ text: `Appartement d’exemple : tube le plus long de ${EX.ap.tubeL} m, diamètre intérieur ${EX.ap.tubeD} mm (valeurs d’exercice)`, answer: `d = ${EX.ap.tubeD} mm = ${EX.ap.tubeDm} m ; V = π ÷ 4 × ${EX.ap.tubeDm}² × ${EX.ap.tubeL} × 1 000 = ${EX.ap.Vtube} L`, why: `${EX.ap.Vtube} L est sous 3 L : pas de bouclage.` })
+        + BE.exemple({ text: `Appartement d’exemple de la station H6 : tube le plus long de ${EX.ap.tubeL} m, diamètre intérieur ${EX.ap.tubeD} mm (valeurs d’exercice)`, answer: `d = ${EX.ap.tubeD} mm = ${EX.ap.tubeDm} m ; V = π ÷ 4 × ${EX.ap.tubeDm}² × ${EX.ap.tubeL} × 1 000 = ${EX.ap.Vtube} L`, why: `${EX.ap.Vtube} L est sous 3 L : pas de bouclage.` })
         + BE.alerte(`<strong>Piège.</strong> Le diamètre extérieur d’un tube est plus grand que son diamètre intérieur : pour une paroi de 1 mm, un tube de ${EX.ap.tubeD} mm intérieur mesure ${EX.ap.dExt} mm à l’extérieur. Avec ${EX.ap.dExt} mm, on trouve ${EX.ap.VtubeExt} L et on conclut à tort que le tube dépasse 3 L.`)
         + BE.renvoi("HydroMétro détaille le bouclage et le dimensionnement d’un réseau : stations « Boucle » et « Dimensionner une distribution d’eau sanitaire ».")
     }),

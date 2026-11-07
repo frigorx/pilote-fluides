@@ -390,6 +390,8 @@ BE.station({
   ecrans: [
     BE.ecran({
       id: "accueil-objectif", dossier: "prise", kicker: "Prise en main, 1", title: "Ce que vous rendez", level: "comprendre",
+      image: "illustrations/1-bureau-baie-plein-soleil.webp",
+      imageAlt: "Un bureau lumineux dont le mur du fond est une grande baie vitrée. Le soleil de l’après-midi entre par la baie et dessine de larges taches de lumière orange sur le sol et sur un coin de table. Sur la table, un dossier ouvert à un tableau vide, un crayon et une calculatrice. Personne dans la pièce.",
       text: "Vous recevez la commande d’un bureau d’études : chiffrer la chaleur que le soleil fait entrer par les vitrages de la maison, un jour clair de juillet. C’est le premier apport du bilan d’été. Vous calculez l’apport de chaque façade à cinq heures de la journée, vous trouvez l’heure de pointe, l’heure où le soleil apporte le plus, et vous chiffrez ce que change une protection solaire. Les réponses s’écrivent sur la feuille A4 recto verso.",
       prompt: "Lisez le tableau à remplir et les trois cartes, puis continuez.",
       render: () => tableau(["Orientation", "A × Sw (m²)", ...H], [...EX.or.map(o => [o.nom, "", "", "", "", "", ""]), ["Somme (W)", "", "", "", "", "", ""]], "Le tableau des apports solaires, vide")
@@ -418,6 +420,8 @@ BE.station({
 
     BE.ecran({
       id: "soleil-facade", dossier: "methode", kicker: "La méthode, 1", title: "Le soleil sur une façade", level: "comprendre",
+      image: "illustrations/3-technicien-boussole-facades.webp",
+      imageAlt: "Un technicien de bureau d’études, de profil, se tient sur le terrain devant une maison de plain-pied. Il porte un casque blanc, un gilet de haute visibilité orange et des chaussures de sécurité. D’une main il tient un plan imprimé, de l’autre une boussole, et il regarde les murs. Le soleil est bas à droite : le mur de droite est éclairé, le mur de gauche est à l’ombre.",
       text: "Le soleil se lève à l’est, passe au sud à midi et se couche à l’ouest. Une façade reçoit donc son plus fort rayonnement à une heure qui dépend de son orientation : l’est le matin, le sud autour de midi, l’ouest l’après-midi. La façade nord ne reçoit presque que la lumière du ciel. Le tableau donne le rayonnement solaire I, en W/m², reçu par une façade verticale un jour clair de juillet à la latitude de Marseille. Les heures sont des heures solaires : à 12 h solaires, le soleil est plein sud. En été, l’heure de la montre est en avance sur l’heure solaire. Ce tableau est une donnée de l’exercice. Il sert à l’exemple et à la maison, qui sont à la même latitude.",
       prompt: "Regardez le schéma, lisez le tableau et l’exemple de lecture, puis continuez.",
       render: () => BE.schema("illustrations/schema-soleil-facade.svg", `Schéma du bâtiment d’exemple vu de dessus, le nord en haut. Le trajet du soleil est un demi-cercle en pointillés autour du bâtiment, de l’est à droite jusqu’à l’ouest à gauche, en passant par le sud en bas. À 8 h, le soleil est à l’est : il éclaire la façade est, qui reçoit ${EX.I["8"].E} W/m². À 12 h, il est au sud : la façade sud reçoit ${EX.I["12"].S} W/m². À 16 h, il est à l’ouest : la façade ouest reçoit ${EX.I["16"].O} W/m². Chaque façade éclairée est tracée en orange, avec deux flèches de rayons. La façade nord reste à l’ombre : elle ne reçoit que la lumière du ciel, ${EX.I["12"].N} W/m² au plus.`, "Le soleil éclaire l’est le matin, le sud à midi, l’ouest l’après-midi.")
@@ -482,6 +486,8 @@ BE.station({
 
     BE.ecran({
       id: "exercice-2", dossier: "methode", kicker: "Exercice 2, protection et masque", title: "Exercice : une baie protégée sous un balcon", level: "appliquer", requiresAction: true,
+      image: "illustrations/2-baie-sous-balcon-store.webp",
+      imageAlt: "Le mur sud d’une petite maison à deux niveaux. Un balcon à dalle mince sort du mur à l’étage. Juste dessous, une fenêtre blanche a un store extérieur à lames baissé, en orange. La dalle du balcon jette une ombre nette en bande sombre sur le mur et sur le haut de la fenêtre ; plus bas, le mur est éclairé. Personne sur l’image.",
       text: {
         1: `Une fenêtre sud de ${EX.ex2.L} × ${EX.ex2.H} m est sous un balcon (Fm = ${EX.ex2.Fm}). Son store extérieur est baissé (Sw = ${EX.sw.ext}). Calculez son apport solaire à ${EX.ex2.h} h solaires. L’exemple résolu reste sous vos yeux.`,
         2: `Une fenêtre sud de ${EX.ex2.L} × ${EX.ex2.H} m est sous un balcon (Fm = ${EX.ex2.Fm}). Son store extérieur est baissé (Sw = ${EX.sw.ext}). Calculez son apport solaire à ${EX.ex2.h} h solaires, sans l’exemple.`

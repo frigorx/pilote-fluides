@@ -67,7 +67,7 @@
     }
   ],
   "exemple": {
-    "enonce": "Appartement d’exemple : un séjour, deux chambres, une cuisine fermée, une salle de bains avec WC, une entrée. 2 occupants. Le propriétaire demande 19 °C (valeur d’exercice), avec une tolérance de ± 1 K ; réduit de 16 °C la nuit ; confort de 7 h à 23 h. VMC simple flux hygroréglable.",
+    "enonce": "Appartement d’exemple de la station E2 : un séjour, deux chambres, une cuisine fermée, une salle de bains avec WC, une entrée. 2 occupants. Le propriétaire demande 19 °C (valeur d’exercice), avec une tolérance de ± 1 K ; réduit de 16 °C la nuit ; confort de 7 h à 23 h. VMC simple flux hygroréglable.",
     "lignes": [
       "Types : séjour, chambre A et chambre B sont des pièces principales (3) ; cuisine et salle de bains avec WC sont des pièces de service ; l’entrée est une circulation.",
       "Températures : θ hiver = 19 °C, θ réduit = 16 °C, θ été = 26 °C dans les pièces principales, humidité 40 à 60 %.",

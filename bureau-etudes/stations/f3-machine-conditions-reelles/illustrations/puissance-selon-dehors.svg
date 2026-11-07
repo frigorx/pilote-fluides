@@ -46,7 +46,7 @@
 <text x="24.50" y="15.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">3 900</text>
 <text x="20.00" y="9.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Puissance (W)</text>
 <text x="99.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Température extérieure (°C)</text>
-<polyline points="26.00,54.52 172.00,54.52" fill="none" stroke="#1b3a63" stroke-width="0.8" stroke-dasharray="3 1.6" stroke-linejoin="round"/>
+<polyline points="26.00,57.10 172.00,57.10" fill="none" stroke="#1b3a63" stroke-width="0.8" stroke-dasharray="3 1.6" stroke-linejoin="round"/>
 <polyline points="32.35,25.47 64.09,39.23 76.78,44.77 83.13,47.83 95.83,53.37 114.87,62.26 127.57,68.08 146.61,77.07 165.65,86.34" fill="none" stroke="#3f74b5" stroke-width="0.9" stroke-linejoin="round"/>
 <circle cx="32.35" cy="25.47" r="0.90" fill="#3f74b5" stroke="#3f74b5" stroke-width="0.2"/>
 <circle cx="64.09" cy="39.23" r="0.90" fill="#3f74b5" stroke="#3f74b5" stroke-width="0.2"/>
@@ -62,7 +62,7 @@
 <line x1="8.00" y1="120.50" x2="20.00" y2="120.50" stroke="#3f74b5" stroke-width="0.9"/>
 <text x="24.00" y="122.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">UE 36 au réel, 26 °C dedans, une ligne du catalogue par point</text>
 <line x1="8.00" y1="127.90" x2="20.00" y2="127.90" stroke="#1b3a63" stroke-width="0.8" stroke-dasharray="3 1.6"/>
-<text x="24.00" y="129.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Besoin de la salle de réunion : 3 476 W</text>
+<text x="24.00" y="129.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Besoin de la salle de réunion : 3 449 W</text>
 <circle cx="14.00" cy="135.30" r="1.60" fill="#fff" stroke="#ff6b35" stroke-width="0.9"/>
 <text x="24.00" y="136.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Lecture à 32 °C : 3 578 W</text>
 <line x1="4.00" y1="141.50" x2="176.00" y2="141.50" stroke="#000" stroke-width="0.3"/>

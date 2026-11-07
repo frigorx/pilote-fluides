@@ -47,9 +47,9 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple : point demandé 0,30 m³/h et 1,64 m (station H3) ; 33,90 L d’eau ; départ à 50 °C ; plain-pied, haut des radiateurs 0,45 m au-dessus du vase.",
+    "enonce": "Bâtiment d’exemple : point demandé 0,30 m³/h et 1,72 m (station H3) ; 33,90 L d’eau ; départ à 50 °C ; plain-pied, haut des radiateurs 0,45 m au-dessus du vase.",
     "lignes": [
-      "K = 1,64 ÷ 0,30² = 18,22 ; la courbe du réseau coupe V1 à 0,33 m³/h et 1,94 m ; 12 W absorbés ; 1,7 W transmis à l’eau, rendement 14 %.",
+      "K = 1,72 ÷ 0,30² = 19,11 ; la courbe du réseau coupe V1 à 0,32 m³/h et 1,94 m ; 12 W absorbés ; 1,7 W transmis à l’eau, rendement 14 %.",
       "Volume : tubes 6,90 L + radiateurs 23,00 L + pompe à chaleur 4,00 L = 33,90 L.",
       "Ve = 33,90 × 1,18 ÷ 100 = 0,40 L ; Pg = 0,45 ÷ 10 = 0,045 bar, soit 0,5 bar ; Vn = 0,40 × 4 ÷ (3 − 0,5) = 0,64 L.",
       "Remplissage 0,55 bar ; 0,55 + 2 = 2,55 bar ≤ 3 bar : soupape de 3 bar."

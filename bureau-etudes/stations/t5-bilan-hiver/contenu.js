@@ -19,21 +19,21 @@ const EX = {
    "nom": "Bureau",
    "hab": "19,14",
    "H": "26,44",
-   "qv": "40",
+   "qv": "48,13",
    "phi": "825",
-   "air": "354",
-   "local": "1179",
-   "ratio": "61,6"
+   "air": "425",
+   "local": "1250",
+   "ratio": "65,3"
   },
   {
    "nom": "Salle de réunion",
    "hab": "24,60",
    "H": "30,95",
-   "qv": "70",
+   "qv": "61,87",
    "phi": "966",
-   "air": "619",
-   "local": "1585",
-   "ratio": "64,4"
+   "air": "547",
+   "local": "1513",
+   "ratio": "61,5"
   },
   {
    "nom": "Sanitaires",
@@ -110,7 +110,7 @@ const EX = {
  "P": "3445",
  "PkW": "3,5",
  "PkWbas": "3,4",
- "sommeLocaux": "2997",
+ "sommeLocaux": "2996",
  "sansAir": "2024",
  "ratio": "60,0",
  "part": {
@@ -272,6 +272,7 @@ BE.station({
   ecrans: [
     BE.ecran({
       id: "accueil-objectif", dossier: "prise", kicker: "Prise en main, 1", title: "Ce que vous rendez", level: "comprendre",
+      image: "illustrations/1-technicien-classeur.webp", imageAlt: "Un technicien de bureau d’études, debout devant son bureau, glisse un tableau imprimé dans la quatrième section d’un gros classeur ouvert. Les trois premières sections contiennent déjà des feuilles, une pile de tableaux attend à côté. Le dernier intercalaire, vide, porte un onglet orange. Au mur, le plan d’un petit bâtiment.",
       text: "Vous recevez la commande d’un bureau d’études : trouver la puissance de chauffage à installer dans la maison. Vous rassemblez les déperditions par les parois de toute la maison (station T3) et celles du renouvellement d’air (station T4). Vous y ajoutez les ponts thermiques et une surpuissance de relance. Le tableau du bilan se remplit de haut en bas : chaque ligne reprend la précédente. Les réponses s’écrivent sur la feuille A4 recto verso.",
       prompt: "Lisez le tableau à remplir et les trois cartes, puis continuez.",
       render: () => tableau(["Poste du bilan", "Unité"], [
@@ -370,7 +371,7 @@ BE.station({
 
     BE.ecran({
       id: "air", dossier: "methode", kicker: "La méthode, 4", title: "Le renouvellement d’air dans le bilan", level: "comprendre",
-      text: `L’air neuf qui entre dans le bâtiment arrive à la température extérieure et doit être chauffé jusqu’à θi. La station T4 calcule son coefficient : H air = 0,34 × qv, avec qv le débit d’air neuf en m³/h et 0,34 en Wh/(m³.K). Le résultat est en W/K, comme H parois. La station T4 partage aussi qv entre les pièces principales, où l’air neuf entre : le séjour, cuisine ouverte comprise, et les chambres. Les pièces de service et les circulations reçoivent 0. Dans le bilan, vous reprenez de votre feuille de la station T4 la part d’air de chaque pièce et H air du bâtiment, leur somme : il se compte une seule fois. Le bâtiment d’exemple a qv = ${EX.qv} m³/h, valeur d’exercice.`,
+      text: `L’air neuf qui entre dans le bâtiment arrive à la température extérieure et doit être chauffé jusqu’à θi. La station T4 calcule son coefficient : H air = 0,34 × qv, avec qv le débit d’air neuf en m³/h et 0,34 en Wh/(m³.K). Le résultat est en W/K, comme H parois. La station T4 partage aussi qv entre les pièces principales, où l’air neuf entre : le séjour, cuisine ouverte comprise, et les chambres. Les pièces de service et les circulations reçoivent 0. Dans le bilan, vous reprenez de votre feuille de la station T4 la part d’air de chaque pièce et H air du bâtiment, leur somme : il se compte une seule fois. Le bâtiment d’exemple a qv = ${EX.qv} m³/h. Le débit de cet exemple, partagé au prorata du volume par la station T4 (${EX.locaux[0].qv} m³/h au bureau, ${EX.locaux[1].qv} m³/h à la salle de réunion), est une valeur d’exercice, plus faible que le minimum du Code du travail (art. R. 4222-6) : 30 m³/h par occupant en salle de réunion, soit 240 m³/h pour huit personnes. Le bâtiment du projet tertiaire applique ce minimum.`,
       prompt: "Suivez le chemin de l’air sur le schéma, lisez l’exemple résolu, puis continuez.",
       render: () => BE.schema("illustrations/schema-chemin-air.svg", "Schéma de principe. À gauche, l’extérieur : une flèche « air neuf à θe » entre dans le rectangle des pièces principales, séjour et chambres, avec leurs entrées d’air. Une flèche descend vers le rectangle des pièces de service, cuisine, salle d’eau et WC, avec la mention « air de transfert, déjà à θi ». Une flèche sort des pièces de service vers la droite : « air rejeté par la VMC ».", "Le chemin de l’air, repris de la station T4 : l’air neuf n’entre que dans les pièces principales.")
         + tableau(["Formule", "Unités"], [["H air = 0,34 × qv", "W/K = Wh/(m³.K) × m³/h"], ["Φ air = H air × ΔT", "W = W/K × K"]])
@@ -424,6 +425,7 @@ BE.station({
 
     BE.ecran({
       id: "exercice-3", dossier: "methode", kicker: "Exercice 3, la puissance à installer", title: "Exercice : de Φ base à la puissance à installer", level: "appliquer", requiresAction: true,
+      image: "illustrations/2-atelier-froid-relance.webp", imageAlt: "Un atelier froid très tôt le matin, sans personne. Une lumière bleu pâle entre par de hautes fenêtres givrées. Sous elles, trois radiateurs à eau le long du mur : le plus proche commence à chauffer, des lignes ondulées orange montent de lui. Deux établis, un panneau d’outils et un thermomètre à cadran dont l’aiguille est basse.",
       text: {
         1: `L’atelier d’exemple a Φ base = ${EX.ex3.base} W. La commande fixe la relance à ${EX.ex3.relPc} % de Φ base. Calculez la relance, puis la puissance à installer arrondie au dixième de kW au-dessus. L’exemple résolu reste sous vos yeux.`,
         2: `L’atelier d’exemple a Φ base = ${EX.ex3.base} W. La commande fixe la relance à ${EX.ex3.relPc} % de Φ base. Calculez la puissance à installer arrondie au dixième de kW au-dessus, sans l’exemple.`
@@ -441,6 +443,7 @@ BE.station({
 
     BE.ecran({
       id: "ce-qui-ne-compte-pas", dossier: "methode", kicker: "La méthode, 7", title: "Ce qui ne compte pas dans le bilan d’hiver", level: "comprendre",
+      image: "illustrations/3-maison-nuit-hiver.webp", imageAlt: "Une maison à deux niveaux vue de dehors, la nuit en hiver, dans un jardin sous la neige. Un garage est accolé à droite. Toutes les fenêtres sont sombres : personne, aucune lampe, aucun soleil. Quelques lignes ondulées orange sortent par les murs et le toit de la partie chauffée, à gauche ; le garage et le comble n’en ont pas.",
       text: "Le bilan d’hiver se calcule pour le cas le plus défavorable : la nuit par le froid de base, sans soleil, sans occupants, sans appareils allumés. Ces apports de chaleur, dits gratuits, ne se retranchent pas de la puissance à installer : ils comptent au bilan d’été et à l’énergie consommée sur l’année. Les locaux non chauffés, comme le garage et le comble, n’ont pas de ligne dans le tableau local par local : ils agissent seulement par le coefficient b des parois qui les touchent.",
       prompt: "Lisez les deux cartes, puis continuez.",
       render: () => BE.cartes([

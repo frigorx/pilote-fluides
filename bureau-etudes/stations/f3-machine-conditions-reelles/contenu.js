@@ -152,32 +152,32 @@ const EX = {
   }
  ],
  "ecran": {
-  "besoin": "3476",
+  "besoin": "3449",
   "m": [
    {
     "nom": "UE 34",
     "P": "3400",
     "lim": "−10 à +46",
     "Pr": "3380",
-    "part": "97,2"
+    "part": "98,0"
    },
    {
     "nom": "UE 36",
     "P": "3600",
     "lim": "−10 à +43",
     "Pr": "3578",
-    "part": "102,9"
+    "part": "103,7"
    },
    {
     "nom": "UE 40",
     "P": "4000",
     "lim": "−10 à +46",
     "Pr": "3976",
-    "part": "114,4"
+    "part": "115,3"
    }
   ],
   "ret": "UE 36",
-  "min": "3497",
+  "min": "3470",
   "Pretrep": "3600",
   "Pret": "3578",
   "C": "0,994",
@@ -187,7 +187,7 @@ const EX = {
   "lim1": "+43"
  },
  "n1": {
-  "besoin": "4443",
+  "besoin": "4441",
   "m": [
    {
     "nom": "UE 45",
@@ -493,7 +493,7 @@ BE.station({
       { id: "n1-c", libelle: "Coefficient de correction au site", unite: "", min: 0.991, max: 0.997, indice: "Relisez l’écran « Lire le coefficient et corriger » : ligne de la température du dehors du projet, colonne de celle du dedans. Au millième, tel qu’écrit dans le tableau." },
       { id: "n1-ue45", libelle: "Puissance au réel de l’UE 45", unite: "W", min: 4290, max: 4556, indice: "Relisez l’écran « Lire le coefficient et corriger » : P réel = P repère × C, avec C lu à la ligne du dehors et à la colonne du dedans du projet. Au watt." },
       { id: "n1-ret", libelle: "Puissance au réel de l’unité retenue", unite: "W", min: 5013, max: 5325, indice: "Relisez l’écran « Choisir sur la puissance au réel » : la plus petite unité dont la puissance au réel couvre le besoin. Donnez sa puissance au réel, au watt." },
-      { id: "n1-part", libelle: "Part du besoin couverte par l’unité retenue", unite: "%", min: 112.8, max: 119.8, indice: "Part = P réel ÷ besoin × 100, au dixième de %, pour l’unité retenue. Le besoin est celui du bâtiment entier." }
+      { id: "n1-part", libelle: "Part du besoin couverte par l’unité retenue", unite: "%", min: 112.9, max: 119.9, indice: "Part = P réel ÷ besoin × 100, au dixième de %, pour l’unité retenue. Le besoin est celui du bâtiment entier." }
     ],
     2: [
       { id: "n2-c", libelle: "Coefficient de correction du projet", unite: "", min: 0.982, max: 0.988, indice: "Ligne de la température du dehors du projet, colonne de celle du dedans (station F1). Au millième, tel qu’écrit dans le tableau." },

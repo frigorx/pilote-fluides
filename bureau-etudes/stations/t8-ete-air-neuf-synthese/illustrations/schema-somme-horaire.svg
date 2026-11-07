@@ -17,27 +17,27 @@
 <line x1="28.00" y1="26.00" x2="30.00" y2="26.00" stroke="#000" stroke-width="0.5"/>
 <text x="26.00" y="27.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">5000</text>
 <text x="26.00" y="12.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">W</text>
-<line x1="30.00" y1="27.94" x2="176.00" y2="27.94" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="3 2"/>
-<text x="34.00" y="24.94" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Somme des maximums des locaux : 4879 W</text>
-<polyline points="44.00,46.26 74.00,41.71 104.00,41.44 134.00,31.92 164.00,31.07" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
-<circle cx="44.00" cy="46.26" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<line x1="30.00" y1="27.97" x2="176.00" y2="27.97" stroke="#1b3a63" stroke-width="0.5" stroke-dasharray="3 2"/>
+<text x="34.00" y="24.97" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Somme des maximums des locaux : 4877 W</text>
+<polyline points="44.00,46.29 74.00,41.74 104.00,41.47 134.00,31.95 164.00,31.10" fill="none" stroke="#1b3a63" stroke-width="0.9"/>
+<circle cx="44.00" cy="46.29" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
 <text x="44.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">8 h</text>
-<circle cx="74.00" cy="41.71" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<circle cx="74.00" cy="41.74" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
 <text x="74.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10 h</text>
-<circle cx="104.00" cy="41.44" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<circle cx="104.00" cy="41.47" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
 <text x="104.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">12 h</text>
-<circle cx="134.00" cy="31.92" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<circle cx="134.00" cy="31.95" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
 <text x="134.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">14 h</text>
-<circle cx="164.00" cy="31.07" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
+<circle cx="164.00" cy="31.10" r="1.30" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.5"/>
 <text x="164.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">16 h</text>
-<circle cx="164.00" cy="31.07" r="3.60" fill="none" stroke="#ff6b35" stroke-width="1.2"/>
-<text x="44.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3734</text>
-<text x="74.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4018</text>
-<text x="104.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4035</text>
-<text x="134.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4630</text>
-<text x="164.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#ff6b35">4683</text>
+<circle cx="164.00" cy="31.10" r="3.60" fill="none" stroke="#ff6b35" stroke-width="1.2"/>
+<text x="44.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3732</text>
+<text x="74.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4016</text>
+<text x="104.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4033</text>
+<text x="134.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4628</text>
+<text x="164.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#ff6b35">4681</text>
 <text x="6.00" y="120.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Total (W)</text>
-<text x="162.00" y="40.07" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#ff6b35">Pointe</text>
+<text x="162.00" y="40.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#ff6b35">Pointe</text>
 <line x1="4.00" y1="127.50" x2="176.00" y2="127.50" stroke="#000" stroke-width="0.3"/>
 <text x="6.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
 <text x="174.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>

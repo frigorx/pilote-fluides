@@ -11,7 +11,7 @@ const niveauCourant = () => Number(new URLSearchParams(location.search).get("niv
 /*EXEMPLE-DEBUT*/
 const EX = {
  "app": {
-  "nom": "Appartement d’exemple",
+  "nom": "Appartement d’exemple de la station E2",
   "hiver": "19",
   "reduit": "16",
   "tol": "1",
@@ -399,12 +399,12 @@ const ecranProjet = BE.projet({
     1: [
       `Les locaux sont dans la liste de la feuille. La page ${EX.pages.theta} du CCTP donne θ hiver, la page ${EX.pages.ventilation} les pièces principales, les pièces de service et le système de ventilation, la page ${EX.pages.famille} les occupants. Les autres valeurs sont dans la commande, qui les donne comme hypothèses du bureau d’études.`,
       "Un type par local : pièce principale (séjour ou sommeil), pièce de service (cuisine, salle d’eau, WC), circulation ou non chauffé. L’article 3 se lit avec une ligne, celle du nombre de pièces principales, et une colonne par pièce de service. L’article 4 se lit avec le même nombre de pièces principales.",
-      `Dans l’appartement d’exemple, la cuisine est une pièce de service : la ligne de ${EX.app.pp} pièces principales et la colonne « cuisine » donnent son débit. Faites le même geste pour la cuisine de la maison : comptez les pièces principales, repérez la ligne, lisez la colonne.`
+      `Dans l’appartement d’exemple de la station E2, la cuisine est une pièce de service : la ligne de ${EX.app.pp} pièces principales et la colonne « cuisine » donnent son débit. Faites le même geste pour la cuisine de la maison : comptez les pièces principales, repérez la ligne, lisez la colonne.`
     ],
     2: [
       "La commande décrit toute la maison : les locaux, les occupants, la ventilation. Les débits se lisent dans les tableaux des articles 3 et 4, aux écrans « Lire le tableau de l’article 3 » et « Les débits réduits de l’article 4 ».",
       "Listez d’abord les locaux, donnez un type à chacun et comptez les pièces principales. Chaque pièce de service prend sa colonne ; deux WC séparés prennent la colonne des WC multiples. Avant de lire l’article 4, cherchez si les bouches ont un dispositif de réglage individuel.",
-      `Dans l’appartement d’exemple, le séjour et deux chambres font ${EX.app.pp} pièces principales, donc la ligne ${EX.app.ligne} ; la salle de bains avec WC lit une seule colonne. Écrivez la même suite de gestes pour la maison de plain-pied.`
+      `Dans l’appartement d’exemple de la station E2, le séjour et deux chambres font ${EX.app.pp} pièces principales, donc la ligne ${EX.app.ligne} ; la salle de bains avec WC lit une seule colonne. Écrivez la même suite de gestes pour la maison de plain-pied.`
     ]
   }
 });
@@ -533,7 +533,7 @@ BE.station({
       id: "pieces-principales-et-de-service", dossier: "methode", kicker: "La méthode, 1", title: "Pièces principales et pièces de service", level: "comprendre",
       text: "Le tableau de l’arrêté de 1982 se lit d’après le nombre de pièces principales du logement. Le Code de la construction et de l’habitation (art. R. 111-1-1) distingue les pièces principales, destinées au séjour ou au sommeil, et les pièces de service : cuisines, salles d’eau, cabinets d’aisance, buanderies, débarras, séchoirs, celliers. Un séjour et une chambre sont des pièces principales. Une cuisine, une salle de bains, un WC et un cellier sont des pièces de service. Une entrée ou un dégagement est une circulation : ni une pièce principale, ni une pièce de service. Un local non chauffé se classe « non chauffé », quel que soit son nom : un cellier non chauffé est « non chauffé ». Ce geste remplit la colonne « type » du tableau des locaux de la feuille.",
       prompt: "Regardez le plan, lisez le tableau des types, puis l’exemple résolu.",
-      render: () => BE.schema("illustrations/schema-plan-types.svg", `Schéma de principe : le plan de l’appartement d’exemple, six cases. En haut, trois pièces principales en bleu clair : le séjour, la chambre A et la chambre B. En bas, la cuisine, en orange clair, pièce de service ; l’entrée, en gris, circulation ; la salle de bains avec WC, en orange clair, pièce de service. Une légende donne les trois couleurs. À droite : pièces principales, ${EX.app.pp}, séjour, chambre A, chambre B.`, "Le séjour et les chambres sont des pièces principales, la cuisine et la salle de bains des pièces de service, l’entrée une circulation.") + tableau(["Local de l’appartement", "Type", "Pourquoi"], EX.app.types, "Le type de chaque local de l’appartement d’exemple")
+      render: () => BE.schema("illustrations/schema-plan-types.svg", `Schéma de principe : le plan de l’appartement d’exemple, six cases. En haut, trois pièces principales en bleu clair : le séjour, la chambre A et la chambre B. En bas, la cuisine, en orange clair, pièce de service ; l’entrée, en gris, circulation ; la salle de bains avec WC, en orange clair, pièce de service. Une légende donne les trois couleurs. À droite : pièces principales, ${EX.app.pp}, séjour, chambre A, chambre B.`, "Le séjour et les chambres sont des pièces principales, la cuisine et la salle de bains des pièces de service, l’entrée une circulation.") + tableau(["Local de l’appartement", "Type", "Pourquoi"], EX.app.types, "Le type de chaque local de l’appartement d’exemple de la station E2")
         + exemplePieces()
         + BE.alerte("<strong>Piège.</strong> La cuisine est une pièce de service, même ouverte sur le séjour : on ne la compte pas parmi les pièces principales.")
         + BE.renvoi("Code de la construction et de l’habitation, art. R. 111-1-1 : un logement comprend des pièces principales destinées au séjour ou au sommeil, et des pièces de service.")
@@ -547,7 +547,7 @@ BE.station({
       },
       prompt: { 1: "Choisissez le bon nombre, en vous aidant de l’exemple.", 2: "Choisissez le bon nombre. Cette question est à faire seul." },
       aides: {
-        1: ["La liste des pièces est dans l’énoncé. La définition est à l’écran « Pièces principales et pièces de service ».", "Une pièce principale sert au séjour ou au sommeil. Rangez chaque pièce de la liste dans une catégorie, puis comptez celles de la première.", `Dans l’appartement d’exemple, le séjour et les deux chambres servent au séjour ou au sommeil : ${EX.app.pp} pièces principales. La cuisine, la salle de bains et l’entrée n’en font pas partie. Écrivez la même liste pour le logement de l’exercice.`],
+        1: ["La liste des pièces est dans l’énoncé. La définition est à l’écran « Pièces principales et pièces de service ».", "Une pièce principale sert au séjour ou au sommeil. Rangez chaque pièce de la liste dans une catégorie, puis comptez celles de la première.", `Dans l’appartement d’exemple de la station E2, le séjour et les deux chambres servent au séjour ou au sommeil : ${EX.app.pp} pièces principales. La cuisine, la salle de bains et l’entrée n’en font pas partie. Écrivez la même liste pour le logement de l’exercice.`],
         2: ["La liste des pièces est dans l’énoncé. La définition est à l’écran « Pièces principales et pièces de service ».", "Une pièce principale sert au séjour ou au sommeil. Rangez chaque pièce de la liste dans une catégorie, puis comptez celles de la première.", `Dans un autre logement, un séjour et deux chambres font ${EX.app.pp} pièces principales : la cuisine et la salle de bains n’en font pas partie. Écrivez la même liste pour le logement de l’exercice.`]
       },
       ...BE.parNiveau({
@@ -617,7 +617,7 @@ BE.station({
       },
       prompt: { 1: "Choisissez le bon débit, en vous aidant de l’exemple.", 2: "Choisissez le bon débit. Cette question est à faire seul." },
       aides: {
-        1: ["Le nombre de pièces principales est dans l’énoncé. Le tableau est à l’écran « Lire le tableau de l’article 3 ».", "Repérez la ligne du nombre de pièces principales. La salle de bains qui contient un WC est une seule pièce de service : cherchez la colonne qui porte son nom.", `Dans l’appartement d’exemple, la ligne de ${EX.app.pp} pièces principales et la colonne « salle de bains ou de douches » donnent le débit de la salle de bains avec WC. Faites la même lecture sur la ligne de 2 pièces principales.`],
+        1: ["Le nombre de pièces principales est dans l’énoncé. Le tableau est à l’écran « Lire le tableau de l’article 3 ».", "Repérez la ligne du nombre de pièces principales. La salle de bains qui contient un WC est une seule pièce de service : cherchez la colonne qui porte son nom.", `Dans l’appartement d’exemple de la station E2, la ligne de ${EX.app.pp} pièces principales et la colonne « salle de bains ou de douches » donnent le débit de la salle de bains avec WC. Faites la même lecture sur la ligne de 2 pièces principales.`],
         2: ["Le nombre de pièces principales est dans l’énoncé. Le tableau est à l’écran « Lire le tableau de l’article 3 ».", "Repérez la ligne du nombre de pièces principales, puis la colonne de la salle de bains. Une salle de bains qui contient un WC reste une seule pièce de service.", `Dans un autre logement de ${EX.app.pp} pièces principales, on lit la ligne ${EX.app.ligne} et une seule colonne pour la salle de bains avec WC. Faites la même lecture sur la ligne de 2 pièces principales.`]
       },
       ...BE.parNiveau({
@@ -662,15 +662,15 @@ BE.station({
           1: BE.tri(EX.tri.lignes, EX.tri.labels, EX.tri.exemple),
           2: BE.tri(EX.tri.lignes, EX.tri.labels)
         });
-        return { render: item => tableau(EX.tri.labels, EX.tri.tableau, "Imposé ou choisi : des données de l’appartement d’exemple") + act.render(item), wire: act.wire };
+        return { render: item => tableau(EX.tri.labels, EX.tri.tableau, "Imposé ou choisi : des données de l’appartement d’exemple de la station E2") + act.render(item), wire: act.wire };
       })()
     }),
 
     BE.ecran({
       id: "exemple-complet", dossier: "methode", kicker: "La méthode, 8", title: "Exemple résolu complet : l’appartement", level: "comprendre",
-      text: "Voici le tableau des locaux de l’appartement d’exemple, toutes les colonnes remplies. Les trois pièces principales ont une entrée d’air et une température d’été. La cuisine et la salle de bains avec WC sont des pièces de service : elles extraient l’air. L’entrée est une circulation. Au-dessous, le bloc ventilation donne le total à atteindre et les débits réduits, lus aux articles 3 et 4. Ce tableau montre comment se remplit le tableau des locaux de la feuille.",
+      text: "Voici le tableau des locaux de l’appartement d’exemple de la station E2, toutes les colonnes remplies. Les trois pièces principales ont une entrée d’air et une température d’été. La cuisine et la salle de bains avec WC sont des pièces de service : elles extraient l’air. L’entrée est une circulation. Au-dessous, le bloc ventilation donne le total à atteindre et les débits réduits, lus aux articles 3 et 4. Ce tableau montre comment se remplit le tableau des locaux de la feuille.",
       prompt: "Suivez le tableau ligne par ligne, puis lisez le bloc ventilation.",
-      render: () => tableau(ENTETES_LOCAUX, EX.app.locaux, `Tableau des locaux de l’appartement d’exemple. ${LEGENDE_COLONNES} Débits en m³/h.`)
+      render: () => tableau(ENTETES_LOCAUX, EX.app.locaux, `Tableau des locaux de l’appartement d’exemple de la station E2. ${LEGENDE_COLONNES} Débits en m³/h.`)
         + tableau(["Donnée", "Valeur", "Où elle se lit"], [
           ["Pièces principales", EX.app.pp, "Séjour, chambre A et chambre B"],
           ["Cuisine", `${EX.app.cuisine} m³/h`, `Article 3, ligne ${EX.app.ligne}, colonne « cuisine »`],
@@ -678,7 +678,7 @@ BE.station({
           ["Total à atteindre", `${EX.app.cuisine} + ${EX.app.sdb} = ${EX.app.total} m³/h`, "Somme des pièces de service"],
           ["Total minimal réduit", `${EX.app.rTotal} m³/h`, `Article 4, colonne « ${EX.app.pp} pièces principales », ligne « Débit total minimal » (VMC hygroréglable)`],
           ["Cuisine réduite", `${EX.app.rCuisine} m³/h au moins`, `Article 4, colonne « ${EX.app.pp} pièces principales », ligne « Débit minimal en cuisine »`]
-        ], "Le bloc ventilation de l’appartement d’exemple")
+        ], "Le bloc ventilation de l’appartement d’exemple de la station E2")
         + BE.renvoi("Sources du tableau : la consigne d’hiver vient du CCTP du logement, la température d’été du Code de l’énergie (art. R. 241-30), les débits de l’arrêté de 1982 (art. 3) ; le reste est une valeur d’exercice.")
         + BE.alerte(`<strong>Piège.</strong> La salle de bains avec WC lue sur deux lignes donne ${EX.app.sdbEtWc} m³/h au lieu de ${EX.app.total} m³/h.`)
         + BE.renvoi("Les consignes de l’appartement, l’humidité, la tolérance, les horaires et les occupants sont des valeurs d’exercice.")

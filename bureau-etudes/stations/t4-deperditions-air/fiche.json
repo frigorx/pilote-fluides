@@ -42,16 +42,16 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment du bureau d’exemple : bureau 49,76 m³ et salle de réunion 52,00 m³ (pièces principales) ; débit permanent 75 m³/h (sanitaires 45 m³/h et coin repas 30 m³/h) ; θi = 19 °C, θe = −7 °C, ΔT = 26 K. Valeurs d’exercice.",
+    "enonce": "Bâtiment du bureau d’exemple : bureau 49,76 m³ et salle de réunion 63,96 m³ (pièces principales) ; débit permanent 110 m³/h (toilettes 60 m³/h et lavabos 50 m³/h) ; θi = 19 °C, θe = −7 °C, ΔT = 26 K. Valeurs d’exercice.",
     "lignes": [
-      "Somme des volumes des pièces principales : 49,76 + 52,00 = 101,76 m³.",
-      "Bureau : qv = 75 × 49,76 ÷ 101,76 = 36,67 m³/h ; Hv = 0,34 × 36,67 = 12,47 W/K ; Φv = 324 W.",
-      "Salle de réunion : qv = 75 × 52,00 ÷ 101,76 = 38,33 m³/h ; Φv = 339 W.",
-      "Bâtiment : 0,34 × 75 × 26 = 663 W, égal à 324 + 339.",
-      "Bureau complet : 687 W de parois (T3) + 324 W d’air = 1011 W ; part de l’air 32,0 %.",
-      "Double flux, η = 0,70, infiltrations 10 m³/h : 75 × (1 − 0,70) + 10 = 32,5 m³/h ; Φv = 287 W."
+      "Somme des volumes des pièces principales : 49,76 + 63,96 = 113,72 m³.",
+      "Bureau : qv = 110 × 49,76 ÷ 113,72 = 48,13 m³/h ; Hv = 0,34 × 48,13 = 16,36 W/K ; Φv = 425 W.",
+      "Salle de réunion : qv = 110 × 63,96 ÷ 113,72 = 61,87 m³/h ; Φv = 547 W.",
+      "Bâtiment : 0,34 × 110 × 26 = 972 W, égal à 425 + 547.",
+      "Bureau complet : 687 W de parois (T3) + 425 W d’air = 1112 W ; part de l’air 38,2 %.",
+      "Double flux, η = 0,70, infiltrations 10 m³/h : 110 × (1 − 0,70) + 10 = 43,0 m³/h ; Φv = 380 W."
     ],
-    "resultat": "Φv = 663 W pour le bâtiment d’exemple en simple flux, 287 W en double flux (valeurs d’exercice)."
+    "resultat": "Φv = 972 W pour le bâtiment d’exemple en simple flux, 380 W en double flux (valeurs d’exercice)."
   },
   "pieges": [
     "Diviser par 3 600 : le 0,34 contient déjà les heures.",

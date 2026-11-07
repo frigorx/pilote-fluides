@@ -18,13 +18,13 @@
 <rect x="34.00" y="64.00" width="83.05" height="5.20" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
 <text x="131.00" y="68.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3 976 W</text>
 <line x1="34.00" y1="11.00" x2="34.00" y2="72.80" stroke="#000" stroke-width="0.5"/>
-<line x1="106.61" y1="10.00" x2="106.61" y2="73.80" stroke="#ff6b35" stroke-width="1.2"/>
+<line x1="106.05" y1="10.00" x2="106.05" y2="73.80" stroke="#ff6b35" stroke-width="1.2"/>
 <rect x="8.00" y="81.20" width="12.00" height="4.00" fill="#fff" stroke="#1b3a63" stroke-width="0.4" stroke-dasharray="1.4 0.8"/>
 <text x="24.00" y="84.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Puissance de repère, 35 °C dehors, 27 °C dedans</text>
 <rect x="8.00" y="88.60" width="12.00" height="4.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
 <text x="24.00" y="92.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Puissance au réel, 32 °C dehors, 26 °C dedans</text>
 <line x1="14.00" y1="95.60" x2="14.00" y2="100.60" stroke="#ff6b35" stroke-width="1.2"/>
-<text x="24.00" y="99.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Besoin de la salle de réunion : 3 476 W</text>
+<text x="24.00" y="99.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Besoin de la salle de réunion : 3 449 W</text>
 <line x1="4.00" y1="114.50" x2="176.00" y2="114.50" stroke="#000" stroke-width="0.3"/>
 <text x="6.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
 <text x="174.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Catalogue de l’exercice</text>

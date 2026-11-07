@@ -49,7 +49,7 @@
     }
   ],
   "exemple": {
-    "enonce": "Petit bâtiment de bureaux de plain-pied, trois locaux chauffés, 49,94 m² habitables. θi = 19 °C, θe = −7 °C (valeurs d’exercice), ΔT = 26 K. Forfaits de la commande : ponts 20 %, relance 15 %. qv = 110 m³/h.",
+    "enonce": "Petit bâtiment de bureaux de plain-pied, trois locaux chauffés, 49,94 m² habitables. θi = 19 °C, θe = −7 °C (valeurs d’exercice), ΔT = 26 K. Forfaits de la commande : ponts 20 %, relance 15 %. qv = 110 m³/h. Le débit de cet exemple, partagé au prorata du volume par la station T4 (48,13 m³/h au bureau, 61,87 m³/h à la salle de réunion), est une valeur d’exercice, plus faible que le minimum du Code du travail (art. R. 4222-6) : 30 m³/h par occupant en salle de réunion, soit 240 m³/h pour huit personnes. Le bâtiment du projet tertiaire applique ce minimum.",
     "lignes": [
       "H parois = 26,44 + 30,95 + 7,47 = 64,86 W/K (par familles : 64,85 W/K).",
       "H ponts = 0,20 × 64,86 = 12,97 W/K.",

@@ -47,13 +47,13 @@
     }
   ],
   "exemple": {
-    "enonce": "Petit bâtiment de bureaux de la station T5 : Φ du local bureau 1179 W, salle de réunion 1585 W, sanitaires 233 W ; relance 15 % ; puissance à installer 3,5 kW ; régime 50/40 °C (valeurs d’exercice).",
+    "enonce": "Petit bâtiment de bureaux de la station T5 : Φ du local bureau 1250 W, salle de réunion 1513 W, sanitaires 233 W ; relance 15 % ; puissance à installer 3,5 kW ; régime 50/40 °C (valeurs d’exercice).",
     "lignes": [
       "ΔT = 50 − 40 = 10 K ; 1,16 × 10 = 11,6.",
-      "Bureau : 1179 + 177 = 1356 W ; 1356 ÷ 11,6 = 117 L/h.",
-      "Salle de réunion : 1585 + 238 = 1823 W ; 1823 ÷ 11,6 = 157 L/h.",
+      "Bureau : 1250 + 188 = 1438 W ; 1438 ÷ 11,6 = 124 L/h.",
+      "Salle de réunion : 1513 + 227 = 1740 W ; 1740 ÷ 11,6 = 150 L/h.",
       "Sanitaires : 233 + 35 = 268 W ; 268 ÷ 11,6 = 23 L/h.",
-      "Circuit : 117 + 157 + 23 = 297 L/h, soit 0,297 m³/h (contrôle : 3447 ÷ 11,6 = 297 L/h).",
+      "Circuit : 124 + 150 + 23 = 297 L/h, soit 0,297 m³/h (contrôle : 3446 ÷ 11,6 = 297 L/h).",
       "Pompe à chaleur : 3500 ÷ 11,6 = 302 L/h."
     ],
     "resultat": "débit du circuit 297 L/h ; pompe à chaleur 302 L/h"

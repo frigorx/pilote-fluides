@@ -48,7 +48,7 @@ const EX = {
  "pacNom": "PAC 3,5",
  "eau": "50",
  "cop7": "2,8",
- "biv": "−4,8",
+ "biv": "−4,6",
  "periodes": [
   {
    "nom": "Plein hiver",
@@ -103,10 +103,10 @@ const EX = {
   "kWh": "104"
  },
  "ete": {
-  "P": "4443",
+  "P": "4441",
   "h": "400",
   "seer": "4,5",
-  "froid": "1777",
+  "froid": "1776",
   "elec": "395"
  },
  "prix": {
@@ -493,7 +493,7 @@ BE.station({
 
     BE.ecran({
       id: "autres-postes", dossier: "methode", kicker: "La méthode, 6", title: "L’eau chaude, la ventilation et l’été", level: "comprendre",
-      text: `Trois postes s’ajoutent au chauffage. L’eau chaude : l’électricité d’un jour de la station H6 × le nombre de jours de l’année. Avec un chauffe-eau thermodynamique, l’électricité d’un jour est plus petite que l’énergie d’un jour : la station H6 a déjà divisé la chaleur, pertes du ballon comprises, par le COP du chauffe-eau ; on ne la redivise pas. Avec un chauffe-eau électrique, l’énergie et l’électricité d’un jour sont égales. La ventilation : l’énergie de l’année du caisson, à la station A4. L’été, si le froid est installé : la puissance frigorifique de la station T8 × les heures de marche à pleine puissance, ÷ 1000, donne le froid de l’année en kWh ; divisé par le SEER, l’efficacité de la machine sur l’été, il donne l’électricité. Les heures et le SEER sont des données de l’exercice. Pour les bureaux d’exemple, l’eau chaude vient d’un petit chauffe-eau électrique et le froid est une option que le maître d’ouvrage fait chiffrer.`,
+      text: `Trois postes s’ajoutent au chauffage. L’eau chaude : l’électricité d’un jour de la station H6 × le nombre de jours de l’année. Avec un chauffe-eau thermodynamique, l’électricité d’un jour est plus petite que l’énergie d’un jour : la station H6 a déjà divisé la chaleur, pertes du ballon comprises, par le COP du chauffe-eau ; on ne la redivise pas. Avec un chauffe-eau électrique, l’énergie et l’électricité d’un jour sont égales. La ventilation : l’énergie de l’année du caisson, à la station A4. L’été, si le froid est installé : la puissance frigorifique de la station T8 × les heures de marche à pleine puissance, ÷ 1000, donne le froid de l’année en kWh ; divisé par le SEER, l’efficacité de la machine sur l’été, il donne l’électricité. Les heures et le SEER sont des données de l’exercice. Pour les bureaux d’exemple, l’eau chaude vient d’un petit chauffe-eau électrique et le froid est une option que le maître d’ouvrage fait chiffrer. Poste été : variante de climatisation par multisplit de la station F3 (le programme de base n’en a pas).`,
       prompt: "Comparez les barres des postes, lisez l’exemple résolu, puis continuez.",
       render: () => BE.schema("illustrations/postes-exemple.svg", `Graphique en barres horizontales, électricité de l’année du bâtiment d’exemple, solution pompe à chaleur : chauffage ${A.chauffage} kWh, en orange ; eau chaude ${A.ecs} kWh ; ventilation ${A.ventilation} kWh ; été, en option, ${A.ete} kWh. Total ${A.elec} kWh.`, "Le chauffage pèse le plus : c’est lui qu’on soigne d’abord.") + exemplePostes()
     }),

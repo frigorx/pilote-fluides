@@ -22,7 +22,7 @@
     },
     {
       "grandeur": "Température de non-chauffage",
-      "valeur": "15 °C (exemple)",
+      "valeur": "18 °C (exemple)",
       "source": "Donnée de l’exercice"
     },
     {
@@ -37,14 +37,14 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple : 2996 W à −7 °C, nuls à 15 °C ; PAC 3,5, eau à 50 °C.",
+    "enonce": "Bâtiment d’exemple : 2996 W à −7 °C, nuls à 18 °C ; PAC 3,5, eau à 50 °C.",
     "lignes": [
       "Machine à −7 °C : 2630 W (ligne du catalogue).",
-      "Point de bivalence lu : vers −4,8 °C, 2703 W.",
+      "Point de bivalence lu : vers −4,6 °C, 2711 W.",
       "Appoint : 2996 − 2630 = 366 W, 1 kW installé.",
-      "Été : 3200 ÷ 4443 × 100 = 72 % du froid demandé, sans objet sans climatisation."
+      "Été : 3200 ÷ 4441 × 100 = 72 % du froid demandé, sans objet sans climatisation."
     ],
-    "resultat": "PAC 3,5 retenue, appoint 1 kW, point de bivalence vers −4,8 °C"
+    "resultat": "PAC 3,5 retenue, appoint 1 kW, point de bivalence vers −4,6 °C"
   },
   "pieges": [
     "La puissance de tête de catalogue, à +7 °C, prise pour la puissance au froid de la base.",

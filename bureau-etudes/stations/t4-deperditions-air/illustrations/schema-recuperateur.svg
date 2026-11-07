@@ -39,8 +39,8 @@
 <text x="174.00" y="97.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">vers les pièces</text>
 <text x="6.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Les deux flux se croisent sans se mélanger.</text>
 <text x="6.00" y="114.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">η = 0,70 : il ne reste à chauffer que 1 − η = 0,30 de l’écart.</text>
-<text x="6.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φv = 0,34 × 75 × (1 − 0,70) × 26 = 199 W</text>
-<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">au lieu de 663 W sans échangeur.</text>
+<text x="6.00" y="121.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φv = 0,34 × 110 × (1 − 0,70) × 26 = 292 W</text>
+<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">au lieu de 972 W sans échangeur.</text>
 <line x1="4.00" y1="133.50" x2="176.00" y2="133.50" stroke="#000" stroke-width="0.3"/>
 <text x="6.00" y="140.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
 <text x="174.00" y="140.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>

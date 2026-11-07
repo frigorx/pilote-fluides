@@ -2,20 +2,20 @@
 <title>Bureau d’exemple : les déperditions se partagent entre les parois et l’air neuf</title>
 <rect width="180" height="110" fill="#fff"/>
 <g><text x="90" y="61" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 61)">inerWeb, by inerweb.fr</text><text x="40" y="33" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 33)">inerWeb, by inerweb.fr</text><text x="140" y="90" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 90)">inerWeb, by inerweb.fr</text></g>
-<text x="90.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Total : 1011 W</text>
+<text x="90.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Total : 1112 W</text>
 <line x1="6.00" y1="28.00" x2="174.00" y2="28.00" stroke="#000" stroke-width="0.5"/>
 <line x1="6.00" y1="28.00" x2="6.00" y2="31.00" stroke="#000" stroke-width="0.5"/>
 <line x1="174.00" y1="28.00" x2="174.00" y2="31.00" stroke="#000" stroke-width="0.5"/>
-<rect x="6.00" y="34.00" width="114.16" height="20.00" fill="#cfe0f3" stroke="#1b3a63" stroke-width="0.6"/>
-<rect x="120.16" y="34.00" width="53.84" height="20.00" fill="#ffd9c7" stroke="#ff6b35" stroke-width="0.9"/>
-<text x="63.08" y="46.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Parois : 687 W</text>
-<text x="147.08" y="46.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Air : 324 W</text>
-<line x1="120.16" y1="60.00" x2="174.00" y2="60.00" stroke="#000" stroke-width="0.5"/>
-<line x1="120.16" y1="57.00" x2="120.16" y2="60.00" stroke="#000" stroke-width="0.5"/>
+<rect x="6.00" y="34.00" width="103.79" height="20.00" fill="#cfe0f3" stroke="#1b3a63" stroke-width="0.6"/>
+<rect x="109.79" y="34.00" width="64.21" height="20.00" fill="#ffd9c7" stroke="#ff6b35" stroke-width="0.9"/>
+<text x="57.90" y="46.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Parois : 687 W</text>
+<text x="141.90" y="46.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Air : 425 W</text>
+<line x1="109.79" y1="60.00" x2="174.00" y2="60.00" stroke="#000" stroke-width="0.5"/>
+<line x1="109.79" y1="57.00" x2="109.79" y2="60.00" stroke="#000" stroke-width="0.5"/>
 <line x1="174.00" y1="57.00" x2="174.00" y2="60.00" stroke="#000" stroke-width="0.5"/>
-<text x="174.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Part de l’air : 32,0 %</text>
-<text x="6.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φ total = Φ parois + Φv = 687 + 324 = 1011 W</text>
-<text x="6.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Part de l’air = 324 ÷ 1011 × 100 = 32,0 %</text>
+<text x="174.00" y="68.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Part de l’air : 38,2 %</text>
+<text x="6.00" y="84.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Φ total = Φ parois + Φv = 687 + 425 = 1112 W</text>
+<text x="6.00" y="91.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Part de l’air = 425 ÷ 1112 × 100 = 38,2 %</text>
 <line x1="4.00" y1="99.50" x2="176.00" y2="99.50" stroke="#000" stroke-width="0.3"/>
 <text x="6.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
 <text x="174.00" y="106.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Schéma de principe</text>

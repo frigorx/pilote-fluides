@@ -10,7 +10,7 @@ const tableau = (entetes, lignes, legende) => `<table class="constat">${legende 
 
 /*EXEMPLE-DEBUT*/
 const EX = {
- "phi": "4443",
+ "phi": "4441",
  "sh": "5",
  "sc": "5",
  "eta": "0,70",
@@ -32,8 +32,8 @@ const EX = {
   "w": "45",
   "qk": "284",
   "qm": "18,6",
-  "Pc": "837",
-  "Pk": "5280",
+  "Pc": "836",
+  "Pk": "5277",
   "EER": "5,31",
   "COP": "6,31",
   "T1": "0",
@@ -50,9 +50,9 @@ const EX = {
   "q0": "256",
   "w": "67",
   "qk": "323",
-  "qm": "17,4",
-  "Pc": "1163",
-  "Pk": "5606",
+  "qm": "17,3",
+  "Pc": "1162",
+  "Pk": "5603",
   "EER": "3,82",
   "COP": "4,82",
   "T1": "5",

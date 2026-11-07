@@ -41,7 +41,7 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple, salle de réunion seule : UE 36, liaison 8,3 m, 3476 W ; notice : 0,900 kg pour 7 m, 20 g/m.",
+    "enonce": "Bâtiment d’exemple, salle de réunion seule : UE 36, liaison 8,3 m, 3449 W ; notice : 0,900 kg pour 7 m, 20 g/m.",
     "lignes": [
       "Diamètres : 6,35 mm liquide, 12,7 mm gaz.",
       "Additionnelle : (8,3 − 7) × 20 = 26 g ; totale 0,926 kg.",

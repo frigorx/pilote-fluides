@@ -3,7 +3,7 @@
   "titre": "Calculer les déperditions d’un local par ses parois",
   "ligne": "Thermique",
   "code": "BE-T3",
-  "quand": "Après le relevé des surfaces (station T1) et le calcul des coefficients U (station T2), avant les déperditions par l’air (station T4). Vous avez les surfaces, les U, Uw, Ud et Ue, et la page du CCTP qui donne les températures de calcul et les locaux non chauffés. Vous obtenez H et Φ d’une pièce par ses parois, et le ratio en W par m².",
+  "quand": "Après le relevé des surfaces (station T1) et le calcul des coefficients U (station T2), avant les déperditions par l’air (station T4). Vous avez les surfaces, les U, Uw, Ud et Ue, et la page du CCTP qui donne les températures de calcul et les locaux non chauffés. Vous obtenez H et Φ d’une pièce par ses parois, et le ratio en W par m². Les lignes T, H, F et R travaillent sur un autre bâtiment d’exemple que l’atelier des stations D0 et E1 : des bureaux. Ses valeurs sont des valeurs d’exercice : θi = 19 °C, θe = −7 °C, 2200 DJU.",
   "methode": [
     "Écart de température : ΔT (K) = θi − θe. θe est souvent négative : on retranche un nombre négatif.",
     "Une ligne par paroi et par baie qui compte : mur sur l’extérieur, baie, mur ou porte sur un local non chauffé, plancher bas sur le sol, plafond sous comble. Le plancher intermédiaire et les cloisons entre pièces chauffées ne comptent pas.",
@@ -53,10 +53,10 @@
     }
   ],
   "exemple": {
-    "enonce": "Bureau d’exemple des stations T1 et T2, θi = 19 °C et θe = −7 °C (valeurs d’exercice), donc ΔT = 19 − (−7) = 26 K. Local technique non chauffé : Aiu = 8,58 m², Aue = 5,72 m², tertiaire, autres dépendances. Comble : Aiu = 40,00 m², Aue = 48,0 m², Ao = 0,25 m², Ac = 42,0 m².",
+    "enonce": "Bureau d’exemple des stations T1 et T2, θi = 19 °C et θe = −7 °C (valeurs d’exercice), donc ΔT = 19 − (−7) = 26 K. Local technique non chauffé : Aiu = 8,58 m², Aue = 5,72 m², tertiaire, autres dépendances. Comble : Aiu = 49,94 m², Aue = 48,0 m², Ao = 0,25 m², Ac = 42,0 m².",
     "lignes": [
       "b du local technique : Aiu isolée, Aue non isolée, tableau II ; Uv,ue = 3 ; 8,58 ÷ 5,72 = 1,50, ligne « 1,25 < … ≤ 2,00 » : b = 0,90.",
-      "b du comble : Ao ÷ Ac = 0,25 ÷ 42,0 = 0,006, fortement ventilé, Uv,ue = 9 ; 40,00 ÷ 48,0 = 0,83, ligne « 0,75 < … ≤ 1,00 », tableau II : b = 0,95.",
+      "b du comble : Ao ÷ Ac = 0,25 ÷ 42,0 = 0,006, fortement ventilé, Uv,ue = 9 ; 49,94 ÷ 48,0 = 1,04, ligne « 1,00 < … ≤ 1,25 », tableau II : b = 0,95.",
       "MA, mur nord (extérieur) : 13,47 × 0,31 × 1,00 = 4,18 W/K.",
       "Fa, fenêtre nord : 1,61 × 1,6 × 1,00 = 2,58 W/K.",
       "MB, mur est (extérieur) : 8,58 × 0,31 × 1,00 = 2,66 W/K.",

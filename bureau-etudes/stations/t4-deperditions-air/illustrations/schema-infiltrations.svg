@@ -16,7 +16,7 @@
 <line x1="8.00" y1="28.00" x2="96.00" y2="28.00" stroke="#3d7fca" stroke-width="1.6"/>
 <line x1="96.00" y1="28.00" x2="93.72" y2="29.25" stroke="#3d7fca" stroke-width="1.6"/>
 <line x1="96.00" y1="28.00" x2="93.72" y2="26.75" stroke="#3d7fca" stroke-width="1.6"/>
-<text x="70.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Entrée d’air : 55 m³/h</text>
+<text x="70.00" y="22.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Entrée d’air : 90 m³/h</text>
 <line x1="8.00" y1="47.00" x2="96.00" y2="47.00" stroke="#3d7fca" stroke-width="0.7"/>
 <line x1="96.00" y1="47.00" x2="93.72" y2="48.25" stroke="#3d7fca" stroke-width="0.7"/>
 <line x1="96.00" y1="47.00" x2="93.72" y2="45.75" stroke="#3d7fca" stroke-width="0.7"/>
@@ -32,9 +32,9 @@
 <line x1="126.00" y1="62.00" x2="176.00" y2="62.00" stroke="#1b3a63" stroke-width="1.6"/>
 <line x1="176.00" y1="62.00" x2="173.72" y2="63.25" stroke="#1b3a63" stroke-width="1.6"/>
 <line x1="176.00" y1="62.00" x2="173.72" y2="60.75" stroke="#1b3a63" stroke-width="1.6"/>
-<text x="162.00" y="55.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">75 m³/h extraits</text>
+<text x="162.00" y="55.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">110 m³/h extraits</text>
 <text x="162.00" y="73.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">par la bouche</text>
-<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Entrées d’air 55 + fuites 20 = 75 m³/h extraits</text>
+<text x="6.00" y="108.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#000">Entrées d’air 90 + fuites 20 = 110 m³/h extraits</text>
 <text x="6.00" y="115.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Les fuites remplacent une partie des entrées d’air.</text>
 <line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#000" stroke-width="0.3"/>
 <text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>

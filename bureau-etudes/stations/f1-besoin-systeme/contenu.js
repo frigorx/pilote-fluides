@@ -13,12 +13,12 @@ const EX = {
  "loc": {
   "REU": {
    "nom": "Salle de réunion",
-   "P": "3476",
+   "P": "3449",
    "h": "16"
   },
   "BUR": {
    "nom": "Bureau",
-   "P": "1102",
+   "P": "1127",
    "h": "12"
   },
   "SAN": {
@@ -28,7 +28,7 @@ const EX = {
   }
  },
  "machine": {
-  "P": "4443",
+  "P": "4441",
   "h": "16",
   "PkW": "4,5"
  },
@@ -74,7 +74,7 @@ const EX = {
    "P": "8,0 kW au plus"
   }
  },
- "regime": "6 °C / 12 °C",
+ "regime": "7 °C / 12 °C",
  "ex2": {
   "x": "4",
   "y": "3",
@@ -223,7 +223,7 @@ BE.station({
     1: [
       { id: "n1-lbur", libelle: "Longueur de la liaison du bureau", unite: "m", min: 9.8, max: 11, indice: "Relisez l’écran « Mesurer une liaison sur le plan » : la liaison du bureau part de l’unité extérieure sur le trait plein commun, puis suit les tirets. Écarts en x et en y entre ses angles, puis la montée et la descente. Au dixième de mètre." },
       { id: "n1-ltot", libelle: "Longueur totale des liaisons, salle de réunion et bureau", unite: "m", min: 17.7, max: 19.7, indice: "Chaque unité intérieure a sa propre liaison, comptée depuis l’unité extérieure : additionnez la liaison de la salle de réunion et celle du bureau." },
-      { id: "n1-part", libelle: "Part du bureau dans la puissance de la machine", unite: "%", min: 24, max: 26, indice: "Relisez l’écran « Les puissances, local par local » : puissance du bureau à sa pointe ÷ puissance de la machine × 100, au pour cent." }
+      { id: "n1-part", libelle: "Part du bureau dans la puissance de la machine", unite: "%", min: 24, max: 27, indice: "Relisez l’écran « Les puissances, local par local » : puissance du bureau à sa pointe ÷ puissance de la machine × 100, au pour cent." }
     ],
     2: [
       { id: "n2-ltot", libelle: "Longueur totale des liaisons du multisplit", unite: "m", min: 45.5, max: 50.3, indice: "Relisez l’écran « Mesurer une liaison sur le plan » : pour chaque unité, le parcours dans le garage, la montée, le parcours dans les combles et la descente ; puis la somme des quatre liaisons." },
@@ -273,7 +273,7 @@ BE.station({
 
     BE.ecran({
       id: "trois-familles", dossier: "methode", kicker: "La méthode, 1", title: "Détente directe ou eau glacée", level: "comprendre",
-      text: `En détente directe, le fluide frigorigène s’évapore dans l’unité intérieure, dans la pièce même. Deux tubes de cuivre, la liaison frigorifique, relient l’unité extérieure à chaque unité intérieure. Un monosplit associe une unité extérieure et une unité intérieure. Un multisplit relie plusieurs unités intérieures, une par pièce, à une seule unité extérieure. Un DRV, à débit de réfrigérant variable, sert des dizaines d’unités sur un même réseau de fluide : on le trouve dans le tertiaire. En eau glacée, le fluide reste enfermé dans la machine, dehors. Elle refroidit de l’eau, autour de 6 °C au départ et de 12 °C au retour, qu’une pompe envoie vers un ventilo-convecteur dans chaque pièce. Une pompe à chaleur air/eau réversible peut produire cette eau. Un radiateur ne rafraîchit pas : il n’a ni ventilateur ni bac pour l’eau qui se condense sur une surface froide.`,
+      text: `En détente directe, le fluide frigorigène s’évapore dans l’unité intérieure, dans la pièce même. Deux tubes de cuivre, la liaison frigorifique, relient l’unité extérieure à chaque unité intérieure. Un monosplit associe une unité extérieure et une unité intérieure. Un multisplit relie plusieurs unités intérieures, une par pièce, à une seule unité extérieure. Un DRV, à débit de réfrigérant variable, sert des dizaines d’unités sur un même réseau de fluide : on le trouve dans le tertiaire. En eau glacée, le fluide reste enfermé dans la machine, dehors. Elle refroidit de l’eau, autour de 7 °C au départ et de 12 °C au retour, qu’une pompe envoie vers un ventilo-convecteur dans chaque pièce. Une pompe à chaleur air/eau réversible peut produire cette eau. Un radiateur ne rafraîchit pas : il n’a ni ventilateur ni bac pour l’eau qui se condense sur une surface froide.`,
       prompt: "Comparez les trois schémas, puis continuez.",
       render: () => BE.schema("illustrations/schema-familles.svg", "Trois schémas de principe côte à côte, chacun avec une maison et le sol. Monosplit : une unité extérieure posée au sol, reliée par un trait orange, le fluide frigorigène, à une unité murale dans une seule pièce. Multisplit : une unité extérieure, trois traits orange qui montent chacun vers l’unité murale d’une des trois pièces. Eau glacée : un groupe d’eau glacée au sol, deux traits bleus, le départ et le retour d’eau, qui montent vers un ventilo-convecteur dans chacune des trois pièces ; aucun trait orange n’entre dans la maison.", "Orange : le fluide frigorigène. Bleu : l’eau glacée.")
     }),

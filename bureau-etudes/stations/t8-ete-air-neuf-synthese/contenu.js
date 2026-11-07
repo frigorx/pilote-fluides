@@ -43,12 +43,12 @@ const EX = {
   {
    "nom": "Salle de réunion",
    "n": "8",
-   "qv": "70",
-   "qm": "0,0233",
-   "anS": "143",
-   "anL": "82",
-   "anSomme": "225",
-   "anEnth": "233",
+   "qv": "61,87",
+   "qm": "0,0206",
+   "anS": "126",
+   "anL": "72",
+   "anSomme": "198",
+   "anEnth": "206",
    "soleil": [
     "371",
     "684",
@@ -59,23 +59,23 @@ const EX = {
    "parois": "307",
    "internes": "1057",
    "latT7": "400",
-   "latent": "482",
+   "latent": "472",
    "sens": [
-    "1878",
-    "2191",
-    "2306",
-    "2911",
-    "2994"
+    "1861",
+    "2174",
+    "2289",
+    "2894",
+    "2977"
    ],
    "tot": [
-    "2360",
-    "2673",
-    "2788",
-    "3393",
-    "3476"
+    "2333",
+    "2646",
+    "2761",
+    "3366",
+    "3449"
    ],
    "pointe": "16",
-   "maxT": "3476"
+   "maxT": "3449"
   },
   {
    "nom": "Sanitaires",
@@ -115,7 +115,7 @@ const EX = {
    "maxT": "301"
   }
  ],
- "reuEcart": "3,6",
+ "reuEcart": "4,0",
  "bat": {
   "soleil": [
    "647",
@@ -125,37 +125,37 @@ const EX = {
    "1596"
   ],
   "sens": [
-   "3105",
-   "3389",
-   "3406",
-   "4001",
-   "4054"
+   "3104",
+   "3388",
+   "3405",
+   "4000",
+   "4053"
   ],
-  "lat": "629",
+  "lat": "628",
   "tot": [
-   "3734",
-   "4018",
-   "4035",
-   "4630",
-   "4683"
+   "3732",
+   "4016",
+   "4033",
+   "4628",
+   "4681"
   ],
   "pointe": "16",
-  "maxSomme": "4683",
-  "sansS": "4250",
-  "sansT": "4879",
+  "maxSomme": "4681",
+  "sansS": "4249",
+  "sansT": "4877",
   "corrS": "140",
   "corrL": "100",
   "comptes": "10",
   "max": "8",
-  "avecS": "3914",
-  "avecL": "529",
-  "avecT": "4443",
+  "avecS": "3913",
+  "avecL": "528",
+  "avecT": "4441",
   "partS": "88",
   "Cs": "0,91",
   "PkW": "4,5"
  },
  "n1": {
-  "qv": "40",
+  "qv": "48,13",
   "soleil": [
    "79",
    "101",
@@ -198,7 +198,7 @@ const EX = {
     "Δh ≈ 71 kJ/kg ; Φ ≈ 4740 W"
    ],
    "good": 0,
-   "explain": "Lectures : h ≈ 71 kJ/kg au point P, h ≈ 53 kJ/kg au point I, Δh ≈ 18 kJ/kg. qm = 1,2 × 200 ÷ 3 600 = 0,0667 kg/s ; Φ = 0,0667 × 18 × 1 000 ≈ 1200 W, à ± 5 % selon la lecture. B prend l’écart des températures pour Δh, C oublie la masse volumique dans qm, D prend le h du dehors seul. Pour comparer, le sensible seul vaut 0,34 × 200 × 9 = 612 W."
+   "explain": "Lectures : h ≈ 71 kJ/kg au point P, h ≈ 53 kJ/kg au point I, Δh ≈ 18 kJ/kg. qm = 1,2 × 200 ÷ 3 600 = 0,0667 kg/s ; Φ = 0,0667 × 18 × 1 000 ≈ 1200 W, à ± 10 % près selon la lecture (h à 1 kJ/kg près sur chaque point). B prend l’écart des températures pour Δh, C oublie la masse volumique dans qm, D prend le h du dehors seul. Pour comparer, le sensible seul vaut 0,34 × 200 × 9 = 612 W."
   }
  },
  "ex3": {
@@ -254,7 +254,7 @@ const exempleSens = () => BE.exemple({ text: `Salle de réunion d’exemple : ${
 const exempleLat = () => BE.exemple({ text: `Même salle, même débit : x = ${EX.ext.x} g/kg dehors, ${EX.int.x} g/kg dedans`, answer: `qm = ${EX.rho} × ${REU.qv} ÷ 3 600 = ${REU.qm} kg/s ; Δx = ${EX.ext.x} − ${EX.int.x} = ${EX.dx} g/kg ; Φl = ${REU.qm} × ${EX.dx} × ${EX.lv} = ${REU.anL} W`, why: "qm au dix-millième de kg/s, Δx au dixième de g/kg, Φl au watt. Le latent s’écrit dans sa propre colonne." });
 const exempleEnth = () => BE.exemple({ text: `Même salle : h = ${EX.ext.h} kJ/kg dehors, ${EX.int.h} kJ/kg dedans`, answer: `Φ = qm × Δh × 1 000 = ${REU.qm} × (${EX.ext.h} − ${EX.int.h}) × 1 000 = ${REU.qm} × ${EX.dh} × 1 000 = ${REU.anEnth} W ; par la somme : ${REU.anS} + ${REU.anL} = ${REU.anSomme} W ; écart (${REU.anEnth} − ${REU.anSomme}) ÷ ${REU.anSomme} = ${EX.reuEcart} %`, why: "Les deux lectures donnent le même ordre de grandeur. La somme sensible plus latent sert au bilan ; la lecture par les enthalpies la contrôle." });
 const lignePostes = (l, i) => [l.nom, l.soleil[i], l.parois, l.internes, l.anS, l.sens[i], l.latent, l.tot[i]];
-const tableauPostes = () => tableau(["Local", "Soleil (W)", "Parois (W)", "Internes (W)", "Air neuf (W)", "Sensible (W)", "Latent (W)", "Total (W)"], [REU, SAN].map(l => lignePostes(l, iR)), `Bâtiment d’exemple à ${REU.pointe} h solaires : les quatre postes, en W`);
+const tableauPostes = () => tableau(["Local", "Soleil (W)", "Parois (W)", "Internes (W)", "Air neuf, sensible (W)", "Sensible (W)", "Latent : occupants + air neuf (W)", "Total (W)"], [REU, SAN].map(l => lignePostes(l, iR)), `Bâtiment d’exemple à ${REU.pointe} h solaires : les quatre postes, en W`);
 const tableauHeures = () => tableau(["Heure solaire", ...H.map(h => `${h} h`)], [["Soleil du bâtiment (W)", ...B.soleil], ["Sensible (W)", ...B.sens], ["Latent (W)", ...H.map(() => B.lat)], ["Total (W)", ...B.tot]], "Bâtiment d’exemple : la somme des trois locaux, bureau du niveau 1 compris, heure par heure");
 const ex3Table = () => tableau(["Local", ...H.map(h => `${h} h`)], [[`${EX.ex3.A.nom}, soleil (W)`, ...EX.ex3.A.soleil], [`${EX.ex3.B.nom}, soleil (W)`, ...EX.ex3.B.soleil]], `Chaque bureau : parois et internes ${EX.ex3.sens} W, latent ${EX.ex3.lat} W, à toute heure`);
 
@@ -336,9 +336,9 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "n1-ans", libelle: "Apport sensible de l’air neuf du bureau", unite: "W", min: 79, max: 85, indice: "Relisez l’écran « L’air neuf en été : le sensible » : 0,34 × qv × (θe − θi), avec l’écart des températures, au watt." },
-      { id: "n1-anl", libelle: "Apport latent de l’air neuf du bureau", unite: "W", min: 45, max: 49, indice: "Relisez l’écran « L’air neuf apporte de l’eau » : qm = 1,2 × qv ÷ 3 600 au dix-millième, Δx = x dehors − x dedans, puis qm × Δx × 2 501." },
-      { id: "n1-p", libelle: "Puissance frigorifique du bureau à son heure de pointe, sensible et latent", unite: "W", min: 1079, max: 1125, indice: "Relisez l’écran « La somme heure par heure » : une ligne par heure, soleil + parois + internes + air neuf + latent, puis le plus grand total. Le bureau a sa propre heure de pointe." }
+      { id: "n1-ans", libelle: "Apport sensible de l’air neuf du bureau", unite: "W", min: 95, max: 101, indice: "Relisez l’écran « L’air neuf en été : le sensible » : 0,34 × qv × (θe − θi), avec l’écart des températures, au watt." },
+      { id: "n1-anl", libelle: "Apport latent de l’air neuf du bureau", unite: "W", min: 54, max: 58, indice: "Relisez l’écran « L’air neuf apporte de l’eau » : qm = 1,2 × qv ÷ 3 600 au dix-millième, Δx = x dehors − x dedans, puis qm × Δx × 2 501." },
+      { id: "n1-p", libelle: "Puissance frigorifique du bureau à son heure de pointe, sensible et latent", unite: "W", min: 1104, max: 1150, indice: "Relisez l’écran « La somme heure par heure » : une ligne par heure, soleil + parois + internes + air neuf + latent, puis le plus grand total. Le bureau a sa propre heure de pointe." }
     ],
     2: [
       { id: "n2-sans", libelle: "Puissance frigorifique sans simultanéité, somme des maximums des pièces", unite: "W", min: 7860, max: 8348, indice: "Relisez l’écran « La simultanéité » : pour chaque pièce, son plus grand total, à sa propre heure de pointe (station T6), puis la somme des huit pièces." },
@@ -360,9 +360,11 @@ BE.station({
   ecrans: [
     BE.ecran({
       id: "accueil-objectif", dossier: "prise", kicker: "Prise en main, 1", title: "Ce que vous rendez", level: "comprendre",
+      image: "illustrations/1-technicien-fait-la-somme.webp",
+      imageAlt: "Un technicien de bureau d’études, assis à son bureau, pose côte à côte quatre feuilles de tableaux, une calculatrice et le plan d’une maison à étage. Il montre la quatrième feuille avec un crayon orange, comme s’il additionnait les feuilles. Par la fenêtre, un ciel d’été.",
       text: "Vous recevez la commande d’un bureau d’études : terminer le bilan d’été. Il manque l’air neuf, puis la somme. L’air neuf entre plus chaud et plus humide que l’air de la pièce : il apporte de la chaleur sensible et de la chaleur latente. Vous additionnez ensuite, local par local et heure par heure, le soleil des vitrages, les parois, les apports internes et l’air neuf. Vous en tirez la puissance frigorifique de chaque local et celle de la machine qui les sert tous. Les réponses s’écrivent sur la feuille A4 recto verso.",
       prompt: "Lisez le tableau à remplir et les trois cartes, puis continuez.",
-      render: () => tableau(["Local", "Soleil", "Parois", "Internes", "Air neuf", "Sensible", "Latent", "Total"], [["", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", ""], ["Bâtiment", "", "", "", "", "", "", ""]], "Le tableau de la synthèse, vide (en W)")
+      render: () => tableau(["Local", "Soleil", "Parois", "Internes", "Air neuf, sensible", "Sensible", "Latent : occupants + air neuf", "Total"], [["", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", ""], ["Bâtiment", "", "", "", "", "", "", ""]], "Le tableau de la synthèse, vide (en W)")
         + BE.cartes([
           { title: "Vous recevez", rows: [["La commande :", "l’air neuf et la puissance frigorifique."], ["Le dossier :", "vos feuilles des stations T6, T7, A1, A2 et E2."]] },
           { title: "Vous produisez", rows: [["Le tableau :", "les quatre postes de chaque local, heure par heure."], ["Le résultat :", "la puissance de chaque local et celle de la machine. Fourchette de ± 3 % à l’écran Vérifier (± 2 % pour la puissance du bureau)."]] },
@@ -386,7 +388,7 @@ BE.station({
 
     BE.ecran({
       id: "air-neuf-sensible", dossier: "methode", kicker: "La méthode, 1", title: "L’air neuf en été : le sensible", level: "comprendre",
-      text: `Un local reçoit de l’air neuf en permanence, par une entrée d’air ou une bouche de soufflage. En été, cet air entre à θe et doit être ramené à θi. La chaleur à lui retirer pour baisser sa température est l’apport sensible de l’air neuf : Φs = 0,34 × qv × (θe − θi), avec qv en m³/h. C’est la formule de la station T4, avec l’écart d’été. Le 0,34 vient de la masse volumique et de la capacité thermique de l’air : qm × cp × Δθ, avec qm = ${EX.rho} × qv ÷ 3 600 en kg/s et cp = ${EX.cp} kJ/(kg.K), donne ${EX.rho} × ${EX.cp} × 1 000 ÷ 3 600 = ${EX.cpEq}, arrondi à 0,34. Seuls les locaux qui reçoivent l’air du dehors ont cet apport. Un local traversé par de l’air qui vient d’une autre pièce, déjà à θi, n’en a pas : ici, les sanitaires.`,
+      text: `Un local reçoit de l’air neuf en permanence, par une entrée d’air ou une bouche de soufflage. En été, cet air entre à θe et doit être ramené à θi. La chaleur à lui retirer pour baisser sa température est l’apport sensible de l’air neuf : Φs = 0,34 × qv × (θe − θi), avec qv en m³/h. C’est la formule de la station T4, avec l’écart d’été. Le 0,34 vient de la masse volumique et de la capacité thermique de l’air : qm × cp × Δθ, avec qm = ${EX.rho} × qv ÷ 3 600 en kg/s et cp = ${EX.cp} kJ/(kg.K), donne ${EX.rho} × ${EX.cp} × 1 000 ÷ 3 600 = ${EX.cpEq}, arrondi à 0,34. Seuls les locaux qui reçoivent l’air du dehors ont cet apport. Un local traversé par de l’air qui vient d’une autre pièce, déjà à θi, n’en a pas : ici, les sanitaires. Le débit de cet exemple, partagé au prorata du volume par la station T4 (${EX.n1.qv} m³/h au bureau, ${EX.locaux[0].qv} m³/h à la salle de réunion), est une valeur d’exercice, plus faible que le minimum du Code du travail (art. R. 4222-6) : 30 m³/h par occupant en salle de réunion, soit 240 m³/h pour huit personnes. Le bâtiment du projet tertiaire applique ce minimum.`,
       prompt: "Suivez l’air sur le schéma, lisez l’exemple résolu, puis continuez.",
       render: () => BE.schema("illustrations/schema-air-neuf.svg", `Schéma de principe : coupe d’un local en été. À gauche, dehors, l’air est à ${EX.te} °C et ${EX.hre} %. Il entre par une entrée d’air, flèche orange. Dans le local, l’air est tenu à ${EX.ti} °C et ${EX.hri} %. À droite, l’air sort par une bouche d’extraction vers les sanitaires. Sous le local, deux cases : le sensible, 0,34 × qv × (θe − θi), la chaleur à retirer pour baisser la température de l’air ; le latent, qm × Δx × 2 501, la chaleur à retirer pour sécher l’air.`, "L’air neuf entre chaud et humide : on lui retire du sensible et du latent.") + exempleSens()
     }),
@@ -400,6 +402,8 @@ BE.station({
 
     BE.ecran({
       id: "exercice-1", dossier: "methode", kicker: "Exercice à l’écran 1, l’air neuf", title: "À l’écran : l’air neuf d’un bureau paysager", level: "appliquer", requiresAction: true,
+      image: "illustrations/2-air-neuf-entre-chaud-humide.webp",
+      imageAlt: "Coupe d’une chambre un après-midi d’été. Dehors, un soleil fort sur l’herbe sèche. Un ruban d’air chaud, avec quelques gouttelettes, entre par l’entrée d’air en haut de la fenêtre. Dans la chambre, au calme, un lit, un petit bureau, un appareil de climatisation au mur et une grille d’extraction près de la porte.",
       text: {
         1: `Un bureau paysager d’exemple reçoit ${EX.ex1.qv} m³/h d’air neuf. Les deux airs sont ceux de l’exemple : ${EX.te} °C et x = ${EX.ext.x} g/kg dehors, ${EX.ti} °C et x = ${EX.int.x} g/kg dedans. Calculez le sensible et le latent de cet air neuf. Les exemples résolus restent sous vos yeux.`,
         2: `Un bureau paysager d’exemple reçoit ${EX.ex1.qv} m³/h d’air neuf. Les deux airs sont ceux de l’exemple : ${EX.te} °C et x = ${EX.ext.x} g/kg dehors, ${EX.ti} °C et x = ${EX.int.x} g/kg dedans. Calculez le sensible et le latent de cet air neuf, sans les exemples.`
@@ -417,7 +421,7 @@ BE.station({
 
     BE.ecran({
       id: "deux-lectures", dossier: "methode", kicker: "La méthode, 3", title: "Deux lectures du diagramme", level: "comprendre",
-      text: `Le diagramme donne une seconde lecture de l’air neuf, par l’enthalpie h : la chaleur contenue dans un kilogramme d’air sec et sa vapeur. Lisez h au point E et au point I, sur les droites en tirets : Φ = qm × (h dehors − h dedans) × 1 000, en watts, sensible et latent ensemble. Cette lecture contrôle la première : sensible plus latent doit donner presque la même chose. Les deux s’écartent un peu, parce que 0,34 est arrondi, que la vapeur aussi se refroidit, et que h se lit au kJ/kg près. L’écart se calcule sur la somme : (lecture par h − somme) ÷ somme × 100 ; il peut être positif ou négatif. Pour le bilan, gardez le sensible et le latent séparés : la machine les traite différemment. Une valeur lue sur le diagramme se donne à ± 5 % : un kJ/kg de lecture sur chaque point pèse quelques pour cent de Δh.`,
+      text: `Le diagramme donne une seconde lecture de l’air neuf, par l’enthalpie h : la chaleur contenue dans un kilogramme d’air sec et sa vapeur. Lisez h au point E et au point I, sur les droites en tirets : Φ = qm × (h dehors − h dedans) × 1 000, en watts, sensible et latent ensemble. Cette lecture contrôle la première : sensible plus latent doit donner presque la même chose. Les deux s’écartent un peu, parce que 0,34 est arrondi, que la vapeur aussi se refroidit, et que h se lit au kJ/kg près. L’écart se calcule sur la somme : (lecture par h − somme) ÷ somme × 100 ; il peut être positif ou négatif. Pour le bilan, gardez le sensible et le latent séparés : la machine les traite différemment. Chaque h se lit à 1 kJ/kg près. Sur la différence Δh, l’erreur peut donc atteindre 2 kJ/kg : pour Δh = 18 kJ/kg, cela fait ± 10 % environ. Le contrôle par h donne un ordre de grandeur. Les résultats du bilan se calculent avec x, par le sensible et le latent.`,
       prompt: "Suivez les lectures de h sur le diagramme, lisez l’exemple résolu, puis continuez.",
       render: () => BE.schema("illustrations/diagramme-enthalpies.svg", `Diagramme de l’air humide de la station A1, avec les mêmes points E et I. Depuis chacun, un trait en tirets suit la droite d’enthalpie constante jusqu’à l’échelle des h : h = ${EX.ext.h} kJ/kg pour E, h = ${EX.int.h} kJ/kg pour I. L’écart Δh = ${EX.dh} kJ/kg contient le sensible et le latent.`, "Les droites en tirets portent l’enthalpie h, en kJ/kg.") + exempleEnth()
     }),
@@ -430,7 +434,7 @@ BE.station({
       },
       prompt: { 1: "Lisez h aux points P et I, puis choisissez la ligne juste, en vous aidant de l’exemple.", 2: "Lisez h aux points P et I, puis choisissez la ligne juste. Cette question est à faire seul." },
       aides: {
-        1: ["Le diagramme est sous l’énoncé. La méthode est à l’écran « Deux lectures du diagramme ».", `Suivez la droite en tirets qui passe par chaque point jusqu’à l’échelle des h, en haut à gauche. qm = ${EX.rho} × ${EX.ex2.qv} ÷ 3 600.`, `Dans l’exemple : ${REU.qm} × ${EX.dh} × 1 000 = ${REU.anEnth} W. Une lecture au kJ/kg près suffit : les choix sont assez éloignés.`],
+        1: ["Le diagramme est sous l’énoncé. La méthode est à l’écran « Deux lectures du diagramme ».", `Un point tombe en général entre deux droites en tirets. Repérez ses deux voisines, puis estimez sa place entre elles : à mi-chemin entre les droites 50 et 55, h ≈ 52 ou 53. Dans l’exemple, le point I (${EX.ti} °C, ${EX.hri} %) est entre les droites 50 et 55, un peu plus près de 55 : h ≈ ${EX.int.h} kJ/kg. Suivez ensuite la pente des tirets jusqu’à l’échelle des h, en haut à gauche. qm = ${EX.rho} × ${EX.ex2.qv} ÷ 3 600.`, `Dans l’exemple : ${REU.qm} × ${EX.dh} × 1 000 = ${REU.anEnth} W. Une lecture au kJ/kg près suffit : les choix sont assez éloignés.`],
         2: ["La méthode est à l’écran « Deux lectures du diagramme ».", "qm en kg/s, Δh en kJ/kg : le produit est en kW, × 1 000 pour des watts.", "Les droites d’enthalpie sont les tirets obliques : épais tous les 10 kJ/kg, fins tous les 5. Les verticales donnent les températures."]
       },
       ...BE.parNiveau({
@@ -456,6 +460,8 @@ BE.station({
 
     BE.ecran({
       id: "exercice-3", dossier: "methode", kicker: "Exercice à l’écran 3, deux bureaux", title: "À l’écran : un bureau à l’est, un bureau à l’ouest", level: "appliquer", requiresAction: true,
+      image: "illustrations/4-deux-bureaux-est-ouest.webp",
+      imageAlt: "Un petit bâtiment de bureaux de plain-pied vu d’en haut, un matin d’été. Deux bureaux côte à côte, chacun avec une personne devant son écran. Le bureau tourné vers le soleil bas du matin est très éclairé ; l’autre est à l’ombre. Sur le toit, un seul groupe extérieur de climatisation relié aux deux bureaux.",
       text: {
         1: `Deux bureaux d’exemple sont servis par la même machine. Le tableau donne le soleil de chacun à chaque heure ; chacun a aussi ${EX.ex3.sens} W de parois et d’internes et ${EX.ex3.lat} W de latent, à toute heure. Trouvez la somme des maximums des deux bureaux, puis le maximum de leur somme. L’écran « La somme heure par heure » reste votre modèle.`,
         2: `Deux bureaux d’exemple sont servis par la même machine. Le tableau donne le soleil de chacun à chaque heure ; chacun a aussi ${EX.ex3.sens} W de parois et d’internes et ${EX.ex3.lat} W de latent, à toute heure. Trouvez la somme des maximums des deux bureaux, puis le maximum de leur somme.`
@@ -473,6 +479,8 @@ BE.station({
 
     BE.ecran({
       id: "simultaneite", dossier: "methode", kicker: "La méthode, 6", title: "La simultanéité", level: "comprendre",
+      image: "illustrations/3-famille-pas-partout-a-la-fois.webp",
+      imageAlt: "Une maison à étage vue en coupe, un matin d’été. La famille, deux adultes et deux adolescents, prend son petit déjeuner dans le séjour-cuisine. L’entrée, le WC et les trois chambres de l’étage sont vides, lumières éteintes. Le soleil du matin entre par les fenêtres d’un seul côté.",
       text: `Chaque local se calcule plein, à son heure de pointe : tous ses occupants, son éclairage, ses appareils. C’est la puissance de l’appareil qui le sert. La machine qui sert tout le bâtiment ne voit jamais tout cela en même temps. D’abord, les locaux n’ont pas leur pointe à la même heure : la somme heure par heure le montre. Ensuite, une personne ne peut pas être dans deux locaux : le bâtiment d’exemple compte ${B.comptes} places dans ses locaux pour ${B.max} personnes au plus. Pour la machine, prenez le maximum de la somme, puis retirez les personnes comptées en trop : ${B.comptes - B.max} × ${EX.actS} = ${B.corrS} W de sensible et ${B.comptes - B.max} × ${EX.actL} = ${B.corrL} W de latent. Le coefficient de simultanéité Cs compare les deux puissances : Cs = puissance de la machine ÷ somme des maximums des locaux, au centième. Pour l’exercice, le bureau d’études retient cette règle ; les guides professionnels donnent des coefficients tout faits, que cette station ne reprend pas.`,
       prompt: "Comparez les trois colonnes du schéma, puis continuez.",
       render: () => BE.schema("illustrations/schema-simultaneite.svg", `Schéma en trois colonnes, bâtiment d’exemple. Première colonne, la somme des maximums des trois locaux : ${B.sansT} W. Deuxième, le maximum de la somme heure par heure, à ${B.pointe} h : ${B.maxSomme} W. Troisième, le même maximum avec les occupants comptés une fois : ${B.avecT} W, la puissance de la machine. Sous les colonnes : Cs = ${B.avecT} ÷ ${B.sansT} = ${B.Cs}.`, "La machine voit moins que la somme des locaux : Cs le mesure.")
@@ -486,24 +494,27 @@ BE.station({
 
     BE.ecran({
       id: "puissance-a-retenir", dossier: "methode", kicker: "La méthode, 7", title: "La puissance à retenir", level: "comprendre",
-      text: `La puissance frigorifique se donne en sensible, en latent et en total. La part sensible, sensible ÷ total × 100 au pour cent, dit quel air la machine doit souffler : beaucoup de sensible demande un air froid mais peu séché. Pour la machine du bâtiment d’exemple : ${B.avecS} ÷ ${B.avecT} × 100 = ${B.partS} %. La puissance se reporte en kW, arrondie au dixième vers le haut : ${B.avecT} W donnent ${B.PkW} kW. La station T9 choisit la machine avec ce nombre, puis corrige sa puissance aux conditions du site. Chaque local garde sa propre puissance pour choisir son appareil intérieur ou sa bouche. Comparez enfin avec la puissance d’hiver de la station T5 : la machine doit tenir les deux.`,
+      text: `La puissance frigorifique se donne en sensible, en latent et en total. La part sensible, sensible ÷ total × 100 au pour cent, dit quel air la machine doit souffler : beaucoup de sensible demande un air froid mais peu séché. Pour la machine du bâtiment d’exemple : ${B.avecS} ÷ ${B.avecT} × 100 = ${B.partS} %. La puissance se reporte en kW, arrondie au dixième vers le haut : ${B.avecT} W donnent ${B.PkW} kW. La station T9 choisit la machine avec ce nombre, puis corrige sa puissance aux conditions du site. Chaque local garde sa propre puissance pour choisir son appareil intérieur ou sa bouche. Comparez enfin avec la puissance d’hiver de la maison. Vous la lisez sur votre feuille N2 de la station T5, ligne « Puissance à installer ». La machine doit tenir les deux.`,
       prompt: "Lisez les deux cartes, puis continuez.",
       render: () => BE.cartes([
         { title: "Pour chaque local", rows: [["Sa puissance :", "le plus grand total de sa ligne, à son heure de pointe."], ["Elle sert à :", "choisir l’appareil intérieur ou la bouche du local."]] },
-        { title: "Pour la machine", rows: [["Sa puissance :", "le maximum de la somme, occupants comptés une fois."], ["Elle se donne :", "sensible, latent, total, part sensible, kW au dixième vers le haut."], ["Elle sert à :", "la station T9, avec la puissance d’hiver de la station T5."]] }
+        { title: "Pour la machine", rows: [["Sa puissance :", "le maximum de la somme, occupants comptés une fois."], ["Elle se donne :", "sensible, latent, total, part sensible, kW au dixième vers le haut."], ["Elle sert à :", "la station T9, avec la puissance d’hiver (feuille N2 de la station T5, ligne « Puissance à installer »)."]] }
       ])
     }),
 
     BE.ecran({
       id: "note-de-calcul", dossier: "methode", kicker: "La méthode, 8", title: "Ce que la note de calcul doit dire", level: "comprendre",
-      text: "La note de calcul dit les deux airs et leur source, les débits, l’heure de pointe, les hypothèses de l’exercice, et elle donne la puissance de chaque local, la puissance de la machine, le coefficient de simultanéité et la part sensible. Un autre technicien doit pouvoir refaire le calcul. Voici la note du bâtiment d’exemple.",
+      text: "La note de calcul dit les deux airs et leur source, les débits, l’heure de pointe, les hypothèses de l’exercice, et elle donne la puissance de chaque local, la puissance de la machine, le coefficient de simultanéité et la part sensible. Un autre technicien doit pouvoir refaire le calcul. Voici la note du bâtiment d’exemple : une ligne de résultat par local, puis le bâtiment.",
       prompt: "Lisez la note d’exemple, puis continuez vers le projet.",
       render: () => tableau(["Rubrique", "Note de calcul du bâtiment d’exemple"], [
         ["Objet", "Synthèse du bilan d’été, petit bâtiment de bureaux de plain-pied, trois locaux"],
         ["Données d’entrée", `Soleil : station T6 ; parois et internes : station T7 ; débits : station T5 ; x et h : diagramme de la station A1 ; 0,34 : Th-Bât, Généralités, p. 18`],
         ["Hypothèses", `Dehors ${EX.te} °C et ${EX.hre} %, dedans ${EX.ti} °C et ${EX.hri} % ; apports constants de ${H[0]} h à ${H[H.length - 1]} h ; ${B.max} personnes au plus (données de l’exercice)`],
         ["Méthode", "0,34 × qv × Δθ ; qm × Δx × 2 501, contrôlé par qm × Δh ; somme heure par heure ; machine au maximum de la somme, occupants comptés une fois"],
-        ["Résultats", `Salle de réunion ${REU.maxT} W à ${REU.pointe} h ; machine ${B.avecS} W sensible, ${B.avecL} W latent, ${B.avecT} W (${B.PkW} kW) à ${B.pointe} h ; Cs = ${B.Cs} ; part sensible ${B.partS} %`]
+        ["Résultats, salle de réunion", `${REU.maxT} W à ${REU.pointe} h, sa pointe`],
+        ["Résultats, sanitaires", `${SAN.maxT} W à ${SAN.pointe} h, sa pointe`],
+        ["Résultats, bureau", "votre résultat de la feuille N1, exercice 3 : sa puissance et son heure de pointe"],
+        ["Résultats, bâtiment", `Somme des maximums des trois locaux ${B.sansT} W ; machine ${B.avecS} W sensible, ${B.avecL} W latent, ${B.avecT} W (${B.PkW} kW) à ${B.pointe} h ; Cs = ${B.Cs} ; part sensible ${B.partS} %`]
       ], "Note de calcul, bâtiment d’exemple")
     }),
 

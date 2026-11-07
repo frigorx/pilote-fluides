@@ -41,12 +41,12 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple, salle de réunion : besoin 3476 W ; 32 °C dehors, 26 °C dedans ; pointe 40 °C.",
+    "enonce": "Bâtiment d’exemple, salle de réunion : besoin 3449 W ; 32 °C dehors, 26 °C dedans ; pointe 40 °C.",
     "lignes": [
       "C = 0,994 (ligne 32 °C, colonne 26 °C).",
-      "UE 34 : 3400 × 0,994 = 3380 W, 97,2 %.",
-      "UE 36 : 3600 × 0,994 = 3578 W, 102,9 %.",
-      "UE 40 : 4000 × 0,994 = 3976 W, 114,4 %.",
+      "UE 34 : 3400 × 0,994 = 3380 W, 98,0 %.",
+      "UE 36 : 3600 × 0,994 = 3578 W, 103,7 %.",
+      "UE 40 : 4000 × 0,994 = 3976 W, 115,3 %.",
       "UE 36 : plage −10 à +43 °C ; à 40 °C, 3600 × 0,926 = 3334 W."
     ],
     "resultat": "UE 36 retenue : 3578 W au réel, à 32 °C dehors et 26 °C dedans"

@@ -42,13 +42,13 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple : quatre circuits (station H3), le bureau le plus défavorisé à 7969 Pa ; pompe à chaleur 3,5 kW ; 33,90 L d’eau (station H4).",
+    "enonce": "Bâtiment d’exemple : quatre circuits (station H3), le bureau le plus défavorisé à 8702 Pa ; pompe à chaleur 3,5 kW ; 33,90 L d’eau (station H4).",
     "lignes": [
-      "Réunion 1 : 7969 − 5578 = 2391 Pa = 0,02391 bar ; Kv = 0,0785 ÷ √0,02391 = 0,0785 ÷ 0,1546 = 0,508 ; position 7.",
-      "Réunion 2 : 1191 Pa, Kv 0,720, position 8 ; Sanitaires : 5560 Pa, Kv 0,098, position 3 ; Bureau : grand ouvert.",
+      "Réunion 1 : 8702 − 5298 = 3404 Pa = 0,03404 bar ; Kv = 0,075 ÷ √0,03404 = 0,075 ÷ 0,1845 = 0,407 ; position 6.",
+      "Réunion 2 : 2300 Pa, Kv 0,494, position 7 ; Sanitaires : 6293 Pa, Kv 0,092, position 3 ; Bureau : grand ouvert.",
       "Volume minimal : 3,5 × 20 = 70,00 L ; il manque 70,00 − 33,90 = 36,10 L : ballon de 40 L, en série sur le retour."
     ],
-    "resultat": "tés en position 7, 8, 3 et grand ouvert ; ballon tampon de 40 L"
+    "resultat": "tés en position 6, 7, 3 et grand ouvert ; ballon tampon de 40 L"
   },
   "pieges": [
     "Prendre l’écart au plus défavorisé du niveau au lieu de toute l’installation : le té est mal réglé.",

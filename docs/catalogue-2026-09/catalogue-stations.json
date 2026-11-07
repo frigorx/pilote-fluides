@@ -6198,7 +6198,7 @@
       "id": "etam4-bim-de-l-etancheur",
       "titre": "Toiture 4 — Le BIM de l'étancheur : la toiture en maquette",
       "ligne": null,
-      "resume": "En gare 9, vous avez appris dix gestes dans BIM Vision, sur la maquette Duplex. Son toit est une toiture plate végétalisée , bordée d'acrotères : un vrai terrain d'étancheur. Cette gare applique les gestes de la gare 9 à cette toiture.",
+      "resume": "En gare 9, vous avez appris dix gestes dans BIM Vision, sur la maquette Duplex. Son toit est une toiture plate végétalisée , bordée d'acrotères.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -6402,7 +6402,7 @@
       "id": "mpi1-plan-de-distribution",
       "titre": "Plâtrerie 1 — Le plan de distribution : cloisons et doublages",
       "ligne": null,
-      "resume": "Les gares 1 à 10 du tronc vous ont appris à lire un dossier. Sur cette ligne, vous lisez les mêmes plans avec les yeux du plaquiste.",
+      "resume": "Sur cette ligne, vous lisez les plans du tronc avec les yeux du plaquiste. Le vestiaire de la gare 10 mesure 4000 × 3000 à l'intérieur. Le client veut y créer un local douche : vous le dessinez dans cette gare.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -6414,7 +6414,7 @@
       "id": "mpi2-calepinage-implantation",
       "titre": "Plâtrerie 2 — Calepinage et implantation : répartir et tracer",
       "ligne": null,
-      "resume": "Calepiner, c'est répartir des éléments de taille fixe (plaques, dalles de plafond) sur une surface avant de poser : sur le papier d'abord, au sol ensuite.",
+      "resume": "Calepiner, c'est répartir des éléments de taille fixe (plaques, dalles de plafond) sur une surface avant de poser : sur le papier d'abord, au sol ensuite. Le dessin de cette répartition s'appelle le calepin.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -6426,7 +6426,7 @@
       "id": "mpi3-details-second-oeuvre",
       "titre": "Plâtrerie 3 — Les détails du second œuvre : jonctions et points singuliers",
       "ligne": null,
-      "resume": "Une cloison rate le plus souvent aux jonctions , là où votre ouvrage rencontre autre chose : le sol, le plafond, une porte. Le dossier les dessine dans les plans de détail .",
+      "resume": "Une cloison rate le plus souvent aux jonctions , là où votre ouvrage rencontre le sol, le plafond ou une porte. Le dossier les dessine dans les plans de détail.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -7874,7 +7874,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7886,7 +7886,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7898,7 +7898,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7910,7 +7910,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7922,7 +7922,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7934,7 +7934,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-trilogie-t3\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",

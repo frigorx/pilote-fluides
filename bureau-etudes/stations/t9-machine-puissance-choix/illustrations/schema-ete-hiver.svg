@@ -1,26 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 132" width="180mm" height="132mm" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 138" width="180mm" height="138mm" role="img">
 <title>Hiver et été avec la même machine</title>
-<rect width="180" height="132" fill="#fff"/>
-<g><text x="90" y="73" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 73)">inerWeb, by inerweb.fr</text><text x="40" y="40" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 40)">inerWeb, by inerweb.fr</text><text x="140" y="108" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 108)">inerWeb, by inerweb.fr</text></g>
+<rect width="180" height="138" fill="#fff"/>
+<g><text x="90" y="76" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 76)">inerWeb, by inerweb.fr</text><text x="40" y="41" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 41)">inerWeb, by inerweb.fr</text><text x="140" y="113" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 113)">inerWeb, by inerweb.fr</text></g>
 <line x1="10.00" y1="92.00" x2="170.00" y2="92.00" stroke="#000" stroke-width="0.5"/>
 <text x="52.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Hiver, à −7 °C</text>
-<text x="132.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Été, à 35 °C</text>
+<text x="132.00" y="14.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">Été</text>
 <rect x="30.00" y="50.06" width="20.00" height="41.94" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
 <text x="40.00" y="47.56" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2996</text>
 <text x="40.00" y="98.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">besoin</text>
 <rect x="62.00" y="55.18" width="20.00" height="36.82" fill="#f2b9a2" stroke="#1b3a63" stroke-width="0.4"/>
 <text x="72.00" y="52.68" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2630</text>
 <text x="72.00" y="98.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">machine</text>
-<rect x="112.00" y="29.80" width="20.00" height="62.20" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
-<text x="122.00" y="27.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4443</text>
+<rect x="112.00" y="29.83" width="20.00" height="62.17" fill="#fff" stroke="#1b3a63" stroke-width="0.4"/>
+<text x="122.00" y="27.33" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">4441</text>
 <text x="122.00" y="98.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">besoin</text>
+<text x="122.00" y="105.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">au site (T8)</text>
 <rect x="144.00" y="47.20" width="20.00" height="44.80" fill="#bcd0e8" stroke="#1b3a63" stroke-width="0.4"/>
 <text x="154.00" y="44.70" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3200</text>
 <text x="154.00" y="98.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">machine</text>
+<text x="154.00" y="105.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">à 35 °C</text>
 <line x1="90.00" y1="18.00" x2="90.00" y2="92.00" stroke="#999" stroke-width="0.3" stroke-dasharray="2 1.5"/>
-<text x="8.00" y="107.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Hiver : la machine donne 88 % du besoin, l’appoint fait le reste.</text>
-<text x="8.00" y="114.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Été : la machine donne 72 % du besoin de froid.</text>
-<line x1="4.00" y1="121.50" x2="176.00" y2="121.50" stroke="#000" stroke-width="0.3"/>
-<text x="6.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
-<text x="174.00" y="128.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Puissances en W, bâtiment d’exemple</text>
+<text x="8.00" y="113.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Hiver : la machine donne 88 % du besoin, l’appoint fait le reste.</text>
+<text x="8.00" y="120.50" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Été : la machine donne 72 % du besoin de froid.</text>
+<line x1="4.00" y1="127.50" x2="176.00" y2="127.50" stroke="#000" stroke-width="0.3"/>
+<text x="6.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>
+<text x="174.00" y="134.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Puissances en W, bâtiment d’exemple</text>
 </svg>

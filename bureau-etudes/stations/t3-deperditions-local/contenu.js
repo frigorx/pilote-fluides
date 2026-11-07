@@ -113,15 +113,15 @@ const EX = {
   "b": "0,90"
  },
  "com": {
-  "Aiu": "40,00",
+  "Aiu": "49,94",
   "Aue": "48,0",
   "Ao": "0,25",
   "Ac": "42,0",
   "aoac": "0,006",
   "uv": "9",
-  "ratio": "0,83",
+  "ratio": "1,04",
   "tableau": "II",
-  "ligne": "0,75 < … ≤ 1,00",
+  "ligne": "1,00 < … ≤ 1,25",
   "b": "0,95"
  },
  "pk": {
@@ -375,7 +375,7 @@ const ecranProjet = BE.projet({
   }
 });
 const rendreCommande = ecranProjet.render;
-const liensCctp = () => BE.liens([{ href: DOSSIER + "cctp-maison.pdf", title: "L’extrait de CCTP de la maison", note: `Trois pages : parois et menuiseries aux pages 1 et 2, températures et locaux non chauffés à la page ${EX.pages.conditions}` }]);
+const liensCctp = () => BE.liens([{ href: DOSSIER + "cctp-maison.pdf", title: "L’extrait de CCTP de la maison", note: `Cinq pages : parois et menuiseries aux pages 1 et 2, températures et locaux non chauffés à la page ${EX.pages.conditions}` }]);
 ecranProjet.render = () => { const html = rendreCommande(); return html.includes("partie-reservee") ? html : html + liensCctp(); };
 
 BE.station({
@@ -426,7 +426,7 @@ BE.station({
       commande: `Le maître d’ouvrage fait étudier la maison de deux niveaux des stations T1 et T2. À partir de vos surfaces, de vos coefficients U et de l’extrait de CCTP, établissez les déperditions de l’entrée et de la chambre 1 par leurs parois. Rendez, pour chaque pièce, le tableau d’une ligne par paroi et par baie, le b du garage et celui du comble avec leur justification, H, Φ et le ratio en W par m², avec la source de chaque donnée. Les températures de calcul et les locaux non chauffés sont à la page ${EX.pages.conditions} du CCTP.`,
       pieces: [
         { piece: "Vos résultats des stations T1 et T2", ou: "Vos feuilles de relevé et de coefficients U" },
-        { piece: "Extrait de CCTP (cctp-maison.pdf)", ou: `Trois pages : parois et menuiseries (pages 1 et 2), températures et locaux non chauffés (page ${EX.pages.conditions}).` },
+        { piece: "Extrait de CCTP (cctp-maison.pdf)", ou: `Cinq pages : parois et menuiseries (pages 1 et 2), températures et locaux non chauffés (page ${EX.pages.conditions}).` },
         { piece: "Tableaux II et VI des règles Th-Bât", ou: "Écran « Lire b dans le tableau » de cette station" },
         { piece: "Feuille réponse niveau 2", ou: "Bouton ci-dessous, à imprimer en A4 recto verso" }
       ]
@@ -497,6 +497,7 @@ BE.station({
       render: () => BE.schema("illustrations/schema-ecart-temperature.svg", "Schéma de principe : une échelle verticale de températures. En haut, à 19 °C, la température intérieure θi. En bas, à −7 °C, la température extérieure θe. Une flèche orange à double sens relie les deux niveaux et porte l’écart ΔT = 19 − (−7) = 26 K. Une note rappelle que retrancher −7 revient à ajouter 7, et qu’un écart de 1 K vaut un écart de 1 °C.", "ΔT est la distance entre θi et θe sur l’échelle des températures.")
         + BE.exemple({ text: `Bureau d’exemple : θi = ${EX.T.ti} °C et θe = ${EX.T.te} °C, valeurs d’exercice`, answer: `ΔT = ${EX.T.ti} − (${EX.T.te}) = ${EX.T.dT} K`, why: "Retrancher −7 revient à ajouter 7. Le résultat s’écrit en kelvins." })
         + BE.alerte(`<strong>Piège.</strong> Écrire ${EX.T.ti} − 7 donne ${EX.T.faux} K au lieu de ${EX.T.dT} K : toute la déperdition en est réduite d’autant.`)
+        + BE.renvoi(`Les lignes T, H, F et R travaillent sur un autre bâtiment d’exemple que l’atelier des stations D0 et E1 : des bureaux. Ses valeurs sont des valeurs d’exercice : θi = ${EX.T.ti} °C, θe = ${EX.T.te} °C, 2200 DJU.`)
     }),
 
     BE.ecran({

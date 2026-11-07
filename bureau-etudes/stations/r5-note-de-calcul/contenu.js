@@ -24,10 +24,10 @@ const EX = {
  "pac": "PAC 3,5",
  "pacBase": "2630",
  "appoint": "366",
- "biv": "−4,8",
+ "biv": "−4,6",
  "regime": "50/40",
  "pompeQ": "0,30",
- "pompeH": "1,64",
+ "pompeH": "1,72",
  "loi": {
   "dep": "50",
   "pente": "1,24",
@@ -120,13 +120,13 @@ const ecranProjet = BE.projet({
     2: [
       "Vos feuilles des stations E1, E2, T5, T8, T9, A2, A4, H1, H2, H4, H5, H6, F1 à F4, R1 et R4. Chaque ligne de la feuille réponse dit de quelle grandeur il s’agit ; la station se retrouve à l’écran « D’où viennent les données » ; la source se recopie de la feuille de la station quand elle y est écrite ; sinon, écrivez sa sorte : calcul de la station, catalogue de l’exercice, texte cité par le CCTP ou donnée de l’exercice.",
       "Recopiez chaque valeur avec son unité, sa station et sa source ; la seule somme à refaire est celle des postes d’électricité de R4. Puis les cinq cohérences de l’écran « Les cohérences entre lignes », la synthèse et la grille de relecture.",
-      `Volet tertiaire : même gabarit, avec le CCTP du bâtiment de bureaux et vos feuilles T5 et T8 (les bilans, bâtiment entier), A2, A5, A6, F3, F4, F5, R2 et R3. La note des bureaux n’a ni multisplit ni chauffe-eau thermodynamique.`
+      `Volet tertiaire : même gabarit, avec le CCTP du bâtiment de bureaux, le dossier du bâtiment (bilans fournis) et vos feuilles A5, A6, F3, F4, F5, R2 et R3. La note des bureaux n’a ni multisplit ni chauffe-eau thermodynamique.`
     ]
   }
 });
 const rendreCommande = ecranProjet.render;
 const blocNiveau = n => n === 1 ? "" :
-  `<div class="commande"><div class="commande-entete"><span class="tag">Commande du bureau d’études</span><span class="commande-volet">Volet tertiaire, feuille à part</span></div><div class="commande-corps"><p>${BE.esc("Le bureau d’études vous demande aussi la note de calcul du bâtiment de bureaux, bâtiment entier, sur le même gabarit : données et thermique (CCTP ; stations T5 et T8, les bilans du bâtiment entier), air (stations A2, A5 et A6), eau glacée et froid (stations F3, F4 et F5), régulation et supervision (stations R2 et R3). Rendez les cohérences entre lignes et deux choix de la synthèse.")}</p></div>`
+  `<div class="commande"><div class="commande-entete"><span class="tag">Commande du bureau d’études</span><span class="commande-volet">Volet tertiaire, feuille à part</span></div><div class="commande-corps"><p>${BE.esc("Le bureau d’études vous demande aussi la note de calcul du bâtiment de bureaux, bâtiment entier, sur le même gabarit : données et thermique (CCTP ; dossier du bâtiment, bilans fournis du bâtiment entier), air (air neuf du dossier du bâtiment ; stations A5 et A6), eau glacée et froid (stations F3, F4 et F5), régulation et supervision (stations R2 et R3). Rendez les cohérences entre lignes et deux choix de la synthèse.")}</p></div>`
   + `<p class="commande-actions"><a class="primary-button lien-feuille" href="feuille-N2-tertiaire.html" target="_blank" rel="noopener">Remplir la feuille du volet tertiaire, puis l’imprimer</a></p></div>`
   + BE.liens([{ href: "../../fil-rouge/tertiaire/cctp-tertiaire.pdf", title: "L’extrait de CCTP du bâtiment de bureaux", note: "Conditions page 1, débits et horaires page 2, centrale et production page 3, régulation et supervision page 4" },
     { href: DOSSIER + "cctp-maison.pdf", title: "L’extrait de CCTP de la maison", note: "Conditions de calcul page 3, ventilation page 4, eau chaude page 5" }]);
@@ -188,7 +188,7 @@ BE.station({
   fourchettes: {
     1: [
       { id: "n1-puissance", libelle: "Puissance de chauffage à installer, case complétée", unite: "W", min: 3341, max: 3549, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },
-      { id: "n1-froid", libelle: "Puissance frigorifique du bâtiment, case complétée", unite: "W", min: 4309, max: 4577, indice: "Relisez l’écran « Recopier, pas recalculer » : la puissance du bâtiment entier, avec simultanéité, pas celle d’un local." },
+      { id: "n1-froid", libelle: "Puissance frigorifique du bâtiment, case complétée", unite: "W", min: 4307, max: 4575, indice: "Relisez l’écran « Recopier, pas recalculer » : la puissance du bâtiment entier, avec simultanéité, pas celle d’un local." },
       { id: "n1-depart", libelle: "Incohérence 1 corrigée : température de départ du régime", unite: "°C", min: 48, max: 52, indice: "Relisez l’écran « Les cohérences entre lignes » : la loi d’eau part, à la base, de la température de départ du régime." },
       { id: "n1-elec", libelle: "Incohérence 2 corrigée : électricité de l’année", unite: "kWh", min: 2678, max: 2844, indice: "Relisez l’écran « Recopier, pas recalculer » : refaites la somme des postes ; si elle ne tombe pas juste, la note se corrige." }
     ],
@@ -331,9 +331,9 @@ BE.station({
           ["R4 et T9", "La machine de l’énergie est celle de T9 ; mêmes DJU que E1"]
         ], "Les cinq cohérences de la maison")
         + tableau(["Cohérence", "Ce qui doit se répondre"], [
-          ["T8 et F3", "Groupe au réel, glycol compris ≥ puissance avec simultanéité"],
-          ["T8 et F5", "Le débit de F5 se retrouve avec le froid du bâtiment de T8, puissance avec simultanéité, et non avec le groupe de F3 : puissance en kW ÷ (coefficient de l’eau glycolée × 5 K), une vérification comme une somme"],
-          ["A2 et A5", "Débit de la centrale = débit d’air neuf"],
+          ["Dossier du bâtiment et F3", "Groupe au réel, glycol compris ≥ puissance avec simultanéité"],
+          ["Dossier du bâtiment et F5", "Le débit de F5 se retrouve avec le froid du bâtiment donné par le dossier, puissance avec simultanéité, et non avec le groupe de F3 : puissance en kW ÷ (coefficient de l’eau glycolée × 5 K), une vérification comme une somme"],
+          ["Dossier du bâtiment et A5", "Débit de la centrale = débit d’air neuf"],
           ["R3 : équipements et liste", "Somme des points par équipement = total de la liste"],
           ["F5 : pompe et circuit", "Débit de la pompe ≥ débit d’eau glacée"]
         ], "Les cinq cohérences du bâtiment de bureaux")

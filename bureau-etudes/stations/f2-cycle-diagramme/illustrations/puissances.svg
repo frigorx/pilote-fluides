@@ -2,14 +2,14 @@
 <title>Les puissances du cycle d’exemple</title>
 <rect width="180" height="74" fill="#fff"/>
 <text x="57.00" y="17.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Frigorifique Φ0</text>
-<rect x="60.00" y="10.00" width="76.08" height="9.00" fill="#2f6db5" stroke="#2f6db5" stroke-width="0.2"/>
-<text x="138.08" y="16.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4443 W</text>
+<rect x="60.00" y="10.00" width="76.09" height="9.00" fill="#2f6db5" stroke="#2f6db5" stroke-width="0.2"/>
+<text x="138.09" y="16.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4441 W</text>
 <text x="57.00" y="34.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Compresseur Pc</text>
-<rect x="60.00" y="27.00" width="19.92" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
-<text x="81.92" y="33.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1163 W</text>
+<rect x="60.00" y="27.00" width="19.91" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="81.91" y="33.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1162 W</text>
 <text x="57.00" y="51.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#1b3a63">Condenseur Φk</text>
 <rect x="60.00" y="44.00" width="96.00" height="9.00" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
-<text x="158.00" y="50.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5606 W</text>
+<text x="158.00" y="50.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">5603 W</text>
 <line x1="60.00" y1="6.00" x2="60.00" y2="61.00" stroke="#000" stroke-width="0.4"/>
 <line x1="4.00" y1="63.50" x2="176.00" y2="63.50" stroke="#000" stroke-width="0.3"/>
 <text x="6.00" y="70.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">inerWeb, Bureau d’études</text>

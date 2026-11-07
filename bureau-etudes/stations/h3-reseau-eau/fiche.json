@@ -47,14 +47,14 @@
     }
   ],
   "exemple": {
-    "enonce": "Bâtiment d’exemple : tronçon commun 297 L/h, 2,0 m ; ligne du bureau 117 L/h, 7,0 m, ligne de radiateur, 6 coudes.",
+    "enonce": "Bâtiment d’exemple : tronçon commun 297 L/h, 2,0 m ; ligne du bureau 124 L/h, 7,0 m, ligne de radiateur, 6 coudes.",
     "lignes": [
       "Tronçon commun : 16 × 1, v = 297 ÷ (3,6 × 153,9) = 0,54 m/s ; R = 311 Pa/m ; 311 × 4,0 = 1244 Pa ; Z = 5,0 × 144,3 = 722 Pa ; 1966 Pa.",
-      "Ligne du bureau : 12 × 1, v = 0,41 m/s ; R = 301 Pa/m ; 301 × 14,0 = 4214 Pa ; Z = 21,5 × 83,2 = 1789 Pa ; 6003 Pa.",
-      "Circuit du bureau : 1966 + 6003 = 7969 Pa, le plus défavorisé.",
-      "Hauteur manométrique : (7969 + 8000) ÷ (990 × 9,81) = 1,64 m."
+      "Ligne du bureau : 12 × 1, v = 0,44 m/s ; R = 334 Pa/m ; 334 × 14,0 = 4676 Pa ; Z = 21,5 × 95,8 = 2060 Pa ; 6736 Pa.",
+      "Circuit du bureau : 1966 + 6736 = 8702 Pa, le plus défavorisé.",
+      "Hauteur manométrique : (8702 + 8000) ÷ (990 × 9,81) = 1,72 m."
     ],
-    "resultat": "circuit le plus défavorisé 7,97 kPa ; pompe : 1,64 m"
+    "resultat": "circuit le plus défavorisé 8,70 kPa ; pompe : 1,72 m"
   },
   "pieges": [
     "Compter la longueur à l’aller seulement : le radiateur est alimenté par un départ et un retour.",

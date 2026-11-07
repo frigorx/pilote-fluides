@@ -3,13 +3,13 @@
 <rect width="180" height="104" fill="#fff"/>
 <line x1="58.00" y1="8.00" x2="58.00" y2="76.00" stroke="#000" stroke-width="0.5"/>
 <text x="55.00" y="20.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Salle de réunion</text>
-<rect x="58.00" y="14.00" width="62.59" height="9.00" fill="#1b3a63" stroke="none"/>
-<rect x="58.00" y="14.00" width="62.59" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
-<text x="123.09" y="20.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3476 W à 16 h</text>
+<rect x="58.00" y="14.00" width="62.13" height="9.00" fill="#1b3a63" stroke="none"/>
+<rect x="58.00" y="14.00" width="62.13" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="122.63" y="20.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">3449 W à 16 h</text>
 <text x="55.00" y="36.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Bureau</text>
-<rect x="58.00" y="30.00" width="19.84" height="9.00" fill="#1b3a63" stroke="none"/>
-<rect x="58.00" y="30.00" width="19.84" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
-<text x="80.34" y="36.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1102 W à 12 h</text>
+<rect x="58.00" y="30.00" width="20.30" height="9.00" fill="#1b3a63" stroke="none"/>
+<rect x="58.00" y="30.00" width="20.30" height="9.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.2"/>
+<text x="80.80" y="36.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">1127 W à 12 h</text>
 <text x="55.00" y="52.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Sanitaires</text>
 <rect x="58.00" y="46.00" width="5.42" height="9.00" fill="#b9c2cc" stroke="none"/>
 <rect x="58.00" y="46.00" width="5.42" height="9.00" fill="#b9c2cc" stroke="#b9c2cc" stroke-width="0.2"/>
@@ -17,7 +17,7 @@
 <text x="55.00" y="68.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="end" fill="#000">Machine</text>
 <rect x="58.00" y="62.00" width="80.00" height="9.00" fill="#ff6b35" stroke="none"/>
 <rect x="58.00" y="62.00" width="80.00" height="9.00" fill="#ff6b35" stroke="#ff6b35" stroke-width="0.2"/>
-<text x="140.50" y="68.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4443 W à 16 h</text>
+<text x="140.50" y="68.40" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">4441 W à 16 h</text>
 <rect x="12.00" y="83.50" width="5.00" height="5.00" fill="#1b3a63" stroke="#1b3a63" stroke-width="0.4"/>
 <text x="20.00" y="88.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">local avec une unité</text>
 <rect x="104.00" y="83.50" width="5.00" height="5.00" fill="#b9c2cc" stroke="#b9c2cc" stroke-width="0.4"/>

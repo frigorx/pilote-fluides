@@ -83,7 +83,7 @@ td.ex { color: #666; font-style: italic; }
    sans que rien ne la touche, et le titre ne grandit que d'environ 1 mm. */
 .qr-ex { display: flex; align-items: center; gap: 1.5mm; background: #fff; font-family: Calibri, Carlito, "Segoe UI", sans-serif; font-size: 14pt; font-weight: normal; line-height: 1.1; color: #1b3a63; text-decoration: underline; }
 .qr-ex .qr-svg { flex: none; display: block; }   /* taille en mm posée par qrSvg (0.36 mm le module) */
-.qr-ex .qr-adr { display: flex; flex-direction: column; white-space: nowrap; }
+.qr-ex .qr-adr { display: flex; flex-direction: row; white-space: nowrap; }   /* adresse sur une seule ligne (P1 Codex de BE-T8, 07/11/2026 : coupée en deux, elle se recopiait mal) */
 .qr-h2 { display: flex; justify-content: space-between; align-items: flex-end; gap: 3mm; }
 .qr-h2 .qr-t { flex: 1; min-width: 0; }
 .zone > .qr-h2:not(.qr-gare) { border-bottom: 0; padding-bottom: 0; }
