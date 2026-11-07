@@ -72,6 +72,11 @@ AIDE.carnet({
         {
           etapes: [
             { lignes: [
+                'Regardez le tracé en direct.',
+                'La règle est horizontale, le crayon trace d’un trait.'
+              ],
+              video: { src: '../videos-enthalpie2r/trace/1-isobare.mp4?v=20261107-trace', poster: '../videos-enthalpie2r/trace/1-isobare.jpg?v=20261107-trace' } },
+            { lignes: [
                 'Le manomètre lit la pression **relative** : il oublie l’air autour.',
                 'Le diagramme utilise la pression **absolue**.',
                 'Pression absolue = pression lue + 1 bar.'
@@ -125,6 +130,16 @@ AIDE.carnet({
         {
           etapes: [
             { lignes: [
+                'Regardez comment on trace une isotherme.',
+                'On part du diagramme entier, on agrandit la zone, puis on revient.'
+              ],
+              video: { src: '../videos-enthalpie2r/trace/2-isotherme.mp4?v=20261107-trace', poster: '../videos-enthalpie2r/trace/2-isotherme.jpg?v=20261107-trace' } },
+            { lignes: [
+                'Regardez comment on place les points 1, 2 et 3.',
+                'Chaque point est le croisement de deux lignes.'
+              ],
+              video: { src: '../videos-enthalpie2r/trace/3-points.mp4?v=20261107-trace', poster: '../videos-enthalpie2r/trace/3-points.jpg?v=20261107-trace' } },
+            { lignes: [
                 'Chaque point est un croisement de deux lignes.',
                 'Une ligne de pression : votre ligne BP ou HP.',
                 'Une isotherme : la température relevée par la pince.'
@@ -174,6 +189,11 @@ AIDE.carnet({
         {
           etapes: [
             { lignes: [
+                'Regardez comment on descend du point 3 au point 4.',
+                'La règle est verticale : l’enthalpie ne change pas.'
+              ],
+              video: { src: '../videos-enthalpie2r/trace/4-point4.mp4?v=20261107-trace', poster: '../videos-enthalpie2r/trace/4-point4.jpg?v=20261107-trace' } },
+            { lignes: [
                 'Entre le point 3 et le point 4, il y a le détendeur.',
                 'Le détendeur fait chuter la pression.',
                 'Il ne change pas l’enthalpie : **h4 = h3**.'
@@ -216,6 +236,11 @@ AIDE.carnet({
         },
         {
           etapes: [
+            { lignes: [
+                'Regardez comment on relie les points à la règle.',
+                'Puis suivez l’isentrope à la main.'
+              ],
+              video: { src: '../videos-enthalpie2r/trace/5-cycle.mp4?v=20261107-trace', poster: '../videos-enthalpie2r/trace/5-cycle.jpg?v=20261107-trace' } },
             { lignes: [
                 'Chaque trait du cycle est un organe.',
                 '4 → 1 : l’évaporateur, sur la ligne BP.',
