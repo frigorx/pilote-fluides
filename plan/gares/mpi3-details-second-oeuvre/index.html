@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Plâtrerie 3 — Les détails du second œuvre : jonctions et points singuliers</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .illus{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
 .corresp{text-align:center;font-size:.85em;margin:18px 0 0}
@@ -34,90 +34,209 @@
 
 <section class="on">
   <h2>Bienvenue en gare</h2>
-  <p>Une cloison rate le plus souvent aux <strong>jonctions</strong>, là où votre ouvrage rencontre autre chose : le sol, le plafond, une porte. Le dossier les dessine dans les <strong>plans de détail</strong>.</p>
-  <p>Dans l'exercice, vous lirez le détail de la cloison C1 du vestiaire, dessinée à la gare Plâtrerie 1, et celui de sa porte.</p>
-  <p>Environ <strong>2 heures</strong>. À la fin, vous saurez :</p>
+  <p>Une cloison rate le plus souvent aux <strong>jonctions</strong>, là où votre ouvrage rencontre le sol, le plafond ou une porte. Le dossier les dessine dans les plans de détail.</p>
+  <p>Environ <strong>2 heures</strong>, règle graduée en main. À la fin, vous saurez :</p>
   <ul>
-    <li>lire un dessin de détail du second œuvre, au 1/10 ou au 1/5 ;</li>
-    <li>reconnaître les jonctions types : cloison-plafond, cloison-sol, huisserie, joint de dilatation ;</li>
-    <li>tirer du détail l'ordre de pose : quoi poser, et dans quel ordre.</li>
+    <li>lire un détail au 1/10 ou au 1/5, et y mesurer une épaisseur ;</li>
+    <li>reconnaître les jonctions cloison-plafond, cloison-sol, huisserie, joint de dilatation ;</li>
+    <li>tirer du détail l'ordre de pose ;</li>
+    <li>calculer le jeu d'une huisserie et mesurer une porte sur le plan.</li>
   </ul>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 9 : chaque geste a sa méthode et un exemple résolu
+  sur la cloison C2 d'un bureau. Faites ensuite l'exercice sur la cloison C1 du vestiaire : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
 </section>
 
 <section>
   <h2>Le détail : une coupe qui zoome</h2>
   <img class="illus" src="illustrations/cloison-ecorchee.webp" width="1200" height="800" alt="Une cloison en cours de montage dans une pièce vide. Un rail métallique est fixé au sol, un autre au plafond. Des montants verticaux sont emboîtés dans les deux rails. L'isolant, en orange, remplit l'espace entre les montants. À droite, des plaques vissées ferment déjà une face.">
-  <p>Voici une cloison en cours de montage : les rails au sol et au plafond, les montants, l'isolant, puis les plaques. Le détail dessine ces mêmes pièces en coupe.</p>
-  <p>Un détail est presque toujours une <strong>coupe</strong> à grande échelle (gares 4 et 6). Au 1/5, une plaque de 12,5 mm se dessine 12,5 ÷ 5 = 2,5 mm. Chaque couche devient lisible.</p>
-  <p>Dans l'autre sens, on multiplie : une couche qui mesure 3 mm à la règle sur un détail au 1/5 vaut 3 × 5 = 15 mm en vrai.</p>
-  <p class="cle">Sur un détail, tout se lit avec les conventions de la gare 5 : trait fort pour ce qui est coupé, vagues pour l'isolant. La légende nomme chaque composant : rail, montant, plaque, bande.</p>
-</section>
-
-<section>
-  <h2>Jonction n° 1 : cloison-plafond et cloison-sol</h2>
-  <div class="svgbox">
-  <svg viewBox="0 0 640 300" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Détail en coupe verticale d'une cloison sur ossature : un rail fixé au plafond, un rail fixé au sol, le montant vertical entre les deux, une plaque de chaque côté et l'isolant en vagues au centre.">
-    <line x1="60" y1="40" x2="580" y2="40" stroke="#10233c" stroke-width="6"/>
-    <line x1="60" y1="270" x2="580" y2="270" stroke="#10233c" stroke-width="6"/>
-    <g stroke="#10233c" stroke-width="2.5" fill="none">
-      <path d="M 290 46 L 290 60 M 290 46 L 350 46 M 350 46 L 350 60"/>
-      <path d="M 290 264 L 290 250 M 290 264 L 350 264 M 350 264 L 350 250"/>
-    </g>
-    <rect x="304" y="46" width="32" height="218" fill="#fffdf8" stroke="#10233c" stroke-width="1.6"/>
-    <g stroke="#10233c" stroke-width="1" fill="none">
-      <path d="M 304 90 q 8 -11 16 0 q 8 11 16 0"/>
-      <path d="M 304 150 q 8 -11 16 0 q 8 11 16 0"/>
-      <path d="M 304 210 q 8 -11 16 0 q 8 11 16 0"/>
-    </g>
-    <rect x="290" y="46" width="14" height="218" fill="#fff" stroke="#10233c" stroke-width="2.5"/>
-    <rect x="336" y="46" width="14" height="218" fill="#fff" stroke="#10233c" stroke-width="2.5"/>
-    <g fill="#c9451a" font-size="15" font-family="Segoe UI, sans-serif">
-      <text x="380" y="58">rail haut, fixé au plafond</text>
-      <text x="380" y="262">rail bas, fixé au sol</text>
-      <text x="380" y="130">plaque (trait fort)</text>
-      <text x="380" y="200">isolant (vagues)</text>
-      <text x="120" y="145" text-anchor="middle">montant vertical,</text>
-      <text x="120" y="165" text-anchor="middle">vu derrière l'isolant</text>
-    </g>
-    <line x1="376" y1="54" x2="352" y2="54" stroke="#c9451a" stroke-width="1"/>
-    <line x1="376" y1="258" x2="352" y2="258" stroke="#c9451a" stroke-width="1"/>
-    <line x1="376" y1="126" x2="352" y2="126" stroke="#c9451a" stroke-width="1"/>
-    <line x1="376" y1="196" x2="330" y2="208" stroke="#c9451a" stroke-width="1"/>
-    <line x1="190" y1="150" x2="306" y2="150" stroke="#c9451a" stroke-width="1" stroke-dasharray="4 4"/>
-  </svg>
-  <figcaption>La coupe verticale type d'une cloison : rails, montant, plaques, isolant.</figcaption>
-  </div>
-  <p class="cle">L'ordre de lecture donne l'ordre de pose : les rails, les montants, une première face de plaques, l'isolant, puis l'autre face. Le détail vous donne le mode opératoire.</p>
-</section>
-
-<section>
-  <h2>Jonction n° 2 : l'huisserie</h2>
-  <p>L'huisserie est le cadre de la porte. C'est le point de rencontre entre votre ouvrage et celui du menuisier. Le détail précise :</p>
+  <p>Le détail dessine en coupe les pièces de cette cloison en cours de montage : rails, montants, isolant, plaques.</p>
+  <p>Un détail est presque toujours une <strong>coupe</strong> à grande échelle, au 1/10 ou au 1/5. L'échelle est écrite sous le dessin.
+  Au 1/5, 1 mm sur le papier vaut 5 mm en vrai.</p>
   <ul>
-    <li>le <strong>renfort</strong> de l'ossature autour de la baie : montants renforcés ou doublés ;</li>
-    <li>la <strong>cote de réservation</strong> : l'ouverture à laisser, plus grande que la porte pour la poser et la régler ;</li>
-    <li>qui pose quoi, et quand : l'huisserie se pose souvent avant les plaques.</li>
+    <li>Du vrai vers le papier, divisez par 5 : une plaque de 12,5 mm se dessine 12,5 ÷ 5 = 2,5 mm.</li>
+    <li>Du papier vers le vrai, multipliez par 5 : un trait de 3 mm sur le papier vaut 3 × 5 = 15 mm en vrai.</li>
   </ul>
-  <p>Le <strong>jeu</strong> est la différence entre la réservation et la porte. Exemple résolu : pour une porte de 930 mm et une réservation de 1000 mm, le jeu total en largeur vaut 1000 − 930 = 70 mm, partagé entre les deux côtés de l'huisserie.</p>
-  <p class="cle">La cote de réservation se lit sur le détail ou sur la fiche du fabricant de la porte. Comme à la gare 7, un écart entre la cote et le matériel livré se signale avant de poser.</p>
+  <p class="cle">Le trait fort montre ce qui est coupé : les plaques, les rails. Les vagues montrent l'isolant.
+  Deux traits en zigzag montrent que le milieu de la cloison n'est pas dessiné.</p>
+</section>
+
+<section>
+  <h2>Jonction n° 1 : légender la coupe d'une cloison</h2>
+  <p>L'ossature d'une cloison est faite des rails et des montants. Pour légender sa coupe, lisez-la de haut en bas, puis des côtés vers le milieu.</p>
+  <ol>
+    <li>En haut et en bas, cherchez les deux <strong>rails</strong> en U : le rail haut est fixé au plafond, le rail bas au sol.</li>
+    <li>Entre les deux rails, cherchez le montant vertical. Il est vu derrière l'isolant, souvent en gris.</li>
+    <li>Sur les deux côtés, cherchez les plaques en trait fort : une ou deux par face.</li>
+    <li>Au milieu, cherchez l'isolant : les vagues.</li>
+  </ol>
+  <div class="svgbox">
+  <svg width="380" viewBox="0 0 96 74" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemple : coupe verticale de la cloison C2 au 1/5, cloison 98/48 avec deux plaques sur chaque face. Plafond en haut, sol en bas, rails en U, montant en gris derrière l'isolant, isolant en vagues, éléments numérotés de 1 à 5.">
+    <defs><pattern id="hc2" width="2.5" height="2.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2.5" stroke="#000" stroke-width=".3"/></pattern></defs>
+    <g font-family="Calibri, Carlito, sans-serif" font-size="5">
+    <rect x="16" y="4" width="64" height="6" fill="url(#hc2)" stroke="#000" stroke-width=".5"/>
+    <rect x="16" y="60" width="64" height="6" fill="url(#hc2)" stroke="#000" stroke-width=".5"/>
+    <rect x="43.2" y="10.6" width="8.2" height="48.8" fill="#e8e8e8" stroke="#000" stroke-width=".25"/>
+    <g fill="none" stroke="#000" stroke-width=".3">
+      <path d="M42.8 22 q1.2 -2 2.4 0 q1.2 2 2.4 0 q1.2 -2 2.4 0 q1.2 2 2.2 0"/>
+      <path d="M42.8 48 q1.2 -2 2.4 0 q1.2 2 2.4 0 q1.2 -2 2.4 0 q1.2 2 2.2 0"/>
+    </g>
+    <rect x="37.5" y="10" width="2.5" height="50" fill="#fff" stroke="#000" stroke-width=".6"/>
+    <rect x="40" y="10" width="2.5" height="50" fill="#fff" stroke="#000" stroke-width=".6"/>
+    <rect x="52.1" y="10" width="2.5" height="50" fill="#fff" stroke="#000" stroke-width=".6"/>
+    <rect x="54.6" y="10" width="2.5" height="50" fill="#fff" stroke="#000" stroke-width=".6"/>
+    <path d="M42.5 16V10H52.1V16 M42.5 54V60H52.1V54" fill="none" stroke="#000" stroke-width="1"/>
+    <rect x="34" y="33.5" width="27" height="3" fill="#fff"/>
+    <path d="M33 33.5h11.5l1.2-1.6l1.6 3.2l1.2-1.6h11.5 M33 36.5h11.5l1.2-1.6l1.6 3.2l1.2-1.6h11.5" fill="none" stroke="#000" stroke-width=".3"/>
+    <g stroke="#000" stroke-width=".25" stroke-dasharray="1 .8">
+      <line x1="38.7" y1="26" x2="26" y2="26"/><line x1="52.1" y1="13" x2="66" y2="13"/>
+      <line x1="51" y1="48" x2="66" y2="48"/><line x1="45.5" y1="42" x2="26" y2="42"/><line x1="52.1" y1="57" x2="66" y2="57"/>
+    </g>
+    <text x="24" y="27.8" text-anchor="end">1</text><text x="67.5" y="14.8">2</text><text x="67.5" y="49.8">3</text><text x="24" y="43.8" text-anchor="end">4</text><text x="67.5" y="58.8">5</text>
+    <text x="16" y="72.5">Cloison C2, 98/48, éch. 1/5</text>
+    </g>
+  </svg>
+  </div>
+  <div class="calc">
+    <h3>Exemple résolu : la coupe de la cloison C2</h3>
+    <p>C2 sépare un bureau de ses sanitaires. C'est une cloison 98/48 : deux plaques sur chaque face.</p>
+    <p>1 : plaque, le trait fort sur le côté. 2 : rail haut, le U fixé sous le plafond. 3 : isolant, les vagues.
+    4 : montant, en gris derrière l'isolant. 5 : rail bas, le U fixé sur le sol.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Mesurer une épaisseur sur le détail</h2>
+  <p>Imprimé à 100 %, le détail de l'exercice est à sa vraie échelle : il se mesure à la règle.</p>
+  <ol>
+    <li>Posez le zéro de la règle au milieu du premier trait.</li>
+    <li>Lisez la graduation au milieu du dernier trait, en millimètres.</li>
+    <li>Multipliez par le nombre de l'échelle : × 5 au 1/5.</li>
+    <li>Contrôlez avec la désignation de la cloison.</li>
+  </ol>
+  <p>La désignation donne deux nombres en millimètres : l'épaisseur annoncée de la cloison, puis la largeur des rails et des montants.
+  L'épaisseur réelle se calcule : ossature + plaques. Une cloison 72/48 mesure en vrai 48 + 12,5 + 12,5 = 73 mm.</p>
+  <div class="calc">
+    <h3>Exemple résolu : les épaisseurs de C2</h3>
+    <p>Sur le détail de C2 à sa vraie échelle, les deux plaques d'une face mesurent 5 mm à la règle.
+    En vrai : 5 × 5 = 25 mm, soit 2 plaques de 12,5 mm.</p>
+    <p>L'épaisseur totale mesure un peu plus de 19,5 mm à la règle : 19,6 mm. En vrai : 19,6 × 5 = 98 mm.</p>
+    <p>Contrôle : 48 + 4 × 12,5 = 98 mm. La mesure et la désignation 98/48 concordent.</p>
+  </div>
+  <p class="cle">Le dessin de C2 change de taille avec l'écran : les mesures de l'exemple sont donc écrites.
+  Lisez la règle au millimètre, puis estimez à l'œil entre deux traits. L'exercice tolère 1 mm d'écart sur le papier, soit 5 mm en vrai au 1/5.</p>
+</section>
+
+<section>
+  <h2>L'ordre de pose</h2>
+  <p>Le détail donne aussi le mode opératoire. Vous y lisez les pièces, puis vous en tirez l'ordre de pose : d'abord ce qui porte, ensuite ce qui ferme.</p>
+  <ol>
+    <li>Fixer les rails au sol et au plafond : tout le reste s'y tient.</li>
+    <li>Emboîter les montants dans les rails.</li>
+    <li>Visser la première face de plaques.</li>
+    <li>Loger l'isolant entre les montants, contre cette première face.</li>
+    <li>Visser la seconde face de plaques : elle ferme la cloison.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : l'ordre de pose de C2</h3>
+    <p>1, les rails R48 au sol et au plafond. 2, les montants M48 dans les rails.
+    3, la face côté bureau : une plaque, puis la seconde vissée par-dessus, ses joints décalés par rapport à la première. 4, l'isolant entre les montants.
+    5, la face côté sanitaires, en deux plaques.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Jonction n° 2 : l'huisserie et son jeu</h2>
+  <p>L'huisserie est le cadre de la porte. La baie est l'ouverture qui la reçoit. Le détail de la baie donne deux informations.</p>
+  <ul>
+    <li>Le <strong>renfort</strong> de l'ossature autour de la baie : montants renforcés ou doublés, car la porte pèse et claque.</li>
+    <li>La cote de réservation : l'ouverture à laisser dans la cloison.</li>
+  </ul>
+  <p>La cote de la porte est celle du vantail, la partie qui s'ouvre. La réservation est plus grande. Dans ces exercices, cet écart s'appelle le <strong>jeu</strong>. Il reçoit l'huisserie : il sert à la poser,
+  à la régler d'aplomb (bien droite) et à la caler (la bloquer avec des cales). Les cotes s'écrivent largeur × hauteur, en millimètres.</p>
+  <ol>
+    <li>Jeu en largeur : largeur de la réservation − largeur de la porte.</li>
+    <li>Jeu en hauteur : hauteur de la réservation − hauteur de la porte.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : la porte de la cloison C2</h3>
+    <p>Le détail de la baie de C2 indique : porte 830 × 2040, réservation 900 × 2060 (données de l'exemple).</p>
+    <p>Jeu en largeur : 900 − 830 = 70 mm.
+    Jeu en hauteur : 2060 − 2040 = 20 mm.</p>
+    <p>Autour de la baie, le détail de C2 montre des montants doublés : c'est le renfort.</p>
+  </div>
+  <p class="cle">La réservation se lit sur le détail ou sur la notice du fabricant de la porte.</p>
+</section>
+
+<section>
+  <h2>Mesurer une porte sur le plan</h2>
+  <p>Sur le plan de niveau, la porte est dessinée ouverte : un trait pour le vantail, un quart de cercle pour son mouvement.</p>
+  <ol>
+    <li>Mesurez à la règle la longueur du trait du vantail. Sur ces plans, ce trait a la largeur de la porte.</li>
+    <li>Multipliez par le nombre de l'échelle : × 50 au 1/50.</li>
+  </ol>
+  <div class="svgbox">
+    <svg viewBox="2 4 126 102" width="420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemple : plan au 1/50 d'un bureau et de ses sanitaires, séparés par la cloison C2. Cote 4200 le long de la cloison. Face standard côté bureau, face hydrofuge côté sanitaires. Une porte dans la cloison, dessinée ouverte avec son quart de cercle.">
+      <defs><pattern id="hpb" width="2.5" height="2.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2.5" stroke="#000" stroke-width=".3"/></pattern></defs>
+      <g font-family="Calibri, Carlito, sans-serif" font-size="5">
+      <path d="M16 10h108v92h-108z M20 14v84h100v-84z" fill="url(#hpb)" fill-rule="evenodd" stroke="#000" stroke-width=".5"/>
+      <line x1="78" y1="14" x2="78" y2="98" stroke="#000" stroke-width=".5"/><line x1="79.44" y1="14" x2="79.44" y2="98" stroke="#000" stroke-width=".5"/>
+      <rect x="77.7" y="70" width="2" height="16.6" fill="#fff"/>
+      <line x1="79.44" y1="86.6" x2="96.04" y2="86.6" stroke="#000" stroke-width=".5"/>
+      <path d="M79.44 70 A16.6 16.6 0 0 1 96.04 86.6" fill="none" stroke="#000" stroke-width=".3"/>
+      <text x="76" y="26" text-anchor="end">C2</text>
+      <text x="76" y="38" text-anchor="end">face standard</text>
+      <text x="82" y="34">face</text><text x="82" y="40">hydrofuge</text>
+      <text x="76" y="80" text-anchor="end">porte</text>
+      <text x="48" y="58" text-anchor="middle" fill="#555">BUREAU</text>
+      <text x="101" y="58" text-anchor="middle" fill="#555">SANITAIRES</text>
+      <g stroke="#000" stroke-width=".3"><line x1="15" y1="14" x2="5" y2="14"/><line x1="15" y1="98" x2="5" y2="98"/><line x1="8" y1="14" x2="8" y2="98"/><path d="M7 15l2-2 M7 99l2-2"/></g>
+      <text x="6.6" y="56" text-anchor="middle" transform="rotate(-90 6.6 56)">4200</text>
+      </g>
+    </svg>
+  </div>
+  <div class="calc">
+    <h3>Exemple résolu : la porte de C2 sur le plan du bureau</h3>
+    <p>Sur le plan du bureau imprimé au 1/50, le trait du vantail de la porte de C2 mesure 16,6 mm à la règle.
+    En vrai : 16,6 × 50 = 830 mm, la porte de 830 de l'écran 6.</p>
+  </div>
+  <p class="cle">Au 1/50, 1 mm d'erreur à la règle donne 50 mm d'erreur en vrai : estimez à l'œil entre deux traits.
+  Le plan de cet écran change de taille avec l'écran : la mesure de l'exemple est donc écrite.</p>
 </section>
 
 <section>
   <h2>Jonction n° 3 : le joint de dilatation</h2>
-  <p>Un grand bâtiment bouge : il se dilate, il travaille. Sur une grande longueur, un <strong>joint de dilatation</strong> coupe exprès la cloison ou le plafond : deux ossatures indépendantes, et un profil souple entre les deux.</p>
-  <p class="cle">Sur le plan, le joint est marqué, souvent « JD ». Si un JD traverse le bâtiment sur le plan de niveau, il traverse aussi vos cloisons et vos plafonds. Un JD oublié à la lecture donne un ouvrage qui fissure.</p>
+  <p>Un grand bâtiment bouge. Un <strong>joint de dilatation</strong>, noté JD, coupe exprès sa structure en deux.
+  S'il traverse le plan de niveau, il traverse vos cloisons et vos plafonds. Au droit du JD, c'est-à-dire à l'endroit où il passe :</p>
+  <ol>
+    <li>la cloison ou le plafond est coupé ;</li>
+    <li>chaque côté a sa propre ossature : deux ossatures indépendantes ;</li>
+    <li>un profil de joint souple ferme l'espace entre les deux.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : un JD traverse une cloison</h3>
+    <p>Sur un autre chantier, un JD traverse la cloison d'un couloir. Un élève écrit en deux phrases :
+    « La cloison est coupée au droit du JD, avec une ossature de chaque côté et un profil souple entre les deux.
+    Une cloison continue fissurerait au premier mouvement du bâtiment. »</p>
+  </div>
+  <p class="cle">Pour expliquer par écrit, dites ce que l'on fait, puis sa raison avec « car » ou dans une seconde phrase.
+  Exemple sur un autre cas : « Les rails se posent en premier, car les montants s'emboîtent dedans. »</p>
 </section>
 
 <section>
-  <h2>Du détail au mode opératoire</h2>
-  <p>Devant un détail, posez-vous quatre questions, dans cet ordre :</p>
-  <ol>
-    <li><strong>Où est-ce ?</strong> Retrouvez le renvoi sur le plan de niveau : le cercle repère de la gare 4.</li>
-    <li><strong>Quelles couches ?</strong> Nommez chaque composant, de la structure vers la finition.</li>
-    <li><strong>Quel ordre ?</strong> Déduisez l'ordre de pose.</li>
-    <li><strong>Quelles cotes ?</strong> Relevez les dimensions imposées : réservations, jeux, recouvrements.</li>
-  </ol>
-  <p class="cle">Avec ces quatre réponses, vous préparez l'intervention à partir du dessin d'exécution.</p>
+  <h2>La méthode complète, du détail au mode opératoire</h2>
+  <p>Devant un détail, cherchez dans l'ordre : où il est (le cercle repère du plan, gare 4), ses couches, l'ordre de pose, ses cotes.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Lire l'échelle du détail ; passer du papier au vrai</td><td data-l="Écran">2</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Nommer rails, montant, plaques, isolant</td><td data-l="Écran">3</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Mesurer à la règle, × 5 ; contrôler avec la désignation</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Écrire l'ordre de pose</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Calculer le jeu : réservation − porte ; dire le renfort</td><td data-l="Écran">6</td></tr>
+    <tr><td data-l="Étape">6</td><td data-l="Geste">Mesurer la porte sur le plan, × 50</td><td data-l="Écran">7</td></tr>
+    <tr><td data-l="Étape">7</td><td data-l="Geste">Traiter un JD ; l'expliquer en deux phrases</td><td data-l="Écran">8</td></tr>
+  </table>
+  <p>Écrivez chaque calcul en entier, avec son unité : 900 − 830 = 70 mm.</p>
 </section>
 
 <section id="ecran-test">
@@ -131,9 +250,10 @@
   <h2>Terminus Plâtrerie 3</h2>
   <p>Rails, huisseries, joints de dilatation : les points singuliers du plaquiste se lisent dans les détails, et le détail donne l'ordre de pose.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
   </p>
-  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait légender et mesurer le détail de la cloison C1 au 1/5, déduire l'ordre de pose, lire la réservation de sa porte et répondre sur un joint de dilatation.</p>
+  <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait légender et mesurer le détail de la cloison C1 au 1/5, déduire l'ordre de pose, lire la réservation de sa porte, la mesurer sur le plan du vestiaire et répondre sur un joint de dilatation.</p>
   <p>Gare suivante : <strong>Plâtrerie 4, le BIM du plaquiste</strong>.</p>
   <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
   <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
@@ -254,7 +374,7 @@
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

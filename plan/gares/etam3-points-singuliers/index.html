@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Toiture 3 — Les points singuliers : là où ça fuit</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
 .calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
@@ -44,22 +44,28 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>Une toiture fuit rarement en plein milieu. Elle fuit là où la membrane s'arrête, tourne ou
   se perce : ce sont les <strong>points singuliers</strong>. Le dossier les dessine en plans de
   détail, au 1/10 ou au 1/5, le zoom final de la gare 4.</p>
-  <p>Environ 2 heures, test compris. À la fin, vous saurez :</p>
+  <p>Environ 2 heures, test compris, calculatrice en main. À la fin, vous saurez :</p>
   <ul>
     <li>nommer les points singuliers d'une toiture-terrasse ;</li>
-    <li>lire le détail d'un relevé ;</li>
-    <li>relier chaque point du plan de toiture (Toiture 1) à son détail.</li>
+    <li>lire et légender le détail d'un relevé ;</li>
+    <li>vérifier la hauteur d'un relevé avec les niveaux ;</li>
+    <li>relier chaque point du plan de toiture à son détail.</li>
   </ul>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 9 : chaque geste a sa méthode et un exemple résolu
+  sur la toiture d'un local technique. Faites ensuite l'exercice sur la toiture du vestiaire : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
 </section>
 
 <section>
   <h2>Le lexique des points singuliers</h2>
   <table class="doc">
     <tr><th>Terme</th><th>Ce que c'est</th></tr>
-    <tr><td><strong>Relevé d'étanchéité</strong></td><td>la membrane qui remonte sur l'acrotère ou sur une costière</td></tr>
+    <tr><td>Acrotère</td><td>le muret en béton qui borde la toiture-terrasse</td></tr>
+    <tr><td>Relevé d'étanchéité</td><td>la membrane qui remonte sur l'acrotère ou sur une costière</td></tr>
+    <tr><td>Bande de solin</td><td>la bande de métal fixée sur l'acrotère, au-dessus du relevé : elle protège sa tête</td></tr>
     <tr><td>Entrée d'eaux pluviales (EP)</td><td>l'entrée de l'évacuation ; la membrane se raccorde sur sa platine</td></tr>
     <tr><td>Trop-plein</td><td>l'évacuation de secours, au travers de l'acrotère</td></tr>
-    <tr><td>Costière</td><td>la rehausse qui porte un lanterneau ou une sortie de ventilation</td></tr>
+    <tr><td>Costière</td><td>la rehausse qui porte un lanterneau (fenêtre de toit) ou une sortie de ventilation</td></tr>
     <tr><td>Joint de dilatation (JD)</td><td>la coupure voulue du bâtiment, traitée par une pièce souple</td></tr>
     <tr><td>Noue</td><td>l'angle rentrant entre deux pentes : l'eau s'y rassemble</td></tr>
     <tr><td>Arêtier</td><td>l'angle saillant entre deux pentes : l'eau s'en écarte</td></tr>
@@ -69,91 +75,186 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
 </section>
 
 <section>
-  <h2>Le détail du relevé</h2>
-  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 12 168 110" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Coupe B-B au 1/10 sur l'acrotère gauche du vestiaire. De bas en haut sur la dalle : forme de pente, pare-vapeur, isolant, membrane d'étanchéité, gravillon. La membrane remonte sur l'acrotère jusqu'à plus 3,25 ; une bande de solin couvre sa tête. Arase de l'acrotère à plus 3,30, dessus de la dalle à plus 2,70, dessous à plus 2,50.">
-<path d="M30 98.0 V117 l3 -1.5 l4 3 l4 -3 l4 3 l5 -1.5 V98.0 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
-<path d="M30 78.0 H110 l-1.5 4 l3 4 l-3 4 l3 4 l-1.5 4 H30 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
-<rect x="30" y="18.0" width="20" height="60.0" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
-<rect x="50" y="58.0" width="60" height="20" fill="#f3efe6" stroke="#10233c" stroke-width="0.35"/>
-<rect x="50" y="48.0" width="60" height="10" fill="#fdf3c4" stroke="#10233c" stroke-width="0.35"/>
-<rect x="51.2" y="43.0" width="58.8" height="4.6" fill="#d9dde3" stroke="#10233c" stroke-width="0.35"/>
-<line x1="50" y1="58.0" x2="110" y2="58.0" stroke="#10233c" stroke-width="0.6" stroke-dasharray="2 1"/>
-<polyline points="110,48.0 50.6,48.0 50.6,23.0" fill="none" stroke="#c9451a" stroke-width="1"/>
-<polyline points="50,20.0 51.8,20.0 51.8,24.5 54,26.0" fill="none" stroke="#10233c" stroke-width="0.6"/>
-<line x1="22" y1="18.0" x2="30" y2="18.0" stroke="#10233c" stroke-width="0.3"/>
-<text x="21" y="19.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 3,30</text>
-<line x1="22" y1="78.0" x2="30" y2="78.0" stroke="#10233c" stroke-width="0.3"/>
-<text x="21" y="79.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 2,70</text>
-<line x1="22" y1="98.0" x2="30" y2="98.0" stroke="#10233c" stroke-width="0.3"/>
-<text x="21" y="99.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c" >+ 2,50</text>
-<line x1="51" y1="23.0" x2="57" y2="23.0" stroke="#10233c" stroke-width="0.3"/>
-<text x="58" y="24.7" text-anchor="start" font-size="5" font-weight="bold" fill="#10233c" >+ 3,25</text>
-<text x="40" y="49.7" text-anchor="middle" font-size="5" fill="#10233c" >acro-</text><text x="40" y="55.7" text-anchor="middle" font-size="5" fill="#10233c" >tère</text>
-<line x1="50.6" y1="36.0" x2="65" y2="34.4" stroke="#637285" stroke-width="0.3"/><circle cx="50.6" cy="36.0" r="0.6" fill="#637285"/>
-<text x="66.5" y="36.0" text-anchor="start" font-size="5" fill="#10233c" >relevé</text>
-<line x1="51.8" y1="21.0" x2="65" y2="16.4" stroke="#637285" stroke-width="0.3"/><circle cx="51.8" cy="21.0" r="0.6" fill="#637285"/>
-<text x="66.5" y="18.0" text-anchor="start" font-size="5" fill="#10233c" >bande de solin</text>
-<line x1="104" y1="45.5" x2="119" y2="34.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="45.5" r="0.6" fill="#637285"/>
-<text x="120.5" y="36" text-anchor="start" font-size="5" fill="#10233c" >gravillon</text>
-<line x1="104" y1="53.0" x2="119" y2="49.4" stroke="#637285" stroke-width="0.3"/><circle cx="104" cy="53.0" r="0.6" fill="#637285"/>
-<text x="120.5" y="51" text-anchor="start" font-size="5" fill="#10233c" >isolant</text>
-<text x="56" y="106.0" text-anchor="start" font-size="5" font-weight="bold" fill="#10233c" >COUPE B-B</text><text x="56" y="112.5" text-anchor="start" font-size="5" fill="#10233c" >éch. 1/10 · niveaux en m</text>
+  <h2>Lire et légender le détail d'un relevé</h2>
+  <p>Le détail d'un relevé est une coupe verticale, souvent au 1/10. Lisez-le dans cet ordre.</p>
+  <ol>
+    <li>Trouvez le support : la dalle en béton et l'<strong>acrotère</strong>, le muret qui borde la toiture.</li>
+    <li>Lisez la pile de la partie courante, de bas en haut : forme de pente, pare-vapeur (pointillé), isolant, membrane (la couche étanche), protection (ici du gravillon).</li>
+    <li>Suivez la membrane : elle remonte sur l'acrotère. Cette partie verticale est le relevé.</li>
+    <li>Regardez la tête du relevé, en haut : une bande de solin la protège.</li>
+    <li>Relevez les niveaux écrits à côté du dessin, en mètres.</li>
+  </ol>
+  <figure class="svgbox"><svg xmlns="http://www.w3.org/2000/svg" width="600" viewBox="0 12 168 94" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Exemple : coupe A-A au 1/10 sur l'acrotère droit d'un local technique. De bas en haut sur la dalle : forme de pente, pare-vapeur, isolant, membrane d'étanchéité, gravillon. La membrane remonte sur l'acrotère jusqu'à plus 3,65 ; une bande de solin couvre sa tête. Dessus de la protection à plus 3,45. Arase de l'acrotère à plus 3,70, dessus de la dalle à plus 3,10, dessous à plus 2,90. Éléments numérotés de 1 à 5.">
+<path d="M138 98 V103 l-3 -1.5 l-4 3 l-4 -3 l-4 3 l-5 -1.5 V98 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<path d="M138 78 H58 l1.5 4 l-3 4 l3 4 l-3 4 l1.5 4 H138 Z" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<rect x="118" y="18" width="20" height="60" fill="#e6e6e6" stroke="#10233c" stroke-width="0.5"/>
+<rect x="58" y="58" width="60" height="20" fill="#f3efe6" stroke="#10233c" stroke-width="0.35"/>
+<rect x="58" y="48" width="60" height="10" fill="#fdf3c4" stroke="#10233c" stroke-width="0.35"/>
+<rect x="58" y="43" width="58.8" height="4.6" fill="#d9dde3" stroke="#10233c" stroke-width="0.35"/>
+<line x1="58" y1="58" x2="118" y2="58" stroke="#10233c" stroke-width="0.6" stroke-dasharray="2 1"/>
+<polyline points="58,48 117.4,48 117.4,23" fill="none" stroke="#c9451a" stroke-width="1"/>
+<polyline points="118,20 116.2,20 116.2,24.5 114,26" fill="none" stroke="#10233c" stroke-width="0.6"/>
+<line x1="138" y1="18" x2="146" y2="18" stroke="#10233c" stroke-width="0.3"/>
+<text x="147" y="19.7" font-size="5" font-weight="bold" fill="#10233c">+ 3,70</text>
+<line x1="138" y1="78" x2="146" y2="78" stroke="#10233c" stroke-width="0.3"/>
+<text x="147" y="79.7" font-size="5" font-weight="bold" fill="#10233c">+ 3,10</text>
+<line x1="138" y1="98" x2="146" y2="98" stroke="#10233c" stroke-width="0.3"/>
+<text x="147" y="99.7" font-size="5" font-weight="bold" fill="#10233c">+ 2,90</text>
+<line x1="117" y1="23" x2="111" y2="23" stroke="#10233c" stroke-width="0.3"/>
+<text x="110" y="24.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c">+ 3,65</text>
+<line x1="58" y1="43" x2="48" y2="43" stroke="#10233c" stroke-width="0.3"/>
+<text x="47" y="44.7" text-anchor="end" font-size="5" font-weight="bold" fill="#10233c">+ 3,45</text>
+<circle cx="128" cy="48" r="3.4" fill="#fff" stroke="#10233c" stroke-width="0.4"/><text x="128" y="49.7" text-anchor="middle" font-size="5" font-weight="bold" fill="#10233c">3</text>
+<line x1="117.4" y1="36" x2="103" y2="34.4" stroke="#637285" stroke-width="0.3"/><circle cx="117.4" cy="36" r="0.6" fill="#637285"/>
+<circle cx="99" cy="34.3" r="3.4" fill="#fff" stroke="#10233c" stroke-width="0.4"/><text x="99" y="36" text-anchor="middle" font-size="5" font-weight="bold" fill="#10233c">4</text>
+<line x1="116.2" y1="21" x2="94.4" y2="15.2" stroke="#637285" stroke-width="0.3"/><circle cx="116.2" cy="21" r="0.6" fill="#637285"/>
+<circle cx="91" cy="15" r="3.4" fill="#fff" stroke="#10233c" stroke-width="0.4"/><text x="91" y="16.7" text-anchor="middle" font-size="5" font-weight="bold" fill="#10233c">2</text>
+<line x1="66" y1="45.3" x2="43.4" y2="30.5" stroke="#637285" stroke-width="0.3"/><circle cx="66" cy="45.3" r="0.6" fill="#637285"/>
+<circle cx="40" cy="30" r="3.4" fill="#fff" stroke="#10233c" stroke-width="0.4"/><text x="40" y="31.7" text-anchor="middle" font-size="5" font-weight="bold" fill="#10233c">5</text>
+<line x1="66" y1="53" x2="43.4" y2="55" stroke="#637285" stroke-width="0.3"/><circle cx="66" cy="53" r="0.6" fill="#637285"/>
+<circle cx="40" cy="55" r="3.4" fill="#fff" stroke="#10233c" stroke-width="0.4"/><text x="40" y="56.7" text-anchor="middle" font-size="5" font-weight="bold" fill="#10233c">1</text>
+<text x="4" y="70" font-size="5" font-weight="bold" fill="#10233c">COUPE A-A</text><text x="4" y="76.5" font-size="5" fill="#10233c">éch. 1/10</text><text x="4" y="83" font-size="5" fill="#10233c">niveaux en m</text>
 </svg>
-    <figcaption>Coupe B-B du toit du vestiaire, au 1/10 : le relevé sur l'acrotère gauche (Toiture 2).</figcaption>
+    <figcaption>Coupe A-A du toit d'un local technique, au 1/10 : le relevé sur l'acrotère droit.</figcaption>
   </figure>
-  <p>Le détail se lit comme une suite de gestes. La membrane de la partie courante remonte sur
-  l'acrotère. Elle dépasse la protection. Sa tête est protégée, ici par une <strong>bande de solin</strong>,
-  une bande de métal fixée sur l'acrotère au-dessus du relevé.</p>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>La cote qui compte est la hauteur du relevé au-dessus de la protection. Dans les exercices
-    de cette ligne, elle doit valoir au moins 150 mm (donnée de l'exercice ; sur un chantier,
-    le DTU qui s'applique fixe le minimum).</p>
-    <p>Sur ce détail, la protection est à + 3,05 (Toiture 2 : 2,70 + 0,20 + 0,10 + 0,05) et le relevé monte à + 3,25.
-    3,25 − 3,05 = 0,20 m, soit 200 mm : le relevé est conforme.</p>
+    <h3>Exemple résolu : la coupe A-A du local technique</h3>
+    <p>1 : isolant, la couche épaisse sous la membrane. 2 : bande de solin, la bande de métal sur la tête du relevé.
+    3 : acrotère, le muret. 4 : relevé d'étanchéité, la membrane qui remonte. 5 : gravillon, la protection.</p>
   </div>
-  <p class="cle">Autour d'une émergence, la protection n'est pas au même niveau partout, à cause de la
-  pente. Vérifiez le relevé du côté où la protection est la plus haute : c'est là qu'il dépasse le moins.</p>
 </section>
 
 <section>
-  <h2>L'entrée d'eaux pluviales en détail</h2>
+  <h2>La hauteur du relevé</h2>
+  <p>La cote qui compte est la hauteur du relevé au-dessus de la protection. Dans les exercices de cette ligne,
+  elle doit valoir au moins <strong>150 mm</strong>. C'est une donnée de l'exercice. Sur un chantier, le DTU qui s'applique fixe le minimum.</p>
+  <ol>
+    <li>Lisez le niveau du haut du relevé, en mètres.</li>
+    <li>Lisez le niveau du dessus de la protection, en mètres.</li>
+    <li>Calculez : haut du relevé − protection.</li>
+    <li>Passez en millimètres : multipliez par 1000.</li>
+    <li>Comparez à 150 mm. À partir de 150 mm, le relevé est conforme. Sous 150 mm, il est non conforme.</li>
+  </ol>
+  <p>Pour trouver le niveau minimal du haut du relevé, faites l'inverse : protection + 0,15 m.</p>
+  <div class="calc">
+    <h3>Exemple résolu : le relevé de la coupe A-A</h3>
+    <p>Le relevé monte à + 3,65. La protection est à + 3,45.</p>
+    <p>3,65 − 3,45 = 0,20 m, soit 0,20 × 1000 = 200 mm. 200 mm dépasse 150 mm : le relevé est conforme.</p>
+    <p>Niveau minimal du haut du relevé : 3,45 + 0,15 = + 3,60.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Autour d'une costière : le côté haut</h2>
+  <p>La toiture a une pente vers l'EP. Autour d'une costière, la protection n'est donc pas au même niveau partout :
+  elle est plus haute du côté du point haut, plus basse du côté de l'EP.</p>
+  <ol>
+    <li>Repérez le côté où la protection est la plus haute.</li>
+    <li>Vérifiez le relevé de ce côté avec le calcul de l'écran 4, car c'est là qu'il dépasse le moins la protection.</li>
+    <li>Niveau minimal du haut du relevé : protection côté haut + 0,15 m.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : la costière du local technique</h3>
+    <p>Autour de la costière, la protection est à + 3,12 côté haut et à + 3,09 côté bas. Le relevé monte à + 3,30.</p>
+    <p>Côté haut : 3,30 − 3,12 = 0,18 m, soit 180 mm. 180 mm dépasse 150 mm : le relevé est conforme.</p>
+    <p>Niveau minimal du haut du relevé : 3,12 + 0,15 = + 3,27.</p>
+    <p>Si le relevé montait seulement à + 3,20 : 3,20 − 3,12 = 0,08 m, soit 80 mm. 80 mm est sous 150 mm : non conforme.</p>
+  </div>
+  <p class="cle">Pour justifier un choix en une phrase, dites le choix, puis sa raison avec « car ».
+  Exemple sur un autre cas : « La bande de solin couvre la tête du relevé, car l'eau qui coule sur l'acrotère ne doit pas passer derrière la membrane. »</p>
+</section>
+
+<section>
+  <h2>EP, trop-plein, joint de dilatation : leurs détails</h2>
   <p>Le détail d'une EP montre :</p>
   <ul>
     <li>la <strong>platine</strong> de l'entrée, prise en sandwich dans l'étanchéité : la membrane se raccorde dessus ;</li>
-    <li>le point bas : la forme de pente y arrive (Toiture 1) ;</li>
+    <li>le point bas : la forme de pente y arrive ;</li>
     <li>le tuyau qui descend vers la descente d'eaux pluviales ;</li>
     <li>souvent, une pièce de membrane en renfort autour.</li>
   </ul>
-  <p class="cle">Une EP se place là où le plan la met. Ailleurs, l'eau ne l'atteint pas.</p>
-</section>
-
-<section>
-  <h2>Le joint de dilatation en détail</h2>
-  <p>Le JD coupe le bâtiment en deux, et la toiture avec. Le détail montre :</p>
-  <ul>
-    <li>deux relevés face à face, souvent sur deux costières ;</li>
-    <li>une pièce souple qui passe au-dessus du joint (lyre, soufflet, capot) : il doit pouvoir bouger.</li>
-  </ul>
+  <p>Le trop-plein traverse l'acrotère. Si l'EP se bouche, l'eau sort par le trop-plein.</p>
+  <p>Le détail d'un JD montre deux relevés face à face, souvent sur deux costières,
+  et une pièce souple qui passe au-dessus du joint : lyre, soufflet ou capot.</p>
   <p class="cle">Un JD ne se ponte jamais avec une pièce rigide : le bâtiment bouge, la pièce casserait.
   Sur le plan de toiture, le JD est un trait mixte.</p>
 </section>
 
 <section>
-  <h2>Du plan de toiture aux détails : le jeu de piste</h2>
-  <p>Dossier en main :</p>
+  <h2>Repérer les points singuliers sur le plan</h2>
+  <p>Le plan de toiture est une vue de dessus, souvent au 1/50. Chaque point singulier y a sa marque.</p>
+  <ul>
+    <li>Un relevé court sur tout le pourtour des acrotères.</li>
+    <li>L'EP est un cercle marqué « EP », au point bas. Les flèches de pente vont vers elle.</li>
+    <li>La costière est dessinée par deux carrés emboîtés. Ses dimensions sont dans la légende.</li>
+    <li>Un trait de coupe, par exemple A-A, renvoie au détail dessiné à part. Un cercle repère, par exemple D1, aussi (gare 4).</li>
+  </ul>
+  <p>Pour dire où se trouve un point, nommez l'angle (« angle bas gauche ») ou donnez sa distance aux acrotères.
+  Pour une distance, mesurez à la règle sur le plan imprimé à 100 %, puis multipliez par 50.</p>
+  <div class="svgbox">
+    <svg xmlns="http://www.w3.org/2000/svg" width="540" viewBox="0 14 172 116" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Exemple : plan de toiture d'un local technique au 1/50. Terrasse de 5000 sur 3500 mm entre les acrotères. Costière carrée de 800 mm vers le milieu, avec un cercle repère D1. Entrée d'eaux pluviales dans l'angle bas gauche. Pentes de 2 pour cent vers la gauche et vers le bas. Trait de coupe A-A à travers l'acrotère droit.">
+      <path d="M40 18 h108 v78 h-108 z M44 22 v70 h100 v-70 z" fill="#dfe7f1" fill-rule="evenodd" stroke="#10233c" stroke-width="0.6"/>
+      <rect x="44" y="22" width="100" height="70" fill="#fff" stroke="#10233c" stroke-width="0.35"/>
+      <rect x="84" y="46" width="16" height="16" fill="#fff" stroke="#10233c" stroke-width="0.6"/><rect x="85.2" y="47.2" width="13.6" height="13.6" fill="none" stroke="#10233c" stroke-width="0.3"/>
+      <text x="92" y="69" text-anchor="middle" font-size="6" fill="#10233c">costière</text>
+      <circle cx="109" cy="52" r="4.6" fill="#fff" stroke="#10233c" stroke-width="0.5"/><text x="109" y="54.1" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c">D1</text>
+      <circle cx="50" cy="87.5" r="3" fill="none" stroke="#10233c" stroke-width="0.5"/><circle cx="50" cy="87.5" r="0.6" fill="#10233c"/>
+      <text x="55" y="89.5" font-size="6" font-weight="bold" fill="#10233c">EP</text>
+      <g stroke="#3d7fca" stroke-width="0.6" fill="#3d7fca"><line x1="132" y1="34" x2="79" y2="34"/><polygon points="74,34 79,31.8 79,36.2"/><line x1="50" y1="38" x2="50" y2="78"/><polygon points="50,82 47.8,77 52.2,77"/></g>
+      <text x="104" y="31.5" text-anchor="middle" font-size="6" font-weight="bold" fill="#3d7fca">2 %</text>
+      <text x="53" y="62" font-size="6" font-weight="bold" fill="#3d7fca">2 %</text>
+      <line x1="136" y1="72" x2="160" y2="72" stroke="#10233c" stroke-width="0.45" stroke-dasharray="5 1.2 1 1.2"/>
+      <text x="134.5" y="74.1" text-anchor="end" font-size="6" font-weight="bold" fill="#10233c">A</text><text x="161.5" y="74.1" font-size="6" font-weight="bold" fill="#10233c">A</text>
+      <g stroke="#10233c" stroke-width="0.3"><line x1="44" y1="93" x2="44" y2="107"/><line x1="144" y1="93" x2="144" y2="107"/><line x1="42" y1="105" x2="146" y2="105"/><line x1="43" y1="106" x2="45" y2="104"/><line x1="143" y1="106" x2="145" y2="104"/><line x1="43" y1="22" x2="10" y2="22"/><line x1="43" y1="92" x2="10" y2="92"/><line x1="12" y1="20" x2="12" y2="94"/><line x1="11" y1="23" x2="13" y2="21"/><line x1="11" y1="93" x2="13" y2="91"/></g>
+      <text x="94" y="103" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c">5000</text>
+      <text x="10" y="57" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c" transform="rotate(-90 10 57)">3500</text>
+      <rect x="40" y="110" width="130" height="18" fill="#fff" stroke="#10233c" stroke-width="0.4"/>
+      <text x="42.5" y="117.5" font-size="6" fill="#10233c">LOCAL TECHNIQUE, TOITURE</text>
+      <text x="42.5" y="125" font-size="6" fill="#10233c">éch. 1/50 · cotes en mm</text>
+    </svg>
+  </div>
+  <div class="calc">
+    <h3>Exemple résolu : les points singuliers du local technique</h3>
+    <p>Les relevés courent sur tout le pourtour des acrotères. L'EP est dans l'angle bas gauche.</p>
+    <p>La costière est vers le milieu. Sur le plan imprimé au 1/50, son bord gauche est à 40 mm de l'acrotère gauche : 40 × 50 = 2000 mm.
+    Son bord haut est à 24 mm de l'acrotère haut : 24 × 50 = 1200 mm.</p>
+    <p>Le plan de cet écran change de taille avec l'écran : ces mesures sont donc écrites.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Le jeu de piste : chaque point et son détail</h2>
   <ol>
-    <li>Déroulez la liste de contrôle de Toiture 1 sur le plan de toiture : notez chaque point singulier.</li>
-    <li>Pour chacun, cherchez son renvoi de détail (gare 4) ou sa coupe.</li>
-    <li>Chaque détail vous donne les couches, les cotes à tenir et l'ordre des gestes.</li>
-    <li>Comparez au descriptif : un élément demandé mais non dessiné se signale aussi.</li>
-    <li>Un point singulier sans détail est une question à poser avant d'exécuter : on signale, on ne devine pas (gare 7).</li>
+    <li>Notez chaque point singulier du plan de toiture et sa place (écran 7).</li>
+    <li>Pour chacun, cherchez son détail : un trait de coupe, un cercle repère ou une feuille de détail du dossier.</li>
+    <li>Lisez le descriptif (le texte des travaux) : un élément demandé mais non dessiné se signale aussi.</li>
+    <li>Si le détail manque, demandez-le avant de commencer les travaux (gare 7).</li>
   </ol>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Sur le plan de l'écran 3 de Toiture 1, je note : les relevés sur les acrotères, 2 EP,
-    1 trop-plein, 1 lanterneau sur costière et 1 JD : 5 sortes de points singuliers, et un même détail peut servir aux deux EP. Si un détail manque, je le demande.</p>
+    <h3>Exemple résolu : le jeu de piste du local technique</h3>
+    <p>Dossier : le plan (écran 7), la coupe A-A (écran 3), le détail D1 de la costière (non reproduit ici), et un descriptif qui demande un trop-plein dans l'acrotère gauche.</p>
+    <table class="doc">
+      <tr><th>Point singulier</th><th>Où ?</th><th>Détail ?</th><th>Sinon, que faites-vous ?</th></tr>
+      <tr><td>relevé sur l'acrotère</td><td>tout le pourtour</td><td>oui (A-A)</td><td></td></tr>
+      <tr><td>entrée d'eaux pluviales</td><td>angle bas gauche</td><td>non</td><td>je demande le détail</td></tr>
+      <tr><td>costière</td><td>à 2000 mm de l'acrotère gauche, à 1200 mm de l'acrotère haut</td><td>oui (D1)</td><td></td></tr>
+      <tr><td>trop-plein</td><td>demandé, mais pas dessiné</td><td>non</td><td>je signale l'écart</td></tr>
+    </table>
   </div>
+</section>
+
+<section>
+  <h2>La méthode complète, du plan aux détails</h2>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Nommer les points singuliers</td><td data-l="Écran">2</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Légender le détail : support, pile, relevé, tête du relevé</td><td data-l="Écran">3</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Relevé : haut du relevé − protection, au moins 150 mm</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Costière : côté haut ; minimum = protection + 0,15</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Lire les détails d'EP, de trop-plein, de JD</td><td data-l="Écran">6</td></tr>
+    <tr><td data-l="Étape">6</td><td data-l="Geste">Repérer chaque point sur le plan, dire où il est</td><td data-l="Écran">7</td></tr>
+    <tr><td data-l="Étape">7</td><td data-l="Geste">Chercher son détail ; demander ou signaler ce qui manque</td><td data-l="Écran">8</td></tr>
+  </table>
 </section>
 
 <section id="ecran-test">
@@ -168,11 +269,12 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>Relevés, EP, trop-pleins, costières, JD, noues : vous savez les nommer, les retrouver sur
   le plan et lire leur détail.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
-  L'exercice fait légender le détail du relevé du vestiaire, mener le jeu de piste sur son plan de
-  toiture et vérifier le relevé d'une costière.</p>
+  L'exercice fait légender le détail du relevé du vestiaire, vérifier le relevé d'une costière et mener le jeu de piste sur son plan de
+  toiture.</p>
   <p>Gare suivante : <strong>le BIM de l'étancheur</strong>, Toiture 4.</p>
   <p class="corresp"><a href="correspondances.html">Correspondances de formation</a></p>
   <p class="fil"><a href="../../index.html">⬅ Revenir à la carte du réseau</a></p>
@@ -293,7 +395,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

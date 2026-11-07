@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Plâtrerie 4 — Le BIM du plaquiste : quantitatif sur maquette</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .capture{display:block;width:100%;max-width:900px;height:auto;margin:12px auto;border:1px solid rgba(27,58,99,.2);border-radius:8px}
 .corresp{text-align:center;font-size:.85em;margin:18px 0 0}
@@ -33,6 +33,7 @@
 </header>
 
 <section class="on">
+  <style>@media print{img.capture,.ecran-seul{display:none}img.capture.papier{display:block;width:auto;height:auto;max-width:150mm;max-height:50mm;margin:2mm auto;border:0.3mm solid #8797ab;border-radius:1.5mm}}</style>
   <h2>Bienvenue en gare</h2>
   <p>À la gare 9, vous avez appris à naviguer dans la maquette Duplex avec BIM Vision. Ici, vous la faites travailler pour le plaquiste. Cette gare se vit <strong>sur poste</strong>, environ 2 heures, test compris. À la fin, vous saurez :</p>
   <ul>
@@ -41,81 +42,175 @@
     <li>relever un quantitatif : longueur et surface de chaque cloison ;</li>
     <li>contrôler une valeur de la maquette avec l'outil de mesure.</li>
   </ul>
-  <p class="cle">Gardez la gare 9 ouverte dans un autre onglet : chaque geste de BIM Vision y a son écran et sa capture. Ici, on s'en sert.</p>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 8 : chaque geste a sa méthode et un exemple résolu
+  sur d'autres cloisons de la même maquette. Faites ensuite la fiche de TP sur les cloisons du Level 2 : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
 </section>
 
 <section>
-  <h2>Rappel de la gare 9</h2>
-  <table class="doc">
-    <tr><th>Geste</th><th>Comment</th><th>Gare 9</th></tr>
-    <tr><td>Ouvrir la maquette</td><td>menu Fichier, Ouvrir, puis le fichier Duplex_A_20110907.ifc</td><td>geste 1</td></tr>
-    <tr><td>Tourner, zoomer, se déplacer</td><td>clic gauche maintenu, molette, molette enfoncée</td><td>geste 2</td></tr>
-    <tr><td>Ne voir qu'un étage</td><td>colonne Actif de la structure IFC : décocher les autres étages</td><td>geste 8</td></tr>
-    <tr><td>Déplier un étage, une famille</td><td>le petit + devant la ligne, dans la structure IFC</td><td>gestes 5 et 7</td></tr>
-    <tr><td>Lire un élément</td><td>cliquer l'élément, lire le panneau Propriétés</td><td>geste 6</td></tr>
-    <tr><td>Lire les couches</td><td>le + devant le mur, puis IfcMaterialLayerSet</td><td>geste 7</td></tr>
-    <tr><td>Mesurer</td><td>onglet Mesure, bouton Longueur</td><td>geste 10</td></tr>
-    <tr><td>Perdu dans l'espace</td><td>onglet AFFICHAGE, Réinitialiser le zoom</td><td>geste 2</td></tr>
-  </table>
+  <h2>Ouvrir la maquette, garder un étage</h2>
+  <img class="capture" src="illustrations/g09-09-masquer.webp" width="1200" height="705" alt="BIM Vision : dans la colonne Actif de la structure IFC, les cases de Level 2 et de Roof sont décochées. La vue 3D montre le rez-de-chaussée seul, ouvert par le haut : cloisons, escaliers et vitrages apparaissent.">
+  <p>La maquette Duplex est un petit immeuble de deux logements. Son fichier s'appelle Duplex_A_20110907.ifc.</p>
+  <ol>
+    <li>Dans BIM Vision, cliquez « FICHIER », puis « Ouvrir ».</li>
+    <li>Choisissez le fichier Duplex_A_20110907.ifc, puis cliquez le bouton « Ouvrir ».</li>
+    <li>À droite, dans la structure IFC, repérez la colonne « Actif ». Chaque étage y a sa case.</li>
+    <li>Décochez la case de chaque étage dont vous n'avez pas besoin. L'étage qui reste se voit ouvert par le haut.</li>
+  </ol>
+  <p>La maquette a quatre étages : Level 1 (rez-de-chaussée), Level 2 (étage), T/FDN (fondations) et Roof (toiture).</p>
+  <div class="calc">
+    <h3>Exemple résolu : garder le Level 1</h3>
+    <p>Je décoche Level 2, Roof et T/FDN. Le rez-de-chaussée reste seul actif. Il apparaît avec ses cloisons et ses escaliers.</p>
+    <p class="ecran-seul">La capture, prise à la gare 9, garde T/FDN coché : les fondations sont sous le rez-de-chaussée et ne gênent pas la vue.</p>
+  </div>
+  <p>Perdu dans la vue : onglet « AFFICHAGE », « Réinitialiser le zoom ». Ces gestes sont aussi à la gare 9, gestes 1, 2 et 8.</p>
 </section>
 
 <section>
   <h2>Retrouver vos cloisons</h2>
-  <img class="capture" src="illustrations/g09-09-masquer.webp" width="1200" height="705" alt="BIM Vision : dans la colonne Actif de la structure IFC, les cases de Level 2 et de Roof sont décochées. La vue 3D montre le rez-de-chaussée seul, ouvert par le haut : cloisons, escaliers et vitrages apparaissent.">
-  <p>Dans la structure IFC, chaque étage range ses murs dans la famille Murs. Le nom de chaque mur dit ce qu'il est :</p>
-  <ul>
-    <li><strong>Exterior - Brick on Block</strong> : mur extérieur, hors de votre lot ;</li>
-    <li><strong>Party Wall - CMU</strong> : mur mitoyen entre les deux logements, hors de votre lot ;</li>
-    <li><strong>Interior - Partition (92mm Stud)</strong> : cloison sur ossature métallique, votre ouvrage ;</li>
-    <li><strong>Interior - Plumbing (152mm Stud)</strong> : cloison plus épaisse, qui loge des tuyaux.</li>
-  </ul>
-  <p class="cle">Pour travailler un étage, décochez les autres dans la colonne Actif, comme sur la capture. C'est le plan de distribution de la gare Plâtrerie 1, en 3D et interrogeable au clic.</p>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-06-compter.webp" width="1200" height="705" alt="BIM Vision : dans la structure IFC, la famille Portes de Level 1 est dépliée, six lignes Porte. Dans la vue 3D, les portes du rez-de-chaussée sont surlignées en vert.">
+  <p>La capture en ligne montre le geste sur la famille Portes. Pour les cloisons, dépliez la famille Murs.</p>
+  <ol>
+    <li>Dans la structure IFC, cliquez le petit + devant l'étage : ses familles apparaissent.</li>
+    <li>Cliquez le + devant la famille « Murs ». Chaque ligne est un mur.</li>
+    <li>Lisez le nom de chaque ligne. Votre ouvrage porte le nom Interior - Partition (92mm Stud).</li>
+    <li>Cliquez une ligne : le mur s'allume en vert dans la vue 3D. Sa fiche s'affiche dans le panneau Propriétés.</li>
+  </ol>
+  <table class="doc empile">
+    <tr><th>Le nom contient</th><th>Ce que c'est</th></tr>
+    <tr><td data-l="Le nom contient">Exterior - Brick on Block</td><td data-l="Ce que c'est">mur extérieur en brique et bloc béton</td></tr>
+    <tr><td data-l="Le nom contient">Party Wall - CMU</td><td data-l="Ce que c'est">mur mitoyen entre les deux logements</td></tr>
+    <tr><td data-l="Le nom contient">Interior - Partition (92mm Stud)</td><td data-l="Ce que c'est">cloison sur ossature métallique de 92 mm : <strong>la seule comptée dans le TP</strong></td></tr>
+    <tr><td data-l="Le nom contient">Interior - Plumbing (152mm Stud)</td><td data-l="Ce que c'est">cloison plus épaisse, qui loge des tuyaux</td></tr>
+    <tr><td data-l="Le nom contient">Interior - Furring</td><td data-l="Ce que c'est">doublage sur ossature, contre un mur</td></tr>
+  </table>
+  <p>Le nom complet, ligne Name, finit par un numéro : Basic Wall:Interior - Partition (92mm Stud):138584. Ce numéro repère la cloison.</p>
+  <div class="calc">
+    <h3>Exemple résolu : une cloison du Level 1</h3>
+    <p>Je garde le Level 1 actif. Je déplie Level 1, puis Murs. Je clique la ligne dont le Name finit par 138584.
+    Le Name contient Interior - Partition (92mm Stud) : c'est une cloison de mon lot. Elle s'allume en vert.</p>
+  </div>
 </section>
 
 <section>
   <h2>Lire la composition d'une cloison</h2>
-  <img class="capture" src="illustrations/g09-08-epaisseur.webp" width="1200" height="690" alt="BIM Vision, sur un mur extérieur : à gauche, le panneau Propriétés descendu jusqu'à la ligne Width, qui vaut 0,417. À droite, la structure IFC du mur dépliée sur IfcMaterialLayerSet et ses couches ; la première couche est cliquée : LayerThickness 0,092.">
-  <p>La capture montre la méthode de la gare 9 (geste 7) sur un mur extérieur. Appliquée à une cloison Partition (92mm Stud), elle donne :</p>
-  <ul>
-    <li>Width : 0,124 m, soit 124 mm d'épaisseur finie ;</li>
-    <li>trois couches : Plasterboard 0,016 m, Metal - Stud Layer 0,092 m, Plasterboard 0,016 m.</li>
-  </ul>
+  <img class="capture papier" src="illustrations/g09-08-epaisseur.webp" width="1200" height="690" alt="BIM Vision, sur un mur extérieur : à gauche, le panneau Propriétés descendu jusqu'à la ligne Width, qui vaut 0,417. À droite, la structure IFC du mur dépliée sur IfcMaterialLayerSet et ses couches ; la première couche est cliquée : LayerThickness 0,092.">
+  <p>La capture montre le geste sur un mur extérieur. Sur une cloison, il se fait de la même façon.</p>
+  <ol>
+    <li>Cliquez la cloison. Descendez le panneau Propriétés jusqu'à la ligne Width : l'épaisseur finie, en mètres.</li>
+    <li>Passez en millimètres : multipliez par 1000.</li>
+    <li>Dans la structure IFC, cliquez le + devant la cloison, puis devant IfcMaterialLayerSet. Chaque ligne en dessous est une couche, dans l'ordre.</li>
+    <li>Cliquez chaque couche. Lisez LayerThickness, son épaisseur, et Material, son matériau.</li>
+    <li>Écrivez la désignation : épaisseur finie / largeur de l'ossature, en millimètres.</li>
+  </ol>
+  <p>Plasterboard veut dire plaque de plâtre. Metal - Stud Layer veut dire ossature métallique.
+  Le 72/48 de la gare Plâtrerie 1 se lit de la même façon : 72 mm d'épaisseur finie, 48 mm d'ossature.</p>
+  <div class="calc">
+    <h3>Exemple résolu : la cloison Plumbing du Level 2</h3>
+    <p>Au Level 2, je clique la ligne Interior - Plumbing (152mm Stud) dont le Name finit par 144138.</p>
+    <p>Width : 0,184 m, soit 0,184 × 1000 = 184 mm.</p>
+    <p>Couches : Plasterboard 0,016 m, Metal - Stud Layer 0,152 m, Plasterboard 0,016 m. Je vérifie : 16 + 152 + 16 = 184 mm.</p>
+    <p>Désignation : <strong>184/152</strong>, avec une plaque de 16 mm par face.</p>
+  </div>
   <div class="svgbox">
-  <svg viewBox="0 0 640 260" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coupe horizontale de la cloison Partition (92mm Stud), très agrandie : une plaque de 16 millimètres, une ossature métallique de 92 millimètres, une plaque de 16 millimètres. Cote totale 124.">
+  <svg viewBox="0 0 680 300" width="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coupe horizontale de la cloison Plumbing (152mm Stud), très agrandie : une plaque de 16 millimètres, une ossature métallique de 152 millimètres, une plaque de 16 millimètres. Cote totale 184.">
     <g font-family="Segoe UI, sans-serif">
-    <rect x="150" y="80" width="48" height="110" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
-    <rect x="474" y="80" width="48" height="110" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
-    <path d="M206 120 h260 v30 h-260" fill="none" stroke="#c9451a" stroke-width="4"/>
-    <text x="336" y="142" text-anchor="middle" font-size="15" fill="#c9451a">Metal - Stud Layer</text>
-    <g stroke="#1b3a63" stroke-width="1"><line x1="150" y1="76" x2="150" y2="30"/><line x1="198" y1="76" x2="198" y2="30"/><line x1="474" y1="76" x2="474" y2="30"/><line x1="522" y1="76" x2="522" y2="30"/>
-    <line x1="150" y1="46" x2="522" y2="46"/><line x1="150" y1="194" x2="150" y2="250"/><line x1="522" y1="194" x2="522" y2="250"/><line x1="150" y1="240" x2="522" y2="240"/></g>
-    <g fill="#1b3a63" font-size="15" font-weight="bold" text-anchor="middle"><text x="174" y="40">16</text><text x="336" y="40">92</text><text x="498" y="40">16</text><text x="336" y="235">124</text></g>
-    <g font-size="15" fill="#1b3a63"><text x="20" y="130">Plasterboard</text><text x="20" y="150">(plaque)</text><text x="536" y="130">Plasterboard</text><text x="536" y="150">(plaque)</text></g>
+    <rect x="170" y="80" width="40" height="120" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+    <rect x="470" y="80" width="40" height="120" fill="#d6e1ef" stroke="#1b3a63" stroke-width="2.5"/>
+    <path d="M218 112 h244 v56 h-244" fill="none" stroke="#c9451a" stroke-width="4"/>
+    <text x="340" y="148" text-anchor="middle" font-size="22" fill="#c9451a">Metal - Stud Layer</text>
+    <g stroke="#1b3a63" stroke-width="1"><line x1="170" y1="76" x2="170" y2="22"/><line x1="210" y1="76" x2="210" y2="22"/><line x1="470" y1="76" x2="470" y2="22"/><line x1="510" y1="76" x2="510" y2="22"/>
+    <line x1="170" y1="56" x2="510" y2="56"/><line x1="170" y1="204" x2="170" y2="290"/><line x1="510" y1="204" x2="510" y2="290"/><line x1="170" y1="282" x2="510" y2="282"/></g>
+    <g fill="#1b3a63" font-size="22" font-weight="bold" text-anchor="middle"><text x="190" y="46">16</text><text x="340" y="46">152</text><text x="490" y="46">16</text><text x="340" y="274">184</text></g>
+    <g font-size="22" fill="#1b3a63"><text x="160" y="132" text-anchor="end">Plasterboard</text><text x="160" y="160" text-anchor="end">(plaque)</text><text x="520" y="132">Plasterboard</text><text x="520" y="160">(plaque)</text></g>
     </g>
   </svg>
-  <figcaption>La cloison Partition (92mm Stud) de la maquette Duplex (cotes en mm).</figcaption>
+  <figcaption>La cloison Plumbing (152mm Stud) de la maquette Duplex (cotes en mm).</figcaption>
   </div>
-  <p class="cle">Lue comme à la gare Plâtrerie 1, c'est une cloison 124/92 : 124 mm d'épaisseur finie, 92 mm d'ossature, une plaque de 16 mm par face. Les plaques de cette maquette mesurent 16 mm, celles du 72/48 mesurent 12,5 mm.</p>
 </section>
 
 <section>
-  <h2>Le quantitatif depuis la maquette</h2>
-  <p>Cliquez une cloison : son panneau Propriétés donne <strong>Length</strong>, sa longueur en mètres, et <strong>Area</strong>, la surface d'une face en mètres carrés. Le quantitatif devient une collecte :</p>
+  <h2>Relever le quantitatif</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-07-proprietes.webp" width="1200" height="705" alt="BIM Vision : un mur extérieur de l'étage est cliqué et s'allume en vert. Le panneau des propriétés montre son nom, puis le groupe des dimensions : Area 41,357137, Length 17,383, Volume 16,741648.">
+  <p>Cliquez une cloison. Dans le panneau Propriétés, le groupe PSet_Revit_Dimensions donne deux lignes :</p>
+  <ul>
+    <li><strong>Length</strong> : la longueur de la cloison, en mètres ;</li>
+    <li>Area : la surface d'une face, en mètres carrés. La maquette a déjà retiré les portes : recopiez Area telle quelle.</li>
+  </ul>
   <ol>
-    <li>gardez un seul étage actif, dépliez sa famille Murs ;</li>
-    <li>cliquez chaque ligne Partition (92mm Stud), relevez Length et Area dans un tableau ;</li>
-    <li>arrondissez au centième, puis additionnez les surfaces. Pour arrondir, regardez le troisième chiffre après la virgule : de 0 à 4, on garde ; de 5 à 9, on monte. 3,791 donne 3,79 ; 4,695 donne 4,70 ;</li>
-    <li>pour les plaques, comptez les deux faces : deux fois la surface (gare Plâtrerie 5).</li>
+    <li>Gardez un seul étage actif et dépliez sa famille Murs (écran 3).</li>
+    <li>Cliquez chaque ligne Interior - Partition (92mm Stud). Une ligne correspond à une cloison.</li>
+    <li>Notez dans un tableau la fin du Name, Length et Area.</li>
+    <li>Arrondissez au centième. Regardez le troisième chiffre après la virgule : de 0 à 4, gardez ; de 5 à 9, montez d'un centième.</li>
+    <li>Additionnez les surfaces arrondies.</li>
+    <li>Pour les plaques, comptez les deux faces : multipliez le total par 2.</li>
   </ol>
-  <p>Exemple résolu au Level 1 : la cloison dont le Name finit par 138584 donne Length 3,791 et Area 10,014. J'arrondis : 3,79 m et 10,01 m². Ses deux faces demandent 2 × 10,01 = 20,02 m² de plaques.</p>
-  <p class="cle">La maquette compte vite. Le calepin de la gare Plâtrerie 2 reste à faire : c'est lui qui place les coupes et donne le nombre réel de plaques.</p>
+  <div class="calc">
+    <h3>Exemple résolu : trois cloisons du Level 1</h3>
+    <table class="doc">
+      <tr><th>Fin du Name</th><th>Length lue</th><th>Area lue</th><th>Length (m)</th><th>Area (m²)</th></tr>
+      <tr><td>138584</td><td>3,7915</td><td>10,014485</td><td>3,79</td><td>10,01</td></tr>
+      <tr><td>139143</td><td>3,195</td><td>6,613016</td><td>3,20</td><td>6,61</td></tr>
+      <tr><td>139783</td><td>1,594</td><td>4,06952</td><td>1,59</td><td>4,07</td></tr>
+    </table>
+    <p>3,195 donne 3,20 : le troisième chiffre est un 5, je monte.</p>
+    <p>Total des surfaces : 10,01 + 6,61 + 4,07 = 20,69 m².</p>
+    <p>Plaques pour les deux faces : 2 × 20,69 = 41,38 m².</p>
+  </div>
+  <p>Le nombre de plaques, marge de chutes comprise, se calcule à la gare Plâtrerie 5.</p>
 </section>
 
 <section>
-  <h2>Contrôler une valeur</h2>
-  <p>L'outil de mesure de la gare 9 (geste 10) vérifie une longueur sans attendre le plan coté : onglet Mesure, bouton Longueur, puis cliquez les deux extrémités de la même face de la cloison.</p>
-  <p>L'<strong>écart</strong> est la plus grande des deux valeurs moins la plus petite. Exemple résolu : Length 3,791 m, mesure 3,770 m : écart 3,791 − 3,770 = 0,021 m.</p>
-  <p class="cle">Dans ce TP, un écart de plus de 0,05 m est un écart grand : recommencez la mesure. Si l'écart reste, signalez-le. Comme à la gare 3, le plan coté de la dernière version reste le document de référence : une maquette peut avoir un indice de retard.</p>
+  <h2>Contrôler une longueur</h2>
+  <img class="capture papier" src="../g09-la-maquette-bim/illustrations/g09-11-mesurer.webp" width="1200" height="749" alt="BIM Vision : en haut, l'onglet Mesure, boutons Surface et Longueur encadrés, puis la case Résultat. En bas à droite, une arête verticale mesurée à 3,100 mètres.">
+  <ol>
+    <li>Onglet « MESURE » : cochez « Ignorer transparents ».</li>
+    <li>Cliquez « Longueur », la petite flèche, puis « Arête ».</li>
+    <li>Cliquez une fois l'arête du bas d'une face de la cloison. L'outil mesure toute l'arête, d'une extrémité à l'autre. La longueur s'affiche dans la case « Résultat ».</li>
+    <li>Recopiez Length avec tous les chiffres affichés après la virgule.</li>
+    <li>Calculez l'<strong>écart</strong> sans arrondir : la plus grande valeur moins la plus petite.</li>
+    <li>Si l'écart est inférieur ou égal à 0,05 m, la Length de la maquette est confirmée. S'il est plus grand, recommencez la mesure.</li>
+    <li>Si l'écart dépasse encore 0,05 m, signalez-le à l'enseignant et vérifiez sur le plan coté de la dernière version (gare 3).</li>
+  </ol>
+  <p>Une petite différence est normale : la mesure dépend de l'arête et des points cliqués.</p>
+  <div class="calc">
+    <h3>Exemple résolu : la cloison 139143 du Level 1</h3>
+    <p>Length : 3,195 m. Supposons que l'outil affiche 3,170 m.</p>
+    <p>Écart : 3,195 − 3,170 = 0,025 m. L'écart ne dépasse pas 0,05 m : la Length de la maquette est confirmée.</p>
+  </div>
+  <p class="cle">Une maquette peut avoir un indice de retard. Le plan coté de la dernière version reste le document de référence.</p>
+</section>
+
+<section>
+  <h2>La maquette et le calepin</h2>
+  <p>La maquette donne, au clic, la longueur et la surface de chaque cloison. Elle ne dit pas où tombent les plaques.</p>
+  <p>Le calepin de la gare Plâtrerie 2 répartit les plaques sur chaque face, avant la pose.</p>
+  <ul>
+    <li>il place les coupes, égales aux deux extrémités ;</li>
+    <li>il fixe le sens de pose des plaques ;</li>
+    <li>il donne le nombre réel de plaques, chutes comprises.</li>
+  </ul>
+  <p>Pour dire à quoi sert un document, écrivez deux phrases. La première dit ce que donne l'autre outil.
+  La seconde dit ce que le document ajoute, avec « car » ou « pour ».</p>
+  <div class="calc">
+    <h3>Exemple résolu : la maquette et le plan coté</h3>
+    <p>« La maquette donne la longueur de chaque cloison au clic. Le plan coté de la dernière version reste la référence, car la maquette peut avoir du retard. »</p>
+  </div>
+</section>
+
+<section>
+  <h2>La méthode complète, de la maquette au quantitatif</h2>
+  <p>Le TP suit cet ordre. Gardez cet écran sous les yeux pendant le travail.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Ouvrir la maquette, garder un seul étage actif</td><td data-l="Écran">2</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Déplier l'étage, puis Murs ; cliquer une cloison Partition</td><td data-l="Écran">3</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Lire Width et les couches ; écrire la désignation</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Relever Name, Length, Area ; arrondir ; additionner ; × 2</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Mesurer une longueur, calculer l'écart, décider</td><td data-l="Écran">6</td></tr>
+    <tr><td data-l="Étape">6</td><td data-l="Geste">Dire ce que le calepin ajoute à la maquette</td><td data-l="Écran">7</td></tr>
+  </table>
+  <p>Écrivez chaque valeur avec son unité, et chaque calcul en entier : 2 × 20,69 = 41,38 m².</p>
 </section>
 
 <section id="ecran-test">
@@ -129,6 +224,7 @@
   <h2>Terminus Plâtrerie 4</h2>
   <p>Retrouver, lire, relever, contrôler : la maquette est devenue un outil de préparation du plaquiste.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger la fiche de TP (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. La fiche de TP se fait sur poste, avec BIM Vision et la maquette Duplex de la gare 9 : composition d'une cloison Partition (92mm Stud), relevé des 8 cloisons du Level 2, contrôle d'une longueur.</p>
@@ -252,7 +348,7 @@
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

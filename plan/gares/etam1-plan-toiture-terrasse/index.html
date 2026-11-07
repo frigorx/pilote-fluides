@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Toiture 1 — Le plan de toiture-terrasse : pentes et altimétries</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
 .calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
@@ -47,12 +47,14 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>Environ 2 heures, test compris. À la fin, vous saurez :</p>
   <ul>
     <li>dérouler la liste de contrôle d'un plan de toiture ;</li>
+    <li>mesurer sur un plan au 1/50 ;</li>
     <li>lire le plan de pentes : la pente en %, le point haut, le point bas ;</li>
-    <li>lire les altimétries, c'est-à-dire les niveaux du toit ;</li>
-    <li>reconnaître les zones de la toiture.</li>
+    <li>lire et contrôler les altimétries, c'est-à-dire les niveaux du toit.</li>
   </ul>
-  <p class="cle">L'exercice papier se fait sur le plan de toiture du vestiaire, au 1/50.
-  Gardez une règle graduée : vous y mesurerez comme en gare 6.</p>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 9 : chaque geste a sa méthode et un exemple résolu
+  sur le plan de toiture d'un local technique au 1/50. Faites ensuite l'exercice sur le plan de toiture du vestiaire :
+  chaque question dit l'écran à relire. Gardez une règle graduée et une calculatrice.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
 </section>
 
 <section>
@@ -60,22 +62,18 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>Lisez d'abord la légende du plan, comme en gare 5 : elle donne le dessin de chaque élément.
   Puis cherchez dans cet ordre :</p>
   <ul>
-    <li>☐ les <strong>acrotères</strong>. Un acrotère est le muret qui borde la toiture ;</li>
+    <li>☐ le cartouche : l'échelle du plan et son indice, la lettre de la version ;</li>
+    <li>☐ les <strong>acrotères</strong>. Un acrotère est le muret qui borde la toiture. Notez où ils sont, et leur épaisseur, donnée par la légende ;</li>
     <li>☐ les entrées d'eaux pluviales (EP), aussi appelées naissances : combien, et où ;</li>
     <li>☐ les trop-pleins. Un trop-plein est une évacuation de secours qui traverse l'acrotère ;</li>
     <li>☐ les émergences, tout ce qui traverse la toiture. Une costière est la rehausse qui porte
     un lanterneau ou une sortie de ventilation ;</li>
     <li>☐ les joints de dilatation (JD). Leur trait mixte traverse toute la toiture ;</li>
-    <li>☐ les zones : courante, technique, accessible.</li>
+    <li>☐ les zones : courante, technique, accessible (écran 7).</li>
   </ul>
-  <p class="cle">Chacun de ces éléments est un endroit où l'eau peut entrer. Vous y travaillerez
-  en Toiture 3.</p>
-</section>
-
-<section>
-  <h2>Lisez un plan de toiture</h2>
+  <p>Un élément absent du plan se note aussi : « aucun n'est dessiné ».</p>
   <figure class="svgbox">
-    <svg viewBox="-40 0 700 380" width="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan d'une toiture-terrasse : acrotères au pourtour, deux entrées d'eaux pluviales dans les angles du bas, un trop-plein dans l'acrotère gauche, un lanterneau sur costière en haut à droite, un joint de dilatation vertical au milieu, deux flèches de pente à 2 pour cent, le point haut à plus 6,45 et l'entrée de gauche à plus 6,32.">
+    <svg viewBox="-110 0 770 380" width="560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan d'une toiture-terrasse : acrotères au pourtour, deux entrées d'eaux pluviales dans les angles du bas, un trop-plein dans l'acrotère gauche, un lanterneau sur costière en haut à droite, un joint de dilatation vertical au milieu, deux flèches de pente.">
       <defs><g id="ep-t1" fill="none" stroke="#10233c" stroke-width="1"><circle cx="5.5" cy="6.5" r="8.5"/><circle cx="5.5" cy="6.5" r="1.5"/><line x1="6" y1="9.84" x2="6" y2="13.08"/><line x1="-1" y1="7" x2="2" y2="7"/><line x1="1" y1="12" x2="4" y2="9"/><line x1="8" y1="9" x2="11" y2="11"/><line x1="6" y1="-0.16" x2="6" y2="3.08"/><line x1="9" y1="7" x2="12" y2="7"/><line x1="8" y1="5" x2="11" y2="3"/><line x1="0" y1="2" x2="3" y2="4"/><rect x="14" y="5" width="2" height="4"/></g></defs>
       <rect x="60" y="40" width="540" height="280" fill="#fffdf8" stroke="#10233c" stroke-width="7"/>
       <rect x="76" y="56" width="508" height="248" fill="none" stroke="#10233c" stroke-width="1.5"/>
@@ -87,31 +85,80 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
       <text x="50" y="256" text-anchor="end" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">trop-plein</text>
       <rect x="420" y="90" width="90" height="60" fill="none" stroke="#10233c" stroke-width="2.5"/>
       <rect x="428" y="98" width="74" height="44" fill="none" stroke="#10233c" stroke-width="1.3"/>
-      <text x="465" y="175" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">lanterneau sur costière</text>
+      <text x="465" y="178" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">lanterneau</text><text x="465" y="200" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">sur costière</text>
       <g stroke="#3d7fca" stroke-width="2" fill="#3d7fca">
         <line x1="160" y1="120" x2="125" y2="240"/><polygon points="121,232 122,252 133,240"/>
         <line x1="480" y1="220" x2="530" y2="262"/><polygon points="524,264 542,272 532,252"/>
       </g>
-      <text x="178" y="120" fill="#3d7fca" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">pente 2 %</text>
-      <text x="400" y="215" fill="#3d7fca" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">pente 2 %</text>
-      <g fill="#10233c" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">
-        <text x="92" y="82">+ 6,45</text>
-        <text x="132" y="298">+ 6,32</text>
-      </g>
-      <text x="330" y="356" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">acrotères au pourtour (double trait) ; l'eau descend vers les entrées EP</text>
+      <text x="178" y="120" fill="#3d7fca" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">pente</text>
+      <text x="392" y="258" fill="#3d7fca" font-size="15" font-weight="bold" font-family="Segoe UI, sans-serif">pente</text>
+      <text x="330" y="356" text-anchor="middle" fill="#637285" font-size="15" font-family="Segoe UI, sans-serif">acrotères au pourtour (double trait)</text>
     </svg>
-    <figcaption>Plan de toiture d'un autre bâtiment. Les entrées d'eaux pluviales sont dessinées avec le symbole d'avaloir de la bibliothèque inerWeb.</figcaption>
+    <figcaption>Les éléments de la liste sur le plan d'un autre bâtiment.</figcaption>
   </figure>
-  <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Je déroule la liste de contrôle sur ce plan.</p>
-    <p>Acrotères : au pourtour, le double trait. EP : 2, dans les angles bas gauche et bas droit.
-    Trop-plein : 1, dans l'acrotère gauche. Émergence : 1 lanterneau sur costière, en haut à droite.
-    JD : 1, le trait mixte vertical au milieu. Zones : aucune zone accessible n'est dessinée,
-    toute la toiture est en zone courante.</p>
+</section>
+
+<section>
+  <h2>Dérouler la liste sur un plan au 1/50</h2>
+  <div class="svgbox">
+    <svg xmlns="http://www.w3.org/2000/svg" width="600" viewBox="0 12 190 118" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Exemple : plan de toiture d'un local technique au 1/50, indice C. Terrasse de 5000 sur 3500 mm entre les acrotères. Point haut dans l'angle haut gauche à plus 3,40 ; angle haut droit plus 3,30 ; angle bas gauche plus 3,33 ; entrée d'eaux pluviales dans l'angle bas droit à plus 3,23. Pente de 2 pour cent vers la droite et vers le bas. Costière carrée de 800 mm. Un trop-plein dans l'acrotère droit, près de l'entrée d'eaux pluviales.">
+      <path d="M40 18 h108 v78 h-108 z M44 22 v70 h100 v-70 z" fill="#dfe7f1" fill-rule="evenodd" stroke="#10233c" stroke-width="0.6"/>
+      <rect x="44" y="22" width="100" height="70" fill="#fff" stroke="#10233c" stroke-width="0.35"/>
+      <rect x="84" y="46" width="16" height="16" fill="#fff" stroke="#10233c" stroke-width="0.6"/><rect x="85.2" y="47.2" width="13.6" height="13.6" fill="none" stroke="#10233c" stroke-width="0.3"/>
+      <text x="102" y="56" font-size="6" fill="#10233c">costière</text>
+      <circle cx="138" cy="86" r="3" fill="none" stroke="#10233c" stroke-width="0.5"/><circle cx="138" cy="86" r="0.6" fill="#10233c"/>
+      <text x="133" y="88" text-anchor="end" font-size="6" font-weight="bold" fill="#10233c">EP</text>
+      <rect x="144" y="73" width="4" height="5" fill="#fff" stroke="#10233c" stroke-width="0.5"/>
+      <text x="151" y="78" font-size="6" font-weight="bold" fill="#10233c">TP</text>
+      <g stroke="#3d7fca" stroke-width="0.6" fill="#3d7fca"><line x1="56" y1="34" x2="110" y2="34"/><polygon points="114,34 109,31.8 109,36.2"/><line x1="50" y1="38" x2="50" y2="80"/><polygon points="50,84 47.8,79 52.2,79"/></g>
+      <text x="82" y="31.5" text-anchor="middle" font-size="6" font-weight="bold" fill="#3d7fca">2 %</text>
+      <text x="53" y="72" font-size="6" font-weight="bold" fill="#3d7fca">2 %</text>
+      <g fill="#10233c"><circle cx="44" cy="22" r="0.8"/><circle cx="144" cy="22" r="0.8"/><circle cx="44" cy="92" r="0.8"/><circle cx="144" cy="92" r="0.8"/></g>
+      <g font-size="6" font-weight="bold" fill="#10233c">
+        <text x="38" y="18.5" text-anchor="end">+ 3,40</text>
+        <text x="150" y="18.5">+ 3,30</text>
+        <text x="38" y="99" text-anchor="end">+ 3,33</text>
+        <text x="150" y="99">+ 3,23</text>
+      </g>
+      <g stroke="#10233c" stroke-width="0.3"><line x1="44" y1="93" x2="44" y2="107"/><line x1="144" y1="93" x2="144" y2="107"/><line x1="42" y1="105" x2="146" y2="105"/><line x1="43" y1="106" x2="45" y2="104"/><line x1="143" y1="106" x2="145" y2="104"/><line x1="43" y1="22" x2="10" y2="22"/><line x1="43" y1="92" x2="10" y2="92"/><line x1="12" y1="20" x2="12" y2="94"/><line x1="11" y1="23" x2="13" y2="21"/><line x1="11" y1="93" x2="13" y2="91"/></g>
+      <text x="94" y="103" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c">5000</text>
+      <text x="10" y="57" text-anchor="middle" font-size="6" font-weight="bold" fill="#10233c" transform="rotate(-90 10 57)">3500</text>
+      <rect x="40" y="110" width="130" height="18" fill="#fff" stroke="#10233c" stroke-width="0.4"/>
+      <text x="42.5" y="117.5" font-size="6" fill="#10233c">LOCAL TECHNIQUE · TOITURE-TERRASSE</text>
+      <text x="42.5" y="125" font-size="6" fill="#10233c">éch. 1/50 · ind. C · cotes en mm</text>
+    </svg>
+    <figcaption>Dessin hors échelle dans la leçon : ne le mesurez pas.</figcaption>
   </div>
-  <p class="cle">L'eau ne remonte jamais. Suivez les flèches de pente : elles mènent toutes à une EP.
-  Une zone sans chemin vers une EP est une erreur du plan, à signaler.</p>
+  <p>Légende de l'exemple. EP : entrée d'eaux pluviales. TP : trop-plein. Costière : 800 × 800 mm, sous un lanterneau.
+  Acrotère : épaisseur 200 mm. Niveaux en m, dessus de la forme de pente. Pente de 2 % : donnée de l'exemple.</p>
+  <div class="calc">
+    <h3>Exemple résolu : la liste sur le local technique</h3>
+    <p>Cartouche : échelle 1/50, indice C.</p>
+    <p>Acrotères : au pourtour, la bande entre les deux traits. Épaisseur 200 mm, lue dans la légende.</p>
+    <p>EP : 1, dans l'angle bas droit. Trop-plein : 1, dans l'acrotère droit, près de l'EP.</p>
+    <p>Émergence : 1 costière 800 × 800 sous un lanterneau. JD : aucun n'est dessiné.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Mesurer au 1/50</h2>
+  <p>Au <strong>1/50</strong>, 1 mm sur le plan vaut 50 mm en vrai (gare 6). Imprimez le plan à 100 %, sinon les mesures sont fausses.</p>
+  <ol>
+    <li>Posez le zéro de la règle sur le premier repère. Pour un acrotère, prenez sa face intérieure : le trait côté terrasse.</li>
+    <li>Lisez la longueur en mm jusqu'au second repère, par exemple le bord le plus proche de la costière.</li>
+    <li>Multipliez par 50 : vous obtenez la longueur réelle en mm.</li>
+    <li>Comparez à la cote ou à la légende quand elles existent.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : la costière du local technique</h3>
+    <p>Mesures prises sur le plan imprimé à 100 % au 1/50. Le dessin de la leçon est hors échelle : ne mesurez pas dessus.</p>
+    <table class="doc">
+      <tr><th>Ce que l'on mesure</th><th>Sur le plan</th><th>En vrai</th></tr>
+      <tr><td>De l'acrotère gauche (face côté terrasse) à la costière</td><td>40 mm</td><td>40 × 50 = 2000 mm</td></tr>
+      <tr><td>De l'acrotère haut (face côté terrasse) à la costière</td><td>24 mm</td><td>24 × 50 = 1200 mm</td></tr>
+      <tr><td>Le côté de la costière, trait extérieur</td><td>16 mm</td><td>16 × 50 = 800 mm : la légende dit 800, la mesure s'accorde</td></tr>
+    </table>
+  </div>
 </section>
 
 <section>
@@ -121,38 +168,43 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
     descend de 2 cm par mètre ;</li>
     <li>le <strong>point haut</strong> est l'endroit d'où l'eau part ;</li>
     <li>le point bas est l'endroit où l'eau arrive : une EP ;</li>
-    <li>la course est la longueur parcourue par l'eau, mesurée à plat sur le plan.</li>
+    <li>la course est la distance à plat entre deux points du calcul. Elle se lit sur la cote du bord suivi, passée en mètres : 5000 mm = 5,00 m ;</li>
+    <li>la descente est la différence de hauteur entre ces deux points.</li>
   </ul>
+  <p>Sur le plan du local technique, les deux flèches disent que la toiture descend de 2 % vers la droite et de 2 % vers le bas.
+  Pour calculer un niveau, suivez un bord de la toiture d'un angle à l'autre.</p>
   <p>La pente vient du descriptif du dossier. Sa valeur minimale est fixée par le DTU de la série 43
   qui s'applique, le NF DTU 43.1 pour un toit en béton. Dans les exercices de cette ligne, la pente
   est une donnée de l'exercice.</p>
-  <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Course de 8,00 m à 2 % : l'eau descend de 8 × 2 = 16 cm.</p>
-  </div>
   <p class="cle">Descente en cm = course en m × pente en %.</p>
+  <div class="calc">
+    <h3>Exemple résolu : les descentes du local technique</h3>
+    <p>Du point haut à l'angle haut droit, le bord suivi est coté 5000 : course 5,00 m. Descente : 5,00 × 2 = 10 cm.</p>
+    <p>De l'angle haut droit à l'EP, le bord droit mesure 3500, comme le bord gauche coté : la toiture est un rectangle. Course 3,50 m. Descente : 3,50 × 2 = 7 cm.</p>
+  </div>
 </section>
 
 <section>
   <h2>Les altimétries : les niveaux de la toiture</h2>
   <p>Une altimétrie est un niveau. Elle s'écrit en mètres, avec son signe :
-  <strong>+ 6,45</strong> veut dire 6,45 m au-dessus du niveau de référence du projet, le ± 0,00.
-  Le ± 0,00 est en général le sol fini du rez-de-chaussée.</p>
-  <ul>
-    <li>le plan de toiture donne les niveaux des points hauts et des points bas ;</li>
-    <li>la légende dit quel niveau est coté : dessus de la dalle, de la forme de pente ou de la protection ;</li>
-    <li>les altitudes du terrain se rapportent au NGF, le nivellement général de la France.
-    Sur le chantier, on travaille depuis le ± 0,00 du projet.</li>
-  </ul>
+  <strong>+ 3,40</strong> veut dire 3,40 m au-dessus du niveau de référence du projet, le ± 0,00.
+  Le ± 0,00 est en général le sol fini du rez-de-chaussée. La légende dit quel niveau est coté :
+  dessus de la dalle, de la forme de pente ou de la protection.</p>
+  <ol>
+    <li>Lisez le niveau du point de départ, souvent le point haut.</li>
+    <li>Calculez la descente en cm (écran 5).</li>
+    <li>Passez la descente en mètres : divisez par 100. 10 cm = 0,10 m ; 7 cm = 0,07 m.</li>
+    <li>Niveau d'arrivée = niveau de départ − descente en m.</li>
+    <li>Comparez au niveau écrit sur le plan. S'il est égal, le plan s'accorde. S'il est différent, signalez-le (gare 7).</li>
+  </ol>
+  <p>Le symbole EP est dessiné un peu à l'intérieur de l'angle, pour rester lisible : calculez jusqu'à l'angle coté.</p>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Sur le plan de l'écran 3, le point haut est à + 6,45 et l'EP de gauche à + 6,32.
-    La course entre les deux mesure 6,50 m, à 2 %.</p>
-    <p>Différence des niveaux : 6,45 − 6,32 = 0,13 m, soit 13 cm.</p>
-    <p>Pente × course : 6,50 × 2 = 13 cm. Les deux valeurs s'accordent.</p>
+    <h3>Exemple résolu : les niveaux du local technique</h3>
+    <p>Point haut : angle haut gauche, + 3,40.</p>
+    <p>Angle haut droit : 3,40 − 0,10 = 3,30. Le plan dit + 3,30 : il s'accorde.</p>
+    <p>EP par l'angle haut droit : 3,30 − 0,07 = 3,23. Le plan dit + 3,23 : il s'accorde.</p>
+    <p>EP par l'angle bas gauche (+ 3,33), course 5,00 m, soit 10 cm : 3,33 − 0,10 = 3,23. Les deux chemins donnent le même niveau.</p>
   </div>
-  <p class="cle">Point haut − point bas, passé en cm = course en m × pente en %. Si les valeurs du plan ne s'accordent pas,
-  vous le signalez : on signale, on ne devine pas (gare 7).</p>
 </section>
 
 <section>
@@ -163,8 +215,35 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
     <tr><td>technique</td><td>autour des équipements (climatisation…)</td><td>protection renforcée, chemin d'accès</td></tr>
     <tr><td>accessible</td><td>dalles sur plots, terrasse</td><td>protection lourde, d'autres exigences</td></tr>
   </table>
-  <p class="cle">La zone décide de la protection, donc d'une partie du complexe (Toiture 2) et des
-  quantités (Toiture 5). Elle se lit sur le plan de toiture.</p>
+  <p>La zone décide de la protection, donc d'une partie du complexe (Toiture 2) et des
+  quantités (Toiture 5). Elle se lit sur le plan de toiture ou dans le descriptif.</p>
+</section>
+
+<section>
+  <h2>Expliquer avec les flèches et les niveaux</h2>
+  <p>L'eau descend toujours, du point haut vers le point bas. Une EP se place donc au point bas, là où mènent les flèches de pente.
+  Une zone sans chemin vers une EP est une erreur du plan, à signaler.</p>
+  <p class="cle">Pour expliquer en deux phrases, écrivez d'abord ce que montre le plan : le niveau ou la flèche.
+  Écrivez ensuite la règle, avec « car » ou « donc ».</p>
+  <div class="calc">
+    <h3>Exemple résolu : une proposition sur le local technique</h3>
+    <p>Un collègue propose de mettre l'EP du local technique dans l'angle haut droit.</p>
+    <p>Réponse écrite : « L'angle bas droit, à + 3,23, est le point le plus bas de la toiture.
+    L'angle haut droit, à + 3,30, est plus haut, donc l'eau arrivée en bas à droite ne remonterait pas jusqu'à une EP placée en haut à droite. »</p>
+  </div>
+</section>
+
+<section>
+  <h2>La méthode complète, du plan au contrôle</h2>
+  <p>La lecture d'un plan de toiture suit toujours le même ordre. Gardez cet écran sous les yeux pendant l'exercice.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Dérouler la liste : cartouche, acrotères, EP, trop-pleins, émergences, JD</td><td data-l="Écran">2 et 3</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Mesurer à la règle depuis la face intérieure de l'acrotère, × 50</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Lire la course sur la cote ; descente en cm = course en m × pente en %</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Niveau d'arrivée = niveau de départ − descente en m ; comparer au plan</td><td data-l="Écran">6</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Expliquer en deux phrases : ce que montre le plan, puis la règle</td><td data-l="Écran">8</td></tr>
+  </table>
 </section>
 
 <section id="ecran-test">
@@ -179,6 +258,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>Vous savez dérouler la liste de contrôle, lire les pentes, les altimétries et les zones d'un
   plan de toiture.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
@@ -304,7 +384,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

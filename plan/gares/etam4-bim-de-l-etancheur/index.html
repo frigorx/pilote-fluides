@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Toiture 4 — Le BIM de l'étancheur : la toiture en maquette</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .illus,.capture{display:block;width:100%;max-width:760px;height:auto;margin:12px auto;border-radius:12px}
 .calc{background:#fff7ee;border-left:4px solid var(--logo-orange);border-radius:8px;padding:8px 14px;margin:14px 0}
@@ -39,118 +39,191 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
 </header>
 
 <section class="on">
+  <style>@media print{img.capture,.ecran-seul{display:none}img.capture.papier{display:block;width:auto;height:auto;max-width:150mm;max-height:44mm;margin:2mm auto;border:0.3mm solid #8797ab;border-radius:1.5mm}}</style>
   <h2>Bienvenue en gare</h2>
   <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-04-vues.webp" width="1200" height="728" alt="En haut, le groupe Vue du ruban, boutons Dessus et Avant encadrés. En bas à gauche, la maquette vue de dessus : la toiture verte et ses deux fenêtres de toit. En bas à droite, la maquette vue de face.">
   <p>En gare 9, vous avez appris dix gestes dans BIM Vision, sur la maquette Duplex. Son toit est
-  une <strong>toiture plate végétalisée</strong>, bordée d'acrotères : un vrai terrain d'étancheur.
-  Cette gare applique les gestes de la gare 9 à cette toiture.</p>
-  <p>Environ 2 heures sur poste, test compris ; la fiche de TP prend 1 h 30. À la fin, vous saurez :</p>
+  une <strong>toiture plate végétalisée</strong>, bordée d'acrotères.</p>
+  <p>Environ 2 heures sur poste, test compris. À la fin, vous saurez :</p>
   <ul>
     <li>isoler la toiture dans la maquette ;</li>
     <li>compter ce qui la traverse et ce qui la borde ;</li>
     <li>lire ses couches et les comparer à la pile de Toiture 2 ;</li>
     <li>mesurer sa surface et vérifier la hauteur possible du relevé.</li>
   </ul>
-  <p class="cle">Ouvrez la maquette Duplex comme en gare 9, geste 1 (lien de téléchargement dans la
-  gare 9). Gardez la gare 9 ouverte dans un autre onglet : chaque écran renvoie à son geste.</p>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 9 : chaque geste a sa méthode et un exemple résolu
+  sur un autre élément de la même maquette. Faites ensuite la fiche de TP sur la toiture : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
 </section>
 
 <section>
-  <h2>Isoler la toiture</h2>
+  <h2>Garder un seul étage</h2>
   <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-09-masquer.webp" width="1200" height="705" alt="Dans la colonne Actif de la structure IFC, les cases de Level 2 et de Roof sont décochées. La vue 3D montre le rez-de-chaussée seul.">
-  <p>La capture de la gare 9 montre le geste 8 à l'envers : elle cache Level 2 et Roof. Pour l'étancheur,
-  faites l'inverse.</p>
+  <p>Ouvrez la maquette Duplex comme en gare 9, geste 1 : « FICHIER », « Ouvrir », puis le fichier Duplex_A_20110907.ifc.
+  La maquette a quatre étages : Level 1 (rez-de-chaussée), Level 2 (étage), T/FDN (fondations) et Roof (toiture).</p>
   <ol>
-    <li>Dans la colonne « Actif » de la structure IFC, décochez Level 1, Level 2 et T/FDN.</li>
-    <li>Il reste l'étage Roof : la toiture, les murs qui la bordent et les fenêtres de toit.</li>
-    <li>Tournez autour (geste 2) : la toiture se voit de tous les côtés.</li>
+    <li>À droite, dans la structure IFC, repérez la colonne « Actif ». Chaque étage y a sa case.</li>
+    <li>Décochez la case de chaque étage dont vous n'avez pas besoin. Il disparaît de la vue.</li>
   </ol>
+  <div class="calc">
+    <h3>Exemple résolu : garder le Level 2</h3>
+    <p>Je décoche Level 1, T/FDN et Roof. Il reste le Level 2, l'étage des deux logements, ouvert par le haut.</p>
+  </div>
+  <p class="ecran-seul">La capture montre le même geste : Level 2 et Roof décochés, le rez-de-chaussée reste.</p>
 </section>
 
 <section>
-  <h2>Ce que contient l'étage Roof</h2>
-  <p>Dans la structure IFC, cliquez le petit + devant Roof : ses familles apparaissent, comme en
-  gare 9, geste 5. Dépliez chaque famille et comptez ses lignes.</p>
+  <h2>Compter ce que contient un étage</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-06-compter.webp" width="1200" height="705" alt="Dans la structure IFC, la famille Portes de Level 1 est dépliée : six lignes Porte. Dans la vue 3D, les portes du rez-de-chaussée sont surlignées en vert.">
+  <ol>
+    <li>Dans la structure IFC, cliquez le petit + devant l'étage : ses familles apparaissent, par exemple Murs et Fenêtres.</li>
+    <li>Cliquez le + devant une famille. Chaque ligne en dessous est un élément.</li>
+    <li>Comptez les lignes : une ligne correspond à un élément.</li>
+  </ol>
+  <p>Sur l'étage Roof, trois familles intéressent l'étancheur :</p>
   <ul>
-    <li>la toiture : une ligne, nommée Basic Roof:Live Roof over Wood Joist Flat Roof, c'est-à-dire
-    toiture plate végétalisée sur solives en bois ;</li>
+    <li>la toiture : Basic Roof:Live Roof over Wood Joist Flat Roof, c'est-à-dire toiture plate végétalisée sur solives en bois ;</li>
     <li>les murs : ce sont les <strong>acrotères</strong>, les murets qui bordent la toiture (Toiture 1) ;</li>
-    <li>les fenêtres de toit : elles traversent la toiture, ce sont des émergences.</li>
+    <li>les fenêtres : ce sont les fenêtres de toit. Elles traversent la toiture : ce sont des émergences.</li>
   </ul>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Je déplie la famille des murs de l'étage Roof. Je compte 4 lignes Basic Wall:Exterior - Brick on Block.
+    <h3>Exemple résolu : les acrotères</h3>
+    <p>Je déplie l'étage Roof, puis sa famille Murs. Je compte 4 lignes Basic Wall:Exterior - Brick on Block.
     La toiture est bordée de 4 acrotères, un par côté.</p>
   </div>
 </section>
 
 <section>
-  <h2>Les couches de la toiture</h2>
-  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-08-epaisseur.webp" width="1200" height="690" alt="À gauche, le panneau des propriétés d'un mur. À droite, la structure IFC du même mur dépliée sur la ligne IfcMaterialLayerSet et ses six couches ; la première couche est cliquée : LayerThickness 0,092, Material Masonry - Brick.">
-  <p>Le geste 7 de la gare 9, sur la toiture au lieu du mur :</p>
+  <h2>Lire l'altitude d'un étage et la hauteur d'un mur</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-05-structure.webp" width="1200" height="705" alt="L'étage Level 1 est sélectionné : il s'allume en vert dans la vue 3D. Dans la structure IFC, la ligne Level 1 est dépliée sur ses familles. Dans les propriétés, la ligne Elevation vaut 0.">
   <ol>
-    <li>Dans la structure IFC, cliquez le + devant la toiture, puis devant IfcMaterialLayerSet.</li>
-    <li>Chaque ligne en dessous est une couche, de haut en bas.</li>
-    <li>Cliquez une couche : LayerThickness donne son épaisseur en mètres, Material son matériau.</li>
+    <li>L'altitude d'un étage : cliquez la ligne de l'étage dans la structure IFC. Dans le panneau Propriétés, en bas à droite, lisez <strong>Elevation</strong>, en mètres. C'est l'altitude du plancher de l'étage.</li>
+    <li>La hauteur d'un mur : cliquez le mur. Dans le panneau Propriétés, lisez Unconnected Height, en mètres. Elle est un peu au-dessus de la ligne Length.</li>
   </ol>
-  <p>Les six couches de la toiture du Duplex, de haut en bas, et leur nom en français :</p>
-  <table class="doc">
-    <tr><th>Material (anglais)</th><th>En français</th></tr>
-    <tr><td>Site - Grass</td><td>herbe et terre : la végétalisation</td></tr>
-    <tr><td>Roofing - Barrier</td><td>barrière posée sur la membrane</td></tr>
-    <tr><td>Roofing - EPDM Membrane</td><td>membrane d'étanchéité en EPDM, un caoutchouc synthétique</td></tr>
-    <tr><td>Insulation / Thermal Barriers - Rigid insulation</td><td>isolant rigide</td></tr>
-    <tr><td>Wood - Sheathing - plywood</td><td>panneau de contreplaqué</td></tr>
-    <tr><td>Wood - Dimensional Lumber</td><td>bois de charpente : les solives</td></tr>
-  </table>
   <div class="calc">
-    <h3>Exemple résolu</h3>
-    <p>Je clique la première couche. Material : Site - Grass. LayerThickness : 0,064 m.
-    La couche du dessus est la végétalisation, épaisse de 64 mm.</p>
+    <h3>Exemple résolu : l'étage Level 2 et un de ses murs</h3>
+    <p>Je clique la ligne Level 2. Je lis Elevation : 3,1. J'écris 3,10 m : c'est la même valeur, avec deux chiffres après la virgule. Le plancher de l'étage est à 3,10 m.</p>
+    <p>Je clique le grand mur de façade du Level 2. Je lis Unconnected Height : 2,9. Ce mur mesure 2,90 m de haut.</p>
+  </div>
+  <p class="ecran-seul">La capture montre la ligne Elevation du Level 1, qui vaut 0.</p>
+</section>
+
+<section>
+  <h2>Mesurer une surface</h2>
+  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-11-mesurer.webp" width="1200" height="749" alt="En haut, l'onglet Mesure : boutons Surface et Longueur encadrés, puis la case Résultat. En bas à gauche, la toiture surlignée en rose avec sa mesure. En bas à droite, une arête verticale mesurée à 3,100 mètres.">
+  <ol>
+    <li>Onglet « MESURE » : cochez « Ignorer transparents ». Sinon le clic prend le volume bleu transparent posé sur le toit.</li>
+    <li>Cliquez « Surface », puis la face à mesurer. Sa surface s'affiche dans la vue et dans la case « Résultat », en m².</li>
+    <li>Recopiez la valeur avec ses trois chiffres après la virgule.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : le grand mur de façade du Level 2</h3>
+    <p>Je clique « Surface », puis la face extérieure du grand mur de façade du Level 2. La face se colore et sa surface s'affiche dans la case « Résultat », en m².</p>
+    <p>Je contrôle : je clique le mur, la ligne Area de ses propriétés vaut 41,357137 m². Avec trois chiffres après la virgule, j'écris 41,357 m². Sur un mur, les deux valeurs peuvent différer un peu, selon la face cliquée.</p>
+  </div>
+  <p>Pour la toiture, mesurez avec « Surface » et recopiez ce que votre écran affiche. Contrôlez ensuite avec la ligne Area des propriétés de la toiture : les deux valeurs concordent.</p>
+</section>
+
+<section>
+  <h2>Lire les couches d'un élément</h2>
+  <img class="capture papier" src="../g09-la-maquette-bim/illustrations/g09-08-epaisseur.webp" width="1200" height="690" alt="À gauche, le panneau des propriétés d'un mur extérieur. À droite, la structure IFC du même mur dépliée sur la ligne IfcMaterialLayerSet et ses six couches ; la première couche est cliquée : LayerThickness 0,092, Material Masonry - Brick.">
+  <ol>
+    <li>Dans la structure IFC, cliquez le + devant l'élément, puis devant IfcMaterialLayerSet.</li>
+    <li>Chaque ligne en dessous est une couche, dans l'ordre. Pour une toiture, l'ordre va de haut en bas. Pour un mur, il va de l'extérieur vers l'intérieur.</li>
+    <li>Cliquez chaque couche. Material donne son matériau, LayerThickness son épaisseur en mètres.</li>
+    <li>Additionnez les épaisseurs : vous obtenez l'épaisseur totale de l'élément.</li>
+    <li>Contrôlez la somme. Pour un mur, elle égale la ligne Width. Pour une toiture, elle égale la ligne Thickness de ses propriétés.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : le mur extérieur de la capture</h3>
+    <table class="doc">
+      <tr><th>N°</th><th>Material</th><th>LayerThickness</th></tr>
+      <tr><td>1</td><td>Masonry - Brick</td><td>0,092 m</td></tr>
+      <tr><td>2</td><td>Misc. Air Layers - Air Space</td><td>0,025 m</td></tr>
+      <tr><td>3</td><td>Insulation / Thermal Barriers - Rigid insulation</td><td>0,050 m</td></tr>
+      <tr><td>4</td><td>Masonry - Concrete Block</td><td>0,193 m</td></tr>
+      <tr><td>5</td><td>Metal - Stud Layer</td><td>0,041 m</td></tr>
+      <tr><td>6</td><td>Plasterboard</td><td>0,016 m</td></tr>
+    </table>
+    <p>Somme : 0,092 + 0,025 + 0,050 + 0,193 + 0,041 + 0,016 = 0,417 m. La ligne Width du mur vaut 0,417 : la somme concorde, le contrôle est bon.</p>
   </div>
 </section>
 
 <section>
-  <h2>La maquette et la pile de Toiture 2</h2>
-  <p>Rangez chaque couche de la maquette dans la pile de Toiture 2 : protection, étanchéité, isolant,
-  pare-vapeur, forme de pente, porteur.</p>
-  <table class="doc">
-    <tr><th>Couche de la maquette</th><th>Place dans la pile</th></tr>
-    <tr><td>Site - Grass</td><td>protection (la végétalisation)</td></tr>
-    <tr><td>Roofing - Barrier</td><td>rôle non dit par la maquette : à demander</td></tr>
-    <tr><td>Roofing - EPDM Membrane</td><td>étanchéité</td></tr>
-    <tr><td>Rigid insulation</td><td>isolant</td></tr>
-    <tr><td>Wood - Sheathing - plywood</td><td>porteur : le contreplaqué est posé sur les solives</td></tr>
-    <tr><td>Wood - Dimensional Lumber</td><td>porteur : les solives</td></tr>
+  <h2>Ranger les couches dans la pile</h2>
+  <p>La pile de Toiture 2, de haut en bas : protection, étanchéité, isolant, pare-vapeur, forme de pente, porteur.
+  Pour ranger une couche de la maquette, lisez son Material après le premier tiret, puis cherchez son mot dans ce tableau. Le mot peut suivre un second tiret : Wood - Sheathing - plywood se range par plywood.</p>
+  <table class="doc empile">
+    <tr><th>Mot anglais du Material (traduction)</th><th>Place dans la pile</th></tr>
+    <tr><td data-l="Mot">Grass (herbe), Gravel (gravillon)</td><td data-l="Pile">protection</td></tr>
+    <tr><td data-l="Mot">Membrane, EPDM (caoutchouc), Bitumen (bitume)</td><td data-l="Pile">étanchéité</td></tr>
+    <tr><td data-l="Mot">insulation (isolant)</td><td data-l="Pile">isolant</td></tr>
+    <tr><td data-l="Mot">Vapor Retarder (pare-vapeur)</td><td data-l="Pile">pare-vapeur</td></tr>
+    <tr><td data-l="Mot">Tapered, Slope (en pente)</td><td data-l="Pile">forme de pente</td></tr>
+    <tr><td data-l="Mot">Concrete (béton), Steel Deck (bac acier), plywood (contreplaqué), Lumber (bois de charpente)</td><td data-l="Pile">porteur</td></tr>
   </table>
-  <p>Deux couches de la pile n'ont pas de ligne dans la maquette : le pare-vapeur et la forme de pente.</p>
-  <p class="cle">Une couche de la pile peut manquer dans la maquette. Ce n'est pas à vous de décider
-  qu'elle est inutile : on signale, on ne devine pas (gare 7). Écrivez la question et posez-la
-  avant de commander le matériel.</p>
+  <p class="cle">Si le mot n'est pas dans le tableau, écrivez « à demander ». Posez la question avant de commander le matériel (gare 7).</p>
+  <div class="calc">
+    <h3>Exemple résolu : trois couches</h3>
+    <p>Site - Grass : le mot après le tiret est Grass, l'herbe. C'est la protection.</p>
+    <p>Masonry - Concrete Block, couche 4 du mur : Concrete, le béton. Le tableau le range dans porteur.</p>
+    <p>Misc. Air Layers - Air Space, couche 2 du mur : Air Space n'est pas dans le tableau. J'écris « à demander ».</p>
+  </div>
+  <p>Comparez ensuite : une couche de la pile sans aucune ligne dans la maquette est une couche non représentée dans la maquette.
+  Le pare-vapeur se trouve sous l'isolant : une couche « à demander » placée au-dessus ne le remplace pas.
+  Pour signaler une couche non représentée, écrivez une question qui nomme la couche, puis ajoutez ce que montre la maquette.
+  Exemple sur un autre élément : « Un isolant est-il prévu sous la dalle du rez-de-chaussée ? La maquette n'en montre pas. »</p>
 </section>
 
 <section>
-  <h2>Mesurer, puis vérifier le relevé</h2>
-  <img class="capture" src="../g09-la-maquette-bim/illustrations/g09-11-mesurer.webp" width="1200" height="749" alt="En haut, l'onglet Mesure : boutons Surface et Longueur encadrés, puis la case Résultat. En bas à gauche, la toiture surlignée en rose avec la mesure 132,926 mètres carrés.">
-  <p>La surface : onglet « MESURE », « Ignorer transparents » coché, puis « Surface » et clic sur
-  la toiture (gare 9, geste 10). La gare 9 trouve 132,926 m².</p>
-  <p>La hauteur possible du relevé se calcule avec trois valeurs de la maquette :</p>
-  <ul>
-    <li>l'altitude de l'étage Roof : cliquez la ligne Roof, lisez Elevation (gare 9, geste 4) ;</li>
-    <li>l'épaisseur de la toiture : la somme de ses couches ;</li>
-    <li>la hauteur des acrotères : cliquez un mur de l'étage Roof, lisez Unconnected Height (gare 9, geste 6).</li>
-  </ul>
-  <p>Dans le Duplex, la toiture et les acrotères partent tous deux du niveau de l'étage Roof : leurs
-  propriétés Base Level et Base Constraint valent Roof.</p>
+  <h2>La hauteur possible du relevé</h2>
+  <p>Le relevé d'étanchéité monte contre l'acrotère. Sa hauteur possible se calcule avec trois valeurs lues dans la maquette.</p>
+  <p>Dans le Duplex, la toiture et les acrotères partent tous deux du niveau de l'étage Roof. Vérifiez-le : cliquez la toiture et lisez Base Level ; cliquez un acrotère et lisez Base Constraint. Les deux valent Roof.</p>
+  <ol>
+    <li>Dessus de la toiture : Elevation de l'étage Roof (écran 4) + épaisseur de la toiture, somme de ses couches (écran 6).</li>
+    <li>Haut de l'acrotère : Elevation de l'étage Roof + Unconnected Height d'un acrotère (écran 4).</li>
+    <li>Hauteur possible du relevé : haut de l'acrotère − dessus de la toiture. Gardez les trois chiffres après la virgule jusqu'ici. Passez en millimètres : multipliez par 1000.</li>
+    <li>Comparez à la hauteur demandée par la consigne.</li>
+  </ol>
+  <div class="svgbox">
+  <svg viewBox="0 30 640 220" width="520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coupe de principe : l'acrotère à droite part du niveau de l'étage, comme la toiture à gauche. Le haut de l'acrotère dépasse le dessus de la toiture : cet écart est la hauteur possible du relevé.">
+    <g font-family="Segoe UI, sans-serif" font-size="23" fill="#1b3a63">
+    <line x1="20" y1="200" x2="620" y2="200" stroke="#1b3a63" stroke-width="1.5" stroke-dasharray="8 5"/>
+    <text x="24" y="234">Elevation de l'étage</text>
+    <rect x="40" y="130" width="300" height="70" fill="#d8ead2" stroke="#1b3a63" stroke-width="2"/>
+    <text x="190" y="172" text-anchor="middle">toiture</text>
+    <rect x="340" y="60" width="70" height="140" fill="#e6e1d6" stroke="#1b3a63" stroke-width="2"/>
+    <text x="375" y="52" text-anchor="middle">acrotère</text>
+    <path d="M330 130 v-70" stroke="#c9451a" stroke-width="5" fill="none"/>
+    <g stroke="#1b3a63" stroke-width="1"><line x1="414" y1="60" x2="520" y2="60"/><line x1="414" y1="130" x2="520" y2="130"/><line x1="500" y1="60" x2="500" y2="130"/></g>
+    <text x="508" y="92" fill="#c9451a">relevé</text><text x="508" y="114" fill="#c9451a">possible</text>
+    </g>
+  </svg>
+  </div>
   <div class="calc">
-    <h3>Exemple résolu, sur une autre maquette</h3>
+    <h3>Exemple résolu, sur une autre toiture</h3>
     <p>Elevation de l'étage : 3,00 m. Épaisseur de la toiture : 0,40 m. Hauteur des acrotères : 0,60 m.</p>
-    <p>Dessus de la toiture : 3,00 + 0,40 = 3,40. Haut de l'acrotère : 3,00 + 0,60 = 3,60.</p>
-    <p>Le relevé peut monter de 3,60 − 3,40 = 0,20 m au-dessus de la toiture, soit 200 mm.</p>
+    <p>Dessus de la toiture : 3,00 + 0,40 = 3,40 m. Haut de l'acrotère : 3,00 + 0,60 = 3,60 m.</p>
+    <p>Hauteur possible du relevé : 3,60 − 3,40 = 0,20 m, soit 200 mm. La consigne demande 150 mm au moins : 200 mm suffit, avec 50 mm de marge.</p>
   </div>
-  <p class="cle">Dans les exercices de cette ligne, le relevé dépasse la protection d'au moins 150 mm
-  (Toiture 2). Si la maquette et un plan coté ne disent pas la même chose, le plan coté au dernier indice
-  l'emporte et l'écart se signale (gare 3).</p>
+  <p class="cle">Dans les exercices de cette ligne, le relevé dépasse la protection d'au moins 150 mm (Toiture 2).
+  En cas d'écart avec le plan coté au dernier indice, le plan coté l'emporte (gare 3).</p>
+</section>
+
+<section>
+  <h2>La méthode complète, de la maquette au relevé</h2>
+  <p>Gardez cet écran sous les yeux pendant le TP.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Garder l'étage Roof seul actif</td><td data-l="Écran">2</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Déplier les familles, compter les lignes</td><td data-l="Écran">3</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Lire Elevation et Unconnected Height</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Mesurer la surface de la toiture</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Lire les couches, additionner, contrôler</td><td data-l="Écran">6</td></tr>
+    <tr><td data-l="Étape">6</td><td data-l="Geste">Ranger les couches, écrire la question</td><td data-l="Écran">7</td></tr>
+    <tr><td data-l="Étape">7</td><td data-l="Geste">Calculer la hauteur possible du relevé</td><td data-l="Écran">8</td></tr>
+  </table>
+  <p>Écrivez chaque valeur avec son unité, et chaque calcul en entier : 3,00 + 0,40 = 3,40 m.</p>
 </section>
 
 <section id="ecran-test">
@@ -165,6 +238,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
   <p>Vous savez isoler une toiture dans la maquette, lire ses couches, la mesurer et vérifier la
   hauteur de son relevé.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger la fiche de TP (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>.
@@ -290,7 +364,7 @@ figure.svgbox figcaption{font-size:.9em;color:var(--muted)}
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>

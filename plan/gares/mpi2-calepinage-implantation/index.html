@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Plâtrerie 2 — Calepinage et implantation : répartir et tracer</title>
-<link rel="stylesheet" href="../../moteur/gare.css">
+<link rel="stylesheet" href="../../moteur/gare.css?v=20261107">
 <style>
 .corresp{text-align:center;font-size:.85em;margin:18px 0 0}
 .corresp a{color:var(--muted)}
@@ -33,7 +33,7 @@
 
 <section class="on">
   <h2>Bienvenue en gare</h2>
-  <p>Calepiner, c'est répartir des éléments de taille fixe (plaques, dalles de plafond) sur une surface avant de poser : sur le papier d'abord, au sol ensuite.</p>
+  <p>Calepiner, c'est répartir des éléments de taille fixe (plaques, dalles de plafond) sur une surface avant de poser : sur le papier d'abord, au sol ensuite. Le dessin de cette répartition s'appelle le calepin.</p>
   <p>À la gare Plâtrerie 1, la cloison C1 a coupé le vestiaire en deux. Dans l'exercice de cette gare, vous calepinerez le plafond de la partie vestiaire.</p>
   <p>Environ <strong>2 heures</strong>, calculatrice en main. À la fin, vous saurez :</p>
   <ul>
@@ -42,11 +42,14 @@
     <li>compter sur le calepin les dalles à commander ;</li>
     <li>préparer l'implantation : la référence et le traçage.</li>
   </ul>
+  <p class="cle">Comment travailler. Lisez les écrans 2 à 8 : chaque geste a sa méthode et un exemple résolu
+  sur le plafond d'une salle de réunion de 3800 × 3600. Faites ensuite l'exercice sur le plafond du vestiaire : chaque question dit l'écran à relire.
+  La leçon existe aussi sur papier, avec les mêmes numéros d'écran (bouton « Leçon (PDF) » en haut de la gare).</p>
 </section>
 
 <section>
   <h2>Le problème du calepinage</h2>
-  <p>Une pièce de 3,80 m à couvrir de dalles de 600 mm : 3800 ÷ 600 = 6,33. Les dalles ne tombent pas juste. Où mettre les coupes ?</p>
+  <p>Une pièce de 3,80 m à couvrir de dalles de 600 mm : 3800 ÷ 600 = 6,333… Les dalles ne tombent pas juste. Il faut choisir où mettre les coupes.</p>
   <div class="svgbox">
   <svg viewBox="0 0 640 260" width="640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deux calepinages d'une même rangée : en haut, départ au bord avec une coupe minuscule au bout ; en bas, réparti avec deux coupes égales aux deux extrémités.">
     <g font-family="Segoe UI, sans-serif">
@@ -64,61 +67,158 @@
     </g>
   </svg>
   </div>
-  <p class="cle">Dans cette gare, chaque coupe de rive mesure au moins un <strong>demi-élément</strong>, soit 300 mm pour une dalle de 600. Une coupe plus petite, appelée languette, casse et se voit. C'est la règle du demi-élément.</p>
+  <p>Trois mots servent dans toute la gare. Le <strong>module</strong> est la taille d'une dalle, ici 600 mm.
+  Une coupe de rive est la dalle coupée posée contre le mur. Une languette est une coupe trop étroite.</p>
+  <p class="cle">Dans cette gare, chaque coupe de rive mesure au moins un <strong>demi-élément</strong>, soit 300 mm pour une dalle de 600. Une languette casse et se voit. C'est la règle du demi-élément.</p>
 </section>
 
 <section>
-  <h2>La méthode du calepin</h2>
+  <h2>Répartir une longueur</h2>
+  <p>La méthode, pour une longueur en mm et des dalles de 600 :</p>
   <ol>
-    <li>Prenez les vraies cotes de la pièce : plan, relevé, diagonales (gare 8).</li>
-    <li>Divisez par le module : 3800 ÷ 600 = 6 dalles entières, reste 200. Si le reste est nul, gardez les dalles entières : il n'y a aucune coupe.</li>
-    <li>Répartissez le reste en deux coupes égales : 200 ÷ 2 = 100. C'est moins de 300 : retirez une dalle entière. Il reste 200 + 600 = 800, soit <strong>deux coupes de 400</strong>.</li>
-    <li>Dessinez le calepin : la grille cotée, les coupes hachurées.</li>
-    <li>Comptez sur le calepin : il donne le quantitatif.</li>
+    <li>Divisez la longueur par 600. La partie entière, le nombre avant la virgule, donne le nombre de dalles entières.</li>
+    <li>Calculez le reste : longueur − dalles entières × 600.</li>
+    <li>Si le reste vaut 0, les dalles tombent juste. Il n'y a aucune coupe.</li>
+    <li>Sinon, partagez le reste en deux coupes égales. Comparez une coupe à 300.</li>
+    <li>Si la coupe est plus petite que 300, retirez une dalle entière. Ajoutez 600 au reste, puis partagez en deux.</li>
+    <li>Vérifiez : dalles entières × 600 + les deux coupes = la longueur.</li>
   </ol>
-  <p class="cle">Le calepin se fait dans les deux sens de la pièce. Quand un point impose sa position, par exemple une dalle centrée sur un luminaire, le calepin part de ce point.</p>
+  <div class="calc">
+    <h3>Exemple résolu : trois longueurs</h3>
+    <p>3400 ÷ 600 = 5,666… : 5 dalles entières. Reste : 3400 − 3000 = 400. Deux coupes de 200 : moins de 300.
+    On retire une dalle : 400 + 600 = 1000 à répartir. Calepin : <strong>4 entières + 2 × 500</strong>.
+    Vérification : 2400 + 500 + 500 = 3400.</p>
+    <p>3700 ÷ 600 = 6,166… : 6 dalles entières, reste 100. Deux coupes de 50 : moins de 300.
+    On retire une dalle : 700 à répartir. Calepin : 5 entières + 2 × 350.</p>
+    <p>3600 ÷ 600 = 6 : reste 0. Calepin : 6 entières, aucune coupe.</p>
+  </div>
+  <p class="cle">Comparez toujours une coupe, c'est-à-dire la moitié du reste, à 300.
+  Avec un reste de 300, chaque coupe ferait 150 : il faut retirer une dalle.</p>
 </section>
 
 <section>
-  <h2>Cas concret : le plafond de la salle de 3,80 × 3,00</h2>
-  <p>Dalles de 600 × 600. Voici la méthode appliquée, puis le calepin dessiné. C'est l'exemple résolu de l'exercice.</p>
-  <table class="doc">
-    <tr><th>Sens</th><th>Calcul</th><th>Calepin retenu</th></tr>
-    <tr><td>3800</td><td>3800 ÷ 600 = 6, reste 200. Deux coupes de 100 : trop petites. On retire une dalle : 5 entières, 800 à répartir.</td><td>400 + 5 × 600 + 400</td></tr>
-    <tr><td>3000</td><td>3000 ÷ 600 = 5, reste 0. Les dalles tombent juste.</td><td>5 × 600</td></tr>
-  </table>
-  <div class="svgbox">
-  <svg viewBox="0 0 520 420" width="520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Calepin du plafond de 3800 sur 3000 : 7 colonnes, une coupe de 400 à gauche, 5 dalles de 600, une coupe de 400 à droite ; 5 rangées de 600. Les colonnes de coupe sont hachurées. Cotes au-dessus : 400, 600 cinq fois, 400, total 3800. À gauche : 3000.">
-    <defs><pattern id="hc2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c9451a" stroke-width="1.2"/></pattern></defs>
-    <g font-family="Segoe UI, sans-serif">
-    <rect x="90" y="90" width="40" height="300" fill="url(#hc2)"/><rect x="430" y="90" width="40" height="300" fill="url(#hc2)"/>
-    <g stroke="#1b3a63" stroke-width="1.6" fill="none">
-      <rect x="90" y="90" width="380" height="300" stroke-width="3"/>
-      <path d="M130 90v300 M190 90v300 M250 90v300 M310 90v300 M370 90v300 M430 90v300 M90 150h380 M90 210h380 M90 270h380 M90 330h380"/>
-    </g>
-    <g stroke="#1b3a63" stroke-width="1"><path d="M90 86v-60 M130 86v-36 M190 86v-36 M250 86v-36 M310 86v-36 M370 86v-36 M430 86v-36 M470 86v-60 M90 62h380 M90 32h380 M86 90h-60 M86 390h-60 M48 90v300"/></g>
-    <g fill="#1b3a63" font-size="15" font-weight="bold" text-anchor="middle">
-      <text x="110" y="57" fill="#c9451a">400</text><text x="160" y="57">600</text><text x="220" y="57">600</text><text x="280" y="57">600</text><text x="340" y="57">600</text><text x="400" y="57">600</text><text x="450" y="57" fill="#c9451a">400</text>
-      <text x="280" y="27">3800</text>
-      <text x="40" y="245" transform="rotate(-90 40 245)">3000</text>
-    </g>
-    <text x="280" y="412" text-anchor="middle" font-size="15" fill="#637285">coupes hachurées : 2 colonnes de 5 dalles</text>
-    </g>
-  </svg>
-  <figcaption>Le calepin du plafond de 3800 × 3000, dalles de 600 × 600 (cotes en mm).</figcaption>
+  <h2>Le calepin dans les deux sens</h2>
+  <p>Un plafond a deux sens : la longueur et la largeur. Chaque sens a son propre calcul, celui de l'écran 3.</p>
+  <ol>
+    <li>Lisez les deux cotes de la pièce entre les faces finies : la face du doublage posé contre le mur, la face de la cloison.</li>
+    <li>Faites le calcul de répartition dans le premier sens.</li>
+    <li>Faites-le dans le second sens.</li>
+    <li>Écrivez chaque calepin retenu : coupe + nombre de dalles × 600 + coupe.</li>
+  </ol>
+  <div class="calc">
+    <h3>Exemple résolu : la salle de réunion, 3800 × 3600</h3>
+    <table class="doc">
+      <tr><th>Sens</th><th>Calcul</th><th>Calepin retenu</th></tr>
+      <tr><td>3800</td><td>6 dalles, reste 200 ; 100 + 100 : non ; on retire une dalle, 800 à répartir</td><td>400 + 5 × 600 + 400</td></tr>
+      <tr><td>3600</td><td>6 dalles, reste 0 : aucune coupe</td><td>6 × 600</td></tr>
+    </table>
   </div>
-  <p class="cle">Comptez sur le calepin. Dalles entières : 5 colonnes × 5 rangées = 25. Dalles coupées : 2 colonnes × 5 rangées = 10, chacune taillée dans une dalle. Total : 35 dalles, plus la casse (gare Plâtrerie 5).</p>
+  <p>Vérifiez les diagonales de la pièce avant de calepiner (relevé, gare 8). Une pièce dont les angles ne sont pas droits change les coupes le long du mur.
+  Quand un point impose sa position, par exemple une dalle centrée sur un luminaire, le calepin part de ce point.</p>
+</section>
+
+<section>
+  <h2>Dessiner le calepin à l'échelle</h2>
+  <p class="cle">Au 1/50, 1 mm sur le papier vaut 50 mm en vrai. Pour dessiner, divisez chaque cote réelle par 50.</p>
+  <ol>
+    <li>Convertissez chaque morceau : une dalle de 600 fait 600 ÷ 50 = 12 mm, une coupe de 400 fait 8 mm.</li>
+    <li>Tracez le cadre de la pièce, s'il n'est pas déjà dessiné.</li>
+    <li>Depuis le bord gauche, reportez à la règle la coupe, puis chaque dalle. Faites de même de haut en bas.</li>
+    <li>Hachurez les dalles coupées : tracez des traits obliques serrés dans leurs cases.</li>
+    <li>Écrivez les cotes réelles au-dessus du cadre : 400, 600…</li>
+    <li>Vérifiez : la somme des largeurs dessinées égale la largeur du cadre.</li>
+  </ol>
+  <div class="svgbox">
+    <svg viewBox="0 -5 110 96" width="600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemple : calepin du plafond de la salle de réunion au 1/50. Cadre de 76 sur 72 millimètres entre deux murs. 7 colonnes : une coupe de 400 hachurée à gauche, 5 dalles de 600, une coupe de 400 hachurée à droite. 6 rangées de 600. Cotes 3800 et 3600.">
+      <defs><pattern id="hcx" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="#c0392b" stroke-width=".3"/></pattern></defs>
+      <g font-family="Calibri, Carlito, sans-serif" font-size="5">
+      <rect x="20" y="16" width="8" height="72" fill="url(#hcx)"/><rect x="88" y="16" width="8" height="72" fill="url(#hcx)"/>
+      <path d="M28 16v72 M40 16v72 M52 16v72 M64 16v72 M76 16v72 M88 16v72 M20 28h76 M20 40h76 M20 52h76 M20 64h76 M20 76h76" stroke="#c0392b" stroke-width=".4" fill="none"/>
+      <rect x="20" y="16" width="76" height="72" fill="none" stroke="#000" stroke-width=".6"/>
+      <text x="17" y="54" text-anchor="end">mur</text><text x="98" y="54">mur</text>
+      <g stroke="#000" stroke-width=".3">
+        <line x1="20" y1="15" x2="20" y2="0"/><line x1="96" y1="15" x2="96" y2="0"/><line x1="20" y1="2" x2="96" y2="2"/>
+        <path d="M19 3l2-2 M95 3l2-2"/>
+        <line x1="28" y1="15" x2="28" y2="11"/><line x1="88" y1="15" x2="88" y2="11"/><line x1="40" y1="15" x2="40" y2="11"/><line x1="20" y1="12" x2="96" y2="12"/>
+        <line x1="19" y1="16" x2="3" y2="16"/><line x1="19" y1="88" x2="3" y2="88"/><line x1="6" y1="16" x2="6" y2="88"/>
+        <path d="M5 17l2-2 M5 89l2-2"/>
+      </g>
+      <text x="58" y="0.6" text-anchor="middle">3800</text>
+      <text x="24" y="10.6" text-anchor="middle" font-size="4.4" fill="#c0392b">400</text>
+      <text x="34" y="10.6" text-anchor="middle">600</text>
+      <text x="92" y="10.6" text-anchor="middle" font-size="4.4" fill="#c0392b">400</text>
+      <text x="4.6" y="52" text-anchor="middle" transform="rotate(-90 4.6 52)">3600</text>
+      </g>
+    </svg>
+  </div>
+  <div class="calc">
+    <h3>Exemple résolu : le dessin de la salle</h3>
+    <p>Cadre : 3800 ÷ 50 = 76 mm de large, 3600 ÷ 50 = 72 mm de haut.</p>
+    <p>Colonnes : 8 + 5 × 12 + 8 = 76 mm. Rangées : 6 × 12 = 72 mm. Les deux sommes tombent juste.</p>
+    <p>Le dessin de cet écran est agrandi pour la lecture. Sur votre feuille, au 1/50, le cadre mesure 76 × 72 mm.</p>
+  </div>
+  <p class="cle">Les cotes écrites sur le dessin sont les cotes réelles en mm : 400 et 600. Les 8 mm et 12 mm servent seulement à tracer à la règle.</p>
+</section>
+
+<section>
+  <h2>Compter sur le calepin</h2>
+  <p>Le calepin donne le quantitatif, la liste des quantités à commander. La méthode :</p>
+  <ol>
+    <li>Dalles entières : nombre de colonnes entières × nombre de rangées entières.</li>
+    <li>Dalles coupées : comptez les cases hachurées. Chacune se taille dans une dalle neuve.</li>
+    <li>Total : dalles entières + dalles coupées.</li>
+    <li>Contrôle : nombre de colonnes × nombre de rangées donne le même total.</li>
+  </ol>
+  <p>Avec la méthode de l'écran 3, chaque coupe mesure plus de 300. La chute qui reste mesure donc moins de 300 : elle ne sert pas pour une autre coupe. Comptez une dalle neuve par coupe.</p>
+  <div class="calc">
+    <h3>Exemple résolu : les dalles de la salle</h3>
+    <p>Dalles entières : 5 colonnes × 6 rangées = 30.</p>
+    <p>Dalles coupées : 2 colonnes × 6 rangées = 12.</p>
+    <p>Total : 30 + 12 = <strong>42 dalles</strong>, sans la casse. Contrôle : 7 colonnes × 6 rangées = 42.</p>
+  </div>
+  <p>La casse s'ajoute ensuite, en pourcentage (gare Plâtrerie 5).</p>
 </section>
 
 <section>
   <h2>De la feuille au sol : l'implantation</h2>
   <p>Implanter, c'est reporter le plan sur le chantier.</p>
   <ul>
-    <li><strong>La référence</strong> : l'implantation part d'une référence vérifiée, un mur contrôlé d'aplomb ou un axe tracé, et jamais d'un coin pris au jugé.</li>
+    <li><strong>La référence</strong> : l'implantation part d'une référence vérifiée, un mur contrôlé d'aplomb (bien vertical) ou un axe tracé. Un coin pris au jugé ne sert jamais de départ.</li>
     <li><strong>Le trait de niveau</strong> : une ligne horizontale tracée tout autour de la pièce, souvent à 1,00 m du sol fini. Les hauteurs se mesurent depuis elle.</li>
     <li><strong>Le cordeau</strong> : il trace les alignements des rails au sol et au plafond.</li>
   </ul>
-  <p class="cle">L'ordre du métier, en six étapes : vérifier la référence ; reporter les cotes du plan depuis elle ; tracer les alignements au cordeau ; tracer le trait de niveau ; contrôler les mesures et les diagonales ; puis seulement visser les rails. Une erreur de traçage se retrouve sur tout l'ouvrage.</p>
+  <p>L'ordre du métier pour une cloison, en six étapes :</p>
+  <ol>
+    <li>vérifier la référence (mur d'aplomb) ;</li>
+    <li>reporter les cotes du plan depuis la référence ;</li>
+    <li>tracer l'alignement au cordeau ;</li>
+    <li>tracer le trait de niveau ;</li>
+    <li>contrôler le traçage : mesures et diagonales ;</li>
+    <li>visser les rails.</li>
+  </ol>
+  <p>Les étapes 3 et 4 peuvent s'inverser. La référence vient toujours en premier, et le contrôle toujours avant le vissage : une erreur de traçage se retrouve sur tout l'ouvrage.</p>
+  <div class="calc">
+    <h3>Exemple résolu : implanter le plafond de la salle</h3>
+    <p>Un élève contrôle d'abord le mur de référence et les diagonales de la pièce.</p>
+    <p>Il trace le trait de niveau à 1,00 m du sol fini, tout autour.</p>
+    <p>Depuis ce trait, il reporte la hauteur du plafond fini, puis il trace au cordeau la ligne des cornières de rive, les profilés fixés au mur qui portent les dalles du bord.</p>
+    <p>Il contrôle la hauteur aux quatre coins. Ensuite seulement, il fixe les cornières.</p>
+    <p>Le plafond suit la même logique que la cloison : la référence d'abord, le contrôle avant la fixation.</p>
+  </div>
+</section>
+
+<section>
+  <h2>La méthode complète, du plan au traçage</h2>
+  <p>Le calepinage d'un plafond suit toujours le même ordre. Gardez cet écran sous les yeux pendant l'exercice.</p>
+  <table class="doc empile">
+    <tr><th>Étape</th><th>Geste</th><th>Écran</th></tr>
+    <tr><td data-l="Étape">1</td><td data-l="Geste">Répartir une longueur : division, reste, coupe d'au moins 300</td><td data-l="Écran">2 et 3</td></tr>
+    <tr><td data-l="Étape">2</td><td data-l="Geste">Lire les deux cotes et écrire le calepin de chaque sens</td><td data-l="Écran">4</td></tr>
+    <tr><td data-l="Étape">3</td><td data-l="Geste">Dessiner au 1/50 : ÷ 50, hachurer les coupes, coter</td><td data-l="Écran">5</td></tr>
+    <tr><td data-l="Étape">4</td><td data-l="Geste">Compter les dalles entières, les dalles coupées, le total</td><td data-l="Écran">6</td></tr>
+    <tr><td data-l="Étape">5</td><td data-l="Geste">Implanter : référence, report, cordeau, niveau, contrôle, pose</td><td data-l="Écran">7</td></tr>
+  </table>
+  <p>Écrivez chaque calcul en entier, avec son unité : 3800 − 3600 = 200 mm. Avec le calcul écrit, vous retrouvez vous-même une erreur.</p>
 </section>
 
 <section id="ecran-test">
@@ -132,6 +232,7 @@
   <h2>Terminus Plâtrerie 2</h2>
   <p>Répartir au demi-élément, dessiner le calepin, tracer depuis une référence : le travail du chantier commence sur le papier.</p>
   <p style="text-align:center;margin:22px 0">
+    <a class="tele" href="lecon.pdf" download>Télécharger la leçon papier (PDF)</a>
     <a class="tele" href="exercice.pdf" download>Télécharger l'exercice papier (PDF)</a>
   </p>
   <p class="cle">Pour l'enseignant, le corrigé est dans <a href="../../../bureau-etudes/documents-professeur.html">l'espace enseignant, sous code</a>. L'exercice fait répartir trois longueurs, calepiner le plafond du vestiaire (2600 × 3000, entre le doublage et la cloison C1), compter les dalles et remettre dans l'ordre les étapes d'une implantation.</p>
@@ -255,7 +356,7 @@
  }
 ]
 </script>
-<script src="../../moteur/gare.js"></script>
+<script src="../../moteur/gare.js?v=20261107"></script>
 <script src="../../moteur/marque.js" data-cartouche="BE" data-licence="cc-by-nc-nd" data-prototype defer></script>
 </body>
 </html>
