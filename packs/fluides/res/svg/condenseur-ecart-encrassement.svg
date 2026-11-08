@@ -42,7 +42,7 @@
 
   <!-- Batterie encrassée -->
   <g><rect x="615" y="120" width="530" height="380" rx="18" class="panel danger"/>
-    <text x="645" y="170" class="panel-title">Batterie encrassée — même charge</text>
+    <text x="645" y="170" class="panel-title">Batterie encrassée</text>
     <rect x="665" y="205" width="180" height="200" class="batt"/>
     <line x1="690" y1="205" x2="690" y2="405" class="ail sale"/><line x1="720" y1="205" x2="720" y2="405" class="ail sale"/>
     <line x1="750" y1="205" x2="750" y2="405" class="ail sale"/><line x1="780" y1="205" x2="780" y2="405" class="ail sale"/>
