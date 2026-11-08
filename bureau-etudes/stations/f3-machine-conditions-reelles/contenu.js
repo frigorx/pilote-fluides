@@ -497,7 +497,7 @@ BE.station({
     ],
     2: [
       { id: "n2-c", libelle: "Coefficient de correction du projet", unite: "", min: 0.982, max: 0.988, indice: "Ligne de la température du dehors du projet, colonne de celle du dedans (station F1). Au millième, tel qu’écrit dans le tableau." },
-      { id: "n2-min", libelle: "Puissance de repère à demander au moins", unite: "W", min: 6794, max: 7104, indice: "Relisez l’écran « Choisir sur la puissance au réel » : puissance de repère à demander = besoin ÷ C, arrondie au watt supérieur ; on divise, car la machine perd au réel. Le besoin est votre puissance de la station T8." },
+      { id: "n2-min", libelle: "Puissance de repère à demander au moins", unite: "W", min: 6793, max: 7103, indice: "Relisez l’écran « Choisir sur la puissance au réel » : puissance de repère à demander = besoin ÷ C, arrondie au watt supérieur ; on divise, car la machine perd au réel. Le besoin est votre puissance de la station T8." },
       { id: "n2-ret", libelle: "Puissance au réel de l’unité retenue", unite: "W", min: 7643, max: 8117, indice: "Relisez les écrans « Choisir sur la puissance au réel » et « Les limites de fonctionnement » : la plus petite unité qui couvre le besoin au réel ET dont la plage contient la pointe d’été. Sa puissance au réel, au watt." },
       { id: "n2-part", libelle: "Part du besoin couverte par l’unité retenue", unite: "%", min: 112.5, max: 119.5, indice: "Part = P réel ÷ besoin × 100, au dixième de %, pour l’unité retenue." },
       { id: "n2-pointe", libelle: "Puissance de l’unité retenue le jour de pointe", unite: "W", min: 7185, max: 7631, indice: "Puissance de l’unité retenue le jour de pointe : P repère × C, avec C lu à la ligne de la pointe d’été et à la colonne du dedans. Au watt." },

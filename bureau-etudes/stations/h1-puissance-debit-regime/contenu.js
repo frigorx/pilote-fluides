@@ -178,7 +178,7 @@ const EX = {
    {
     "nom": "Séjour-cuisine",
     "niveau": "rez-de-chaussée",
-    "phi": "1554"
+    "phi": "1567"
    },
    {
     "nom": "Entrée",
@@ -193,22 +193,22 @@ const EX = {
    {
     "nom": "Chambre 1",
     "niveau": "étage",
-    "phi": "433"
+    "phi": "437"
    },
    {
     "nom": "Chambre 2",
     "niveau": "étage",
-    "phi": "456"
+    "phi": "460"
    },
    {
     "nom": "Palier",
     "niveau": "étage",
-    "phi": "265"
+    "phi": "273"
    },
    {
     "nom": "Chambre 3",
     "niveau": "étage",
-    "phi": "226"
+    "phi": "194"
    },
    {
     "nom": "Salle d'eau",
@@ -308,12 +308,12 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "h1-n1-sejour", libelle: "Débit d’eau du séjour-cuisine", unite: "L/h", min: 286, max: 304, indice: "Relisez l’écran « La puissance de chaque émetteur » (Φ du local plus sa relance), puis l’écran « La puissance que l’eau transporte » : le débit est la puissance divisée par 1,16 × ΔT, avec ΔT = départ moins retour, pris dans le régime de la commande." },
-      { id: "h1-n1-circuit", libelle: "Débit d’eau du circuit", unite: "L/h", min: 660, max: 702, indice: "Relisez l’écran « Du besoin de chaque pièce au débit du circuit » : le circuit transporte la somme des débits des huit pièces, relance comprise. Contrôlez avec la somme des puissances divisée par 1,16 × ΔT." }
+      { id: "h1-n1-sejour", libelle: "Débit d’eau du séjour-cuisine", unite: "L/h", min: 288, max: 306, indice: "Relisez l’écran « La puissance de chaque émetteur » (Φ du local plus sa relance), puis l’écran « La puissance que l’eau transporte » : le débit est la puissance divisée par 1,16 × ΔT, avec ΔT = départ moins retour, pris dans le régime de la commande." },
+      { id: "h1-n1-circuit", libelle: "Débit d’eau du circuit", unite: "L/h", min: 659, max: 701, indice: "Relisez l’écran « Du besoin de chaque pièce au débit du circuit » : le circuit transporte la somme des débits des huit pièces, relance comprise. Contrôlez avec la somme des puissances divisée par 1,16 × ΔT." }
     ],
     2: [
       { id: "h1-n2-pac", libelle: "Débit d’eau de la pompe à chaleur, régime du projet", unite: "L/h", min: 669, max: 711, indice: "Relisez l’écran « Le débit de la pompe à chaleur » : la puissance à installer de la station T5, en W, divisée par 1,16 × ΔT du régime du projet." },
-      { id: "h1-n2-variante", libelle: "Débit d’eau du circuit au régime de la variante", unite: "L/h", min: 327, max: 349, indice: "Relisez l’écran « Le régime change le débit » : avec le régime de la variante, ΔT change, et le débit de chaque pièce avec lui. Additionnez les débits des huit pièces." }
+      { id: "h1-n2-variante", libelle: "Débit d’eau du circuit au régime de la variante", unite: "L/h", min: 328, max: 350, indice: "Relisez l’écran « Le régime change le débit » : avec le régime de la variante, ΔT change, et le débit de chaque pièce avec lui. Additionnez les débits des huit pièces." }
     ]
   },
   /*FOURCHETTES-FIN*/

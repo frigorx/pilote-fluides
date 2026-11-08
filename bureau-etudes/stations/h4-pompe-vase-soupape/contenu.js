@@ -272,8 +272,8 @@ const EX = {
  },
  "maison": {
   "Qd": "0,68",
-  "Hd": "2,24",
-  "qd": "681",
+  "Hd": "2,22",
+  "qd": "680",
   "dep": "45",
   "ret": "40",
   "troncons": [
@@ -495,12 +495,12 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "h4-n1-q", libelle: "Débit au point de fonctionnement de la pompe", unite: "m³/h", min: 0.7, max: 0.78, indice: "Relisez l’écran « Le point de fonctionnement » : tracez la courbe du réseau H = K × Q² par le point demandé, puis lisez le débit là où elle coupe la courbe de la vitesse retenue, la plus petite qui donne au moins le débit demandé." },
+      { id: "h4-n1-q", libelle: "Débit au point de fonctionnement de la pompe", unite: "m³/h", min: 0.71, max: 0.79, indice: "Relisez l’écran « Le point de fonctionnement » : tracez la courbe du réseau H = K × Q² par le point demandé, puis lisez le débit là où elle coupe la courbe de la vitesse retenue, la plus petite qui donne au moins le débit demandé." },
       { id: "h4-n1-vn", libelle: "Volume minimal du vase, avant le choix dans la série", unite: "L", min: 0.8, max: 0.86, indice: "Relisez l’écran « Le volume du vase » : Ve = e × volume d’eau ; Vn = Ve × (3 + 1) ÷ (3 − pression de gonflage), pressions en bar. Résultat en litres, au centième, avant de choisir le vase de la série." },
       { id: "h4-n1-pr", libelle: "Pression de remplissage au manomètre", unite: "bar", min: 0.79, max: 0.84, indice: "Relisez l’écran « Remplissage et soupape » : hauteur statique ÷ 10 + 0,5 bar, la hauteur statique allant du raccord du vase au haut du radiateur le plus haut." }
     ],
     2: [
-      { id: "h4-n2-q", libelle: "Débit au point de fonctionnement de la pompe", unite: "m³/h", min: 0.7, max: 0.78, indice: "Relisez l’écran « Le point de fonctionnement » : tracez la courbe du réseau H = K × Q² par le point demandé, puis lisez le débit là où elle coupe la courbe de la vitesse retenue, la plus petite qui donne au moins le débit demandé." },
+      { id: "h4-n2-q", libelle: "Débit au point de fonctionnement de la pompe", unite: "m³/h", min: 0.71, max: 0.79, indice: "Relisez l’écran « Le point de fonctionnement » : tracez la courbe du réseau H = K × Q² par le point demandé, puis lisez le débit là où elle coupe la courbe de la vitesse retenue, la plus petite qui donne au moins le débit demandé." },
       { id: "h4-n2-p", libelle: "Puissance absorbée par la pompe", unite: "W", min: 27, max: 31, indice: "Relisez l’écran « La puissance absorbée et le rendement » : lisez la courbe de puissance de la vitesse retenue au débit du point de fonctionnement, à l’unité." },
       { id: "h4-n2-v", libelle: "Volume d’eau de l’installation", unite: "L", min: 52, max: 55.3, indice: "Relisez l’écran « Le volume d’eau de l’installation » : tubes (S × longueur aller-retour ÷ 1 000), radiateurs (5,0 L par mètre), pompe à chaleur. Résultat en litres, au centième." },
       { id: "h4-n2-vn", libelle: "Volume minimal du vase, avant le choix dans la série", unite: "L", min: 0.8, max: 0.86, indice: "Relisez l’écran « Le volume du vase » : Ve = e × volume d’eau ; Vn = Ve × (3 + 1) ÷ (3 − pression de gonflage), pressions en bar. Résultat en litres, au centième, avant de choisir le vase de la série." }

@@ -1,11 +1,12 @@
 {
   "meta": {
     "nom": "Maison d'étude BE",
-    "version": 1,
-    "date": "2026-10-30",
+    "version": 2,
+    "date": "2026-11-08",
     "zone": "H3",
     "ville": "Marseille",
     "altitude_m": 0,
+    "altitudes": "±0,00 = sol fini du rez-de-chaussée. Altitudes en mètres.",
     "unites": "mètres et mètres carrés, cotes à deux décimales",
     "origine": "Maison fictive écrite par inerWeb pour le réseau Bureau d'études. Aucune donnée de tiers.",
     "orientation": "Le nord est en haut de tous les plans. Les orientations S, N, E, O sont celles de la face extérieure du mur. Le séjour est au sud, la rue et l'entrée au nord.",
@@ -18,7 +19,10 @@
       "Le plancher intermédiaire et les cloisons entre pièces chauffées ne sont pas déperditifs.",
       "Le volume d'une pièce est sa surface en cotes intérieures multipliée par la hauteur sous plafond. L'épaisseur des planchers n'est pas comptée.",
       "La trémie d'escalier est rattachée au palier pour les parois et le volume. Elle est exclue de la surface habitable et du plancher du palier. Le plafond au-dessus de la trémie compte.",
-      "Les portes intérieures ne sont pas relevées."
+      "Les portes intérieures ne sont pas relevées.",
+      "Les portes intérieures (liste portes_interieures) et le passage libre entre le palier et le couloir sont dessinés sur les plans seulement : ils n'entrent ni dans les métrés, ni dans les déperditions, ni dans aucun calcul.",
+      "Le couloir de l'étage est une circulation chauffée rattachée au palier : c'est le second rectangle du palier, compté avec lui dans tous les tableaux.",
+      "Les hauteurs de toiture, du toit du garage, du terrain et les coupes servent aux plans et aux coupes. Le modèle thermique garde le plafond sous combles perdus et le garage non chauffé."
     ]
   },
   "batiment": {
@@ -27,7 +31,9 @@
     "epaisseur_cloisons_m": 0.10,
     "empreinte_RDC": [[0, 0], [10.90, 0], [10.90, 8.00], [3.30, 8.00], [3.30, 6.00], [0, 6.00]],
     "empreinte_ETG": [[3.30, 0], [10.90, 0], [10.90, 8.00], [3.30, 8.00]],
-    "toiture": { "type": "combles perdus non chauffés, deux pentes", "egout_m": 5.40, "faitage_m": 6.60, "debord_m": 0.40 },
+    "toiture": { "type": "combles perdus non chauffés, deux pentes", "egout_m": 5.40, "faitage_m": 6.60, "debord_m": 0.40, "epaisseur_m": 0.20,
+      "faitage": "nord-sud, au milieu de l'étage (x = 7,10 m)",
+      "description": "Faîtage nord-sud à +6,60 : pignons au nord et au sud, égouts à l'est et à l'ouest, dessus du toit à +5,40 à la face des murs (coupe A-A)." },
     "escalier": { "niveau_bas": "RDC", "niveau_haut": "ETG", "x": 5.10, "y": 5.50, "longueur": 1.20, "largeur": 2.20, "sens": "monte vers le sud, de l'entrée vers le palier" }
   },
   "niveaux": [
@@ -56,10 +62,10 @@
     { "id": "CH2", "nom": "Chambre 2", "niveau": "ETG", "chauffee": true,
       "rectangles": [ { "x": 7.10, "y": 0.30, "longueur": 3.50, "largeur": 3.60 } ] },
     { "id": "PAL", "nom": "Palier", "niveau": "ETG", "chauffee": true,
-      "rectangles": [ { "x": 3.60, "y": 4.00, "longueur": 2.70, "largeur": 3.70 } ],
+      "rectangles": [ { "x": 3.60, "y": 4.00, "longueur": 2.70, "largeur": 3.70 }, { "x": 6.40, "y": 4.00, "longueur": 2.30, "largeur": 0.90, "nom": "Couloir" } ],
       "tremie": { "x": 5.10, "y": 5.50, "longueur": 1.20, "largeur": 2.20 } },
     { "id": "CH3", "nom": "Chambre 3", "niveau": "ETG", "chauffee": true,
-      "rectangles": [ { "x": 6.40, "y": 4.00, "longueur": 2.30, "largeur": 3.70 } ] },
+      "rectangles": [ { "x": 6.40, "y": 5.00, "longueur": 2.30, "largeur": 2.70 } ] },
     { "id": "SDE", "nom": "Salle d'eau", "niveau": "ETG", "chauffee": true,
       "rectangles": [ { "x": 8.80, "y": 4.00, "longueur": 1.80, "largeur": 3.70 } ] }
   ],
@@ -88,10 +94,12 @@
     { "id": "C02", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["SEJ", "ENT", "WC"], "segment": { "x1": 7.65, "y1": 4.50, "x2": 7.65, "y2": 7.70 } },
     { "id": "C03", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["ENT", "WC"], "segment": { "x1": 6.35, "y1": 6.00, "x2": 6.35, "y2": 7.70 } },
     { "id": "C04", "niveau": "RDC", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["ENT", "WC"], "segment": { "x1": 6.40, "y1": 6.05, "x2": 7.60, "y2": 6.05 } },
-    { "id": "C05", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH1", "CH2", "PAL", "CH3", "SDE"], "segment": { "x1": 3.60, "y1": 3.95, "x2": 10.60, "y2": 3.95 } },
+    { "id": "C05", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH1", "CH2", "PAL", "SDE"], "segment": { "x1": 3.60, "y1": 3.95, "x2": 10.60, "y2": 3.95 } },
     { "id": "C06", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH1", "CH2"], "segment": { "x1": 7.05, "y1": 0.30, "x2": 7.05, "y2": 3.90 } },
-    { "id": "C07", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["PAL", "CH3"], "segment": { "x1": 6.35, "y1": 4.00, "x2": 6.35, "y2": 7.70 } },
-    { "id": "C08", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["CH3", "SDE"], "segment": { "x1": 8.75, "y1": 4.00, "x2": 8.75, "y2": 7.70 } }
+    { "id": "C07", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["PAL", "CH3"], "segment": { "x1": 6.35, "y1": 4.00, "x2": 6.35, "y2": 7.70 },
+      "passage": { "note": "baie libre, sans porte, entre le palier et le couloir", "x0": 6.30, "x1": 6.40, "y0": 4.00, "y1": 4.90, "hauteur_m": 2.04 } },
+    { "id": "C08", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["PAL", "CH3", "SDE"], "segment": { "x1": 8.75, "y1": 4.00, "x2": 8.75, "y2": 7.70 } },
+    { "id": "C09", "niveau": "ETG", "type": "cloison", "epaisseur_m": 0.10, "pieces": ["PAL", "CH3"], "segment": { "x1": 6.40, "y1": 4.95, "x2": 8.70, "y2": 4.95 } }
   ],
   "menuiseries": [
     { "repere": "PF1", "type": "Porte-fenêtre 2 vantaux", "niveau": "RDC", "piece": "SEJ", "mur": "M01", "orientation": "S", "largeur_m": 2.40, "hauteur_m": 2.15, "allege_m": 0.00, "decalage_m": 0.50 },
@@ -114,6 +122,35 @@
     { "repere": "F14", "type": "Fenêtre oscillo-battante", "niveau": "ETG", "piece": "SDE", "mur": "M17", "orientation": "N", "largeur_m": 0.60, "hauteur_m": 0.60, "allege_m": 1.40, "decalage_m": 0.60 },
     { "repere": "F15", "type": "Fenêtre 1 vantail", "niveau": "ETG", "piece": "SDE", "mur": "M18", "orientation": "E", "largeur_m": 0.80, "hauteur_m": 1.00, "allege_m": 1.10, "decalage_m": 1.45 }
   ],
+  "portes_interieures": {
+    "note": "Dessin seulement, comme le livre « Lire les plans » (dépliant n° 1). Position : décalage depuis le début de la cloison (plus petite abscisse ou ordonnée de son segment). Charnière : bout « min » ou « max » de la baie. La porte s'ouvre vers la pièce « vers ».",
+    "hauteur_m": 2.04,
+    "liste": [
+      { "repere": "PI1", "niveau": "RDC", "cloison": "C01", "de": "ENT", "vers": "SEJ", "largeur_m": 0.80, "decalage_m": 1.30, "charniere": "min" },
+      { "repere": "PI2", "niveau": "RDC", "cloison": "C04", "de": "WC", "vers": "ENT", "largeur_m": 0.70, "decalage_m": 0.40, "charniere": "max" },
+      { "repere": "PI3", "niveau": "ETG", "cloison": "C05", "de": "PAL", "vers": "CH1", "largeur_m": 0.80, "decalage_m": 0.20, "charniere": "min" },
+      { "repere": "PI4", "niveau": "ETG", "cloison": "C09", "de": "PAL", "vers": "CH3", "largeur_m": 0.80, "decalage_m": 0.10, "charniere": "min" },
+      { "repere": "PI5", "niveau": "ETG", "cloison": "C05", "de": "PAL", "vers": "CH2", "largeur_m": 0.80, "decalage_m": 4.00, "charniere": "max" },
+      { "repere": "PI6", "niveau": "ETG", "cloison": "C08", "de": "PAL", "vers": "SDE", "largeur_m": 0.80, "decalage_m": 0.05, "charniere": "min" }
+    ]
+  },
+  "garage": {
+    "toit": "toit plat (plan E.1 du cahier Étanchéité) : dalle de 0,20 de +2,50 à +2,70, acrotère de 0,30 × 0,50, dessus à +3,20",
+    "dalle_bas_m": 2.50, "dalle_haut_m": 2.70,
+    "acrotere": { "epaisseur_m": 0.30, "hauteur_au_dessus_dalle_m": 0.50, "dessus_m": 3.20, "cotes": ["nord", "sud", "ouest"] },
+    "entree_eaux_pluviales": { "x": 0.55, "y": 0.55, "angle": "sud-ouest" }
+  },
+  "terrain": { "altitude_tn_maison_m": -0.15, "altitude_tn_rue_m": -0.30 },
+  "parcelle": {
+    "comme": "plan de masse du BE, 30/10/2026",
+    "largeur_m": 30.00, "profondeur_m": 24.00, "maison_depuis_limite_ouest_m": 8.00, "maison_depuis_limite_sud_m": 7.00,
+    "rue": "au nord", "nom_rue": "rue des Compagnons (nom inventé)",
+    "allee_voiture": { "x": 0.60, "largeur_m": 2.40 }, "allee_pietons": { "x": 3.90, "largeur_m": 0.90 }
+  },
+  "coupes": {
+    "A-A": { "plan": "y", "valeur_m": 2.40, "regard": "nord" },
+    "B-B": { "plan": "x", "valeur_m": 8.20, "regard": "est" }
+  },
   "planchers": [
     { "id": "PB1", "type": "bas_terre_plein", "nom": "Plancher bas sur terre-plein", "niveau": "RDC", "pieces": ["SEJ", "ENT", "WC"], "epaisseur_m": 0.20, "deperditif": true },
     { "id": "PI1", "type": "intermediaire", "nom": "Plancher intermédiaire", "entre": ["RDC", "ETG"], "epaisseur_m": 0.20, "deperditif": false },

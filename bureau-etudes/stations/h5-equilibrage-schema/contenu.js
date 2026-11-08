@@ -248,8 +248,8 @@ const EX = {
     "id": "CH1",
     "nom": "Chambre 1",
     "branche": "Étage",
-    "q": "82",
-    "dp": "9761"
+    "q": "83",
+    "dp": "9640"
    },
    {
     "n": "5",
@@ -257,23 +257,23 @@ const EX = {
     "nom": "Chambre 2",
     "branche": "Étage",
     "q": "87",
-    "dp": "11750"
+    "dp": "11602"
    },
    {
     "n": "6",
     "id": "PAL",
     "nom": "Palier",
     "branche": "Étage",
-    "q": "50",
-    "dp": "7993"
+    "q": "52",
+    "dp": "7865"
    },
    {
     "n": "7",
     "id": "CH3",
     "nom": "Chambre 3",
     "branche": "Étage",
-    "q": "43",
-    "dp": "8324"
+    "q": "37",
+    "dp": "7962"
    },
    {
     "n": "8",
@@ -281,23 +281,23 @@ const EX = {
     "nom": "Salle d'eau",
     "branche": "Étage",
     "q": "37",
-    "dp": "8270"
+    "dp": "8122"
    },
    {
     "n": "9",
     "id": "SEJ1",
     "nom": "Séjour 1",
     "branche": "Rez-de-chaussée",
-    "q": "147,5",
-    "dp": "8572"
+    "q": "148,5",
+    "dp": "8620"
    },
    {
     "n": "10",
     "id": "SEJ2",
     "nom": "Séjour 2",
     "branche": "Rez-de-chaussée",
-    "q": "147,5",
-    "dp": "7303"
+    "q": "148,5",
+    "dp": "7339"
    },
    {
     "n": "11",
@@ -305,7 +305,7 @@ const EX = {
     "nom": "Entrée",
     "branche": "Rez-de-chaussée",
     "q": "76",
-    "dp": "5341"
+    "dp": "5353"
    },
    {
     "n": "12",
@@ -313,14 +313,14 @@ const EX = {
     "nom": "WC",
     "branche": "Rez-de-chaussée",
     "q": "11",
-    "dp": "3700"
+    "dp": "3712"
    }
   ],
   "pac": "4,0",
   "V": "53,66",
   "pompe": {
    "v": "V2",
-   "Q": "0,74",
+   "Q": "0,75",
    "Qd": "0,68"
   }
  }
@@ -421,13 +421,13 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "h5-n1-dp", libelle: "Perte de charge à dissiper sur la ligne de l’entrée", unite: "Pa", min: 6216, max: 6602, indice: "Relisez l’écran « La perte de charge à dissiper » : l’écart se prend au circuit le plus défavorisé de toute la maison, pas à celui du niveau. Résultat en pascals, à l’unité." },
-      { id: "h5-n1-kv", libelle: "Kv de réglage du té de la chambre 1", unite: "", min: 0.564, max: 0.6, indice: "Relisez l’écran « Le Kv de réglage » : q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), Kv = q ÷ √Δp, au millième." },
+      { id: "h5-n1-dp", libelle: "Perte de charge à dissiper sur la ligne de l’entrée", unite: "Pa", min: 6061, max: 6437, indice: "Relisez l’écran « La perte de charge à dissiper » : l’écart se prend au circuit le plus défavorisé de toute la maison, pas à celui du niveau. Résultat en pascals, à l’unité." },
+      { id: "h5-n1-kv", libelle: "Kv de réglage du té de la chambre 1", unite: "", min: 0.574, max: 0.61, indice: "Relisez l’écran « Le Kv de réglage » : q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), Kv = q ÷ √Δp, au millième." },
       { id: "h5-n1-ballon", libelle: "Volume d’eau qui manque, avant le choix du ballon", unite: "L", min: 25.54, max: 27.14, indice: "Relisez l’écran « Le ballon tampon » : 20 L par kW de pompe à chaleur, moins le volume d’eau de l’installation (station H4). Résultat en litres, au centième, avant de choisir le ballon de la série." }
     ],
     2: [
-      { id: "h5-n2-kv-sej", libelle: "Kv de réglage du té du séjour 2", unite: "", min: 0.678, max: 0.72, indice: "Relisez l’écran « Le Kv de réglage » : q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), Kv = q ÷ √Δp, au millième." },
-      { id: "h5-n2-kv-pal", libelle: "Kv de réglage du té du palier", unite: "", min: 0.25, max: 0.266, indice: "Relisez l’écran « Le Kv de réglage » : q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), Kv = q ÷ √Δp, au millième." },
+      { id: "h5-n2-kv-sej", libelle: "Kv de réglage du té du séjour 2", unite: "", min: 0.697, max: 0.741, indice: "Relisez l’écran « Le Kv de réglage » : q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), Kv = q ÷ √Δp, au millième." },
+      { id: "h5-n2-kv-pal", libelle: "Kv de réglage du té du palier", unite: "", min: 0.26, max: 0.278, indice: "Relisez l’écran « Le Kv de réglage » : q en m³/h (L/h ÷ 1 000), Δp à dissiper en bar (Pa ÷ 100 000), Kv = q ÷ √Δp, au millième." },
       { id: "h5-n2-ballon", libelle: "Volume d’eau qui manque, avant le choix du ballon", unite: "L", min: 25.54, max: 27.14, indice: "Relisez l’écran « Le ballon tampon » : 20 L par kW de pompe à chaleur, moins le volume d’eau de l’installation (station H4). Résultat en litres, au centième, avant de choisir le ballon de la série." }
     ]
   },

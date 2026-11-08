@@ -319,7 +319,7 @@ const EX = {
     "n": "4",
     "nom": "Chambre 1",
     "parcours": "du palier à la fenêtre sud",
-    "q": "82",
+    "q": "83",
     "L": "4,5",
     "sing": "ligne de radiateur, 6 coudes"
    },
@@ -335,7 +335,7 @@ const EX = {
     "n": "6",
     "nom": "Palier",
     "parcours": "sous la fenêtre ouest du palier",
-    "q": "50",
+    "q": "52",
     "L": "2,0",
     "sing": "ligne de radiateur, 4 coudes"
    },
@@ -343,7 +343,7 @@ const EX = {
     "n": "7",
     "nom": "Chambre 3",
     "parcours": "du palier à la fenêtre nord",
-    "q": "43",
+    "q": "37",
     "L": "6,5",
     "sing": "ligne de radiateur, 6 coudes"
    },
@@ -359,7 +359,7 @@ const EX = {
     "n": "9",
     "nom": "Séjour 1",
     "parcours": "sous la fenêtre sud du séjour",
-    "q": "147,5 = 295 ÷ 2 (H2)",
+    "q": "148,5 = 297 ÷ 2 (H2)",
     "L": "9,0",
     "sing": "ligne de radiateur, 8 coudes"
    },
@@ -367,7 +367,7 @@ const EX = {
     "n": "10",
     "nom": "Séjour 2",
     "parcours": "sous la fenêtre est de la cuisine",
-    "q": "147,5 = 295 ÷ 2 (H2)",
+    "q": "148,5 = 297 ÷ 2 (H2)",
     "L": "6,0",
     "sing": "ligne de radiateur, 6 coudes"
    },
@@ -487,12 +487,12 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "h3-n1-t3", libelle: "Perte de charge du tronçon 3, branche de l’étage", unite: "Pa", min: 5957, max: 6327, indice: "Relisez l’écran « Le circuit d’un émetteur » : perte linéaire = R × longueur aller-retour, avec R = R à 100 L/h × (débit ÷ 100) puissance 1,75 ; perte singulière = Σζ × ρv²/2 ; le tronçon 3 porte le débit de toute la branche de l’étage." },
-      { id: "h3-n1-circuit", libelle: "Perte de charge du circuit le plus défavorisé de l’étage", unite: "kPa", min: 11.39, max: 12.11, indice: "Relisez l’écran « Le circuit le plus défavorisé » : additionnez le tronçon commun, la branche de l’étage et la ligne du radiateur ; prenez le plus grand des cinq circuits de l’étage. Donnez le résultat en kPa (Pa ÷ 1000)." }
+      { id: "h3-n1-t3", libelle: "Perte de charge du tronçon 3, branche de l’étage", unite: "Pa", min: 5814, max: 6174, indice: "Relisez l’écran « Le circuit d’un émetteur » : perte linéaire = R × longueur aller-retour, avec R = R à 100 L/h × (débit ÷ 100) puissance 1,75 ; perte singulière = Σζ × ρv²/2 ; le tronçon 3 porte le débit de toute la branche de l’étage." },
+      { id: "h3-n1-circuit", libelle: "Perte de charge du circuit le plus défavorisé de l’étage", unite: "kPa", min: 11.25, max: 11.96, indice: "Relisez l’écran « Le circuit le plus défavorisé » : additionnez le tronçon commun, la branche de l’étage et la ligne du radiateur ; prenez le plus grand des cinq circuits de l’étage. Donnez le résultat en kPa (Pa ÷ 1000)." }
     ],
     2: [
-      { id: "h3-n2-rdc", libelle: "Perte de charge du circuit le plus défavorisé du rez-de-chaussée", unite: "kPa", min: 8.31, max: 8.83, indice: "Relisez l’écran « Le circuit le plus défavorisé » : pour chaque radiateur du rez-de-chaussée, tronçon commun + branche du rez-de-chaussée + sa ligne. Le plus grand, en kPa." },
-      { id: "h3-n2-hmt", libelle: "Hauteur manométrique à fournir par la pompe", unite: "m", min: 2.17, max: 2.31, indice: "Relisez l’écran « La hauteur manométrique » : le circuit le plus défavorisé de toute la maison, plus la pompe à chaleur, en pascals, divisé par ρ × g = 990 × 9,81. Résultat en mètres, au centième." }
+      { id: "h3-n2-rdc", libelle: "Perte de charge du circuit le plus défavorisé du rez-de-chaussée", unite: "kPa", min: 8.36, max: 8.88, indice: "Relisez l’écran « Le circuit le plus défavorisé » : pour chaque radiateur du rez-de-chaussée, tronçon commun + branche du rez-de-chaussée + sa ligne. Le plus grand, en kPa." },
+      { id: "h3-n2-hmt", libelle: "Hauteur manométrique à fournir par la pompe", unite: "m", min: 2.15, max: 2.29, indice: "Relisez l’écran « La hauteur manométrique » : le circuit le plus défavorisé de toute la maison, plus la pompe à chaleur, en pascals, divisé par ρ × g = 990 × 9,81. Résultat en mètres, au centième." }
     ]
   },
   /*FOURCHETTES-FIN*/

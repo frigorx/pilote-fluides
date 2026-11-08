@@ -10,7 +10,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-D0-corrige-N1.pdf",
-   "taille": 175334
+   "taille": 170962
   },
   {
    "id": "d002",
@@ -19,7 +19,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-D0-corrige-N2.pdf",
-   "taille": 260366
+   "taille": 259987
   },
   {
    "id": "d003",
@@ -64,7 +64,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-T1-corrige-N1.pdf",
-   "taille": 277555
+   "taille": 263486
   },
   {
    "id": "d008",
@@ -73,7 +73,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T1-corrige-N2.pdf",
-   "taille": 275760
+   "taille": 275808
   },
   {
    "id": "d009",
@@ -109,7 +109,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T3-corrige-N2.pdf",
-   "taille": 238956
+   "taille": 238961
   },
   {
    "id": "d013",
@@ -118,7 +118,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-T4-corrige-N1.pdf",
-   "taille": 153992
+   "taille": 152721
   },
   {
    "id": "d014",
@@ -127,7 +127,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T4-corrige-N2.pdf",
-   "taille": 175020
+   "taille": 172305
   },
   {
    "id": "d015",
@@ -136,7 +136,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-T5-corrige-N1.pdf",
-   "taille": 242900
+   "taille": 243145
   },
   {
    "id": "d016",
@@ -145,7 +145,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T5-corrige-N2.pdf",
-   "taille": 235194
+   "taille": 234776
   },
   {
    "id": "d017",
@@ -181,7 +181,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T7-corrige-N2.pdf",
-   "taille": 238194
+   "taille": 237904
   },
   {
    "id": "d021",
@@ -199,7 +199,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T8-corrige-N2.pdf",
-   "taille": 265149
+   "taille": 269752
   },
   {
    "id": "d023",
@@ -217,7 +217,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-T9-corrige-N2.pdf",
-   "taille": 228505
+   "taille": 234198
   },
   {
    "id": "d025",
@@ -244,7 +244,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-A2-corrige-N1.pdf",
-   "taille": 245963
+   "taille": 246992
   },
   {
    "id": "d028",
@@ -253,7 +253,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-A2-corrige-N2.pdf",
-   "taille": 235752
+   "taille": 235715
   },
   {
    "id": "d029",
@@ -262,7 +262,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-A3-corrige-N1.pdf",
-   "taille": 273683
+   "taille": 273855
   },
   {
    "id": "d030",
@@ -271,7 +271,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-A3-corrige-N2.pdf",
-   "taille": 238048
+   "taille": 238060
   },
   {
    "id": "d031",
@@ -334,7 +334,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-H1-corrige-N1.pdf",
-   "taille": 234937
+   "taille": 235060
   },
   {
    "id": "d038",
@@ -343,7 +343,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-H1-corrige-N2.pdf",
-   "taille": 220473
+   "taille": 220460
   },
   {
    "id": "d039",
@@ -352,7 +352,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-H2-corrige-N1.pdf",
-   "taille": 237350
+   "taille": 237523
   },
   {
    "id": "d040",
@@ -361,7 +361,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-H2-corrige-N2.pdf",
-   "taille": 221806
+   "taille": 221710
   },
   {
    "id": "d041",
@@ -370,7 +370,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-H3-corrige-N1.pdf",
-   "taille": 249076
+   "taille": 249084
   },
   {
    "id": "d042",
@@ -379,7 +379,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-H3-corrige-N2.pdf",
-   "taille": 225055
+   "taille": 225051
   },
   {
    "id": "d043",
@@ -388,7 +388,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-H4-corrige-N1.pdf",
-   "taille": 237758
+   "taille": 238021
   },
   {
    "id": "d044",
@@ -397,7 +397,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-H4-corrige-N2.pdf",
-   "taille": 258080
+   "taille": 258323
   },
   {
    "id": "d045",
@@ -406,7 +406,7 @@
    "titre": "Corrigé de la feuille, niveau 1",
    "format": "pdf",
    "fichier": "BE-H5-corrige-N1.pdf",
-   "taille": 244349
+   "taille": 244433
   },
   {
    "id": "d046",
@@ -415,7 +415,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-H5-corrige-N2.pdf",
-   "taille": 238351
+   "taille": 238431
   },
   {
    "id": "d047",
@@ -451,7 +451,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-F1-corrige-N2.pdf",
-   "taille": 247754
+   "taille": 250130
   },
   {
    "id": "d051",
@@ -469,7 +469,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-F2-corrige-N2.pdf",
-   "taille": 352277
+   "taille": 352274
   },
   {
    "id": "d053",
@@ -496,7 +496,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-F3-corrige-N2.pdf",
-   "taille": 225012
+   "taille": 225017
   },
   {
    "id": "d056",
@@ -514,7 +514,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-F4-corrige-N2.pdf",
-   "taille": 238797
+   "taille": 239349
   },
   {
    "id": "d058",
@@ -604,7 +604,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-R4-corrige-N2.pdf",
-   "taille": 231822
+   "taille": 236443
   },
   {
    "id": "d068",
@@ -631,7 +631,7 @@
    "titre": "Corrigé de la feuille, niveau 2",
    "format": "pdf",
    "fichier": "BE-R5-corrige-N2.pdf",
-   "taille": 212304
+   "taille": 212296
   },
   {
    "id": "d071",

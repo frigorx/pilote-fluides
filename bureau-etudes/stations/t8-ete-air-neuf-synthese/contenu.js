@@ -341,8 +341,8 @@ BE.station({
       { id: "n1-p", libelle: "Puissance frigorifique du bureau à son heure de pointe, sensible et latent", unite: "W", min: 1104, max: 1150, indice: "Relisez l’écran « La somme heure par heure » : une ligne par heure, soleil + parois + internes + air neuf + latent, puis le plus grand total. Le bureau a sa propre heure de pointe." }
     ],
     2: [
-      { id: "n2-sans", libelle: "Puissance frigorifique sans simultanéité, somme des maximums des pièces", unite: "W", min: 7860, max: 8348, indice: "Relisez l’écran « La simultanéité » : pour chaque pièce, son plus grand total, à sa propre heure de pointe (station T6), puis la somme des huit pièces." },
-      { id: "n2-avec", libelle: "Puissance frigorifique de la machine, avec simultanéité", unite: "W", min: 6589, max: 6997, indice: "Relisez l’écran « La simultanéité » : la somme de la maison heure par heure, le plus grand total, puis les occupants comptés une seule fois." },
+      { id: "n2-sans", libelle: "Puissance frigorifique sans simultanéité, somme des maximums des pièces", unite: "W", min: 7859, max: 8347, indice: "Relisez l’écran « La simultanéité » : pour chaque pièce, son plus grand total, à sa propre heure de pointe (station T6), puis la somme des huit pièces." },
+      { id: "n2-avec", libelle: "Puissance frigorifique de la machine, avec simultanéité", unite: "W", min: 6588, max: 6996, indice: "Relisez l’écran « La simultanéité » : la somme de la maison heure par heure, le plus grand total, puis les occupants comptés une seule fois." },
       { id: "n2-lat", libelle: "Latent de la machine, avec simultanéité", unite: "W", min: 346, max: 368, indice: "Latent de la machine : occupants (station T7) et air neuf des pièces principales, puis les personnes comptées en trop retirées." }
     ]
   },

@@ -188,10 +188,10 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "n1-sej", libelle: "Φv du séjour-cuisine (air neuf)", unite: "W", min: 398, max: 424, indice: "Relisez l’écran « Quel débit retenir », puis « Partager le débit entre les pièces » : la somme des volumes est celle des quatre pièces principales seulement. Contrôlez ΔT et la formule à l’écran « La formule de l’air »." }
+      { id: "n1-sej", libelle: "Φv du séjour-cuisine (air neuf)", unite: "W", min: 411, max: 437, indice: "Relisez l’écran « Quel débit retenir », puis « Partager le débit entre les pièces » : la somme des volumes est celle des quatre pièces principales seulement. Contrôlez ΔT et la formule à l’écran « La formule de l’air »." }
     ],
     2: [
-      { id: "n2-ch1", libelle: "Φv de la chambre 1 (air neuf)", unite: "W", min: 126, max: 134, indice: "Relisez l’écran « Partager le débit entre les pièces » : seules les pièces principales reçoivent l’air neuf, et la chambre 1 n’en reçoit que sa part." },
+      { id: "n2-ch1", libelle: "Φv de la chambre 1 (air neuf)", unite: "W", min: 129, max: 139, indice: "Relisez l’écran « Partager le débit entre les pièces » : seules les pièces principales reçoivent l’air neuf, et la chambre 1 n’en reçoit que sa part." },
       { id: "n2-maison", libelle: "Φv de la maison, somme des pièces", unite: "W", min: 742, max: 788, indice: "Relisez l’écran « Quel débit retenir » : le débit permanent, pas la pointe. Puis l’écran « La formule de l’air »." },
       { id: "n2-df", libelle: "Φv de la maison en double flux", unite: "W", min: 317, max: 337, indice: "Relisez l’écran « Double flux et infiltrations » : 1 − η sur le débit soufflé, les infiltrations ajoutées sans échangeur." }
     ]

@@ -4,9 +4,10 @@
 <g><text x="90" y="57" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 90 57)">inerWeb, by inerweb.fr</text><text x="40" y="31" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 40 31)">inerWeb, by inerweb.fr</text><text x="140" y="85" font-family="Trebuchet MS, Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1b3a63" fill-opacity="0.07" transform="rotate(-18 140 85)">inerWeb, by inerweb.fr</text></g>
 <text x="3.00" y="5.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="start" fill="#1b3a63">Maison : les gaines dans les combles, moitié nord de l’étage</text>
 <rect x="3.00" y="9.00" width="48.60" height="66.60" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<rect x="53.40" y="59.40" width="41.40" height="16.20" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
 <text x="38.10" y="69.30" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Palier</text>
-<rect x="53.40" y="9.00" width="41.40" height="66.60" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
-<text x="76.80" y="71.10" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Chambre 3</text>
+<rect x="53.40" y="9.00" width="41.40" height="48.60" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
+<text x="73.20" y="34.20" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Chambre 3</text>
 <rect x="96.60" y="9.00" width="32.40" height="66.60" fill="#f4f6f9" stroke="#8a96a6" stroke-width="0.3"/>
 <text x="120.90" y="32.04" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">Salle</text>
 <text x="120.90" y="37.98" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#44505f">d’eau</text>
@@ -31,9 +32,9 @@
 <line x1="108.68" y1="43.65" x2="105.40" y2="40.31" stroke="#1b3a63" stroke-width="0.3"/>
 <circle cx="111.00" cy="46.00" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
 <text x="111.00" y="47.38" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">2</text>
-<line x1="112.80" y1="57.60" x2="28.20" y2="57.60" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
-<line x1="28.20" y1="57.60" x2="28.20" y2="45.00" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
-<g transform="translate(109.80 54.60)"><svg x="0" y="0" width="6.00" height="6.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
+<line x1="112.80" y1="54.00" x2="28.20" y2="54.00" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<line x1="28.20" y1="54.00" x2="28.20" y2="45.00" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
+<g transform="translate(109.80 51.00)"><svg x="0" y="0" width="6.00" height="6.00" viewBox="-23.0 -31.0 48.0 48.0" overflow="visible"><rect x="-23.0" y="-31.0" width="48.0" height="48.0" fill="#ffffff"/>
 <ellipse cx="0.70" cy="-0.44" rx="14.70" ry="10.44" stroke="black" stroke-width="1" fill="none"/>
 <path d="M 5.95,-14.54 A 6.09,3.04 0 0 0 -6.23,-14.54" stroke="black" stroke-width="1" fill="none"/>
 <path d="M 5.95,-11.05 A 6.09,3.04 0 0 0 -6.23,-11.05" stroke="black" stroke-width="0.4" fill="none"/>
@@ -44,12 +45,12 @@
 <circle cx="28.20" cy="45.00" r="1.2" fill="#d9771f"/>
 <rect x="56.76" y="60.38" width="6.60" height="7.40" fill="#fff" stroke="#d9771f" stroke-width="0.6"/>
 <text x="60.06" y="65.58" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#d9771f">2</text>
-<line x1="112.80" y1="64.70" x2="112.80" y2="60.80" stroke="#1b3a63" stroke-width="0.3"/>
-<circle cx="112.80" cy="68.00" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
-<text x="112.80" y="69.38" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
-<line x1="24.30" y1="61.63" x2="27.50" y2="58.32" stroke="#1b3a63" stroke-width="0.3"/>
-<circle cx="22.00" cy="64.00" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
-<text x="22.00" y="65.38" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">2</text>
+<line x1="112.80" y1="61.10" x2="112.80" y2="57.20" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="112.80" cy="64.40" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="112.80" y="65.78" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">1</text>
+<line x1="24.30" y1="58.03" x2="27.50" y2="54.72" stroke="#1b3a63" stroke-width="0.3"/>
+<circle cx="22.00" cy="60.40" r="3.3" fill="#fff" stroke="#1b3a63" stroke-width="0.5"/>
+<text x="22.00" y="61.78" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">2</text>
 <line x1="64.20" y1="13.50" x2="99.30" y2="13.50" stroke="#1b3a63" stroke-width="0.8" stroke-linecap="square" stroke-dasharray="2 1.2"/>
 <line x1="99.30" y1="13.50" x2="99.30" y2="28.80" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>
 <line x1="99.30" y1="28.80" x2="28.20" y2="28.80" stroke="#1b3a63" stroke-width="1.4" stroke-linecap="square"/>

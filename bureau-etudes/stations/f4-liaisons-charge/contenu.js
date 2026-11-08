@@ -262,7 +262,7 @@ BE.station({
     { n: 2, nom: "autonome", batiment: "La maison, puis le groupe du bâtiment de bureaux", partie: "publique" },
     { n: 3, nom: "bâtiment tertiaire", batiment: "Bâtiment tertiaire, dans l’espace enseignant", partie: "dediee" }
   ],
-  intro: "La machine est choisie. Il reste à la raccorder et à la charger : relever chaque liaison, lire ses diamètres dans la notice, calculer la charge de fluide à peser, vérifier que la fuite de toute cette charge dans la plus petite pièce reste sous la limite, puis compter les tonnes équivalent CO₂ et remplir la fiche F-Gaz.",
+  intro: "La machine est choisie. Il reste à la raccorder et à la charger : relever chaque liaison, lire ses diamètres dans la notice, calculer la charge de fluide à peser, vérifier si la fuite de toute cette charge dans la plus petite pièce reste sous la limite, puis compter les tonnes équivalent CO₂ et remplir la fiche F-Gaz.",
   note: `La notice de la station est fictive, sans marque. La limite de concentration de ${EX.limite} kg/m³ est une valeur de l’exercice, pas celle de la norme : sur un vrai projet, la charge maximale se calcule avec la norme NF EN 378 en vigueur et se recoupe avec la notice de l’appareil.`,
 
   dossiers: [
@@ -321,8 +321,8 @@ BE.station({
       { id: "n2-gaz", libelle: "Diamètre de la liaison gaz du séjour-cuisine", unite: "mm", min: 12.6, max: 12.8, indice: "Relisez l’écran « Lire les diamètres » : la ligne de la notice qui contient la puissance de la pièce (votre feuille de la station F1). En millimètres, comme dans la notice." },
       { id: "n2-add", libelle: "Charge additionnelle du multisplit", unite: "g", min: 110, max: 206, indice: "(longueur totale − longueur incluse de votre machine) × g/m de la liaison liquide. Au gramme. La fourchette suit l’écart permis sur vos longueurs de F1." },
       { id: "n2-tot", libelle: "Charge totale du multisplit", unite: "kg", min: 2.19, max: 2.326, indice: "Charge d’usine de votre machine (catalogue de l’exercice) + charge additionnelle, en kilogrammes, à trois décimales." },
-      { id: "n2-c", libelle: "Concentration dans le local le plus défavorable", unite: "kg/m³", min: 0.102, max: 0.11, indice: "Relisez l’écran « La concentration dans le local » : charge totale ÷ volume du plus petit local climatisé (votre feuille de la station T1). Au millième." },
-      { id: "n2-max", libelle: "Charge maximale admise dans ce local", unite: "kg", min: 2.68, max: 2.86, indice: "Charge maximale admise dans ce local = limite de l’exercice × volume du local. Au centième de kilogramme." },
+      { id: "n2-c", libelle: "Concentration dans le local le plus défavorable", unite: "kg/m³", min: 0.14, max: 0.15, indice: "Relisez l’écran « La concentration dans le local » : charge totale ÷ volume du plus petit local climatisé (votre feuille de la station T1). Au millième." },
+      { id: "n2-max", libelle: "Charge maximale admise dans ce local", unite: "kg", min: 1.95, max: 2.09, indice: "Charge maximale admise dans ce local = limite de l’exercice × volume du local. Au centième de kilogramme." },
       { id: "n2-teq", libelle: "Tonnes équivalent CO₂ du multisplit", unite: "t", min: 1.47, max: 1.57, indice: "Charge totale (kg) × PRP du R32 ÷ 1 000. Au centième de tonne." },
       { id: "t-teq", libelle: "Tertiaire : tonnes équivalent CO₂ du groupe", unite: "t", min: 1.7, max: 1.82, indice: "Tertiaire : charge d’usine du groupe retenu à la station F3 (catalogue de l’exercice) × PRP ÷ 1 000. Au centième de tonne." }
     ]

@@ -9,14 +9,16 @@
 <rect x="92.00" y="75.00" width="6.00" height="84.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="238.00" y="129.00" width="6.00" height="30.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="238.00" y="55.00" width="6.00" height="50.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
-<rect x="92.00" y="73.00" width="88.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="92.00" y="73.00" width="32.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="140.00" y="73.00" width="40.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="92.00" y="71.00" width="6.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="178.00" y="45.00" width="2.00" height="28.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="92.00" y="51.00" width="6.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="26.00" y="45.00" width="12.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="86.00" y="45.00" width="12.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="92.00" y="39.00" width="6.00" height="6.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
-<rect x="152.00" y="43.00" width="28.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="152.00" y="43.00" width="10.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
+<rect x="176.00" y="43.00" width="4.00" height="2.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="152.00" y="11.00" width="2.00" height="32.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="178.00" y="11.00" width="2.00" height="32.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
 <rect x="238.00" y="11.00" width="6.00" height="20.00" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.12"/>
@@ -34,8 +36,10 @@
 <line x1="218.00" y1="159.00" x2="238.00" y2="159.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="238.00" y1="129.00" x2="244.00" y2="129.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="238.00" y1="105.00" x2="244.00" y2="105.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
-<line x1="98.00" y1="75.00" x2="180.00" y2="75.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
-<line x1="98.00" y1="73.00" x2="178.00" y2="73.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="75.00" x2="124.00" y2="75.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="140.00" y1="75.00" x2="180.00" y2="75.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="98.00" y1="73.00" x2="124.00" y2="73.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="140.00" y1="73.00" x2="178.00" y2="73.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="92.00" y1="71.00" x2="98.00" y2="71.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="238.00" y1="55.00" x2="244.00" y2="55.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="92.00" y1="53.00" x2="98.00" y2="53.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
@@ -43,8 +47,10 @@
 <line x1="86.00" y1="51.00" x2="92.00" y2="51.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="26.00" y1="45.00" x2="38.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="86.00" y1="45.00" x2="92.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
-<line x1="152.00" y1="45.00" x2="178.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
-<line x1="154.00" y1="43.00" x2="178.00" y2="43.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="152.00" y1="45.00" x2="162.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="176.00" y1="45.00" x2="178.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="154.00" y1="43.00" x2="162.00" y2="43.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="176.00" y1="43.00" x2="178.00" y2="43.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="92.00" y1="39.00" x2="98.00" y2="39.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="238.00" y1="31.00" x2="244.00" y2="31.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="92.00" y1="23.00" x2="98.00" y2="23.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
@@ -78,12 +84,16 @@
 <line x1="238.00" y1="159.00" x2="238.00" y2="129.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="238.00" y1="105.00" x2="238.00" y2="55.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="238.00" y1="31.00" x2="238.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="124.00" y1="75.00" x2="124.00" y2="73.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="140.00" y1="75.00" x2="140.00" y2="73.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="180.00" y1="75.00" x2="180.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="178.00" y1="73.00" x2="178.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="178.00" y1="43.00" x2="178.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="38.00" y1="51.00" x2="38.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="86.00" y1="51.00" x2="86.00" y2="45.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="152.00" y1="45.00" x2="152.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="162.00" y1="45.00" x2="162.00" y2="43.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
+<line x1="176.00" y1="45.00" x2="176.00" y2="43.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="154.00" y1="43.00" x2="154.00" y2="11.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="104.00" y1="11.00" x2="104.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
 <line x1="122.00" y1="11.00" x2="122.00" y2="5.00" stroke="#000" stroke-width="0.5" stroke-linecap="square"/>
@@ -121,6 +131,10 @@
 <line x1="160.00" y1="9.00" x2="172.00" y2="9.00" stroke="#000" stroke-width="0.2"/>
 <line x1="160.00" y1="7.00" x2="172.00" y2="7.00" stroke="#000" stroke-width="0.2"/>
 <line x1="38.00" y1="48.00" x2="86.00" y2="48.00" stroke="#000" stroke-width="0.4" stroke-dasharray="2 1"/>
+<line x1="124.00" y1="75.00" x2="124.00" y2="91.00" stroke="#000" stroke-width="0.4"/>
+<polyline points="124.00,91.00 126.50,90.80 128.94,90.22 131.26,89.26 133.40,87.94 135.31,86.31 136.94,84.40 138.26,82.26 139.22,79.94 139.80,77.50 140.00,75.00" fill="none" stroke="#000" stroke-width="0.2" stroke-linejoin="round"/>
+<line x1="176.00" y1="45.00" x2="176.00" y2="59.00" stroke="#000" stroke-width="0.4"/>
+<polyline points="176.00,59.00 173.81,58.83 171.67,58.31 169.64,57.47 167.77,56.33 166.10,54.90 164.67,53.23 163.53,51.36 162.69,49.33 162.17,47.19 162.00,45.00" fill="none" stroke="#000" stroke-width="0.2" stroke-linejoin="round"/>
 <line x1="26.00" y1="117.00" x2="244.00" y2="117.00" stroke="#000" stroke-width="0.3" stroke-dasharray="5 1 1 1"/>
 <line x1="29.00" y1="117.00" x2="29.00" y2="107.00" stroke="#000" stroke-width="0.7"/>
 <polyline points="27.60,109.60 29.00,107.00 30.40,109.60" fill="none" stroke="#000" stroke-width="0.5" stroke-linejoin="round"/>
@@ -198,8 +212,8 @@
 <line x1="84.90" y1="74.10" x2="87.10" y2="71.90" stroke="#000" stroke-width="0.5" stroke-linecap="butt"/>
 <text x="82.61" y="31.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 82.61 31.00)">M08 2,00</text>
 <text x="82.61" y="62.00" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000" transform="rotate(-90 82.61 62.00)">M07 1,10</text>
-<polygon points="47.00,15.00 43.50,29.00 47.00,26.50 50.50,29.00" fill="#000" stroke="#000" stroke-width="0.3" stroke-linejoin="round"/>
-<text x="47.00" y="12.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">N</text>
+<polygon points="40.00,15.00 36.50,29.00 40.00,26.50 43.50,29.00" fill="#000" stroke="#000" stroke-width="0.3" stroke-linejoin="round"/>
+<text x="40.00" y="12.60" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">N</text>
 <line x1="30.00" y1="42.00" x2="70.00" y2="42.00" stroke="#000" stroke-width="0.5"/>
 <line x1="30.00" y1="40.20" x2="30.00" y2="43.80" stroke="#000" stroke-width="0.35"/>
 <text x="30.00" y="37.80" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">0</text>
@@ -221,6 +235,8 @@
 <text x="62.08" y="56.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">PG1</text>
 <text x="36.67" y="106.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">A</text>
 <text x="229.67" y="106.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">A</text>
+<text x="121.24" y="29.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M06</text>
+<line x1="122.09" y1="25.44" x2="124.89" y2="11.49" stroke="#1b3a63" stroke-width="0.2"/>
 <text x="166.24" y="22.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M09</text>
 <text x="61.78" y="96.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Garage</text>
 <text x="61.78" y="102.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">16,20 m²</text>
@@ -230,12 +246,12 @@
 <text x="167.63" y="127.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">38,68 m²</text>
 <text x="167.63" y="133.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">7,00 × 4,20</text>
 <text x="208.89" y="44.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,90 × 3,20</text>
-<text x="115.72" y="34.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Entrée</text>
-<text x="115.72" y="40.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10,19 m²</text>
-<text x="115.72" y="46.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,70 ×</text>
-<text x="115.72" y="52.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,10</text>
-<text x="165.11" y="57.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,30 ×</text>
-<text x="165.11" y="63.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,40</text>
+<text x="115.72" y="35.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">Entrée</text>
+<text x="115.72" y="41.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">10,19 m²</text>
+<text x="115.72" y="47.55" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">2,70 ×</text>
+<text x="115.72" y="53.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">3,10</text>
+<text x="163.11" y="62.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,30 ×</text>
+<text x="163.11" y="68.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,40</text>
 <text x="166.28" y="28.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#000">WC</text>
 <text x="166.28" y="34.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">1,92 m²</text>
 <text x="168.24" y="156.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M01</text>
@@ -243,7 +259,6 @@
 <text x="104.24" y="121.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M03</text>
 <text x="231.24" y="38.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M04</text>
 <text x="209.24" y="22.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M05</text>
-<text x="121.24" y="58.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M06</text>
 <text x="62.24" y="62.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" font-weight="bold" text-anchor="middle" fill="#1b3a63">M19</text>
 <text x="68.62" y="10.75" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Mxx : repère</text>
 <text x="68.62" y="16.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">d’un mur</text>
@@ -257,6 +272,6 @@
 <text x="288.00" y="192.45" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="end" fill="#000">Maison d'étude BE, Marseille, zone H3</text>
 <text x="9.00" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Échelle 1/50</text>
 <text x="47.74" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Cotes en mètres</text>
-<text x="95.96" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">30/10/2026</text>
-<text x="131.84" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plan généré depuis maison.json, version 1</text>
+<text x="95.96" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">08/11/2026</text>
+<text x="131.84" y="199.15" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="start" fill="#000">Plan généré depuis maison.json, version 2</text>
 </svg>

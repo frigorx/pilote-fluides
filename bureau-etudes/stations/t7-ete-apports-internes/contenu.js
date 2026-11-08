@@ -430,9 +430,9 @@ BE.station({
       { id: "n1-ch1", libelle: "Sensible total de la chambre 1 à l’heure de pointe", unite: "W", min: 411, max: 437, indice: "Additionnez le sensible des occupants, l’éclairage, les appareils et les parois de la chambre. Le latent reste à part." }
     ],
     2: [
-      { id: "n2-sens", libelle: "Sensible de la maison, somme des huit pièces", unite: "W", min: 2622, max: 2786, indice: "Relisez l’écran « Le tableau d’un local à l’heure de pointe » : une ligne par pièce chauffée, puis la somme. Le latent et le soleil des vitrages (station T6) ne s’ajoutent pas." },
+      { id: "n2-sens", libelle: "Sensible de la maison, somme des huit pièces", unite: "W", min: 2619, max: 2783, indice: "Relisez l’écran « Le tableau d’un local à l’heure de pointe » : une ligne par pièce chauffée, puis la somme. Le latent et le soleil des vitrages (station T6) ne s’ajoutent pas." },
       { id: "n2-lat", libelle: "Latent de la maison, somme des huit pièces", unite: "W", min: 388, max: 412, indice: "Seuls les occupants apportent du latent ici : occupants de chaque pièce × apport latent, puis la somme des pièces." },
-      { id: "n2-opq", libelle: "Apport des parois opaques de la maison", unite: "W", min: 708, max: 752, indice: "Parois opaques : murs extérieurs, murs sur le garage, portes pleines et plafonds. Les vitrages ne comptent pas dans cette somme." }
+      { id: "n2-opq", libelle: "Apport des parois opaques de la maison", unite: "W", min: 707, max: 751, indice: "Parois opaques : murs extérieurs, murs sur le garage, portes pleines et plafonds. Les vitrages ne comptent pas dans cette somme." }
     ]
   },
   /*FOURCHETTES-FIN*/

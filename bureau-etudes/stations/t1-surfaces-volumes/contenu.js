@@ -66,13 +66,13 @@ BE.station({
     1: [
       { id: "n1-murs", libelle: "Murs extérieurs nets", unite: "m²", min: 97.24, max: 107.48, indice: "Relisez les écrans sur la surface brute et la déduction des baies : longueur fois hauteur sous plafond, moins les baies, murs extérieurs seulement." },
       { id: "n1-plancher", libelle: "Plancher bas", unite: "m²", min: 48.25, max: 53.33, indice: "Le plancher bas ne concerne que les pièces chauffées du rez-de-chaussée. Relisez l’écran sur les planchers et les plafonds, et la convention de l’escalier." },
-      { id: "n1-plafond", libelle: "Plafond sous combles", unite: "m²", min: 47.5, max: 52.5, indice: "Le plafond sous combles ne concerne que les pièces de l’étage. Relisez la convention de l’escalier à l’écran « Ce qu’on cherche »." },
-      { id: "n1-volume", libelle: "Volume chauffé", unite: "m³", min: 239.37, max: 264.59, indice: "Volume égal surface au sol fois hauteur sous plafond, pièces chauffées seulement. Relisez l’écran sur le volume chauffé et la convention de l’escalier." }
+      { id: "n1-plafond", libelle: "Plafond sous combles", unite: "m²", min: 47.28, max: 52.26, indice: "Le plafond sous combles ne concerne que les pièces de l’étage. Relisez la convention de l’escalier à l’écran « Ce qu’on cherche »." },
+      { id: "n1-volume", libelle: "Volume chauffé", unite: "m³", min: 238.83, max: 263.99, indice: "Volume égal surface au sol fois hauteur sous plafond, pièces chauffées seulement. Relisez l’écran sur le volume chauffé et la convention de l’escalier." }
     ],
     2: [
-      { id: "n2-opaques", libelle: "Surface des parois opaques déperditives", unite: "m²", min: 203.78, max: 225.24, indice: "Relisez la définition à l’écran « Ce qu’on cherche » : quatre postes, sans les baies. Contrôlez chaque poste avant de les additionner." },
+      { id: "n2-opaques", libelle: "Surface des parois opaques déperditives", unite: "m²", min: 203.56, max: 225, indice: "Relisez la définition à l’écran « Ce qu’on cherche » : quatre postes, sans les baies. Contrôlez chaque poste avant de les additionner." },
       { id: "n2-baies", libelle: "Surface des baies (extérieures et sur local non chauffé)", unite: "m²", min: 26.86, max: 29.7, indice: "Les baies se lisent dans le tableau des menuiseries, avec le mur qui les porte. Ne gardez que celles des murs relevés." },
-      { id: "n2-volume", libelle: "Volume chauffé", unite: "m³", min: 239.37, max: 264.59, indice: "Volume égal surface au sol fois hauteur sous plafond, pièces chauffées seulement. Relisez la convention de l’escalier à l’écran « Ce qu’on cherche »." }
+      { id: "n2-volume", libelle: "Volume chauffé", unite: "m³", min: 238.83, max: 263.99, indice: "Volume égal surface au sol fois hauteur sous plafond, pièces chauffées seulement. Relisez la convention de l’escalier à l’écran « Ce qu’on cherche »." }
     ]
   },
   /*FOURCHETTES-FIN*/

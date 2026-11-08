@@ -368,11 +368,11 @@ BE.station({
       { id: "n1-co2", libelle: "Émissions de l’année avec la chaudière gaz", unite: "kg de CO2", min: 1326, max: 1410, indice: "Relisez l’écran « Le coût et les émissions » : chaque énergie × son facteur d’émission, puis la somme." }
     ],
     2: [
-      { id: "n2-besoin", libelle: "Besoin de chauffage de la maison", unite: "kWh", min: 4253, max: 4517, indice: "Relisez l’écran « Le besoin de chauffage de l’année » : H × DJU × 24 ÷ 1000, puis × c." },
+      { id: "n2-besoin", libelle: "Besoin de chauffage de la maison", unite: "kWh", min: 4252, max: 4516, indice: "Relisez l’écran « Le besoin de chauffage de l’année » : H × DJU × 24 ÷ 1000, puis × c." },
       { id: "n2-elec", libelle: "Électricité de chauffage de la pompe à chaleur, appoint compris", unite: "kWh", min: 1348, max: 1432, indice: "Relisez l’écran « L’électricité de la pompe à chaleur » : l’appoint, puis le reste ÷ SCOP (pas le COP de tête), puis la somme." },
       { id: "n2-total", libelle: "Électricité de l’année, tous postes, solution pompe à chaleur", unite: "kWh", min: 2572, max: 2732, indice: "Relisez l’écran « L’eau chaude, la ventilation et l’été » : chauffage + eau chaude + ventilation + été, en électricité." },
       { id: "n2-cout", libelle: "Coût de l’année, solution pompe à chaleur", unite: "€", min: 643, max: 683, indice: "Relisez l’écran « Le coût et les émissions » : les kWh d’électricité × le prix de l’électricité." },
-      { id: "n2-co2", libelle: "Émissions de l’année, solution chaudière gaz", unite: "kg de CO2", min: 1716, max: 1824, indice: "Relisez l’écran « Le coût et les émissions » : chaque énergie × son facteur d’émission, puis la somme." },
+      { id: "n2-co2", libelle: "Émissions de l’année, solution chaudière gaz", unite: "kg de CO2", min: 1715, max: 1823, indice: "Relisez l’écran « Le coût et les émissions » : chaque énergie × son facteur d’émission, puis la somme." },
       { id: "n2-retour", libelle: "Temps de retour du surcoût", unite: "ans", min: 11, max: 11.8, indice: "Relisez l’écran « Le temps de retour » : surcoût ÷ économie, l’économie prise sur le coût total des deux solutions." }
     ]
   },

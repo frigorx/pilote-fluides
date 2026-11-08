@@ -271,7 +271,7 @@ const EX = {
    {
     "nom": "Séjour-cuisine",
     "niveau": "rez-de-chaussée",
-    "P": "1709",
+    "P": "1724",
     "S": "38,68"
    },
    {
@@ -289,26 +289,26 @@ const EX = {
    {
     "nom": "Chambre 1",
     "niveau": "étage",
-    "P": "476",
+    "P": "481",
     "S": "12,24"
    },
    {
     "nom": "Chambre 2",
     "niveau": "étage",
-    "P": "502",
+    "P": "506",
     "S": "12,60"
    },
    {
-    "nom": "Palier",
+    "nom": "Palier avec couloir",
     "niveau": "étage",
-    "P": "292",
-    "S": "7,35"
+    "P": "300",
+    "S": "9,42"
    },
    {
     "nom": "Chambre 3",
     "niveau": "étage",
-    "P": "249",
-    "S": "8,51"
+    "P": "213",
+    "S": "6,21"
    },
    {
     "nom": "Salle d'eau",
@@ -348,7 +348,7 @@ const donneesH1 = () => tableau(["Pièce", "Niveau", "Puissance de l’émetteur
   ...EX.maison.pieces.map(p => [p.nom, p.niveau, p.P, p.S]),
   ["Air des pièces (station T5)", "", "", `${EX.maison.ti} °C`]
 ], "Données reprises des stations H1, T5 et T1")
-  + BE.schema("illustrations/schema-radiateurs-maison.svg", `Schéma de principe du circuit de la maison, à compléter. En bas à gauche, la pompe à chaleur air/eau du garage et la pompe de circulation sur le départ, en rouge, à ${EX.maison.dep} °C ; le retour, en bleu, à ${EX.maison.ret} °C. En haut, la branche de l’étage : chambres 1, 2 et 3, salle d’eau, palier. Au-dessous, la branche du rez-de-chaussée : deux radiateurs au séjour-cuisine, entrée, WC. Sous chaque radiateur, une longueur à choisir dans le catalogue.`, "Les radiateurs de la maison : les longueurs se choisissent sur la feuille.")
+  + BE.schema("illustrations/schema-radiateurs-maison.svg", `Schéma de principe du circuit de la maison, à compléter. En bas à gauche, la pompe à chaleur air/eau du garage et la pompe de circulation sur le départ, en rouge, à ${EX.maison.dep} °C ; le retour, en bleu, à ${EX.maison.ret} °C. En haut, la branche de l’étage : chambres 1, 2 et 3, salle d’eau, palier avec couloir. Au-dessous, la branche du rez-de-chaussée : deux radiateurs au séjour-cuisine, entrée, WC. Sous chaque radiateur, une longueur à choisir dans le catalogue.`, "Les radiateurs de la maison : les longueurs se choisissent sur la feuille.")
   + BE.liens([{ href: DOSSIER + "cctp-maison.pdf", title: "L’extrait de CCTP de la maison", note: "Générateur et émetteurs à la page 4" }]);
 ecranProjet.render = () => { const html = rendreCommande(); return html.includes("partie-reservee") ? html : html + donneesH1(); };
 
@@ -412,11 +412,11 @@ BE.station({
   fourchettes: {
     1: [
       { id: "h2-n1-coef", libelle: "Coefficient de correction au régime du projet", unite: "", min: 0.343, max: 0.365, indice: "Relisez l’écran « L’écart moyen entre l’eau et l’air » : moyenne de l’eau, (départ + retour) ÷ 2, moins la température de l’air de la pièce. Puis l’écran « Corriger la puissance du catalogue » : coefficient = (écart moyen ÷ 50) puissance 1,3, au millième." },
-      { id: "h2-n1-sejour", libelle: "Puissance du catalogue nécessaire au séjour-cuisine, deux radiateurs ensemble", unite: "W", min: 4683, max: 4973, indice: "Relisez l’écran « Corriger la puissance du catalogue » : la puissance de l’émetteur du séjour-cuisine (station H1) divisée par le coefficient. La valeur demandée est celle de la pièce entière, pour ses deux radiateurs ensemble." }
+      { id: "h2-n1-sejour", libelle: "Puissance du catalogue nécessaire au séjour-cuisine, deux radiateurs ensemble", unite: "W", min: 4723, max: 5017, indice: "Relisez l’écran « Corriger la puissance du catalogue » : la puissance de l’émetteur du séjour-cuisine (station H1) divisée par le coefficient. La valeur demandée est celle de la pièce entière, pour ses deux radiateurs ensemble." }
     ],
     2: [
-      { id: "h2-n2-variante", libelle: "Somme des puissances du catalogue nécessaires au régime de la variante", unite: "W", min: 12921, max: 13721, indice: "Relisez l’écran « Moyenne arithmétique ou logarithmique » pour l’écart moyen de la variante, puis additionnez les puissances du catalogue nécessaires des huit pièces : chaque puissance de l’émetteur divisée par le coefficient de la variante." },
-      { id: "h2-n2-plancher", libelle: "Écart moyen eau-air nécessaire au plancher du séjour-cuisine", unite: "K", min: 6.5, max: 7.1, indice: "Relisez l’écran « Le plancher chauffant » : la puissance de l’émetteur du séjour-cuisine divisée par sa surface donne des W/m², puis divisée par 6,5 W/m² par kelvin, l’écart moyen nécessaire, au dixième." }
+      { id: "h2-n2-variante", libelle: "Somme des puissances du catalogue nécessaires au régime de la variante", unite: "W", min: 12908, max: 13708, indice: "Relisez l’écran « Moyenne arithmétique ou logarithmique » pour l’écart moyen de la variante, puis additionnez les puissances du catalogue nécessaires des huit pièces : chaque puissance de l’émetteur divisée par le coefficient de la variante." },
+      { id: "h2-n2-plancher", libelle: "Écart moyen eau-air nécessaire au plancher du séjour-cuisine", unite: "K", min: 6.6, max: 7.2, indice: "Relisez l’écran « Le plancher chauffant » : la puissance de l’émetteur du séjour-cuisine divisée par sa surface donne des W/m², puis divisée par 6,5 W/m² par kelvin, l’écart moyen nécessaire, au dixième." }
     ]
   },
   /*FOURCHETTES-FIN*/
@@ -540,7 +540,7 @@ BE.station({
       id: "choisir", dossier: "methode", kicker: "La méthode, 5", title: "Choisir le radiateur dans le catalogue", level: "comprendre",
       text: "On prend la plus petite longueur du catalogue dont la puissance à 50 K atteint au moins la puissance du catalogue nécessaire. Une longueur plus grande chaufferait aussi, mais coûterait plus et prendrait plus de mur. Une grande pièce reçoit deux radiateurs identiques : chacun donne la moitié. Pour contrôler, on multiplie la puissance du catalogue du radiateur choisi par le coefficient : le résultat doit atteindre la puissance de l’émetteur. La salle de réunion du bâtiment d’exemple a deux radiateurs, valeur d’exercice.",
       prompt: "Suivez le tableau du bâtiment d’exemple, puis continuez.",
-      render: () => tableau(["Local", "Émetteur, H1 (W)", `Catalogue nécessaire (W)`, "Choix", "Catalogue du choix (W)", `Au régime ${EX.reg.dep}/${EX.reg.ret} (W)`],
+      render: () => tableau(["Local", "Émetteur, H1 (W)", `Catalogue nécessaire (W)`, "Choix", "Catalogue du choix, total par local (W)", `Au régime ${EX.reg.dep}/${EX.reg.ret} (W)`],
         EX.locaux.map(l => [l.nom, l.P, l.need, l.choix, l.P50t, l.reel]), `Radiateurs du bâtiment d’exemple, coefficient ${EX.reg.f}`)
         + exempleChoix()
         + BE.alerte("<strong>Piège.</strong> Chercher dans le catalogue la puissance de l’émetteur sans la corriger : le radiateur choisi est deux à trois fois trop petit.")

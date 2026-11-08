@@ -307,10 +307,10 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "n1-hab", libelle: "Surface habitable de la maison", unite: "m²", min: 97.16, max: 99.14, indice: "Relisez l’écran « Le plan de niveau et la coupe » : seules les pièces chauffées comptent, un local non chauffé est écarté et un palier se lit hors trémie. Vérifiez chaque surface lue, la page qui la porte et l’addition." }
+      { id: "n1-hab", libelle: "Surface habitable de la maison", unite: "m²", min: 96.94, max: 98.90, indice: "Relisez l’écran « Le plan de niveau et la coupe » : seules les pièces chauffées comptent, un local non chauffé est écarté et un palier se lit hors trémie. Vérifiez chaque surface lue, la page qui la porte et l’addition." }
     ],
     2: [
-      { id: "n2-hab", libelle: "Surface habitable de la maison", unite: "m²", min: 97.16, max: 99.14, indice: "Relisez l’écran « Le plan de niveau et la coupe » : seules les pièces chauffées comptent, un local non chauffé est écarté et un palier se lit hors trémie. Vérifiez chaque surface lue, la page qui la porte et l’addition." },
+      { id: "n2-hab", libelle: "Surface habitable de la maison", unite: "m²", min: 96.94, max: 98.90, indice: "Relisez l’écran « Le plan de niveau et la coupe » : seules les pièces chauffées comptent, un local non chauffé est écarté et un palier se lit hors trémie. Vérifiez chaque surface lue, la page qui la porte et l’addition." },
       { id: "n2-baies", libelle: "Surface totale des baies vitrées de la maison", unite: "m²", min: 23.76, max: 25.24, indice: "Relisez l’écran « La règle du sixième » : fenêtres et portes-fenêtres seulement, largeur × hauteur lues au tableau des menuiseries, portes pleines exclues. Vérifiez qu’aucune ligne du tableau n’est oubliée ni comptée deux fois." }
     ]
   },

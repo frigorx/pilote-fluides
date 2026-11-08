@@ -93,7 +93,8 @@
 <line x1="16.50" y1="85.75" x2="19.00" y2="85.75" stroke="#d9771f" stroke-width="0.7"/>
 <polygon points="19.00,85.75 16.61,86.76 16.61,84.74" fill="#d9771f"/>
 <rect x="77.00" y="43.50" width="32.00" height="14.50" fill="#fff" stroke="#000" stroke-width="0.4"/>
-<text x="93.00" y="52.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Palier</text>
+<text x="93.00" y="49.85" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">Palier</text>
+<text x="93.00" y="55.65" font-family="Trebuchet MS, Arial, sans-serif" font-size="4.94" text-anchor="middle" fill="#000">avec couloir</text>
 <line x1="65.00" y1="50.75" x2="77.00" y2="50.75" stroke="#d9771f" stroke-width="0.7"/>
 <polygon points="77.00,50.75 74.61,51.76 74.61,49.74" fill="#d9771f"/>
 <line x1="69.00" y1="45.75" x2="69.00" y2="49.35" stroke="#1b3a63" stroke-width="0.9"/>

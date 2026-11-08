@@ -193,10 +193,10 @@ BE.station({
       { id: "n1-elec", libelle: "Incohérence 2 corrigée : électricité de l’année", unite: "kWh", min: 2678, max: 2844, indice: "Relisez l’écran « Recopier, pas recalculer » : refaites la somme des postes ; si elle ne tombe pas juste, la note se corrige." }
     ],
     2: [
-      { id: "n2-puissance", libelle: "Maison : puissance de chauffage à installer", unite: "W", min: 3822, max: 4060, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },
-      { id: "n2-froid", libelle: "Maison : puissance frigorifique, avec simultanéité", unite: "W", min: 6589, max: 6997, indice: "Relisez l’écran « Recopier, pas recalculer » : la puissance du bâtiment entier, avec simultanéité, pas celle d’un local." },
+      { id: "n2-puissance", libelle: "Maison : puissance de chauffage à installer", unite: "W", min: 3821, max: 4059, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },
+      { id: "n2-froid", libelle: "Maison : puissance frigorifique, avec simultanéité", unite: "W", min: 6588, max: 6996, indice: "Relisez l’écran « Recopier, pas recalculer » : la puissance du bâtiment entier, avec simultanéité, pas celle d’un local." },
       { id: "n2-machine", libelle: "Maison : puissance au réel de l’unité extérieure", unite: "W", min: 7643, max: 8117, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },
-      { id: "n2-debit", libelle: "Maison : débit du circuit de chauffage", unite: "L/h", min: 660, max: 702, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },
+      { id: "n2-debit", libelle: "Maison : débit du circuit de chauffage", unite: "L/h", min: 659, max: 701, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },
       { id: "n2-elec", libelle: "Maison : électricité de l’année, tous postes", unite: "kWh", min: 2572, max: 2732, indice: "Relisez l’écran « Recopier, pas recalculer » : refaites la somme des postes ; si elle ne tombe pas juste, la note se corrige." },
       { id: "n2-retour", libelle: "Maison : temps de retour du surcoût", unite: "ans", min: 11, max: 11.8, indice: "Relisez l’écran « Recopier, pas recalculer » : le temps de retour de votre feuille de la station R4, au dixième d’année." },
       { id: "t-hiver", libelle: "Tertiaire : puissance de chauffage à installer", unite: "W", min: 9637, max: 10235, indice: "Relisez l’écran « Recopier, pas recalculer » : la valeur se recopie depuis la feuille de sa station, avec son unité." },

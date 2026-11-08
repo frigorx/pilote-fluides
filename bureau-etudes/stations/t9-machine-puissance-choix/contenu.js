@@ -288,7 +288,7 @@ BE.station({
     2: [
       { id: "n2-pb", libelle: "Puissance corrigée de la machine retenue à la température de base", unite: "W", min: 3018, max: 3142, indice: "Relisez l’écran « Corriger la puissance au site » : la base de la maison tombe entre deux lignes du catalogue ; partez de la ligne froide et comptez les degrés." },
       { id: "n2-biv", libelle: "Point de bivalence de la machine retenue, température lue", unite: "°C", min: -3, max: -1.9, indice: "Relisez l’écran « Le point de bivalence » : la droite passe par le besoin de base à θb et par 0 W à θnc ; lisez la température au croisement avec la courbe, au demi-degré." },
-      { id: "n2-app", libelle: "Appoint de la machine retenue à la température de base", unite: "W", min: 487, max: 519, indice: "Relisez l’écran « L’appoint » : besoin de base, sans la relance, moins la puissance de la machine à la température de base." }
+      { id: "n2-app", libelle: "Appoint de la machine retenue à la température de base", unite: "W", min: 486, max: 518, indice: "Relisez l’écran « L’appoint » : besoin de base, sans la relance, moins la puissance de la machine à la température de base." }
     ]
   },
   /*FOURCHETTES-FIN*/

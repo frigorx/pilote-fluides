@@ -251,12 +251,12 @@ BE.station({
   /*FOURCHETTES-DEBUT*/
   fourchettes: {
     1: [
-      { id: "n1-base", libelle: "Φ base de la maison", unite: "W", min: 3474, max: 3690, indice: "Relisez l’écran « Les quatre postes du bilan » : H parois, H ponts et H air s’additionnent avant de multiplier par ΔT. Contrôlez le forfait des ponts (écran « Les ponts thermiques ») et ΔT, page 3 du CCTP." },
-      { id: "n1-p", libelle: "Puissance à installer, en W", unite: "W", min: 3821, max: 4059, indice: "Relisez l’écran « La relance après l’allure réduite » : la relance est un pourcentage de Φ base, ajouté à Φ base. Écrivez la puissance en W, avant l’arrondi ou arrondie au dixième de kW au-dessus." }
+      { id: "n1-base", libelle: "Φ base de la maison", unite: "W", min: 3473, max: 3689, indice: "Relisez l’écran « Les quatre postes du bilan » : H parois, H ponts et H air s’additionnent avant de multiplier par ΔT. Contrôlez le forfait des ponts (écran « Les ponts thermiques ») et ΔT, page 3 du CCTP." },
+      { id: "n1-p", libelle: "Puissance à installer, en W", unite: "W", min: 3820, max: 4058, indice: "Relisez l’écran « La relance après l’allure réduite » : la relance est un pourcentage de Φ base, ajouté à Φ base. Écrivez la puissance en W, avant l’arrondi ou arrondie au dixième de kW au-dessus." }
     ],
     2: [
-      { id: "n2-hp", libelle: "H parois de la maison, somme des huit pièces", unite: "W/K", min: 95.06, max: 100.96, indice: "Relisez l’écran « Additionner les parois : par local ou par familles » : les huit pièces chauffées, chacune avec son tableau de la station T3, ni le garage ni le comble. Comparez avec la somme par familles." },
-      { id: "n2-p", libelle: "Puissance à installer, en W", unite: "W", min: 3822, max: 4060, indice: "Relisez l’écran « La relance après l’allure réduite » : la relance est un pourcentage de Φ base, ajouté à Φ base. Écrivez la puissance en W, avant l’arrondi ou arrondie au dixième de kW au-dessus." }
+      { id: "n2-hp", libelle: "H parois de la maison, somme des huit pièces", unite: "W/K", min: 95.04, max: 100.92, indice: "Relisez l’écran « Additionner les parois : par local ou par familles » : les huit pièces chauffées, chacune avec son tableau de la station T3, ni le garage ni le comble. Comparez avec la somme par familles." },
+      { id: "n2-p", libelle: "Puissance à installer, en W", unite: "W", min: 3821, max: 4059, indice: "Relisez l’écran « La relance après l’allure réduite » : la relance est un pourcentage de Φ base, ajouté à Φ base. Écrivez la puissance en W, avant l’arrondi ou arrondie au dixième de kW au-dessus." }
     ]
   },
   /*FOURCHETTES-FIN*/
