@@ -528,6 +528,19 @@
         "r5-13",
         "r5-14"
       ]
+    },
+    {
+      "edition": "lot-be-2026-11-08",
+      "statut": "epreuve",
+      "commentaire": "Chapitre pilote T3 du livre Bureau d’études (tome 1) : six QR du livre augmenté (t3-l0, l1, l2, l2v, lt, lp), clés réservées le 08/11/2026, publiées le 08/11/2026, rien d’imprimé encore.",
+      "slugs": [
+        "t3-l0",
+        "t3-l1",
+        "t3-l2",
+        "t3-l2v",
+        "t3-lt",
+        "t3-lp"
+      ]
     }
   ]
 }
