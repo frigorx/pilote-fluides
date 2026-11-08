@@ -83,8 +83,8 @@
   <div class="lignes" id="lignes"></div>
 </div>
 
-<script src="programme.js?v=20261108-2"></script>
-<script src="carte.js?v=20261031"></script>
+<script src="programme.js?v=20261108-c1"></script>
+<script src="carte.js?v=20261108-c1"></script>
 <script>
 (function () {
   "use strict";
@@ -92,7 +92,8 @@
   C.dessiner(document.getElementById("plan"), P);
 
   document.getElementById("legende").innerHTML = P.LIGNES.map(l => `<span><i class="trait" style="background:${l.couleur}"></i><b>${l.code}</b> ${l.nom}</span>`).join("")
-    + `<span>Chaque station : 2 heures, 3 niveaux. Disque plein : station ouverte. Cercle en pointillé : à venir. Survolez une station pour voir ce que l'on y rend ; cliquez sur une lettre pour isoler sa ligne.</span>`;
+    + `<span>Chaque station : 2 heures, 3 niveaux. Disque plein : station ouverte. Cercle en pointillé : à venir. Survolez une station pour voir ce que l'on y rend ; cliquez sur une lettre pour isoler sa ligne.</span>`
+    + `<span>Pointillé sous D0 : l'antenne C1, un contrôle de 12 questions qui dit sur quelle station reprendre.</span>`;
 
   const etat = s => s.etat === "en-ligne" ? "ouverte" : s.etat === "relecture" ? "en relecture" : s.etat === "construction" ? "en construction" : "à venir";
   document.getElementById("lignes").innerHTML = [{code: "D", nom: "Gare centrale et terminus", couleur: "#1b3a63"}].concat(P.LIGNES).map(l => {

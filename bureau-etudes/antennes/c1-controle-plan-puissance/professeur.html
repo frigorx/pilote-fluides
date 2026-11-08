@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Contrôle 1, récapitulatif du professeur | inerWeb BE</title>
+<style>
+:root{--bleu:#1b3a63;--filet:#c7ccd4;--fond:#f4f6f9;--vert:#1d7a3a;--rouge:#b3261e}
+*{box-sizing:border-box}
+body{font-family:Calibri,"Segoe UI",Arial,sans-serif;font-size:14pt;line-height:1.45;margin:0;color:#111;background:#f7f1e7}
+header{background:var(--bleu);color:#fff;padding:12px 24px;font-size:17pt;font-weight:bold}
+main{padding:18px 24px 50px}
+h1{color:var(--bleu);font-size:20pt;margin:0 0 8px}h2{color:var(--bleu);font-size:16pt;margin:18px 0 6px}
+.depot{border:3px dashed var(--bleu);border-radius:10px;padding:22px;text-align:center;background:var(--fond);margin:10px 0}
+table{border-collapse:collapse;width:100%;margin:8px 0}
+th,td{border:1px solid var(--filet);padding:5px 7px;text-align:center}
+th{background:var(--fond)}td.g{text-align:left}
+.ok{color:var(--vert);font-weight:bold}.ko{color:var(--rouge);font-weight:bold}.vi{color:#888}
+.n0{background:#eee}.n1{background:#f8d0cc}.n2{background:#fde5bf}.n3{background:#d9ead3}.n4{background:#b6d7a8}
+button{font-size:14pt;padding:8px 16px;border-radius:8px;border:2px solid var(--bleu);background:#fff;color:var(--bleu);font-weight:bold;cursor:pointer;margin:4px 8px 4px 0}
+.info{color:#4a5568}
+.filigrane{position:absolute;pointer-events:none;opacity:.09;font:700 40px "Trebuchet MS",Arial,sans-serif;color:#1b3a63;transform:rotate(-18deg);white-space:nowrap;z-index:0}
+.filigrane small{font:400 18px "Segoe UI",Arial,sans-serif;display:block;text-align:right}
+body{position:relative;overflow-x:hidden}
+header,main{position:relative;z-index:1}
+@media print{.filigrane{opacity:.07}}
+table{background:#fffdf8}
+.large{overflow-x:auto}
+@media (max-width:640px){main{padding:12px 16px 40px}}
+</style>
+</head>
+<body>
+<div class="filigrane" aria-hidden="true" style="top:120px;left:30px">inerWeb<small>by inerweb.fr</small></div>
+<div class="filigrane" aria-hidden="true" style="top:48%;left:36%">inerWeb<small>by inerweb.fr</small></div>
+<div class="filigrane" aria-hidden="true" style="bottom:80px;right:40px">inerWeb<small>by inerweb.fr</small></div>
+<header>inerWeb BE, Contrôle 1 : du plan à la puissance, récapitulatif du professeur</header>
+<main>
+<h1>Déposez ici les fichiers de vos élèves</h1>
+<p>Les élèves passent le contrôle sur <a href="./">la page du Contrôle 1</a>, en mode « Chrono : 45 minutes » ou « S'entraîner ». À la fin, chacun clique sur « Télécharger mon résultat » et range le fichier où vous l'indiquez (dossier partagé, clé USB). Dites-le à voix haute avant de commencer : le téléchargement n'est pas automatique.</p>
+<p class="info">Les fichiers s'appellent <code>C1-RESULTAT__Nom-Prenom.html</code>. Sélectionnez-les tous d'un coup
+(Ctrl + A dans le dossier), ou faites-les glisser dans le cadre. Un fichier téléchargé sans choix de dossier est dans
+« Téléchargements ». Rien ne part sur Internet : tout se lit sur ce poste.</p>
+<div class="depot" id="depot">Glissez les fichiers ici, ou <input type="file" id="fichiers" multiple accept=".html,.htm,.json"></div>
+<p id="etat" class="info"></p>
+
+<div id="sortie" style="display:none">
+<h2>Niveaux par compétence (0 à 4)</h2>
+<p class="info">1 à 4 = NA, EC, M, PM ; 0 = NE (rien répondu). Lire un plan : questions 1 à 4 (TP TECVC CP1).
+Déperditions et puissances : questions 5 à 11 (TP TECVC CP5). Réglementation : question 12, indicatif. Une réponse juste
+sans aide pèse 4, chaque aide retire 1 (au moins 1 si juste). Niveau selon la part obtenue : 85 % et plus = 4 ; 50 % = 3 ;
+plus de 0 = 2 ; 0 = 1. La colonne « Reprendre à » donne la station de la première réponse à revoir.</p>
+<div class="large"><table id="t-niveaux"></table></div>
+<h2>Juste ou faux, question par question</h2>
+<p class="info">✓ juste · ✗ faux · — sans réponse · « a2 » : deux aides ouvertes. La dernière ligne montre les questions que la
+classe a ratées.</p>
+<div class="large"><table id="t-questions"></table></div>
+<h2>Exporter</h2>
+<button id="csv">Tableau pour École Directe (CSV)</button>
+<button id="json">Données (JSON)</button>
+<button onclick="window.print()">Imprimer cette page</button>
+<p class="info">Le CSV s'ouvre dans Excel (séparateur point-virgule). Une ligne par élève et par compétence : code,
+libellé, niveau, statut. Chaque fichier d'élève contient l'énoncé, les données, la réponse et la valeur attendue :
+vous pouvez le relire question par question.</p>
+</div>
+</main>
+<script>
+(function () {
+"use strict";
+var R = {};   // nom -> résultat
+var $ = function (id) { return document.getElementById(id); };
+function lire(fichier) {
+  return fichier.text().then(function (t) {
+    var o = null;
+    if (/\.json$/i.test(fichier.name)) o = JSON.parse(t);
+    else { var m = t.match(/<script type="application\/json" id="resultats-c1">([\s\S]*?)<\/script>/); if (m) o = JSON.parse(m[1]); }
+    if (!o || !o.questions) throw new Error(fichier.name + " : pas de résultat dedans");
+    R[o.nom] = o;
+  });
+}
+function charger(liste) {
+  var erreurs = [];
+  Promise.all(Array.prototype.map.call(liste, function (f) { return lire(f).catch(function (e) { erreurs.push(e.message); }); }))
+    .then(function () {
+      $("etat").textContent = Object.keys(R).length + " élève(s) lu(s)." + (erreurs.length ? " Ignorés : " + erreurs.join(" ; ") : "");
+      dessiner();
+    });
+}
+$("fichiers").addEventListener("change", function (e) { charger(e.target.files); });
+$("depot").addEventListener("dragover", function (e) { e.preventDefault(); });
+$("depot").addEventListener("drop", function (e) { e.preventDefault(); charger(e.dataTransfer.files); });
+
+function reprendre(o) { var q = o.questions.filter(function (q) { return !q.juste && q.stations && q.stations.length; })[0]; return q ? q.stations[0] + " (q. " + (o.questions.indexOf(q) + 1) + ")" : "tout réussi"; }
+function noms() { return Object.keys(R).sort(function (a, b) { return a.localeCompare(b, "fr"); }); }
+function dessiner() {
+  var N = noms(); if (!N.length) return;
+  $("sortie").style.display = "block";
+  var codes = R[N[0]].niveaux.map(function (n) { return n.code; });
+  $("t-niveaux").innerHTML = "<tr><th>Élève</th>" + codes.map(function (c) { return "<th>" + c + "</th>"; }).join("") + "<th>Aides ouvertes</th><th>Reprendre à</th><th>Mode, durée</th></tr>" +
+    N.map(function (n) {
+      var o = R[n], aides = o.questions.reduce(function (s, q) { return s + (q.aides || (q.aide ? 1 : 0)); }, 0);
+      var d = o.debut && o.fin ? Math.round((new Date(o.fin) - new Date(o.debut)) / 60000) + " min" : "";
+      return "<tr><td class='g'>" + n + "</td>" + o.niveaux.map(function (x) { return "<td class='n" + x.niveau + "'>" + x.niveau + " · " + x.statut + "</td>"; }).join("") +
+        "<td>" + aides + "</td><td>" + reprendre(o) + "</td><td>" + (o.mode === "libre" ? "entraînement, " : "chrono, ") + d + (o.tempsEcoule ? " (arrêt)" : "") + "</td></tr>";
+    }).join("");
+  var nq = R[N[0]].questions.length, ratees = new Array(nq).fill(0);
+  $("t-questions").innerHTML = "<tr><th>Élève</th>" + R[N[0]].questions.map(function (q, k) { return "<th title='" + q.titre + "'>" + (k + 1) + "<br>" + ((q.stations || []).join(" ") || "ind.") + "</th>"; }).join("") + "<th>Justes</th></tr>" +
+    N.map(function (n) {
+      var o = R[n], j = 0;
+      return "<tr><td class='g'>" + n + "</td>" + o.questions.map(function (q, k) {
+        if (q.juste) j++; else ratees[k]++;
+        var s = q.juste ? "<span class='ok'>✓</span>" : q.vide ? "<span class='vi'>—</span>" : "<span class='ko'>✗</span>";
+        return "<td>" + s + (q.aides ? " a" + q.aides : q.aide ? " a" : "") + "</td>";
+      }).join("") + "<td>" + j + "</td></tr>";
+    }).join("") +
+    "<tr><th class='g'>Ratées par la classe</th>" + ratees.map(function (r) { return "<th>" + r + "</th>"; }).join("") + "<th></th></tr>";
+}
+function telecharger(texte, nom, type) {
+  var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([texte], { type: type })); a.download = nom; document.body.appendChild(a); a.click(); a.remove();
+}
+$("csv").addEventListener("click", function () {
+  var l = ["Élève;Code;Compétence;Niveau (0-4);Statut;Date;Évaluation"];
+  noms().forEach(function (n) { var j = R[n].debut ? new Date(R[n].debut).toLocaleDateString("fr-FR") : ""; R[n].niveaux.forEach(function (x) { l.push([n, x.code, x.libelle, x.niveau, x.statut, j, "Contrôle 1 inerWeb BE"].join(";")); }); });
+  telecharger("﻿" + l.join("\r\n"), "C1-NIVEAUX.csv", "text/csv");
+});
+$("json").addEventListener("click", function () {
+  var out = { evaluation: "be-c1", produit: "inerWeb BE, antenne C1",
+    eleves: noms().map(function (n) { var o = R[n]; return { nom: n, niveaux: o.niveaux, justes: o.questions.filter(function (q) { return q.juste; }).length, questions: o.questions.map(function (q) { return { id: q.id, comp: q.comp, stations: q.stations, juste: q.juste, vide: q.vide, aides: q.aides }; }) }; }) };
+  telecharger(JSON.stringify(out, null, 2), "C1-NIVEAUX.json", "application/json");
+});
+})();
+</script>
+</body>
+</html>

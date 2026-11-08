@@ -1,0 +1,20 @@
+{
+  "cle": "c1-controle-plan-puissance",
+  "code": "BE-C1",
+  "titre": "Contrôle 1 : du plan à la puissance",
+  "type": "antenne",
+  "depart": "D0",
+  "duree_min": 45,
+  "modes": ["entraînement, sans minuteur", "chrono, 45 minutes"],
+  "questions": 12,
+  "stations_couvertes": ["P6", "P7", "P7b", "T1", "E1", "E2", "T2", "T3", "T4", "T5", "H1"],
+  "referentiel": {
+    "tecvc": [
+      {"code": "CP1", "libelle": "Réaliser les plans d'implantation des équipements et des réseaux d'une installation de génie climatique"},
+      {"code": "CP5", "libelle": "Réaliser les calculs de déperditions thermiques"}
+    ],
+    "apport_propre": "Question 12 (loi, norme, contrat) : hors réseau, à titre indicatif."
+  },
+  "origine": "Test de positionnement de classe du 08/11/2026 (tp-tecvc, fabrique/s08/positionnement), rendu générique inerWeb.",
+  "livre": {"tome": 1, "chapitre": "D0", "page_eleve": 43, "cle_qr": "c1"}
+}

@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="inerWeb BE, antenne C1 : douze questions, du plan coté à la puissance d'un circuit d'eau. Le résultat montre sur la carte du réseau les stations réussies et celle où reprendre.">
+<title>Contrôle 1 : du plan à la puissance | inerWeb BE</title>
+<style>
+/* Antenne C1 du Bureau d'études (08/11/2026), tirée du test de positionnement de classe.
+   Charte inerWeb : fond crème, cartes blanc cassé, bleu marine, Calibri, corps 15 pt, rien sous 14 pt. */
+:root{--navy:#1b3a63;--ink:#10233c;--muted:#4f5d70;--cream:#f7f1e7;--paper:#fffdf8;--blue:#3d7fca;--orange:#c9451a;--filet:#d9cdb8;--jaune:#fff6c9;--vert:#1e7e54;--rouge:#b3261e}
+*{box-sizing:border-box}
+html{font-size:15pt}
+body{font-family:Calibri,"Segoe UI",system-ui,Arial,sans-serif;line-height:1.5;color:var(--ink);background:var(--cream);margin:0}
+.page{position:relative;overflow:hidden;min-height:100vh}
+.filigrane{position:absolute;pointer-events:none;opacity:.09;font:700 40px "Trebuchet MS",Arial,sans-serif;color:var(--navy);transform:rotate(-18deg);white-space:nowrap;z-index:0}
+.filigrane small{font:400 18px "Segoe UI",Arial,sans-serif;display:block;text-align:right}
+header{position:relative;z-index:1;background:var(--paper);border-bottom:3px solid var(--navy);padding:8px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap}
+header .marque{display:flex;align-items:center;gap:12px;color:var(--navy);text-decoration:none;font-weight:bold}
+header nav{display:flex;gap:6px 16px;flex-wrap:wrap;align-items:center}
+header nav a{color:var(--blue);font-weight:bold;min-height:44px;display:inline-flex;align-items:center}
+main{position:relative;z-index:1;max-width:1010px;margin:0 auto;padding:18px 16px 60px}
+h1{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy);font-size:21pt;margin:0 0 10px;line-height:1.25}
+h2{font-family:"Trebuchet MS",Calibri,Arial,sans-serif;color:var(--navy);font-size:17pt;margin:0 0 6px}
+.bloc{color:var(--orange);font-weight:bold;margin:0 0 4px}
+.carte{border:1px solid var(--filet);background:var(--paper);border-radius:12px;padding:18px 20px;margin:0 0 16px}
+.donnees{background:#fff;border-left:5px solid var(--navy);padding:8px 14px;margin:10px 0}
+.figure{text-align:center;margin:8px 0;overflow-x:auto}
+.figure svg{max-width:100%;height:auto;background:#fff;border:1px solid var(--filet);border-radius:6px}
+.svgtxt{font-family:Calibri,Arial,sans-serif;font-size:20px}
+label.rep{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 4px;font-weight:bold}
+input[type=text]{font-size:16pt;padding:6px 10px;width:12em;max-width:100%;border:2px solid var(--navy);border-radius:6px;background:var(--jaune)}
+.choix label{display:block;border:2px solid var(--filet);border-radius:8px;padding:8px 12px;margin:6px 0;background:#fff;cursor:pointer}
+.choix input{transform:scale(1.4);margin-right:10px}
+button,.bouton{font:bold 15pt Calibri,"Segoe UI",Arial,sans-serif;padding:9px 18px;min-height:44px;border-radius:8px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;text-decoration:none;display:inline-block}
+button.plein,.bouton.plein{background:var(--navy);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:16px;flex-wrap:wrap}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.modes button{text-align:left;padding:12px 16px}
+.modes button span{display:block;font-weight:normal;font-size:14pt}
+.aide{margin-top:10px}
+.aide-texte{border:2px dashed #b06a00;border-radius:8px;padding:8px 12px;margin-top:8px;background:#fffaf0}
+.compteur{color:var(--muted);margin:6px 0 0}
+#chrono{font-size:17pt;font-weight:bold;background:#fff;color:var(--navy);border:2px solid var(--navy);border-radius:6px;padding:2px 10px}
+#chrono.court{background:#ffd9d6;color:var(--rouge);border-color:var(--rouge)}
+.arrondi,.info{color:var(--muted)}
+.station-q{color:var(--muted);margin:0 0 6px}
+table{border-collapse:collapse;width:100%;margin:10px 0}
+th,td{border:1px solid var(--filet);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#f3ece0}
+.ok{color:var(--vert);font-weight:bold}.ko{color:var(--rouge);font-weight:bold}
+.cache{display:none!important}
+.ici{border:3px solid var(--orange);border-radius:12px;background:#fff4ec;padding:14px 18px;margin:12px 0}
+.ici h2{color:var(--orange)}
+.ici.fini{border-color:var(--vert);background:#eef7f1}.ici.fini h2{color:var(--vert)}
+.plan{background:#fff;border:1px solid var(--filet);border-radius:12px;padding:6px;margin:10px 0;overflow-x:auto;position:relative}
+.plan svg{display:block;width:100%;height:auto;min-width:760px}
+.legende{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--muted)}
+.legende i{display:inline-block;width:18px;height:18px;border-radius:50%;vertical-align:-3px;margin-right:6px}
+.carte-fiche{position:absolute;z-index:3;width:300px;background:var(--paper);border:2px solid var(--c,#1b3a63);border-left-width:8px;border-radius:12px;padding:10px 14px;box-shadow:0 6px 18px rgba(16,35,60,.18);font-size:14pt;line-height:1.4;pointer-events:none}
+.carte-fiche strong{display:block;color:var(--navy)}
+.carte-fiche .carte-ligne{display:block;color:var(--muted)}
+.carte-fiche p{margin:6px 0 0}
+.carte-pale{opacity:.18}
+.carte-lettre,.carte-station{cursor:pointer}
+.c1-hors{opacity:.22}
+.c1-ok circle{fill:var(--vert)!important;stroke:#fff!important;stroke-dasharray:none!important}
+.c1-ko circle{fill:#fff!important;stroke:var(--rouge)!important;stroke-dasharray:none!important}
+.c1-anneau{fill:none;stroke:var(--orange);stroke-width:6}
+.c1-ici rect{stroke:var(--orange)!important;fill:#fff4ec!important}
+@media (max-width:640px){
+  html{font-size:14pt}
+  .plan svg{min-width:1000px}
+  .modes{grid-template-columns:1fr}
+  .nav button{flex:1 1 100%}
+  h1{font-size:19pt}
+  th,td{padding:5px 6px}
+}
+@media (prefers-reduced-motion:reduce){.c1-anneau animate{display:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="filigrane" aria-hidden="true" style="top:140px;left:30px">inerWeb<small>by inerweb.fr</small></div>
+<div class="filigrane" aria-hidden="true" style="top:46%;left:38%">inerWeb<small>by inerweb.fr</small></div>
+<div class="filigrane" aria-hidden="true" style="bottom:90px;right:40px">inerWeb<small>by inerweb.fr</small></div>
+
+<header>
+  <a class="marque" href="../../index.html" aria-label="Le réseau inerWeb BE"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 50" width="133" height="35" aria-hidden="true"><text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="4" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="54" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="4" x2="112" y1="35" y2="35"/><rect fill="#e8914a" x="118" y="10" rx="5" ry="5" width="66" height="24"/><text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15px" font-weight="bold" x="151" y="27" text-anchor="middle">BE</text></svg><span>Contrôle 1</span></a>
+  <nav><a href="formulaire.html" target="_blank" rel="noopener">Le formulaire</a><span id="chrono" class="cache" role="timer" aria-label="Temps restant">45:00</span><span id="qui"></span></nav>
+</header>
+<main>
+
+<section id="accueil" class="carte">
+<h1>Contrôle 1 : du plan à la puissance</h1>
+<p>Douze questions de difficulté croissante : lire un plan coté, puis calculer comme au bureau d'études,
+jusqu'à la puissance d'un circuit d'eau. Chaque question vient d'une station du réseau. À la fin, la carte du réseau
+montre les stations que vous maîtrisez et celle où reprendre.</p>
+<p>Calculatrice autorisée. <b>Le formulaire</b> (lien en haut de la page) donne les formules et les unités : ouvrez-le
+quand vous voulez, à côté du contrôle.</p>
+<p><b>Trois aides par question :</b> la piste, la méthode, puis un exemple chiffré à imiter. Elles sont comptées dans le
+résultat. Une réponse juste sans aide montre que vous savez faire seul.</p>
+<label class="rep" for="nom">Votre nom et votre prénom, ou un pseudo :
+<input type="text" id="nom" autocomplete="off" style="width:16em"></label>
+<p class="info">Vos valeurs sont tirées de ce nom : chacun a les siennes. Si vous fermez la page, rouvrez-la et retapez
+le même nom : vos réponses reviennent. Rien n'est envoyé sur Internet.</p>
+<h2>Comment voulez-vous le passer ?</h2>
+<div class="modes">
+<button type="button" id="mode-libre">S'entraîner<span>Sans minuteur. Vous corrigez quand vous voulez et vous pouvez recommencer avec d'autres valeurs.</span></button>
+<button type="button" id="mode-chrono" class="plein">Chrono : 45 minutes<span>Le minuteur part au clic. À zéro, le contrôle s'arrête et se corrige, fini ou pas.</span></button>
+</div>
+<p class="info">En classe, votre professeur vous dit quel mode choisir. Professeur : <a href="professeur.html">le récapitulatif de la classe</a>.</p>
+</section>
+
+<section id="test" class="carte cache">
+<div class="bloc" id="q-bloc"></div>
+<p class="station-q" id="q-station"></p>
+<h2 id="q-titre"></h2>
+<div id="q-corps"></div>
+<div class="aide" id="aides"></div>
+<div class="nav">
+<button id="prec" type="button">← Question précédente</button>
+<button id="suiv" class="plein" type="button">Question suivante →</button>
+</div>
+</section>
+
+<section id="fin" class="carte cache">
+<h1>Avant de corriger</h1>
+<p id="fin-vides"></p>
+<p>Vous pouvez encore revenir en arrière. Quand vous cliquez sur « Corriger », vos réponses sont corrigées et vous ne
+pouvez plus les changer.</p>
+<div class="nav"><button id="retour" type="button">← Revenir aux questions</button>
+<button id="terminer" class="plein" type="button">Corriger</button></div>
+</section>
+
+<section id="resultat" class="carte cache">
+<h1>Votre résultat</h1>
+<p id="res-phrase"></p>
+<div id="res-ici" class="ici"></div>
+<h2>Vous êtes ici, sur le réseau</h2>
+<div class="legende"><span><i style="background:#1e7e54"></i>station réussie</span><span><i style="background:#fff;border:3px solid #b3261e"></i>une réponse à revoir</span><span><i style="background:#fff;border:4px solid #c9451a"></i>anneau orange : reprenez ici</span><span>pâle : hors de ce contrôle</span><span>C1 en orange, sous D0 : vous êtes ici</span></div>
+<div class="plan"><svg id="plan" role="img" aria-labelledby="plan-titre"><title id="plan-titre">Le réseau inerWeb BE, avec les stations réussies allumées et la station où reprendre entourée</title></svg></div>
+<h2>Votre niveau, de 0 à 4</h2>
+<table id="res-niveaux"></table>
+<p class="info">0 : rien répondu. 1 : à reprendre. 2 : en cours. 3 : maîtrisé. 4 : bien maîtrisé. Chaque aide ouverte
+compte un peu moins qu'une réponse trouvée seul.</p>
+<h2>Question par question</h2>
+<table id="res-table"></table>
+<h2>Garder une trace (facultatif)</h2>
+<p>Si votre professeur le demande, téléchargez votre résultat et rangez-le où il vous l'indique. Le fichier reste sur
+ce poste.</p>
+<div class="nav"><span id="res-info" class="info"></span><span><button id="recommencer" type="button" class="cache">Recommencer avec d'autres valeurs</button>
+<button id="enregistrer" class="plein" type="button">Télécharger mon résultat</button></span></div>
+</section>
+</main>
+</div>
+
+<script src="../../programme.js?v=20261108-c1"></script>
+<script src="../../carte.js?v=20261108-c1"></script>
+<script>
+(function () {
+"use strict";
+var VERSION = "BE-C1-1";
+var TOL = 0.02;            // ± 2 %
+var MAX_U = 0.45;          // arrêté du 13 juin 2008, murs en contact avec l'extérieur
+
+/* ---------- tirage : graine tirée du nom ---------- */
+/* ---------- tirage : graine tirée du nom ---------- */
+function normaliser(s) {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]+/g, " ").trim();
+}
+function graine(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function generateur(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function arr(x, d) { var p = Math.pow(10, d); return Math.round(x * p) / p; }
+function fr(x, d) { return (d === undefined ? String(x) : x.toFixed(d)).replace(".", ","); }
+function milliers(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
+
+/* ---------- aides à niveaux : la dernière est l'exemple chiffré (autres valeurs) ---------- */
+var POINTS_MAX = 4;   // une question juste sans aide pèse 4 ; chaque aide retire 1 (au moins 1 si juste). Sert au niveau 0-4, jamais affiché.
+var AIDES = {
+  Q1: ["Repérez le mur nord : c'est le mur du haut du plan. Sa cote est écrite au-dessus.",
+       "La cote est en centimètres. Divisez par 100 pour l'avoir en mètres.",
+       "Exemple : 375 cm ÷ 100 = 3,75 m."],
+  Q2: ["1/50 veut dire : la réalité est 50 fois plus grande que le papier.",
+       "Longueur réelle en cm = longueur sur le papier × 50. Puis ÷ 100 pour les mètres.",
+       "Exemple : 3 cm × 50 = 150 cm = 1,50 m."],
+  Q3: ["Calculez d'abord la surface du mur entier, puis celle de la fenêtre.",
+       "Surface = longueur × hauteur. Surface nette = mur entier − fenêtre.",
+       "Exemple : 4,00 × 2,50 = 10,00 m² ; 1,20 × 1,35 = 1,62 m² ; 10,00 − 1,62 = 8,38 m²."],
+  Q4: ["Il faut trois longueurs en mètres : la longueur, la largeur et la hauteur.",
+       "Les cotes du plan sont en cm : divisez par 100. Volume = longueur × largeur × hauteur.",
+       "Exemple : 4,00 × 3,00 × 2,50 = 30,0 m³."],
+  Q5: ["ΔT = température intérieure − température extérieure.",
+       "Retrancher un nombre négatif revient à l'ajouter : 19 − (−7) = 19 + 7.",
+       "Exemple : 20 − (−5) = 20 + 5 = 25 K."],
+  Q6: ["R = e ÷ λ.",
+       "L'épaisseur doit être en mètres : 140 mm = 0,140 m.",
+       "Exemple : 100 mm et λ = 0,040 : 0,100 ÷ 0,040 = 2,50 m²·K/W."],
+  Q7: ["Additionnez toutes les résistances, Rsi et Rse compris : c'est R total.",
+       "Le coefficient U est l'inverse de R total : U = 1 ÷ R total.",
+       "Exemple : 0,13 + 0,05 + 3,00 + 0,23 + 0,04 = 3,45 ; U = 1 ÷ 3,45 = 0,290 W/(m²·K)."],
+  Q8: ["U petit = la paroi isole bien.",
+       "Le mur respecte l'arrêté si son U est inférieur ou égal au U maximal."],
+  Q9: ["Φ = U × S × ΔT.",
+       "Exemple : 0,30 × 10,0 × 26 = 78 W."],
+  Q10: ["Les quatre puissances s'ajoutent.",
+        "Déperditions Φ = ΦT + Φinf + ΦRA. Puissance à installer ΦHL = Φ + ΦRH.",
+        "Exemple : 10 000 + 500 + 2 000 = 12 500 W ; 12 500 + 3 000 = 15 500 W."],
+  Q11: ["ΔT = température de départ − température de retour.",
+        "P (kW) = 1,163 × qv (m³/h) × ΔT (K).",
+        "Exemple : 2,4 m³/h, 45 °C et 35 °C : 1,163 × 2,4 × 10 = 27,9 kW."],
+  Q12: ["Ouvrez le formulaire, partie « Ce qui oblige une entreprise ».",
+        "Qui écrit ce document ? Et qu'est-ce qui relie l'entreprise à lui ?"]
+};
+
+var DUREE_MS = 45 * 60 * 1000;
+
+/* ---------- les douze questions ---------- */
+function construire(nom) {
+  var r = generateur(graine(normaliser(nom) + "|" + VERSION));
+  function un(t) { return t[Math.floor(r() * t.length)]; }
+  var V = {};
+  V.L = un([420, 450, 480, 510, 540, 570, 600]);        // cm
+  V.l = un([300, 320, 340, 360, 380]);                  // cm
+  V.H = un([2.5, 2.6, 2.7]);                            // m
+  V.lf = un([1.2, 1.4, 1.6, 1.8]); V.hf = un([1.25, 1.35, 1.45]);
+  V.rad = un([0.8, 1.0, 1.2, 1.4, 1.6]);                // m, radiateur
+  V.Ti = un([19, 20]); V.Te = un([-5, -7, -9, -11, -15]);
+  V.lam = un([0.032, 0.035, 0.04]); V.e = un([100, 120, 140, 160, 200]);
+  V.Riso = un([2.5, 3.15, 3.7, 4.35, 5.0]);
+  V.Ucas = un([0.28, 0.36, 0.41, 0.52, 1.2, 1.65]);
+  V.Up = un([0.2, 0.25, 0.3, 0.35]); V.Sp = un([8.5, 9.6, 10.8, 12.4, 14.2]); V.dTp = un([24, 26, 28, 30]);
+  V.pT = un([8400, 9650, 11200, 12800, 14300, 15600]); V.pI = un([420, 610, 880, 1150]);
+  V.pR = un([1540, 2080, 2730, 3360]); V.pH = un([1850, 2460, 3120, 3980]);
+  V.qv = un([0.8, 1.2, 1.6, 2.4, 3.0]); V.reg = un([[45, 35], [55, 45], [70, 50], [80, 60]]);
+  V.loi = Math.floor(r() * 3); V.melange = [r(), r(), r()];
+
+  var Ld = V.L / 100, ld = V.l / 100;
+  var Q = [];
+  Q.push({ id: "Q1", comp: "CP1", bloc: "Lire un plan", titre: "Lire une cote",
+    corps: "<p>Voici le plan d'un bureau, vu de dessus. Les cotes sont en centimètres.</p>" + svgPlan(V) +
+      "<p>Quelle est la longueur du mur nord, en mètres ?</p>",
+    unite: "m", arrondi: "deux chiffres après la virgule", attendu: arr(Ld, 2),
+    aide: "Une cote en centimètres se divise par 100 pour l'avoir en mètres. Exemple : 375 cm = 3,75 m." });
+  Q.push({ id: "Q2", comp: "CP1", bloc: "Lire un plan", titre: "Utiliser l'échelle",
+    corps: "<p>Le plan est imprimé à l'échelle <b>1/50</b> : 1 cm sur le papier vaut 50 cm en vrai.</p>" + svgEchelle(V) +
+      "<p>Sur le papier, le radiateur mesure <b>" + fr(V.rad * 2, 1) + " cm</b>. Quelle est sa longueur réelle, en mètres ?</p>",
+    unite: "m", arrondi: "deux chiffres après la virgule", attendu: arr(V.rad, 2),
+    aide: "Longueur réelle = longueur sur le papier × 50, en centimètres. Puis ÷ 100 pour les mètres. Exemple : 3 cm × 50 = 150 cm = 1,50 m." });
+  var Sn = arr(Ld * V.H - V.lf * V.hf, 2);
+  Q.push({ id: "Q3", comp: "CP1", bloc: "Lire un plan", titre: "La surface nette d'un mur",
+    corps: "<p>Le mur nord vu de face. Il mesure " + fr(Ld, 2) + " m de long et " + fr(V.H, 2) + " m de haut. La fenêtre mesure " +
+      fr(V.lf, 2) + " m × " + fr(V.hf, 2) + " m.</p>" + svgElevation(V) +
+      "<p>Quelle est la surface du mur sans la fenêtre, en m² ?</p>",
+    unite: "m²", arrondi: "deux chiffres après la virgule", attendu: Sn,
+    aide: "Surface nette = surface du mur entier − surface de la fenêtre. Surface = longueur × hauteur. Exemple : 4,00 × 2,50 − 1,20 × 1,35 = 10,00 − 1,62 = 8,38 m²." });
+  Q.push({ id: "Q4", comp: "CP1", bloc: "Lire un plan", titre: "Le volume de la pièce",
+    corps: "<p>Le même bureau. Hauteur sous plafond : <b>" + fr(V.H, 2) + " m</b>.</p>" + svgPlan(V) +
+      "<p>Quel est le volume de la pièce, en m³ ?</p>",
+    unite: "m³", arrondi: "un chiffre après la virgule", attendu: arr(Ld * ld * V.H, 1),
+    aide: "Volume = longueur × largeur × hauteur, les trois en mètres. Exemple : 4,00 × 3,00 × 2,50 = 30,0 m³." });
+  Q.push({ id: "Q5", comp: "CP5", bloc: "Les températures", titre: "L'écart de température",
+    corps: svgTemperatures(V) + "<p>Dans le bureau, on veut <b>" + V.Ti + " °C</b>. La température extérieure de base est <b>" +
+      fr(V.Te).replace("-", "−") + " °C</b>.</p><p>Quel est l'écart de température ΔT entre l'intérieur et l'extérieur ?</p>",
+    unite: "K (ou °C)", arrondi: "nombre entier", attendu: V.Ti - V.Te,
+    aide: "ΔT = température intérieure − température extérieure. Retrancher un nombre négatif revient à l'ajouter. Exemple : 19 − (−7) = 19 + 7 = 26." });
+  Q.push({ id: "Q6", comp: "CP5", bloc: "La paroi", titre: "La résistance d'un isolant",
+    corps: svgCouche(V) + "<p>Un panneau de laine de verre fait <b>" + V.e + " mm</b> d'épaisseur. Sa conductivité est λ = <b>" +
+      fr(V.lam, 3) + " W/(m·K)</b>.</p><p>Quelle est sa résistance thermique R ?</p>",
+    unite: "m²·K/W", arrondi: "deux chiffres après la virgule", attendu: arr(V.e / 1000 / V.lam, 2),
+    aide: "R = e ÷ λ, avec l'épaisseur e en mètres. 100 mm = 0,100 m. Exemple : 0,100 ÷ 0,040 = 2,50 m²·K/W." });
+  var Rt = 0.13 + 0.05 + V.Riso + 0.23 + 0.04;
+  Q.push({ id: "Q7", comp: "CP5", bloc: "La paroi", titre: "Le coefficient U d'un mur",
+    corps: "<p>La coupe d'un mur, de l'intérieur vers l'extérieur, avec la résistance de chaque couche :</p>" + svgCoupe(V) +
+      "<p>Quel est le coefficient U de ce mur ?</p>",
+    unite: "W/(m²·K)", arrondi: "trois chiffres après la virgule", attendu: arr(1 / Rt, 3),
+    aide: "R total = Rsi + toutes les couches + Rse. Puis U = 1 ÷ R total. Exemple : 0,13 + 0,05 + 3,00 + 0,23 + 0,04 = 3,45 ; U = 1 ÷ 3,45 = 0,290." });
+  var conforme = V.Ucas <= MAX_U;
+  Q.push({ id: "Q8", comp: "CP5", bloc: "La paroi", titre: "Conforme ou non ?", type: "choix",
+    corps: "<p>Un bâtiment existant de plus de 1 000 m² est rénové. Pour ses murs extérieurs, l'arrêté du 13 juin 2008 fixe un U maximal de <b>" +
+      fr(MAX_U, 2) + " W/(m²·K)</b>.</p>" + svgJauge(V.Ucas) + "<p>Le bureau d'études a calculé U = <b>" + fr(V.Ucas, 2) +
+      " W/(m²·K)</b> pour le mur rénové. Le mur respecte-t-il l'arrêté ?</p>",
+    options: ["Oui, il respecte l'arrêté", "Non, il ne respecte pas l'arrêté"], attendu: conforme ? 0 : 1,
+    aide: "U petit = la paroi isole bien. Le mur respecte l'arrêté si son U est inférieur ou égal au U maximal." });
+  Q.push({ id: "Q9", comp: "CP5", bloc: "Les déperditions", titre: "Ce que perd une paroi",
+    corps: svgFlux() + "<p>Un mur a un coefficient U = <b>" + fr(V.Up, 2) + " W/(m²·K)</b> et une surface nette de <b>" + fr(V.Sp, 1) +
+      " m²</b>. L'écart de température est ΔT = <b>" + V.dTp + " K</b>.</p><p>Quelle puissance Φ ce mur perd-il ?</p>",
+    unite: "W", arrondi: "nombre entier", attendu: Math.round(V.Up * V.Sp * V.dTp),
+    aide: "Φ = U × S × ΔT. Exemple : 0,30 × 10,0 × 26 = 78 W." });
+  Q.push({ id: "Q10", comp: "CP5", bloc: "Les déperditions", titre: "La puissance à installer",
+    corps: "<p>Le bureau d'études a calculé, pour un bâtiment :</p>" + svgPuissances() + "<div class='donnees'>" +
+      "ΦT, déperditions par les parois : <b>" + milliers(V.pT) + " W</b><br>Φinf, infiltrations d'air : <b>" + milliers(V.pI) +
+      " W</b><br>ΦRA, renouvellement d'air : <b>" + milliers(V.pR) + " W</b><br>ΦRH, surpuissance de relance : <b>" + milliers(V.pH) +
+      " W</b></div><p>Quelle est la puissance à installer ΦHL ?</p>",
+    unite: "W", arrondi: "nombre entier", attendu: V.pT + V.pI + V.pR + V.pH,
+    aide: "Déperditions totales Φ = ΦT + Φinf + ΦRA. Puissance à installer ΦHL = Φ + ΦRH." });
+  var dTe = V.reg[0] - V.reg[1];
+  Q.push({ id: "Q11", comp: "CP5", bloc: "Les déperditions", titre: "La puissance d'un circuit d'eau",
+    corps: svgCircuit(V) + "<p>Un circuit de chauffage a un débit de <b>" + fr(V.qv, 1) + " m³/h</b>. L'eau part à <b>" + V.reg[0] +
+      " °C</b> et revient à <b>" + V.reg[1] + " °C</b>.</p><p>Quelle puissance ce circuit transporte-t-il ?</p>",
+    unite: "kW", arrondi: "un chiffre après la virgule", attendu: arr(1.163 * V.qv * dTe, 1),
+    aide: "P (kW) = 1,163 × qv (m³/h) × ΔT (K), avec ΔT = départ − retour. Exemple : 1,163 × 2,4 × 10 = 27,9 kW." });
+  var LOIS = [
+    { q: "La norme NF EN 12831 donne la méthode de calcul des déperditions. S'impose-t-elle à l'entreprise par elle-même ?",
+      o: ["Oui, une norme est une loi", "Non, seulement si un arrêté ou le contrat y renvoie", "Oui, dès qu'elle est publiée"], b: 1 },
+    { q: "Le CCTP d'un marché renvoie au DTU du lot. Le DTU s'impose-t-il à l'entreprise qui a signé ?",
+      o: ["Non, un DTU est toujours volontaire", "Oui, par le contrat qu'elle a signé", "Seulement si le client le redit sur le chantier"], b: 1 },
+    { q: "Un isolant a un certificat ACERMI. Qu'apporte ce certificat ?",
+      o: ["Il oblige l'entreprise à poser ce produit", "Il prouve la performance de l'isolant, sa résistance R", "Il remplace le calcul du bureau d'études"], b: 1 }];
+  var L = LOIS[V.loi], ordre = [0, 1, 2].sort(function (a, b) { return V.melange[a] - V.melange[b]; });
+  Q.push({ id: "Q12", comp: "B9", bloc: "Ce qui oblige", titre: "Texte, norme, contrat", type: "choix",
+    corps: "<p>" + L.q + "</p>", options: ordre.map(function (i) { return L.o[i]; }), attendu: ordre.indexOf(L.b),
+    aide: "" });
+  Q.forEach(function (q) { q.aides = AIDES[q.id]; });
+  return Q;
+}
+
+/* ---------- images (SVG, texte jamais posé sur un tracé) ---------- */
+function T(x, y, s, anc, gras) { return '<text class="svgtxt" x="' + x + '" y="' + y + '" text-anchor="' + (anc || "middle") + '"' + (gras ? ' font-weight="bold"' : "") + ">" + s + "</text>"; }
+function fleche(id) { return '<defs><marker id="' + id + '" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b3a63"/></marker></defs>'; }
+function svgPlan(V) {
+  var k = 0.55, w = V.L * k, h = V.l * k, x = 90, y = 70;
+  return '<div class="figure"><svg viewBox="0 0 ' + (w + 190) + ' ' + (h + 150) + '" width="' + (w + 190) + '">' + fleche("fp") +
+    '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="#f7f7f7" stroke="#222" stroke-width="7"/>' +
+    '<rect x="' + (x + w * 0.35) + '" y="' + (y - 4) + '" width="' + (V.lf * 100 * k) + '" height="8" fill="#9fc5e8" stroke="#222" stroke-width="1.5"/>' +
+    '<line x1="' + x + '" y1="' + (y - 34) + '" x2="' + (x + w) + '" y2="' + (y - 34) + '" stroke="#1b3a63" stroke-width="1.5" marker-start="url(#fp)" marker-end="url(#fp)"/>' +
+    T(x + w / 2, y - 44, V.L, "middle", true) +
+    '<line x1="' + (x - 34) + '" y1="' + y + '" x2="' + (x - 34) + '" y2="' + (y + h) + '" stroke="#1b3a63" stroke-width="1.5" marker-start="url(#fp)" marker-end="url(#fp)"/>' +
+    T(x - 44, y + h / 2 + 6, V.l, "end", true) +
+    T(x + w / 2, y + h / 2 + 6, "Bureau") + T(x + w + 20, y + 10, "Nord ↑", "start") +
+    T(x + w * 0.35 + V.lf * 50 * k, y + 32, "fenêtre") + T(x + w / 2, y + h + 50, "Mur nord : en haut du plan", "middle") +
+    '</svg></div>';
+}
+function svgEchelle(V) {
+  var cm = 40, l = V.rad * 2 * cm;
+  return '<div class="figure"><svg viewBox="0 0 520 190" width="520">' + fleche("fe") +
+    '<rect x="40" y="20" width="440" height="110" fill="#fafafa" stroke="#999" stroke-dasharray="6 4"/>' +
+    '<rect x="' + (260 - l / 2) + '" y="70" width="' + l + '" height="16" fill="#e8a87c" stroke="#222"/>' +
+    T(260, 60, "radiateur, sur le papier") +
+    '<line x1="' + (260 - l / 2) + '" y1="108" x2="' + (260 + l / 2) + '" y2="108" stroke="#1b3a63" stroke-width="1.5" marker-start="url(#fe)" marker-end="url(#fe)"/>' +
+    T(260, 124, fr(V.rad * 2, 1) + " cm", "middle", true) + T(260, 172, "Échelle 1/50 : 1 cm sur le papier = 50 cm en vrai") + '</svg></div>';
+}
+function svgElevation(V) {
+  var k = 70, w = V.L / 100 * k, h = V.H * k, x = 130, y = 30, fw = V.lf * k, fh = V.hf * k, fx = x + (w - fw) / 2, fy = y + 0.9 * k;
+  return '<div class="figure"><svg viewBox="0 0 ' + (w + 320) + ' ' + (h + 110) + '" width="' + (w + 320) + '">' + fleche("fv") +
+    '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="#efe6d8" stroke="#222" stroke-width="2"/>' +
+    '<rect x="' + fx + '" y="' + fy + '" width="' + fw + '" height="' + fh + '" fill="#cfe2f3" stroke="#222" stroke-width="2"/>' +
+    '<line x1="' + x + '" y1="' + (y + h + 30) + '" x2="' + (x + w) + '" y2="' + (y + h + 30) + '" stroke="#1b3a63" stroke-width="1.5" marker-start="url(#fv)" marker-end="url(#fv)"/>' +
+    T(x + w / 2, y + h + 56, fr(V.L / 100, 2) + " m", "middle", true) +
+    '<line x1="' + (x - 30) + '" y1="' + y + '" x2="' + (x - 30) + '" y2="' + (y + h) + '" stroke="#1b3a63" stroke-width="1.5" marker-start="url(#fv)" marker-end="url(#fv)"/>' +
+    T(x - 40, y + h / 2 + 6, fr(V.H, 2) + " m", "end", true) +
+    T(x + w + 14, fy + fh / 2 - 6, "fenêtre", "start") + T(x + w + 14, fy + fh / 2 + 16, fr(V.lf, 2) + " × " + fr(V.hf, 2) + " m", "start", true) +
+    '<line x1="' + (fx + fw) + '" y1="' + (fy + fh / 2) + '" x2="' + (x + w + 10) + '" y2="' + (fy + fh / 2) + '" stroke="#888" stroke-dasharray="4 3"/>' +
+    '</svg></div>';
+}
+function svgTemperatures(V) {
+  return '<div class="figure"><svg viewBox="0 0 520 190" width="520">' +
+    '<polygon points="170,70 260,15 350,70" fill="#d9cbb5" stroke="#222" stroke-width="2"/>' +
+    '<rect x="180" y="70" width="160" height="100" fill="#fbeee0" stroke="#222" stroke-width="2"/>' +
+    T(260, 115, "intérieur") + T(260, 145, V.Ti + " °C", "middle", true) +
+    T(85, 115, "extérieur") + T(85, 145, fr(V.Te).replace("-", "−") + " °C", "middle", true) + T(440, 115, "ΔT = ?", "middle", true) + '</svg></div>';
+}
+function svgCouche(V) {
+  return '<div class="figure"><svg viewBox="0 0 520 170" width="520">' + fleche("fc") +
+    '<rect x="200" y="20" width="110" height="110" fill="#f6e27a" stroke="#222" stroke-width="2"/>' +
+    '<path d="M205 40 q 12 -12 24 0 t 24 0 t 24 0 t 24 0 M205 75 q 12 -12 24 0 t 24 0 t 24 0 t 24 0 M205 110 q 12 -12 24 0 t 24 0 t 24 0 t 24 0" stroke="#b08a00" fill="none"/>' +
+    '<line x1="200" y1="148" x2="310" y2="148" stroke="#1b3a63" stroke-width="1.5" marker-start="url(#fc)" marker-end="url(#fc)"/>' +
+    T(255, 166, "e = " + V.e + " mm", "middle", true) + T(330, 80, "λ = " + fr(V.lam, 3), "start", true) + T(180, 80, "laine de verre", "end") + '</svg></div>';
+}
+function svgCoupe(V) {
+  var C = [["plâtre", 0.05, 70, "#eeeeee"], ["isolant", V.Riso, 100, "#f6e27a"], ["parpaing", 0.23, 90, "#bdbdbd"]];
+  var x = 150, s = '<div class="figure"><svg viewBox="0 0 560 300" width="560">';
+  s += T(60, 40, "intérieur", "middle", true) + T(500, 40, "extérieur", "middle", true);
+  s += T(60, 160, "Rsi = 0,13", "middle") + T(500, 160, "Rse = 0,04", "middle");
+  var xx = x;
+  C.forEach(function (c, i) {
+    s += '<rect x="' + xx + '" y="60" width="' + c[2] + '" height="200" fill="' + c[3] + '" stroke="#222" stroke-width="2"/>';
+    xx += c[2];
+  });
+  xx = x;
+  C.forEach(function (c, i) {
+    var cx = xx + c[2] / 2;
+    s += '<line x1="' + cx + '" y1="262" x2="' + cx + '" y2="' + (272) + '" stroke="#888"/>' + T(cx, 292, c[0], "middle");
+    xx += c[2];
+  });
+  s += '</svg></div>';
+  s += "<div class='donnees'>Rsi, côté intérieur : <b>0,13</b> m²·K/W<br>Plâtre : R = <b>0,05</b> m²·K/W<br>Isolant : R = <b>" + fr(V.Riso, 2) +
+    "</b> m²·K/W<br>Parpaing : R = <b>0,23</b> m²·K/W<br>Rse, côté extérieur : <b>0,04</b> m²·K/W</div>";
+  return s;
+}
+function svgJauge(u) {
+  var k = 300, x0 = 80, xm = x0 + MAX_U / 2 * k, xu = x0 + Math.min(u, 2) / 2 * k;
+  return '<div class="figure"><svg viewBox="0 0 520 150" width="520">' +
+    '<rect x="' + x0 + '" y="60" width="' + k + '" height="22" fill="#eef" stroke="#222"/>' +
+    '<line x1="' + xm + '" y1="40" x2="' + xm + '" y2="100" stroke="#b3261e" stroke-width="3"/>' + T(xm, 125, "U max", "middle", true) +
+    T(x0, 50, "0", "middle") + T(x0 + k, 50, "2", "middle") + T(x0 + k + 20, 77, "W/(m²·K)", "start") +
+    '<circle cx="' + xu + '" cy="71" r="8" fill="#1b3a63"/>' + T(xu, 30, "U du mur", "middle") + '</svg></div>';
+}
+function svgFlux() {
+  return '<div class="figure"><svg viewBox="0 0 520 170" width="520">' + fleche("ff") +
+    '<rect x="230" y="20" width="60" height="130" fill="#d9cbb5" stroke="#222" stroke-width="2"/>' +
+    '<line x1="150" y1="85" x2="370" y2="85" stroke="#c9451a" stroke-width="5" marker-end="url(#ff)"/>' +
+    T(110, 70, "chaud", "middle") + T(420, 70, "froid", "middle") + T(260, 168, "le mur", "middle") + T(420, 110, "Φ = ?", "middle", true) + '</svg></div>';
+}
+function svgPuissances() {
+  var c = [["ΦT", "#9fc5e8", 170], ["Φinf", "#b6d7a8", 40], ["ΦRA", "#ffe599", 70], ["ΦRH", "#f4cccc", 80]], x = 60, s = '<div class="figure"><svg viewBox="0 0 520 120" width="520">';
+  c.forEach(function (b) { s += '<rect x="' + x + '" y="20" width="' + b[2] + '" height="40" fill="' + b[1] + '" stroke="#222"/>' + T(x + b[2] / 2, 85, b[0], "middle", true); x += b[2]; });
+  return s + T(260, 112, "ΦHL : la puissance à installer, tout compris", "middle") + '</svg></div>';
+}
+function svgCircuit(V) {
+  return '<div class="figure"><svg viewBox="0 0 560 200" width="560">' + fleche("fk") +
+    '<rect x="30" y="50" width="110" height="100" rx="8" fill="#f4cccc" stroke="#222" stroke-width="2"/>' + T(85, 105, "chaudière") +
+    '<rect x="420" y="50" width="110" height="100" rx="8" fill="#eeeeee" stroke="#222" stroke-width="2"/>' + T(475, 105, "radiateurs") +
+    '<line x1="140" y1="70" x2="420" y2="70" stroke="#c0392b" stroke-width="4" marker-end="url(#fk)"/>' +
+    '<line x1="420" y1="130" x2="140" y2="130" stroke="#2e6db4" stroke-width="4" marker-end="url(#fk)"/>' +
+    T(280, 55, "départ " + V.reg[0] + " °C", "middle", true) + T(280, 160, "retour " + V.reg[1] + " °C", "middle", true) +
+    T(280, 192, "débit " + fr(V.qv, 1) + " m³/h", "middle") + '</svg></div>';
+}
+
+
+/* ---------- le réseau : quelle station enseigne chaque question (programme.js, source unique) ---------- */
+var P = window.BE_PROGRAMME, CARTE = window.BE_CARTE;
+var ANT = P.ANTENNES.filter(function (a) { return a.code === "C1"; })[0];
+var STATIONS_Q = {};
+ANT.questions.forEach(function (x) { STATIONS_Q[x.id] = x.stations; });
+function infoStation(code) {
+  if (code.charAt(0) === "P") {
+    var g = P.PLANS.GARES.filter(function (s) { return "P" + s.code === code; })[0];
+    return { code: code, nom: "gare " + g.code + " de la ligne P, " + g.titre, court: "Gare P" + g.code + ", " + g.titre, href: "../../" + g.href };
+  }
+  var s = P.station(code);
+  return { code: code, nom: "station " + s.code + ", " + s.titre, court: s.code + ", " + s.titre, href: "../../" + s.href };
+}
+function nomStations(id) { return (STATIONS_Q[id] || []).map(function (c) { return infoStation(c).court; }).join(" ; "); }
+
+/* ---------- état, sauvegarde sur le poste ---------- */
+var E = { nom: "", mode: "chrono", rep: {}, aides: {}, debut: null, fin: null, tirage: 0 }, Q = [], i = 0;
+var $ = function (id) { return document.getElementById(id); };
+function cle() { return "inerweb-be-c1:" + VERSION + ":" + E.mode + ":" + normaliser(E.nom); }
+function sauver() { try { localStorage.setItem(cle(), JSON.stringify(E)); } catch (e) {} }
+function relire() { try { var s = localStorage.getItem(cle()); if (s) { var o = JSON.parse(s); E.rep = o.rep || {}; E.aides = o.aides || {}; E.debut = o.debut; E.fin = o.fin; E.tempsEcoule = o.tempsEcoule; E.tirage = o.tirage || 0; } } catch (e) {} }
+function graineNom() { return E.nom + (E.tirage ? " #" + E.tirage : ""); }
+
+function lireNombre(s) {
+  if (s === undefined || s === null) return NaN;
+  s = String(s).replace(/\s/g, "").replace(",", ".").replace("−", "-");
+  return s === "" ? NaN : Number(s);
+}
+function juste(q, r) {
+  if (q.type === "choix") return r !== undefined && Number(r) === q.attendu;
+  var v = lireNombre(r);
+  if (isNaN(v)) return false;
+  var t = Math.max(Math.abs(q.attendu) * TOL, q.arrondi === "nombre entier" ? 0.5 : 0.005);
+  return Math.abs(v - q.attendu) <= t;
+}
+function vide(q) { var r = E.rep[q.id]; return r === undefined || String(r).trim() === ""; }
+
+function afficher() {
+  var q = Q[i];
+  $("q-bloc").textContent = q.bloc;
+  $("q-station").textContent = STATIONS_Q[q.id].length ? "Appris à : " + nomStations(q.id) : "Hors du réseau, à titre indicatif : la réglementation.";
+  $("q-titre").textContent = "Question " + (i + 1) + " sur " + Q.length + " · " + q.titre;
+  var h = q.corps;
+  if (q.type === "choix") {
+    h += '<div class="choix">' + q.options.map(function (o, k) {
+      return '<label><input type="radio" name="c" value="' + k + '"' + (String(E.rep[q.id]) === String(k) ? " checked" : "") + "> " + o + "</label>";
+    }).join("") + "</div>";
+  } else {
+    h += '<label class="rep">Votre réponse : <input type="text" id="champ" inputmode="decimal" autocomplete="off" value="' +
+      (E.rep[q.id] !== undefined ? String(E.rep[q.id]).replace(/"/g, "") : "") + '"> ' + q.unite + "</label>" +
+      '<p class="arrondi">Arrondi : ' + q.arrondi + ".</p>";
+  }
+  $("q-corps").innerHTML = h;
+  /* Texte des figures à 20 unités : la figure ne descend pas sous 70 % de sa largeur, soit 14 px au moins ; elle défile sur un petit écran. */
+  Array.prototype.forEach.call($("q-corps").querySelectorAll(".figure svg"), function (f) { f.style.minWidth = Math.ceil(Number(f.getAttribute("width")) * 0.7) + "px"; });
+  dessinerAides();
+  $("prec").disabled = i === 0;
+  $("suiv").textContent = i === Q.length - 1 ? "Fin des questions →" : "Question suivante →";
+  var champ = $("champ");
+  if (champ) champ.addEventListener("input", function () { E.rep[q.id] = champ.value; sauver(); });
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="c"]'), function (b) {
+    b.addEventListener("change", function () { E.rep[q.id] = b.value; sauver(); });
+  });
+  window.scrollTo(0, 0);
+}
+
+var TITRES_AIDES = ["La piste", "La méthode", "L'exemple chiffré"];
+function nbAides(id) { var n = E.aides[id]; return n === true ? 1 : (n || 0); }
+function dessinerAides() {
+  var q = Q[i], n = nbAides(q.id), m = q.aides.length, h = "";
+  var titre = function (k) { return k === m - 1 && m === 3 ? TITRES_AIDES[2] : TITRES_AIDES[k]; };
+  for (var k = 0; k < n; k++) h += '<div class="aide-texte"><b>' + titre(k) + " :</b> " + q.aides[k] + "</div>";
+  if (n < m && !E.fin) h += '<p><button id="aide-btn" type="button">Aide ' + (n + 1) + " sur " + m + " : " + titre(n).toLowerCase() + "</button></p>";
+  h += '<p class="compteur">Aides utilisées : ' + n + " sur " + m + "</p>";
+  $("aides").innerHTML = h;
+  var b = $("aide-btn");
+  if (b) b.addEventListener("click", function () { E.aides[q.id] = nbAides(q.id) + 1; sauver(); dessinerAides(); });
+}
+
+/* ---------- minuteur (mode chrono) : 45 min depuis le clic, survit à un rechargement ---------- */
+var tic = null;
+function restant() { return DUREE_MS - (Date.now() - new Date(E.debut).getTime()); }
+function lancerChrono() {
+  $("chrono").classList.remove("cache");
+  var pas = function () {
+    var r = restant();
+    if (r <= 0) { clearInterval(tic); $("chrono").textContent = "00:00"; finir(true); return; }
+    var mn = Math.floor(r / 60000), s = Math.floor(r % 60000 / 1000);
+    $("chrono").textContent = (mn < 10 ? "0" : "") + mn + ":" + (s < 10 ? "0" : "") + s;
+    $("chrono").classList.toggle("court", r < 5 * 60000);
+  };
+  pas(); tic = setInterval(pas, 500);
+}
+
+function commencer(mode) {
+  var n = $("nom").value.trim();
+  if (!n) { alert("Écrivez votre nom et votre prénom, ou un pseudo."); $("nom").focus(); return; }
+  E = { nom: n, mode: mode, rep: {}, aides: {}, debut: null, fin: null, tirage: 0 }; relire();
+  if (!E.debut) E.debut = new Date().toISOString();
+  Q = construire(graineNom()); sauver();
+  $("qui").textContent = n + (mode === "chrono" ? "" : " · entraînement");
+  $("accueil").classList.add("cache");
+  if (E.fin || (mode === "chrono" && restant() <= 0)) { finir(true); return; }
+  $("test").classList.remove("cache");
+  i = 0; afficher();
+  if (mode === "chrono") lancerChrono();
+}
+$("mode-libre").addEventListener("click", function () { commencer("libre"); });
+$("mode-chrono").addEventListener("click", function () { commencer("chrono"); });
+$("prec").addEventListener("click", function () { if (i > 0) { i--; afficher(); } });
+$("suiv").addEventListener("click", function () {
+  if (i < Q.length - 1) { i++; afficher(); return; }
+  var vides = Q.filter(vide).map(function (q) { return Q.indexOf(q) + 1; });
+  $("fin-vides").textContent = vides.length ? "Questions sans réponse : " + vides.join(", ") + "." : "Vous avez répondu à toutes les questions.";
+  $("test").classList.add("cache"); $("fin").classList.remove("cache"); window.scrollTo(0, 0);
+});
+$("retour").addEventListener("click", function () { $("fin").classList.add("cache"); $("test").classList.remove("cache"); afficher(); });
+
+/* ---------- correction et niveaux ---------- */
+var STATUT = ["NE", "NA", "EC", "M", "PM"];
+var MOTS = ["rien répondu", "à reprendre", "en cours", "maîtrisé", "bien maîtrisé"];
+function niveau(liste) {
+  if (liste.every(function (x) { return x.vide; })) return 0;
+  var p = liste.reduce(function (s, x) { return s + x.poids; }, 0) / (liste.length * POINTS_MAX);
+  return p >= 0.85 ? 4 : p >= 0.5 ? 3 : p > 0 ? 2 : 1;
+}
+function corriger() {
+  var lignes = Q.map(function (q) {
+    var r = E.rep[q.id];
+    return { id: q.id, comp: q.comp, titre: q.titre, stations: STATIONS_Q[q.id], enonce: q.corps.replace(/<svg[\s\S]*?<\/svg>/g, "[figure]").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+      reponse: q.type === "choix" ? (r !== undefined ? q.options[r] : "") : (r || ""),
+      attendu: q.type === "choix" ? q.options[q.attendu] : fr(q.attendu), unite: q.unite || "", arrondi: q.arrondi || "",
+      juste: juste(q, r), vide: vide(q), aides: nbAides(q.id), aidesMax: q.aides.length };
+  });
+  lignes.forEach(function (l) { l.aide = l.aides > 0; l.poids = l.juste ? Math.max(1, POINTS_MAX - l.aides) : 0; });
+  var comps = { CP1: "Lire un plan : cotes, échelle, surfaces, volumes", CP5: "Calculer les déperditions et les puissances", B9: "La réglementation (indicatif)" };
+  var niveaux = Object.keys(comps).map(function (c) {
+    var n = niveau(lignes.filter(function (l) { return l.comp === c; }));
+    return { code: c, libelle: comps[c], niveau: n, statut: STATUT[n] };
+  });
+  lignes.forEach(function (l) { delete l.poids; });
+  return { version: VERSION, produit: "inerWeb BE, antenne C1", mode: E.mode, nom: E.nom, debut: E.debut, fin: E.fin, tempsEcoule: !!E.tempsEcoule,
+    questions: lignes, niveaux: niveaux };
+}
+/* Une station est réussie quand toutes les questions qui s'y rattachent sont justes.
+   « Reprenez ici » : la station de la première question à revoir, dans l'ordre du contrôle. */
+function situer(R) {
+  var parStation = {}, ordre = [];
+  R.questions.forEach(function (l) { l.stations.forEach(function (c) { if (!parStation[c]) { parStation[c] = []; ordre.push(c); } parStation[c].push(l); }); });
+  var ok = ordre.filter(function (c) { return parStation[c].every(function (l) { return l.juste; }); });
+  var ko = ordre.filter(function (c) { return ok.indexOf(c) < 0; });
+  var premiere = R.questions.filter(function (l) { return !l.juste && l.stations.length; })[0];
+  return { ok: ok, ko: ko, reprendre: premiere ? { station: premiere.stations[0], question: R.questions.indexOf(premiere) + 1 } : null };
+}
+function dessinerCarte(S) {
+  var svg = $("plan");
+  if (svg.childNodes.length > 1) return;
+  CARTE.dessiner(svg, P);
+  var NS = "http://www.w3.org/2000/svg";
+  Array.prototype.forEach.call(svg.querySelectorAll("[data-code]"), function (g) {
+    var c = g.getAttribute("data-code");
+    if (c === "C1") { g.classList.add("c1-ici"); return; }
+    if (c === P.GARE || c === P.TERMINUS) return;
+    g.classList.add(S.ok.indexOf(c) >= 0 ? "c1-ok" : S.ko.indexOf(c) >= 0 ? "c1-ko" : "c1-hors");
+    if (S.reprendre && c === S.reprendre.station) {
+      var k = g.querySelector("circle");
+      var a = document.createElementNS(NS, "circle");
+      a.setAttribute("cx", k.getAttribute("cx")); a.setAttribute("cy", k.getAttribute("cy")); a.setAttribute("r", 24);
+      a.setAttribute("class", "c1-anneau");
+      if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+        var an = document.createElementNS(NS, "animate");
+        an.setAttribute("attributeName", "r"); an.setAttribute("values", "21;28;21"); an.setAttribute("dur", "1.6s"); an.setAttribute("repeatCount", "indefinite");
+        a.appendChild(an);
+      }
+      g.insertBefore(a, g.firstChild);
+      /* Sur un petit écran le plan défile : on l'amène sur la station à reprendre. */
+      var boite = svg.parentNode, kx = svg.getBoundingClientRect().width / CARTE.VUE.largeur;
+      boite.scrollLeft = Math.max(0, Number(k.getAttribute("cx")) * kx - boite.clientWidth / 2);
+    }
+  });
+}
+var RESULTAT = null;
+$("terminer").addEventListener("click", function () {
+  if (!confirm("Corriger maintenant ? Vous ne pourrez plus changer vos réponses.")) return;
+  finir(false);
+});
+function finir(auto) {
+  if (tic) clearInterval(tic);
+  $("chrono").classList.add("cache");
+  if (!E.fin) { E.fin = new Date().toISOString(); E.tempsEcoule = auto && E.mode === "chrono"; }
+  sauver();
+  RESULTAT = corriger();
+  var S = situer(RESULTAT);
+  var nj = RESULTAT.questions.filter(function (l) { return l.juste; }).length;
+  var na = RESULTAT.questions.reduce(function (s, l) { return s + l.aides; }, 0);
+  $("res-phrase").textContent = (E.tempsEcoule ? "Les 45 minutes sont passées : le contrôle est arrêté. " : "") + nj + " réponse" + (nj > 1 ? "s justes" : " juste") +
+    " sur " + RESULTAT.questions.length + ", " + (na ? na + " aide" + (na > 1 ? "s ouvertes" : " ouverte") : "sans aide") + ".";
+  var ici = $("res-ici");
+  if (S.reprendre) {
+    var st = infoStation(S.reprendre.station);
+    ici.className = "ici";
+    ici.innerHTML = "<h2>Reprenez ici</h2><p>La première réponse à revoir est la question " + S.reprendre.question + ". Elle s'apprend à la " + st.nom +
+      ".</p><p><a class='bouton plein' href='" + st.href + "'>Aller à " + st.court + " →</a></p>" +
+      (S.ok.length ? "<p class='info'>Stations réussies : " + S.ok.map(function (c) { return infoStation(c).court; }).join(" ; ") + ".</p>" : "");
+  } else {
+    var suite = infoStation("H2");
+    ici.className = "ici fini";
+    ici.innerHTML = "<h2>Toutes les stations du contrôle sont réussies</h2><p>Vous pouvez continuer le parcours après H1 : la " + suite.nom + ".</p>" +
+      "<p><a class='bouton plein' href='" + suite.href + "'>Aller à " + suite.court + " →</a></p>";
+  }
+  $("res-niveaux").innerHTML = "<tr><th>Ce que vous savez faire</th><th>Niveau</th></tr>" + RESULTAT.niveaux.map(function (n) {
+    return "<tr><td>" + n.libelle + "</td><td><b>" + n.niveau + "</b> : " + MOTS[n.niveau] + "</td></tr>"; }).join("");
+  $("res-table").innerHTML = "<tr><th>Question</th><th>Votre réponse</th><th>Résultat</th><th>Station</th></tr>" + RESULTAT.questions.map(function (l, k) {
+    var lien = l.stations.length ? l.stations.map(function (c) { var s = infoStation(c); return "<a href='" + s.href + "'>" + s.code + "</a>"; }).join(", ") : "indicatif";
+    return "<tr><td>" + (k + 1) + ". " + l.titre + "</td><td>" + (l.vide ? "—" : echapper(l.reponse) + " " + (l.unite.indexOf("(") < 0 ? l.unite : "")) + "</td><td class='" +
+      (l.juste ? "ok'>juste" : "ko'>à revoir") + (l.aides ? " <span class='info'>(" + l.aides + " aide" + (l.aides > 1 ? "s" : "") + ")</span>" : "") + "</td><td>" + lien + "</td></tr>";
+  }).join("");
+  $("recommencer").classList.toggle("cache", E.mode !== "libre");
+  $("test").classList.add("cache"); $("fin").classList.add("cache"); $("accueil").classList.add("cache"); $("resultat").classList.remove("cache");
+  dessinerCarte(S);
+  window.scrollTo(0, 0);
+}
+$("recommencer").addEventListener("click", function () {
+  var t = (E.tirage || 0) + 1;
+  try { localStorage.removeItem(cle()); } catch (e) {}
+  E.rep = {}; E.aides = {}; E.debut = new Date().toISOString(); E.fin = null; E.tempsEcoule = false; E.tirage = t;
+  Q = construire(graineNom()); sauver(); RESULTAT = null;
+  var svg = $("plan"); while (svg.childNodes.length > 1) svg.removeChild(svg.lastChild);
+  Array.prototype.forEach.call(document.querySelectorAll(".carte-fiche"), function (f) { f.remove(); });
+  $("resultat").classList.add("cache"); $("test").classList.remove("cache"); i = 0; afficher();
+});
+
+/* ---------- le fichier de résultat (facultatif) : une page lisible + les données pour le récapitulatif ---------- */
+function echapper(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+function pageResultat(R) {
+  var lignes = R.questions.map(function (l, k) {
+    return "<tr><td>" + (k + 1) + "</td><td>" + (l.stations.join(", ") || "indicatif") + "</td><td>" + echapper(l.enonce) + "</td><td>" + echapper(l.reponse) + "</td><td>" +
+      echapper(l.attendu) + " " + echapper(l.unite) + "</td><td>" + (l.juste ? "juste" : l.vide ? "sans réponse" : "faux") + "</td><td>" + (l.aides ? l.aides + " sur " + l.aidesMax : "") + "</td></tr>";
+  }).join("\n");
+  var niv = R.niveaux.map(function (n) { return "<tr><td>" + n.libelle + "</td><td>" + n.niveau + "</td><td>" + n.statut + "</td></tr>"; }).join("\n");
+  var jour = R.debut ? new Date(R.debut).toLocaleString("fr-FR") : "";
+  return '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Contrôle 1, ' + echapper(R.nom) + "</title>" +
+    "<style>body{font-family:Calibri,Arial,sans-serif;font-size:14pt;margin:20px;color:#10233c}h1,h2{color:#1b3a63}table{border-collapse:collapse;width:100%;margin:10px 0}td,th{border:1px solid #999;padding:4px 6px;vertical-align:top;text-align:left}.f{color:#1b3a63;opacity:.5}</style></head><body>" +
+    "<p class='f'>inerWeb BE · by inerweb.fr</p><h1>Contrôle 1 : du plan à la puissance</h1><p><b>Nom :</b> " + echapper(R.nom) + " · " + (R.mode === "chrono" ? "chrono 45 min" : "entraînement") + " · " + jour + (R.tempsEcoule ? " (arrêt au bout des 45 minutes)" : "") + "</p>" +
+    "<h2>Niveaux, de 0 à 4</h2><table><tr><th>Ce que l'on sait faire</th><th>Niveau</th><th>Statut</th></tr>" + niv + "</table>" +
+    "<h2>Détail</h2><p>Tolérance ± 2 %. Colonne « attendu » : la valeur juste pour les données de cette personne.</p>" +
+    "<table><tr><th>N°</th><th>Station</th><th>Énoncé et données</th><th>Réponse</th><th>Attendu</th><th>Résultat</th><th>Aides ouvertes</th></tr>" + lignes + "</table>" +
+    '<script type="application/json" id="resultats-c1">' + JSON.stringify(R).replace(/</g, "\\u003c") + "<\/script></body></html>";
+}
+function telecharger(blob, nom) {
+  var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = nom; document.body.appendChild(a); a.click(); a.remove();
+  $("res-info").textContent = "Fichier téléchargé : " + nom + " (dossier Téléchargements).";
+}
+$("enregistrer").addEventListener("click", function () {
+  if (!RESULTAT) return;
+  var nom = "C1-RESULTAT__" + RESULTAT.nom.replace(/[^\wÀ-ÿ-]+/g, "-").replace(/^-+|-+$/g, "") + ".html";
+  var blob = new Blob([pageResultat(RESULTAT)], { type: "text/html" });
+  if (window.showSaveFilePicker) {
+    window.showSaveFilePicker({ suggestedName: nom, types: [{ description: "Page web", accept: { "text/html": [".html"] } }] })
+      .then(function (h) { return h.createWritable(); })
+      .then(function (w) { return w.write(blob).then(function () { return w.close(); }); })
+      .then(function () { $("res-info").textContent = "Fichier enregistré : " + nom; })
+      .catch(function (e) { if (!e || e.name !== "AbortError") telecharger(blob, nom); });
+  } else telecharger(blob, nom);
+});
+
+window.__c1 = { construire: construire, juste: juste, normaliser: normaliser, situer: situer, page: pageResultat, resultat: function () { return RESULTAT; } };
+})();
+</script>
+</body>
+</html>

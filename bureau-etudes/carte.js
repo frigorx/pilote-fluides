@@ -18,7 +18,8 @@
 
   const NS = "http://www.w3.org/2000/svg";
   const DECAL = 200;   /* la ligne P « Lire les plans » occupe le haut ; les six autres descendent d'autant */
-  const VUE = {largeur: 1040, hauteur: 685 + DECAL};
+  const ANTENNE = 75;  /* la voie de l'antenne C1 passe sous le quai D0, sous la ligne R (08/11/2026) */
+  const VUE = {largeur: 1040, hauteur: 685 + DECAL + ANTENNE};
   const VOIES = {P: 160, E: 75 + DECAL, A: 180 + DECAL, T: 285 + DECAL, H: 390 + DECAL, F: 495 + DECAL, R: 600 + DECAL};
   const COTE = {E: "haut", A: "haut", T: "alterne", H: "bas", F: "bas", R: "bas"};
   const X0 = 120, X1 = 920, DEBUT = 160, FIN = 900;
@@ -60,6 +61,17 @@
     const ligneDe = Object.fromEntries(lignes.map(l => [l.code, l]));
 
     function montrer(s, x, y, cercle) {
+      if (s.depart) {
+        fiche.style.setProperty("--c", "#1b3a63");
+        fiche.innerHTML = `<strong>Antenne ${s.code}, ${s.titre}</strong><span class="carte-ligne">Voie en impasse depuis la gare centrale ${s.depart}</span>`
+          + `<p>${s.rendu}</p><p class="carte-pied">${ouverte(s) ? "45 minutes, ou sans minuteur : cliquez pour entrer." : "Antenne à venir."}</p>`;
+        fiche.hidden = false;
+        const k = svg.getBoundingClientRect().width / VUE.largeur;
+        fiche.style.left = Math.min(Math.max(x * k - 40, 4), svg.clientWidth - 304) + "px";
+        fiche.style.top = "";
+        fiche.style.bottom = (svg.clientHeight - y * k + 30) + "px";
+        return;
+      }
       const l = ligneDe[s.ligne] || {nom: s.code === P.GARE ? "Gare centrale" : "Terminus", couleur: "#1b3a63"};
       fiche.style.setProperty("--c", l.couleur);
       if (s.ligne === "P") {
@@ -81,6 +93,7 @@
     const brancher = (g, s, x, y, cercle, r) => {
       if (!ouverte(s)) { g.setAttribute("tabindex", "0"); g.setAttribute("role", "img"); g.setAttribute("aria-label", `${s.code}, ${s.titre}, à venir. Vous rendez : ${s.rendu}`); }
       g.classList.add("carte-station");
+      g.setAttribute("data-code", s.ligne === "P" ? "P" + s.code : s.code);
       g.addEventListener("mouseenter", () => montrer(s, x, y, cercle));
       g.addEventListener("focus", () => montrer(s, x, y, cercle));
       g.addEventListener("mouseleave", () => cacher(cercle, r));
@@ -125,6 +138,20 @@
     });
     quai(10, P.station(P.GARE), "Gare centrale");
     quai(920, P.station(P.TERMINUS), "Terminus");
+
+    /* Les antennes : une voie en impasse en pointillé qui descend du quai de départ, un heurtoir, son nom.
+       Bande sous les libellés de la ligne R (ils finissent vers y = 872) : aucun texte sur un trait. */
+    (P.ANTENNES || []).forEach(a => {
+      const x = 65, y0 = 30 + DECAL + 615, y = y0 + 52, xb = 140;
+      const g = ouverte(a) ? el("a", {href: a.href, "aria-label": `Antenne ${a.code}, ${a.titre}. ${a.rendu}`}) : el("g", {});
+      el("path", {d: `M${x} ${y0} V${y} H${xb}`, fill: "none", stroke: "#1b3a63", "stroke-width": 6, "stroke-dasharray": "10 7", "stroke-linecap": "round"}, undefined, g);
+      el("rect", {x: xb, y: y - 18, width: 44, height: 36, rx: 6, fill: "#fffdf8", stroke: "#1b3a63", "stroke-width": 5}, undefined, g);
+      el("text", {x: xb + 22, y: y + 6, "text-anchor": "middle", fill: "#1b3a63", "font-family": "Trebuchet MS, Arial", "font-size": 17, "font-weight": 700}, a.code, g);
+      el("text", {x: xb + 58, y: y - 2, fill: "#10233c", "font-family": "Calibri, Arial", "font-size": 18, "font-weight": 700}, a.titre, g);
+      el("text", {x: xb + 58, y: y + 19, fill: "#637285", "font-family": "Calibri, Arial", "font-size": 16}, "Antenne en impasse : faire le point, savoir où reprendre", g);
+      brancher(g, a, xb + 22, y - 18, null, 0);
+      apparait(g, 0);
+    });
 
     /* La ligne P : des gares numérotées, leur titre en biais au-dessus de la voie (49 px d'écart seulement) */
     if (PL) {

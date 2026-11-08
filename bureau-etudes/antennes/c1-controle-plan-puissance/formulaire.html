@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Le formulaire du Contrôle 1 | inerWeb BE</title>
+<style>
+:root{--bleu:#1b3a63;--filet:#c7ccd4;--fond:#f4f6f9}
+*{box-sizing:border-box}
+body{font-family:Calibri,"Segoe UI",Arial,sans-serif;font-size:15pt;line-height:1.5;margin:0;color:#111;background:#f7f1e7}
+header{background:var(--bleu);color:#fff;padding:12px 24px;font-size:17pt;font-weight:bold}
+main{max-width:940px;margin:0 auto;padding:16px 24px 40px}
+h2{color:var(--bleu);font-size:17pt;margin:18px 0 6px;border-bottom:2px solid var(--bleu);padding-bottom:3px}
+table{border-collapse:collapse;width:100%;margin:6px 0 10px}
+th,td{border:1px solid var(--filet);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:var(--fond)}
+.f{font-weight:bold;white-space:nowrap}
+.filigrane{position:absolute;pointer-events:none;opacity:.09;font:700 40px "Trebuchet MS",Arial,sans-serif;color:#1b3a63;transform:rotate(-18deg);white-space:nowrap;z-index:0}
+.filigrane small{font:400 18px "Segoe UI",Arial,sans-serif;display:block;text-align:right}
+body{position:relative;overflow-x:hidden}
+header,main{position:relative;z-index:1}
+@media print{.filigrane{opacity:.07}}
+th,td{background:#fffdf8}
+th{background:#f3ece0}
+@media (max-width:640px){body{font-size:14pt}main{padding:12px 16px 30px}th,td{padding:5px 6px}}
+</style>
+</head>
+<body>
+<div class="filigrane" aria-hidden="true" style="top:120px;left:30px">inerWeb<small>by inerweb.fr</small></div>
+<div class="filigrane" aria-hidden="true" style="top:48%;left:36%">inerWeb<small>by inerweb.fr</small></div>
+<div class="filigrane" aria-hidden="true" style="bottom:80px;right:40px">inerWeb<small>by inerweb.fr</small></div>
+<header>inerWeb BE · Contrôle 1 · le formulaire, à garder ouvert à côté</header>
+<main>
+<p>Ouvrez-le autant que vous voulez : il ne compte pas comme une aide. Il donne les formules et les unités.</p>
+
+<h2>Lire un plan</h2>
+<table>
+<tr><th style="width:38%">Ce que je cherche</th><th>Formule</th><th style="width:24%">Unités</th></tr>
+<tr><td>Une cote en mètres</td><td class="f">cm ÷ 100 = m</td><td>375 cm = 3,75 m</td></tr>
+<tr><td>Une longueur réelle à l'échelle 1/50</td><td class="f">longueur sur le papier × 50</td><td>cm, puis ÷ 100 pour les m</td></tr>
+<tr><td>La surface d'un mur</td><td class="f">S = longueur × hauteur</td><td>m × m = m²</td></tr>
+<tr><td>La surface nette d'un mur</td><td class="f">S nette = S du mur − S des baies</td><td>m²</td></tr>
+<tr><td>Le volume d'une pièce</td><td class="f">V = longueur × largeur × hauteur</td><td>m³</td></tr>
+</table>
+
+<h2>Les températures</h2>
+<table>
+<tr><td style="width:38%">L'écart de température</td><td class="f">ΔT = θ intérieure − θ extérieure</td><td style="width:24%">K (1 K = 1 °C d'écart)</td></tr>
+</table>
+<p>Retrancher un nombre négatif revient à l'ajouter.</p>
+
+<h2>La paroi</h2>
+<table>
+<tr><th style="width:38%">Grandeur</th><th>Formule</th><th style="width:24%">Unité</th></tr>
+<tr><td>λ, lambda : le matériau seul. Petit, il isole.</td><td>lu sur la fiche du fabricant</td><td>W/(m·K)</td></tr>
+<tr><td>R d'une couche. Grand, elle isole.</td><td class="f">R = e ÷ λ, e en mètres</td><td>m²·K/W</td></tr>
+<tr><td>R total de la paroi</td><td class="f">R total = Rsi + R des couches + Rse</td><td>m²·K/W</td></tr>
+<tr><td>U de la paroi. Petit, elle isole.</td><td class="f">U = 1 ÷ R total</td><td>W/(m²·K)</td></tr>
+<tr><td>U maximal des murs extérieurs, bâtiment existant de plus de 1 000 m² (arrêté du 13 juin 2008)</td><td class="f">U ≤ 0,45</td><td>W/(m²·K)</td></tr>
+</table>
+
+<h2>Les déperditions et les puissances</h2>
+<table>
+<tr><th style="width:38%">Ce que je cherche</th><th>Formule</th><th style="width:24%">Unité</th></tr>
+<tr><td>Ce que perd une paroi</td><td class="f">Φ = U × S × ΔT</td><td>W</td></tr>
+<tr><td>Les déperditions totales</td><td class="f">Φ = ΦT + Φinf + ΦRA</td><td>W</td></tr>
+<tr><td>La puissance à installer</td><td class="f">ΦHL = Φ + ΦRH</td><td>W</td></tr>
+<tr><td>La puissance d'un circuit d'eau</td><td class="f">P = 1,163 × qv × ΔT</td><td>kW, avec qv en m³/h et ΔT = départ − retour</td></tr>
+</table>
+<p>ΦT : par les parois. Φinf : par les infiltrations d'air. ΦRA : par le renouvellement d'air. ΦRH : la surpuissance de
+relance, pour remonter la température le matin.</p>
+
+<h2>Ce qui oblige une entreprise</h2>
+<table>
+<tr><td style="width:38%">Un texte : loi, décret, arrêté</td><td>oblige par lui-même</td></tr>
+<tr><td>Une norme, un DTU</td><td>volontaire ; oblige quand un arrêté ou le contrat y renvoie</td></tr>
+<tr><td>Un certificat (ACERMI…)</td><td>prouve une performance, n'oblige personne</td></tr>
+</table>
+</main>
+</body>
+</html>

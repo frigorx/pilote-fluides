@@ -114,7 +114,21 @@
   ].map(m => ({nom: m.nom, detail: m.detail, gares: m.gares.map(([code, cle, titre]) => ({code, cle, titre, ligne: "P", etat: "relecture", href: `../plan/gares/${cle}/index.html`, exercice: `../plan/gares/${cle}/exercice.pdf`}))}));
   const PLANS = {code: "P", nom: "Lire les plans", detail: "du trait au plan, de la cote à la maquette", couleur: "#8a5200", carte: "../plan/index.html", GARES: GARES_PLANS, METIERS};
 
-  window.BE_PROGRAMME = {LIGNES, STATIONS, GARE, TERMINUS, PLANS,
+  /* Les antennes (Franck, 08/11/2026) : petites voies en impasse, hors du parcours. Elles ne sont pas des
+     stations : ni niveau, ni feuille, ni fiche du livre. C1 part de la gare centrale D0. C'est un contrôle de
+     positionnement : chaque question renvoie à la station qui l'enseigne ; le résultat allume les stations
+     réussies et désigne la première à reprendre. `stations` : codes de STATIONS, ou « P » + numéro de gare. */
+  const ANTENNES = [
+    {code: "C1", cle: "c1-controle-plan-puissance", titre: "Contrôle 1 : du plan à la puissance", depart: "D0", etat: "relecture",
+      rendu: "Douze questions, du plan coté à la puissance d'un circuit d'eau. Le résultat dit sur quelle station reprendre.",
+      href: "antennes/c1-controle-plan-puissance/",
+      questions: [
+        {id: "Q1", stations: ["P7"]}, {id: "Q2", stations: ["P6"]}, {id: "Q3", stations: ["P7b"]}, {id: "Q4", stations: ["T1"]},
+        {id: "Q5", stations: ["E1", "E2"]}, {id: "Q6", stations: ["T2"]}, {id: "Q7", stations: ["T2"]}, {id: "Q8", stations: ["T2"]},
+        {id: "Q9", stations: ["T3"]}, {id: "Q10", stations: ["T4", "T5"]}, {id: "Q11", stations: ["H1"]}, {id: "Q12", stations: []}]}
+  ];
+
+  window.BE_PROGRAMME = {LIGNES, STATIONS, GARE, TERMINUS, PLANS, ANTENNES,
     station: code => STATIONS.find(s => s.code === code),
     deLaLigne: ligne => STATIONS.filter(s => s.ligne === ligne)};
 })();
