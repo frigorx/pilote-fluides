@@ -268,10 +268,16 @@
     $("#codes-box").hidden = !jsonLu;
     $("#lien-corresp").addEventListener("click", e => { e.preventDefault(); const d = $("#corresp-detail"); d.hidden = !d.hidden; e.currentTarget.setAttribute("aria-expanded", String(!d.hidden)); });
   }
+  /* Station en ligne (data-etat posé par outils/statut-stations.mjs) : badge masqué, sauf « Extrait ». Sinon bandeau de relecture. */
+  function setBadge(extrait) {
+    const b = $("#mode-badge"), enLigne = document.body.dataset.etat === "en-ligne";
+    b.textContent = enLigne ? extrait : (extrait ? "Extrait, en cours de relecture" : "En cours de relecture");
+    b.hidden = enLigne && !extrait;
+  }
   function showHome() {
     stopSpeech(); document.body.classList.remove("course-running");
     $("#home").hidden = false; $("#course-shell").hidden = true; $("#home-button").hidden = true; $("#exit-button").hidden = true;
-    $("#mode-badge").textContent = "En cours de relecture";
+    setBadge("");
     history.replaceState(null, "", location.pathname); scrollTo(0, 0);
   }
 
@@ -294,7 +300,7 @@
   function openCourse() {
     document.body.classList.add("course-running");
     $("#home").hidden = true; $("#course-shell").hidden = false; $("#home-button").hidden = false; $("#exit-button").hidden = false;
-    $("#mode-badge").textContent = extractMode ? "Extrait, en cours de relecture" : "En cours de relecture";
+    setBadge(extractMode ? "Extrait" : "");
     $("#rail-mode").textContent = extractMode ? "EXTRAIT" : "COURS";
     scrollTo(0, 0);
   }

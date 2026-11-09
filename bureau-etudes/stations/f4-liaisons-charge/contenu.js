@@ -180,30 +180,30 @@ const EX = {
   }
  },
  "ex2": {
-  "charge": "2,9",
+  "charge": "2,8",
   "pieces": [
    {
     "nom": "Le séjour",
-    "V": "60"
+    "V": "75"
    },
    {
     "nom": "La chambre",
-    "V": "32"
+    "V": "35"
    },
    {
     "nom": "Le bureau",
-    "V": "20"
+    "V": "17"
    }
   ],
   "quiz": {
    "choices": [
-    "Le séjour : 0,048 kg/m³, la charge convient",
-    "Les trois pièces ensemble : 0,026 kg/m³, la charge convient",
-    "Le bureau : 0,145 kg/m³, la charge convient, car le R32 est peu inflammable",
-    "Le bureau : 0,145 kg/m³, au-dessus de 0,13 : la charge ne convient pas"
+    "Le séjour : 0,037 kg/m³, la charge convient",
+    "Les trois pièces ensemble : 0,022 kg/m³, la charge convient",
+    "Le bureau : 0,165 kg/m³, la charge convient, car le R32 est peu inflammable",
+    "Le bureau : 0,165 kg/m³, au-dessus de 0,13 : la charge ne convient pas"
    ],
    "good": 3,
-   "explain": "Le local qui compte est le plus petit : la même fuite y donne la plus forte concentration. 2,9 ÷ 20 = 0,145 kg/m³, au-dessus de la limite de l’exercice. Le séjour donne 0,048 kg/m³ : il ne dit rien du bureau. Les trois pièces ne s’additionnent pas : la fuite reste dans la pièce où elle se produit. La classe A2L ne lève pas la limite, elle sert à la fixer."
+   "explain": "Le local qui compte est le plus petit : la même fuite y donne la plus forte concentration. 2,8 ÷ 17 = 0,165 kg/m³, au-dessus de la limite de l’exercice. Le séjour donne 0,037 kg/m³ : il ne dit rien du bureau. Les trois pièces ne s’additionnent pas : la fuite reste dans la pièce où elle se produit. La classe A2L ne lève pas la limite, elle sert à la fixer."
   }
  },
  "ex3": {
