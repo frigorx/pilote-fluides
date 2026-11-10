@@ -342,7 +342,7 @@ window.INERWEB_RESEAUX = [
     niveaux: "tous niveaux",
     etat: "",
     catalogue: [],
-    chiffres: "42 films",
+    chiffres: "43 films",
     points: 4,
     vignette: "icones/reseaux/illustrations/studio-cinema.webp" /* le cinéma de la maquette du quartier (06/10) */,
     plein: true,
