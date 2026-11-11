@@ -406,10 +406,6 @@ let h = `<!doctype html>
   @media print { .barre, .actions, .rien { display:none } .carte, .planche { break-inside:avoid } }
 </style></head><body>
 
-<!-- La galerie est le « Catalogue » du site : sans ce lien, c'était un
-     cul-de-sac — aucun moyen de revenir au plan (constat du 19/08). -->
-<p style="margin:14px 0 -8px"><a href="index.html" style="color:var(--bleu);text-decoration:none;font-weight:bold">❄️ inerweb.fr · ← revenir au plan</a></p>
-
 <h1>Animations, cours interactifs et planches du froid</h1>
 <p class="meta">Froid et climatisation · © 2026 inerweb.fr</p>
 
