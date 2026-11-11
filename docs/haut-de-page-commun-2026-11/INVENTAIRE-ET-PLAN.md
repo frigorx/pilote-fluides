@@ -221,3 +221,15 @@ Le marqueur `ici` sous l'entrée de la page en cours disparaît : aucune des qua
 - Au téléphone, les entrées du menu de `metier.html`, `formateurs.html` et `decouvrir.html` font 30 px de haut (leur feuille de style n'a pas la règle de 44 px de `reseaux.html`) ; c'était déjà le cas avec six entrées.
 - Le lien « Mentions légales » du pied fait 25 px de haut au téléphone, comme en ligne ; il n'a pas été changé, parce qu'il est présent dans toutes les leçons.
 - Lancer `node build/version.mjs` au moment de publier : les pages appellent `marque.js` avec une clé `?v=` ancienne, le navigateur peut garder l'ancien script en cache.
+
+## 11. Mise en ligne du lot 4 et clôture : 11/11/2026
+
+Lot 4 en ligne le 11/11 vers 16 h 45 sur le feu vert de Franck (main `99452a79a`, sw `5858142237`), vérifié sur inerweb.fr : les six pages affichent les quatre entrées, « Le métier » et « YouTube » sont au pied de page, l'accueil est intact. Un bouton « Voir le catalogue » a été ajouté sur `reseaux.html` (commit `c55327e45`) : le catalogue se joint donc aussi par « Cours », et plus seulement par l'accueil comme l'écrit le tableau du § 10.
+
+Chantier clos le 11/11 par Franck. Les lots 5 et 6 (stations et leçons, environ 670 pages) sont abandonnés : sa décision est de ne rien poser dans les leçons.
+
+Restent ouverts, sans urgence :
+
+- « BE » seul au-dessus de « Bureau d'études » : le garder ou le retirer.
+- Les neuf pages à menu commun sans les deux liens du pied (§ 10) : conseil donné à Franck, les laisser ainsi.
+- Pages qui gardent l'ancienne barre de retour : `partage.html`, `habilitations/index.html`, `cablage-virtuel/` (5 pages), `aquiblue/` (2 pages).

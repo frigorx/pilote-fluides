@@ -1,5 +1,19 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 11/11/2026 — ACCUEIL À QUATRE ENTRÉES ET HAUT DE PAGE COMMUN
+>
+> En ligne le 11/11 (accueil : main `384f6b7c4` ; libellés : `f4d01f6b8` ; haut de page, lots 0 à 4 : `25a90792f`,
+> `1b007106c`, `419b6298c`, `99452a79a`). `index.html` : quatre entrées par profil (`#eleve`, `#habilitation`,
+> `#enseignant`, `#decouvrir`), recherche sous le titre ; les huit portes du 01/11 sont dans `portes.html`.
+> Haut de page : `moteur/retour-accueil.js` pose le menu à quatre entrées (Cours, Habilitations, Outils, Enseignants)
+> sur les pages dont la balise porte `data-menu="commun"` ; la liste est `MENU_COMMUN` dans `build/retour-accueil.mjs`
+> (47 pages). Six pages gardent leur barre écrite à la main, avec les mêmes quatre entrées (`reseaux`, `plan`, `metier`,
+> `formateurs`, `decouvrir`, `portes`). « Le métier » et « YouTube » sont au pied de page, par `moteur/marque.js`,
+> seulement sur les pages à menu. Les leçons et les stations n'ont pas de menu (décision de Franck) : les lots 5 et 6
+> du plan sont abandonnés. Chantier clos le 11/11. Plan et contrôles : `docs/haut-de-page-commun-2026-11/INVENTAIRE-ET-PLAN.md`,
+> `docs/accueil-quatre-entrees-2026-11/PLAN.md`, `docs/libelles-clairs-2026-11/PLAN.md` (dix libellés en attente).
+> Pièges : ne pas lancer `node build/galerie.mjs` seul ; `curl` sur inerweb.fr rend 403, vérifier par un navigateur.
+
 > ## 01/11/2026 — ACCUEIL À HUIT PORTES (`index.html`, ancien accueil → `reseaux.html`)
 >
 > En ligne le 01/11 (main `506904b70`, puis `3d02c4930` à 17 h 20). `index.html` refait : gros logo cliquable vers
