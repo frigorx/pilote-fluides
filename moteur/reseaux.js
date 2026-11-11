@@ -184,7 +184,7 @@ window.INERWEB_RESEAUX = [
       { titre: "Les domaines de tension", href: "hocourant/?module=M4" },
       { titre: "La consignation", href: "hocourant/?module=M9" }
     ],
-    pdf: { titre: "📕 Le livre — PDF disponible", href: "hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" }
+    pdf: { titre: "📕 Le livre — extrait en PDF", href: "hocourant/livret/inerWeb.fr-HoCourant-Livret-extrait.pdf?v=v1" }
   },
   {
     id: "r408",
@@ -208,7 +208,7 @@ window.INERWEB_RESEAUX = [
       { titre: "Utiliser en sécurité", href: "r408/?module=M7" },
       { titre: "La vérification journalière", href: "r408/?module=M9" }
     ],
-    pdf: { titre: "📕 Le livret — PDF disponible", href: "r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" }
+    pdf: { titre: "📕 Le livret — extrait en PDF", href: "r408/livret/inerWeb.fr-R408-Livret-extrait.pdf?v=v1" }
   },
   {
     id: "cuivrezo",

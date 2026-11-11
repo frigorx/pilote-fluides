@@ -126,9 +126,9 @@
       entete(null) +
       "<h1>Se préparer au travail en hauteur</h1>" +
       '<div class="accueil-ame">' + reseauHtml() +
-      '<a class="carte ame-livre" href="livret/inerWeb.fr-R408-Livret-eleve-A5.pdf" download title="Télécharger le livret (PDF)">' +
+      '<a class="carte ame-livre" href="livret/inerWeb.fr-R408-Livret-extrait.pdf?v=v1" download title="Télécharger l’extrait du livret (PDF)">' +
       '<img src="livret/couverture-r408-web.jpg" alt="Couverture du livret R408" width="672" height="955">' +
-      '<span class="ame-livre-texte"><strong>Le livre</strong><span>112 pages · PDF</span>' +
+      '<span class="ame-livre-texte"><strong>Le livre</strong><span>Extrait · PDF</span>' +
       '<span class="btn btn-primaire">Télécharger</span></span></a></div>' +
       bandeauPrototype +
       '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre enseignant vous donne un ' +

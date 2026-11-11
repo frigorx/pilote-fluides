@@ -38,7 +38,10 @@ packs/fluides/res/docs/
 #     originale inerWeb, aucun droit tiers. ⚠️ 11,5 Mo — chaque nouvelle version
 #     pèse autant dans l'historique. L'atelier est C:\git\hocourant, cette copie
 #     ne s'édite jamais directement. Le corrigé formateur, lui, reste hors ligne.
-!hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf
+!hocourant/livret/inerWeb.fr-HoCourant-Livret-extrait.pdf
+# … 11/11/2026 (décision de Franck) : le livret complet ne vient plus ici, seulement son extrait,
+#     comme pour le livret R408. Les deux se refont par build/extrait-livrets.py.
+!r408/livret/inerWeb.fr-R408-Livret-extrait.pdf
 # … et sauf l'extrait offert du livre HabFluide (27/09) : 20 premières pages du tirage du
 #     12/09, jusqu'au test d'entrée. Fabriqué depuis C:\git\livre-habfluide\dist ; le livre
 #     complet, lui, ne vient JAMAIS ici (vente envisagée en PDF).

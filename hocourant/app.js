@@ -120,9 +120,9 @@
       entete(null) +
       "<h1>Préparer son habilitation électrique</h1>" +
       '<div class="accueil-ame">' + reseauHtml() +
-      '<a class="carte ame-livre" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download title="Télécharger le livret (PDF)">' +
+      '<a class="carte ame-livre" href="livret/inerWeb.fr-HoCourant-Livret-extrait.pdf?v=v1" download title="Télécharger l’extrait du livret (PDF)">' +
       '<img src="livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant" width="672" height="954">' +
-      '<span class="ame-livre-texte"><strong>Le livre</strong><span>124 pages · PDF</span>' +
+      '<span class="ame-livre-texte"><strong>Le livre</strong><span>Extrait · PDF</span>' +
       '<span class="btn btn-primaire">Télécharger</span></span></a></div>' +
       cadreRessource +
       '<div class="carte accent"><p><strong>Comment ça marche ?</strong> Votre formateur vous donne un ' +
@@ -141,14 +141,14 @@
       // La couverture du livre se voit AVANT de télécharger (Franck, 27/09 : « trop de texte, pas assez de visuels ») :
       // l'image est la page 1 du PDF (livret/couverture-hocourant.jpg), cliquable comme le bouton.
       '<div class="carte carte-livret">' +
-      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download title="Télécharger le livret (PDF)">' +
+      '<a class="livret-couv" href="livret/inerWeb.fr-HoCourant-Livret-extrait.pdf?v=v1" download title="Télécharger l’extrait du livret (PDF)">' +
       '<img src="livret/couverture-hocourant.jpg?v=v3-1" alt="Couverture du livret HoCourant" width="672" height="954"></a>' +
-      '<div class="livret-texte"><h2>Le livret papier <span class="badge badge-pdf">PDF disponible</span></h2>' +
+      '<div class="livret-texte"><h2>Le livret papier <span class="badge badge-pdf">Extrait en PDF</span></h2>' +
       "<p>Le support de cours complet : dix chapitres, quatre-vingts questions, les activités " +
       "à faire en atelier et le lexique. Sa page de garde porte votre nom — remplissez-la, un livret " +
       "perdu revient à son propriétaire.</p>" +
-      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" download>' +
-      "Télécharger le livret (PDF, 124 pages, 12,5 Mo)</a></div>" +
+      '<div class="btn-ligne"><a class="btn btn-secondaire" href="livret/inerWeb.fr-HoCourant-Livret-extrait.pdf?v=v1" download>' +
+      "Télécharger l’extrait (PDF, 20 pages, 2,7 Mo)</a><a class='btn btn-secondaire' href='../livres/#habilitations'>Demander le livret complet</a></div>" +
       '<div class="enc enc-note"><span class="enc-mot">À imprimer en A5</span>' +
       "<p>En couleur comme en noir et blanc : le livret est fait pour les deux. Le corrigé " +
       "est réservé au formateur et ne se télécharge pas ici.</p></div></div></div>" +
