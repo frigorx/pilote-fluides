@@ -10,11 +10,11 @@ on ne sait pas où aller ni comment faire ». Audit du même jour sur le site en
 
 | Mesure | Accueil à huit portes | Accueil à quatre entrées |
 |---|---|---|
-| Choses à cliquer sur la page (1 366 × 768) | 80 | 25 |
-| Choses à cliquer au premier écran | 37 (à 1 024 px) | 12 |
-| Hauteur, ordinateur | 4,5 écrans | 3 écrans |
-| Hauteur, téléphone 375 × 812 | 8,4 écrans | 4,2 écrans |
-| Premier écran au téléphone | le volet, qui couvre tout | le titre et les quatre entrées |
+| Choses à cliquer sur la page (1 366 × 768) | 80 | 28 |
+| Choses à cliquer au premier écran | 37 (à 1 024 px) | 17 |
+| Hauteur, ordinateur | 4,5 écrans | 3,1 écrans |
+| Hauteur, téléphone 375 × 812 | 8,4 écrans | 4,1 écrans |
+| Premier écran au téléphone | le volet, qui couvre tout | le titre, la recherche et les deux premières entrées |
 
 ## Ce qui change
 
@@ -26,6 +26,8 @@ on ne sait pas où aller ni comment faire ». Audit du même jour sur le site en
 - Un bandeau « Essayer ce cours » (« Du glaçon au circuit ») et six images tirées des productions
   (demande de Franck du 11/11 : « texte et images, ça manque d'illustrations »). Toutes les images existaient
   déjà dans le dépôt : vignettes des portes, couvertures, affiche de film, quartier, jeux, câblage, cuivre.
+- La recherche est sous le titre, avec trois exemples à cliquer (demande de Franck du 11/11 : « un vrai moteur
+  de recherche, ça peut débloquer pas mal de situations »). Elle fouille tous les cours du site (plan.html?q=).
 - Menu du haut de l'accueil : Cours, Habilitations, Outils, Enseignants.
 - `portes.html` (nouveau) : les huit portes du 01/11/2026, telles quelles, sans volet ni bandeau
   établissement. « Voir tout le site » y mène ; le gros logo y mène toujours à `reseaux.html`.

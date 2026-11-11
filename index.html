@@ -90,11 +90,13 @@
   h1 em { font-style:normal; color:var(--orange); }
   .chapo { margin:0; font-size:18px; color:var(--mut); max-width:36em; text-wrap:pretty; }
   .chapo strong { color:var(--txt); }
-  .hall-recherche { display:flex; gap:8px; margin:0; flex:1 1 360px; min-width:0; }
-  .hall-recherche input { flex:1; min-width:0; padding:11px 16px; font:16px/1.4 inherit; color:var(--txt);
+  .hall-recherche { display:flex; gap:8px; margin:16px 0 0; max-width:760px; }
+  .hall-recherche input { flex:1; min-width:0; padding:13px 18px; font:17px/1.4 inherit; color:var(--txt);
                           background:var(--carte); border:1.5px solid var(--ligne); border-radius:999px; }
   .hall-recherche input:focus { outline:3px solid var(--orange); outline-offset:2px; border-color:var(--bleu); }
   .hall-recherche .bouton { border:0; font:inherit; font-weight:bold; cursor:pointer; }
+  .exemples { margin:8px 0 0; color:var(--mut); font-size:16px; }
+  .exemples a { display:inline-block; padding:6px 2px; font-weight:bold; }
   .boutons { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
   .bouton { display:inline-block; padding:11px 24px; background:var(--bleu); color:#fff;
             font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
@@ -139,12 +141,11 @@
   .g-mots strong { display:block; font-family:var(--titre); font-size:18px; color:var(--bleu); }
   .g-mots span { color:var(--mut); font-size:15.5px; line-height:1.4; }
 
-  /* ---- La recherche et la page « tout le site » ---- */
-  .bas { display:grid; grid-template-columns:1.3fr 1fr; gap:16px; margin-top:22px; }
-  .bloc { background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r); padding:14px 16px; }
-  .bloc label { display:block; margin-bottom:8px; font-family:var(--titre); font-weight:bold; font-size:18px; color:var(--bleu); }
-  .bloc p { margin:0 0 10px; color:var(--mut); }
-  .bloc p strong { color:var(--txt); }
+  /* ---- La page « tout le site » ---- */
+  .bas { margin-top:22px; padding:14px 18px; background:var(--carte); border:1px solid var(--ligne); border-radius:var(--r);
+         display:flex; gap:12px 18px; align-items:center; flex-wrap:wrap; }
+  .bas p { margin:0; flex:1 1 20em; color:var(--mut); }
+  .bas p strong { color:var(--txt); }
 
   /* ---- Les écrans de profil : un titre, quelques choix, le retour ---- */
   .retour { display:inline-block; margin:18px 0 0; padding:8px 0; font-family:var(--titre); font-weight:bold; text-decoration:none; }
@@ -168,7 +169,6 @@
 
   @media (max-width:900px) {
     .entrees { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .bas { grid-template-columns:1fr; }
   }
   @media (max-width:760px) {
     .hero { margin:10px 0 10px; }
@@ -188,13 +188,17 @@
     .g-mots { padding:8px 10px 10px; }
     .g-mots strong { font-size:17px; }
     .g-mots span { font-size:15px; }
-    .hall-recherche { flex-direction:column; flex-basis:auto; }
-    .hall-recherche .bouton { align-self:flex-start; }
+    .hall-recherche { margin-top:10px; }
+    .hall-recherche input { padding:11px 12px; font-size:16px; }
+    .hall-recherche .bouton { padding:11px 12px; font-size:16px; }
+    .hall-recherche .loupe { display:none; }
+    .hall-recherche input::placeholder { font-size:15px; }
+    .exemples { margin-top:4px; font-size:15px; }
     .choix img, .c-picto { width:64px; height:56px; }
     .choix a { gap:12px; padding-right:12px; }
     .c-va { display:none; }
     .entete .dedans { gap:4px 20px; padding:8px 20px 4px; }
-    .nav { gap:6px 8px; margin-left:0; width:100%; font-size:14.5px; justify-content:space-between; flex-wrap:nowrap; }
+    .nav { gap:6px 6px; margin-left:0; width:100%; font-size:14px; justify-content:space-between; }
     .nav a { padding:10px 0 8px; white-space:nowrap; }
   }
 
@@ -337,6 +341,14 @@
       <div class="pastille">GRATUIT, SANS COMPTE, EN FRANÇAIS</div>
       <h1 id="titre-hall" tabindex="-1">Apprendre le froid et la climatisation, <em>un cours après l’autre</em>.</h1>
       <p class="chapo">Des cours qui parlent, du CAP au BTS. <strong>Un projet personnel d’enseignant frigoriste.</strong></p>
+      <!-- La recherche, tout en haut (F. Henninot, 11/11/2026 : « un vrai moteur de recherche, ça peut débloquer
+           pas mal de situations »). Elle fouille tous les cours du site (recherche-index.gen.js, lu par plan.html). -->
+      <form class="hall-recherche" action="plan.html" method="get" role="search" id="recherche-accueil">
+        <label for="q-accueil" class="sr-only">Chercher dans tous les cours du site</label>
+        <input type="search" id="q-accueil" name="q" placeholder="Chercher un cours" autocomplete="off" spellcheck="false">
+        <button type="submit" class="bouton"><span class="loupe" aria-hidden="true">🔍 </span>Chercher</button>
+      </form>
+      <p class="exemples">Essayez : <a href="plan.html?q=surchauffe">surchauffe</a>, <a href="plan.html?q=manifold">manifold</a>, <a href="plan.html?q=inverter">inverter</a></p>
     </div>
 
     <h2 class="entrees-titre">Vous êtes…</h2>
@@ -382,17 +394,8 @@
     </ul>
 
     <div class="bas">
-      <div class="bloc">
-        <label for="q-accueil">Vous cherchez un mot précis</label>
-        <form class="hall-recherche" action="plan.html" method="get" role="search" id="recherche-accueil">
-          <input type="search" id="q-accueil" name="q" placeholder="surchauffe, manifold, pressostat" autocomplete="off" spellcheck="false">
-          <button type="submit" class="bouton">Chercher</button>
-        </form>
-      </div>
-      <div class="bloc">
         <p><strong>Tout le site sur une page :</strong> <!-- CHIFFRES-PORTES DEBUT (écrit par build/accueil.mjs, ne pas éditer à la main) -->14 réseaux, 449 stations en ligne et plus de 9 000 narrations audio.<!-- CHIFFRES-PORTES FIN --></p>
         <a class="bouton creux" href="portes.html">Voir tout le site →</a>
-      </div>
     </div>
   </section>
 
