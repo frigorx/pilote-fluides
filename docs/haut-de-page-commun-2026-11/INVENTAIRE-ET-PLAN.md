@@ -188,3 +188,36 @@ Décision de Franck du 11/11 (14 h 15) pour les six pages sorties du lot 3 : « 
 5. Contrôle téléphone (`controle-telephone.cjs`), atelier contre site en ligne : Législation et bureau d'études OK des deux côtés ; AéroRézo, ÉlectroRézo, CartoClim « à revoir » des deux côtés pour les mêmes schémas trop petits ; HydroMétro « à revoir » dans l'atelier contre « bloquant » en ligne (boutons hors de portée, corrigés par le défilement). Aucun bloquant nouveau.
 
 **À regarder avant publication** : « BE » seul au-dessus du titre « Bureau d'études » (le nom du réseau est court) ; le défilement de la page d'entrée d'HydroMétro ; lancer `node build/version.mjs` au moment de publier.
+
+## 10. Lot 4 : fait le 11/11/2026
+
+Décision de Franck du 11/11 : « Le métier » et « YouTube », qui ne sont plus dans le menu du haut, vont au pied de page, par `moteur/marque.js`. Rien n'est publié. Aucune balise de script n'a été changée, `build/retour-accueil.mjs` n'a pas été relancé.
+
+**Les six pages à menu écrit à la main** (`reseaux.html`, `plan.html`, `metier.html`, `formateurs.html`, `decouvrir.html`, `portes.html`) : la barre garde sa mise en page, seul le contenu de `nav.nav` change. Il reprend les quatre entrées de `index.html` (Cours `reseaux.html#reseaux`, Habilitations `index.html#habilitation`, Outils `reseaux.html#outils`, Enseignants `index.html#enseignant`) et reçoit `aria-label="Menu du site"`, comme celle de l'accueil. Sortent du menu :
+
+| Entrée | Où la trouver |
+|---|---|
+| Accueil | le logo de la barre |
+| Le plan, Livres | « Cours » (`reseaux.html`, six liens vers le plan, quatre vers les livres) |
+| Catalogue | l'accueil (`galerie.html`) |
+| Formateurs | l'accueil et `reseaux.html` |
+| Le métier, YouTube | le pied de page |
+
+Le marqueur `ici` sous l'entrée de la page en cours disparaît : aucune des quatre entrées ne correspond à ces pages. Ces six pages ne sont produites par aucun script de `build/` (`build/accueil.mjs` ne réécrit `reseaux.html` qu'entre ses sentinelles).
+
+**Le pied de page** (`moteur/marque.js`) : après « Mentions légales », deux liens, « Le métier » (`/metier.html`, même forme d'adresse que les mentions) et « YouTube » (la chaîne inerWeb FR, nouvel onglet). Choix le plus sobre, sans attribut à poser page par page : les liens ne sont posés que sur les pages qui portent le menu du site, reconnu de deux façons, `nav[aria-label="Menu du site"]` (l'accueil et les six pages ci-dessus) ou la balise de `retour-accueil.js` à `data-menu="commun"` (les 47 pages des lots 1 à 3 bis). Les leçons et les stations n'ont ni l'un ni l'autre : rien n'y change. Même style que le lien des mentions, en fin de document seulement : absents du filigrane fixe et masqués à l'impression (le papier garde le pied d'aujourd'hui). Au téléphone (560 px et moins), cibles de 44 px de haut.
+
+**Contrôles passés** (atelier servi sur le port 8796, le 8794 étant pris par un autre chat) :
+
+1. Au navigateur, en 1 366 px et en 375 px : l'accueil, les six pages, une page à menu commun (`livres/index.html`), une entrée de réseau (`legislation/index.html`), une station (`legislation/stations/acoustique-le-bruit-en-db`). Les liens « Le métier » et « YouTube » sont présents partout sauf dans la station ; la marque est le dernier élément de la page, en mode document, jamais fixée ; aucun débordement (largeur du document égale à la fenêtre) ; au téléphone, liens de 49 × 44 et 46 × 44 px. Les quatre entrées tiennent sur une ligne à 375 px (dernière entrée à 355 px).
+2. Impression : la seule règle `@media print` ajoutée masque les deux liens ; la règle qui remet la marque en pied de feuille est inchangée ; la barre des six pages n'est pas touchée.
+3. Adresses : `/metier.html`, `reseaux.html`, `index.html` en 200 ; les ancres `#reseaux`, `#outils`, `#habilitation`, `#enseignant` existent (relevé du § 1).
+4. `node build/retour-accueil.mjs --verifier` : 0 clé périmée, 14 pages sans balise, comme au lot 3 bis.
+5. Contrôle téléphone (`controle-telephone.cjs`), atelier contre site en ligne, sur les dix pages ci-dessus : aucune page bloquante, mêmes verdicts des deux côtés (`metier.html` et `reseaux.html` « à revoir » pour des schémas trop petits, déjà en ligne).
+
+**À regarder avant publication** :
+
+- Neuf pages à menu commun chargent la copie de `marque.js` de leur réseau, ou aucune marque, et n'ont donc pas les deux liens : `hydrometro/`, `cartoclim/`, `electrorezo/` (copie `assets/marque.js`), `cuivrezo/`, `hocourant/`, `tour-de-main/` (copie `moteur/` du réseau), `aerorezo/index.html`, `mentions.html` et `simurezo/simurezo.html` (pas de marque). Les copies servent aussi aux stations de ces réseaux : elles n'ont pas été touchées. À trancher : y recopier les deux liens, ou les laisser sans.
+- Au téléphone, les entrées du menu de `metier.html`, `formateurs.html` et `decouvrir.html` font 30 px de haut (leur feuille de style n'a pas la règle de 44 px de `reseaux.html`) ; c'était déjà le cas avec six entrées.
+- Le lien « Mentions légales » du pied fait 25 px de haut au téléphone, comme en ligne ; il n'a pas été changé, parce qu'il est présent dans toutes les leçons.
+- Lancer `node build/version.mjs` au moment de publier : les pages appellent `marque.js` avec une clé `?v=` ancienne, le navigateur peut garder l'ancien script en cache.

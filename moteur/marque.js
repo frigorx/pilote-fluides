@@ -169,6 +169,14 @@
     "#marque-inerweb .marque-mentions{color:#1b3a63;font-size:13px;" +
     "text-decoration:underline;text-underline-offset:2px;padding:3px 0}" +
     "#marque-inerweb .marque-mentions:hover{color:#0d2440}" +
+    /* 11/11/2026, lot 4 du haut de page commun : « Le métier » et « YouTube »
+       quittent le menu du haut (quatre entrées) pour ce pied de page. Même
+       style que le lien légal, en fin de document seulement : ni en filigrane
+       fixe, ni sur papier. Posés seulement sur les pages à menu du site. */
+    "#marque-inerweb .marque-lien{display:none;color:#1b3a63;font-size:13px;margin-left:8px;" +
+    "text-decoration:underline;text-underline-offset:2px;padding:3px 0}" +
+    "#marque-inerweb .marque-lien:hover{color:#0d2440}" +
+    "#marque-inerweb.marque-document .marque-lien{display:inline-block}" +
     /* PIÈGE MESURÉ (18/08) : ajouter la licence à côté du logo fait passer le
        filigrane fixe de 200×24 à 420×47 px — deux lignes — et il recouvre
        alors le texte du cours. En mode fixe la marque garde donc l'emprise
@@ -208,6 +216,8 @@
        légal, lui, doit rester atteignable partout (20/09). On lui rend sa
        taille et l'espace qui le sépare du logo. */
     "#marque-inerweb .marque-mentions{font-size:12px;margin-left:8px}" +
+    "#marque-inerweb .marque-lien{font-size:12px}" +
+    "#marque-inerweb.marque-document .marque-lien{display:inline-flex;align-items:center;min-height:44px}" +
     "#marque-inerweb svg{width:86px;height:18px}" +
     "#marque-inerweb.marque-document{font-size:10px;gap:6px}" +
     "#marque-inerweb.marque-document .marque-droits{font-size:9.5px}" +
@@ -219,6 +229,7 @@
     "left:0;right:0;bottom:0;margin:0;padding:2mm 4mm 0;border:0;opacity:.85;" +
     "color:#444;max-width:none;flex-wrap:wrap}" +
     "#marque-inerweb .marque-lic{display:inline!important}" +
+    "#marque-inerweb .marque-lien{display:none!important}" +
     "#marque-inerweb .marque-droits{display:block!important;color:#555;" +
     "font-size:7.5pt}}";
 
@@ -302,6 +313,21 @@
     }
   }
 
+  /* « Le métier » et « YouTube », seulement sur les pages qui portent le menu
+     du site : écrit dans la page (index.html et les pages à menu maison,
+     nav aria-label="Menu du site") ou posé par retour-accueil.js (balise
+     data-menu="commun"). Jamais dans les leçons, qui n'ont ni l'un ni l'autre.
+     Adresse YouTube : la même que window.INERWEB_YOUTUBE (moteur/reseaux.js),
+     à changer partout à la fois (git grep UCeeJMhgiuPSWekxoH-EexQA). */
+  function liensDuSite() {
+    if (!document.querySelector('nav[aria-label="Menu du site"],script[src*="retour-accueil.js"][data-menu="commun"]')) return "";
+    return (
+      '<a class="marque-lien" href="/metier.html">Le métier</a>' +
+      '<a class="marque-lien" href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" ' +
+      'target="_blank" rel="noopener" title="La chaîne YouTube inerWeb FR (nouvel onglet)">YouTube</a>'
+    );
+  }
+
   function poser() {
     if (document.getElementById("marque-inerweb")) return;
     var style = document.createElement("style");
@@ -325,6 +351,7 @@
       "<span>© inerWeb " + ANNEE +
       '<span class="marque-lic"> · ' + LIC.court + "</span></span>" +
       '<a class="marque-mentions" href="/mentions.html">Mentions légales</a>' +
+      liensDuSite() +
       '<span class="marque-droits">' + proto +
       "© inerWeb " + ANNEE + " — F. Henninot · " + LIC.long + "</span>";
 
