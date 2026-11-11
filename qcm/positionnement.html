@@ -906,6 +906,10 @@
       <button type="button" data-d="MFER">1<sup>re</sup> Bac Pro MFER</button>
       <button type="button" data-d="TMFER">Term. Bac Pro MFER</button>
     </div>
+    <label style="display:flex; gap:10px; align-items:flex-start; margin:14px 0 4px; font-size:16px; font-weight:normal">
+      <input type="checkbox" id="vieclasse" checked style="width:22px; height:22px; flex:none; margin-top:2px">
+      <span>Avec les questions de vie de classe (règles de la classe, règlement du lycée). Je décoche si je suis un professionnel.</span>
+    </label>
     <input type="hidden" id="nom">
     <p id="chargement" class="petit">Chargement des questions…</p>
     <button class="suite o" id="commencer" disabled>Commencer</button>
@@ -1017,12 +1021,13 @@ fetch('banque.json', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Err
 }).catch(() => { $('chargement').textContent = "Les questions ne se chargent pas : rechargez la page."; });
 
 // ---------------------------------------------------------------- la préparation : un tirage par niveau, propre à l'élève
-function preparer(nom, cl){
+const VIE_DE_CLASSE = ['Les règles de la classe', "Le règlement de l'établissement"];
+function preparer(nom, cl, avecVie){
   const r = alea(graine((nom + '|' + cl).toLowerCase()));
   const dipl = cl === 'CAP' ? 'CAP' : 'MFER';
   const niveaux = [];
   for (let n = 0; n <= 5; n++) {
-    const dispo = BANQUE.map((q, i) => (q.niveau === n && (!q.d || q.d === dipl)) ? i : -1).filter(i => i >= 0);
+    const dispo = BANQUE.map((q, i) => (q.niveau === n && (!q.d || q.d === dipl) && (avecVie || !VIE_DE_CLASSE.includes(q.theme))) ? i : -1).filter(i => i >= 0);
     const tires = melange(dispo, r).slice(0, PAR_NIVEAU);
     niveaux.push({ ordre: tires, reponses: tires.map(() => melange([0, 1, 2, 3].slice(0, 3), r)), choix: [] });
   }
@@ -1202,7 +1207,7 @@ $('commencer').addEventListener('click', () => {
   if (!BANQUE) return;
   if (!classe) { document.querySelectorAll('.choix button').forEach(x => x.style.borderColor = 'var(--rouge)'); return; }
   if (nom.length < 3) { $('nom').focus(); $('nom').style.borderColor = 'var(--rouge)'; return; }
-  etat = preparer(nom, classe); sauver();
+  etat = preparer(nom, classe, $('vieclasse').checked); sauver();
   minuteur = setInterval(chrono, 1000); chrono(); afficher(); garderEcranAllume();
 });
 $('suivant').addEventListener('click', suivante);
