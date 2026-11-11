@@ -113,11 +113,11 @@
 <main>
   <header class="tete">
     <h1>Mon parcours inerWeb</h1>
-    <p>Choisissez votre niveau, puis votre diplôme. Vous voyez les stations inerWeb qui vous servent, rangées dans l'ordre de votre référentiel.</p>
+    <p>Choisissez votre formation (CAP ou Bac pro), puis votre diplôme. Vous voyez les stations inerWeb qui vous servent, rangées dans l'ordre de votre référentiel.</p>
   </header>
 
   <section class="etape" aria-labelledby="t-niveau">
-    <h2 id="t-niveau"><span class="num">1</span> Mon niveau</h2>
+    <h2 id="t-niveau"><span class="num">1</span> Ma formation</h2>
     <div class="choix" id="niveaux"></div>
   </section>
 
@@ -135,8 +135,8 @@
   "use strict";
   var P = window.PARCOURS, S = P.stations;
   var NIVEAUX = {
-    3: { titre: "Niveau 3", detail: "CAP, titre professionnel" },
-    4: { titre: "Niveau 4", detail: "Bac pro, brevet professionnel" }
+    3: { titre: "CAP et titre professionnel", detail: "niveau 3" },
+    4: { titre: "Bac pro et brevet professionnel", detail: "niveau 4" }
   };
   var etat = { niveau: null, diplome: null, vue: "coeur", partie: null, mode: "stations", tab: null, tri: null };
 

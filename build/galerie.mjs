@@ -319,7 +319,7 @@ let h = `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Bibliothèque d'animations et de supports — habilitation fluides frigorigènes</title>
+<title>Animations, cours interactifs et planches du froid</title>
 <meta name="description" content="Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.">
 <style>
   :root { --bleu:#1b3a63; --orange:#ff6b35; --texte:#33475b; --mut:#8494a4; --bord:#d7e0e8;
@@ -410,8 +410,8 @@ let h = `<!doctype html>
      cul-de-sac — aucun moyen de revenir au plan (constat du 19/08). -->
 <p style="margin:14px 0 -8px"><a href="index.html" style="color:var(--bleu);text-decoration:none;font-weight:bold">❄️ inerweb.fr · ← revenir au plan</a></p>
 
-<h1>Bibliothèque d'animations et de supports</h1>
-<p class="meta">Habilitation fluides frigorigènes · © 2026 inerweb.fr</p>
+<h1>Animations, cours interactifs et planches du froid</h1>
+<p class="meta">Froid et climatisation · © 2026 inerweb.fr</p>
 
 <div class="intro">
   <p><b>Deux usages.</b> <b>Se servir</b> : chercher une ressource et la projeter telle quelle en cours.
