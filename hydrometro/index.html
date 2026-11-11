@@ -8,12 +8,14 @@
   <meta name="description" content="Un réseau pédagogique autonome de 22 stations pour explorer l’hydraulique CVC par lignes et correspondances.">
   <link rel="stylesheet" href="styles.css?v=20260823e">
   <link rel="stylesheet" href="print.css?v=20260823d" media="print">
+  <!-- Menu commun (11/11/2026) : la page défile de la hauteur du menu, sinon le bas du plan sort de l’écran. -->
+  <style>html{overflow-x:hidden;overflow-y:auto}body{overflow:visible}</style>
   <script src="../moteur/animations.js?v=c71a0f27da"></script>
   <script src="../moteur/voix-index.js?v=69c3f48245"></script>
   <script src="../moteur/prononciation.js?v=20261004-2038"></script>
   <script src="../moteur/voix.js?v=20261004-2038"></script>
   <script src="../moteur/reglage-voix.js?v=45451e558b"></script>
-<script defer src="../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="hydrometro/index.html" data-reseau-nom="💧 HydroMétro"></script>
+<script defer src="../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="hydrometro/index.html" data-reseau-nom="💧 HydroMétro" data-menu="commun"></script>
 </head>
 <body data-view="map">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -22,7 +24,6 @@
     <section id="mapScreen" class="screen map-screen" aria-labelledby="mapTitle">
       <header class="topbar">
         <div class="brand" aria-label="HydroMétro, réseau hydraulique autonome">
-          <span class="brand-mark" aria-hidden="true">H</span>
           <span><strong>HydroMétro</strong><small>réseau hydraulique autonome</small></span>
         </div>
         <div class="topbar-tools">
@@ -232,7 +233,6 @@
   <script src="programme.js?v=20260823d" defer></script>
   <script src="modules.js?v=20260823g" defer></script>
   <script src="app.js?v=20261004-2038" defer></script>
-  <script src="assets/logo-entete.js" defer></script>
   <script src="assets/marque.js" data-cartouche="Hydro" data-licence="cc-by-nc-nd" defer></script>
   <script src="../moteur/prof-vocal.js?v=9912c09150"></script>
 </body>

@@ -157,3 +157,34 @@ Question pour Franck avant de reprendre ces six pages (et avant le lot 5, où to
 4. Contrôle téléphone (`controle-telephone.cjs`) sur les 5 pages, atelier et site en ligne : OK partout, aucun bloquant.
 
 **À regarder avant publication** : la décision sur les six pages à double logo ; lancer `node build/version.mjs` au moment de publier (clé du service worker).
+
+## 9. Lot 3 bis : fait le 11/11/2026
+
+Décision de Franck du 11/11 (14 h 15) pour les six pages sorties du lot 3 : « Oui, nom seul ». L'en-tête de la page d'entrée garde le nom du réseau, sans le logo inerWeb ; le logo n'apparaît qu'une fois, dans le menu. Rien n'est publié. Les stations et leçons de ces réseaux ne changent pas : aucun fichier partagé n'est modifié (feuille de style, script ou symbole communs aux stations).
+
+**Pages posées (6)**, avec ce qui a été retiré :
+
+| Page | Retiré | Reste |
+|---|---|---|
+| `hydrometro/index.html` | l'appel à `assets/logo-entete.js` (script partagé avec les stations, non modifié) et le rond « H » provisoire que ce script retirait | « HydroMétro » et « réseau hydraulique autonome », dans leur style d'origine |
+| `aerorezo/index.html` | le logo figé « inerWeb AéroRézo » (SVG) | « AéroRézo » en texte (Trebuchet gras 22 px, bleu marine de la page), toujours lié à l'accueil du réseau |
+| `cartoclim/index.html` | le logo figé « inerWeb CartoClim » (SVG) | « CartoClim » en texte, même style |
+| `electrorezo/index.html` | le mot « inerWeb » devant le cartouche | le cartouche « ÉlectroRézo » tel quel |
+| `legislation/index.html` | le logo inerweb.fr (SVG) et son commentaire ; le filet qui séparait le logo du nom | « Législation », dans son style d'origine |
+| `bureau-etudes/index.html` | le logo figé « inerWeb BE » (SVG) | « BE » en texte (Trebuchet gras 22 px, bleu marine), au-dessus du titre « Bureau d'études » |
+
+- `hydrometro/index.html` reçoit aussi une règle de page : la page défile (`html{overflow-y:auto}`). L'écran du plan est calé à la hauteur de la fenêtre et la page interdisait le défilement : le menu (91 px au téléphone) poussait quatre stations hors de portée (Équilibrage, Plancher chauffant, Diagnostic, Mission réseau). En ligne, la barre de 34 px coupait déjà « Positionnement initial » et « Entrer par Boucle ». Effet de bord : le pied de marque passe en fin de page au lieu de rester fixé en bas à gauche.
+- Législation charge `moteur/` en relatif (`../moteur/`) : le menu s'y pose comme ailleurs.
+- Aucune de ces six pages n'est produite par un script de `build/` ; les outils de `legislation/outils/` lisent la page ou écrivent dans les stations.
+
+**Pages sorties** : aucune.
+
+**Contrôles passés** (atelier servi sur le port 8794) :
+
+1. Au navigateur, en 1 366 px et en 375 px, les six pages : un seul menu, un seul logo inerWeb en haut de page (le second SVG relevé sur la page du bureau d'études est le plan du réseau, dont le titre accessible contient « inerWeb BE »), nom du réseau visible, entrées de 44 px, dernière entrée à 359 px sur 375, aucun débordement (largeur du document égale à la fenêtre).
+2. Pied de marque (`marque.js`) inchangé sur cinq pages ; HydroMétro, voir plus haut.
+3. Une station de chaque réseau (`hydrometro/stations/boucle`, `aerorezo/stations/air-circule`, `electrorezo/stations/1-1-courant-intensite`, `cartoclim/stations/1-1-climatiser`, `legislation/stations/acoustique-le-bruit-en-db`, `bureau-etudes/stations/a1-air-humide`) : pas de menu commun, en-tête et barre de retour d'avant, logo du réseau présent.
+4. `node build/retour-accueil.mjs --verifier` : 0 clé périmée, 14 pages sans balise.
+5. Contrôle téléphone (`controle-telephone.cjs`), atelier contre site en ligne : Législation et bureau d'études OK des deux côtés ; AéroRézo, ÉlectroRézo, CartoClim « à revoir » des deux côtés pour les mêmes schémas trop petits ; HydroMétro « à revoir » dans l'atelier contre « bloquant » en ligne (boutons hors de portée, corrigés par le défilement). Aucun bloquant nouveau.
+
+**À regarder avant publication** : « BE » seul au-dessus du titre « Bureau d'études » (le nom du réseau est court) ; le défilement de la page d'entrée d'HydroMétro ; lancer `node build/version.mjs` au moment de publier.

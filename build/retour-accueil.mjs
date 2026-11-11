@@ -82,11 +82,13 @@ const MENU_COMMUN = [
   // (diaporama calé à la hauteur de l'écran), cablage-virtuel/ (sa barre porte déjà le retour à
   // l'accueil, jouer.html est l'exercice, film.html un film), aquiblue/ (son en-tête porte le logo).
   "livres/index.html", "studio/index.html", /^rezotools\//, /^qcm\//, /^simurezo\//,
-  // Lot 3 : pages d'entrée de réseau sans logo propre, Mon parcours, la galerie. Hors lot :
-  // hydrometro/, aerorezo/, electrorezo/, cartoclim/, legislation/, bureau-etudes/ (leur en-tête
-  // porte le logo « inerWeb + réseau » : deux logos l'un sous l'autre, comme aquiblue/).
+  // Lot 3 : pages d'entrée de réseau sans logo propre, Mon parcours, la galerie.
   "cuivrezo/index.html", "tour-de-main/index.html", "hocourant/index.html",
   "mon-parcours/index.html", "galerie.html",
+  // Lot 3 bis : les six autres pages d'entrée. Leur en-tête garde le nom du réseau seul, sans le
+  // logo inerWeb du réseau (décision de Franck du 11/11 : le logo n'apparaît qu'une fois, dans le menu).
+  "hydrometro/index.html", "aerorezo/index.html", "electrorezo/index.html", "cartoclim/index.html",
+  "legislation/index.html", "bureau-etudes/index.html",
 ];
 const SANS_MENU = new Set([]);
 const menuCommun = (rel) => !SANS_MENU.has(rel) && MENU_COMMUN.some((m) => (typeof m === "string" ? m === rel : m.test(rel)));

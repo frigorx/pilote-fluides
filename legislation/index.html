@@ -50,7 +50,7 @@
                     display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
   .entete .marque { display:flex; align-items:center; gap:12px; text-decoration:none; }
   .entete .reseau-nom { font-family:var(--titre); font-weight:bold; font-size:17px;
-                        color:var(--bleu); border-left:2px solid var(--ligne); padding-left:12px; }
+                        color:var(--bleu); }
   .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
          font-family:var(--titre); font-size:15px; font-weight:bold; }
   .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px;
@@ -150,7 +150,7 @@
     .pastille { white-space:normal; }
   }
 </style>
-<script defer src="../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation"></script>
+<script defer src="../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="legislation/index.html" data-reseau-nom="📜 Réseau Législation" data-menu="commun"></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -158,17 +158,6 @@
 <div class="entete" role="banner">
   <div class="dedans">
     <a class="marque" href="./" aria-label="inerWeb Législation — accueil du réseau">
-      <!-- Logo figé, charte § 3.4 : orange DU LOGO #e8914a, distinct de l'orange
-           du contenu. C'est aussi ce que marque.js reconnaît (aria-label
-           commençant par « inerWeb ») pour savoir que l'en-tête est marqué. -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
-        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
-        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
-        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
-        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
-        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
-        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
-      </svg>
       <span class="reseau-nom">Législation</span>
     </a>
     <nav class="nav" aria-label="Correspondance">
