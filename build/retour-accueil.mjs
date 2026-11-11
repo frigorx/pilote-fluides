@@ -78,6 +78,10 @@ const MENU_COMMUN = [
   "formateur.html", "portail.html", "matrice.html", "planning.html", "pratique.html", "seances.html", "charte.html",
   "documents.html", "formation.html", "comprendre-les-codes.html", "activer.html",
   "demander-un-acces.html", "mentions.html",
+  // Lot 2 : les petits espaces (studio/ sans ses salles de films). Hors lot : habilitations/index.html
+  // (diaporama calé à la hauteur de l'écran), cablage-virtuel/ (sa barre porte déjà le retour à
+  // l'accueil, jouer.html est l'exercice, film.html un film), aquiblue/ (son en-tête porte le logo).
+  "livres/index.html", "studio/index.html", /^rezotools\//, /^qcm\//, /^simurezo\//,
 ];
 const SANS_MENU = new Set([]);
 const menuCommun = (rel) => !SANS_MENU.has(rel) && MENU_COMMUN.some((m) => (typeof m === "string" ? m === rel : m.test(rel)));

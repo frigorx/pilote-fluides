@@ -96,3 +96,35 @@ Le lot 5 est risqué parce que le `topbar` de chaque station porte ses boutons d
 4. **Fiches courtes de QR** (`f/ e/ h/ m/`, 406 pages) : laissées nues, ou seulement le logo vers l'accueil ? Conseil : laissées telles quelles.
 5. **Ordre** : commencer par les lots 1 et 2 (environ 55 pages sans risque) et attendre le retour de `libelles-clairs` pour `portes.html`, `galerie.html` et `mon-parcours/` ?
 6. **Libellé « Outils »** : il mène à `reseaux.html#outils`. Même mot partout, y compris dans `rezotools/` ?
+
+## 7. Lots 0 à 2 : fait le 11/11/2026
+
+Décisions de Franck du 11/11 appliquées : quatre entrées partout (logo vers `index.html`, Cours `reseaux.html#reseaux`, Habilitations `index.html#habilitation`, Outils `reseaux.html#outils`, Enseignants `index.html#enseignant`), le réseau en cours sur une seconde ligne discrète, rien dans les leçons. Rien n'est publié.
+
+**Lot 0, le script** (commits `c31443137`, puis `f48dd9264`). `moteur/retour-accueil.js` garde sa barre de retour telle quelle et sait poser, à la place, le menu commun quand la balise porte `data-menu="commun"`. `build/retour-accueil.mjs` pose cet attribut d'après deux listes, `MENU_COMMUN` (pages ou dossiers) et `SANS_MENU`. Le menu reprend la barre de `index.html` : fond `#fffdf8`, filet `#d6dee7`, logo figé 153 × 35, Trebuchet gras 16 px, au téléphone (760 px et moins) les quatre entrées sur une ligne pleine largeur à 14 px, cibles de 44 px. Dans le flux, jamais fixé ; masqué à l'impression et dans les cadres ; même identifiant que la barre de retour, donc jamais deux sur une page. Le dessin suit le plan, avec une correction : les classes du menu sont préfixées `iwm-`, parce que les calculettes RézoTools ont leur propre `.iw-nav` qui transformait les entrées en pastilles. Le script de pose renouvelle la clé `?v=` sur les 1 178 pages qui portent la balise (diff d'une ligne par page) : c'est son fonctionnement normal.
+
+**Lot 1** (commit `1815e5b33`) : 13 pages de la racine. formateur, portail, matrice, planning, pratique, seances, charte, documents, formation, comprendre-les-codes, activer, demander-un-acces, mentions. Aucune barre maison à retirer : leurs en-têtes sont des titres de page.
+
+**Lot 2** (commit de ce lot) : 23 pages. `livres/index.html`, `studio/index.html`, `rezotools/` (index et 14 calculettes), `qcm/` (4), `simurezo/` (2). Barre « Retour » (`nav.haut`) retirée de `livres/`, `studio/` et `rezotools/` : ses trois liens (« ← inerweb.fr », Plan des réseaux, Studio ou Quartier) sont tous ouverts depuis « Cours » (`reseaux.html`). La barre de navigation entre calculettes reste sous le menu.
+
+**Pages sorties des lots** (elles gardent la barre de retour actuelle) :
+
+| Page | Pourquoi |
+|---|---|
+| `partage.html` | affiche centrée par un corps en flex : le menu se range à côté de l'affiche |
+| `habilitations/index.html` | diaporama calé à la hauteur de l'écran avec la barre de 34 px ; le menu (57 px) fait déborder chaque diapositive |
+| `cablage-virtuel/index.html`, `professeur.html` | leur barre porte déjà « ‹ inerweb.fr » ou « Accueil inerweb.fr » : doublon avec le logo |
+| `cablage-virtuel/jouer.html` | l'exercice lui-même (règle des leçons) |
+| `cablage-virtuel/film.html` | un film (lecteur plein cadre) |
+| `cablage-virtuel/documents-professeur.html` | marcherait seule, mais la famille resterait mêlée : à traiter avec le reste de `cablage-virtuel/` |
+| `aquiblue/index.html`, `espace-prof.html` | leur en-tête porte déjà le logo inerWeb : deux logos l'un sous l'autre |
+
+**Contrôles passés** (atelier servi sur le port 8793) :
+
+1. Au navigateur, en 1 366 px et en 375 px : les 36 pages posées, une à une (menu sur une ligne, dernière entrée à 359 px sur 375, liens de 44 px, texte de 14 px au moins, aucun élément fixé par-dessus, aucun second logo, aucun débordement ajouté ; les débordements de `matrice`, `planning` et `comprendre-les-codes` existent déjà en ligne).
+2. Les quatre entrées depuis `rezotools/calculettes/cop.html` (profondeur 2) : adresses justes, pages en 200, ancres présentes ; « Habilitations » ouvre bien l'écran `#habilitation` de l'accueil.
+3. `node build/retour-accueil.mjs --verifier` : 0 clé périmée, 15 pages sans balise comme sur `main` (le script de pose les poserait, dont `index.html` et `portes.html` : remis à leur état d'origine après chaque pose).
+4. Contrôle téléphone (`controle-telephone.cjs`) sur mentions, portail, formation, livres, studio, rezotools, une calculette, qcm/positionnement, simurezo : aucun bloquant. Deux « à revoir » sans lien avec le menu : étiquettes de 11 px des affiches du Studio, schéma de SimuRézo trop petit au téléphone.
+5. Pages hors lots identiques au site en ligne (barre, hauteur de page) : une station d'HydroMétro, une station d'AéroRézo, `plan.html`, `legislation/index.html`.
+
+**À regarder avant publication** : l'en-tête au téléphone fait 91 px (135 px avec la ligne du réseau), contre 34 px pour l'ancienne barre ; lancer `node build/version.mjs` au moment de publier (clé du service worker).
