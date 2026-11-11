@@ -128,3 +128,32 @@ Décisions de Franck du 11/11 appliquées : quatre entrées partout (logo vers `
 5. Pages hors lots identiques au site en ligne (barre, hauteur de page) : une station d'HydroMétro, une station d'AéroRézo, `plan.html`, `legislation/index.html`.
 
 **À regarder avant publication** : l'en-tête au téléphone fait 91 px (135 px avec la ligne du réseau), contre 34 px pour l'ancienne barre ; lancer `node build/version.mjs` au moment de publier (clé du service worker).
+
+## 8. Lot 3 : fait le 11/11/2026
+
+Rien n'est publié. Une ligne ajoutée à `MENU_COMMUN` dans `build/retour-accueil.mjs`, puis `node build/retour-accueil.mjs` ; `index.html`, `portes.html` et les 13 autres pages sans balise remises à leur état d'origine après la pose.
+
+**Pages posées (5)** : `cuivrezo/index.html`, `tour-de-main/index.html`, `hocourant/index.html`, `mon-parcours/index.html`, `galerie.html`.
+
+- `galerie.html` : la ligne « ❄️ inerweb.fr · ← revenir au plan » (lien vers `index.html`) est retirée, avec son commentaire : le logo du menu fait le même retour.
+- `hocourant/index.html` n'avait plus la balise depuis la livraison de l'atelier HoCourant du 15/10 (`d11f15f45`) : la page n'avait aucun retour vers l'accueil. Le script de pose la remet, avec le menu.
+- Sur les pages d'entrée de réseau, le menu n'a pas de seconde ligne « Vous êtes dans » : c'est la page du réseau elle-même.
+
+**Pages sorties du lot** (elles gardent leur haut de page actuel) :
+
+| Page | Pourquoi |
+|---|---|
+| `hydrometro/index.html`, `aerorezo/index.html`, `electrorezo/index.html`, `cartoclim/index.html`, `legislation/index.html`, `bureau-etudes/index.html` | leur en-tête commence par le logo du réseau, qui contient le mot inerWeb (« inerWeb AéroRézo », « inerWeb BE »…) : avec le menu, deux logos inerWeb l'un sous l'autre, même cas que `aquiblue/` au lot 2 |
+
+Question pour Franck avant de reprendre ces six pages (et avant le lot 5, où toutes les stations à `topbar` portent le même logo) : accepter le logo du réseau sous le menu, ou retirer le logo du réseau de leur en-tête et garder seulement le nom du réseau ?
+
+`jouerezo/`, `r408/`, `plan/` et `voyage/` ne font pas partie du lot 3 : ils restent aux lots 5 et 6 ou dans les pages à laisser telles quelles (§ 4).
+
+**Contrôles passés** (atelier servi sur le port 8794) :
+
+1. Au navigateur, en 1 366 px et en 375 px, les 5 pages une à une : un seul menu (`#inerweb-retour-accueil-barre` unique), aucun second logo, entrées de 44 px, texte de 14 px au moins, dernière entrée à 359 px sur 375 (341 px dans la galerie), aucun débordement (largeur du document égale à la fenêtre). Dans la galerie, le menu suit la marge du corps de page ; il ne touche pas les bords de l’écran.
+2. Les quatre entrées et le logo depuis `hocourant/index.html` : adresses justes, pages en 200.
+3. `node build/retour-accueil.mjs --verifier` : 0 clé périmée, 14 pages sans balise (15 sur `main`, HoCourant en moins).
+4. Contrôle téléphone (`controle-telephone.cjs`) sur les 5 pages, atelier et site en ligne : OK partout, aucun bloquant.
+
+**À regarder avant publication** : la décision sur les six pages à double logo ; lancer `node build/version.mjs` au moment de publier (clé du service worker).

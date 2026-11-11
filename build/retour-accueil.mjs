@@ -82,6 +82,11 @@ const MENU_COMMUN = [
   // (diaporama calé à la hauteur de l'écran), cablage-virtuel/ (sa barre porte déjà le retour à
   // l'accueil, jouer.html est l'exercice, film.html un film), aquiblue/ (son en-tête porte le logo).
   "livres/index.html", "studio/index.html", /^rezotools\//, /^qcm\//, /^simurezo\//,
+  // Lot 3 : pages d'entrée de réseau sans logo propre, Mon parcours, la galerie. Hors lot :
+  // hydrometro/, aerorezo/, electrorezo/, cartoclim/, legislation/, bureau-etudes/ (leur en-tête
+  // porte le logo « inerWeb + réseau » : deux logos l'un sous l'autre, comme aquiblue/).
+  "cuivrezo/index.html", "tour-de-main/index.html", "hocourant/index.html",
+  "mon-parcours/index.html", "galerie.html",
 ];
 const SANS_MENU = new Set([]);
 const menuCommun = (rel) => !SANS_MENU.has(rel) && MENU_COMMUN.some((m) => (typeof m === "string" ? m === rel : m.test(rel)));
