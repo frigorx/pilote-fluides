@@ -1,5 +1,15 @@
 # REPRISE — pack habilitation fluides frigorigènes
 
+> ## 11/11/2026 — STUDIO : SÉRIE « BRIGADE DU TABLEAU » (ÉLECTRICITÉ)
+>
+> En ligne le 11/11 (main `52c7c5c83`, feu vert de Franck du 11/11 à 18 h 13). Fiche `studio/#t-brigade` : huit films
+> d'initiation à l'électricité (épisode 1, deux hors série, épisodes 2 à 6), copies téléphone faststart dans
+> `studio/brigade/`, affiche de série et huit affiches peintes (film noir) dans `studio/affiches/brigade-*.webp` et
+> `serie-brigade-du-tableau.webp`, portes vers les stations ÉlectroRézo 1-1, 1-3, 1-8, 4-9, 6-A, 5-2, 4-3 et 4-1.
+> Compteur de films 44 → 52 (`moteur/reseaux.js`, `reseaux.html`). Contrôle téléphone en ligne : 0 bloquant. Atelier
+> des films (hors dépôt) : `OneDrive\Documents\inerweb-video\electrotech\` ; défauts mineurs laissés et voix à écouter
+> listés dans son `task_plan.md` et `CONTROLE-EP2-6.md`.
+
 > ## 11/11/2026 — ACCUEIL À QUATRE ENTRÉES ET HAUT DE PAGE COMMUN
 >
 > En ligne le 11/11 (accueil : main `384f6b7c4` ; libellés : `f4d01f6b8` ; haut de page, lots 0 à 4 : `25a90792f`,
