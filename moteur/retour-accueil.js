@@ -191,27 +191,28 @@
       B + "{position:static;display:block;margin:0;padding:0;background:#fffdf8;border:0;border-bottom:1px solid #d6dee7;" +
       "font:bold 16px/1.3 'Trebuchet MS',Calibri,Arial,sans-serif;color:#1b3a63;text-align:left;box-sizing:border-box}" +
       B + " *{box-sizing:border-box}" +
-      B + " .iw-dedans{max-width:1080px;margin:0 auto;padding:6px 20px;display:flex;align-items:center;gap:0 20px;flex-wrap:wrap}" +
-      B + " a{color:#1b3a63;text-decoration:none;background:none;display:inline-flex;align-items:center;min-height:44px;padding:0;margin:0}" +
+      B + " .iwm-dedans{max-width:1080px;margin:0 auto;padding:6px 20px;display:flex;align-items:center;gap:0 20px;flex-wrap:wrap}" +
+      B + " a{color:#1b3a63;text-decoration:none;background:none;display:inline-flex;align-items:center;min-height:44px;padding:0;margin:0;" +
+      "border:0;border-radius:0;box-shadow:none;font-weight:bold;text-transform:none;letter-spacing:normal;white-space:nowrap}" +
       B + " a:focus-visible{outline:3px solid #ff6b35;outline-offset:2px}" +
-      B + " .iw-nav{display:flex;flex-wrap:wrap;gap:0 22px;margin-left:auto}" +
-      B + " .iw-nav a{border-bottom:3px solid transparent;font-size:16px}" +
-      B + " .iw-nav a:hover{border-bottom-color:#d6dee7;color:#1b3a63}" +
-      B + " .iw-ici{max-width:1080px;margin:0 auto;padding:0 20px 2px;font:normal 14px/1.3 Calibri,'Segoe UI',Arial,sans-serif;color:#5a6b7d}" +
-      B + " .iw-ici a{font-weight:bold;min-height:32px;margin-left:4px}" +
-      B + " .iw-ici a:hover{text-decoration:underline}" +
-      "@media (max-width:760px){" + B + " .iw-dedans{padding:2px 16px 0}" +
-      B + " .iw-nav{margin-left:0;width:100%;justify-content:space-between;gap:0 6px}" +
-      B + " .iw-nav a{font-size:14px;white-space:nowrap}" + B + " .iw-ici{padding:0 16px}" + B + " .iw-ici a{min-height:44px}}" +
+      B + " .iwm-entrees{display:flex;flex-wrap:wrap;gap:0 22px;margin:0 0 0 auto;padding:0;background:none;border:0}" +
+      B + " .iwm-entrees a{border-bottom:3px solid transparent;font-size:16px}" +
+      B + " .iwm-entrees a:hover{border-bottom-color:#d6dee7;color:#1b3a63}" +
+      B + " .iwm-ici{max-width:1080px;margin:0 auto;padding:0 20px 2px;font:normal 14px/1.3 Calibri,'Segoe UI',Arial,sans-serif;color:#5a6b7d}" +
+      B + " .iwm-ici a{font-weight:bold;min-height:32px;margin-left:4px}" +
+      B + " .iwm-ici a:hover{text-decoration:underline}" +
+      "@media (max-width:760px){" + B + " .iwm-dedans{padding:2px 16px 0}" +
+      B + " .iwm-entrees{margin-left:0;width:100%;justify-content:space-between;gap:0 6px}" +
+      B + " .iwm-entrees a{font-size:14px;white-space:nowrap}" + B + " .iwm-ici{padding:0 16px}" + B + " .iwm-ici a{min-height:44px}}" +
       "@media print{" + B + "{display:none}}";
     document.head.appendChild(st);
 
     var b = document.createElement("nav");
     b.id = "inerweb-retour-accueil-barre";
-    b.className = "iw-commun";
+    b.className = "iwm-commun";
     b.setAttribute("aria-label", "Menu du site");
     var d = document.createElement("div");
-    d.className = "iw-dedans";
+    d.className = "iwm-dedans";
     var a = document.createElement("a");
     a.id = "inerweb-retour-accueil";
     a.href = accueil;
@@ -221,7 +222,7 @@
     a.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" aria-hidden="true" focusable="false"><text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text><text fill="#1b3a63" font-family="Trebuchet MS,Trebuchet,sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text><text fill="#1b3a63" font-family="Segoe Script,Brush Script MT,cursive" font-size="26px" x="94" y="32">Web</text><line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line><rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect><text fill="#fff" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text></svg>';
     d.appendChild(a);
     var n = document.createElement("div");
-    n.className = "iw-nav";
+    n.className = "iwm-entrees";
     [["reseaux.html#reseaux", "Cours"], ["index.html#habilitation", "Habilitations"],
      ["reseaux.html#outils", "Outils"], ["index.html#enseignant", "Enseignants"]].forEach(function (e) {
       var l = document.createElement("a");
@@ -233,7 +234,7 @@
     b.appendChild(d);
     if (reseau) {
       var r = document.createElement("div");
-      r.className = "iw-ici";
+      r.className = "iwm-ici";
       r.appendChild(document.createTextNode("Vous êtes dans :"));
       var lr = document.createElement("a");
       lr.id = "inerweb-retour-reseau";
