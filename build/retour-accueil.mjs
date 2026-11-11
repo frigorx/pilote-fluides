@@ -72,7 +72,13 @@ const attr = (v) => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
    data-menu="commun" sur les pages des familles déployées, lot par lot : la page reçoit le menu
    commun (logo, Cours, Habilitations, Outils, Enseignants) au lieu de la barre de retour.
    Une page absente de MENU_COMMUN, ou citée dans SANS_MENU, garde la barre de retour. */
-const MENU_COMMUN = [];
+const MENU_COMMUN = [
+  // Lot 1 : pages de la racine qui n'avaient que la barre de retour. Hors lot : partage.html
+  // (affiche centrée par un corps en flex : le menu se rangeait à côté de l'affiche).
+  "formateur.html", "portail.html", "matrice.html", "planning.html", "pratique.html", "seances.html", "charte.html",
+  "documents.html", "formation.html", "comprendre-les-codes.html", "activer.html",
+  "demander-un-acces.html", "mentions.html",
+];
 const SANS_MENU = new Set([]);
 const menuCommun = (rel) => !SANS_MENU.has(rel) && MENU_COMMUN.some((m) => (typeof m === "string" ? m === rel : m.test(rel)));
 
