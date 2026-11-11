@@ -68,6 +68,13 @@ for (const [page, id] of Object.entries(FILMS_YT)) {
   try { readFileSync(join(RACINE, page)); } catch { throw new Error(`youtube-films.js : page de film introuvable : ${page}`); }
 }
 const attr = (v) => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+/* ---- LE MENU COMMUN (11/11/2026, docs/haut-de-page-commun-2026-11/INVENTAIRE-ET-PLAN.md) ----
+   data-menu="commun" sur les pages des familles déployées, lot par lot : la page reçoit le menu
+   commun (logo, Cours, Habilitations, Outils, Enseignants) au lieu de la barre de retour.
+   Une page absente de MENU_COMMUN, ou citée dans SANS_MENU, garde la barre de retour. */
+const MENU_COMMUN = [];
+const SANS_MENU = new Set([]);
+const menuCommun = (rel) => !SANS_MENU.has(rel) && MENU_COMMUN.some((m) => (typeof m === "string" ? m === rel : m.test(rel)));
 
 function pagesHtml(d, sortie = []) {
   for (const e of readdirSync(d, { withFileTypes: true })) {
@@ -106,7 +113,8 @@ for (const page of pagesHtml(RACINE)) {
   if (!/<head[\s>]/i.test(html)) { sansHead++; continue; }
   const prefixe = relative(dirname(page), RACINE).split(sep).join("/");
   const donnees = (reseau ? ` data-reseau-href="${attr(reseau.adresse)}" data-reseau-nom="${attr(reseau.emoji + " " + reseau.nom)}"` : "") +
-    (FILMS_YT[rel] ? ` data-youtube="${attr(FILMS_YT[rel])}"` : "");
+    (FILMS_YT[rel] ? ` data-youtube="${attr(FILMS_YT[rel])}"` : "") +
+    (menuCommun(rel) ? ` data-menu="commun"` : "");
   const balise = `<script defer src="${prefixe ? prefixe + "/" : ""}moteur/retour-accueil.js?v=${cle}"${donnees}></script>`;
   let neuf;
   if (existante.test(html)) {
