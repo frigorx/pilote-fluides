@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="moteur/animations.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1b3a63">
+<link rel="apple-touch-icon" href="icones/apple-touch-icon-180.png">
+<title>Tout inerWeb en huit portes — inerweb.fr</title>
+<meta name="description" content="Cours, habilitations, livres, outils et logiciels du froid et de la climatisation, du CAP au BTS. Gratuit, sans compte, en français.">
+<meta property="og:title" content="Tout inerWeb en huit portes — inerweb.fr">
+<meta property="og:description" content="Huit portes : les cours en réseaux, les habilitations, les outils, les jeux, le bureau d’études, les logiciels, les livres et l’espace de la classe. Gratuit, sans compte.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://inerweb.fr/portes.html">
+<link rel="canonical" href="https://inerweb.fr/portes.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="inerweb.fr">
+<meta property="og:image" content="https://inerweb.fr/icones/og-inerweb-1200x630.png?v=20261006">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="inerweb.fr — apprendre le froid, station par station, sur un plan de métro.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  /* LES HUIT PORTES (11/11/2026) : l'accueil du 01/11/2026 devenu la page « tout le site, porte par porte ».
+     L'accueil (index.html) tient en quatre entrées par profil et mène ici par « Voir tout le site ».
+     Le volet des actualités et le bandeau de l'établissement restent sur l'accueil. */
+  :root { --bleu:#1b3a63; --bleu-clair:#2f5689; --orange:#ff6b35; --violet:#7a4fa0;
+          --vert:#1e7e54; --ambre:#b06a00; --hp:#c0392b;
+          --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7; --carte:#fffdf8; --ligne:#d6dee7;
+          --r:14px; --ombre:0 2px 10px rgba(27,58,99,.10);
+          --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt);
+         font:17px/1.6 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange); }
+
+  /* Accessibilité : lien d'évitement (visible au clavier seulement) et focus orange partout. */
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu);
+           color:#fff; padding:12px 20px; border-radius:999px; font-weight:bold;
+           font-family:var(--titre); text-decoration:none; }
+  .evite:focus { left:8px; }
+  #contenu:focus { outline:none; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  /* La barre du haut : la même que sur toutes les pages. */
+  .entete { background:var(--carte); border-bottom:1px solid var(--ligne); }
+  .entete .dedans { max-width:1080px; margin:0 auto; padding:12px 20px;
+                    display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+  .entete .marque { display:flex; align-items:center; text-decoration:none; }
+  .nav { display:flex; gap:22px; margin-left:auto; flex-wrap:wrap;
+         font-family:var(--titre); font-size:16px; font-weight:bold; }
+  .nav a { color:var(--bleu); text-decoration:none; padding-bottom:2px; border-bottom:3px solid transparent; }
+  .nav a:hover { border-bottom-color:var(--ligne); color:var(--bleu); }
+  .nav a.ici { border-bottom-color:var(--orange); }
+  .nav a.nav-youtube { color:#a30000; font-weight:bold; }
+
+  /* Le pied de page est posé par moteur/marque.js (mode document). */
+  .page { max-width:1080px; margin:0 auto; padding:0 20px 18px; }
+
+  /* ---- Le premier écran : le gros logo, la phrase d'identité, la recherche ---- */
+  .hero { margin:24px 0 24px; display:grid; grid-template-columns:minmax(0,1fr) auto;
+          gap:16px 36px; align-items:center; }
+  /* Retouche de Franck (01/11/2026, 17 h) : la recherche et les deux repères de départ sur une
+     même rangée, pleine largeur sous le texte et le logo, pour ne plus perdre d'espace. */
+  .hero-actions { grid-column:1 / -1; order:3; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+  .hero-logo { display:block; order:2; justify-self:end; padding:16px 22px; border-radius:var(--r);
+               background:var(--carte); border:1px solid var(--ligne); box-shadow:var(--ombre);
+               text-decoration:none; text-align:center; color:var(--mut); font-size:14.5px; line-height:1.4; }
+  .hero-logo:hover { border-color:var(--bleu-clair); color:var(--bleu); }
+  .hero-logo svg { display:block; width:min(100%,390px); height:auto; margin:0 auto 6px; }
+  .hero-texte { order:1; min-width:0; }
+  .pastille { display:inline-block; font-size:12px; font-weight:bold; color:#fff;
+              background:var(--orange); padding:3px 12px; border-radius:999px;
+              white-space:nowrap; letter-spacing:.4px; margin-bottom:12px; }
+  h1 { margin:0 0 10px; font-family:var(--titre); font-weight:bold; font-size:38px;
+       line-height:1.15; color:var(--bleu); text-wrap:pretty; }
+  h1 em { font-style:normal; color:var(--orange); }
+  .chapo { margin:0; font-size:18px; color:var(--mut); max-width:36em; text-wrap:pretty; }
+  .chapo strong { color:var(--txt); }
+  .hall-recherche { display:flex; gap:8px; margin:0; flex:1 1 360px; min-width:0; }
+  .hall-recherche input { flex:1; min-width:0; padding:11px 16px; font:16px/1.4 inherit; color:var(--txt);
+                          background:var(--carte); border:1.5px solid var(--ligne); border-radius:999px; }
+  .hall-recherche input:focus { outline:3px solid var(--orange); outline-offset:2px; border-color:var(--bleu); }
+  .hall-recherche .bouton { border:0; font:inherit; font-weight:bold; cursor:pointer; }
+  .boutons { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .bouton { display:inline-block; padding:11px 24px; background:var(--bleu); color:#fff;
+            font-weight:bold; text-decoration:none; border-radius:999px; white-space:nowrap; }
+  .bouton:hover { background:var(--bleu-clair); color:#fff; }
+  .bouton.creux { padding:9px 22px; background:var(--carte); color:var(--bleu); border:2px solid var(--bleu-clair); }
+  .bouton.creux:hover { background:#e7eff7; color:var(--bleu); }
+
+  /* ---- Les huit portes : une vignette, un titre, une ligne, des boutons ---- */
+  .portes-titre { margin:0 0 12px; font-family:var(--titre); font-size:22px; color:var(--bleu); }
+  .portes { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+  .porte { display:flex; flex-direction:column; background:var(--carte); border:1px solid var(--ligne);
+           border-top:6px solid var(--c); border-radius:var(--r); box-shadow:var(--ombre); overflow:hidden; }
+  .p-image { display:block; aspect-ratio:16/5; overflow:hidden; background:#eef3f9; }
+  .p-image img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 60%; }
+  .porte h3 { margin:0; padding:12px 18px 0; font-family:var(--titre); font-size:22px; line-height:1.25; }
+  .porte h3 a { color:var(--c); text-decoration:none; }
+  .porte h3 a:hover { text-decoration:underline; }
+  .p-mots { margin:4px 0 10px; padding:0 18px; color:var(--mut); font-size:15.5px; line-height:1.45; text-wrap:pretty; }
+  .p-liens { list-style:none; margin:auto 0 0; padding:0 14px 16px; display:flex; flex-wrap:wrap; gap:8px; }
+  .p-liens a { display:inline-block; padding:8px 13px; border-radius:999px; background:#eef3f9; color:var(--bleu);
+               text-decoration:none; font-weight:bold; font-size:15px; line-height:1.3; }
+  .p-liens a:hover { background:var(--bleu); color:#fff; }
+
+
+  /* ---- Le bas : tout le site, les films ---- */
+  .tout { margin:28px 0 10px; padding:18px 20px; background:var(--carte); border:1px solid var(--ligne);
+          border-radius:var(--r); display:flex; gap:12px 18px; align-items:center; flex-wrap:wrap; }
+  .tout p { margin:0; flex:1 1 20em; color:var(--mut); }
+  .tout p strong { color:var(--txt); }
+
+  @media (max-width:760px) {
+    .hero { grid-template-columns:1fr; gap:16px; margin-top:18px; }
+    .hero-logo { order:1; justify-self:stretch; padding:10px 14px; }
+    .hero-logo svg { width:min(100%,240px); margin-bottom:2px; }
+    .hero-texte { order:2; }
+    h1 { font-size:30px; }
+    .portes { grid-template-columns:1fr; }
+    .porte h3 { font-size:21px; }
+    .hero-actions { flex-direction:column; align-items:stretch; }
+    .hall-recherche { flex-direction:column; flex-basis:auto; }
+    .hall-recherche .bouton { align-self:flex-start; }
+    .boutons { flex-direction:column; align-items:stretch; }
+    .boutons .bouton { text-align:center; white-space:normal; }
+    .nav { gap:14px; }
+    .nav a { padding:8px 2px 6px; }
+  }
+
+  @media (max-width:1099px){ .pastille, .hero-logo { font-size:14px !important; } }
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<div class="entete" role="banner">
+  <div class="dedans">
+    <a class="marque" href="index.html" aria-label="inerweb.fr — accueil">
+      <!-- Logo figé, charte § 3.4 : orange DU LOGO #e8914a, distinct de l'orange du contenu. -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="153" height="35" role="img" aria-label="inerweb.fr">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="plan.html">Le plan</a>
+      <a href="galerie.html">Catalogue</a>
+      <a href="reseaux.html#outils">Outils</a>
+      <a href="metier.html">Le métier</a>
+      <a href="formateurs.html">Formateurs</a>
+      <a href="livres/">Livres</a>
+      <a class="nav-youtube" href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener" title="La chaîne YouTube inerWeb FR (nouvel onglet)">▶ YouTube</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" role="main" id="contenu" tabindex="-1">
+
+  <!-- Le premier écran : le titre, la recherche, les deux repères, et le gros logo qui ouvre l'inventaire complet (reseaux.html). -->
+  <section class="hero" aria-labelledby="titre-hall">
+    <div class="hero-texte">
+      <div class="pastille">GRATUIT, SANS COMPTE, EN FRANÇAIS</div>
+      <h1 id="titre-hall">Tout inerWeb, <em>en huit portes</em>.</h1>
+      <p class="chapo">Des cours qui parlent, des habilitations, des livres, des outils et des logiciels, du CAP au BTS. <strong>Un projet personnel d’enseignant frigoriste.</strong></p>
+    </div>
+    <div class="hero-actions">
+      <form class="hall-recherche" action="plan.html" method="get" role="search" id="recherche-accueil">
+        <label for="q-accueil" class="sr-only">Chercher un cours</label>
+        <input type="search" id="q-accueil" name="q" placeholder="Chercher un cours : surchauffe, manifold, huile…" autocomplete="off" spellcheck="false">
+        <button type="submit" class="bouton">Chercher</button>
+      </form>
+      <div class="boutons">
+        <a class="bouton creux" href="f/positionnement/">🎯 Où j’en suis ? Le test d’entrée</a>
+        <a class="bouton creux" href="mon-parcours/">🧭 Mon parcours par diplôme</a>
+      </div>
+    </div>
+    <a class="hero-logo" href="reseaux.html" aria-label="inerWeb : tout le site, réseau par réseau">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 50" width="330" height="75" aria-hidden="true" focusable="false">
+        <text fill="#1b3a63" font-size="28px" x="4" y="34">&#10052;&#65039;</text>
+        <text fill="#1b3a63" font-family="Trebuchet MS, Trebuchet, sans-serif" font-size="26px" font-weight="bold" x="44" y="32">iner</text>
+        <text fill="#1b3a63" font-family="Segoe Script, Brush Script MT, cursive" font-size="26px" x="94" y="32">Web</text>
+        <line stroke="#e8914a" stroke-width="2" x1="44" x2="150" y1="35" y2="35"></line>
+        <rect fill="#e8914a" x="155" y="10" rx="5" ry="5" width="59" height="24"></rect>
+        <text fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14px" font-weight="bold" x="184.5" y="27" text-anchor="middle">.fr</text>
+      </svg>
+      Tout le site, réseau par réseau →
+    </a>
+  </section>
+
+  <h2 class="portes-titre">Par où entrer ?</h2>
+  <ul class="portes">
+
+    <li class="porte" style="--c:#2568a6">
+      <a class="p-image" href="reseaux.html#reseaux" tabindex="-1" aria-hidden="true"><img src="icones/portes/reseaux.webp" width="876" height="274" alt=""></a>
+      <h3><a href="reseaux.html#reseaux">❄️ Réseaux et cours</a></h3>
+      <p class="p-mots">Le froid, l’eau, l’air, l’électricité, le cuivre, la climatisation, la réglementation. Un cours à chaque station, une voix qui explique.</p>
+      <ul class="p-liens">
+        <li><a href="plan.html">Thermo-techno</a></li>
+        <li><a href="legislation/">Législation</a></li>
+        <li><a href="hydrometro/">HydroMétro</a></li>
+        <li><a href="aerorezo/">AéroRézo</a></li>
+        <li><a href="electrorezo/">ÉlectroRézo</a></li>
+        <li><a href="cuivrezo/">CuivRézo</a></li>
+        <li><a href="tour-de-main/">Le tour de main</a></li>
+        <li><a href="cartoclim/">CartoClim</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#c9451a">
+      <a class="p-image" href="habilitations/" tabindex="-1" aria-hidden="true"><img src="icones/portes/habilitations.webp" width="876" height="274" alt=""></a>
+      <h3><a href="habilitations/">🦺 Habilitations et sécurité</a></h3>
+      <p class="p-mots">Se préparer aux trois habilitations : fluides frigorigènes, électricité, travail en hauteur.</p>
+      <ul class="p-liens">
+        <li><a href="formation.html">Fluides frigorigènes</a></li>
+        <li><a href="hocourant/">Électrique, HoCourant</a></li>
+        <li><a href="r408/">Hauteur, R408</a></li>
+        <li><a href="f/positionnement/">Le test d’entrée</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#b73a29">
+      <a class="p-image" href="rezotools/" tabindex="-1" aria-hidden="true"><img src="icones/portes/outils.webp" width="876" height="274" alt=""></a>
+      <h3><a href="rezotools/">🧰 Outils interactifs</a></h3>
+      <p class="p-mots">Les calculettes du frigoriste, le câblage virtuel, les QCM pour réviser seul.</p>
+      <ul class="p-liens">
+        <li><a href="rezotools/">RézoTools, les calculettes</a></li>
+        <li><a href="cablage-virtuel/">Câblage virtuel</a></li>
+        <li><a href="qcm/">QCM</a></li>
+        <li><a href="qcm/manometres.html">QCM manomètres</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#1e7e54">
+      <a class="p-image" href="jouerezo/" tabindex="-1" aria-hidden="true"><img src="icones/portes/jeux.webp" width="876" height="274" alt=""></a>
+      <h3><a href="jouerezo/">🎮 Mini-jeux et simulateurs</a></h3>
+      <p class="p-mots">Jouer pour retenir, dépanner une chambre froide, entrer dans le quartier technique en 3D.</p>
+      <ul class="p-liens">
+        <li><a href="jouerezo/">JouéRézo, dix jeux</a></li>
+        <li><a href="simurezo/">SimuRézo, la panne</a></li>
+        <li><a href="quartier/">Le quartier en 3D</a></li>
+        <li><a href="cuivrezo/simulateur/">Le jeu du chalumeau</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#1b3a63">
+      <a class="p-image" href="bureau-etudes/" tabindex="-1" aria-hidden="true"><img src="icones/portes/bureau-etudes.webp" width="876" height="274" alt="" loading="lazy"></a>
+      <h3><a href="bureau-etudes/">📐 Bureau d’études</a></h3>
+      <p class="p-mots">Lire les plans, calculer, construire un projet de chauffage, de ventilation et de climatisation.</p>
+      <ul class="p-liens">
+        <li><a href="bureau-etudes/index.html#plans">Lire les plans</a></li>
+        <li><a href="livres/#h-plans">Le livre Lire les plans</a></li>
+        <li><a href="bureau-etudes/index.html#mode-emploi">Comment ça marche</a></li>
+        <li><a href="bureau-etudes/index.html#stations">Les stations</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#b06a00">
+      <a class="p-image" href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="icones/portes/logiciels.webp" width="876" height="274" alt="" loading="lazy"></a>
+      <h3><a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener">💻 Logiciels métiers</a></h3>
+      <p class="p-mots">inerWeb Fluide pour la traçabilité des fluides, inerWeb Pilote pour l’habilitation, AquiBlue pour les mesures.</p>
+      <ul class="p-liens">
+        <li><a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/v8/" target="_blank" rel="noopener">inerWeb Fluide, la démonstration</a></li>
+        <li><a href="https://frigorx.github.io/-inerweb-fluid-cerfa-fi-bsd-4/guide.html" target="_blank" rel="noopener">Le guide</a></li>
+        <li><a href="presentation-inerweb-fluide.pdf" target="_blank" rel="noopener">La présentation (PDF)</a></li>
+        <li><a href="formation.html">inerWeb Pilote</a></li>
+        <li><a href="aquiblue/">AquiBlue</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#7a4fa0">
+      <a class="p-image" href="livres/" tabindex="-1" aria-hidden="true"><img src="icones/portes/livres.webp" width="876" height="274" alt="" loading="lazy"></a>
+      <h3><a href="livres/">📚 Livres et livrets</a></h3>
+      <p class="p-mots">HabFluide, HoCourant, R408, les livres de classe du CAP et du Bac pro, et Lire les plans.</p>
+      <ul class="p-liens">
+        <li><a href="habfluide/inerWeb.fr-HabFluide-extrait.pdf" target="_blank" rel="noopener">HabFluide, extrait (PDF)</a></li>
+        <li><a href="hocourant/livret/inerWeb.fr-HoCourant-Livret-eleve-A5.pdf?v=v3-5" target="_blank" rel="noopener">HoCourant, livret (PDF)</a></li>
+        <li><a href="r408/livret/inerWeb.fr-R408-Livret-eleve-A5.pdf?v=v1" target="_blank" rel="noopener">R408, livret (PDF)</a></li>
+        <li><a href="livres/#h-cap">Livre CAP IFCA</a></li>
+        <li><a href="livres/#h-mfer">Livre Bac pro MFER</a></li>
+        <li><a href="livres/#h-plans">Livre Lire les plans, tome 1</a></li>
+      </ul>
+    </li>
+
+    <li class="porte" style="--c:#2f5689">
+      <a class="p-image" href="decouvrir.html" tabindex="-1" aria-hidden="true"><img src="icones/portes/classe.webp" width="876" height="274" alt="" loading="lazy"></a>
+      <h3><a href="decouvrir.html">🎓 Pour la classe</a></h3>
+      <p class="p-mots">Comprendre comment inerWeb fonctionne, préparer une séance, trouver un support, évaluer.</p>
+      <ul class="p-liens">
+        <li><a href="decouvrir.html">Découvrir inerWeb</a></li>
+        <li><a href="formateurs.html">Préparer ma séance</a></li>
+        <li><a href="galerie.html">Le catalogue</a></li>
+        <li><a href="livres/">Les livres de classe</a></li>
+        <li><a href="metier.html">Le métier</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+
+  <div class="tout">
+    <p><strong>Tout le site sur une page :</strong> les réseaux, les livres, les outils et le journal des nouveautés.</p>
+    <div class="boutons">
+      <a class="bouton" href="reseaux.html">Tout inerWeb, réseau par réseau →</a>
+      <a class="bouton creux" href="studio/">🎬 Les films</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
+<script src="moteur/lisibilite.js?v=bca2e892d0"></script>
+<!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais écrit à la main. -->
+<script src="moteur/marque.js?v=bca2e892d0" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script>
+  // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
+  if ("serviceWorker" in navigator)
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+</script>
+</body>
+</html>
