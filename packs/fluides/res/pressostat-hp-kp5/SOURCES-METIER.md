@@ -1,44 +1,49 @@
-# Sources métier et arbitrages
+# Sources métier : pressostat HP (exemple Danfoss KP5)
 
-Consultation effectuée le 19 août 2026. Le catalogue de productions a été contrôlé, puis le RAG local de HAL a été interrogé en lecture seule avec le filtre `--pour-cloud`. Aucune donnée élève ou note de terrain n’a été extraite.
+Refonte du 13/11/2026. Chaque valeur de la page vient d'un des documents ci-dessous. Une valeur qui n'y figure pas ne s'écrit pas dans la page. Aucun logo, aucune image, aucun extrait de notice n'est repris.
 
-## Prototype canonique réemployé
+## 1. Danfoss (appareil pris en exemple)
 
-| Source | Autorité | Apport repris |
-|---|---|---|
-| `C:\git\inerweb-frigolo\outils\kp5-pressostat-hp.html` | dépôt Git `frigorx/inerweb-frigolo`, commit d’ajout `56f3df1` | face KP5, manomètre, contact 1–2–4, logique CUT OUT/DIFF et exercices progressifs |
-| RAG `kp5-pressostat-hp.html` | `doc/bedc0c84dda3110aa91c06596b43829a` | confirme l’usage en formation professionnelle |
+| Sigle | Document | Référence | Adresse |
+|---|---|---|---|
+| FD | Fiche de données « Pressure switch, Type KP » | AI213186439478en-001203, 2022.09 | https://assets.danfoss.com/documents/207508/AI213186439478en-001203.pdf |
+| NI-KP1 | Guide d'installation « Pressure switch KP 1, 1W, 1A, 2, 4, 5, 5A, 6, 7 » | AN211886440281en-000704, 2024.10 | https://assets.danfoss.com/documents/464307/AN211886440281en-000704.pdf |
 
-Le prototype GitHub reste intact. La présente version est un brouillon dérivé, sans CDN et entièrement hors ligne. Les tables P/T et le calcul `90 % de PS` du prototype ne sont pas repris comme règles générales.
+| Valeur de la page | Source |
+|---|---|
+| Plage 8 à 32 bar | FD, tableau des codes |
+| Version à réarmement manuel : différentiel fixe 3 bar (code 060-117366) | FD, tableau des codes |
+| Version automatique : différentiel 1,8 à 6 bar réglable | FD, tableau des codes |
+| La vis de plage règle la coupure ; réarmement manuel possible à coupure − différentiel | FD p. 4 « Setting » |
+| Un tour de la vis de plage : 2,3 bar | FD p. 4 |
+| Bornes 1, 2, 4 : 1 arrivée, 1–2 vers le moteur, s'ouvre quand la pression monte, 1–4 signal | NI-KP1 p. 2, FD p. 3 |
+| Contact : 16 A sous 400 V (AC1, AC3), 10 A sous 400 V (AC15) | NI-KP1 p. 2 |
+| Pression de service maximale 35 bar | NI-KP1 p. 1 |
+| Température ambiante −40 à 65 °C ; raccord flare 1/4 de pouce (6 mm) | FD p. 2 et 4 |
+| Levier d'essai manœuvré avec les doigts, jamais au tournevis | NI-KP1 p. 2 |
 
-## Fonds local consulté
+## 2. Fonds de l'auteur
 
-| Source | Référence RAG | Apport retenu |
-|---|---|---|
-| `PROCEDURE REGLAGE PRESSOSTAT HP SECURITE.docx` | `doc/89d10b102210e794d60605da9a74d94f` | préréglage, relevé de coupure, baisse de pression, réarmement et répétition du contrôle |
-| `4.3 Electricité (réglage pressostat HP).pdf` | `doc/53bf890dccf3d8838ac4c2b5d994ca38` | contrôle en fonctionnement ou sous pression d’azote |
-| `Synthèse activité N° 26 seconde.docx` | `doc/03008c70ebebeb1c557420184a2042f1` | rôle de sécurité, défauts de condensation et signalisation électrique |
-| `_réglage des pressostat HP sécurité .docx` | `doc/3414a8aa2f7f1f80c3600f3666b55105` | réglage et câblage du pressostat HP en atelier |
-| `Le pressostat HP et BP elev.docx` | `doc/1a3a6757a0bbd2eca0bc843ed3e55b30` | distinction sécurité/régulation et réarmement manuel ou automatique |
-| `Pressostat combiné prof.docx` | `doc/a5c5950c5f22bba32c59f8c16ba2a614` | fonctions HP et BP réunies mais indépendantes dans un combiné |
-| `fonctionnement du pressostat HP.docx` | `doc/971761d00291138b9ceccf43972a03fa` | conséquences d’une condensation trop élevée et arrêt de protection |
-| `Raccordement Pressostat HP Prof.doc` | `doc/72878b821aec44b185121533b1cc6216` | raccordement électrique en atelier |
+| Valeur ou geste de la page | Document du fonds |
+|---|---|
+| Essai : arrêter le ventilateur du condenseur ou obturer le passage de l'air, noter la coupure, attendre la baisse, réarmer | « PROCEDURE REGLAGE PRESSOSTAT HP SECURITE.docx » |
+| Choix de la coupure : température maximale du lieu + 10 °C + 10 °C ; elle dépend du fluide, du condenseur et du lieu | même document |
+| Causes d'une HP trop haute : condenseur encrassé, ventilateur du condenseur en défaut ; emploi en régulation du ventilateur | « Le pressostat HPet BP prof.docx » |
 
-Le fonds local cite l’arrêt du ventilateur ou l’obstruction du débit d’air pour provoquer une montée HP. Le module ne transforme pas cette pratique en geste universel : elle est présentée comme un essai à risque, possible uniquement avec une procédure constructeur/site, des limites d’arrêt et une surveillance directe. Le banc à l’azote reste la méthode pédagogique privilégiée.
+Écart signalé à l'auteur : la procédure donne « 55 °C soit 15 bar effectif au R134a ». Le calcul (CoolProp, 12/11/2026) donne 14,9 bar absolus, soit 13,9 bar au manomètre. La page écrit 13,9 bar et règle 14 bar.
 
-## Documentation primaire Danfoss
+## 3. Autres fabricants
 
-- KP5 automatique `060-117166` : plage `8 à 32 bar Pe`, différentiel `1,8 à 6 bar`, SPDT, réarmement automatique : <https://designcenter.danfoss.com/en-us/products/climate-solutions-for-cooling/switches/pressure-switches/kp/p/060-117166> ;
-- KP5 manuel maximum `060-121266` : plage `8 à 32 bar Pe`, différentiel fixe `3 bar`, SPDT : <https://designcenter.danfoss.com/products/climate-solutions-for-cooling/switches/pressure-switches/kp/p/060-121266> ;
-- fiche de données KP : réglage HP sur `CUT OUT`, réglage du différentiel sur `DIFF`, puis `CUT IN = CUT OUT − DIFF` : <https://assets.danfoss.com/documents/latest/207508/AI213186439478en-001203.pdf> ;
-- guide d’installation KP : le contact `1–2` s’ouvre à la hausse, câblage hors tension et différentiel fixe de `3 bar` pour KP5 manuel : <https://assets.danfoss.com/documents/latest/464307/AN211886440281en-000704.pdf>.
+| Ligne du tableau | Document du fabricant |
+|---|---|
+| Ranco O16, modèles HP : 8 à 32 bar ; différentiel 2 à 6 bar réglable (O16-R6750), 2 bar fixe en manuel (O16-R6751) | Robertshaw, fiche « Pressure Controls O Series », 150-3012, 11/25 |
+| Alco (Copeland) PS1 : 6 à 31 bar (code 5), autres plages ; différentiel réglable, fixe en manuel ; bornes 1, 2, 4 | Copeland Europe, « Operating instructions, Pressure Controls Series PS1 / PS2 », P/N 0715180 Rev13, 28.11.2024 |
 
-## Arbitrages et limites
+Le repérage des bornes du Ranco O16 récent n'a été trouvé dans aucune notice : la page renvoie à la notice du modèle. Détail : `PROJET-VISIBILITE\nuit\AUTRES-MARQUES.md`.
 
-- La zone neutre est l’intervalle entre CUT IN et CUT OUT. Dans cet intervalle, l’état dépend du dernier seuil franchi.
-- Sur un modèle automatique, la baisse jusqu’à CUT IN permet le retour du contact.
-- Sur un manuel maximum, la baisse rend le réarmement possible mais ne referme pas seule le contact.
-- La consigne de coupure est déterminée par la documentation de la machine et par la limite haute la plus contraignante ; aucune valeur générique n’est imposée.
-- Le pressostat ne remplace ni la soupape de sécurité ni les autres protections prévues par la machine.
-- La direction de rotation d’une vis n’est pas enseignée comme invariant : suivre les repères du modèle puis mesurer les basculements.
+Le sens de rotation des vis ne se lit pas avec certitude sur la notice : la page ne le donne pas.
 
+## 4. Ce que la page ne traite pas (à compléter par l'auteur)
+
+- Les pannes du pressostat lui-même (capillaire percé ou bouché, soufflet fatigué, contacts collés) : rien dans le fonds ni dans les notices lues.
+- Les codes du référentiel affichés (repris de l'ancienne page, « à valider »).
