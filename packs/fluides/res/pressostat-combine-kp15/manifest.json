@@ -1,10 +1,10 @@
 {
   "product": "inerweb.fr — Pressostat combiné KP15 HP/BP",
-  "version": "1.3.0-brouillon",
+  "version": "2.0.0",
   "status": "Brouillon pédagogique à valider",
-  "generatedOn": "2026-08-19",
+  "generatedOn": "2026-11-13",
   "offline": true,
-  "lessonSteps": 16,
-  "quizQuestions": 8,
+  "lessonSteps": 13,
+  "quizQuestions": 6,
   "entrypoint": "index.html"
 }
