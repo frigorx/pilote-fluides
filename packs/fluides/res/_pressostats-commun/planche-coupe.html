@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planche de contrôle : coupe du pressostat</title>
+<style>
+  body { margin: 0; padding: 16px; background: #f7f1e7; color: #1b3a63; font-family: "Segoe UI", Calibri, Arial, sans-serif; }
+  h1 { font-size: 22px; margin: 0 0 12px; }
+  .grille { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  figure { margin: 0; width: 360px; max-width: 100%; }
+  figure.large { width: 640px; }
+  figcaption { font-weight: 700; font-size: 16px; margin: 0 0 6px; }
+  .reglage { margin-top: 8px; font-size: 16px; }
+  .reglage input[type=range] { width: 100%; }
+  .reglage button { font-size: 16px; padding: 8px 12px; margin-top: 4px; }
+  ol.leg { columns: 2; font-size: 15px; margin: 6px 0 0; padding-left: 24px; }
+</style>
+</head>
+<body>
+<h1>Coupe du pressostat : planche de contrôle</h1>
+<div class="grille" id="grille"></div>
+<script src="dessins-base.js"></script>
+<script src="dessin-coupe.js"></script>
+<script>
+(function () {
+  var VAL = { bp: { enclenchement: 1.4, coupure: 0.2, rearmement: "auto" }, hp: { coupure: 14, retour: 10, rearmement: "manuel" } };
+  var ECH = { bp: { min: -0.2, max: 3 }, hp: { min: 6, max: 18 } };
+  var grille = document.getElementById("grille");
+  function fig(id, titre, opts, etat, large) {
+    var f = document.createElement("figure"); f.id = id; if (large) f.className = "large";
+    var c = document.createElement("figcaption"); c.textContent = titre; f.appendChild(c);
+    var o = Object.assign({ valeurs: VAL, echelles: ECH }, opts), d = PressostatDessins.creer("coupe", o);
+    f.appendChild(d.noeud); grille.appendChild(f);
+    d.regler(etat || {});
+    return { f: f, d: d };
+  }
+  function f1(v, n) { return v.toFixed(n).replace(".", ","); }
+
+  fig("bp-ferme", "bp, contact fermé à 2,2 bar", { cote: "bp", reperes: false }, { bp: { p: 2.2, ouvert: false } });
+  fig("bp-ouvert", "bp, contact ouvert à 0,2 bar", { cote: "bp" }, { bp: { p: 0.2, ouvert: true } });
+  fig("hp-ferme", "hp, fermé à 9 bar", { cote: "hp" }, { hp: { p: 9, ouvert: false } });
+  fig("hp-ouvert", "hp, ouvert à 14 bar (verrou)", { cote: "hp" }, { hp: { p: 14, ouvert: true } });
+  fig("hp-appui", "hp, ouvert à 10 bar, appui", { cote: "hp", accent: "bouton" }, { hp: { p: 10, ouvert: true }, appui: true });
+  var r = fig("combine-reperes", "combine avec repères", { cote: "combine", reperes: true }, { bp: { p: 2.2, ouvert: false }, hp: { p: 9, ouvert: false } }, true);
+  var ol = document.createElement("ol"); ol.className = "leg";
+  r.d.reperes.forEach(function (x) { var li = document.createElement("li"); li.value = x.n; li.textContent = x.nom; ol.appendChild(li); });
+  r.f.appendChild(ol);
+  fig("combine-levier", "combine, accent levier, HP ouvert à 14 bar", { cote: "combine", accent: "levier" }, { bp: { p: 0.2, ouvert: true }, hp: { p: 14, ouvert: true } }, true);
+
+  /* curseurs : la logique des seuils vit ici, pas dans le dessin */
+  var cb = fig("curseur-bp", "bp avec curseur", { cote: "bp" }, { bp: { p: 2.2, ouvert: false } });
+  var ouvB = false;
+  var rb = document.createElement("div"); rb.className = "reglage";
+  rb.innerHTML = '<label>Pression : <b id="vb">2,20</b> bar<br><input id="sb" type="range" min="-0.2" max="3" step="0.05" value="2.2"></label>';
+  cb.f.appendChild(rb);
+  rb.querySelector("input").addEventListener("input", function (e) {
+    var p = +e.target.value;
+    if (!ouvB && p <= VAL.bp.coupure) ouvB = true; else if (ouvB && p >= VAL.bp.enclenchement) ouvB = false;
+    document.getElementById("vb").textContent = f1(p, 2);
+    cb.d.regler({ bp: { p: p, ouvert: ouvB } });
+  });
+
+  var ch = fig("curseur-hp", "hp avec curseur", { cote: "hp" }, { hp: { p: 9, ouvert: false } });
+  var ouvH = false, pH = 9;
+  var rh = document.createElement("div"); rh.className = "reglage";
+  rh.innerHTML = '<label>Pression : <b id="vh">9,0</b> bar<br><input id="sh" type="range" min="6" max="18" step="0.1" value="9"></label><br><button id="bh">Appuyer sur le réarmement</button>';
+  ch.f.appendChild(rh);
+  rh.querySelector("input").addEventListener("input", function (e) {
+    pH = +e.target.value;
+    if (!ouvH && pH >= VAL.hp.coupure) ouvH = true;
+    document.getElementById("vh").textContent = f1(pH, 1);
+    ch.d.regler({ hp: { p: pH, ouvert: ouvH } });
+  });
+  var bh = document.getElementById("bh");
+  function appui(on) {
+    var rearme = on && ouvH && pH <= VAL.hp.retour;
+    if (rearme) ouvH = false;
+    ch.d.regler({ hp: { p: pH, ouvert: ouvH }, appui: on });
+  }
+  bh.addEventListener("pointerdown", function () { appui(true); });
+  bh.addEventListener("pointerup", function () { appui(false); });
+  bh.addEventListener("pointerleave", function () { appui(false); });
+  window.__pret = true;
+})();
+</script>
+</body>
+</html>

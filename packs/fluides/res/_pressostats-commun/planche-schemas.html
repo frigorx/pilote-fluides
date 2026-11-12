@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Planche de contrôle des schémas</title>
+<style>
+body{margin:0;padding:16px;background:#ece6da;font-family:Segoe UI,Calibri,Arial,sans-serif;color:#1b3a63}
+h1{font-size:20px;margin:0 0 12px}
+#grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+figure{margin:0;padding:10px;background:#fff;border-radius:10px}
+figure.large{grid-column:span 2}
+h3{margin:0 0 8px;font-size:15px;font-weight:600}
+@media(max-width:700px){figure.large{grid-column:span 1}}
+</style></head><body>
+<h1>Planche de contrôle : dessins-schemas.js</h1>
+<div id="grille"></div>
+<script src="dessins-base.js"></script>
+<script src="dessins-schemas.js"></script>
+<script>
+(function () {
+  var PD = window.PressostatDessins, grille = document.getElementById("grille");
+  var PBP = { cote: "bp", plage: [-0.2, 7.5], diffPlage: [0.7, 4] }, PHP = { cote: "hp", plage: [8, 32] };
+  var FIGS = [
+    ["bornes", { modele: "combine" }, { etat: "marche" }, "bornes combine, marche", 1],
+    ["bornes", { modele: "combine" }, { etat: "defaut-bp" }, "bornes combine, défaut BP", 1],
+    ["bornes", { modele: "combine" }, { etat: "defaut-hp" }, "bornes combine, défaut HP", 1],
+    ["bornes", { modele: "bp" }, { etat: "marche" }, "bornes bp, marche", 1],
+    ["bornes", { modele: "bp" }, { etat: "defaut" }, "bornes bp, défaut", 1],
+    ["bornes", { modele: "hp" }, { etat: "marche" }, "bornes hp, marche", 1],
+    ["bornes", { modele: "hp" }, { etat: "defaut" }, "bornes hp, défaut", 1],
+    ["circuit", { prises: "deux" }, { marche: true }, "circuit, deux prises", 1],
+    ["circuit", { prises: "bp" }, { marche: true }, "circuit, prise BP", 1],
+    ["circuit", { prises: "hp" }, { marche: true }, "circuit, prise HP", 1],
+    ["circuit", { prises: "deux", manometres: true }, { marche: true }, "circuit, deux prises, manomètres", 1],
+    ["circuit", { prises: "deux", essai: true }, { marche: false }, "circuit, essai, à l'arrêt", 1],
+    ["face", { modele: "combine", reperes: true }, {}, "face combine, repères", 0],
+    ["face", { modele: "bp", reperes: true }, {}, "face bp, repères", 0],
+    ["face", { modele: "hp", reperes: true }, {}, "face hp, repères", 0],
+    ["face", { modele: "bp", reperes: true, differentiel: "fixe", rearmement: "manuel" }, {}, "face bp, différentiel fixe, manuel", 0],
+    ["face", { modele: "hp", reperes: true, differentiel: "reglable", rearmement: "auto" }, {}, "face hp, différentiel réglable, auto", 0],
+    ["circuit", { prises: "bp", essai: true }, { marche: true }, "circuit, essai, prise BP", 1],
+    ["circuit", { prises: "hp", essai: true }, { marche: true }, "circuit, essai, prise HP", 1],
+    ["face", { modele: "combine", reperes: true, accent: "bouton" }, { appui: false }, "face combine, accent bouton, sans appui", 0],
+    ["face", { modele: "combine", accent: "bouton" }, { appui: true }, "face combine, accent bouton, appui", 0],
+    ["plaque", PBP, { enclenchement: 1.4, differentiel: 1.2 }, "plaque BP", 0],
+    ["plaque", PHP, { coupure: 14 }, "plaque HP", 0],
+    ["versions", { surligner: 1 }, {}, "versions, surligner 1", 1],
+    ["famille", {}, {}, "famille", 1]
+  ];
+  var ET = { etroit: true };
+  function et(t, o, e, n) { o.etroit = true; FIGS.push([t, o, e, n + " (étroit)", 0, 1]); }
+  et("bornes", { modele: "combine" }, { etat: "marche" }, "bornes combine, marche");
+  et("bornes", { modele: "combine" }, { etat: "defaut-bp" }, "bornes combine, défaut BP");
+  et("bornes", { modele: "combine" }, { etat: "defaut-hp" }, "bornes combine, défaut HP");
+  et("bornes", { modele: "bp" }, { etat: "marche" }, "bornes bp, marche");
+  et("bornes", { modele: "bp" }, { etat: "defaut" }, "bornes bp, défaut");
+  et("bornes", { modele: "hp" }, { etat: "marche" }, "bornes hp, marche");
+  et("bornes", { modele: "hp" }, { etat: "defaut" }, "bornes hp, défaut");
+  et("versions", { surligner: 1 }, {}, "versions");
+  et("circuit", { prises: "deux" }, { marche: true }, "circuit, deux prises");
+  et("circuit", { prises: "bp" }, { marche: true }, "circuit, prise BP");
+  et("circuit", { prises: "hp" }, { marche: true }, "circuit, prise HP");
+  et("circuit", { prises: "deux", manometres: true }, { marche: true }, "circuit, manomètres");
+  et("circuit", { prises: "deux", essai: true }, { marche: false }, "circuit, essai, à l'arrêt");
+  et("circuit", { prises: "bp", essai: true }, { marche: true }, "circuit, essai, prise BP");
+  et("circuit", { prises: "hp", essai: true }, { marche: true }, "circuit, essai, prise HP");
+  var q = new URLSearchParams(location.search), seul = q.get("type"), etr = !!q.get("e");
+  FIGS.forEach(function (f, i) {
+    if (seul && f[0] !== seul) return;
+    if (!!f[5] !== etr) return;
+    var fig = document.createElement("figure"), h = document.createElement("h3");
+    fig.id = "fig-" + i; if (f[4]) fig.className = "large"; if (f[5]) fig.style.width = "330px";
+    h.textContent = f[3]; fig.appendChild(h);
+    var d = PD.creer(f[0], f[1]); d.regler(f[2]);
+    fig.appendChild(d.noeud); grille.appendChild(fig);
+    fig.dataset.type = f[0]; fig.dataset.reperes = JSON.stringify(d.reperes || []);
+  });
+})();
+</script></body></html>
