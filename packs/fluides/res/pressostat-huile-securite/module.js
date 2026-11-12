@@ -4,80 +4,84 @@ window.OIL_MODULE = {
   subtitle: "LE CIRCUIT D’HUILE · STATION 15",
   codes: ["1.05", "6.03", "6.05", "9.07"],
   voix: true,
-  nextStep: "Terminer par le diagnostic du circuit d’huile : replacer la sécurité de lubrification dans la chaîne complète et justifier le prochain contrôle.",
+  nextStep: "Terminer par le diagnostic du circuit d’huile : replacer le pressostat d’huile dans le circuit complet et choisir le prochain contrôle.",
   nextUrl: "../diagnostic-circuit-huile/index.html",
   nextLabel: "Station 16 · Diagnostic : lire l’architecture et le retour",
-  summaryVisual: { kind: "oilPressureDiagnostic", label: "Synthèse du pressostat différentiel d’huile : mesurer deux pressions, respecter le délai, diagnostiquer puis décider" },
+  summaryVisual: { kind: "pressostatDessin", type: "huile-chrono", options: { mode: "marche", issue: "arret", seuil: 0.65, contact: 0.2, delai: 60 }, label: "La pression nette d’huile reste sous le seuil pendant toute la temporisation : le compresseur s’arrête" },
   lessons: [
     {
       id: "demarrage",
-      narration: "Au démarrage, un compresseur à pompe à huile se trouve dans une situation particulière : la pression de lubrification n'est pas encore établie, puisque la pompe commence tout juste à tourner. Si la sécurité coupait immédiatement, la machine ne démarrerait jamais. C'est pourquoi le défaut apparent est provisoirement toléré, pendant un délai appelé temporisation. Mais soyez clair sur ce que permet ce délai : il autorise un démarrage normal, il n'autorise jamais une lubrification insuffisante durable. Passé ce temps, la pression doit être là.",
+      narration: "Quand le compresseur démarre, la pompe à huile commence juste à tourner. La pression de graissage n'est pas encore là. Si le pressostat coupait tout de suite, la machine ne démarrerait jamais. La temporisation laisse à la pompe le temps de monter en pression. Si la pression est montée avant la fin du délai, le compresseur continue. Sinon, il s'arrête.",
       short: "Démarrer",
-      kicker: "Station 1 · Temporisation",
-      title: "Au démarrage, le défaut apparent est provisoirement toléré",
-      lead: "La pompe doit commencer à tourner avant que la pression nette puisse s’établir.",
+      kicker: "Station 1 · Au démarrage",
+      title: "Au démarrage, la temporisation laisse la pompe monter en pression",
+      lead: "Quand le compresseur démarre, la pompe à huile commence juste à tourner. La pression nette est encore sous le seuil.",
       details: [
-        "La temporisation autorise cette phase de montée en pression.",
-        "Si le différentiel devient suffisant avant la fin du délai prévu, la temporisation s’arrête et le compresseur continue."
+        "La temporisation démarre en même temps que le compresseur.",
+        "Si la pression nette dépasse le seuil plus le différentiel de contact avant la fin du délai, la temporisation s’arrête et le compresseur continue.",
+        "Si la pression n’est pas montée à la fin du délai, le compresseur s’arrête."
       ],
-      box: { type: "key", text: "La temporisation permet le démarrage normal ; elle n’autorise jamais une lubrification insuffisante durable." },
-      visual: { kind: "oilPressureTimer", title: "Suivre le démarrage", label: "Démarrage, délai puis maintien ou arrêt selon le différentiel d’huile" }
+      box: { type: "key", text: "La temporisation couvre le démarrage. Passé le délai, le compresseur ne tourne pas sans pression d’huile." },
+      visual: { kind: "pressostatDessin", type: "huile-chrono", options: { mode: "demarrage", issue: "double", seuil: 0.65, contact: 0.2, delai: 60 }, title: "Deux démarrages comparés", label: "Deux courbes de pression nette au démarrage : l’une dépasse le seuil avant la fin du délai, l’autre non", caption: "Vert : la pression monte à temps, le compresseur continue. Orange : elle ne monte pas, il s’arrête." }
     },
     {
       id: "fonctionnement",
-      narration: "En fonctionnement, le principe est le même. Une chute brève de la pression nette relance la temporisation : si tout se rétablit, la machine continue. Une chute persistante, elle, doit arrêter le compresseur — c'est la protection qui joue son rôle. Et voici l'interdit de cette station : shunter le contact ou allonger le délai sans prescription supprime la protection du compresseur. Cela fait redémarrer la machine, ce qui ressemble à une réparation pendant quelques heures. En réalité, vous laissez tourner sans lubrification garantie une machine qui vient de vous signaler un problème.",
+      narration: "En marche, la règle est la même. Si la pression nette passe sous le seuil, la temporisation redémarre. Si la pression remonte avant la fin du délai, la marche continue. Si elle reste trop basse, le compresseur s'arrête et le signal de défaut s'allume. Ne pontez jamais ce contact et n'allongez pas le délai. La machine repartirait, mais elle tournerait sans graissage.",
       short: "Surveiller",
       kicker: "Station 2 · En marche",
-      title: "Une chute brève peut se rétablir ; une chute persistante doit arrêter",
-      lead: "En fonctionnement, une pression nette qui passe sous le seuil relance la temporisation.",
+      title: "En marche : une chute brève passe, une chute qui dure arrête le compresseur",
+      lead: "En marche, si la pression nette passe sous le seuil, la temporisation redémarre.",
       details: [
-        "Si la pression remonte suffisamment avant la fin du délai, la marche normale reprend.",
-        "Si elle reste trop faible, le contact de sécurité coupe la commande et signale le défaut selon le câblage."
+        "Si la pression remonte avant la fin du délai, la temporisation s’arrête et la marche continue.",
+        "Si elle reste trop basse jusqu’à la fin du délai, le contact L–M s’ouvre : le compresseur s’arrête et la borne S alimente le signal de défaut."
       ],
-      box: { type: "warning", text: "Shunter le contact ou allonger le délai sans prescription supprime la protection du compresseur." },
-      visual: { kind: "oilPressureTimer", title: "Comparer rétablissement et défaut persistant", label: "Deux issues après une chute de pression nette d’huile" }
+      box: { type: "warning", text: "Ne pontez jamais ce contact et n’allongez pas le délai : le compresseur tournerait sans graissage." },
+      visual: { kind: "pressostatDessin", type: "huile-chrono", options: { mode: "marche", issue: "double", seuil: 0.65, contact: 0.2, delai: 60 }, title: "Deux chutes de pression comparées", label: "Deux courbes de pression nette en marche : une chute brève qui se rétablit, une chute qui dure", caption: "Vert : la pression remonte avant la fin du délai. Orange : elle reste basse, le compresseur s’arrête." }
     },
     {
       id: "electrique",
-      narration: "Le contact du pressostat agit sur la chaîne de sécurité : il participe à ce qui autorise le contacteur ou l'automate à faire tourner le compresseur. Ce n'est donc pas un simple voyant, c'est un maillon de commande. Deux règles pour intervenir dessus. La première : on consigne avant toute ouverture du coffret — coupure, condamnation, vérification d'absence de tension. La seconde : on n'improvise jamais un pont électrique, même pour un essai, même cinq minutes. Un pont oublié reste en place, et personne ne le retrouve avant la casse.",
+      narration: "Le pressostat d'huile a deux circuits séparés. Le circuit de sécurité commande la temporisation. Le circuit de marche alimente la commande du compresseur. Quand la sécurité a coupé, une troisième borne alimente un voyant ou une alarme. Sur les appareils Danfoss pris en exemple, le réarmement est manuel : on appuie sur le bouton, environ deux minutes après l'arrêt, une fois la cause trouvée. Avant d'ouvrir le coffret, consignez.",
       short: "Sécurité",
       kicker: "Station 3 · Électricité",
-      title: "Le contact agit sur la chaîne de sécurité",
-      lead: "Le pressostat participe à la chaîne qui autorise le contacteur ou l’automate du compresseur.",
+      title: "Le pressostat d’huile coupe la commande du compresseur",
+      lead: "Le pressostat d’huile a deux circuits séparés. Le circuit de sécurité (contact T1–T2) commande la temporisation. Le circuit de marche (bornes L et M) alimente la commande du compresseur.",
       details: [
-        "Bornes, tension, voyant, test, délai et réarmement manuel ou automatique varient : suivre le schéma du composant installé.",
-        "Après un déclenchement, rechercher la cause avant de réarmer. Un test fonctionnel se réalise selon la procédure constructeur."
+        "La borne S alimente un voyant ou une alarme quand la sécurité a coupé.",
+        "Sur les MP54 et MP55 de Danfoss, le réarmement est manuel : on appuie sur le bouton de réarmement, environ 2 minutes après l’arrêt, une fois la cause trouvée.",
+        "Les bornes et la tension changent d’un modèle à l’autre : suivez le schéma de l’appareil posé."
       ],
-      box: { type: "warning", text: "Consigner avant toute ouverture du coffret et ne jamais improviser un pont électrique." },
-      visual: { kind: "oilPressureSafety", title: "Lire la chaîne électrique", label: "Symbole de pressostat inséré dans la commande de sécurité du compresseur" }
+      box: { type: "warning", text: "Consignez avant d’ouvrir le coffret. Ne posez jamais de pont électrique, même pour un essai." },
+      visual: { kind: "pressostatDessin", type: "huile-bornes", options: { etat: "defaut" }, title: "Les deux circuits du pressostat d’huile", label: "Schéma du pressostat d’huile : contact T1–T2 et temporisation, contact L–M vers la commande du compresseur, borne S vers le voyant", caption: "Défaut d’huile à la fin du délai : le contact L–M est ouvert, la borne S alimente le voyant." }
     },
     {
       id: "mesurer",
-      narration: "Le diagnostic exige deux pressions prises au même instant, et c'est ce qui le rend rigoureux. Relevez la pression côté sortie de pompe et celle du carter pendant le même régime de fonctionnement, puis calculez leur différence — c'est elle, la pression nette, qui compte. Suivez ensuite son évolution dans le temps, car un défaut peut n'apparaître qu'à chaud. Écrivez les deux pressions, la différence, la durée d'observation, le régime, et la date du prochain contrôle. Jamais une valeur isolée : elle ne prouverait rien et ne se comparerait à rien.",
+      narration: "Pour diagnostiquer, relevez les deux pressions au même moment : la sortie de la pompe et le carter. Calculez la différence. Comparez-la au seuil de la notice du compresseur. Si elle est trop basse, contrôlez le niveau d'huile, son état, la crépine, la pompe et les prises de pression. Le pressostat lui-même se met en cause en dernier.",
       short: "Mesurer",
       kicker: "Station 4 · Diagnostic",
-      title: "Le diagnostic exige deux pressions prises au même instant",
-      lead: "Relever P1 et P2 pendant le même régime, puis calculer leur différence et suivre son évolution dans le temps.",
+      title: "Pour diagnostiquer, relevez les deux pressions au même moment",
+      lead: "Relevez P1 et P2 pendant le même régime de marche, puis calculez la pression nette : P1 − P2.",
       details: [
-        "Comparer à la notice ; contrôler niveau, température, dilution ou mousse, crépine, pompe, entraînement et prises de pression.",
-        "Un contact défectueux est une hypothèse seulement après vérification de la lubrification réelle et du circuit électrique."
+        "Comparez la pression nette au seuil donné par la notice du compresseur.",
+        "Si elle est trop basse, contrôlez le niveau d’huile, sa température, son état (mousse, dilution par le fluide), la crépine, la pompe et son entraînement, les prises de pression.",
+        "Le pressostat lui-même se met en cause en dernier, quand le graissage et le circuit électrique ont été vérifiés."
       ],
-      box: { type: "exam", text: "Écrire P1, P2, Δp, durée, régime et prochain contrôle : jamais une valeur isolée." },
-      visual: { kind: "oilPressureDiagnostic", title: "Construire la chaîne de preuve", label: "Niveau, deux pressions, pompe, état d’huile puis décision" }
+      box: { type: "exam", text: "Notez P1, P2, la pression nette, la durée d’observation et le régime de marche." },
+      visual: { kind: "pressostatDessin", type: "huile-circuit", options: { manometres: true, controles: true }, title: "Où mesurer, quoi contrôler", label: "Compresseur à pompe à huile avec deux manomètres et les points à contrôler : niveau, crépine, pompe, prises de pression", caption: "Deux manomètres donnent P1 et P2. Les repères montrent les points à contrôler." }
     },
     {
       id: "conclure",
-      narration: "Terminons par la conclusion, et par une mise en garde qui vaut pour beaucoup de sécurités. Un réarmement réussi ne prouve pas que la lubrification est réparée. Le défaut peut disparaître quelques instants, puis revenir quand l'huile chauffe, quand elle mousse au redémarrage, ou quand le régime change. La démarche complète est toujours la même : observation, relevé des deux pressions, calcul de la différence, comparaison à la notice, cause probable, puis contrôle suivant planifié. Une sécurité qui s'est déclenchée mérite qu'on cherche pourquoi, même si la machine repart.",
+      narration: "Le compresseur repart après un réarmement. La panne est peut-être encore là. Un défaut d'huile peut disparaître quelques minutes, puis revenir quand l'huile chauffe, quand elle mousse, ou quand le régime change. Notez le moment du déclenchement, les deux pressions, la durée et les contrôles faits. Terminez par la cause probable et le prochain contrôle. Ne baissez pas le seuil pour que la machine tienne.",
       short: "Conclure",
-      kicker: "Station 5 · Habilitation",
-      title: "Un réarmement réussi ne prouve pas que la lubrification est réparée",
-      lead: "Le défaut peut disparaître quelques instants puis revenir lorsque l’huile chauffe, mousse ou change de régime.",
+      kicker: "Station 5 · Après le réarmement",
+      title: "Le compresseur repart après réarmement : la panne est peut-être encore là",
+      lead: "Un défaut d’huile peut disparaître quelques minutes, puis revenir quand l’huile chauffe, mousse ou quand le régime change.",
       details: [
-        "Décrire le déclenchement, les pressions, la durée et les contrôles effectués.",
-        "Conclure par une hypothèse vérifiable et l’action sûre suivante, sans modifier le seuil pour faire tenir la marche."
+        "Décrivez le déclenchement : le moment, les deux pressions, la durée, les contrôles faits.",
+        "Terminez par la cause probable et le prochain contrôle à faire.",
+        "Ne baissez pas le seuil pour que la machine tienne."
       ],
-      box: { type: "key", text: "Observation → P1 et P2 → calcul → comparaison notice → cause probable → contrôle suivant." },
-      visual: { kind: "oilPressureDiagnostic", title: "Rendre une conclusion vérifiable", label: "Méthode de diagnostic du pressostat différentiel d’huile" }
+      box: { type: "key", text: "Dans l’ordre : observer, relever P1 et P2, calculer, comparer à la notice, nommer la cause probable, prévoir le contrôle suivant." },
+      visual: { kind: "pressostatDessin", type: "huile-appareil", options: { accent: "rearmement" }, title: "Le bouton de réarmement", label: "Pressostat d’huile ouvert, bouton de réarmement mis en avant", caption: "Le bouton de réarmement remet le contact en service, 2 minutes environ après l’arrêt, cause trouvée." }
     }
   ],
   quiz: [
