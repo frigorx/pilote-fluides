@@ -1206,6 +1206,7 @@
       oilPressureSafety: visualOilPressureSafety,
       oilPressureDiagnostic: visualOilPressureDiagnostic,
       oilPressureClaudeSlot: visualOilPressureClaudeSlot,
+      pressostatDessin: function (item) { var PD = window.PressostatDessins; if (!PD) return visualQuiz(item); var opts = {}, k; for (k in (item.options || {})) opts[k] = item.options[k]; opts.label = item.label; return PD.creer(item.type, opts).noeud.outerHTML; },
       oilRiserClaudeSlot: visualOilRiserClaudeSlot,
       oilReturnFilmSlot: visualOilReturnFilmSlot,
       eclatementFilmSlot: visualEclatementFilmSlot,

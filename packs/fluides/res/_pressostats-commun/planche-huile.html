@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Planche de contrôle des dessins d’huile</title>
+<style>
+body{margin:0;padding:16px;background:#ece6da;font-family:Segoe UI,Calibri,Arial,sans-serif;color:#1b3a63}
+h1{font-size:20px;margin:0 0 12px}
+#grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+figure{margin:0;padding:10px;background:#fff;border-radius:10px}
+figure.large{grid-column:span 2}
+h3{margin:0 0 8px;font-size:15px;font-weight:600}
+@media(max-width:700px){figure.large{grid-column:span 1}}
+</style></head><body>
+<h1>Planche de contrôle : dessins-huile.js</h1>
+<div id="grille"></div>
+<script src="dessins-base.js"></script>
+<script src="dessins-huile.js"></script>
+<script>
+(function () {
+  var PD = window.PressostatDessins, grille = document.getElementById("grille");
+  var CH = { seuil: 0.65, contact: 0.2, delai: 60 };
+  function ch(mode, issue) { return { mode: mode, issue: issue, seuil: CH.seuil, contact: CH.contact, delai: CH.delai }; }
+  var FIGS = [
+    ["huile-circuit", {}, "circuit, sans option", 1],
+    ["huile-circuit", { manometres: true }, "circuit, manomètres", 1],
+    ["huile-circuit", { manometres: true, p1: 5.5, p2: 2.0 }, "circuit, manomètres, P1 et P2", 1],
+    ["huile-circuit", { manometres: true, controles: true }, "circuit, manomètres, contrôles", 1],
+    ["huile-graissage", {}, "graissage", 1],
+    ["huile-chrono", ch("demarrage", "reussi"), "chrono, démarrage réussi", 1],
+    ["huile-chrono", ch("demarrage", "arret"), "chrono, démarrage arrêt", 1],
+    ["huile-chrono", ch("demarrage", "double"), "chrono, démarrage double", 1],
+    ["huile-chrono", ch("marche", "reussi"), "chrono, marche réussi", 1],
+    ["huile-chrono", ch("marche", "arret"), "chrono, marche arrêt", 1],
+    ["huile-chrono", ch("marche", "double"), "chrono, marche double", 1],
+    ["huile-bornes", { etat: "marche" }, "bornes, marche", 1],
+    ["huile-bornes", { etat: "tempo" }, "bornes, temporisation", 1],
+    ["huile-bornes", { etat: "defaut" }, "bornes, défaut", 1],
+    ["huile-appareil", {}, "appareil, nu", 0],
+    ["huile-appareil", { reperes: true }, "appareil, repères", 0],
+    ["huile-appareil", { accent: "rearmement" }, "appareil, accent réarmement", 0]
+  ];
+  var q = new URLSearchParams(location.search), seul = q.get("type");
+  FIGS.forEach(function (f, i) {
+    if (seul && f[0] !== seul) return;
+    var fig = document.createElement("figure"), h = document.createElement("h3");
+    fig.id = "fig-" + i; if (f[3]) fig.className = "large";
+    h.textContent = f[2]; fig.appendChild(h);
+    var d = PD.creer(f[0], f[1]); d.regler({});
+    fig.appendChild(d.noeud); grille.appendChild(fig);
+    fig.dataset.reperes = JSON.stringify(d.reperes || []);
+  });
+})();
+</script></body></html>
