@@ -7,24 +7,33 @@
 
 | Mesure | Résultat |
 |---|---:|
-| Cours interactifs recensés | **75** |
-| Cours avec anomalie critique automatisable | **35** |
-| Cours avec dette documentaire ou de reprise | **37** |
-| Cours contenant des médias sans `SOURCES-IMAGES.md` | **10** |
-| SVG pédagogiques contrôlés | **72** |
-| SVG sans titre / sans description textuelle | **27 / 67** |
+| Cours interactifs recensés | **98** |
+| Cours avec anomalie critique automatisable | **37** |
+| Cours avec dette documentaire ou de reprise | **52** |
+| Cours contenant des médias sans `SOURCES-IMAGES.md` | **23** |
+| SVG pédagogiques contrôlés | **74** |
+| SVG sans titre / sans description textuelle | **29 / 69** |
 
 ## Contrôle des cours interactifs
 
 | Cours | HTML | Hors ligne | Typo | Impression | Lisibilité | Médias | Registre droits | État |
 |---|---|---|---|---|---|---:|---|---|
 | `_circuit-huile-commun` | ✗ | ✓ | ✓ | ✓ | absente | 1 | ✗ | 🔴 description |
+| `_detendeurs-commun` | ✗ | ✓ | ✓ | ✗ | absente | — | — | 🔴 description |
+| `_pressostats-commun` | ✗ | ✓ | ✓ | ✓ | absente | — | — | 🔴 description |
+| `analyse-fonctionnelle-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 17 | ✓ | 🟢 contrôle statique tenu |
 | `bilan-thermique-performance-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `bouteille-liquide-pedagogique` | ✓ | ✓ | ✓ | ✓ | absente | 11 | ✓ | 🟠 réglage de lisibilité |
+| `bouteilles-fluide` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `capsules` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟠 ancien fond #EEF2F6 (1) |
-| `chaine-intervention-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `centrale-positive-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 17 | ✓ | 🟢 contrôle statique tenu |
+| `chaine-energie-information-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 17 | ✓ | 🟢 contrôle statique tenu |
+| `chaine-intervention-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `chaleur-circuit-interactif` | ✓ | ✓ | ✓ | ✗ | commune | 4 | ✗ | 🟠 impression, SOURCES-IMAGES.md, ancien fond #EEF2F6 (4) |
 | `chaleur-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `chambre-froide-enceinte-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✓ | 🟢 contrôle statique tenu |
+| `chambre-froide-securites-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✓ | 🟢 contrôle statique tenu |
+| `chambre-negative-reglages-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✓ | 🟢 contrôle statique tenu |
 | `circuit-huile-interactif` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `circuit-organe-par-organe` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `clapet-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
@@ -32,19 +41,28 @@
 | `commande-directe-thermostat` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `compresseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `condenseur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
+| `conservation-denrees-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✓ | 🟢 contrôle statique tenu |
 | `cours-classes-securite` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `cout-du-froid-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `degivrage-electrique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `degivrage-gaz-chauds` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `degivrage-inversion-cycle` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `degivrage-naturel` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `detecteurs-fuite-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✓ | 🟢 contrôle statique tenu |
+| `detendeur-automatique` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `detendeur-egalisation-externe` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `detendeur-electronique` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `detendeur-interactif` | ✓ | ✓ | ✓ | ✓ | absente | 4 | ✓ | 🟠 réglage de lisibilité |
+| `detendeur-mop` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `detendeurs-famille` | ✓ | ✓ | ✓ | ✓ | commune | 5 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `detente-capillaire` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `diagnostic-circuit-huile` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `diagnostic-circuit-huile-conclure` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `diagramme-enthalpique` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🟠 réglage de lisibilité |
+| `diagramme-enthalpique` | ✓ | ✓ | ✓ | ✓ | absente | 1 | ✓ | 🟠 réglage de lisibilité |
 | `electrovanne-interactive` | ✓ | ✓ | ✓ | ✓ | absente | 5 | ✓ | 🟠 réglage de lisibilité |
 | `elements-circuit-huile` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `elements-circuit-huile-regler` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `etancheite-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `evaporateur-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 4 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (2) |
 | `fil-conducteur-intervention` | ✓ | ✓ | ✓ | ✗ | commune | 1 | ✓ | 🟠 impression |
 | `film-effet-de-serre` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🔴 fonds forcés à l’impression |
@@ -54,24 +72,28 @@
 | `froid-clim-academie` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `glissement-temperature` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
 | `hydrocarbures-a1-a2` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md, ancien terme « module interactif » (1) |
-| `intervention-hydrocarbures-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `intervention-hydrocarbures-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `maintenance-centrale-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 17 | ✓ | 🟢 contrôle statique tenu |
 | `mission-bouteilles` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `module-compresseur` | ✗ | ✓ | ✓ | ✓ | absente | — | — | 🔴 description |
 | `nomenclature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 18 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
+| `parcours-manometres` | ✓ | ✓ | ✓ | ✓ | commune | 6 | ✓ | 🟠 ancien fond #EEF2F6 (2) |
+| `plan-maintenance-commercial-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 17 | ✓ | 🟢 contrôle statique tenu |
 | `pose-manifold-2-voies-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `pose-manifold-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `positif-negatif-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 2 | ✓ | 🟢 contrôle statique tenu |
+| `postes-magasin-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 17 | ✓ | 🟢 contrôle statique tenu |
 | `pression-temperature-interactive` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
-| `pressostat-bp-kp1` | ✓ | ✓ | ✓ | ✓ | commune | 14 | ✓ | 🟢 contrôle statique tenu |
-| `pressostat-combine-kp15` | ✓ | ✓ | ✓ | ✓ | commune | 10 | ✓ | 🟢 contrôle statique tenu |
+| `pressostat-bp-kp1` | ✓ | ✓ | ✓ | ✓ | commune | 7 | ✗ | 🟠 SOURCES-IMAGES.md |
+| `pressostat-combine-kp15` | ✓ | ✓ | ✓ | ✓ | commune | 7 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `pressostat-differentiel-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `pressostat-hp-kp5` | ✓ | ✓ | ✓ | ✓ | commune | 15 | ✓ | 🟢 contrôle statique tenu |
+| `pressostat-hp-kp5` | ✓ | ✓ | ✓ | ✓ | commune | 8 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `pressostat-huile-securite` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `protection-minimum-serie` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pump-down-ameliore` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pump-down-automatique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `pump-down-unique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
-| `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
+| `pupitre-reglage-interactif` | ✓ | ✓ | ✓ | ✓ | commune | 1 | ✗ | 🟠 SOURCES-IMAGES.md |
 | `recuperation-fluide-interactive` | ✓ | ✓ | ✓ | ✓ | commune | 3 | ✓ | 🟢 contrôle statique tenu |
 | `regulateur-electronique-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `regulateur-huile-mecanique-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
@@ -79,6 +101,7 @@
 | `regulateur-kvr-nrd` | ✓ | ✓ | ✓ | ✓ | absente | — | — | 🔴 fonds forcés à l’impression |
 | `regulateurs-kv-pedagogiques` | ✓ | ✓ | ✓ | ✓ | absente | 8 | ✓ | 🟠 réglage de lisibilité |
 | `regules-interactif` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
+| `remise-au-client-interactif` | ✓ | ✓ | ✓ | ✓ | commune | — | — | 🟢 contrôle statique tenu |
 | `reservoir-huile-pedagogique` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `retour-huile-naturel` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
 | `retour-huile-verifier` | ✗ | ✓ | ✓ | ✓ | commune | — | — | 🔴 description |
@@ -96,8 +119,8 @@
 
 ## Titres et descriptions des SVG
 
-- Sans titre : `brasage-balayage-azote.svg`, `categories-champs.svg`, `classe-lettre-chiffre.svg`, `co2-local-protege.svg`, `co2-nh3-deux-risques.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `condenseur-ecart-encrassement.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `deux-etages-deux-papiers.svg`, `givre-isole-machine-force.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`.
-- Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `brasage-balayage-azote.svg`, `categories-champs.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classe-lettre-chiffre.svg`, `classes-securite.svg`, `co2-local-protege.svg`, `co2-nh3-compare.svg`, `co2-nh3-deux-risques.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `compresseurs.svg`, `condenseur-ecart-encrassement.svg`, `condenseur-trois-zones.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `deux-etages-deux-papiers.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `givre-isole-machine-force.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `recuperation.svg`, `regulateurs-kv-places.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`, `tirage-au-vide.svg`.
+- Sans titre : `brasage-balayage-azote.svg`, `briefing-si-ca-tourne-mal.svg`, `briefing-trois-risques.svg`, `categories-champs.svg`, `classe-lettre-chiffre.svg`, `co2-local-protege.svg`, `co2-nh3-deux-risques.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `condenseur-ecart-encrassement.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `deux-etages-deux-papiers.svg`, `givre-isole-machine-force.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`.
+- Sans description : `aptitude-capacite.svg`, `balayage-azote.svg`, `balayage-detecteur.svg`, `brasage-balayage-azote.svg`, `briefing-si-ca-tourne-mal.svg`, `briefing-trois-risques.svg`, `categories-champs.svg`, `chaleur-sensible-latente.svg`, `charge-limite-local.svg`, `classe-lettre-chiffre.svg`, `classes-securite.svg`, `co2-local-protege.svg`, `co2-nh3-compare.svg`, `co2-nh3-deux-risques.svg`, `co2-point-bas.svg`, `co2-protection.svg`, `code-nomme-classe-previent.svg`, `compresseurs-comparatif.svg`, `compresseurs.svg`, `condenseur-ecart-encrassement.svg`, `condenseur-trois-zones.svg`, `consignation-cinq-etapes.svg`, `coup-de-liquide-piston.svg`, `coup-de-liquide-principe.svg`, `croix-frigoriste-etats.svg`, `detendeur-regulation.svg`, `detendeurs-ligne.svg`, `deux-etages-deux-papiers.svg`, `diagramme-logph.svg`, `echangeur-air.svg`, `epreuve-azote.svg`, `familles-fluides.svg`, `frise-histoire.svg`, `givre-degivrage.svg`, `givre-isole-machine-force.svg`, `intro-securite.svg`, `lecture-table.svg`, `lie-domaine.svg`, `ligne-liquide-protection.svg`, `logph-lecture.svg`, `manifold-lecture.svg`, `mesure-surchauffe.svg`, `mesures-surchauffe-sous-refroidissement.svg`, `motif-flocon.svg`, `nomenclature.svg`, `ordre-vannes.svg`, `pesee-charge.svg`, `prepa-chantier.svg`, `pression-absolue-relative.svg`, `prp-echelle.svg`, `quatre-leviers-energie.svg`, `r290-zone-intervention.svg`, `recherche-fuite-geste.svg`, `recuperation-securisee.svg`, `recuperation.svg`, `regulateurs-kv-places.svg`, `s1-double-accident.svg`, `secu-bouteille.svg`, `secu-consignation.svg`, `secu-decomposition-ari.svg`, `secu-espace-clos.svg`, `secu-flamme.svg`, `secu-projection.svg`, `securite-decomposition-fluide.svg`, `securite-espace-clos.svg`, `securite-pression-residuelle.svg`, `securite-projection-fluide.svg`, `sequence-mise-en-service.svg`, `tirage-au-vide.svg`.
 
 ## Ce que cet audit ne valide pas
 

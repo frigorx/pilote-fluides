@@ -2,7 +2,7 @@
 
 _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on peut ouvrir en classe, et pour quel niveau. Pour l'état technique (écrans, voix, liens cassés), voir `docs/audit-site-2026-09/`._
 
-**598 stations** réparties en 19 réseaux.
+**599 stations** réparties en 19 réseaux.
 
 ## Plan thermo-techno — 126 stations
 
@@ -69,10 +69,10 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Positif, négatif, congélation, surgélation : ce que le froid fait au produit](https://inerweb.fr/packs/fluides/res/positif-negatif-interactif/) | — | — | — | Cours interactif : froid positif et négatif, réfrigération, les trois temps de la congélation et son palier, surgélation, décongélation selon l’arrêté du 21 décembre 2009. |
 | [Raccorder les postes d’un magasin — meubles, chambres, électrovannes](https://inerweb.fr/packs/fluides/res/postes-magasin-interactif/) | — | — | — | Cours interactif : raccorder un poste (meuble ou chambre froide) à une centrale positive : l’ordre sur la ligne liquide, le sens de l’électrovanne, qui l’ouvre et la ferme, le bulbe du détendeur, la conduite d’aspiration, les contrôles. |
 | [Pression et température — la relation de saturation](https://inerweb.fr/packs/fluides/res/pression-temperature-interactive/) | — | — | 1.02 1.03 | Comprenez la relation pression-température, l’ébullition sous vide, la saturation et le glissement des fluides frigorigènes avec une expérience interactive. |
-| [Le pressostat BP de sécurité — comprendre, régler, prouver](https://inerweb.fr/packs/fluides/res/pressostat-bp-kp1/) | — | — | 1.01 1.04 3.01 4.05 6.03 6.07 9.06 | Module inerweb.fr hors ligne : comprendre et régler un pressostat basse pression de sécurité. |
-| [Le pressostat combiné KP15 — deux pressions, une chaîne d’arrêt](https://inerweb.fr/packs/fluides/res/pressostat-combine-kp15/) | — | — | 1.01 1.04 3.01 4.05 6.03 6.07 7.04 9.06 | Comprendre le pressostat combiné Danfoss KP15 : fonctionnement HP/BP, réglage CUT IN/CUT OUT, différentiel, câblage A/B/C/D et contrôle. |
+| [Le pressostat BP — fonctionnement et réglage (exemple : Danfoss KP1)](https://inerweb.fr/packs/fluides/res/pressostat-bp-kp1/) | — | — | 1.01 1.04 3.01 4.05 6.03 6.07 9.06 | À quoi sert un pressostat BP, comment il fonctionne et comment le régler : enclenchement, coupure, différentiel, bornes, vérification. Exemple suivi : Danfoss KP1. |
+| [Le pressostat combiné HP/BP — fonctionnement et réglage (exemple : Danfoss KP15)](https://inerweb.fr/packs/fluides/res/pressostat-combine-kp15/) | — | — | 1.01 1.04 3.01 4.05 6.03 6.07 7.04 9.06 | À quoi sert un pressostat combiné HP/BP, comment il fonctionne et comment le régler : enclenchement, coupure, différentiel, réarmement, bornes. Exemple suivi : Danfoss KP15. |
 | [Le pressostat d’huile : la pression nette](https://inerweb.fr/packs/fluides/res/pressostat-differentiel-huile-pedagogique/) | — | — | — | — |
-| [Le pressostat HP de sécurité — comprendre, régler, prouver](https://inerweb.fr/packs/fluides/res/pressostat-hp-kp5/) | — | — | 1.01 1.04 3.01 4.05 6.03 6.07 7.04 9.06 | Module inerweb.fr hors ligne : comprendre et régler un pressostat haute pression de sécurité. |
+| [Le pressostat HP — fonctionnement et réglage (exemple : Danfoss KP5)](https://inerweb.fr/packs/fluides/res/pressostat-hp-kp5/) | — | — | 1.01 1.04 3.01 4.05 6.03 6.07 7.04 9.06 | À quoi sert un pressostat HP, comment il fonctionne et comment le régler : coupure, différentiel, réarmement manuel, bornes, vérification. Exemple suivi : Danfoss KP5. |
 | [Le pressostat d’huile : temporisation et sécurité](https://inerweb.fr/packs/fluides/res/pressostat-huile-securite/) | — | — | — | — |
 | [La protection minimum · Les régules · inerweb.fr](https://inerweb.fr/packs/fluides/res/protection-minimum-serie/) | — | — | — | Cette station locale interactive a besoin de JavaScript pour fonctionner. |
 | [Le pump-down amélioré · Les régules · inerweb.fr](https://inerweb.fr/packs/fluides/res/pump-down-ameliore/) | — | — | — | Cette station locale interactive a besoin de JavaScript pour fonctionner. |
@@ -593,7 +593,7 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
-| [inerWeb QCM · réviser en autonomie](https://inerweb.fr/qcm/) | — | CAP BAC | — | inerWeb QCM : réviser seul le froid et la climatisation, sur téléphone ou ordinateur. Trois activités : où j'en suis (196 questions, six niveaux), lire un manomètre, compléter le schéma frigorifique. Pas de compte, pas de nom, rien n'est envoyé. |
+| [inerWeb QCM · réviser en autonomie](https://inerweb.fr/qcm/) | — | CAP BAC | — | inerWeb QCM : réviser seul le froid et la climatisation, sur téléphone ou ordinateur. Quatre activités : où j'en suis (196 questions, six niveaux), lire un manomètre, compléter le schéma frigorifique, reconnaître les courbes du diagramme. Et deux réseaux pour réviser autrement : jeux (JouéRézo) et simulateur de panne (SimuRézo). Pas de compte, pas de nom, rien n'est envoyé. |
 | [Où j'en suis — positionnement froid et climatisation · inerWeb QCM](https://inerweb.fr/qcm/positionnement.html) | — | CAP BAC | — | Où j'en suis en froid, climatisation et habilitations : 196 questions sur six niveaux, de l'atelier jusqu'au niveau expert, puis ma carte des compétences (2de TNE, CAP IFCA, Bac Pro MFER). Révision libre : rien n'est envoyé. |
 | [Lire un manomètre — pression, fluide, température · inerWeb QCM](https://inerweb.fr/qcm/manometres.html) | — | — | A1T2 A5T2 C2 S3 S4 CAP-C4.5 | Lire un manomètre comme sur un vrai manifold : l'aiguille, l'échelle du fluide, la température de changement d'état. Dix questions, puis « Et sur la machine ? » avec mes vrais relevés. Révision libre : rien n'est envoyé. |
 | [Jeu — compléter le schéma frigorifique · inerWeb QCM](https://inerweb.fr/qcm/schema-frigo.html) | — | — | C2 S3 CAP-C2.1 | Compléter le schéma frigorifique avec les symboles normalisés : les quatre organes, puis la ligne liquide. Révision libre : rien n'est envoyé. |
@@ -665,9 +665,9 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Voyage dans tous ses états, la régulation d’une centrale — raconté par une molécule](https://inerweb.fr/voyage/regulation.html) | — | — | — | Suivez une molécule de fluide frigorigène dans une centrale de supermarché à quatre compresseurs : pourquoi la basse pression bouge, la consigne, la zone neutre, les temporisations, la permutation, le délestage, puis la haute pression tenue par les ventilateurs, fixe ou flottante, jusqu’à son plancher — avec l’écran du régulateur, en même temps. |
 | [Voyage dans tous ses états, le sous-refroidisseur de liquide — raconté par une molécule](https://inerweb.fr/voyage/sous-refroidisseur.html) | — | — | — | Suivez une molécule de fluide frigorigène dans le sous-refroidisseur de liquide d’une grosse installation à compresseur à vis : les trois zones du condenseur, plus de froid par kilo, la vapeur de détente, pas de bulles au détendeur, l’échangeur à plaques, le piquage et l’orifice économiseur — avec son cycle sur le diagramme enthalpique, en même temps. |
 | [Voyage dans tous ses états, le compresseur à vis — raconté par une molécule](https://inerweb.fr/voyage/vis.html) | — | — | — | Suivez une molécule de fluide frigorigène dans un compresseur à vis : les rotors mâle et femelle, l’alvéole qui se ferme sans clapet puis rétrécit, l’huile injectée, le Vi, le tiroir, le séparateur d’huile, l’économiseur — avec son cycle sur le diagramme enthalpique, en même temps. |
-| [les films d'inerweb.fr](https://inerweb.fr/studio/) | — | — | — | Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours. |
+| [les films d'inerweb.fr](https://inerweb.fr/studio/) | — | — | — | Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, trois documentaires sur le climat, l'ozone et un kilo de fluide. Chaque film mène à son cours. |
 
-## Pages du site — 12 stations
+## Pages du site — 13 stations
 
 | Station | Ligne | Niveaux | Codes | Sujet |
 |---|---|---|---|---|
@@ -676,11 +676,12 @@ _Relevé par `outils/catalogue-stations.mjs`, jamais saisi à la main. Ce qu'on 
 | [Découvrir inerWeb — le parcours enseignant](https://inerweb.fr/decouvrir.html) | — | — | — | Prendre en main inerWeb en une quinzaine d’étapes : ce que c’est, ce que ça apporte à vos cours, comment s’en servir demain avec vos élèves. Pour les enseignants, les formateurs et toute personne qui enseigne le froid, la climatisation et les énergies. |
 | [Espace formateurs](https://inerweb.fr/formateurs.html) | — | — | — | Utiliser inerWeb en classe et demander une réutilisation. Droits réservés sur les nouvelles créations ; licences antérieures et tierces conservées. |
 | [Habilitation fluides frigorigènes (démonstrateur)](https://inerweb.fr/formation.html) | — | — | — | Démonstrateur : la formation habilitation fluides frigorigènes (A1, A2, D, E) dans le moteur inerWeb Pilote. |
-| [Bibliothèque d'animations et de supports — habilitation fluides frigorigènes](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
+| [Animations, cours interactifs et planches du froid](https://inerweb.fr/galerie.html) | — | — | — | Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables. |
 | [le froid et la climatisation, station par station](https://inerweb.fr/index.html) | — | — | — | Cours, habilitations, livres, outils et logiciels du froid et de la climatisation, du CAP au BTS. Gratuit, sans compte, en français. |
 | [Le métier de frigoriste](https://inerweb.fr/metier.html) | — | — | — | Frigoriste, climaticien, technicien CVC : cinq familles, une journée type, ce qu'on mesure, le cadre réglementaire et les formations de la 2nde au bureau d'études. |
 | [Le lien à garder — Habilitation fluides frigorigènes](https://inerweb.fr/partage.html) | — | — | — | Gratuit, sans compte, sans installation — il s'ouvre dans le navigateur, sur téléphone comme sur ordinateur. Gardez ce lien. |
 | [Le plan du réseau thermo-techno](https://inerweb.fr/plan.html) | — | — | — | Le plan de formation inerweb.fr : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte. |
+| [Tout inerWeb en huit portes](https://inerweb.fr/portes.html) | — | — | — | Cours, habilitations, livres, outils et logiciels du froid et de la climatisation, du CAP au BTS. Gratuit, sans compte, en français. |
 | [Tout inerWeb, réseau par réseau](https://inerweb.fr/reseaux.html) | — | — | — | Quatorze réseaux gratuits pour apprendre le froid, la climatisation, l’électrotechnique et la réglementation, du CAP au BTS, sans compte. |
 | [Ouvrir une séance à une classe](https://inerweb.fr/seances.html) | — | — | — | Fabriquer le code d'une séance : un lien et un QR code à projeter. Réservé aux titulaires d'un accès enseignant. |
 

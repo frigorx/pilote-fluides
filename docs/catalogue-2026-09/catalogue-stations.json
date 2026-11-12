@@ -1,6 +1,6 @@
 {
   "site": "https://inerweb.fr/",
-  "total": 598,
+  "total": 599,
   "stations": [
     {
       "reseau": "Plan thermo-techno",
@@ -951,9 +951,9 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "pressostat-bp-kp1",
-      "titre": "Le pressostat BP de sécurité — comprendre, régler, prouver",
+      "titre": "Le pressostat BP — fonctionnement et réglage (exemple : Danfoss KP1)",
       "ligne": null,
-      "resume": "Module inerweb.fr hors ligne : comprendre et régler un pressostat basse pression de sécurité.",
+      "resume": "À quoi sert un pressostat BP, comment il fonctionne et comment le régler : enclenchement, coupure, différentiel, bornes, vérification. Exemple suivi : Danfoss KP1.",
       "niveaux": null,
       "competences": [
         "1.01",
@@ -971,9 +971,9 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "pressostat-combine-kp15",
-      "titre": "Le pressostat combiné KP15 — deux pressions, une chaîne d’arrêt",
+      "titre": "Le pressostat combiné HP/BP — fonctionnement et réglage (exemple : Danfoss KP15)",
       "ligne": null,
-      "resume": "Comprendre le pressostat combiné Danfoss KP15 : fonctionnement HP/BP, réglage CUT IN/CUT OUT, différentiel, câblage A/B/C/D et contrôle.",
+      "resume": "À quoi sert un pressostat combiné HP/BP, comment il fonctionne et comment le régler : enclenchement, coupure, différentiel, réarmement, bornes. Exemple suivi : Danfoss KP15.",
       "niveaux": null,
       "competences": [
         "1.01",
@@ -1004,9 +1004,9 @@
     {
       "reseau": "Plan thermo-techno",
       "id": "pressostat-hp-kp5",
-      "titre": "Le pressostat HP de sécurité — comprendre, régler, prouver",
+      "titre": "Le pressostat HP — fonctionnement et réglage (exemple : Danfoss KP5)",
       "ligne": null,
-      "resume": "Module inerweb.fr hors ligne : comprendre et régler un pressostat haute pression de sécurité.",
+      "resume": "À quoi sert un pressostat HP, comment il fonctionne et comment le régler : coupure, différentiel, réarmement manuel, bornes, vérification. Exemple suivi : Danfoss KP5.",
       "niveaux": null,
       "competences": [
         "1.01",
@@ -7072,7 +7072,7 @@
       "id": "qcm",
       "titre": "inerWeb QCM · réviser en autonomie",
       "ligne": null,
-      "resume": "inerWeb QCM : réviser seul le froid et la climatisation, sur téléphone ou ordinateur. Trois activités : où j'en suis (196 questions, six niveaux), lire un manomètre, compléter le schéma frigorifique. Pas de compte, pas de nom, rien n'est envoyé.",
+      "resume": "inerWeb QCM : réviser seul le froid et la climatisation, sur téléphone ou ordinateur. Quatre activités : où j'en suis (196 questions, six niveaux), lire un manomètre, compléter le schéma frigorifique, reconnaître les courbes du diagramme. Et deux réseaux pour réviser autrement : jeux (JouéRézo) et simulateur de panne (SimuRézo). Pas de compte, pas de nom, rien n'est envoyé.",
       "niveaux": {
         "cap": "CAP IFCA",
         "bac": "2de TNE, Bac Pro MFER"
@@ -7665,7 +7665,7 @@
       "id": "studio",
       "titre": "les films d'inerweb.fr",
       "ligne": null,
-      "resume": "Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, deux documentaires sur le climat et l'ozone. Chaque film mène à son cours.",
+      "resume": "Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, trois documentaires sur le climat, l'ozone et un kilo de fluide. Chaque film mène à son cours.",
       "niveaux": null,
       "competences": null,
       "missionProf": null,
@@ -7783,7 +7783,7 @@
     {
       "reseau": "Pages du site",
       "id": "galerie",
-      "titre": "Bibliothèque d'animations et de supports — habilitation fluides frigorigènes",
+      "titre": "Animations, cours interactifs et planches du froid",
       "ligne": null,
       "resume": "Le catalogue inerweb.fr : toutes les planches animées, cours interactifs et supports du froid, rejouables et filtrables.",
       "niveaux": null,
@@ -7842,6 +7842,18 @@
     },
     {
       "reseau": "Pages du site",
+      "id": "portes",
+      "titre": "Tout inerWeb en huit portes",
+      "ligne": null,
+      "resume": "Cours, habilitations, livres, outils et logiciels du froid et de la climatisation, du CAP au BTS. Gratuit, sans compte, en français.",
+      "niveaux": null,
+      "competences": null,
+      "missionProf": null,
+      "url": "https://inerweb.fr/portes.html",
+      "chemin": "portes.html"
+    },
+    {
+      "reseau": "Pages du site",
       "id": "reseaux",
       "titre": "Tout inerWeb, réseau par réseau",
       "ligne": null,
@@ -7874,7 +7886,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/",
-      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/index.html"
+      "chemin": "D:\\git\\_wt-pressostats\\sous-tension/index.html"
     },
     {
       "reseau": "Modules externes",
@@ -7886,7 +7898,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD1-fondamentaux.html",
-      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-TD1-fondamentaux.html"
+      "chemin": "D:\\git\\_wt-pressostats\\sous-tension/sous-tension-TD1-fondamentaux.html"
     },
     {
       "reseau": "Modules externes",
@@ -7898,7 +7910,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD2-tableau-electrique.html",
-      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-TD2-tableau-electrique.html"
+      "chemin": "D:\\git\\_wt-pressostats\\sous-tension/sous-tension-TD2-tableau-electrique.html"
     },
     {
       "reseau": "Modules externes",
@@ -7910,7 +7922,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-TD3-cas-particuliers.html",
-      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-TD3-cas-particuliers.html"
+      "chemin": "D:\\git\\_wt-pressostats\\sous-tension/sous-tension-TD3-cas-particuliers.html"
     },
     {
       "reseau": "Modules externes",
@@ -7922,7 +7934,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/sous-tension-evaluation.html",
-      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/sous-tension-evaluation.html"
+      "chemin": "D:\\git\\_wt-pressostats\\sous-tension/sous-tension-evaluation.html"
     },
     {
       "reseau": "Modules externes",
@@ -7934,7 +7946,7 @@
       "competences": null,
       "missionProf": null,
       "url": "https://inerweb.fr/sous-tension/td-triphase.html",
-      "chemin": "D:\\git\\_wt-be-pub7\\sous-tension/td-triphase.html"
+      "chemin": "D:\\git\\_wt-pressostats\\sous-tension/td-triphase.html"
     },
     {
       "reseau": "Modules externes",
