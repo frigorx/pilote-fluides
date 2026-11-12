@@ -1,47 +1,52 @@
-# Sources métier et arbitrages
+# Sources métier : pressostat BP (exemple Danfoss KP1)
 
-Consultation effectuée le 19 août 2026. Le RAG a été interrogé en lecture seule par familles : technologie, zone neutre/différentiel, contacts/câblage, réglage sous azote et contrôle en fonctionnement. Le filtre de diffusion cloud a été conservé ; aucune donnée sensible n’a été extraite.
+Refonte du 13/11/2026. Chaque valeur de la page vient d'un des documents ci-dessous. Une valeur qui n'y figure pas ne s'écrit pas dans la page. Aucun logo, aucune image, aucun extrait de notice n'est repris.
 
-## Prototype canonique réemployé
+## 1. Danfoss (appareil pris en exemple)
 
-| Source | Autorité | Apport repris |
-|---|---|---|
-| `C:\git\inerweb-frigolo\outils\kp1-pressostat-bp.html` | dépôt Git `frigorx/inerweb-frigolo`, commit d’ajout `56f3df1` | face KP1, manomètre, contact 1–2–4, réglages CUT IN/DIFF et exercices progressifs |
-| `C:\git\pilote-fluides\packs\fluides\cartes.js` | dépôt Pilote Fluides | confirme que ce prototype GitHub est déjà l’outil KP1 relié au parcours |
-| RAG `kp1-pressostat-bp.html` | `doc/5a00e6e43ab4abf704fcfec2810248b9` | confirme l’usage en formation professionnelle |
+| Sigle | Document | Référence | Adresse |
+|---|---|---|---|
+| FD | Fiche de données « Pressure switch, Type KP » | AI213186439478en-001203, 2022.09 | https://assets.danfoss.com/documents/207508/AI213186439478en-001203.pdf |
+| NI-KP1 | Guide d'installation « Pressure switch KP 1, 1W, 1A, 2, 4, 5, 5A, 6, 7 » | AN211886440281en-000704, 2024.10 | https://assets.danfoss.com/documents/464307/AN211886440281en-000704.pdf |
 
-Le prototype publié reste intact. La présente refonte est un brouillon dérivé, entièrement hors ligne. Son écran pump-down n’est pas repris dans le cœur du chapitre sécurité.
+| Valeur de la page | Source |
+|---|---|
+| Version automatique : plage −0,2 à 7,5 bar, différentiel 0,7 à 4 bar réglable (code 060-114166) | FD, tableau des codes |
+| Version à réarmement manuel : plage −0,9 à 7 bar, différentiel fixe 0,7 bar | FD, tableau des codes |
+| Automatique : la vis de plage règle l'enclenchement ; coupure = enclenchement − différentiel | FD p. 4 « Setting » |
+| Manuel : la vis de plage règle la coupure ; réarmement possible à coupure + différentiel | FD p. 4 |
+| Un tour de vis : 0,7 bar (plage), 0,15 bar (différentiel) | FD p. 4 |
+| La coupure reste au-dessus du vide (−1 bar) | FD p. 4 |
+| Bornes 1, 2, 4 : 1 arrivée, 1–4 vers le moteur, s'ouvre quand la pression baisse, 1–2 signal | NI-KP1 p. 2, FD p. 3 |
+| Moteur monophasé jusqu'à 2 kW environ branché en direct | FD p. 1 |
+| Contact : 16 A sous 400 V (AC1, AC3), 10 A sous 400 V (AC15) | NI-KP1 p. 2 |
+| Pression de service maximale 17 bar | NI-KP1 p. 1 |
+| Température ambiante −40 à 65 °C ; raccord flare 1/4 de pouce (6 mm) | FD p. 2 et 4 |
+| Levier d'essai manœuvré avec les doigts, jamais au tournevis | NI-KP1 p. 2 |
 
-## Fonds local utilisé
+## 2. Fonds de l'auteur
 
-| Source | Référence RAG | Apport retenu |
-|---|---|---|
-| `les-pressostats.pdf` | `doc/a3678655de0e81bb7fd1d981f61c8611` | panorama technologique : BP, HP, combiné, différentiel d’huile, fonctions de régulation et de sécurité |
-| `Activité n°1 Découverte des pressostat.docx` | `doc/185bc2280c415c4211b1e41aede4e943` | identification, préréglage, mesure de pression et analyse de l’action sur l’installation |
-| `TP_Pressostat_BP_Raynaud.html` | `doc/6b790be62bf66b0e81c08c356bb69b80` | cut-in, cut-out, différentiel, manomètres et travail sous azote |
-| `TP_Reglage_Visuel_Pressostat_BP.docx` | `doc/d557ce1c2a4c94ab16b307c9f2e61740` | exemple visuel CUT IN `0,3 bar` / CUT OUT `0,2 bar`, conservé comme cas d’exercice uniquement |
-| `PROCEDURE REGLAGE PRESSOSTAT BP SECURITE.docx` | `doc/ddda154e648a5f613b0bdb30e99f97ac` | fermeture/ouverture du départ liquide, relevé des deux basculements, calcul du différentiel et répétition du contrôle |
-| `PROCEDURE REGLAGE PRESSOSTAT BP REGULATION.docx` | `doc/a217415638950ca3a40f8d50fba45cb0` | logique de mesure dans les deux sens et nécessité de distinguer sécurité et régulation |
-| `reglage bp sous azote.docx` | `doc/3a0766fbc02fe19d101a134841158e78` | préparation du banc, manipulation sécurisée de l’azote, contrôle des pressions et pose/dépose des manifolds |
-| `TP_Réglage_Pressostat_Sans_Illustrations.docx` | `doc/2ea6eb0505e0620f67a4d5a621d03fa5` | installation, manifold, bouteille d’azote et progression pratique |
-| `4.2 Electricité (réglage pressostat BP).pdf` | `doc/9c97eba5755f0fe3c7a2c50226a7d2da` | identification des réglages CUT IN et DIFF en fonctionnement ou à l’arrêt |
-| `Pressostat 2 CABALAGE.docx` | `doc/c3e89eedc00a3da9b427effa04d499e2` | raccordement électrique en atelier et contrôle de mise en œuvre |
-| `Pressostat 2 CABALAGE.pdf` | `doc/fef50556b076388ab199bbb503cdca5b` et `doc/d00277162af12a45f4e6b14bda54c31b` | variantes BAC MFER et CAP IFCA du TP de câblage |
-| `Synthèse activité N° 22 seconde.docx` | `doc/77eb585af9ba859634e5cdc0e7a85175` | rôle sécurité, piquage aspiration et états `1–4` / `1–2` |
-| `Doc. Ressource pressostat BP.docx` | `doc/1117125f82e55699c0364a0e5ceb646e` | schéma de raccordement et principes de fonctionnement |
-| `Pressostat BP.docx` | `doc/c094a97c8d268fee5d935499b4f65608` | distinction sécurité/régulation et exemple historique à `0,2 bar` |
+| Valeur ou geste de la page | Document du fonds |
+|---|---|
+| Essai : fermer la vanne de départ liquide, noter la coupure, rouvrir, noter l'enclenchement, calculer le différentiel | « PROCEDURE REGLAGE PRESSOSTAT BP SECURITE.docx » |
+| Exemples de réglage : coupure 0,2 bar ; −5 °C R134a 1,2 / 1,4 bar ; −5 °C R404A 3,8 / 4,0 bar ; −25 °C R404A 1,3 / 1,5 bar | même document |
+| Deux emplois : sécurité, ou régulation (arrêt et remise en marche du compresseur par la pression d'aspiration) | « Le pressostat HPet BP prof.docx », fiche ERM n° 4 « La régulation pressostatique » |
 
-## Documentation primaire Danfoss
+Pressions de saturation recalculées le 12/11/2026 (CoolProp, bar relatifs) : R134a à −5 °C : 1,42 ; R404A à −5 °C : 4,09 ; R404A à −25 °C : 1,46.
 
-- fiche produit KP1 `060-205191` : plage `−0,2 à 7,5 bar Pe`, différentiel `0,7 à 4,0 bar`, SPDT, réarmement automatique : <https://designcenter.danfoss.com/products/climate-solutions-for-cooling/switches/pressure-switches/kp/p/060-205191> ;
-- fiche produit KP1 `060-111166` : plage `−0,9 à 7,0 bar Pe`, différentiel fixe `0,7 bar`, réarmement manuel minimum : <https://designcenter.danfoss.com/products/climate-solutions-for-cooling/switches/pressure-switches/kp/p/060-111166> ;
-- fiche de données KP : réglage LP sur CUT IN, différentiel sur DIFF, `CUT OUT = CUT IN − DIFF`, vérification au manomètre précis : <https://assets.danfoss.com/documents/latest/207508/AI213186439478en-001203.pdf> ;
-- guide d’installation KP : contact `1–4` ouvert à la baisse, `1–2` ouvert à la hausse et mise hors tension avant câblage : <https://assets.danfoss.com/documents/latest/464307/AN211886440281en-000704.pdf>.
+## 3. Autres fabricants
 
-## Arbitrages et limites
+| Ligne du tableau | Document du fabricant |
+|---|---|
+| Ranco O16, modèle BP (O16-R6703) : −0,2 à 8 bar, différentiel 0,7 à 4 bar, automatique | Robertshaw, fiche « Pressure Controls O Series », 150-3012, 11/25 |
+| Alco (Copeland) PS1 : −0,5 à 7 bar (code 3), autres plages ; différentiel réglable, fixe en manuel ; bornes 1, 2, 4 | Copeland Europe, « Operating instructions, Pressure Controls Series PS1 / PS2 », P/N 0715180 Rev13, 28.11.2024 |
+| Johnson Controls Penn P70 à contact inverseur : bornes 1, 2, 3 | Johnson Controls, « P70, P72, and P170 Series Controls », 24-7664-1601 Rev. H, 2018 |
 
-- La zone neutre est définie comme l’intervalle entre CUT OUT et CUT IN ; sa largeur en bar est le différentiel. Dans cet intervalle, l’état dépend du dernier seuil franchi.
-- Les valeurs locales à `0,2 bar` sont des exemples historiques, pas une règle universelle.
-- Les tables P/T du prototype GitHub ne sont pas embarquées : leur provenance et, pour les zéotropes, le choix bulle/rosée ne sont pas documentés.
-- La direction de rotation des vis n’est pas enseignée comme invariant. L’apprenant suit les repères du modèle puis mesure les basculements.
-- Toute coupure visée doit rester au-dessus de la limite basse autorisée du compresseur et de la machine.
+Le repérage des bornes du Ranco O16 récent n'a été trouvé dans aucune notice : la page renvoie à la notice du modèle. Les plages du Penn P70 sont en psig dans la notice : la page ne les donne pas. Détail : `PROJET-VISIBILITE\nuit\AUTRES-MARQUES.md`.
+
+Le sens de rotation des vis ne se lit pas avec certitude sur la notice : la page ne le donne pas.
+
+## 4. Ce que la page ne traite pas (à compléter par l'auteur)
+
+- Les pannes du pressostat lui-même (capillaire percé ou bouché, soufflet fatigué, contacts collés) : rien dans le fonds ni dans les notices lues.
+- Les codes du référentiel affichés (repris de l'ancienne page, « à valider »).

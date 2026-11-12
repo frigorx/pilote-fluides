@@ -1,10 +1,10 @@
 {
-  "product": "inerweb.fr — Pressostat BP de sécurité",
-  "version": "2.5.0-brouillon",
+  "product": "inerweb.fr — Pressostat BP",
+  "version": "3.0.0",
   "status": "Refonte pédagogique à valider",
-  "generatedOn": "2026-08-19",
+  "generatedOn": "2026-11-13",
   "offline": true,
-  "lessonSteps": 16,
-  "quizQuestions": 9,
+  "lessonSteps": 10,
+  "quizQuestions": 5,
   "entrypoint": "index.html"
 }
