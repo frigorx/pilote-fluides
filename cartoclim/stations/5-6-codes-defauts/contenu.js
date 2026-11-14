@@ -167,6 +167,7 @@ ModeleAppareil.construire({
     { quoi: 'Symboles', source: 'collection QElectroTech, CC BY 3.0', detail: 'bibliothèque inerWeb, rien n’a été redessiné' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Ma clim ne refroidit plus, comment raisonner ?", url: '../../../studio/clim/c01-clim-ne-refroidit-plus-comment-raisonner.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.4 L’Inverter : la vitesse suit le besoin", url: lien('2.4') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.5 Alimenter et relier les deux unités", url: lien('4.5') },
     { ligne: 5, couleur: '#B06A00', texte: "5.2 Le régulateur électronique : les sondes", url: lien('5.2') },

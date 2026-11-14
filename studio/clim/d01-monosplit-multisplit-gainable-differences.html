@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Monosplit, multisplit, gainable : les différences expliquées</title>
+<meta name="description" content="Monosplit et multisplit comptent les unités intérieures reliées à un groupe extérieur ; le gainable est une forme d'unité intérieure cachée dans le plafond. Les différences et comment choisir, en schémas animés.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/d01-monosplit-multisplit-gainable-differences.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Monosplit, multisplit, gainable : les différences expliquées">
+<meta property="og:description" content="Monosplit et multisplit comptent les unités intérieures reliées à un groupe extérieur ; le gainable est une forme d'unité intérieure cachée dans le plafond. Les différences et comment choisir, en schémas animés.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/d01-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/d01-monosplit-multisplit-gainable-differences.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 11 (film D01, 3 min 17), page du film.
+     Page SATELLITE écrite à la main, sur le modèle de la page de B02 : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/D01/
+     (renders/D01-norm.mp4, D01.vtt, miniature-D01). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/D01-transcription.txt, en paragraphes. Quiz et liens = fiche.yaml. Chapitres = LIVRAISON-D01.md.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Monosplit, multisplit, gainable : les différences expliquées",
+"description":"Monosplit et multisplit comptent les unités intérieures reliées à un groupe extérieur ; le gainable est une forme d'unité intérieure cachée dans le plafond. Les différences et comment choisir, en schémas animés.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/d01-miniature.webp","uploadDate":"2026-11-14","duration":"PT3M17S",
+"contentUrl":"https://inerweb.fr/studio/clim/d01-monosplit-multisplit-gainable-differences.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Monosplit, multisplit, gainable : quelles différences ?</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 11 · 3 min 17</p>
+  </header>
+  <p class="chapo">Monosplit et multisplit disent combien d'unités intérieures dépendent d'une unité extérieure. Gainable dit la forme de l'unité intérieure : un caisson caché dans le faux plafond. Le film remet ces trois mots à leur place, puis pose un cas à résoudre : trois pièces et un balcon étroit.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="d01-miniature.webp" src="d01-monosplit-multisplit-gainable-differences.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="d01-monosplit-multisplit-gainable-differences.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Le film ne donne aucun chiffre ni aucun prix. Il parle de climatiseurs split à détente directe : une unité extérieure et une ou plusieurs unités intérieures reliées par des tubes de cuivre.</p>
+
+    <section class="attention" aria-label="Sécurité">
+      <p>La pose, la charge en fluide et le choix des gaines reviennent à un professionnel habilité.</p>
+    </section>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les mots du film, en bref</h2>
+      <div class="defs">
+        <div><h3>Un split</h3>
+          <p>Une climatisation en deux parties : une unité extérieure et une unité intérieure, reliées par deux tubes de cuivre et un câble qui traversent le mur.</p></div>
+        <div><h3>Le monosplit</h3>
+          <p>Une unité extérieure pour une seule unité intérieure, donc pour une seule pièce. Deux pièces demandent deux unités extérieures, et la place manque vite sur une façade.</p></div>
+        <div><h3>Le multisplit</h3>
+          <p>Une seule unité extérieure pour plusieurs unités intérieures, une par pièce. Il y a moins de boîtiers dehors et plus de tubes dedans. Le groupe n'a qu'un compresseur et qu'un mode : toutes les pièces refroidissent, ou toutes chauffent.</p></div>
+        <div><h3>Les limites du multisplit</h3>
+          <p>Le nombre de pièces et la longueur des tubes sont limités par la notice du fabricant.</p></div>
+        <div><h3>Le gainable</h3>
+          <p>Une forme d'unité intérieure, comme la murale, la console ou la cassette. Un caisson caché dans le faux plafond pousse l'air dans des gaines, qui le distribuent par plusieurs bouches avec une seule consigne. Il demande de la place au-dessus du plafond et des gaines calculées pour sa turbine.</p></div>
+        <div><h3>Comment choisir</h3>
+          <p>Une seule pièce : un monosplit. Plusieurs pièces et peu de place dehors : un multisplit. Une grande surface, ou des unités qui ne doivent pas se voir : un gainable. Un gainable peut être seul sur son groupe, comme un monosplit, ou relié avec d'autres unités, comme un multisplit.</p></div>
+      </div>
+    </section>
+
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres</h2>
+      <ol class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Mission 11</button></li>
+        <li><button type="button" data-t="14"><time>0:14</time>Le monosplit</button></li>
+        <li><button type="button" data-t="45"><time>0:45</time>Le multisplit</button></li>
+        <li><button type="button" data-t="80"><time>1:20</time>Le gainable</button></li>
+        <li><button type="button" data-t="117"><time>1:57</time>Comment choisir</button></li>
+        <li><button type="button" data-t="140"><time>2:20</time>À vous</button></li>
+        <li><button type="button" data-t="160"><time>2:40</time>À retenir</button></li>
+        <li><button type="button" data-t="186"><time>3:06</time>Prochain film</button></li>
+      </ol>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 11 : monosplit, multisplit, gainable, les différences</p>
+      <p>Trois mots reviennent dans tous les catalogues. Remettons-les à leur place.</p>
+      <p>Un split : une climatisation en deux parties, une unité extérieure et une unité intérieure.</p>
+      <p>Monosplit : une unité extérieure pour une seule unité intérieure, donc une seule pièce.</p>
+      <p>Deux tubes de cuivre et un câble les relient, à travers le mur.</p>
+      <p>Deux pièces : deux unités extérieures. La place manque vite sur une façade.</p>
+      <p>Multisplit : une seule unité extérieure, plusieurs unités intérieures, une par pièce.</p>
+      <p>Chaque pièce a ses deux tubes jusqu'au groupe. Moins de boîtiers dehors, plus de tubes dedans.</p>
+      <p>Un seul compresseur. Une seule pièce demande du froid : il ralentit.</p>
+      <p>Un seul mode pour le groupe : toutes les pièces refroidissent, ou toutes chauffent.</p>
+      <p>Nombre de pièces et longueur des tubes : limités par la notice du fabricant.</p>
+      <p>Le gainable est une forme d'unité intérieure, comme la murale, la console ou la cassette.</p>
+      <p>Un caisson caché dans le faux plafond. Il pousse l'air dans des gaines, qui le distribuent par plusieurs bouches.</p>
+      <p>On ne voit que les bouches. Il demande de la place au-dessus du plafond, et des gaines calculées pour sa turbine.</p>
+      <p>Toutes les bouches reçoivent le même air, avec une seule consigne.</p>
+      <p>Un gainable : seul sur son groupe, comme un monosplit, ou avec d'autres unités, comme un multisplit.</p>
+      <p>Une seule pièce : un monosplit, avec une murale ou une console.</p>
+      <p>Plusieurs pièces, peu de place dehors : un multisplit, une unité par pièce, chacune avec sa consigne.</p>
+      <p>Une grande surface, ou des unités qui ne doivent pas se voir : un gainable, avec des gaines calculées.</p>
+      <p>À vous : un appartement de trois pièces, un balcon étroit. Quel système choisissez-vous ?</p>
+      <p>Un multisplit : un seul groupe sur le balcon, une unité intérieure par pièce.</p>
+      <p>Monosplit : une unité extérieure pour une unité intérieure.</p>
+      <p>Multisplit : une unité extérieure, plusieurs unités intérieures, un seul mode pour toutes.</p>
+      <p>Gainable : une unité intérieure cachée dans le plafond, qui souffle par des gaines.</p>
+      <p>La pose, la charge en fluide et le choix des gaines reviennent à un professionnel habilité.</p>
+      <p>La prochaine fois : le dégivrage d'une pompe à chaleur.</p>
+      <p>Le multisplit en schéma animé : inerweb.fr, réseau CartoClim.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Quatre questions pour vérifier</h2>
+      <details class="q"><summary>Combien d'unités intérieures un monosplit alimente-t-il ?</summary><p>Une seule, donc une seule pièce.</p></details>
+      <details class="q"><summary>Un multisplit peut-il chauffer une pièce et en refroidir une autre en même temps ?</summary><p>Non : le groupe n'impose qu'un seul mode, toutes les pièces refroidissent ou toutes chauffent.</p></details>
+      <details class="q"><summary>Le gainable est-il un système différent du multisplit ?</summary><p>Non : c'est une forme d'unité intérieure. Un gainable peut être seul sur son groupe ou relié avec d'autres unités.</p></details>
+      <details class="q"><summary>Trois pièces, un balcon étroit : quel système ?</summary><p>Un multisplit : un seul groupe sur le balcon, une unité intérieure par pièce.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../cartoclim/stations/3-4-multisplit/index.html">Le schéma animé et les exercices : CartoClim 3.4, le multisplit</a>
+        <a class="btn sec" href="../../cartoclim/stations/3-3-unites-interieures/index.html">CartoClim 3.3 : choisir l'unité intérieure (murale, console, cassette, gainable)</a>
+        <a class="btn sec" href="../../cartoclim/stations/3-2-split/index.html">CartoClim 3.2 : le split</a>
+        <a class="btn sec" href="a01-comment-fonctionne-une-climatisation.html">Pour commencer : mission 01, comment fonctionne une climatisation ?</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <a class="btn sec" href="d04-degivrage-pompe-a-chaleur-comment-ca-marche.html">Film suivant : mission 12, comment une pompe à chaleur se dégivre-t-elle ?</a>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

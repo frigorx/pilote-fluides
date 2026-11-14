@@ -153,6 +153,7 @@ ModeleAppareil.construire({
 
   correspondances: [
     { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Une clim réversible, comment chauffe-t-elle ?", url: '../../../studio/clim/a02-clim-reversible-comment-chauffe-t-elle.html' },
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Comment une pompe à chaleur se dégivre-t-elle ?", url: '../../../studio/clim/d04-degivrage-pompe-a-chaleur-comment-ca-marche.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.2 Pression et température", url: lien('2.2') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.5 Détendre", url: lien('2.5') },

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Dégivrage d'une pompe à chaleur : comment ça marche ?</title>
+<meta name="description" content="Givre sur l'unité extérieure, déclenchement par la sonde de batterie, inversion du cycle par la vanne quatre voies, arrêt des ventilateurs, eau de fonte : le dégivrage expliqué en schémas animés.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/d04-degivrage-pompe-a-chaleur-comment-ca-marche.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Dégivrage d'une pompe à chaleur : comment ça marche ?">
+<meta property="og:description" content="Givre sur l'unité extérieure, déclenchement par la sonde de batterie, inversion du cycle par la vanne quatre voies, arrêt des ventilateurs, eau de fonte : le dégivrage expliqué en schémas animés.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/d04-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/d04-degivrage-pompe-a-chaleur-comment-ca-marche.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 12 (film D04, 3 min 45), page du film.
+     Page SATELLITE écrite à la main, sur le modèle de la page de B02 : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/D04/
+     (renders/D04-norm.mp4, D04.vtt, miniature-D04). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/D04-transcription.txt, en paragraphes. Quiz et liens = fiche.yaml. Chapitres = LIVRAISON-D04.md.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Dégivrage d'une pompe à chaleur : comment ça marche ?",
+"description":"Givre sur l'unité extérieure, déclenchement par la sonde de batterie, inversion du cycle par la vanne quatre voies, arrêt des ventilateurs, eau de fonte : le dégivrage expliqué en schémas animés.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/d04-miniature.webp","uploadDate":"2026-11-14","duration":"PT3M45S",
+"contentUrl":"https://inerweb.fr/studio/clim/d04-degivrage-pompe-a-chaleur-comment-ca-marche.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Comment une pompe à chaleur se dégivre-t-elle ?</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 12 · 3 min 45</p>
+  </header>
+  <p class="chapo">L'hiver, la batterie de l'unité extérieure se couvre de givre. La machine le fait fondre en inversant son cycle, et le ventilateur de l'unité intérieure s'arrête pendant ce temps pour ne pas souffler d'air frais. Le film suit le dégivrage de bout en bout, de la sonde à la reprise du chauffage.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="d04-miniature.webp" src="d04-degivrage-pompe-a-chaleur-comment-ca-marche.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="d04-degivrage-pompe-a-chaleur-comment-ca-marche.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les températures du film (2 °C dehors, −5 °C dans la batterie) sont des exemples. Le film ne donne aucune durée ni aucun seuil de fabricant : la règle exacte dépend de l'appareil. Il parle d'une pompe à chaleur air-air, c'est-à-dire d'une climatisation réversible.</p>
+
+    <section class="attention" aria-label="Sécurité">
+      <p>Quelques minutes de dégivrage sont normales. Une glace qui reste pendant des heures signale une panne : faites-la diagnostiquer, et ne cassez jamais le givre avec un outil.</p>
+    </section>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les mots du film, en bref</h2>
+      <div class="defs">
+        <div><h3>Le givre</h3>
+          <p>L'humidité de l'air se dépose sur les ailettes de la batterie extérieure et gèle, quand leur surface est sous zéro. Le givre ferme peu à peu les passages de l'air, et la batterie prend de moins en moins de chaleur.</p></div>
+        <div><h3>Le déclenchement</h3>
+          <p>Une sonde de température est fixée sur la batterie extérieure et la carte électronique la surveille. Quand la batterie reste trop froide pendant un certain temps de marche, la carte lance le dégivrage. La carte ne voit pas le givre : elle le déduit de ses mesures.</p></div>
+        <div><h3>L'inversion du cycle</h3>
+          <p>La carte commande la vanne quatre voies, qui passe en position froid, comme en été. Le compresseur tourne toujours dans le même sens, et le gaz chaud part vers l'unité extérieure. La batterie extérieure devient condenseur : la chaleur de la vapeur fait fondre le givre.</p></div>
+        <div><h3>Les ventilateurs</h3>
+          <p>Le ventilateur extérieur s'arrête : son air froid refroidirait la batterie qu'on veut réchauffer. L'échangeur intérieur devient évaporateur, donc froid. Le ventilateur intérieur s'arrête ou ralentit, pour ne pas souffler d'air frais dans la pièce.</p></div>
+        <div><h3>L'eau de fonte</h3>
+          <p>Elle coule le long des ailettes jusqu'au bac, sous l'unité extérieure. Le bac est percé pour l'évacuer dehors. Le panache blanc que l'on voit est de la vapeur d'eau.</p></div>
+        <div><h3>La reprise</h3>
+          <p>Quand la sonde indique que la batterie est assez chaude, ou après une durée maximale fixée par le fabricant, le dégivrage s'arrête. La vanne repasse en position chauffage et le ventilateur extérieur repart. Le ventilateur intérieur attend que l'échangeur soit chaud.</p></div>
+      </div>
+    </section>
+
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres</h2>
+      <ol class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Mission 12</button></li>
+        <li><button type="button" data-t="14"><time>0:14</time>Le givre</button></li>
+        <li><button type="button" data-t="41"><time>0:41</time>Le déclenchement</button></li>
+        <li><button type="button" data-t="64"><time>1:04</time>Le cycle s'inverse</button></li>
+        <li><button type="button" data-t="103"><time>1:43</time>Le ventilateur intérieur</button></li>
+        <li><button type="button" data-t="128"><time>2:08</time>L'eau de fonte</button></li>
+        <li><button type="button" data-t="148"><time>2:28</time>La reprise</button></li>
+        <li><button type="button" data-t="179"><time>2:59</time>À retenir</button></li>
+        <li><button type="button" data-t="211"><time>3:31</time>Prochain film</button></li>
+      </ol>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 12 : le dégivrage d'une pompe à chaleur</p>
+      <p>Un jour d'hiver, l'unité extérieure fume, et l'unité intérieure s'arrête de souffler. Voyons pourquoi.</p>
+      <p>Dehors : 2 °C, air humide (exemple). Fluide dans la batterie : −5 °C (exemple).</p>
+      <p>La surface des ailettes est donc sous zéro. L'humidité de l'air s'y dépose et gèle : c'est le givre.</p>
+      <p>Le givre ferme peu à peu les passages de l'air. La batterie prend de moins en moins de chaleur.</p>
+      <p>Une sonde de température est fixée sur la batterie extérieure. La carte électronique la surveille.</p>
+      <p>Quand la batterie reste trop froide pendant un certain temps de marche, la carte lance le dégivrage. La règle exacte dépend du fabricant.</p>
+      <p>La carte ne voit pas le givre : elle le déduit de ses mesures.</p>
+      <p>La carte commande la vanne quatre voies. Elle passe en position froid, comme en été.</p>
+      <p>Le compresseur tourne toujours dans le même sens. Le gaz chaud qui sort du compresseur part vers l'unité extérieure.</p>
+      <p>La batterie extérieure devient condenseur. La chaleur de la vapeur fait fondre le givre.</p>
+      <p>Le ventilateur extérieur s'arrête : son air froid refroidirait la batterie qu'on veut réchauffer.</p>
+      <p>Dans la pièce, l'échangeur devient évaporateur. Il prend un peu de chaleur à la pièce pour alimenter le dégivrage.</p>
+      <p>L'échangeur intérieur est maintenant froid. Si le ventilateur marchait, il soufflerait de l'air frais dans la pièce, en plein hiver.</p>
+      <p>La carte l'arrête donc, ou le ralentit. L'unité intérieure ne chauffe plus pendant le dégivrage.</p>
+      <p>Cette pause dure quelques minutes. La pièce perd un peu de chaleur.</p>
+      <p>Le givre fond. L'eau coule le long des ailettes jusqu'au bac, sous l'unité extérieure.</p>
+      <p>Le bac est percé : l'eau s'évacue dehors. Par grand froid, une eau qui reste gèlerait de nouveau sous l'appareil.</p>
+      <p>Le panache blanc que l'on voit est de la vapeur d'eau.</p>
+      <p>Quand la sonde indique que la batterie est assez chaude, ou après une durée maximale fixée par le fabricant, le dégivrage s'arrête.</p>
+      <p>La vanne repasse en position chauffage. Le ventilateur extérieur repart. Le ventilateur intérieur attend que l'échangeur soit chaud, pour ne pas souffler de l'air froid.</p>
+      <p>Pendant le dégivrage, la machine consomme sans chauffer. Plus l'air est froid et humide, plus les dégivrages reviennent souvent.</p>
+      <p>Le givre se forme quand la batterie extérieure est sous zéro et que l'air est humide.</p>
+      <p>La carte lance le dégivrage d'après ses sondes, en inversant le cycle avec la vanne quatre voies.</p>
+      <p>Le ventilateur extérieur s'arrête pour laisser la batterie chauffer, l'intérieur pour ne pas souffler d'air froid.</p>
+      <p>Quelques minutes de dégivrage sont normales. Une glace qui reste pendant des heures signale une panne : faites-la diagnostiquer, et ne cassez jamais le givre avec un outil.</p>
+      <p>La prochaine fois : R32, R290, CO₂, les fluides frigorigènes.</p>
+      <p>La vanne 4 voies en schéma animé : inerweb.fr, réseau CartoClim.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Quatre questions pour vérifier</h2>
+      <details class="q"><summary>Quelle pièce commande l'inversion du cycle pour dégivrer ?</summary><p>La carte électronique commande la vanne quatre voies, qui passe en position froid.</p></details>
+      <details class="q"><summary>Que devient la batterie extérieure pendant le dégivrage ?</summary><p>Un condenseur : elle reçoit la vapeur chaude du compresseur, dont la chaleur fait fondre le givre.</p></details>
+      <details class="q"><summary>Pourquoi le ventilateur intérieur s'arrête-t-il pendant le dégivrage ?</summary><p>L'échangeur intérieur est devenu froid : le ventilateur soufflerait de l'air frais dans la pièce.</p></details>
+      <details class="q"><summary>Quelques minutes de dégivrage de temps en temps : normal ou panne ?</summary><p>Normal. Une glace épaisse qui reste pendant des heures signale une panne à faire diagnostiquer.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../cartoclim/stations/2-6-vanne-4-voies/index.html">Le schéma animé et les exercices : CartoClim 2.6, la vanne 4 voies</a>
+        <a class="btn sec" href="d01-monosplit-multisplit-gainable-differences.html">Film précédent : mission 11, monosplit, multisplit, gainable</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <span class="btn bientot">Prochain film, bientôt : R32, R290, CO₂, quelles différences ?</span>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
