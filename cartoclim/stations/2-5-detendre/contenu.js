@@ -154,6 +154,7 @@ ModeleAppareil.construire({
     { quoi: 'Symboles', source: 'collection QElectroTech, CC BY 3.0', detail: 'bibliothèque inerWeb, rien n’a été redessiné' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Le détendeur expliqué simplement", url: '../../../studio/clim/a04-detendeur-explique-simplement.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.2 Pression et température", url: lien('2.2') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.4 L’Inverter : la vitesse suit le besoin", url: lien('2.4') },
     { ligne: 5, couleur: '#B06A00', texte: "5.2 Le régulateur électronique", url: lien('5.2') },

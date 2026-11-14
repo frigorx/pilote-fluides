@@ -162,6 +162,7 @@ ModeleAppareil.construire({
     { quoi: 'Dessin des six points et pictogrammes', source: 'dessins originaux inerWeb', detail: 'schéma de principe écrit pour cette station : ce ne sont pas des symboles de la bibliothèque' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Une clim qui fait du bruit, quelles causes possibles ?", url: '../../../studio/clim/b03-clim-qui-fait-du-bruit-quelles-causes-possibles.html' },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.2 Le split : deux unités, un circuit", url: lien('3.2') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe", url: lien('4.4') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.6 L’étanchéité — de l’indice à la preuve", url: lien('4.6') },

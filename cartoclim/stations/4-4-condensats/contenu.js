@@ -163,6 +163,7 @@ ModeleAppareil.construire({
     { quoi: 'Symboles', source: 'collection QElectroTech, CC BY 3.0', detail: 'bibliothèque inerWeb, rien n’a été redessiné' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Pourquoi la clim produit-elle de l'eau ?", url: '../../../studio/clim/a05-pourquoi-la-clim-produit-elle-de-l-eau.html' },
     { ligne: 1, couleur: '#C9451A', texte: "1.4 Point de rosée et air humide", url: lien('1.4') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.7 Le dégivrage par inversion de cycle", url: lien('2.7') },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.3 Choisir l’unité intérieure", url: lien('3.3') },

@@ -165,6 +165,7 @@ ModeleAppareil.construire({
       detail: 'cours et documentation sur l’eau chaude sanitaire et le chauffe-eau électrique (couches, groupe de sécurité, anode) · station HydroMétro Sécurité' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : COP, EER, SEER, SCOP, ne plus les confondre", url: '../../../studio/clim/f06-cop-eer-seer-scop-ne-plus-les-confondre.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.7 La PAC air/eau : haute, moyenne et basse température", url: lien('3.7') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe de relevage", url: lien('4.4') },

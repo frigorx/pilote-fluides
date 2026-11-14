@@ -157,6 +157,8 @@ ModeleAppareil.construire({
 
   correspondances: [
     { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Combien consomme une climatisation ?", url: '../../../studio/clim/b01-combien-consomme-une-climatisation.html' },
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Inverter, qu'est-ce qui change vraiment ?", url: '../../../studio/clim/a06-inverter-qu-est-ce-qui-change-vraiment.html' },
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Une clim plus puissante est-elle meilleure ?", url: '../../../studio/clim/f01-une-clim-plus-puissante-est-elle-meilleure.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.3 Rotatif et scroll : les compresseurs de la clim", url: lien('2.3') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.5 Détendre : capillaire et détendeur électronique", url: lien('2.5') },
     { ligne: 5, couleur: '#B06A00', texte: "5.6 Les codes défauts : lire ce que dit la machine", url: lien('5.6') },
