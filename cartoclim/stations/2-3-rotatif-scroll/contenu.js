@@ -152,6 +152,7 @@ ModeleAppareil.construire({
       detail: 'productions inerWeb ; les deux dessins du temps 2 sont tracés par le programme' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : À quoi sert le compresseur ?", url: '../../../studio/clim/a03-a-quoi-sert-le-compresseur.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.2 Pression et température", url: lien('2.2') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.4 L’Inverter : la vitesse suit le besoin", url: lien('2.4') },
