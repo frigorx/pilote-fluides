@@ -156,6 +156,7 @@ ModeleAppareil.construire({
       detail: 'les images de la base trouvées pour l’Inverter portaient toutes une marque lisible : on montre à la place les symboles du climatiseur' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Combien consomme une climatisation ?", url: '../../../studio/clim/b01-combien-consomme-une-climatisation.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.3 Rotatif et scroll : les compresseurs de la clim", url: lien('2.3') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.5 Détendre : capillaire et détendeur électronique", url: lien('2.5') },
     { ligne: 5, couleur: '#B06A00', texte: "5.6 Les codes défauts : lire ce que dit la machine", url: lien('5.6') },

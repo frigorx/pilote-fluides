@@ -1,0 +1,151 @@
+WEBVTT
+
+00:00:01.200 --> 00:00:03.160
+Mission 03 : combien
+
+00:00:03.160 --> 00:00:05.904
+consomme une climatisation ?
+
+00:00:06.254 --> 00:00:10.022
+Faisons le calcul nous-mêmes, avec un exemple.
+
+00:00:13.222 --> 00:00:17.701
+Sur un climatiseur, on lit souvent une puissance,
+
+00:00:17.701 --> 00:00:19.438
+par exemple 2,5 kW.
+
+00:00:19.788 --> 00:00:22.262
+Ce chiffre est la puissance frigorifique :
+
+00:00:22.262 --> 00:00:25.266
+la chaleur que l'appareil peut retirer de la pièce,
+
+00:00:25.265 --> 00:00:28.092
+à pleine puissance, dans des conditions d'essai.
+
+00:00:28.442 --> 00:00:31.795
+L'appareil consomme bien moins d'électricité :
+
+00:00:31.795 --> 00:00:34.274
+dans notre exemple, environ 700 W.
+
+00:00:34.624 --> 00:00:36.874
+La machine déplace la chaleur.
+
+00:00:36.874 --> 00:00:41.224
+Un peu d'électricité lui suffit pour en déplacer beaucoup.
+
+00:00:44.024 --> 00:00:45.867
+Rendement (EER) =
+
+00:00:45.867 --> 00:00:50.744
+puissance frigorifique ÷ puissance électrique
+
+00:00:51.094 --> 00:00:56.374
+2,5 ÷ 0,7 ≈ 3,6
+
+00:00:56.724 --> 00:00:59.162
+1 kWh d'électricité →
+
+00:00:59.162 --> 00:01:03.108
+environ 3,6 kWh de chaleur retirée
+
+00:01:05.908 --> 00:01:09.058
+La facture compte des kilowattheures : de l'énergie,
+
+00:01:09.058 --> 00:01:12.148
+c'est-à-dire une puissance multipliée par un temps.
+
+00:01:12.498 --> 00:01:18.234
+0,7 kW × 1 h = 0,7 kWh
+
+00:01:18.584 --> 00:01:23.192
+0,7 kW × 6 h ≈ 4,2 kWh
+
+00:01:23.542 --> 00:01:27.007
+Multipliez par le prix du kilowattheure de votre contrat :
+
+00:01:27.007 --> 00:01:29.158
+vous avez le coût de ces six heures.
+
+00:01:31.958 --> 00:01:35.798
+Ce calcul suppose que l'appareil tourne à fond tout le temps.
+
+00:01:36.148 --> 00:01:39.665
+Un appareil inverter règle la vitesse de son compresseur :
+
+00:01:39.665 --> 00:01:42.940
+il tourne souvent au ralenti, et consomme alors moins.
+
+00:01:43.290 --> 00:01:47.075
+La consommation réelle dépend surtout de la chaleur à retirer :
+
+00:01:47.075 --> 00:01:50.800
+le soleil sur les vitres, l'isolation, le nombre de personnes,
+
+00:01:50.799 --> 00:01:52.962
+l'écart entre dehors et la consigne.
+
+00:01:53.312 --> 00:01:57.034
+Une consigne plus basse oblige à retirer plus de chaleur,
+
+00:01:57.034 --> 00:01:59.384
+donc à consommer plus d'électricité.
+
+00:02:02.184 --> 00:02:05.406
+Pour comparer deux appareils, l'étiquette énergie donne
+
+00:02:05.406 --> 00:02:09.096
+un rendement saisonnier (SEER), calculé sur une saison entière.
+
+00:02:09.446 --> 00:02:14.026
+Elle donne aussi une consommation par an, pour un usage conventionnel.
+
+00:02:14.026 --> 00:02:16.970
+Elle sert à comparer les appareils entre eux.
+
+00:02:16.970 --> 00:02:21.158
+Votre consommation dépendra de votre logement et de votre usage.
+
+00:02:23.958 --> 00:02:27.729
+Un filtre encrassé freine l'air. La chaleur passe mal,
+
+00:02:27.729 --> 00:02:30.942
+et le compresseur doit tourner plus longtemps.
+
+00:02:31.292 --> 00:02:35.982
+Nettoyer les filtres de l'unité intérieure, comme l'explique la notice,
+
+00:02:35.982 --> 00:02:37.964
+fait partie de l'usage normal.
+
+00:02:40.764 --> 00:02:43.854
+La puissance frigorifique et la puissance électrique
+
+00:02:43.854 --> 00:02:45.756
+sont deux grandeurs différentes.
+
+00:02:46.106 --> 00:02:48.975
+L'énergie consommée est la puissance électrique
+
+00:02:48.975 --> 00:02:51.050
+multipliée par le temps de marche.
+
+00:02:51.400 --> 00:02:53.749
+La consommation réelle dépend surtout
+
+00:02:53.749 --> 00:02:56.416
+de la chaleur à retirer et de votre usage.
+
+00:02:57.116 --> 00:03:00.515
+La prochaine fois : climatisation et ventilation,
+
+00:03:00.515 --> 00:03:02.180
+deux métiers différents.
+
+00:03:02.530 --> 00:03:06.279
+Le compresseur inverter : inerweb.fr,
+
+00:03:06.279 --> 00:03:08.002
+réseau CartoClim.

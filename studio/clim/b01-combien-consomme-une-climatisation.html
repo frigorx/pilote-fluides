@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Combien consomme une climatisation ? Le calcul expliqué simplement</title>
+<meta name="description" content="Puissance frigorifique, puissance électrique, kilowattheures : un exemple pour estimer soi-même la consommation d'une clim, et ce qui la fait varier.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/b01-combien-consomme-une-climatisation.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Combien consomme une climatisation ? Le calcul expliqué simplement">
+<meta property="og:description" content="Puissance frigorifique, puissance électrique, kilowattheures : un exemple pour estimer soi-même la consommation d'une clim, et ce qui la fait varier.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/b01-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/b01-combien-consomme-une-climatisation.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 03 (film B01, 3 min 09), page du film.
+     Page SATELLITE écrite à la main, sur le modèle de la page d'A01 : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/B01/
+     (renders/B01-norm.mp4, B01.vtt, miniature-B01.png). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/B01-transcription.txt, en paragraphes. Quiz et liens = fiche.yaml.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Combien consomme une climatisation ? Le calcul expliqué simplement",
+"description":"Puissance frigorifique, puissance électrique, kilowattheures : un exemple pour estimer soi-même la consommation d'une clim, et ce qui la fait varier.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/b01-miniature.webp","uploadDate":"2026-11-14","duration":"PT3M09S",
+"contentUrl":"https://inerweb.fr/studio/clim/b01-combien-consomme-une-climatisation.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Combien consomme une climatisation ?</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 03 · 3 min 09</p>
+  </header>
+  <p class="chapo">Pour estimer soi-même la consommation d'une clim, il faut distinguer deux puissances : celle de froid lue sur l'appareil et celle d'électricité, bien plus petite. Multipliée par le temps de marche, la puissance électrique donne l'énergie en kilowattheures. Le film montre aussi ce qui fait varier la consommation réelle : l'inverter, le soleil, l'isolation, la consigne et les filtres.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="b01-miniature.webp" src="b01-combien-consomme-une-climatisation.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="b01-combien-consomme-une-climatisation.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les valeurs du film (2,5 kW de froid, 700 W d'électricité, rendement 3,6, 6 heures) sont des exemples. Le prix du kilowattheure dépend de votre contrat : le film n'en donne aucun. Le film parle d'un climatiseur split : une unité intérieure et une unité extérieure.</p>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les mots du calcul, en bref</h2>
+      <div class="defs">
+        <div><h3>La puissance frigorifique (en kW)</h3>
+          <p>La chaleur que l'appareil peut retirer de la pièce, à pleine puissance, dans des conditions d'essai. On la lit souvent sur l'appareil. Dans l'exemple : 2,5 kW.</p></div>
+        <div><h3>La puissance électrique (en kW ou en W)</h3>
+          <p>L'électricité que l'appareil prend au réseau pour déplacer cette chaleur. Elle est bien plus petite : environ 700 W, soit 0,7 kW, dans l'exemple.</p></div>
+        <div><h3>Le rendement (EER)</h3>
+          <p>La puissance frigorifique divisée par la puissance électrique : 2,5 ÷ 0,7 ≈ 3,6. Un kilowattheure d'électricité déplace environ 3,6 kilowattheures de chaleur.</p></div>
+        <div><h3>L'énergie (en kWh)</h3>
+          <p>Une puissance multipliée par un temps. 0,7 kW pendant 6 heures font environ 4,2 kWh. C'est ce que compte la facture.</p></div>
+        <div><h3>Le rendement saisonnier (SEER)</h3>
+          <p>Un rendement calculé sur une saison entière, affiché sur l'étiquette énergie. Il sert à comparer des appareils entre eux, pas à prédire votre facture.</p></div>
+      </div>
+    </section>
+
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres</h2>
+      <ol class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Mission 03</button></li>
+        <li><button type="button" data-t="11"><time>0:11</time>Deux puissances</button></li>
+        <li><button type="button" data-t="42"><time>0:42</time>Le rendement</button></li>
+        <li><button type="button" data-t="63"><time>1:03</time>Puissance et énergie</button></li>
+        <li><button type="button" data-t="90"><time>1:30</time>La vraie vie</button></li>
+        <li><button type="button" data-t="120"><time>2:00</time>L'étiquette</button></li>
+        <li><button type="button" data-t="142"><time>2:22</time>Un filtre propre</button></li>
+        <li><button type="button" data-t="159"><time>2:39</time>À retenir</button></li>
+        <li><button type="button" data-t="177"><time>2:57</time>Prochain film</button></li>
+      </ol>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 03 : combien consomme une climatisation ? Faisons le calcul nous-mêmes, avec un exemple.</p>
+      <p>Sur un climatiseur, on lit souvent une puissance, par exemple 2,5 kW. Ce chiffre est la puissance frigorifique : la chaleur que l'appareil peut retirer de la pièce, à pleine puissance, dans des conditions d'essai. L'appareil consomme bien moins d'électricité : dans notre exemple, environ 700 W. La machine déplace la chaleur. Un peu d'électricité lui suffit pour en déplacer beaucoup.</p>
+      <p>Rendement (EER) = puissance frigorifique ÷ puissance électrique. 2,5 ÷ 0,7 ≈ 3,6. 1 kWh d'électricité → environ 3,6 kWh de chaleur retirée.</p>
+      <p>La facture compte des kilowattheures : de l'énergie, c'est-à-dire une puissance multipliée par un temps. 0,7 kW × 1 h = 0,7 kWh. 0,7 kW × 6 h ≈ 4,2 kWh. Multipliez par le prix du kilowattheure de votre contrat : vous avez le coût de ces six heures.</p>
+      <p>Ce calcul suppose que l'appareil tourne à fond tout le temps. Un appareil inverter règle la vitesse de son compresseur : il tourne souvent au ralenti, et consomme alors moins.</p>
+      <p>La consommation réelle dépend surtout de la chaleur à retirer : le soleil sur les vitres, l'isolation, le nombre de personnes, l'écart entre dehors et la consigne. Une consigne plus basse oblige à retirer plus de chaleur, donc à consommer plus d'électricité.</p>
+      <p>Pour comparer deux appareils, l'étiquette énergie donne un rendement saisonnier (SEER), calculé sur une saison entière. Elle donne aussi une consommation par an, pour un usage conventionnel. Elle sert à comparer les appareils entre eux. Votre consommation dépendra de votre logement et de votre usage.</p>
+      <p>Un filtre encrassé freine l'air. La chaleur passe mal, et le compresseur doit tourner plus longtemps. Nettoyer les filtres de l'unité intérieure, comme l'explique la notice, fait partie de l'usage normal.</p>
+      <p>La puissance frigorifique et la puissance électrique sont deux grandeurs différentes. L'énergie consommée est la puissance électrique multipliée par le temps de marche. La consommation réelle dépend surtout de la chaleur à retirer et de votre usage.</p>
+      <p>La prochaine fois : climatisation et ventilation, deux métiers différents.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Quatre questions pour vérifier</h2>
+      <details class="q"><summary>Un climatiseur affiche 2,5 kW de puissance frigorifique. Consomme-t-il 2,5 kW d'électricité ?</summary><p>Non, bien moins : dans l'exemple du film, environ 0,7 kW (rendement 3,6).</p></details>
+      <details class="q"><summary>Comment calcule-t-on l'énergie consommée ?</summary><p>Puissance électrique × temps de marche (kW × h = kWh).</p></details>
+      <details class="q"><summary>Que consomment 0,7 kW pendant 6 heures ?</summary><p>Environ 4,2 kWh.</p></details>
+      <details class="q"><summary>Citez deux choses qui font monter la consommation.</summary><p>Une consigne plus basse, beaucoup de soleil, une mauvaise isolation, un filtre encrassé.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../cartoclim/stations/2-4-inverter/index.html">Le schéma animé et les exercices : CartoClim 2.4, l'inverter</a>
+        <a class="btn sec" href="a02-clim-reversible-comment-chauffe-t-elle.html">Film précédent : mission 02, une clim réversible, comment chauffe-t-elle ?</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <span class="btn bientot">Prochain film, bientôt : climatisation et ventilation, deux métiers différents</span>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
