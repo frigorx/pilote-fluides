@@ -152,6 +152,7 @@ ModeleAppareil.construire({
     { quoi: 'Symbole', source: 'collection QElectroTech, CC BY 3.0', detail: 'bibliothèque inerWeb, rien n’a été redessiné' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Une clim réversible, comment chauffe-t-elle ?", url: '../../../studio/clim/a02-clim-reversible-comment-chauffe-t-elle.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.2 Pression et température", url: lien('2.2') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.5 Détendre", url: lien('2.5') },
