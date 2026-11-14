@@ -156,6 +156,7 @@ ModeleAppareil.construire({
     { quoi: 'Pictogrammes des touches et dessins des scènes', source: 'dessins originaux inerWeb', detail: 'flocon, soleil, goutte, ventilateur, A : pictogrammes de touches, pas des symboles de la bibliothèque' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Clim à 25 °C ou 19 °C, quel impact ?", url: '../../../studio/clim/b02-clim-25-ou-19-degres-quel-impact.html' },
     { ligne: 1, couleur: '#C9451A', texte: "1.4 Point de rosée et air humide", url: lien('1.4') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.6 La vanne 4 voies : froid ou chaud", url: lien('2.6') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe", url: lien('4.4') },
