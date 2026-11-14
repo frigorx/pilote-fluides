@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=c71a0f27da"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Comment fonctionne une climatisation ? Le principe en images</title>
+<meta name="description" content="Une climatisation déplace la chaleur de la pièce vers l'extérieur. Suivez le fluide dans l'évaporateur, le compresseur, le condenseur et le détendeur.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/a01-comment-fonctionne-une-climatisation.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Comment fonctionne une climatisation ? Le principe en images">
+<meta property="og:description" content="Une climatisation déplace la chaleur de la pièce vers l'extérieur. Suivez le fluide dans l'évaporateur, le compresseur, le condenseur et le détendeur.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/a01-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/a01-comment-fonctionne-une-climatisation.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 01 (film A01, 3 min 48), page du film.
+     Page SATELLITE écrite à la main, comme voyage/*.html : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/A01/
+     (renders/A01-norm.mp4, A01.vtt, miniature-A01.png). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/A01-transcription.txt, présentée en paragraphes. Quiz et liens = fiche.yaml.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Comment fonctionne une climatisation ? Le principe en images",
+"description":"Une climatisation déplace la chaleur de la pièce vers l'extérieur. Suivez le fluide dans l'évaporateur, le compresseur, le condenseur et le détendeur.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/a01-miniature.webp","uploadDate":"2026-11-14","duration":"PT3M48S",
+"contentUrl":"https://inerweb.fr/studio/clim/a01-comment-fonctionne-une-climatisation.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Comment fonctionne une climatisation ?</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 01 · 3 min 48</p>
+  </header>
+  <p class="chapo">Une climatisation déplace la chaleur de la pièce vers l'extérieur. Dans ce film, on suit cette chaleur : elle entre par les murs, le fluide frigorigène la ramasse dans l'évaporateur, le compresseur la pousse dehors et le condenseur la rend à l'air extérieur. Le détendeur referme la boucle.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="a01-miniature.webp" src="a01-comment-fonctionne-une-climatisation.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="a01-comment-fonctionne-une-climatisation.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les températures du film (5 °C, 35 °C, 45 °C) sont des exemples. Les valeurs réelles dépendent du fluide, de l'appareil et des conditions. Le film parle d'un climatiseur split : une unité intérieure et une unité extérieure.</p>
+
+    <section class="attention" aria-label="Sécurité">
+      <p>Le circuit contient un fluide sous pression : seul un professionnel habilité l'ouvre.</p>
+    </section>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les quatre organes et le fluide, en bref</h2>
+      <div class="defs">
+        <div><h3>Le fluide frigorigène</h3>
+          <p>Il circule en circuit fermé, dans des tubes, entre l'unité intérieure et l'unité extérieure. Il change d'état : quand un liquide s'évapore, il absorbe de la chaleur ; quand une vapeur redevient liquide, elle la rend. La pression règle la température du changement d'état : à basse pression il s'évapore à basse température, à haute pression il se condense à haute température.</p></div>
+        <div><h3><span>1.</span> L'évaporateur</h3>
+          <p>Dans l'unité intérieure, un échangeur de tubes et d'ailettes. Le fluide y arrive surtout liquide et froid. Un ventilateur envoie l'air de la pièce au travers : cet air cède sa chaleur au fluide et ressort plus frais. Le fluide s'évapore et devient vapeur.</p></div>
+        <div><h3><span>2.</span> Le compresseur</h3>
+          <p>Dans l'unité extérieure. Il aspire la vapeur et la comprime. Sa pression monte, et sa température aussi : la vapeur devient plus chaude que l'air extérieur. Il joue le rôle de la pompe et consomme de l'électricité.</p></div>
+        <div><h3><span>3.</span> Le condenseur</h3>
+          <p>Un second échangeur dans l'unité extérieure. Un ventilateur souffle l'air extérieur au travers. Le fluide lui cède sa chaleur et se condense : il redevient liquide.</p></div>
+        <div><h3><span>4.</span> Le détendeur</h3>
+          <p>Un passage très étroit. Le liquide le traverse, sa pression chute d'un coup, sa température aussi. Il repart froid vers l'évaporateur et le cycle recommence en boucle.</p></div>
+      </div>
+    </section>
+
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres</h2>
+      <ol class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Mission 01</button></li>
+        <li><button type="button" data-t="10"><time>0:10</time>Dehors et dedans</button></li>
+        <li><button type="button" data-t="20"><time>0:20</time>La chaleur va du chaud vers le froid</button></li>
+        <li><button type="button" data-t="51"><time>0:51</time>Le fluide frigorigène</button></li>
+        <li><button type="button" data-t="84"><time>1:24</time>L'évaporateur</button></li>
+        <li><button type="button" data-t="111"><time>1:51</time>Le compresseur</button></li>
+        <li><button type="button" data-t="131"><time>2:11</time>Le condenseur</button></li>
+        <li><button type="button" data-t="149"><time>2:29</time>Le détendeur</button></li>
+        <li><button type="button" data-t="165"><time>2:45</time>Le bilan</button></li>
+        <li><button type="button" data-t="191"><time>3:11</time>À retenir</button></li>
+      </ol>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 01 : comprendre le cycle frigorifique. Suivons la chaleur, de la pièce jusqu'au dehors.</p>
+      <p>Dehors : 35 °C. Dans la pièce : 26 °C. Un appareil au mur souffle de l'air frais. Une règle domine tout le reste : d'elle-même, la chaleur va toujours du plus chaud vers le plus froid. Dehors est plus chaud que la pièce : la chaleur entre toute seule, par les murs et les fenêtres.</p>
+      <p>Pour rafraîchir, il faut faire l'inverse : sortir cette chaleur, du plus froid vers le plus chaud. C'est comme monter de l'eau à l'étage : toute seule elle descend, il faut une pompe. Une climatisation est une pompe pour la chaleur.</p>
+      <p>Pour transporter la chaleur, un fluide frigorigène circule en circuit fermé, dans des tubes, entre l'unité intérieure et l'unité extérieure. Il change d'état. Quand un liquide s'évapore, il absorbe de la chaleur. Quand une vapeur redevient liquide, elle la rend. La pression règle la température du changement d'état. Basse pression, évaporation à basse température. Haute pression, condensation à haute température.</p>
+      <p>Premier organe, l'évaporateur, dans l'unité intérieure : un échangeur de tubes et d'ailettes. Le fluide y arrive surtout liquide, et froid, par exemple à 5 °C. Un ventilateur envoie l'air de la pièce au travers. Cet air cède sa chaleur au fluide et ressort plus frais. Le fluide s'évapore. Il devient vapeur.</p>
+      <p>Deuxième organe, le compresseur, dans l'unité extérieure. Il aspire cette vapeur et la comprime. Sa pression monte, et sa température aussi : la vapeur devient plus chaude que l'air extérieur. Le compresseur joue le rôle de la pompe, et il consomme de l'électricité.</p>
+      <p>Troisième organe, le condenseur, un second échangeur dans l'unité extérieure. Un ventilateur souffle l'air extérieur, à 35 °C, à travers. Le fluide lui cède sa chaleur et se condense, vers 45 °C : il redevient liquide.</p>
+      <p>Quatrième organe, le détendeur, un passage très étroit. Le liquide le traverse, sa pression chute d'un coup, sa température aussi. Il repart froid vers l'évaporateur, et le cycle recommence en boucle.</p>
+      <p>Faisons le bilan. L'évaporateur prend la chaleur de la pièce. Le compresseur y ajoute l'énergie de son moteur, qui finit en chaleur. Le condenseur rejette le tout dehors, donc davantage que ce qui a été pris dans la pièce. La machine déplace de la chaleur. Le froid de la pièce, c'est de la chaleur en moins.</p>
+      <p>Une climatisation déplace la chaleur de la pièce vers l'extérieur. Un fluide change d'état dans quatre organes : évaporateur, compresseur, condenseur, détendeur. L'électricité sert à pousser la chaleur du plus froid vers le plus chaud. Le circuit contient un fluide sous pression : seul un professionnel habilité l'ouvre.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Cinq questions pour vérifier</h2>
+      <details class="q"><summary>Que fait une climatisation de la chaleur de la pièce ?</summary><p>Elle la déplace vers l'extérieur.</p></details>
+      <details class="q"><summary>Dans quel sens la chaleur circule-t-elle d'elle-même ?</summary><p>Du plus chaud vers le plus froid.</p></details>
+      <details class="q"><summary>Dans quel ordre le fluide traverse-t-il les quatre organes ?</summary><p>Évaporateur, compresseur, condenseur, détendeur.</p></details>
+      <details class="q"><summary>Quel organe fait monter la pression et la température de la vapeur ?</summary><p>Le compresseur.</p></details>
+      <details class="q"><summary>À quoi sert l'électricité consommée ?</summary><p>À pousser la chaleur du plus froid vers le plus chaud (compresseur, ventilateurs).</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../cartoclim/stations/1-1-climatiser/index.html">Le schéma animé et les exercices : CartoClim 1.1</a>
+        <a class="btn sec" href="../../voyage/index.html">Voyage dans tous ses états : le même circuit raconté par une molécule</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <span class="btn bientot">Prochain film, bientôt : une clim réversible, comment elle chauffe</span>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -145,6 +145,7 @@ ModeleAppareil.construire({
     { quoi: 'Symboles', source: 'collection QElectroTech, CC BY 3.0', detail: 'bibliothèque inerWeb, rien n’a été redessiné' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Comment fonctionne une climatisation ?", url: '../../../studio/clim/a01-comment-fonctionne-une-climatisation.html' },
     { ligne: 1, couleur: '#C9451A', texte: "1.2 Occupants, équipements et soleil", url: lien('1.2') },
     { ligne: 1, couleur: '#C9451A', texte: "1.5 Le confort d’été", url: lien('1.5') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
