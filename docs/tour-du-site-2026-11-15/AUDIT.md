@@ -74,7 +74,7 @@ Décidé et corrigé sans redemander, après recomptage par un sous-agent :
 - Plan : « 126 cours et outils » au lieu de 60 (126 liens distincts dans la liste du plan).
 - Carte « Je me situe » : « 20 questions », le test vers lequel mène le bouton en tire vingt.
 - Habilitations, travail en hauteur : « 185 questions » au lieu de 253. La banque du site et celle de
-  l'atelier  en comptent 185 ; aucune trace de 253. À remettre si Franck a une autre source.
+  l'atelier inerweb-r408 en comptent 185 ; aucune trace de 253. À remettre si Franck a une autre source.
 - Vérifiés et justes : 29 films HoCourant, 11 modules et 4 paliers R408, onze vues du diaporama, SimuRézo
   3 niveaux et 8 situations, les nombres de pages des dix extraits PDF, tous les compteurs du Studio.
 - Non tranché : la page des habilitations annonce 208 + 224 pages pour le livre du CAP (114 et 72 pour les
