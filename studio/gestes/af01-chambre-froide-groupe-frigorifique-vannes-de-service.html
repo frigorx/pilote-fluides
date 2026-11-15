@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Groupe frigorifique : repérer vannes de service et prises</title>
+<meta name="description" content="Chambre froide : repérez le groupe de condensation, ses trois vannes de service, la prise de service et la prise du pressostat, les parties d&#x27;une vanne et l&#x27;état des lieux. Animation de découverte, sans manœuvre. Cette animation ne remplace pas la formation pratique encadrée.">
+<link rel="canonical" href="https://inerweb.fr/studio/gestes/af01-chambre-froide-groupe-frigorifique-vannes-de-service.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Groupe frigorifique : repérer vannes de service et prises">
+<meta property="og:description" content="Chambre froide : repérez le groupe de condensation, ses trois vannes de service, la prise de service et la prise du pressostat, les parties d&#x27;une vanne et l&#x27;état des lieux. Animation de découverte, sans manœuvre. Cette animation ne remplace pas la formation pratique encadrée.">
+<meta property="og:image" content="https://inerweb.fr/studio/gestes/af01-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/gestes/af01-chambre-froide-groupe-frigorifique-vannes-de-service.html">
+<!-- ===================================================================
+     LES AVENTURIERS DU FROID, expédition 01 (film AF01, 5 min 00), page du film.
+     Page SATELLITE écrite sur le modèle des pages des Explorateurs de la Clim : texte utile et original autour du film.
+     Film (copie 1280x720), sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/gestes-fluides/aventuriers-du-froid/AF01/
+     (renders/telephone.mp4, AF01.vtt, miniature-AF01.jpg). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/AF01-transcription.txt. Chapitres, quiz et description = LIVRAISON-AF01.md.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoObject", "name": "Groupe frigorifique : repérer vannes de service et prises", "description": "Chambre froide : repérez le groupe de condensation, ses trois vannes de service, la prise de service et la prise du pressostat, les parties d'une vanne et l'état des lieux. Animation de découverte, sans manœuvre. Cette animation ne remplace pas la formation pratique encadrée.", "thumbnailUrl": "https://inerweb.fr/studio/gestes/af01-miniature.webp", "uploadDate": "2026-11-15", "duration": "PT5M00S", "contentUrl": "https://inerweb.fr/studio/gestes/af01-chambre-froide-groupe-frigorifique-vannes-de-service.mp4", "inLanguage": "fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; }
+  .attention p { font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Les Portes de la Chambre Froide</h1>
+    <p class="sous-titre">Les Aventuriers du Froid · expédition 01 · 5 min 00</p>
+  </header>
+  <p class="chapo">Vous arrivez devant une chambre froide. Avant de brancher quoi que ce soit, il faut savoir où se trouvent les organes du circuit et laquelle des vannes de service est la vôtre. Ce film suit une carte d'explorateur : le groupe de condensation et ses organes, les trois vannes de service repérées A, B et C, les parties d'une vanne (capuchon, carré de manœuvre, presse-étoupe, bouchon), la prise de service et la prise du pressostat, les positions de la tige, puis l'état des lieux qui précède tout geste.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="af01-miniature.webp" src="af01-chambre-froide-groupe-frigorifique-vannes-de-service.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="af01-chambre-froide-groupe-frigorifique-vannes-de-service.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les schémas sont des schémas de principe. Le film ne montre aucune manœuvre et ne donne aucune valeur chiffrée.</p>
+
+    <section class="attention" aria-labelledby="h-att">
+      <h2 id="h-att">Avant de regarder</h2>
+      <p>Cette animation ne remplace pas la formation pratique encadrée. En atelier, aucune vanne de service ne se manœuvre sans le professeur.</p>
+      <p>Le fluide liquide peut brûler par le froid : lunettes et gants d'abord. Seul un professionnel habilité intervient sur le circuit.</p>
+    </section>
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres du film</h2>
+      <ul class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Ouverture</button></li>
+        <li><button type="button" data-t="8"><time>0:08</time>La carte</button></li>
+        <li><button type="button" data-t="27"><time>0:27</time>La situation</button></li>
+        <li><button type="button" data-t="47"><time>0:47</time>Le circuit</button></li>
+        <li><button type="button" data-t="74"><time>1:14</time>Le groupe</button></li>
+        <li><button type="button" data-t="100"><time>1:40</time>Les trois vannes</button></li>
+        <li><button type="button" data-t="121"><time>2:01</time>Une vanne de près</button></li>
+        <li><button type="button" data-t="144"><time>2:24</time>Les deux prises</button></li>
+        <li><button type="button" data-t="171"><time>2:51</time>Les positions de la tige</button></li>
+        <li><button type="button" data-t="197"><time>3:17</time>L'état des lieux</button></li>
+        <li><button type="button" data-t="218"><time>3:38</time>Erreurs à éviter</button></li>
+        <li><button type="button" data-t="235"><time>3:55</time>À vous</button></li>
+        <li><button type="button" data-t="254"><time>4:14</time>À retenir</button></li>
+        <li><button type="button" data-t="286"><time>4:46</time>Prochaine expédition</button></li>
+      </ul>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Les Portes de la Chambre Froide. Aventuriers du Froid, expédition 01. inerWeb Studio.</p>
+      <p>Expédition 01 :</p>
+      <p>Les portes de la chambre froide.</p>
+      <p>Sur une carte d'explorateur, on repère les portes avant de les franchir.</p>
+      <p>Celle-ci mène à une chambre froide.</p>
+      <p>Ses portes sont les vannes de service du groupe frigorifique.</p>
+      <p>Avant de s'en approcher, il faut apprendre à les reconnaître.</p>
+      <p>Vous arrivez devant une chambre froide pour une intervention de maintenance.</p>
+      <p>Avant de brancher quoi que ce soit,</p>
+      <p>il faut savoir où se trouvent les organes du circuit,</p>
+      <p>et laquelle des vannes est la vôtre.</p>
+      <p>Lunettes et gants d'abord, car le fluide liquide peut brûler par le froid.</p>
+      <p>Le fluide circule dans une boucle fermée.</p>
+      <p>Dans la chambre, l'évaporateur absorbe la chaleur.</p>
+      <p>Le compresseur élève la pression de la vapeur.</p>
+      <p>Le condenseur rejette la chaleur dehors.</p>
+      <p>Le détendeur ramène le liquide vers l'évaporateur.</p>
+      <p>Chacun de ces organes a son film dans le Voyage dans tous ses états.</p>
+      <p>Regardons le groupe de condensation.</p>
+      <p>Il rassemble le moteur et le compresseur, le condenseur avec son ventilateur,</p>
+      <p>le réservoir de liquide, les pressostats, et les vannes de service.</p>
+      <p>Selon l'installation, on y trouve aussi une électrovanne,</p>
+      <p>un filtre déshydrateur et un voyant.</p>
+      <p>Cherchez chaque organe sur l'appareil, nom après nom.</p>
+      <p>Sur le groupe de cette expédition,</p>
+      <p>trois vannes de service portent chacune un repère.</p>
+      <p>La vanne A est au refoulement, à la sortie du compresseur.</p>
+      <p>La vanne B est au départ du liquide.</p>
+      <p>La vanne C est à l'aspiration, là où la vapeur revient vers le compresseur.</p>
+      <p>Approchons-nous de l'une d'elles.</p>
+      <p>Un capuchon coiffe la tige.</p>
+      <p>Dessous se trouve le carré de manœuvre, là où se place la clé.</p>
+      <p>Autour de la tige, le presse-étoupe peut fuir : il se contrôle.</p>
+      <p>Sur le corps de la vanne, un bouchon ferme la prise de service.</p>
+      <p>Deux prises, deux rôles.</p>
+      <p>La prise de service, notée P, se trouve près du carré.</p>
+      <p>Plus tard, un flexible la rejoindra.</p>
+      <p>La prise notée P1 appartient au pressostat, à l'opposé.</p>
+      <p>On ne l'ouvre jamais.</p>
+      <p>Les pressions et la surchauffe, que lisent les manomètres,</p>
+      <p>ont leur film : La Guerre des manos.</p>
+      <p>La tige peut occuper plusieurs positions.</p>
+      <p>Au siège arrière, la machine est en service</p>
+      <p>et les prises de service sont fermées.</p>
+      <p>En position intermédiaire, la prise de service communique avec le circuit :</p>
+      <p>les manomètres branchés se mettent à lire.</p>
+      <p>Tourner dans le sens des aiguilles d'une montre visse la tige vers l'avant,</p>
+      <p>l'autre sens la ramène vers l'arrière.</p>
+      <p>Avant tout geste, faites un état des lieux.</p>
+      <p>Notez les capuchons, les bouchons et la position de chaque vanne.</p>
+      <p>À la fin, vous remettrez tout comme vous l'avez trouvé.</p>
+      <p>Ce repérage reste le même sur une installation neuve,</p>
+      <p>en maintenance ou après une réparation.</p>
+      <p>Quatre erreurs à éviter.</p>
+      <p>Toucher à la prise du pressostat.</p>
+      <p>Forcer une vanne qui résiste.</p>
+      <p>Oublier un bouchon ou un capuchon.</p>
+      <p>Négliger le presse-étoupe.</p>
+      <p>À vous. Retrouvez sur le groupe la prise du pressostat.</p>
+      <p>Elle se trouve à l'opposé de la prise de service, et on ne l'ouvre jamais.</p>
+      <p>À retenir.</p>
+      <p>Un groupe se lit par ses organes : compresseur,</p>
+      <p>condenseur, réservoir de liquide, pressostats, vannes.</p>
+      <p>Une vanne de service se lit par ses parties : capuchon,</p>
+      <p>carré, presse-étoupe, deux prises, ses positions.</p>
+      <p>L'état des lieux précède tout geste.</p>
+      <p>Cette animation ne remplace pas la formation pratique encadrée :</p>
+      <p>en atelier, aucune vanne de service ne se manœuvre sans le professeur.</p>
+      <p>Prochaine expédition : le mystère des trois tuyaux.</p>
+      <p>Pour vous exercer sur ces vannes,</p>
+      <p>ouvrez la gare 1 du Tour de main sur inerweb.fr.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Cinq questions pour vérifier</h2>
+      <details class="q"><summary>Sur une vanne de service, quelle prise ne s'ouvre jamais ?</summary><p>Réponse : la prise P1 du pressostat.</p></details>
+      <details class="q"><summary>Quelle est la position de la tige quand la machine est en service, prises de service fermées ?</summary><p>Réponse : le siège arrière.</p></details>
+      <details class="q"><summary>Que fait-on avant de toucher à une vanne ?</summary><p>Réponse : un état des lieux (capuchons, bouchons, position des vannes).</p></details>
+      <details class="q"><summary>Quel élément autour de la tige peut fuir et doit se contrôler ?</summary><p>Réponse : le presse-étoupe.</p></details>
+      <details class="q"><summary>En formation, qui doit être présent avant de manœuvrer une vanne de service ?</summary><p>Réponse : le professeur.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../tour-de-main/interventions/vannes-service/">La gare 1 du Tour de main : les vannes de service</a>
+        <span class="btn bientot">Expédition 02 : en préparation</span>
+        <a class="btn sec" href="../index.html#t-gestes-af">Tous les films de la série Les Aventuriers du Froid</a>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant. Voix de synthèse.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
