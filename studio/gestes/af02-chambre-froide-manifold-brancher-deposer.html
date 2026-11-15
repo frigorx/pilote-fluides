@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Manifold chambre froide : brancher, tirer au vide, déposer</title>
+<meta name="description" content="Chambre froide : contrôlez le manifold, branchez le flexible bleu et le flexible rouge sur les vannes de service, tirez au vide les flexibles, lisez les pressions, puis déposez en isolant d&#x27;abord le manifold. Animation de découverte du geste. Cette animation ne remplace pas la formation pratique encadrée.">
+<link rel="canonical" href="https://inerweb.fr/studio/gestes/af02-chambre-froide-manifold-brancher-deposer.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Manifold chambre froide : brancher, tirer au vide, déposer">
+<meta property="og:description" content="Chambre froide : contrôlez le manifold, branchez le flexible bleu et le flexible rouge sur les vannes de service, tirez au vide les flexibles, lisez les pressions, puis déposez en isolant d&#x27;abord le manifold. Animation de découverte du geste. Cette animation ne remplace pas la formation pratique encadrée.">
+<meta property="og:image" content="https://inerweb.fr/studio/gestes/af02-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/gestes/af02-chambre-froide-manifold-brancher-deposer.html">
+<!-- ===================================================================
+     LES AVENTURIERS DU FROID, expédition 02 (film AF02, 5 min 35), page du film.
+     Page SATELLITE écrite sur le modèle des pages des Explorateurs de la Clim : texte utile et original autour du film.
+     Film (copie 1280x720), sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/gestes-fluides/aventuriers-du-froid/AF02/
+     (renders/telephone.mp4, AF02.vtt, miniature-AF02.jpg). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/AF02-transcription.txt. Chapitres, quiz et description = LIVRAISON-AF02.md.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoObject", "name": "Manifold chambre froide : brancher, tirer au vide, déposer", "description": "Chambre froide : contrôlez le manifold, branchez le flexible bleu et le flexible rouge sur les vannes de service, tirez au vide les flexibles, lisez les pressions, puis déposez en isolant d'abord le manifold. Animation de découverte du geste. Cette animation ne remplace pas la formation pratique encadrée.", "thumbnailUrl": "https://inerweb.fr/studio/gestes/af02-miniature.webp", "uploadDate": "2026-11-15", "duration": "PT5M35S", "contentUrl": "https://inerweb.fr/studio/gestes/af02-chambre-froide-manifold-brancher-deposer.mp4", "inLanguage": "fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; }
+  .attention p { font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Le Mystère des Trois Tuyaux</h1>
+    <p class="sous-titre">Les Aventuriers du Froid · expédition 02 · 5 min 35</p>
+  </header>
+  <p class="chapo">Chambre froide : contrôlez le manifold, branchez le flexible bleu et le flexible rouge sur les vannes de service, tirez au vide les flexibles, lisez les pressions, puis déposez en isolant d'abord le manifold. Ce film suit une carte d'explorateur : l'état des lieux, le manifold et ses quatre vannes, les trois tuyaux et leurs couleurs, le branchement à la main, le vide des flexibles, l'ordre de fermeture avant d'arrêter la pompe, la position intermédiaire de la tige avec le professeur, puis la dépose.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="af02-miniature.webp" src="af02-chambre-froide-manifold-brancher-deposer.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="af02-chambre-froide-manifold-brancher-deposer.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les schémas sont des schémas de principe. Le film ne donne aucune valeur chiffrée. Les flexibles se tirent au vide, jamais à l'air libre.</p>
+
+    <section class="attention" aria-labelledby="h-att">
+      <h2 id="h-att">Avant de regarder</h2>
+      <p>Cette animation ne remplace pas la formation pratique encadrée. En atelier, aucune vanne de service ne se manœuvre sans le professeur.</p>
+    </section>
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres du film</h2>
+      <ul class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Ouverture</button></li>
+        <li><button type="button" data-t="8"><time>0:08</time>La carte</button></li>
+        <li><button type="button" data-t="24"><time>0:24</time>La situation</button></li>
+        <li><button type="button" data-t="39"><time>0:39</time>L'état des lieux</button></li>
+        <li><button type="button" data-t="53"><time>0:53</time>Le manifold</button></li>
+        <li><button type="button" data-t="75"><time>1:15</time>Les trois tuyaux</button></li>
+        <li><button type="button" data-t="102"><time>1:42</time>Le branchement</button></li>
+        <li><button type="button" data-t="129"><time>2:09</time>Le vide des flexibles</button></li>
+        <li><button type="button" data-t="161"><time>2:41</time>Fermer avant d'arrêter</button></li>
+        <li><button type="button" data-t="188"><time>3:08</time>La position intermédiaire</button></li>
+        <li><button type="button" data-t="219"><time>3:39</time>La dépose</button></li>
+        <li><button type="button" data-t="253"><time>4:13</time>Erreurs à éviter</button></li>
+        <li><button type="button" data-t="272"><time>4:32</time>À vous</button></li>
+        <li><button type="button" data-t="290"><time>4:50</time>À retenir</button></li>
+        <li><button type="button" data-t="320"><time>5:20</time>Prochaine expédition</button></li>
+      </ul>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Le Mystère des Trois Tuyaux. Aventuriers du Froid, expédition 02. inerWeb Studio.</p>
+      <p>Expédition 02 :</p>
+      <p>Le mystère des trois tuyaux.</p>
+      <p>La première porte de la carte est franchie.</p>
+      <p>La deuxième étape mène à un passage de trois tuyaux.</p>
+      <p>Il faut brancher un manifold sur la chambre froide,</p>
+      <p>puis le retirer,</p>
+      <p>sans laisser entrer d'air ni perdre de fluide.</p>
+      <p>Vous revenez devant le groupe</p>
+      <p>pour une intervention de maintenance.</p>
+      <p>La machine est arrêtée et consignée.</p>
+      <p>Lunettes et gants sont portés,</p>
+      <p>car le fluide liquide peut brûler par le froid.</p>
+      <p>Avant de brancher quoi que ce soit,</p>
+      <p>faites l'état des lieux.</p>
+      <p>Notez les capuchons, les bouchons et la position de chaque vanne,</p>
+      <p>pour tout remettre comme vous l'avez trouvé.</p>
+      <p>Voici le manifold.</p>
+      <p>Deux manomètres :</p>
+      <p>le bleu lit la basse pression,</p>
+      <p>le rouge la haute pression.</p>
+      <p>Quatre vannes :</p>
+      <p>basse pression, vide, service</p>
+      <p>et haute pression.</p>
+      <p>Contrôlez-le avant de le brancher :</p>
+      <p>vannes fermées, aiguilles à zéro,</p>
+      <p>un joint propre dans chaque flexible.</p>
+      <p>Trois tuyaux, trois couleurs.</p>
+      <p>Le bleu va sur la vanne C, à l'aspiration :</p>
+      <p>basse pression.</p>
+      <p>Le rouge va sur la vanne B, au départ du liquide :</p>
+      <p>haute pression.</p>
+      <p>Le jaune va vers l'appareil prévu.</p>
+      <p>Tant qu'il n'y en a pas, il reste bouché.</p>
+      <p>Bleu et rouge ne se croisent jamais :</p>
+      <p>le manomètre bleu ne supporte pas la haute pression.</p>
+      <p>Prenons le bleu, sur la vanne C.</p>
+      <p>La vanne est au siège arrière :</p>
+      <p>la prise de service est fermée.</p>
+      <p>On retire le bouchon de la prise,</p>
+      <p>puis on visse le flexible à la main, joint propre.</p>
+      <p>Même geste côté haute pression,</p>
+      <p>avec le rouge, sur la vanne B.</p>
+      <p>Jamais sur la prise du pressostat :</p>
+      <p>elle reste sous pression, vanne fermée ou non.</p>
+      <p>Les flexibles contiennent de l'air.</p>
+      <p>On les tire au vide : on ne les purge pas.</p>
+      <p>La pompe se branche sur la voie vide,</p>
+      <p>par un flexible court.</p>
+      <p>Les vannes de service restent au siège arrière :</p>
+      <p>la machine n'est pas concernée.</p>
+      <p>Pompe en route, on ouvre les voies vide,</p>
+      <p>basse pression et haute pression.</p>
+      <p>La voie service reste fermée.</p>
+      <p>Les deux aiguilles descendent.</p>
+      <p>La notice ou le professeur dit quand s'arrêter.</p>
+      <p>Ici, l'ordre fait tout :</p>
+      <p>on ferme d'abord les trois voies du manifold,</p>
+      <p>puis l'isolement de la pompe,</p>
+      <p>et on arrête la pompe en dernier.</p>
+      <p>Si elle s'arrêtait la première,</p>
+      <p>l'air et l'huile reviendraient dans les flexibles.</p>
+      <p>Si les aiguilles remontent, un raccord fuit :</p>
+      <p>on le resserre à la main et on recommence.</p>
+      <p>Le circuit de la machine a ses propres expéditions :</p>
+      <p>l'azote d'abord, le vide ensuite.</p>
+      <p>Avec le professeur à côté de vous,</p>
+      <p>on décolle la tige de son siège arrière :</p>
+      <p>c'est la position intermédiaire.</p>
+      <p>La prise de service communique avec le circuit :</p>
+      <p>les aiguilles montent jusqu'à la pression de la machine.</p>
+      <p>Passez le détecteur ou la solution moussante</p>
+      <p>sur chaque raccord, et écoutez.</p>
+      <p>Pour lire, les vannes du manifold restent fermées.</p>
+      <p>À l'arrêt, les deux aiguilles sont presque égales ;</p>
+      <p>en marche, la haute pression se lit plus haut.</p>
+      <p>Pour déposer, on isole d'abord le manifold :</p>
+      <p>la vanne B, côté haute pression,</p>
+      <p>revient au siège arrière.</p>
+      <p>Le fluide resté dans le flexible retourne vers la machine par le by-pass,</p>
+      <p>sans purge.</p>
+      <p>La vanne C revient ensuite au siège arrière.</p>
+      <p>Aiguilles stables : le manifold est isolé.</p>
+      <p>On desserre alors lentement chaque raccord,</p>
+      <p>tourné vers le sol, loin des visages.</p>
+      <p>Bouchons, presse-étoupes et capuchons</p>
+      <p>reprennent leur place.</p>
+      <p>Quatre erreurs à éviter.</p>
+      <p>Croiser le bleu et le rouge.</p>
+      <p>Purger un flexible au lieu de le tirer au vide.</p>
+      <p>Ouvrir basse et haute pression</p>
+      <p>ensemble pour lire.</p>
+      <p>Arrêter la pompe avant de fermer le manifold.</p>
+      <p>À vous. Désignez le flexible</p>
+      <p>qui se branche sur la vanne C.</p>
+      <p>C'est le bleu.</p>
+      <p>Le rouge va sur la vanne B.</p>
+      <p>À retenir.</p>
+      <p>Le manifold se contrôle avant d'être branché :</p>
+      <p>bleu à la basse pression, rouge à la haute pression.</p>
+      <p>Les flexibles se tirent au vide :</p>
+      <p>on ferme le manifold avant d'arrêter la pompe.</p>
+      <p>À la dépose, on isole le manifold</p>
+      <p>avant de desserrer les raccords.</p>
+      <p>Cette animation ne remplace pas la formation pratique encadrée :</p>
+      <p>en atelier, aucune vanne de service ne se manœuvre sans le professeur.</p>
+      <p>Prochaine expédition :</p>
+      <p>à la recherche du fluide perdu.</p>
+      <p>Pour vous exercer à poser et déposer le manifold,</p>
+      <p>ouvrez la gare 2 du Tour de main sur inerweb.fr.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Cinq questions pour vérifier</h2>
+      <details class="q"><summary>Quel flexible se branche sur la vanne C, à l'aspiration ?</summary><p>Réponse : le bleu, côté basse pression.</p></details>
+      <details class="q"><summary>Dans quelle position est la tige des vannes de service quand on branche les flexibles et qu'on les tire au vide ?</summary><p>Réponse : au siège arrière, la prise de service est fermée.</p></details>
+      <details class="q"><summary>Que fait-on d'un flexible qui contient de l'air ?</summary><p>Réponse : on le tire au vide.</p></details>
+      <details class="q"><summary>Dans quel ordre termine-t-on le tirage au vide des flexibles ?</summary><p>Réponse : on ferme le manifold, puis l'isolement de la pompe, et on arrête la pompe en dernier.</p></details>
+      <details class="q"><summary>À la dépose, que fait-on avant de desserrer les raccords ?</summary><p>Réponse : on isole le manifold (vannes de service au siège arrière, aiguilles stables).</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../tour-de-main/interventions/pose-manometres/">La gare 2 du Tour de main : poser les manomètres</a>
+        <a class="btn sec" href="af01-chambre-froide-groupe-frigorifique-vannes-de-service.html">Film précédent : expédition 01, Les Portes de la Chambre Froide</a>
+        <a class="btn sec" href="af03-chambre-froide-recuperation-fluide-station-bouteille.html">Film suivant : expédition 03, À la Recherche du Fluide Perdu</a>
+        <a class="btn sec" href="../index.html#t-gestes-af">Tous les films de la série Les Aventuriers du Froid</a>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant. Voix de synthèse.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Récupérer le fluide d'une chambre froide : station, bouteille, pesée</title>
+<meta name="description" content="Chambre froide : lisez l&#x27;étiquette de la bouteille, pesez-la, branchez la station, tirez au vide les flexibles, récupérez le liquide puis la vapeur en surveillant la balance, videz la station et repesez. Animation de découverte du geste. Cette animation ne remplace pas la formation pratique encadrée.">
+<link rel="canonical" href="https://inerweb.fr/studio/gestes/af03-chambre-froide-recuperation-fluide-station-bouteille.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Récupérer le fluide d&#x27;une chambre froide : station, bouteille, pesée">
+<meta property="og:description" content="Chambre froide : lisez l&#x27;étiquette de la bouteille, pesez-la, branchez la station, tirez au vide les flexibles, récupérez le liquide puis la vapeur en surveillant la balance, videz la station et repesez. Animation de découverte du geste. Cette animation ne remplace pas la formation pratique encadrée.">
+<meta property="og:image" content="https://inerweb.fr/studio/gestes/af03-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/gestes/af03-chambre-froide-recuperation-fluide-station-bouteille.html">
+<!-- ===================================================================
+     LES AVENTURIERS DU FROID, expédition 03 (film AF03, 5 min 59), page du film.
+     Page SATELLITE écrite sur le modèle des pages des Explorateurs de la Clim : texte utile et original autour du film.
+     Film (copie 1280x720), sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/gestes-fluides/aventuriers-du-froid/AF03/
+     (renders/telephone.mp4, AF03.vtt, miniature-AF03.jpg). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/AF03-transcription.txt. Chapitres, quiz et description = LIVRAISON-AF03.md.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoObject", "name": "Récupérer le fluide d'une chambre froide : station, bouteille, pesée", "description": "Chambre froide : lisez l'étiquette de la bouteille, pesez-la, branchez la station, tirez au vide les flexibles, récupérez le liquide puis la vapeur en surveillant la balance, videz la station et repesez. Animation de découverte du geste. Cette animation ne remplace pas la formation pratique encadrée.", "thumbnailUrl": "https://inerweb.fr/studio/gestes/af03-miniature.webp", "uploadDate": "2026-11-15", "duration": "PT5M59S", "contentUrl": "https://inerweb.fr/studio/gestes/af03-chambre-froide-recuperation-fluide-station-bouteille.mp4", "inLanguage": "fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; }
+  .attention p { font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>À la Recherche du Fluide Perdu</h1>
+    <p class="sous-titre">Les Aventuriers du Froid · expédition 03 · 5 min 59</p>
+  </header>
+  <p class="chapo">Chambre froide : lisez l'étiquette de la bouteille, pesez-la, branchez la station, tirez au vide les flexibles, récupérez le liquide puis la vapeur en surveillant la balance, videz la station et repesez. Ce film suit une carte d'explorateur : l'état des lieux, la bouteille de récupération, la pesée de départ, le branchement à la main, le vide, les prises de service, le liquide par la haute pression, la vapeur par la basse pression, la station, les flexibles, la repesée, puis les cas particuliers.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="af03-miniature.webp" src="af03-chambre-froide-recuperation-fluide-station-bouteille.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="af03-chambre-froide-recuperation-fluide-station-bouteille.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les schémas sont des schémas de principe. Le film ne donne aucune valeur chiffrée. La masse maximale est écrite sur la bouteille, rien ne se rejette volontairement, et les flexibles se tirent au vide.</p>
+
+    <section class="attention" aria-labelledby="h-att">
+      <h2 id="h-att">Avant de regarder</h2>
+      <p>Cette animation ne remplace pas la formation pratique encadrée. En atelier, aucune vanne de service ne se manœuvre sans le professeur.</p>
+    </section>
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres du film</h2>
+      <ul class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Ouverture et la carte</button></li>
+        <li><button type="button" data-t="21"><time>0:21</time>La situation</button></li>
+        <li><button type="button" data-t="37"><time>0:37</time>L'état des lieux</button></li>
+        <li><button type="button" data-t="49"><time>0:49</time>La bouteille</button></li>
+        <li><button type="button" data-t="76"><time>1:16</time>La pesée de départ</button></li>
+        <li><button type="button" data-t="94"><time>1:34</time>Le branchement</button></li>
+        <li><button type="button" data-t="125"><time>2:05</time>Le vide</button></li>
+        <li><button type="button" data-t="147"><time>2:27</time>Les prises de service</button></li>
+        <li><button type="button" data-t="158"><time>2:38</time>Le liquide</button></li>
+        <li><button type="button" data-t="184"><time>3:04</time>La vapeur</button></li>
+        <li><button type="button" data-t="203"><time>3:23</time>La station</button></li>
+        <li><button type="button" data-t="222"><time>3:42</time>Les flexibles</button></li>
+        <li><button type="button" data-t="246"><time>4:06</time>La repesée</button></li>
+        <li><button type="button" data-t="261"><time>4:21</time>Selon le cas</button></li>
+        <li><button type="button" data-t="283"><time>4:43</time>Erreurs à éviter</button></li>
+        <li><button type="button" data-t="301"><time>5:01</time>À vous</button></li>
+        <li><button type="button" data-t="319"><time>5:19</time>À retenir</button></li>
+        <li><button type="button" data-t="346"><time>5:46</time>Prochaine expédition</button></li>
+      </ul>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>À la Recherche du Fluide Perdu. Aventuriers du Froid, expédition 03. inerWeb Studio.</p>
+      <p>Expédition 03 :</p>
+      <p>À la recherche du fluide perdu.</p>
+      <p>Deux portes sont franchies.</p>
+      <p>La troisième étape mène au fluide perdu.</p>
+      <p>Il faut sortir le fluide de la chambre froide,</p>
+      <p>pour le mettre dans une bouteille,</p>
+      <p>sans en rejeter dans l'air.</p>
+      <p>Vous revenez devant le groupe</p>
+      <p>pour récupérer son fluide.</p>
+      <p>La machine est arrêtée et consignée :</p>
+      <p>le professeur vérifie,</p>
+      <p>c'est un point d'arrêt.</p>
+      <p>Lunettes et gants sont portés,</p>
+      <p>car le fluide liquide peut brûler par le froid.</p>
+      <p>Avant de brancher quoi que ce soit,</p>
+      <p>faites l'état des lieux.</p>
+      <p>Notez les capuchons, les bouchons et la position de chaque vanne,</p>
+      <p>pour tout remettre comme vous l'avez trouvé.</p>
+      <p>Lisez l'étiquette de la bouteille à voix haute :</p>
+      <p>le fluide doit être celui de la plaque de la machine.</p>
+      <p>Fluide différent : on ne branche pas,</p>
+      <p>et le professeur est prévenu.</p>
+      <p>La bouteille est dédiée à ce fluide :</p>
+      <p>deux fluides mélangés ne se recyclent plus.</p>
+      <p>Contrôlez aussi la date de l'épreuve.</p>
+      <p>Pour un fluide inflammable, la station et la bouteille sont adaptées,</p>
+      <p>selon la notice.</p>
+      <p>Posez la bouteille vide sur la balance,</p>
+      <p>bien droite.</p>
+      <p>Attendez que l'affichage se calme.</p>
+      <p>Notez la masse :</p>
+      <p>c'est la masse de départ.</p>
+      <p>La masse maximale de fluide est écrite sur la bouteille.</p>
+      <p>On ne la dépasse jamais.</p>
+      <p>Contrôlez le matériel :</p>
+      <p>manifold fermé, joints propres, station éteinte.</p>
+      <p>Le bleu va sur la vanne C, à l'aspiration.</p>
+      <p>Le rouge va sur la vanne B, au départ du liquide.</p>
+      <p>Le jaune va vers l'entrée de la station.</p>
+      <p>La sortie de la station va vers le robinet vapeur de la bouteille.</p>
+      <p>Le robinet liquide reste fermé.</p>
+      <p>Tout se serre à la main,</p>
+      <p>vannes de service au siège arrière :</p>
+      <p>les prises sont fermées.</p>
+      <p>Les flexibles et la station contiennent de l'air.</p>
+      <p>On les tire au vide :</p>
+      <p>on ne les purge pas.</p>
+      <p>La pompe se branche sur la voie vide.</p>
+      <p>Pompe en route, on ouvre les voies du manifold.</p>
+      <p>La notice ou le professeur dit quand s'arrêter.</p>
+      <p>On ferme alors le manifold,</p>
+      <p>puis on arrête la pompe en dernier.</p>
+      <p>Avec le professeur à côté de vous,</p>
+      <p>on décolle les vannes de service de leur siège arrière :</p>
+      <p>c'est la position intermédiaire.</p>
+      <p>On lit la basse et la haute pression.</p>
+      <p>Le liquide d'abord,</p>
+      <p>par la haute pression.</p>
+      <p>On ouvre dans l'ordre :</p>
+      <p>le robinet vapeur de la bouteille,</p>
+      <p>la sortie de la station,</p>
+      <p>la voie service,</p>
+      <p>puis la voie haute pression.</p>
+      <p>On met la station sur liquide,</p>
+      <p>puis on la démarre.</p>
+      <p>Surveillez la balance en permanence :</p>
+      <p>jamais plus que la masse écrite sur la bouteille.</p>
+      <p>La station ne tourne jamais sous azote.</p>
+      <p>Quand la balance ne monte presque plus,</p>
+      <p>le liquide est récupéré.</p>
+      <p>Il reste la vapeur.</p>
+      <p>On ferme la voie haute pression,</p>
+      <p>on ouvre la basse pression,</p>
+      <p>et l'entrée de la station passe sur vapeur.</p>
+      <p>On suit l'aiguille de basse pression</p>
+      <p>jusqu'à la valeur d'arrêt de la notice.</p>
+      <p>Il reste du fluide dans la station :</p>
+      <p>on la vide dans la bouteille.</p>
+      <p>L'entrée est fermée, la station arrêtée, l'alimentation coupée :</p>
+      <p>alors seulement, on tourne le sélecteur sur purge,</p>
+      <p>puis on relance.</p>
+      <p>Le sélecteur ne se tourne jamais en marche.</p>
+      <p>Par défaut, on ne purge pas les flexibles :</p>
+      <p>on ne les ouvre pas à l'air,</p>
+      <p>on les tire au vide.</p>
+      <p>Une seule exception :</p>
+      <p>en fin d'intervention, après la récupération totale,</p>
+      <p>sans réinjection,</p>
+      <p>quand il ne reste que des vapeurs dans le flexible.</p>
+      <p>On est alors obligé de purger.</p>
+      <p>Si le gaz est réinjecté dans l'installation,</p>
+      <p>il n'y a pas de purge.</p>
+      <p>On referme tout :</p>
+      <p>vannes de service au siège arrière,</p>
+      <p>manifold fermé, robinet de la bouteille fermé.</p>
+      <p>On repèse la bouteille :</p>
+      <p>la masse récupérée est la masse finale moins la masse de départ.</p>
+      <p>On la note au registre.</p>
+      <p>Installation neuve : le circuit est vide,</p>
+      <p>rien à récupérer.</p>
+      <p>En maintenance,</p>
+      <p>on récupère avant d'ouvrir le circuit.</p>
+      <p>Après réparation : pas de récupération,</p>
+      <p>on enchaîne l'azote, le vide, puis la charge.</p>
+      <p>Pour la mise hors service,</p>
+      <p>on récupère tout le fluide.</p>
+      <p>Quatre erreurs à éviter.</p>
+      <p>Brancher sans avoir pesé la bouteille.</p>
+      <p>Utiliser une bouteille d'un autre fluide.</p>
+      <p>Dépasser la masse écrite sur la bouteille.</p>
+      <p>Tourner le sélecteur de la station en marche.</p>
+      <p>À vous. Dites ce qui limite</p>
+      <p>le remplissage de la bouteille.</p>
+      <p>C'est la masse écrite sur la bouteille.</p>
+      <p>Jamais plus.</p>
+      <p>À retenir.</p>
+      <p>On tire au vide,</p>
+      <p>puis on récupère :</p>
+      <p>le liquide d'abord, la vapeur ensuite.</p>
+      <p>La balance se surveille en permanence :</p>
+      <p>jamais plus que la masse écrite,</p>
+      <p>jamais de mélange, aucun rejet volontaire.</p>
+      <p>Cette animation ne remplace pas la formation pratique encadrée :</p>
+      <p>en atelier, aucune vanne de service ne se manœuvre sans le professeur.</p>
+      <p>Prochaine expédition :</p>
+      <p>le souffle de l'azote.</p>
+      <p>Pour vous exercer à récupérer le fluide,</p>
+      <p>ouvrez la gare 0 du Tour de main sur inerweb.fr.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Cinq questions pour vérifier</h2>
+      <details class="q"><summary>Que lit-on à voix haute avant de brancher la bouteille de récupération ?</summary><p>Réponse : l'étiquette ; le fluide doit être celui de la plaque de la machine.</p></details>
+      <details class="q"><summary>Qu'est-ce qui limite le remplissage de la bouteille ?</summary><p>Réponse : la masse maximale écrite sur la bouteille.</p></details>
+      <details class="q"><summary>Dans quel ordre récupère-t-on le fluide ?</summary><p>Réponse : le liquide par la haute pression, puis la vapeur par la basse pression.</p></details>
+      <details class="q"><summary>Que fait-on du sélecteur de la station ?</summary><p>Réponse : on ne le tourne jamais quand la station est en marche.</p></details>
+      <details class="q"><summary>Par défaut, que fait-on du fluide resté dans un flexible ?</summary><p>Réponse : on ne purge pas, on tire au vide ; la purge n'est permise qu'en fin d'intervention, après récupération totale, sans réinjection, vapeurs seules.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../tour-de-main/interventions/recuperation/">La gare 0 du Tour de main : la récupération</a>
+        <a class="btn sec" href="af02-chambre-froide-manifold-brancher-deposer.html">Film précédent : expédition 02, Le Mystère des Trois Tuyaux</a>
+        <a class="btn sec" href="af04-chambre-froide-epreuve-etancheite-azote-detendeur-paliers.html">Film suivant : expédition 04, Le Souffle de l'Azote</a>
+        <a class="btn sec" href="../index.html#t-gestes-af">Tous les films de la série Les Aventuriers du Froid</a>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant. Voix de synthèse.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
