@@ -63,6 +63,25 @@ contrôle de chaque retour sont faits par le modèle principal.
 6. Les deux affiches recomposées dépannent ; une vraie affiche de série reste à dessiner si Franck la veut.
 7. Accueil : la vignette du câblage virtuel est rognée d'un quart en hauteur.
 
+## 3 bis. Suite du 15/11 après-midi (Franck : « ne me pose pas de questions »)
+
+Décidé et corrigé sans redemander, après recomptage par un sous-agent :
+
+- Bureau d'études : 34 stations affichées (les 34 du projet), total du site 469.
+- Studio, fiche de la Brigade : « L'initiation : huit films ».
+- Accueil : la vignette du câblage virtuel se cale en haut.
+- Journal : douze stations du Bureau d'études ouvertes le 9 novembre.
+- Plan : « 126 cours et outils » au lieu de 60 (126 liens distincts dans la liste du plan).
+- Carte « Je me situe » : « 20 questions », le test vers lequel mène le bouton en tire vingt.
+- Habilitations, travail en hauteur : « 185 questions » au lieu de 253. La banque du site et celle de
+  l'atelier  en comptent 185 ; aucune trace de 253. À remettre si Franck a une autre source.
+- Vérifiés et justes : 29 films HoCourant, 11 modules et 4 paliers R408, onze vues du diaporama, SimuRézo
+  3 niveaux et 8 situations, les nombres de pages des dix extraits PDF, tous les compteurs du Studio.
+- Non tranché : la page des habilitations annonce 208 + 224 pages pour le livre du CAP (114 et 72 pour les
+  exemplaires professeur, 256 pour le Bac pro), la page des livres 206 + 222 (112, 70, 254). Les livres
+  complets ne sont pas dans le dépôt.
+- Affiches des deux séries de gestes : confiées à un chat à part, non publiées sans le regard de Franck.
+
 ## 4. Contrôles
 
 - Memory joué dans l'aperçu local, ordinateur et téléphone (375 px) : 16 cartes, une face nom et une face

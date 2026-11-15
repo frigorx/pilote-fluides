@@ -11,7 +11,7 @@
 <title>Le plan du réseau thermo-techno — inerweb.fr</title>
 <meta name="description" content="Le plan de formation inerweb.fr : les cours interactifs du froid sur une carte de métro — le tronc, les organes, les gestes, les fluides, la régulation, l’huile, le CO₂. Gratuit, sans compte.">
 <meta property="og:title" content="Le plan du réseau thermo-techno — inerweb.fr">
-<meta property="og:description" content="Le plan de formation du froid en carte de métro : 60 cours et outils gratuits, sans compte.">
+<meta property="og:description" content="Le plan de formation du froid en carte de métro : 126 cours et outils gratuits, sans compte.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://inerweb.fr/plan.html">
 <link rel="canonical" href="https://inerweb.fr/plan.html">
@@ -783,8 +783,8 @@
 <!-- Les descriptions des stations, relevées des cours par le build
      (build/registre.mjs) — jamais saisies ici. Voir la vue de ligne. -->
 <script src="plan-descriptions.gen.js?v=20261028-bouteilles"></script>
-<script src="moteur/lexique-recherche.js?v=40c45976a5"></script>
-<script src="moteur/recherche.js?v=40c45976a5"></script>
+<script src="moteur/lexique-recherche.js?v=6323483b61"></script>
+<script src="moteur/recherche.js?v=6323483b61"></script>
 <script src="moteur/plan-donnees.js?v=20261028-bouteilles"></script>
 <script>
 /* =====================================================================
@@ -1441,7 +1441,7 @@
     if (etatIndex !== "absent") return;
     etatIndex = "en-cours";
     var s = document.createElement("script");
-    s.src = "recherche-index.gen.js?v=40c45976a5";
+    s.src = "recherche-index.gen.js?v=6323483b61";
     s.onload = function () {
       (window.RECHERCHE_INDEX || []).forEach(function (st) {
         var deja = parAdresse[cleAdresse(st.u)];
@@ -1591,11 +1591,11 @@
 </script>
 
 <!-- Lisibilité : taille du texte + police adaptée DYS (bouton « Aa »). -->
-<script src="moteur/lisibilite.js?v=40c45976a5"></script>
-<script src="chiffres.gen.js?v=40c45976a5"></script>
+<script src="moteur/lisibilite.js?v=6323483b61"></script>
+<script src="chiffres.gen.js?v=6323483b61"></script>
 <!-- Le pied de page (logo + mention de droits) est posé par marque.js, jamais
      écrit à la main : une page qui circule seule doit porter sa licence. -->
-<script src="moteur/marque.js?v=40c45976a5" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
+<script src="moteur/marque.js?v=6323483b61" data-cartouche=".fr" data-licence="cc-by-nc-nd"></script>
 <script>
   // Consultation hors-ligne + raccourci d'écran d'accueil : voir sw.js.
   // Le catch : certains navigateurs (vie privée renforcée, webviews)
