@@ -7,10 +7,10 @@
 <link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1b3a63">
 <title>inerWeb Studio — les films d'inerweb.fr</title>
-<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires en dix tomes, la trilogie « Diagramme dans tous les sens », la série de la régulation en onze épisodes, les mini-films sécurité « Ça aurait pu mal finir » en dix épisodes, trois documentaires sur le climat, l'ozone et un kilo de fluide. Chaque film mène à son cours.">
+<meta name="description" content="Les films d'inerweb.fr présentés comme au cinéma : la saga Les voyages extraordinaires, deux trilogies sur les diagrammes, six séries dont Les Explorateurs de la Clim et Brigade du tableau, les mini-films sécurité « Ça aurait pu mal finir », trois documentaires sur le climat, l'ozone et un kilo de fluide. Chaque film mène à son cours.">
 <link rel="canonical" href="https://inerweb.fr/studio/">
 <meta property="og:title" content="inerWeb Studio — les films d'inerweb.fr">
-<meta property="og:description" content="Une saga, deux séries, trois documentaires : les films du site, chacun relié à son cours.">
+<meta property="og:description" content="Une saga, deux trilogies, six séries, trois documentaires : les films du site, chacun relié à son cours.">
 <meta property="og:image" content="https://inerweb.fr/voyage/videos/chapitre-00-mon-voyage.jpg">
 <meta property="og:url" content="https://inerweb.fr/studio/">
 <!-- ===================================================================
@@ -57,11 +57,12 @@
   @media (min-width:900px) { .galerie { grid-template-columns:repeat(4,minmax(0,1fr)); max-width:72rem; } }
   .affiche { position:relative; display:block; border-radius:12px; overflow:hidden; background:#0b1626; box-shadow:0 6px 18px rgba(16,35,60,.25); text-decoration:none; }
   .affiche img { display:block; width:100%; height:auto; aspect-ratio:2/3; object-fit:cover; }
-  .affiche .rayon { position:absolute; top:8px; left:8px; background:var(--orange-texte); color:#fff; font-size:13px; font-weight:bold; letter-spacing:.04em; text-transform:uppercase; padding:2px 8px; border-radius:6px; }
+  .affiche .rayon { position:absolute; top:8px; left:8px; background:var(--orange-texte); color:#fff; font-size:13px; font-weight:bold; letter-spacing:.04em; text-transform:uppercase; padding:2px 8px; border-radius:6px; max-width:calc(100% - 16px); box-sizing:border-box; }
   .affiche .titre { position:absolute; left:0; right:0; bottom:0; padding:34px 10px 12px; text-align:center; color:#fff;
                     font-family:var(--titre); font-weight:bold; font-size:clamp(1rem,2vw,1.3rem); line-height:1.15; text-shadow:0 1px 4px #000, 0 0 12px rgba(0,0,0,.8);
                     background:linear-gradient(to bottom, rgba(5,12,24,0), rgba(5,12,24,.88)); }
   .affiche.sans-titre .rayon { font-size:11px; letter-spacing:0; } /* rayon plus long que les autres : tient sur une ligne, sans masquer le titre de l'image */
+  .affiche.rayon-bas .rayon { top:auto; bottom:8px; } /* le titre est peint en haut de l'affiche : l'étiquette descend pour ne pas le masquer */
   .affiche.sans-titre .titre { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; background:none; } /* titre déjà dans l'image : gardé pour le lecteur d'écran */
   .affiche:hover img, .affiche:focus-visible img { filter:brightness(1.08); }
   .affiche:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
@@ -120,7 +121,7 @@
     <h1>🎬 inerWeb Studio</h1>
     <p class="sous-titre">les films d'inerweb.fr</p>
   </header>
-  <p class="chapo">À l'affiche : une saga, une trilogie, trois séries, trois documentaires et un premier film de geste. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
+  <p class="chapo">À l'affiche : une saga, deux trilogies, six séries, des mini-films de sécurité, trois documentaires et deux films de geste. On choisit une affiche, on lit la critique, on regarde, puis on va comprendre et s'exercer dans la station du cours.</p>
   <!-- Même adresse que window.INERWEB_YOUTUBE (moteur/reseaux.js). -->
   <p class="youtube"><a href="https://www.youtube.com/channel/UCeeJMhgiuPSWekxoH-EexQA" target="_blank" rel="noopener">▶ Les films sur la chaîne YouTube inerWeb FR</a></p>
 
@@ -134,7 +135,7 @@
         <p class="pitch"><b>Saga.</b> Un road-movie à hauteur de molécule : le circuit frigorifique, puis d'autres fluides et d'autres machines.</p>
       </li>
       <li>
-        <a class="affiche sans-titre" href="#t-diagramme">
+        <a class="affiche sans-titre rayon-bas" href="#t-diagramme">
           <img src="affiches/affiche-diagramme-dans-tous-les-sens.webp" alt="" width="800" height="1200" loading="lazy">
           <span class="rayon">Trilogie</span>
           <span class="titre">Diagramme dans tous les sens</span></a>
@@ -143,12 +144,12 @@
       <li>
         <a class="affiche sans-titre" href="#t-air-humide">
           <img src="affiches/affiche-il-etait-une-fois-l-air-humide.webp" alt="" width="800" height="1200" loading="lazy">
-          <span class="rayon">Trilogie · tome 1</span>
+          <span class="rayon">Trilogie · tomes 1 et 2</span>
           <span class="titre">Il était une fois l’air humide</span></a>
-        <p class="pitch"><b>Trilogie.</b> Le diagramme de l’air humide façon western : le lire, traiter l’air, puis faire le bilan d’une centrale. Tome 1 en ligne, tomes 2 et 3 bientôt.</p>
+        <p class="pitch"><b>Trilogie.</b> Le diagramme de l’air humide façon western : le lire, traiter l’air, puis faire le bilan d’une centrale. Tomes 1 et 2 en ligne, tome 3 bientôt.</p>
       </li>
       <li>
-        <a class="affiche sans-titre" href="#t-explorateurs-clim">
+        <a class="affiche sans-titre rayon-bas" href="#t-explorateurs-clim">
           <img src="affiches/explorateurs-clim.webp" alt="" width="800" height="1200" loading="lazy">
           <span class="rayon">Série · missions 01 à 21</span>
           <span class="titre">Les Explorateurs de la Clim</span></a>
@@ -157,12 +158,12 @@
       <li>
         <a class="affiche" href="#t-manos">
           <img src="affiches/serie-guerre-des-manos.webp" alt="" width="800" height="1200" loading="lazy">
-          <span class="rayon">Série · 4 films</span>
+          <span class="rayon">Série · 5 films</span>
           <span class="titre">La Guerre des manos</span></a>
         <p class="pitch"><b>Série.</b> Le mano BP bleu contre le mano HP rouge, façon science-fiction des années 1970 : pression relative et absolue, surchauffe, sous-refroidissement et incondensables.</p>
       </li>
       <li>
-        <a class="affiche sans-titre" href="#t-brigade">
+        <a class="affiche sans-titre rayon-bas" href="#t-brigade">
           <img src="affiches/serie-brigade-du-tableau.webp" alt="" width="800" height="1200" loading="lazy">
           <span class="rayon">Série · 22 films</span>
           <span class="titre">Brigade du tableau</span></a>
@@ -225,7 +226,7 @@
         <p class="pitch"><b>Le geste.</b> Un tube de cuivre passe par-dessus un autre, d'un seul morceau : mesurer, tracer, cintrer, contrôler.</p>
       </li>
       <li>
-        <a class="affiche" href="#t-armoire">
+        <a class="affiche sans-titre" href="#t-armoire">
           <img src="affiches/geste-armoire.webp" alt="" width="800" height="1200" loading="lazy">
           <span class="rayon">Le geste</span>
           <span class="titre">Câbler une armoire</span></a>
@@ -400,23 +401,23 @@
 
       <h3 class="sous">Les missions</h3>
       <ol class="rangee">
-        <li class="carte"><a class="vue" href="clim/a01-comment-fonctionne-une-climatisation.html"><img src="affiches/explorateurs-clim-a01.webp" alt="" width="800" height="1200" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 48</span></a>
+        <li class="carte"><a class="vue" href="clim/a01-comment-fonctionne-une-climatisation.html"><img src="clim/a01-miniature.webp" alt="" width="1280" height="720" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 48</span></a>
           <p class="num">Mission 01</p><h3>Comment fonctionne une climatisation ?</h3>
           <p>La chaleur va du chaud vers le froid. Pour la sortir de la pièce, un fluide change d’état dans quatre organes.</p>
           <p class="portes"><a href="clim/a01-comment-fonctionne-une-climatisation.html">▶ Le film</a><a href="../cartoclim/stations/1-1-climatiser/index.html">La station</a></p></li>
-        <li class="carte"><a class="vue" href="clim/a02-clim-reversible-comment-chauffe-t-elle.html"><img src="affiches/explorateurs-clim-a02.webp" alt="" width="800" height="1200" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 54</span></a>
+        <li class="carte"><a class="vue" href="clim/a02-clim-reversible-comment-chauffe-t-elle.html"><img src="clim/a02-miniature.webp" alt="" width="1280" height="720" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">2 min 54</span></a>
           <p class="num">Mission 02</p><h3>Une clim réversible : comment chauffe-t-elle ?</h3>
           <p>Le même circuit, parcouru dans l’autre sens : la vanne quatre voies inverse le chemin du fluide.</p>
           <p class="portes"><a href="clim/a02-clim-reversible-comment-chauffe-t-elle.html">▶ Le film</a><a href="../cartoclim/stations/2-6-vanne-4-voies/index.html">La station</a></p></li>
-        <li class="carte"><a class="vue" href="clim/b01-combien-consomme-une-climatisation.html"><img src="affiches/explorateurs-clim-b01.webp" alt="" width="800" height="1200" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 09</span></a>
+        <li class="carte"><a class="vue" href="clim/b01-combien-consomme-une-climatisation.html"><img src="clim/b01-miniature.webp" alt="" width="1280" height="720" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 09</span></a>
           <p class="num">Mission 03</p><h3>Combien consomme une climatisation ?</h3>
           <p>Puissance de froid, puissance d’électricité, kilowattheures : un exemple pour estimer soi-même, et ce qui fait varier la consommation.</p>
           <p class="portes"><a href="clim/b01-combien-consomme-une-climatisation.html">▶ Le film</a><a href="../cartoclim/stations/2-4-inverter/index.html">La station</a></p></li>
-        <li class="carte"><a class="vue" href="clim/a03-a-quoi-sert-le-compresseur.html"><img src="affiches/explorateurs-clim-a03.webp" alt="" width="800" height="1200" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 01</span></a>
+        <li class="carte"><a class="vue" href="clim/a03-a-quoi-sert-le-compresseur.html"><img src="clim/a03-miniature.webp" alt="" width="1280" height="720" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 01</span></a>
           <p class="num">Mission 04</p><h3>À quoi sert le compresseur ?</h3>
           <p>Il comprime la vapeur pour la rendre plus chaude que l’air extérieur, et fait circuler le fluide.</p>
           <p class="portes"><a href="clim/a03-a-quoi-sert-le-compresseur.html">▶ Le film</a><a href="../cartoclim/stations/2-3-rotatif-scroll/index.html">La station</a></p></li>
-        <li class="carte"><a class="vue" href="clim/b02-clim-25-ou-19-degres-quel-impact.html"><img src="affiches/explorateurs-clim-b02.webp" alt="" width="800" height="1200" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 01</span></a>
+        <li class="carte"><a class="vue" href="clim/b02-clim-25-ou-19-degres-quel-impact.html"><img src="clim/b02-miniature.webp" alt="" width="1280" height="720" loading="lazy"><span class="jouer">▶ voir</span><span class="duree">3 min 01</span></a>
           <p class="num">Mission 05</p><h3>Clim à 25 °C ou 19 °C : quel impact ?</h3>
           <p>Une consigne plus basse change l’écart avec le dehors et le travail du compresseur, sans règle magique.</p>
           <p class="portes"><a href="clim/b02-clim-25-ou-19-degres-quel-impact.html">▶ Le film</a><a href="../cartoclim/stations/5-1-modes-telecommande/index.html">La station</a></p></li>
@@ -957,7 +958,7 @@
     <section class="fiche" id="t-armoire" aria-labelledby="h-armoire">
       <p class="retour"><a href="#affiches">← Toutes les affiches</a></p>
       <div class="entete">
-        <a class="affiche" href="../cablage-virtuel/film.html" aria-label="Voir le film Câbler une armoire"><img src="affiches/geste-armoire.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">Câbler une armoire</span></a>
+        <a class="affiche sans-titre" href="../cablage-virtuel/film.html" aria-label="Voir le film Câbler une armoire"><img src="affiches/geste-armoire.webp" alt="" width="800" height="1200" loading="lazy"><span class="titre">Câbler une armoire</span></a>
         <div>
           <h2 id="h-armoire">Câbler une armoire, du bornier au moteur</h2>
           <p class="meta">Le geste · 12 min (formation) ou 15 min (révision, 12 questions) · le Câblage virtuel filmé, voix de synthèse</p>

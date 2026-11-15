@@ -11,7 +11,7 @@ Dix jeux courts, jouables au téléphone, qui rejouent le contenu des stations e
 
 | Jeu | Page | Moteur | Thèmes | D'où vient le contenu |
 |---|---|---|---|---|
-| Memory | `memory.html` | `moteur/memory.js` | symboles du froid, symboles électriques, **le vrai et le symbole** (électricité, froid), **les outils**, fluides et classes, un risque une protection | bibliothèque `../symboles/` (QElectroTech, CC BY 3.0) ; **bibliothèque curée inerWeb** (éléments réels `reel_*` et symboles, copiés dans `illustrations/bibliotheque/`) ; vues d'organes du Tome 3 ; photos d'atelier et CuivRézo ; planches HabFluide |
+| Memory | `memory.html` | `moteur/memory.js` | symboles du froid, symboles électriques, symboles du tableau électrique, fluides et classes, un risque une protection. Depuis le 15/11/2026 : un nom d'un côté, son symbole normalisé de l'autre, jamais un dessin d'organe ni une photo (Franck) | bibliothèque `../symboles/` (QElectroTech, CC BY 3.0) ; **bibliothèque curée inerWeb** (éléments réels `reel_*` et symboles, copiés dans `illustrations/bibliotheque/`) ; vues d'organes du Tome 3 ; photos d'atelier et CuivRézo ; planches HabFluide |
 | Le bon ordre | `ordre.html` | `moteur/ordre.js` | gestes du frigoriste (7 séries), sécurité (3) | planches HabFluide `f/a-*` |
 | Chrono vrai ou faux | `chrono.html` | `moteur/chrono.js` | fluides et gestes, électricité, hauteur, tout mélangé | 32 questions écrites ici + banques **chargées en direct** HoCourant et R408 |
 | QCM éclair | `qcm.html` | `moteur/qcm.js` | les mêmes | les mêmes |

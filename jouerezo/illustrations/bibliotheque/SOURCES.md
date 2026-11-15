@@ -28,6 +28,16 @@ Les vues isolées d'organes frigorifiques ne sont pas copiées : elles sont lues
 | `frigo_schema/separateur_huile` | avec repères |
 | `frigo_schema/tube_capillaire` | avec repères |
 | `frigo_schema/voyant_liquide` | sans repères |
+| `frigo_schema/clapet_anti_retour` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/compresseur_piston` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/compresseur_scroll` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/compresseur_vis` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/silencieux` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/vanne_isolement` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/vanne_securite` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/ventilateur_axial` | avec repères (Memory, 15/11/2026) |
+| `frigo_schema/detendeur_thermo_int--avec-reperes` | avec repères : le « TC » le distingue du détendeur électronique (Memory, 15/11/2026) |
+| `frigo_schema/detendeur_electronique--avec-reperes` | avec repères : le « TCE » le distingue du détendeur thermostatique (Memory, 15/11/2026) |
 | `fusibles/fusible_1p` | sans repères |
 | `protections/differentiel_2p` | sans repères |
 | `protections/disjoncteur_magneto_therm_2p` | sans repères |

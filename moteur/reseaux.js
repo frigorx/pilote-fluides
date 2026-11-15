@@ -92,7 +92,7 @@ window.INERWEB_RESEAUX = [
     emoji: "📐",
     adresse: "bureau-etudes/index.html",
     couleur: "#0c4b88",
-    sousTitre: "Lire les plans en 15 gares, puis calculer un projet de chauffage, ventilation, climatisation de bout en bout, du dossier projet à la note de calcul : 34 stations de 2 heures prévues, ouvertes une à une, sur une maison puis sur un bâtiment tertiaire.",
+    sousTitre: "Lire les plans en 16 gares, puis calculer un projet de chauffage, ventilation, climatisation de bout en bout, du dossier projet à la note de calcul : 34 stations de 2 heures, sur une maison puis sur un bâtiment tertiaire.",
     niveaux: "technicien d’études CVC",
     etat: "en relecture",
     catalogue: ["Bureau d'études"],
@@ -222,7 +222,7 @@ window.INERWEB_RESEAUX = [
     niveaux: "CAP",
     etat: "en relecture",
     catalogue: [],
-    stations: 14, /* pas encore au catalogue des stations : compte relevé dans l'atelier cuivrezo */
+    stations: 18, /* pas encore au catalogue des stations : compte relevé dans l'atelier cuivrezo */
     lignes: 4,
     vignette: "icones/reseaux/cuivrezo.webp",
     illustration: "cuivrezo/images/1-4-cintrette.webp",
@@ -235,8 +235,9 @@ window.INERWEB_RESEAUX = [
   },
   /* Le tour de main (ex-ManiRézo, F. Henninot 07/10/2026 : « une porte à part entière », pour qu'un
      élève trouve le réglage des pressostats sans lien direct). Jamais « ManiRézo » ni « Rézo ».
-     Le plan renvoie surtout à des stations qui vivent ailleurs (déjà comptées par leur réseau) :
-     seul le jeu de poste compte comme station ici. Images : capture du banc du jeu de poste et
+     Le plan renvoie aussi à des stations qui vivent ailleurs (déjà comptées par leur réseau) :
+     ne comptent ici que ses propres pages, le jeu de poste et les 18 interventions de
+     tour-de-main/interventions/ (15/11/2026). Images : capture du banc du jeu de poste et
      capture du plan (07/10). */
   {
     id: "tour-de-main",
@@ -250,9 +251,9 @@ window.INERWEB_RESEAUX = [
     niveaux: "CAP · Bac pro",
     etat: "" /* bandeau « Prototype » levé le 08/10 (F. Henninot : « publie », sur conseil) */,
     catalogue: [],
-    stations: 1,
-    lignes: 4,
-    chiffres: "1 jeu de poste · 23 stations · 4 lignes",
+    stations: 19,
+    lignes: 6,
+    chiffres: "1 jeu de poste · 40 stations · 6 lignes",
     vignette: "icones/reseaux/tour-de-main.webp",
     illustration: "icones/reseaux/illustrations/tour-de-main.webp",
     entree: { titre: "Le réglage des pressostats", href: "tour-de-main/simulateur/pressostat.html" },
@@ -295,11 +296,11 @@ window.INERWEB_RESEAUX = [
     emoji: "🎮",
     adresse: "jouerezo/index.html",
     couleur: "#15803d",
-    sousTitre: "Dix jeux pour retenir le froid classique : Memory, le bon ordre, chrono vrai ou faux, QCM éclair, l’intrus, Nuit à l’atelier, compléter le schéma, Qui suis-je ?, le pendu du frigo, le circuit dont vous êtes le héros. Un code de partie à rendre en fin de jeu.",
+    sousTitre: "Quatorze jeux pour retenir le froid classique : Memory, le bon ordre, chrono vrai ou faux, QCM éclair, l’intrus, Nuit à l’atelier, compléter le schéma, Qui suis-je ?, le pendu du frigo, le circuit dont vous êtes le héros, le jeu du chalumeau, le jeu de l’azote, texte à trous, ranger. Un code de partie à rendre en fin de jeu.",
     niveaux: "CAP · Bac pro",
     etat: "",
     catalogue: [],
-    chiffres: "10 jeux",
+    chiffres: "14 jeux",
     points: 10,
     vignette: "jouerezo/illustrations/accueil.webp",
     entree: { titre: "Memory", href: "jouerezo/memory.html" },
@@ -338,11 +339,11 @@ window.INERWEB_RESEAUX = [
     emoji: "🎬",
     adresse: "studio/index.html",
     couleur: "#be185d" /* le cinéma du quartier (quartier/index.html, app-cinema) */,
-    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le glissement, le compresseur à vis, le sous-refroidisseur, les centrales frigorifiques et leur régulation, la centrale booster CO₂, le bi-étagé), la série « L’ennemi juré » (le groupe d’eau glacée), la trilogie « Diagramme dans tous les sens » (lire le diagramme enthalpique, toutes ses courbes, puis le tracer depuis les relevés), les onze films de la régulation, les dix mini-films sécurité « Ça aurait pu mal finir », la série « La Guerre des manos » (pression relative et absolue, la surchauffe, le sous-refroidissement, les incondensables et le tirage au vide), la série « Brigade du tableau » (huit films d’initiation à l’électricité, de la loi d’Ohm aux fusibles), l’effet de serre, la couche d’ozone et « Un kilo », un documentaire sur le parcours d’un kilo de fluide. Chaque film mène à son cours.",
+    sousTitre: "Tous les films du site dans une seule salle : le Voyage dans tous ses états, ses éditions à l’ammoniac et au CO₂, ses éditions « machines et régulations » (le glissement, le compresseur à vis, le sous-refroidisseur, les centrales frigorifiques et leur régulation, la centrale booster CO₂, le bi-étagé), la série « L’ennemi juré » (le groupe d’eau glacée), la trilogie « Diagramme dans tous les sens » (lire le diagramme enthalpique, toutes ses courbes, puis le tracer depuis les relevés), les onze films de la régulation, les dix mini-films sécurité « Ça aurait pu mal finir », la série « La Guerre des manos » (pression relative et absolue, la surchauffe, le sous-refroidissement, les incondensables et le tirage au vide), la série « Brigade du tableau » (vingt-deux films d’initiation à l’électricité, de la loi d’Ohm aux fusibles), « Il était une fois l’air humide », « Les Explorateurs de la Clim » (vingt et une missions), « Les Aventuriers du Froid », « Mission Clim », l’effet de serre, la couche d’ozone et « Un kilo », un documentaire sur le parcours d’un kilo de fluide. Chaque film mène à son cours.",
     niveaux: "tous niveaux",
     etat: "",
     catalogue: [],
-    chiffres: "97 films",
+    chiffres: "99 films",
     points: 4,
     vignette: "icones/reseaux/illustrations/studio-cinema.webp" /* le cinéma de la maquette du quartier (06/10) */,
     plein: true,

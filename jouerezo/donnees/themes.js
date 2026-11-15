@@ -116,8 +116,9 @@ const P = {
 function sym(id, nom) { return { a: { img: id, alt: "" }, b: { txt: nom }, nom: nom }; }
 function txt(a, b) { return { a: { txt: a }, b: { txt: b } }; }
 const BIB = "illustrations/bibliotheque/";
-function reel(p) { return { nom: p.nom, a: { src: p.reel.src || (BIB + p.reel.lib + ".svg"), alt: "" }, b: { src: BIB + p.sym.lib + ".svg", alt: "" } }; }
-function photo(p) { return { nom: p.nom, a: { src: p.src, alt: "" }, b: { txt: p.nom } }; }
+/* Memory : un nom d'un côté, son symbole normalisé de l'autre, jamais un dessin d'organe (Franck, 15/11/2026).
+   Le symbole vient de la bibliothèque inerWeb (illustrations/bibliotheque/, planche Eduscol). */
+function symb(lib, nom) { return { nom: nom, a: { src: BIB + lib + ".svg", alt: "" }, b: { txt: nom } }; }
 /* les banques de mots (Qui suis-je ?, pendu) : écrites ici (definitions.js) + fabriquées des stations ÉlectroRézo */
 const MOTS_FROID = (window.JR_DEFINITIONS || []).filter(d => d.famille === "froid");
 const MOTS_OUTILS = (window.JR_DEFINITIONS || []).filter(d => d.famille === "outil");
@@ -129,31 +130,31 @@ const JR_THEMES = window.JR_THEMES = {};
    MEMORY — 8 paires tirées au sort dans chaque réserve
    ===================================================================== */
 JR_THEMES.memory = [
-  { id: "symboles-froid", nom: "Symboles du froid", emoji: "❄️", type: "image", portes: P.symbolesFroid,
+  { id: "symboles-froid", nom: "Symboles du froid", emoji: "❄️", type: "image", large: true, portes: P.symbolesFroid,
     paires: [
-      sym("compresseur-a-piston", "Compresseur à piston"),
-      sym("compresseur-scroll", "Compresseur scroll"),
-      sym("compresseur-a-vis", "Compresseur à vis"),
-      sym("detendeur-thermostatique-interne", "Détendeur thermostatique"),
-      sym("detendeur-electronique", "Détendeur électronique"),
-      sym("electrovanne-2", "Électrovanne"),
-      sym("filtre-a-cartouche-2", "Filtre à cartouche"),
-      sym("separateur-d-huile", "Séparateur d'huile"),
-      sym("soupape-de-securite", "Soupape de sécurité"),
-      sym("ventilateur-axial", "Ventilateur axial"),
-      sym("pompe-a-vide-2", "Pompe à vide"),
-      sym("sonde-ntc", "Sonde NTC"),
-      sym("clapet-anti-retour-3", "Clapet anti-retour"),
-      sym("vanne-d-isolement", "Vanne d'isolement"),
-      sym("echangeur-a-plaques-3", "Échangeur à plaques"),
-      sym("bouteille-de-refrigerant", "Bouteille de fluide"),
-      sym("manometres", "Manomètres"),
-      sym("capillaire", "Capillaire"),
-      sym("thermometre-a-bulbe", "Thermomètre à bulbe"),
-      sym("pompe-a-condensats", "Pompe à condensats"),
-      sym("silencieux", "Silencieux")
+      symb("frigo_schema/compresseur_general", "Compresseur (symbole général)"),
+      symb("frigo_schema/compresseur_piston", "Compresseur à piston"),
+      symb("frigo_schema/compresseur_scroll", "Compresseur scroll"),
+      symb("frigo_schema/compresseur_vis", "Compresseur à vis"),
+      symb("frigo_schema/echangeur_a_air", "Échangeur à air (condenseur, évaporateur)"),
+      symb("frigo_schema/echangeur_a_plaques", "Échangeur à plaques"),
+      symb("frigo_schema/detendeur_thermo_int--avec-reperes", "Détendeur thermostatique"),
+      symb("frigo_schema/detendeur_electronique--avec-reperes", "Détendeur électronique"),
+      symb("frigo_schema/tube_capillaire", "Tube capillaire"),
+      symb("frigo_schema/filtre_deshydrateur", "Filtre déshydrateur"),
+      symb("frigo_schema/voyant_liquide", "Voyant liquide"),
+      symb("frigo_schema/electrovanne_frigo", "Électrovanne"),
+      symb("frigo_schema/vanne_isolement", "Vanne d'isolement"),
+      symb("frigo_schema/clapet_anti_retour", "Clapet anti-retour"),
+      symb("frigo_schema/vanne_securite", "Soupape de sécurité"),
+      symb("frigo_schema/bouteille_liquide", "Réservoir de liquide"),
+      symb("frigo_schema/separateur_huile", "Séparateur d'huile"),
+      symb("frigo_schema/silencieux", "Silencieux"),
+      symb("frigo_schema/ventilateur_axial", "Ventilateur axial"),
+      symb("capteurs_froid/pressostat", "Pressostat"),
+      symb("capteurs_froid/sonde_temperature", "Sonde de température")
     ] },
-  { id: "symboles-elec", nom: "Symboles électriques", emoji: "⚡", type: "image", portes: P.symbolesElec,
+  { id: "symboles-elec", nom: "Symboles électriques", emoji: "⚡", type: "image", large: true, portes: P.symbolesElec,
     paires: [
       sym("fusible-symbole-general", "Fusible"),
       sym("disjoncteur-magneto-thermique", "Disjoncteur magnéto-thermique"),
@@ -191,13 +192,8 @@ JR_THEMES.memory = [
       txt("R-22", "HCFC · du chlore · interdit"),
       txt("R-12", "CFC · chlore + fluor · interdit, tueur d'ozone")
     ] },
-  { id: "vrai-symbole-elec", nom: "Le vrai et le symbole : électricité", emoji: "🔌", type: "image", portes: P.symbolesElec,
-    paires: ((window.JR_REEL_SYMBOLE || {}).elec || []).map(reel) },
-  { id: "vrai-symbole-froid", nom: "Le vrai et le symbole : froid", emoji: "🧊", type: "image", portes: P.symbolesFroid,
-    paires: ((window.JR_REEL_SYMBOLE || {}).froid || []).map(reel) },
-  { id: "outils", nom: "Les outils", emoji: "🧰", type: "image",
-    portes: [{ t: "CuivRézo — les gestes de base", h: "../cuivrezo/" }, { t: "HabFluide — Le manifold : lire, brancher", h: "../f/mise-en-service-3/" }, { t: "ÉlectroRézo 1.9 — Mesurer", h: "../electrorezo/stations/1-9-mesurer/" }],
-    paires: (window.JR_OUTILS_PHOTOS || []).map(photo) },
+  { id: "symboles-tableau", nom: "Symboles du tableau électrique", emoji: "🔌", type: "image", large: true, portes: P.symbolesElec,
+    paires: ((window.JR_REEL_SYMBOLE || {}).elec || []).map(function (p) { return symb(p.sym.lib, p.nom); }) },
   { id: "risques", nom: "Un risque, une protection", emoji: "🦺", type: "texte", portes: P.securite,
     paires: [
       txt("Projection de fluide vers les yeux", "Lunettes de protection, et sortir de l'axe"),
