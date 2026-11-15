@@ -163,7 +163,7 @@
   const KM = [
     { n: 'R404A', v: 26100, cls: 'A1 — PRP 3 922', note: 'les deux tiers du tour de la Terre' },
     { n: 'R32', v: 4500, cls: 'A2L — PRP 675', note: '3 allers-retours Paris – Marseille' },
-    { n: 'R290', v: 20, cls: 'A3 — PRP 3', note: 'la sortie de ville' },
+    { n: 'R290', v: 0.13, txt: 'moins de 1', cls: 'A3 — PRP < 1', note: 'environ 130 m, le bout de la rue' },
   ];
 
   function KmCard({ T, appear, leave }) {
@@ -183,7 +183,7 @@
                     <div style={{ font: '600 22px Calibri, sans-serif', color: '#7a8899' }}>{r.cls}</div>
                   </div>
                   <div style={{ flex: 1, textAlign: 'right', font: "bold 56px 'Trebuchet MS', sans-serif", color: hot ? C.orange : C.ink }}>
-                    {fr(r.v * g)} <span style={{ font: "bold 30px 'Trebuchet MS', sans-serif" }}>km</span>
+                    {r.txt || fr(r.v * g)} <span style={{ font: "bold 30px 'Trebuchet MS', sans-serif" }}>km</span>
                   </div>
                 </div>
                 <div style={{ height: 14, background: '#eef3f8', borderRadius: 7, marginTop: 8, overflow: 'hidden' }}>
@@ -484,7 +484,7 @@
               { at: K.PRP + 3.4, until: K.Kilometres - 0.2, text: '1 kg de R404A vaut 3 922 kg de CO₂.' },
               { at: K.Kilometres + 0.2, until: K.Kilometres + 2.8, text: 'En kilomètres de voiture, ça parle davantage.' },
               { at: K.Kilometres + 2.8, until: K.Kilometres + 6, text: '1 kg de R404A : 26 000 km. Deux tiers du tour de la Terre.' },
-              { at: K.Kilometres + 6, until: K.Mur - 0.2, text: '1 kg de R290, du propane : 20 km.' },
+              { at: K.Kilometres + 6, until: K.Mur - 0.2, text: '1 kg de R290, du propane : moins de 1 km.' },
               { at: K.Mur + 0.2, until: K.Mur + 3.2, text: "En 1987, le monde entier a interdit les CFC. Ça a marché." },
               { at: K.Mur + 3.2, until: K.Mur + 5.8, text: 'Pour le climat, aucun accord de ce niveau.' },
               { at: K.Mur + 5.8, until: K.Agir - 0.2, text: 'Au rythme actuel, on va droit dans le mur.' },

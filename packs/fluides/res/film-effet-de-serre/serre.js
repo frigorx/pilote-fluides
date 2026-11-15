@@ -351,9 +351,10 @@
     note: '3 allers-retours Paris – Marseille'
   }, {
     n: 'R290',
-    v: 20,
-    cls: 'A3 — PRP 3',
-    note: 'la sortie de ville'
+    v: 0.13,
+    txt: 'moins de 1',
+    cls: 'A3 — PRP < 1',
+    note: 'environ 130 m, le bout de la rue'
   }];
   function KmCard({
     T,
@@ -415,7 +416,7 @@
           font: "bold 56px 'Trebuchet MS', sans-serif",
           color: hot ? C.orange : C.ink
         }
-      }, fr(r.v * g), " ", /*#__PURE__*/React.createElement("span", {
+      }, r.txt || fr(r.v * g), " ", /*#__PURE__*/React.createElement("span", {
         style: {
           font: "bold 30px 'Trebuchet MS', sans-serif"
         }
@@ -1054,7 +1055,7 @@
       }, {
         at: K.Kilometres + 6,
         until: K.Mur - 0.2,
-        text: '1 kg de R290, du propane : 20 km.'
+        text: '1 kg de R290, du propane : moins de 1 km.'
       }, {
         at: K.Mur + 0.2,
         until: K.Mur + 3.2,
