@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Pourquoi un filtre encrassé change le fonctionnement</title>
+<meta name="description" content="Un filtre de climatisation encrassé freine l'air : moins de froid, givre sur l'évaporateur, plus de consommation. Ce que fait l'utilisateur, ce qui revient au technicien.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Pourquoi un filtre encrassé change le fonctionnement">
+<meta property="og:description" content="Un filtre de climatisation encrassé freine l'air : moins de froid, givre sur l'évaporateur, plus de consommation. Ce que fait l'utilisateur, ce qui revient au technicien.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/f04-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 20 (film F04, 2 min 30), page du film.
+     Page SATELLITE écrite à la main, sur le modèle de la page d'A01 : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/F04/
+     (renders/F04-norm.mp4, F04.vtt, miniature-F04). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/F04-transcription.txt, en paragraphes. Quiz et liens = fiche.yaml.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Pourquoi un filtre encrassé change le fonctionnement",
+"description":"Un filtre de climatisation encrassé freine l'air : moins de froid, givre sur l'évaporateur, plus de consommation. Ce que fait l'utilisateur, ce qui revient au technicien.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/f04-miniature.webp","uploadDate":"2026-11-15","duration":"PT2M30S",
+"contentUrl":"https://inerweb.fr/studio/clim/f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Pourquoi un filtre encrassé change le fonctionnement</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 20 · 2 min 30</p>
+  </header>
+  <p class="chapo">Un filtre encrassé freine l'air : l'évaporateur devient plus froid que prévu, le givre apparaît, la machine refroidit moins et consomme plus. Le filtre se nettoie selon la notice, le reste revient au technicien.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="f04-miniature.webp" src="f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Le film ne donne aucun chiffre. Le rythme de nettoyage et le geste exact sont dans la notice de l'appareil.</p>
+
+    <section class="attention" aria-label="Sécurité">
+      <p>Avant d'ouvrir la façade, on arrête l'appareil. Le circuit du fluide ne s'ouvre pas sans attestation.</p>
+    </section>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les mots du film, en bref</h2>
+      <div class="defs">
+        <div><h3>Le filtre</h3>
+          <p>Une grille placée à l'entrée de l'unité intérieure. Il arrête la poussière avant l'évaporateur. C'est le seul point que l'utilisateur nettoie lui-même.</p></div>
+        <div><h3>Un filtre encrassé</h3>
+          <p>L'air passe moins bien. La turbine tourne comme avant, mais il arrive moins d'air sur l'évaporateur : il refroidit moins l'air qui en sort, et il sort moins d'air frais dans la pièce.</p></div>
+        <div><h3>Du givre sur l'évaporateur</h3>
+          <p>Avec moins de chaleur à prendre, l'évaporateur devient plus froid que prévu. L'eau de l'air qui s'y dépose peut geler, et le givre bouche les ailettes : l'air passe encore moins, et la machine refroidit encore moins.</p></div>
+        <div><h3>Ce qu'on constate</h3>
+          <p>Le client dit que ça refroidit moins, ou que ça givre devant. Souvent, la machine n'est pas en panne : elle est encrassée. Elle consomme aussi plus pour un résultat moindre.</p></div>
+        <div><h3>Un filtre propre ne prouve rien</h3>
+          <p>Ces signes peuvent avoir d'autres causes : le diagnostic revient à un professionnel.</p></div>
+      </div>
+    </section>
+
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres</h2>
+      <ol class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Mission 20</button></li>
+        <li><button type="button" data-t="16"><time>0:16</time>Le filtre</button></li>
+        <li><button type="button" data-t="35"><time>0:35</time>Moins d'air</button></li>
+        <li><button type="button" data-t="56"><time>0:56</time>Le givre</button></li>
+        <li><button type="button" data-t="75"><time>1:15</time>Ce qu'on constate</button></li>
+        <li><button type="button" data-t="99"><time>1:39</time>Le geste</button></li>
+        <li><button type="button" data-t="121"><time>2:01</time>À retenir</button></li>
+        <li><button type="button" data-t="141"><time>2:21</time>La suite</button></li>
+      </ol>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 20 : pourquoi un filtre encrassé change le fonctionnement</p>
+      <p>Un filtre sale ne se voit pas de loin.</p>
+      <p>Pourtant, il peut dérégler toute la machine.</p>
+      <p>Suivons l'air.</p>
+      <p>Un climatiseur brasse de l'air, et l'air porte de la poussière.</p>
+      <p>Le filtre est une grille placée à l'entrée de l'unité intérieure.</p>
+      <p>Il arrête la poussière avant l'évaporateur.</p>
+      <p>C'est le seul point que l'utilisateur nettoie lui-même.</p>
+      <p>Quand le filtre s'encrasse, l'air passe moins bien.</p>
+      <p>La turbine tourne comme avant, mais il arrive moins d'air sur l'évaporateur.</p>
+      <p>L'évaporateur a moins de chaleur à absorber.</p>
+      <p>Il refroidit moins l'air qui en sort.</p>
+      <p>Et il sort moins d'air frais dans la pièce.</p>
+      <p>Avec moins de chaleur à prendre, l'évaporateur devient plus froid que prévu.</p>
+      <p>L'eau de l'air qui s'y dépose peut alors geler.</p>
+      <p>Le givre bouche les ailettes.</p>
+      <p>L'air passe encore moins, et la machine refroidit encore moins.</p>
+      <p>Le client dit que ça refroidit moins, ou que ça givre devant.</p>
+      <p>Souvent, la machine n'est pas en panne : elle est encrassée.</p>
+      <p>Elle consomme aussi plus pour un résultat moindre.</p>
+      <p>Mais ces signes peuvent avoir d'autres causes.</p>
+      <p>Un filtre propre ne prouve pas que tout va bien : le diagnostic revient à un professionnel.</p>
+      <p>Avant d'ouvrir la façade, on arrête l'appareil.</p>
+      <p>La notice dit comment sortir le filtre, le laver ou le changer, et à quel rythme.</p>
+      <p>Le reste revient au technicien : batteries, turbine, bac et mesures.</p>
+      <p>Quant au circuit du fluide, il ne s'ouvre pas sans attestation.</p>
+      <p>Un filtre encrassé freine l'air.</p>
+      <p>Moins d'air, c'est moins de froid, puis du givre.</p>
+      <p>La machine consomme plus et refroidit moins.</p>
+      <p>Le filtre se nettoie selon la notice.</p>
+      <p>Le reste revient au technicien.</p>
+      <p>D'autres missions sont en préparation</p>
+      <p>L'entretien en schéma animé : inerweb.fr, dans CartoClim.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Quatre questions pour vérifier</h2>
+      <details class="q"><summary>Que fait un filtre encrassé à l'air qui passe sur l'évaporateur ?</summary><p>Il en laisse passer moins.</p></details>
+      <details class="q"><summary>Pourquoi l'évaporateur peut-il givrer quand le filtre est bouché ?</summary><p>Il reçoit moins de chaleur, devient plus froid que prévu, et l'eau de l'air peut y geler.</p></details>
+      <details class="q"><summary>Que dit la notice du filtre ?</summary><p>Comment le sortir, le laver ou le changer, et à quel rythme.</p></details>
+      <details class="q"><summary>Qui s'occupe du reste de l'entretien ?</summary><p>Le technicien : batteries, turbine, bac et mesures.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../cartoclim/stations/5-3-entretien/index.html">L'entretien en schéma animé : la station CartoClim 5.3</a>
+        <a class="btn sec" href="a08-pourquoi-un-climatiseur-peut-il-givrer.html">Le givre : mission 18, pourquoi un climatiseur peut-il givrer ?</a>
+        <a class="btn sec" href="a05-pourquoi-la-clim-produit-elle-de-l-eau.html">L'eau de l'air : mission 15, pourquoi la clim produit-elle de l'eau ?</a>
+        <a class="btn sec" href="a01-comment-fonctionne-une-climatisation.html">Le circuit en entier : mission 01, comment fonctionne une climatisation ?</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <span class="btn bientot">D'autres missions sont en préparation</span>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

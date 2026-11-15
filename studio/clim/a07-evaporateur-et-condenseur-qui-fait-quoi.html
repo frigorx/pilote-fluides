@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Évaporateur et condenseur : qui fait quoi ?</title>
+<meta name="description" content="Évaporateur et condenseur d'une climatisation : deux échangeurs semblables aux rôles opposés. Qui prend la chaleur, qui la rend, et pourquoi les rôles s'échangent en hiver.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/a07-evaporateur-et-condenseur-qui-fait-quoi.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Évaporateur et condenseur : qui fait quoi ?">
+<meta property="og:description" content="Évaporateur et condenseur d'une climatisation : deux échangeurs semblables aux rôles opposés. Qui prend la chaleur, qui la rend, et pourquoi les rôles s'échangent en hiver.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/a07-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/a07-evaporateur-et-condenseur-qui-fait-quoi.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 19 (film A07, 3 min 09), page du film.
+     Page SATELLITE écrite à la main, sur le modèle de la page d'A01 : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/A07/
+     (renders/A07-norm.mp4, A07.vtt, miniature-A07). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/A07-transcription.txt, en paragraphes. Quiz et liens = fiche.yaml.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Évaporateur et condenseur : qui fait quoi ?",
+"description":"Évaporateur et condenseur d'une climatisation : deux échangeurs semblables aux rôles opposés. Qui prend la chaleur, qui la rend, et pourquoi les rôles s'échangent en hiver.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/a07-miniature.webp","uploadDate":"2026-11-15","duration":"PT3M9S",
+"contentUrl":"https://inerweb.fr/studio/clim/a07-evaporateur-et-condenseur-qui-fait-quoi.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Évaporateur et condenseur : qui fait quoi ?</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 19 · 3 min 09</p>
+  </header>
+  <p class="chapo">Une clim a deux échangeurs construits de la même façon, mais aux rôles opposés : l'évaporateur prend la chaleur de la pièce, le condenseur la rend au dehors. Sur une clim réversible, les rôles s'échangent en hiver.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="a07-miniature.webp" src="a07-evaporateur-et-condenseur-qui-fait-quoi.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="a07-evaporateur-et-condenseur-qui-fait-quoi.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Le film ne donne aucune valeur de température ni de pression. Il parle d'un climatiseur split : une unité intérieure et une unité extérieure.</p>
+
+    <section class="attention" aria-label="Sécurité">
+      <p>Le circuit contient un fluide sous pression : seul un professionnel habilité l'ouvre.</p>
+    </section>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les mots du film, en bref</h2>
+      <div class="defs">
+        <div><h3>Un échangeur</h3>
+          <p>Un ensemble de tubes et d'ailettes, avec un ventilateur qui pousse l'air à travers. Le fluide frigorigène circule dans les tubes, l'air passe entre les ailettes, et les deux ne se mélangent jamais.</p></div>
+        <div><h3>L'évaporateur</h3>
+          <p>Sur un split, il est dans l'unité intérieure. Le fluide y arrive froid, plus froid que l'air de la pièce : l'air cède sa chaleur au fluide, qui s'évapore et devient vapeur. L'air ressort plus frais dans la pièce.</p></div>
+        <div><h3>Le condenseur</h3>
+          <p>Sur un split, il est dans l'unité extérieure. Le fluide y arrive à l'état de vapeur chaude, plus chaude que l'air du dehors : il cède sa chaleur à l'air extérieur, et la vapeur se condense et redevient liquide.</p></div>
+        <div><h3>Entre les deux</h3>
+          <p>Le compresseur et le détendeur règlent la pression, donc la température du changement d'état.</p></div>
+        <div><h3>Sur une clim réversible</h3>
+          <p>La vanne quatre voies inverse le sens du fluide. En hiver, l'échangeur intérieur devient condenseur et l'échangeur extérieur devient évaporateur : le nom dépend du rôle du moment.</p></div>
+      </div>
+    </section>
+
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres</h2>
+      <ol class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Mission 19</button></li>
+        <li><button type="button" data-t="15"><time>0:15</time>Deux échangeurs</button></li>
+        <li><button type="button" data-t="46"><time>0:46</time>L'évaporateur</button></li>
+        <li><button type="button" data-t="69"><time>1:09</time>Le condenseur</button></li>
+        <li><button type="button" data-t="94"><time>1:34</time>Qui fait quoi</button></li>
+        <li><button type="button" data-t="113"><time>1:53</time>Les rôles</button></li>
+        <li><button type="button" data-t="132"><time>2:12</time>L'air qui passe</button></li>
+        <li><button type="button" data-t="155"><time>2:35</time>À retenir</button></li>
+        <li><button type="button" data-t="179"><time>2:59</time>La suite</button></li>
+      </ol>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 19 : évaporateur et condenseur, qui fait quoi ?</p>
+      <p>Deux échangeurs se ressemblent beaucoup, et pourtant ils font le contraire.</p>
+      <p>Voyons ce qui les distingue.</p>
+      <p>Un échangeur est un ensemble de tubes et d'ailettes, avec un ventilateur qui pousse l'air à travers.</p>
+      <p>Sur un split, l'évaporateur est dans l'unité intérieure, et le condenseur dans l'unité extérieure.</p>
+      <p>Le fluide frigorigène circule dans les tubes.</p>
+      <p>L'air passe entre les ailettes.</p>
+      <p>Les deux ne se mélangent jamais.</p>
+      <p>Les deux échangeurs se ressemblent, mais le fluide n'y arrive ni dans le même état, ni à la même température.</p>
+      <p>Dans l'évaporateur, le fluide arrive froid, plus froid que l'air de la pièce.</p>
+      <p>La chaleur va du plus chaud vers le plus froid : l'air de la pièce cède sa chaleur au fluide.</p>
+      <p>En prenant cette chaleur, le fluide s'évapore.</p>
+      <p>Il devient vapeur.</p>
+      <p>L'air ressort plus frais dans la pièce.</p>
+      <p>Dans le condenseur, le fluide arrive à l'état de vapeur chaude, plus chaude que l'air du dehors.</p>
+      <p>Cette fois, c'est le fluide qui cède sa chaleur à l'air extérieur.</p>
+      <p>En cédant sa chaleur, la vapeur se condense.</p>
+      <p>Elle redevient liquide.</p>
+      <p>L'air qui sort de l'unité extérieure est plus chaud qu'à l'entrée.</p>
+      <p>L'évaporateur prend la chaleur de la pièce : le fluide s'évapore.</p>
+      <p>Le condenseur rend cette chaleur au dehors : le fluide se condense.</p>
+      <p>Entre les deux, le compresseur et le détendeur règlent la pression, donc la température du changement d'état.</p>
+      <p>Sur une clim réversible, la vanne quatre voies inverse le sens du fluide.</p>
+      <p>En hiver, l'échangeur intérieur devient condenseur, et l'échangeur extérieur devient évaporateur.</p>
+      <p>Le nom d'un échangeur dépend donc de son rôle du moment.</p>
+      <p>Les deux échangeurs ont besoin d'un bon passage d'air.</p>
+      <p>Un filtre ou des ailettes encrassés réduisent l'échange.</p>
+      <p>Un évaporateur qui manque d'air peut givrer.</p>
+      <p>Un condenseur qui manque d'air fait monter la pression dans le circuit.</p>
+      <p>L'utilisateur lave le filtre.</p>
+      <p>Le reste revient à un professionnel.</p>
+      <p>Deux échangeurs de tubes et d'ailettes, le même principe, des rôles opposés.</p>
+      <p>L'évaporateur prend la chaleur de l'air de la pièce, et le fluide s'évapore.</p>
+      <p>Le condenseur rend la chaleur à l'air du dehors, et le fluide se condense.</p>
+      <p>Sur une clim réversible, les rôles s'échangent en hiver.</p>
+      <p>D'autres missions sont en préparation.</p>
+      <p>Le split et ses deux unités en schéma animé : inerweb.fr, dans CartoClim.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Quatre questions pour vérifier</h2>
+      <details class="q"><summary>Que fait l'évaporateur ?</summary><p>Il prend la chaleur de l'air de la pièce : le fluide s'y évapore.</p></details>
+      <details class="q"><summary>Que fait le condenseur ?</summary><p>Il rend la chaleur à l'air du dehors : le fluide s'y condense.</p></details>
+      <details class="q"><summary>Que devient le nom des échangeurs sur une clim réversible en hiver ?</summary><p>Ils s'échangent : l'échangeur intérieur devient condenseur, l'extérieur devient évaporateur.</p></details>
+      <details class="q"><summary>Pourquoi les deux échangeurs ont-ils besoin d'air qui circule ?</summary><p>Sans bon passage d'air, l'échange se réduit : l'évaporateur peut givrer, et la pression monte dans le circuit au condenseur.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../cartoclim/stations/3-2-split/index.html">Le split et ses deux unités en schéma animé : la station CartoClim 3.2</a>
+        <a class="btn sec" href="a01-comment-fonctionne-une-climatisation.html">Le circuit en entier : mission 01, comment fonctionne une climatisation ?</a>
+        <a class="btn sec" href="a02-clim-reversible-comment-chauffe-t-elle.html">Les rôles échangés : mission 02, une clim réversible</a>
+        <a class="btn sec" href="a08-pourquoi-un-climatiseur-peut-il-givrer.html">L'évaporateur qui manque d'air : mission 18, pourquoi un climatiseur peut-il givrer ?</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <a class="btn sec" href="f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.html">Prochain film : mission 20, pourquoi un filtre encrassé change le fonctionnement</a>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

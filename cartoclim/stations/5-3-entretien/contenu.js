@@ -162,6 +162,8 @@ ModeleAppareil.construire({
     { quoi: 'Dessin des six points et pictogrammes', source: 'dessins originaux inerWeb', detail: 'schéma de principe écrit pour cette station : ce ne sont pas des symboles de la bibliothèque' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Pourquoi un climatiseur peut-il givrer ?", url: '../../../studio/clim/a08-pourquoi-un-climatiseur-peut-il-givrer.html' },
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Pourquoi un filtre encrassé change le fonctionnement", url: '../../../studio/clim/f04-pourquoi-un-filtre-encrasse-change-le-fonctionnement.html' },
     { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Une clim qui fait du bruit, quelles causes possibles ?", url: '../../../studio/clim/b03-clim-qui-fait-du-bruit-quelles-causes-possibles.html' },
     { ligne: 3, couleur: '#6B5FB5', texte: "3.2 Le split : deux unités, un circuit", url: lien('3.2') },
     { ligne: 4, couleur: '#1E7E54', texte: "4.4 Les condensats : pente, siphon, pompe", url: lien('4.4') },

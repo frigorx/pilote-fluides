@@ -141,6 +141,7 @@ ModeleAppareil.construire({
     { quoi: 'Symboles', source: 'collection QElectroTech, CC BY 3.0', detail: 'bibliothèque inerWeb, rien n’a été redessiné' } ],
 
   correspondances: [
+    { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Évaporateur et condenseur : qui fait quoi ?", url: '../../../studio/clim/a07-evaporateur-et-condenseur-qui-fait-quoi.html' },
     { ligne: '🎬', couleur: '#1b3a63', texte: "Le film : Peut-on chauffer une maison avec une clim ?", url: '../../../studio/clim/b05-peut-on-chauffer-une-maison-avec-une-clim.html' },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.1 Le circuit, organe par organe", url: lien('2.1') },
     { ligne: 2, couleur: '#3D7FCA', texte: "2.6 La vanne 4 voies : froid ou chaud", url: lien('2.6') },
