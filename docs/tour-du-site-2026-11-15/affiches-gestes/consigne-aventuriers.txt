@@ -1,0 +1,10 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG.
+
+Format: portrait 1024 x 1536.
+
+A film poster for an educational series about refrigeration technicians, in the style of a retro hand-drawn exploration map / vintage travel poster.
+Subject (ONE subject only): a single commercial refrigeration condensing unit (a compact box with a round fan grille on the front, a compressor and two small copper pipes with brass service valves on its side), drawn as the treasure at the end of a journey, standing on the map in the lower middle of the frame. A dotted red-brown itinerary line winds up toward it from the bottom edge. A large faded compass rose sits behind it, slightly off-centre. Two or three tiny stylized mountains drawn in ochre outline on the horizon.
+Style: flat illustration with a clean warm-brown ink outline, flat fills, aged cream paper background (#f3e6c8) with very light paper grain, restrained palette of 3 colors: cream, warm brown (#7a4a1e), burnt orange (#c8682c), plus pale steel blue only on the unit. No gradients, no drop shadows, no photorealism. Calm, elegant, cinema poster composition.
+Composition: the TOP 35 percent of the image must be plain empty cream paper with nothing in it (a title will be added there later). Large calm negative space. The unit occupies at most one third of the frame height.
+
+Strictly avoid: any text, letters, numbers, words, labels, signature, brand, logo, map names, cluttered scene, many objects, every element in focus, oversaturated colors, hyper-detail, black background, people, religious symbols.
