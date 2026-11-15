@@ -57,92 +57,92 @@ Le PRG compare l'effet de serre d'un kilogramme de fluide
 00:01:24.452 --> 00:01:26.788
 Le CO₂ vaut 1, par définition.
 
-00:01:27.138 --> 00:01:31.697
+00:01:27.138 --> 00:01:30.983
 PRG, ordre de grandeur :
 
-00:01:31.697 --> 00:01:38.346
-R32 environ 675, R290 : 3, CO₂ : 1.
+00:01:30.983 --> 00:01:38.514
+R32 environ 675, R290 : inférieur à 1, CO₂ : 1.
 
-00:01:38.696 --> 00:01:40.522
+00:01:38.864 --> 00:01:40.690
 1 kg de R32 qui fuit
 
-00:01:40.522 --> 00:01:46.640
+00:01:40.690 --> 00:01:46.808
 pèse autant, pour le climat, que 675 kg de CO₂ (ordre de grandeur).
 
-00:01:46.990 --> 00:01:50.270
+00:01:47.158 --> 00:01:50.438
 Ce sont des ordres de grandeur du règlement européen :
 
-00:01:50.270 --> 00:01:52.821
+00:01:50.439 --> 00:01:52.990
 on les vérifie avant tout calcul officiel.
 
-00:01:55.622 --> 00:01:58.783
+00:01:55.790 --> 00:01:58.951
 Troisième différence : la pression.
 
-00:01:58.783 --> 00:02:02.396
+00:01:58.951 --> 00:02:02.564
 Le CO₂ travaille à très haute pression :
 
-00:02:02.397 --> 00:02:05.558
+00:02:02.565 --> 00:02:05.726
 à 20 °C, à l'arrêt, environ 57 bar.
 
-00:02:05.908 --> 00:02:10.374
+00:02:06.076 --> 00:02:10.542
 Au-dessus de 31 °C, le CO₂ ne peut plus se condenser.
 
-00:02:10.374 --> 00:02:13.660
+00:02:10.542 --> 00:02:13.828
 Le cycle s'appelle alors transcritique.
 
-00:02:14.010 --> 00:02:17.610
+00:02:14.178 --> 00:02:17.778
 Ses composants sont prévus pour cette haute pression.
 
-00:02:20.410 --> 00:02:22.856
+00:02:20.578 --> 00:02:23.024
 Chaque différence a des conséquences.
 
-00:02:22.856 --> 00:02:28.144
+00:02:23.024 --> 00:02:28.312
 Un fluide inflammable demande de limiter la quantité et d'éviter les étincelles.
 
-00:02:28.144 --> 00:02:31.978
+00:02:28.312 --> 00:02:32.146
 Un fluide à haute pression demande des composants adaptés.
 
-00:02:32.328 --> 00:02:35.681
+00:02:32.496 --> 00:02:35.849
 La quantité admise dépend de la classe et du local.
 
-00:02:35.681 --> 00:02:39.889
+00:02:35.849 --> 00:02:40.057
 La classe se lit dans la fiche de données de sécurité du fluide,
 
-00:02:39.889 --> 00:02:41.664
+00:02:40.057 --> 00:02:41.832
 jamais à partir de son nom.
 
-00:02:42.014 --> 00:02:46.115
+00:02:42.182 --> 00:02:46.283
 Manipuler un fluide frigorigène demande une attestation d'aptitude :
 
-00:02:46.115 --> 00:02:48.950
+00:02:46.283 --> 00:02:49.118
 ce travail revient à un professionnel habilité.
 
-00:02:51.750 --> 00:02:56.876
+00:02:51.918 --> 00:02:57.044
 Trois fluides, trois différences : la sécurité, l'effet de serre,
 
-00:02:56.876 --> 00:02:57.822
+00:02:57.044 --> 00:02:57.990
 la pression.
 
-00:02:58.172 --> 00:03:03.265
+00:02:58.340 --> 00:03:03.433
 R32 : faiblement inflammable. R290 : très inflammable.
 
-00:03:03.265 --> 00:03:06.188
+00:03:03.433 --> 00:03:06.356
 CO₂ : ne propage pas la flamme.
 
-00:03:06.538 --> 00:03:11.255
-PRG : R32 plusieurs centaines, R290 : 3, CO₂ : 1.
+00:03:06.706 --> 00:03:13.273
+PRG : R32 plusieurs centaines, R290 : inférieur à 1, CO₂ : 1.
 
-00:03:11.255 --> 00:03:15.490
+00:03:13.273 --> 00:03:18.010
 Seul le CO₂ travaille à très haute pression.
 
-00:03:15.840 --> 00:03:18.892
+00:03:18.360 --> 00:03:21.412
 Aucun fluide n'est le meilleur sur tous les points :
 
-00:03:18.892 --> 00:03:20.712
+00:03:21.412 --> 00:03:23.232
 chacun demande ses précautions.
 
-00:03:21.412 --> 00:03:25.444
+00:03:23.932 --> 00:03:27.964
 La prochaine fois : pourquoi les fluides frigorigènes évoluent.
 
-00:03:25.794 --> 00:03:30.690
+00:03:28.314 --> 00:03:33.210
 Le cours interactif sur les classes de sécurité : inerweb.fr.
