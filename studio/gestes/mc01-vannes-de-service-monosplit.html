@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Les Vannes Secrètes : repérer les vannes de service d'un monosplit</title>
+<meta name="description" content="Repérez les vannes de service, les raccords à dudgeon (flare) et les prises de service d&#x27;un climatiseur monosplit, avec les erreurs à éviter. Film de 5 minutes avec QCM. Ne remplace pas la formation pratique encadrée.">
+<link rel="canonical" href="https://inerweb.fr/studio/gestes/mc01-vannes-de-service-monosplit.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Les Vannes Secrètes : repérer les vannes de service d&#x27;un monosplit">
+<meta property="og:description" content="Repérez les vannes de service, les raccords à dudgeon (flare) et les prises de service d&#x27;un climatiseur monosplit, avec les erreurs à éviter. Film de 5 minutes avec QCM. Ne remplace pas la formation pratique encadrée.">
+<meta property="og:image" content="https://inerweb.fr/studio/gestes/mc01-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/gestes/mc01-vannes-de-service-monosplit.html">
+<!-- ===================================================================
+     MISSION CLIM, mission 01 (film MC01, 5 min 02), page du film.
+     Page SATELLITE écrite sur le modèle des pages des Explorateurs de la Clim : texte utile et original autour du film.
+     Film (copie 1280x720), sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/gestes-fluides/mission-clim/MC01/
+     (renders/telephone.mp4, MC01.vtt, miniature-MC01.jpg). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/MC01-transcription.txt. Chapitres, quiz et description = LIVRAISON-MC01.md.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "VideoObject", "name": "Les Vannes Secrètes : repérer les vannes de service d'un monosplit", "description": "Repérez les vannes de service, les raccords à dudgeon (flare) et les prises de service d'un climatiseur monosplit, avec les erreurs à éviter. Film de 5 minutes avec QCM. Ne remplace pas la formation pratique encadrée.", "thumbnailUrl": "https://inerweb.fr/studio/gestes/mc01-miniature.webp", "uploadDate": "2026-11-15", "duration": "PT5M02S", "contentUrl": "https://inerweb.fr/studio/gestes/mc01-vannes-de-service-monosplit.mp4", "inLanguage": "fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; }
+  .attention p { font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Les Vannes Secrètes</h1>
+    <p class="sous-titre">Mission Clim · mission 01 · 5 min 02</p>
+  </header>
+  <p class="chapo">Un client appelle pour son climatiseur. Avant de toucher au circuit, il faut savoir où l'appareil se laisse approcher. Dans ce film, on repère sur l'unité extérieure d'un monosplit trois éléments : la vanne de service, la prise de service et le raccord à dudgeon (flare). On voit aussi ce que la notice du modèle doit dire avant toute manœuvre, et les erreurs à éviter.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="mc01-miniature.webp" src="mc01-vannes-de-service-monosplit.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="mc01-vannes-de-service-monosplit.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">La forme des vannes et des prises dépend du modèle. Les dessins du film sont des formes de principe. Le couple de serrage, le sens de manœuvre et la position des vannes viennent de la notice du modèle.</p>
+
+    <section class="attention" aria-labelledby="h-att">
+      <h2 id="h-att">Avant de regarder</h2>
+      <p>Ne remplace pas la formation pratique encadrée : en atelier, la manœuvre se fait avec le professeur, sur un appareil réel.</p>
+    </section>
+    <section id="chapitres" aria-labelledby="h-chap">
+      <h2 id="h-chap">Les chapitres du film</h2>
+      <ul class="chap">
+        <li><button type="button" data-t="0"><time>0:00</time>Opération Zéro Fuite</button></li>
+        <li><button type="button" data-t="16"><time>0:16</time>Un client appelle</button></li>
+        <li><button type="button" data-t="44"><time>0:44</time>Pièce 1 : l'appareil</button></li>
+        <li><button type="button" data-t="73"><time>1:13</time>Pièce 2 : le repérage</button></li>
+        <li><button type="button" data-t="105"><time>1:45</time>Pièce 3 : le capuchon</button></li>
+        <li><button type="button" data-t="117"><time>1:57</time>Pièce 4 : la vanne de service</button></li>
+        <li><button type="button" data-t="146"><time>2:26</time>Pièce 5 : la prise de service</button></li>
+        <li><button type="button" data-t="177"><time>2:57</time>Pièce 6 : le raccord à dudgeon</button></li>
+        <li><button type="button" data-t="216"><time>3:36</time>Pièce 7 : la ronde</button></li>
+        <li><button type="button" data-t="232"><time>3:52</time>Pièce 8 : les erreurs</button></li>
+        <li><button type="button" data-t="261"><time>4:21</time>À retenir</button></li>
+        <li><button type="button" data-t="290"><time>4:50</time>Prochaine mission</button></li>
+      </ul>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Les Vannes Secrètes. Opération Zéro Fuite, mission 01. inerWeb Studio.</p>
+      <p>Opération Zéro Fuite. Mission un : les vannes secrètes.</p>
+      <p>Un client appelle pour son climatiseur.</p>
+      <p>Un monosplit, une unité à l'intérieur, une unité dehors.</p>
+      <p>Avant de toucher au circuit, vous devez savoir où l'appareil se laisse approcher.</p>
+      <p>La mission de ce film : repérer sur l'unité extérieure les vannes de service, les raccords et les prises de service.</p>
+      <p>Le repérage est le même après une installation neuve, pour une maintenance ou après une réparation.</p>
+      <p>Le circuit d'un monosplit relie deux unités par deux tubes de cuivre isolés.</p>
+      <p>Le petit tube transporte le liquide.</p>
+      <p>Le gros tube transporte le gaz.</p>
+      <p>Ces deux liaisons arrivent à l'unité extérieure.</p>
+      <p>Les points d'accès au circuit s'y trouvent, selon la notice du fabricant.</p>
+      <p>D'où le nom de la mission : les vannes secrètes.</p>
+      <p>Placez-vous devant l'unité extérieure, appareil à l'arrêt, installation consignée.</p>
+      <p>Lunettes et gants sur vous.</p>
+      <p>Avant tout geste, faites l'état des lieux : capuchons, bouchons, position des vannes.</p>
+      <p>Notez tout, pour tout remettre comme vous l'avez trouvé.</p>
+      <p>Puis repérez les trois éléments : le raccord de chaque liaison, la vanne de service, la prise de service, tels que la notice du modèle les décrit.</p>
+      <p>Retirez le capuchon et posez-le sur un support propre, à portée de vue.</p>
+      <p>Son état se contrôle.</p>
+      <p>La vanne de service commande le passage du fluide entre l'unité extérieure et la liaison.</p>
+      <p>Sa forme dépend du modèle.</p>
+      <p>La notice dit comment elle s'ouvre, dans quel sens, avec quel outil et dans quelle position elle est livrée.</p>
+      <p>En formation, une vanne de service ne se manœuvre jamais sans le professeur.</p>
+      <p>Aucun nombre de tours n'est valable pour tous les appareils.</p>
+      <p>La prise de service sert à brancher un flexible, par exemple celui d'un manifold.</p>
+      <p>Elle a son propre bouchon.</p>
+      <p>Remettez-le après chaque usage.</p>
+      <p>Où elle se trouve, et comment elle s'ouvre, dépend du modèle.</p>
+      <p>La notice du constructeur le précise.</p>
+      <p>Pour comparer avec une chambre froide, une station du Tour de main montre une vanne de service et ses deux prises.</p>
+      <p>Les liaisons se raccordent à l'unité par des dudjons serrés au couple, ou par des brasures sous azote.</p>
+      <p>Le dudjon se nomme aussi flare.</p>
+      <p>Le bout du tube de cuivre est évasé.</p>
+      <p>L'écrou presse cette partie évasée contre le raccord.</p>
+      <p>L'écrou se serre au couple indiqué par la notice du modèle.</p>
+      <p>Il ne se force jamais.</p>
+      <p>Un raccord forcé ou mal serré peut fuir.</p>
+      <p>Pour réaliser un dudjon, la station un point six de Cuivre Rézo détaille chaque étape.</p>
+      <p>Reprenons la ronde : le capuchon, la vanne, la prise, le raccord.</p>
+      <p>Quatre points à repérer avant toute intervention.</p>
+      <p>L'ordre des gestes viendra dans les missions suivantes.</p>
+      <p>On oublie parfois de remettre un capuchon, un bouchon ou un écrou.</p>
+      <p>On serre parfois un dudjon à la force du poignet, sans le couple de la notice.</p>
+      <p>On manœuvre parfois une vanne sans avoir lu la notice, ou sans le professeur en formation.</p>
+      <p>On ouvre parfois les vannes avant que le circuit soit prêt.</p>
+      <p>L'azote et le vide font l'objet des missions quatre et cinq.</p>
+      <p>Deux tubes de cuivre isolés relient les unités : le petit pour le liquide, le gros pour le gaz.</p>
+      <p>Avant tout geste, vous notez l'état des capuchons, des bouchons et des vannes.</p>
+      <p>Le couple, le sens de manœuvre et la position des vannes viennent de la notice du modèle.</p>
+      <p>Ce film ne remplace pas la formation pratique encadrée : en atelier, vous manœuvrez avec votre professeur, sur un appareil réel.</p>
+      <p>Prochaine mission : Opération Raccordement.</p>
+      <p>Pour comprendre les pressions, regardez La Guerre des Manos.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Cinq questions pour vérifier</h2>
+      <details class="q"><summary>Quel tube d'un monosplit transporte le liquide ?</summary><p><b>A</b> le gros tube ; <b>B</b> le petit tube ; <b>C</b> les deux selon le sens.</p><p>Réponse : B, le petit tube.</p></details>
+      <details class="q"><summary>Que fait-on avant tout geste sur l'unité extérieure ?</summary><p><b>A</b> on dévisse tout pour voir ; <b>B</b> on fait l'état des lieux et on le note ; <b>C</b> on branche le manifold.</p><p>Réponse : B, on fait l'état des lieux et on le note.</p></details>
+      <details class="q"><summary>Comment serre-t-on un raccord à dudgeon ?</summary><p><b>A</b> au couple de la notice ; <b>B</b> le plus fort possible ; <b>C</b> d'un nombre de tours toujours identique.</p><p>Réponse : A, au couple de la notice.</p></details>
+      <details class="q"><summary>Où trouve-t-on le sens de manœuvre et la position de livraison d'une vanne de service ?</summary><p><b>A</b> dans la notice du modèle ; <b>B</b> sur une valeur valable pour tous les appareils ; <b>C</b> sur le capuchon.</p><p>Réponse : A, dans la notice du modèle.</p></details>
+      <details class="q"><summary>Ce film remplace-t-il la formation pratique ?</summary><p><b>A</b> oui ; <b>B</b> non, la manœuvre se fait en atelier avec le professeur ; <b>C</b> seulement pour les vannes.</p><p>Réponse : B, non, la manœuvre se fait en atelier avec le professeur.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../tour-de-main/interventions/vannes-service/">La gare 1 du Tour de main : les vannes de service</a>
+        <a class="btn" href="../../cuivrezo/stations/1-6/index.html">La station CuivRézo 1.6 : réaliser un dudgeon</a>
+        <a class="btn sec" href="mc02-raccorder-manifold-monosplit.html">Film suivant : mission 02, Opération Raccordement</a>
+        <a class="btn sec" href="../index.html#t-gestes-mc">Tous les films de la série Mission Clim</a>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant. Voix de synthèse.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
