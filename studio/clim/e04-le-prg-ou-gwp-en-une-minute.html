@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script src="../../moteur/animations.js?v=7bddbcaafd"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://inerweb.fr/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b3a63">
+<title>Le PRG, ou GWP, en une minute</title>
+<meta name="description" content="Le PRG compare l'effet de serre d'un kilogramme de fluide à celui d'un kilogramme de CO2 sur cent ans. Exemples R32 et propane, et ce que le PRG ne dit pas.">
+<link rel="canonical" href="https://inerweb.fr/studio/clim/e04-le-prg-ou-gwp-en-une-minute.html">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Le PRG, ou GWP, en une minute">
+<meta property="og:description" content="Le PRG compare l'effet de serre d'un kilogramme de fluide à celui d'un kilogramme de CO2 sur cent ans. Exemples R32 et propane, et ce que le PRG ne dit pas.">
+<meta property="og:image" content="https://inerweb.fr/studio/clim/e04-miniature.webp">
+<meta property="og:url" content="https://inerweb.fr/studio/clim/e04-le-prg-ou-gwp-en-une-minute.html">
+<!-- ===================================================================
+     LES EXPLORATEURS DE LA CLIM, mission 21 (film E04, 1 min 52), page du film.
+     Page SATELLITE écrite à la main, sur le modèle de la page d'A01 : texte utile et original autour du film.
+     Film, sous-titres et miniature : sources dans C:/Users/henni/OneDrive/Documents/inerweb-video/clim/E04/
+     (renders/E04-norm.mp4, E04.vtt, miniature-E04). Le filigrane inerWeb est déjà dans le film : pas de filigrane sur la page.
+     Transcription = renders/E04-transcription.txt, en paragraphes. Quiz et liens = fiche.yaml.
+     =================================================================== -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Le PRG, ou GWP, en une minute",
+"description":"Le PRG compare l'effet de serre d'un kilogramme de fluide à celui d'un kilogramme de CO2 sur cent ans. Exemples R32 et propane, et ce que le PRG ne dit pas.",
+"thumbnailUrl":"https://inerweb.fr/studio/clim/e04-miniature.webp","uploadDate":"2026-11-15","duration":"PT1M52S",
+"contentUrl":"https://inerweb.fr/studio/clim/e04-le-prg-ou-gwp-en-une-minute.mp4","inLanguage":"fr"}
+</script>
+<style>
+  :root { --bleu:#1b3a63; --orange:#ff6b35; --orange-texte:#c9451a; --txt:#10233c; --mut:#5a6b7d; --fond:#f7f1e7;
+          --carte:#fffdf8; --ligne:#d6dee7; --studio:#be185d; --titre:'Trebuchet MS',Calibri,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fond); color:var(--txt); font:18px/1.65 Calibri,'Segoe UI',system-ui,Arial,sans-serif; }
+  a { color:var(--bleu); }
+  a:hover { color:var(--orange-texte); }
+  .evite { position:absolute; left:-9999px; top:8px; z-index:200; background:var(--bleu); color:#fff; padding:8px 14px; border-radius:8px; }
+  .evite:focus { left:8px; }
+  .page { max-width:56rem; margin:0 auto; padding-inline:16px; padding-block:14px 48px; display:grid; gap:22px; }
+  h1 { font-family:var(--titre); color:var(--bleu); font-size:clamp(1.6rem,4vw,2.3rem); line-height:1.15; margin:0; text-wrap:balance; }
+  h2 { font-family:var(--titre); color:var(--bleu); font-size:1.4rem; line-height:1.2; margin:0 0 8px; }
+  h3 { font-family:var(--titre); color:var(--bleu); font-size:1.1rem; line-height:1.3; margin:0 0 4px; }
+  .sous-titre { margin:2px 0 0; color:var(--studio); font-weight:bold; font-size:18px; }
+  .chapo { margin:0; font-size:19px; }
+  .ecran video { display:block; width:100%; height:auto; aspect-ratio:16/9; background:#0b1626; border-radius:12px; box-shadow:0 6px 18px rgba(16,35,60,.25); }
+  section { background:var(--carte); border:1px solid var(--ligne); border-radius:14px; padding:16px 18px; }
+  section p { margin:0 0 10px; }
+  section p:last-child { margin-bottom:0; }
+  .defs { display:grid; gap:12px; }
+  .defs h3 span { color:var(--orange-texte); }
+  .chap { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  .chap button { font:inherit; min-height:44px; width:100%; text-align:left; cursor:pointer; background:var(--carte); color:var(--bleu); border:2px solid var(--ligne); border-radius:10px; padding:6px 12px; }
+  .chap button:hover, .chap button:focus-visible { border-color:var(--orange-texte); color:var(--orange-texte); outline:none; }
+  .chap time { font-weight:bold; margin-right:10px; font-variant-numeric:tabular-nums; }
+  .attention { border-left:6px solid var(--orange-texte); background:#fff3ea; font-weight:bold; }
+  details.q { border-top:1px solid var(--ligne); padding:8px 0; }
+  details.q:first-of-type { border-top:0; }
+  details.q summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:bold; color:var(--bleu); }
+  details.q p { margin:4px 0 8px 18px; }
+  .liens { display:flex; flex-wrap:wrap; gap:10px; margin:0; }
+  .btn { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 16px; border-radius:22px; border:2px solid var(--bleu);
+         background:var(--bleu); color:#fff; font-weight:bold; text-decoration:none; }
+  .btn.sec { background:var(--carte); color:var(--bleu); }
+  .btn.bientot { background:var(--carte); color:var(--mut); border-style:dashed; }
+  .btn:hover, .btn:focus-visible { color:#fff; background:var(--orange-texte); border-color:var(--orange-texte); outline:none; }
+  .legende { margin:0; color:var(--mut); font-size:16px; }
+</style>
+<script defer src="../../moteur/youtube-films.js?v=7236082ae4"></script>
+<script defer src="../../moteur/retour-accueil.js?v=49380564ef" data-reseau-href="studio/index.html" data-reseau-nom="🎬 inerWeb Studio" data-menu="commun"></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au film</a>
+<div class="page">
+  <header>
+    <h1>Le PRG, ou GWP, en une minute</h1>
+    <p class="sous-titre">Les Explorateurs de la Clim · mission 21 · 1 min 52</p>
+  </header>
+  <p class="chapo">Le PRG, potentiel de réchauffement planétaire (GWP en anglais), compare l'effet de serre d'un kilogramme de fluide qui s'échappe à celui d'un kilogramme de dioxyde de carbone, sur cent ans. Il ne dit rien de la sécurité du fluide.</p>
+
+  <main id="contenu" style="display:grid;gap:22px">
+    <div class="ecran">
+      <video id="lecteur" controls playsinline preload="metadata" poster="e04-miniature.webp" src="e04-le-prg-ou-gwp-en-une-minute.mp4">
+        <track kind="subtitles" srclang="fr" label="Français" src="e04-le-prg-ou-gwp-en-une-minute.vtt" default>
+        Votre navigateur ne lit pas la vidéo. Le texte du film est plus bas sur cette page.
+      </video>
+    </div>
+    <p class="legende">Les valeurs de PRG du film viennent du règlement européen et peuvent être révisées.</p>
+
+    <section id="definitions" aria-labelledby="h-def">
+      <h2 id="h-def">Les mots du film, en bref</h2>
+      <div class="defs">
+        <div><h3>Le PRG, ou GWP</h3>
+          <p>Le potentiel de réchauffement planétaire (GWP en anglais). On prend un kilogramme de fluide qui s'échappe, et on regarde son effet de serre sur cent ans, comparé à celui d'un kilogramme de dioxyde de carbone.</p></div>
+        <div><h3>La référence</h3>
+          <p>Le dioxyde de carbone sert de référence : son PRG vaut un, par définition.</p></div>
+        <div><h3>Deux exemples du film</h3>
+          <p>Le R32 a un PRG de 675 : 1 kg de R32 qui s'échappe agit comme 675 kg de CO₂. Le propane, ou R290, a un PRG inférieur à 1, mais il est inflammable.</p></div>
+        <div><h3>Ce que le PRG ne dit pas</h3>
+          <p>Il ne mesure que l'effet de serre. Il ne dit ni si le fluide est inflammable, ni s'il donne un bon rendement, ni combien il y en a dans l'appareil.</p></div>
+      </div>
+    </section>
+
+    <section id="transcription" aria-labelledby="h-tr">
+      <h2 id="h-tr">Le texte du film</h2>
+      <p>Mission 21 : le PRG, ou GWP, en une minute</p>
+      <p>Quand un fluide s'échappe, certains pèsent plus lourd sur le climat que d'autres.</p>
+      <p>Voyons comment on les compare.</p>
+      <p>Quand un fluide frigorigène s'échappe dans l'air, il peut renforcer l'effet de serre.</p>
+      <p>Mais tous les fluides n'agissent pas avec la même force.</p>
+      <p>Pour les comparer, on utilise le PRG, le potentiel de réchauffement planétaire.</p>
+      <p>En anglais, GWP.</p>
+      <p>On prend un kilogramme de fluide qui s'échappe, et on regarde son effet de serre sur cent ans.</p>
+      <p>On le compare à celui d'un kilogramme de dioxyde de carbone.</p>
+      <p>Le dioxyde de carbone sert de référence : son PRG vaut un, par définition.</p>
+      <p>Le R32 a un PRG de 675.</p>
+      <p>1 kg de R32 qui s'échappe agit comme 675 kg de CO₂.</p>
+      <p>Le propane, ou R290, a un PRG inférieur à 1.</p>
+      <p>Mais le propane est inflammable.</p>
+      <p>Le PRG ne dit rien de la sécurité.</p>
+      <p>Le PRG ne mesure que l'effet de serre.</p>
+      <p>Il ne dit ni si le fluide est inflammable, ni s'il donne un bon rendement, ni combien il y en a dans l'appareil.</p>
+      <p>Ces valeurs viennent du règlement européen.</p>
+      <p>Elles peuvent être révisées.</p>
+      <p>Le PRG compare l'effet de serre d'un fluide à celui du dioxyde de carbone, sur cent ans.</p>
+      <p>Plus il est grand, plus une fuite pèse sur le climat.</p>
+      <p>Il ne dit rien de la sécurité du fluide.</p>
+      <p>D'autres missions sont en préparation</p>
+      <p>L'effet de serre en film : inerweb.fr, dans le pack fluides.</p>
+    </section>
+
+    <section id="quiz" aria-labelledby="h-quiz">
+      <h2 id="h-quiz">Trois questions pour vérifier</h2>
+      <details class="q"><summary>À quoi le PRG compare-t-il un fluide ?</summary><p>À 1 kg de dioxyde de carbone, sur cent ans.</p></details>
+      <details class="q"><summary>Que vaut le PRG du dioxyde de carbone ?</summary><p>Un, par définition.</p></details>
+      <details class="q"><summary>Un PRG très bas veut-il dire que le fluide est sans danger ?</summary><p>Non : le PRG ne dit rien de la sécurité. Le propane a un PRG très bas et il est inflammable.</p></details>
+    </section>
+
+    <section id="suite" aria-labelledby="h-suite">
+      <h2 id="h-suite">Pour aller plus loin</h2>
+      <p class="liens">
+        <a class="btn" href="../../packs/fluides/res/film-effet-de-serre/index.html">L'effet de serre en film : le pack fluides</a>
+        <a class="btn sec" href="e01-r32-r290-co2-quelles-differences.html">Trois fluides comparés : mission 13, R32, R290, CO₂, quelles différences ?</a>
+        <a class="btn sec" href="../index.html#t-explorateurs-clim">Tous les films de la saga</a>
+        <span class="btn bientot">D'autres missions sont en préparation</span>
+      </p>
+    </section>
+  </main>
+
+  <p class="legende">Conception pédagogique : F. Henninot, inerWeb. Film, images et textes réalisés avec l'assistance d'une intelligence artificielle, relus par l'enseignant.</p>
+</div>
+<script>
+(function () {
+  var v = document.getElementById('lecteur');
+  [].forEach.call(document.querySelectorAll('.chap button'), function (b) {
+    b.addEventListener('click', function () {
+      v.currentTime = Number(b.getAttribute('data-t')); v.play(); v.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
