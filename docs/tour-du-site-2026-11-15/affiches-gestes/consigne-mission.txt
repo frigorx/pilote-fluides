@@ -1,0 +1,10 @@
+Use your built-in image generation tool to create ONE image. Do not write code and do not draw with PIL, matplotlib or SVG.
+
+Format: portrait 1024 x 1536.
+
+A film poster for an educational series about air-conditioning technicians, styled like a secret-agent mission file, bold flat graphic illustration (1960s spy poster with bold flat color shapes).
+Subject (ONE subject only): the outdoor unit of a split air conditioner (white-grey box with a large round fan grille), seen in three-quarter view in the lower half of the frame. On its right side, its two brass service valves with their two insulated copper pipes are clearly visible, lit by a single cone of warm light from a flashlight coming from the upper left, as if an agent had just discovered them. A thin red target circle surrounds the two brass valves.
+Style: flat illustration, bold clean dark-navy outline, flat color fills, deep night-blue background (#1d3557, a deep blue, never black) with subtle grain, restrained palette: night blue, pale grey-white, brass yellow (#e0b84a), and one red accent (#d9382e) only for the target circle. No gradients except the soft light cone, no drop shadows, no photorealism.
+Composition: the TOP 35 percent of the image must be plain empty night-blue with nothing in it (a title will be added there later). Large calm negative space. The unit occupies at most 40 percent of the frame height.
+
+Strictly avoid: any text, letters, numbers, words, labels, stamps, signature, brand, logo, cluttered scene, many objects, every element in focus, oversaturated colors, hyper-detail, pure black background, people, hands, religious symbols.
