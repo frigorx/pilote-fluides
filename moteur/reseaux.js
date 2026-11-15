@@ -96,6 +96,7 @@ window.INERWEB_RESEAUX = [
     niveaux: "technicien d’études CVC",
     etat: "en relecture",
     catalogue: ["Bureau d'études"],
+    stations: 34, /* les 34 stations du projet (programme.js) ; le catalogue en range 36 ici, avec les gares 2 bis et 5 bis de « Lire les plans » (15/11/2026) */
     lignes: 7,
     /* prevues : stations prévues au total (en ligne comprises) ; l'accueil affiche la différence comme « en préparation ». Ne le poser que là où le nombre est connu. */
     prevues: 34,
